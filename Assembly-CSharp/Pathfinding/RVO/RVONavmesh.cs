@@ -5,24 +5,24 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C8 RID: 1480
+	// Token: 0x020005DE RID: 1502
 	[AddComponentMenu("Pathfinding/Local Avoidance/RVO Navmesh")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_r_v_o_1_1_r_v_o_navmesh.php")]
 	public class RVONavmesh : GraphModifier
 	{
-		// Token: 0x06002895 RID: 10389 RVA: 0x001B8C5C File Offset: 0x001B6E5C
+		// Token: 0x060028EB RID: 10475 RVA: 0x001BE848 File Offset: 0x001BCA48
 		public override void OnPostCacheLoad()
 		{
 			this.OnLatePostScan();
 		}
 
-		// Token: 0x06002896 RID: 10390 RVA: 0x001B8C5C File Offset: 0x001B6E5C
+		// Token: 0x060028EC RID: 10476 RVA: 0x001BE848 File Offset: 0x001BCA48
 		public override void OnGraphsPostUpdate()
 		{
 			this.OnLatePostScan();
 		}
 
-		// Token: 0x06002897 RID: 10391 RVA: 0x001B8C64 File Offset: 0x001B6E64
+		// Token: 0x060028ED RID: 10477 RVA: 0x001BE850 File Offset: 0x001BCA50
 		public override void OnLatePostScan()
 		{
 			if (!Application.isPlaying)
@@ -60,14 +60,14 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002898 RID: 10392 RVA: 0x001B8D39 File Offset: 0x001B6F39
+		// Token: 0x060028EE RID: 10478 RVA: 0x001BE925 File Offset: 0x001BCB25
 		protected override void OnDisable()
 		{
 			base.OnDisable();
 			this.RemoveObstacles();
 		}
 
-		// Token: 0x06002899 RID: 10393 RVA: 0x001B8D48 File Offset: 0x001B6F48
+		// Token: 0x060028EF RID: 10479 RVA: 0x001BE934 File Offset: 0x001BCB34
 		public void RemoveObstacles()
 		{
 			if (this.lastSim != null)
@@ -81,7 +81,7 @@ namespace Pathfinding.RVO
 			this.obstacles.Clear();
 		}
 
-		// Token: 0x0600289A RID: 10394 RVA: 0x001B8D9C File Offset: 0x001B6F9C
+		// Token: 0x060028F0 RID: 10480 RVA: 0x001BE988 File Offset: 0x001BCB88
 		private void AddGraphObstacles(Simulator sim, GridGraph grid)
 		{
 			bool reverse = Vector3.Dot(grid.transform.TransformVector(Vector3.up), (sim.movementPlane == MovementPlane.XY) ? Vector3.back : Vector3.up) > 0f;
@@ -95,7 +95,7 @@ namespace Pathfinding.RVO
 			}, this.wallHeight * 0.4f, null);
 		}
 
-		// Token: 0x0600289B RID: 10395 RVA: 0x001B8E18 File Offset: 0x001B7018
+		// Token: 0x060028F1 RID: 10481 RVA: 0x001BEA04 File Offset: 0x001BCC04
 		private void AddGraphObstacles(Simulator simulator, INavmesh navmesh)
 		{
 			GraphUtilities.GetContours(navmesh, delegate(List<Int3> vertices, bool cycle)
@@ -110,13 +110,13 @@ namespace Pathfinding.RVO
 			});
 		}
 
-		// Token: 0x040042B0 RID: 17072
+		// Token: 0x0400438E RID: 17294
 		public float wallHeight = 5f;
 
-		// Token: 0x040042B1 RID: 17073
+		// Token: 0x0400438F RID: 17295
 		private readonly List<ObstacleVertex> obstacles = new List<ObstacleVertex>();
 
-		// Token: 0x040042B2 RID: 17074
+		// Token: 0x04004390 RID: 17296
 		private Simulator lastSim;
 	}
 }

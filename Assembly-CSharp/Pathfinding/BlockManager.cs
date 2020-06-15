@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200059E RID: 1438
+	// Token: 0x020005B4 RID: 1460
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_block_manager.php")]
 	public class BlockManager : VersionedMonoBehaviour
 	{
-		// Token: 0x0600271F RID: 10015 RVA: 0x001ABF87 File Offset: 0x001AA187
+		// Token: 0x06002775 RID: 10101 RVA: 0x001B1B73 File Offset: 0x001AFD73
 		private void Start()
 		{
 			if (!AstarPath.active)
@@ -18,7 +18,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002720 RID: 10016 RVA: 0x001ABFA0 File Offset: 0x001AA1A0
+		// Token: 0x06002776 RID: 10102 RVA: 0x001B1B8C File Offset: 0x001AFD8C
 		public bool NodeContainsAnyOf(GraphNode node, List<SingleNodeBlocker> selector)
 		{
 			List<SingleNodeBlocker> list;
@@ -40,7 +40,7 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x06002721 RID: 10017 RVA: 0x001ABFF8 File Offset: 0x001AA1F8
+		// Token: 0x06002777 RID: 10103 RVA: 0x001B1BE4 File Offset: 0x001AFDE4
 		public bool NodeContainsAnyExcept(GraphNode node, List<SingleNodeBlocker> selector)
 		{
 			List<SingleNodeBlocker> list;
@@ -68,7 +68,7 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x06002722 RID: 10018 RVA: 0x001AC05C File Offset: 0x001AA25C
+		// Token: 0x06002778 RID: 10104 RVA: 0x001B1C48 File Offset: 0x001AFE48
 		public void InternalBlock(GraphNode node, SingleNodeBlocker blocker)
 		{
 			AstarPath.active.AddWorkItem(new AstarWorkItem(delegate()
@@ -82,7 +82,7 @@ namespace Pathfinding
 			}, null));
 		}
 
-		// Token: 0x06002723 RID: 10019 RVA: 0x001AC0A0 File Offset: 0x001AA2A0
+		// Token: 0x06002779 RID: 10105 RVA: 0x001B1C8C File Offset: 0x001AFE8C
 		public void InternalUnblock(GraphNode node, SingleNodeBlocker blocker)
 		{
 			AstarPath.active.AddWorkItem(new AstarWorkItem(delegate()
@@ -100,27 +100,27 @@ namespace Pathfinding
 			}, null));
 		}
 
-		// Token: 0x040041BA RID: 16826
+		// Token: 0x04004298 RID: 17048
 		private Dictionary<GraphNode, List<SingleNodeBlocker>> blocked = new Dictionary<GraphNode, List<SingleNodeBlocker>>();
 
-		// Token: 0x02000759 RID: 1881
+		// Token: 0x02000773 RID: 1907
 		public enum BlockMode
 		{
-			// Token: 0x04004A0A RID: 18954
+			// Token: 0x04004AF5 RID: 19189
 			AllExceptSelector,
-			// Token: 0x04004A0B RID: 18955
+			// Token: 0x04004AF6 RID: 19190
 			OnlySelector
 		}
 
-		// Token: 0x0200075A RID: 1882
+		// Token: 0x02000774 RID: 1908
 		public class TraversalProvider : ITraversalProvider
 		{
-			// Token: 0x1700068C RID: 1676
-			// (get) Token: 0x06002D65 RID: 11621 RVA: 0x001CED45 File Offset: 0x001CCF45
-			// (set) Token: 0x06002D66 RID: 11622 RVA: 0x001CED4D File Offset: 0x001CCF4D
+			// Token: 0x17000692 RID: 1682
+			// (get) Token: 0x06002DC8 RID: 11720 RVA: 0x001D49ED File Offset: 0x001D2BED
+			// (set) Token: 0x06002DC9 RID: 11721 RVA: 0x001D49F5 File Offset: 0x001D2BF5
 			public BlockManager.BlockMode mode { get; private set; }
 
-			// Token: 0x06002D67 RID: 11623 RVA: 0x001CED56 File Offset: 0x001CCF56
+			// Token: 0x06002DCA RID: 11722 RVA: 0x001D49FE File Offset: 0x001D2BFE
 			public TraversalProvider(BlockManager blockManager, BlockManager.BlockMode mode, List<SingleNodeBlocker> selector)
 			{
 				if (blockManager == null)
@@ -136,7 +136,7 @@ namespace Pathfinding
 				this.selector = selector;
 			}
 
-			// Token: 0x06002D68 RID: 11624 RVA: 0x001CED98 File Offset: 0x001CCF98
+			// Token: 0x06002DCB RID: 11723 RVA: 0x001D4A40 File Offset: 0x001D2C40
 			public bool CanTraverse(Path path, GraphNode node)
 			{
 				if (!node.Walkable || (path.enabledTags >> (int)node.Tag & 1) == 0)
@@ -150,16 +150,16 @@ namespace Pathfinding
 				return !this.blockManager.NodeContainsAnyExcept(node, this.selector);
 			}
 
-			// Token: 0x06002D69 RID: 11625 RVA: 0x001CEDF7 File Offset: 0x001CCFF7
+			// Token: 0x06002DCC RID: 11724 RVA: 0x001D4A9F File Offset: 0x001D2C9F
 			public uint GetTraversalCost(Path path, GraphNode node)
 			{
 				return path.GetTagPenalty((int)node.Tag) + node.Penalty;
 			}
 
-			// Token: 0x04004A0C RID: 18956
+			// Token: 0x04004AF7 RID: 19191
 			private readonly BlockManager blockManager;
 
-			// Token: 0x04004A0E RID: 18958
+			// Token: 0x04004AF9 RID: 19193
 			private readonly List<SingleNodeBlocker> selector;
 		}
 	}

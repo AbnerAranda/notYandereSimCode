@@ -6,7 +6,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Toggled Objects")]
 public class UIToggledObjects : MonoBehaviour
 {
-	// Token: 0x0600032C RID: 812 RVA: 0x0001F3DC File Offset: 0x0001D5DC
+	// Token: 0x0600032D RID: 813 RVA: 0x0001F404 File Offset: 0x0001D604
 	private void Awake()
 	{
 		if (this.target != null)
@@ -30,7 +30,7 @@ public class UIToggledObjects : MonoBehaviour
 		EventDelegate.Add(base.GetComponent<UIToggle>().onChange, new EventDelegate.Callback(this.Toggle));
 	}
 
-	// Token: 0x0600032D RID: 813 RVA: 0x0001F464 File Offset: 0x0001D664
+	// Token: 0x0600032E RID: 814 RVA: 0x0001F48C File Offset: 0x0001D68C
 	public void Toggle()
 	{
 		bool value = UIToggle.current.value;
@@ -47,7 +47,7 @@ public class UIToggledObjects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600032E RID: 814 RVA: 0x0001F4D9 File Offset: 0x0001D6D9
+	// Token: 0x0600032F RID: 815 RVA: 0x0001F501 File Offset: 0x0001D701
 	private void Set(GameObject go, bool state)
 	{
 		if (go != null)
@@ -56,18 +56,18 @@ public class UIToggledObjects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400047D RID: 1149
+	// Token: 0x0400047F RID: 1151
 	public List<GameObject> activate;
 
-	// Token: 0x0400047E RID: 1150
+	// Token: 0x04000480 RID: 1152
 	public List<GameObject> deactivate;
 
-	// Token: 0x0400047F RID: 1151
+	// Token: 0x04000481 RID: 1153
 	[HideInInspector]
 	[SerializeField]
 	private GameObject target;
 
-	// Token: 0x04000480 RID: 1152
+	// Token: 0x04000482 RID: 1154
 	[HideInInspector]
 	[SerializeField]
 	private bool inverse;

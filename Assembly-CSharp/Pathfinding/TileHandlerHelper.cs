@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200058C RID: 1420
+	// Token: 0x020005A2 RID: 1442
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_tile_handler_helper.php")]
 	public class TileHandlerHelper : VersionedMonoBehaviour
 	{
-		// Token: 0x060026A5 RID: 9893 RVA: 0x001A8D18 File Offset: 0x001A6F18
+		// Token: 0x060026FB RID: 9979 RVA: 0x001AE904 File Offset: 0x001ACB04
 		public void UseSpecifiedHandler(TileHandler newHandler)
 		{
 			if (!base.enabled)
@@ -31,7 +31,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026A6 RID: 9894 RVA: 0x001A8DE4 File Offset: 0x001A6FE4
+		// Token: 0x060026FC RID: 9980 RVA: 0x001AE9D0 File Offset: 0x001ACBD0
 		private void OnEnable()
 		{
 			if (this.handler != null)
@@ -43,7 +43,7 @@ namespace Pathfinding
 			this.forcedReloadRects.Clear();
 		}
 
-		// Token: 0x060026A7 RID: 9895 RVA: 0x001A8E50 File Offset: 0x001A7050
+		// Token: 0x060026FD RID: 9981 RVA: 0x001AEA3C File Offset: 0x001ACC3C
 		private void OnDisable()
 		{
 			if (this.handler != null)
@@ -55,7 +55,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026A8 RID: 9896 RVA: 0x001A8EBC File Offset: 0x001A70BC
+		// Token: 0x060026FE RID: 9982 RVA: 0x001AEAA8 File Offset: 0x001ACCA8
 		public void DiscardPending()
 		{
 			if (this.handler != null)
@@ -71,7 +71,7 @@ namespace Pathfinding
 			this.forcedReloadRects.Clear();
 		}
 
-		// Token: 0x060026A9 RID: 9897 RVA: 0x001A8F11 File Offset: 0x001A7111
+		// Token: 0x060026FF RID: 9983 RVA: 0x001AEAFD File Offset: 0x001ACCFD
 		private void Start()
 		{
 			if (UnityEngine.Object.FindObjectsOfType(typeof(TileHandlerHelper)).Length > 1)
@@ -86,7 +86,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026AA RID: 9898 RVA: 0x001A8F48 File Offset: 0x001A7148
+		// Token: 0x06002700 RID: 9984 RVA: 0x001AEB34 File Offset: 0x001ACD34
 		private void FindGraph()
 		{
 			if (AstarPath.active != null)
@@ -100,7 +100,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026AB RID: 9899 RVA: 0x001A8F9B File Offset: 0x001A719B
+		// Token: 0x06002701 RID: 9985 RVA: 0x001AEB87 File Offset: 0x001ACD87
 		private void OnRecalculatedTiles(NavmeshTile[] tiles)
 		{
 			if (!this.handler.isValid)
@@ -110,7 +110,7 @@ namespace Pathfinding
 			this.handler.OnRecalculatedTiles(tiles);
 		}
 
-		// Token: 0x060026AC RID: 9900 RVA: 0x001A8FCC File Offset: 0x001A71CC
+		// Token: 0x06002702 RID: 9986 RVA: 0x001AEBB8 File Offset: 0x001ACDB8
 		private void HandleOnEnableCallback(NavmeshClipper obj)
 		{
 			Rect bounds = obj.GetBounds(this.handler.graph.transform);
@@ -119,7 +119,7 @@ namespace Pathfinding
 			obj.ForceUpdate();
 		}
 
-		// Token: 0x060026AD RID: 9901 RVA: 0x001A901C File Offset: 0x001A721C
+		// Token: 0x06002703 RID: 9987 RVA: 0x001AEC08 File Offset: 0x001ACE08
 		private void HandleOnDisableCallback(NavmeshClipper obj)
 		{
 			GridLookup<NavmeshClipper>.Root root = this.handler.cuts.GetRoot(obj);
@@ -131,7 +131,7 @@ namespace Pathfinding
 			this.lastUpdateTime = float.NegativeInfinity;
 		}
 
-		// Token: 0x060026AE RID: 9902 RVA: 0x001A906C File Offset: 0x001A726C
+		// Token: 0x06002704 RID: 9988 RVA: 0x001AEC58 File Offset: 0x001ACE58
 		private void Update()
 		{
 			if (this.handler == null)
@@ -144,7 +144,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026AF RID: 9903 RVA: 0x001A90D0 File Offset: 0x001A72D0
+		// Token: 0x06002705 RID: 9989 RVA: 0x001AECBC File Offset: 0x001ACEBC
 		public void ForceUpdate()
 		{
 			if (this.handler == null)
@@ -211,16 +211,16 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04004182 RID: 16770
+		// Token: 0x04004260 RID: 16992
 		private TileHandler handler;
 
-		// Token: 0x04004183 RID: 16771
+		// Token: 0x04004261 RID: 16993
 		public float updateInterval;
 
-		// Token: 0x04004184 RID: 16772
+		// Token: 0x04004262 RID: 16994
 		private float lastUpdateTime = float.NegativeInfinity;
 
-		// Token: 0x04004185 RID: 16773
+		// Token: 0x04004263 RID: 16995
 		private readonly List<IntRect> forcedReloadRects = new List<IntRect>();
 	}
 }

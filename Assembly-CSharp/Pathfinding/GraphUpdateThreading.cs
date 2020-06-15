@@ -2,18 +2,18 @@
 
 namespace Pathfinding
 {
-	// Token: 0x0200054F RID: 1359
+	// Token: 0x02000565 RID: 1381
 	public enum GraphUpdateThreading
 	{
-		// Token: 0x04003FDA RID: 16346
+		// Token: 0x040040B8 RID: 16568
 		UnityThread,
-		// Token: 0x04003FDB RID: 16347
+		// Token: 0x040040B9 RID: 16569
 		SeparateThread,
-		// Token: 0x04003FDC RID: 16348
+		// Token: 0x040040BA RID: 16570
 		UnityInit,
-		// Token: 0x04003FDD RID: 16349
+		// Token: 0x040040BB RID: 16571
 		UnityPost = 4,
-		// Token: 0x04003FDE RID: 16350
+		// Token: 0x040040BC RID: 16572
 		SeparateAndUnityInit = 3
 	}
 }

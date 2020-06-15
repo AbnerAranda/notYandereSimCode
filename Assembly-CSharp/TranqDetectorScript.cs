@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200042D RID: 1069
+// Token: 0x02000432 RID: 1074
 public class TranqDetectorScript : MonoBehaviour
 {
-	// Token: 0x06001C5F RID: 7263 RVA: 0x00153156 File Offset: 0x00151356
+	// Token: 0x06001C83 RID: 7299 RVA: 0x001565CE File Offset: 0x001547CE
 	private void Start()
 	{
 		this.Checklist.alpha = 0f;
 	}
 
-	// Token: 0x06001C60 RID: 7264 RVA: 0x00153168 File Offset: 0x00151368
+	// Token: 0x06001C84 RID: 7300 RVA: 0x001565E0 File Offset: 0x001547E0
 	private void Update()
 	{
 		if (this.StopChecking)
@@ -80,7 +80,7 @@ public class TranqDetectorScript : MonoBehaviour
 		this.Checklist.alpha = Mathf.MoveTowards(this.Checklist.alpha, 0f, Time.deltaTime);
 	}
 
-	// Token: 0x06001C61 RID: 7265 RVA: 0x001533C4 File Offset: 0x001515C4
+	// Token: 0x06001C85 RID: 7301 RVA: 0x0015683C File Offset: 0x00154A3C
 	public void TranqCheck()
 	{
 		if (!this.StopChecking && this.KidnappingLabel.text == "Kidnapping Checklist" && this.TranquilizerIcon.spriteName == "Yes" && this.FollowerIcon.spriteName == "Yes" && this.BiologyIcon.spriteName == "Yes" && this.SyringeIcon.spriteName == "Yes" && this.DoorIcon.spriteName == "Yes")
@@ -102,39 +102,50 @@ public class TranqDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003540 RID: 13632
+	// Token: 0x06001C86 RID: 7302 RVA: 0x0015699C File Offset: 0x00154B9C
+	public void GarroteAttack()
+	{
+		AudioSource component = base.GetComponent<AudioSource>();
+		component.clip = this.TranqClips[UnityEngine.Random.Range(0, this.TranqClips.Length)];
+		component.Play();
+		this.Yandere.EquippedWeapon.Type = WeaponType.Syringe;
+		this.Yandere.AttackManager.Stealth = true;
+		this.StopChecking = true;
+	}
+
+	// Token: 0x040035B5 RID: 13749
 	public YandereScript Yandere;
 
-	// Token: 0x04003541 RID: 13633
+	// Token: 0x040035B6 RID: 13750
 	public DoorScript Door;
 
-	// Token: 0x04003542 RID: 13634
+	// Token: 0x040035B7 RID: 13751
 	public UIPanel Checklist;
 
-	// Token: 0x04003543 RID: 13635
+	// Token: 0x040035B8 RID: 13752
 	public Collider MyCollider;
 
-	// Token: 0x04003544 RID: 13636
+	// Token: 0x040035B9 RID: 13753
 	public UILabel KidnappingLabel;
 
-	// Token: 0x04003545 RID: 13637
+	// Token: 0x040035BA RID: 13754
 	public UISprite TranquilizerIcon;
 
-	// Token: 0x04003546 RID: 13638
+	// Token: 0x040035BB RID: 13755
 	public UISprite FollowerIcon;
 
-	// Token: 0x04003547 RID: 13639
+	// Token: 0x040035BC RID: 13756
 	public UISprite BiologyIcon;
 
-	// Token: 0x04003548 RID: 13640
+	// Token: 0x040035BD RID: 13757
 	public UISprite SyringeIcon;
 
-	// Token: 0x04003549 RID: 13641
+	// Token: 0x040035BE RID: 13758
 	public UISprite DoorIcon;
 
-	// Token: 0x0400354A RID: 13642
+	// Token: 0x040035BF RID: 13759
 	public bool StopChecking;
 
-	// Token: 0x0400354B RID: 13643
+	// Token: 0x040035C0 RID: 13760
 	public AudioClip[] TranqClips;
 }

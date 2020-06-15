@@ -2,10 +2,10 @@
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D3 RID: 1491
+	// Token: 0x020005E9 RID: 1513
 	public interface IAstarPooledObject
 	{
-		// Token: 0x06002911 RID: 10513
+		// Token: 0x06002967 RID: 10599
 		void OnEnterPool();
 	}
 }

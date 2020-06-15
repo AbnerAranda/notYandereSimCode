@@ -2,16 +2,16 @@
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D4 RID: 1492
+	// Token: 0x020005EA RID: 1514
 	public static class ObjectPool<T> where T : class, IAstarPooledObject, new()
 	{
-		// Token: 0x06002912 RID: 10514 RVA: 0x001BB4A0 File Offset: 0x001B96A0
+		// Token: 0x06002968 RID: 10600 RVA: 0x001C108C File Offset: 0x001BF28C
 		public static T Claim()
 		{
 			return ObjectPoolSimple<T>.Claim();
 		}
 
-		// Token: 0x06002913 RID: 10515 RVA: 0x001BB4A7 File Offset: 0x001B96A7
+		// Token: 0x06002969 RID: 10601 RVA: 0x001C1093 File Offset: 0x001BF293
 		public static void Release(ref T obj)
 		{
 			T t = obj;

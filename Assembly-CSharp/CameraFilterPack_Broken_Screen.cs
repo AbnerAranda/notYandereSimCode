@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000148 RID: 328
+// Token: 0x02000149 RID: 329
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Broken/Broken_Screen")]
 public class CameraFilterPack_Broken_Screen : MonoBehaviour
 {
 	// Token: 0x17000268 RID: 616
-	// (get) Token: 0x06000CC0 RID: 3264 RVA: 0x0006849D File Offset: 0x0006669D
+	// (get) Token: 0x06000CC7 RID: 3271 RVA: 0x000691CD File Offset: 0x000673CD
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Broken_Screen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CC1 RID: 3265 RVA: 0x000684D1 File Offset: 0x000666D1
+	// Token: 0x06000CC8 RID: 3272 RVA: 0x00069201 File Offset: 0x00067401
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_Broken_Screen1") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Broken_Screen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CC2 RID: 3266 RVA: 0x00068508 File Offset: 0x00066708
+	// Token: 0x06000CC9 RID: 3273 RVA: 0x00069238 File Offset: 0x00067438
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -53,12 +53,12 @@ public class CameraFilterPack_Broken_Screen : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000CC3 RID: 3267 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000CCA RID: 3274 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000CC4 RID: 3268 RVA: 0x000685BD File Offset: 0x000667BD
+	// Token: 0x06000CCB RID: 3275 RVA: 0x000692ED File Offset: 0x000674ED
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -67,23 +67,23 @@ public class CameraFilterPack_Broken_Screen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000F80 RID: 3968
+	// Token: 0x04000F9F RID: 3999
 	public Shader SCShader;
 
-	// Token: 0x04000F81 RID: 3969
+	// Token: 0x04000FA0 RID: 4000
 	private float TimeX = 1f;
 
-	// Token: 0x04000F82 RID: 3970
+	// Token: 0x04000FA1 RID: 4001
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04000F83 RID: 3971
+	// Token: 0x04000FA2 RID: 4002
 	[Range(-1f, 1f)]
 	public float Shadow = 1f;
 
-	// Token: 0x04000F84 RID: 3972
+	// Token: 0x04000FA3 RID: 4003
 	private Material SCMaterial;
 
-	// Token: 0x04000F85 RID: 3973
+	// Token: 0x04000FA4 RID: 4004
 	private Texture2D Texture2;
 }

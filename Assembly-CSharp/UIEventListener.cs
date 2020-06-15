@@ -6,7 +6,7 @@ using UnityEngine;
 public class UIEventListener : MonoBehaviour
 {
 	// Token: 0x17000099 RID: 153
-	// (get) Token: 0x06000508 RID: 1288 RVA: 0x00030DF0 File Offset: 0x0002EFF0
+	// (get) Token: 0x06000509 RID: 1289 RVA: 0x00030E18 File Offset: 0x0002F018
 	private bool isColliderEnabled
 	{
 		get
@@ -25,7 +25,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000509 RID: 1289 RVA: 0x00030E36 File Offset: 0x0002F036
+	// Token: 0x0600050A RID: 1290 RVA: 0x00030E5E File Offset: 0x0002F05E
 	private void OnSubmit()
 	{
 		if (this.isColliderEnabled && this.onSubmit != null)
@@ -34,7 +34,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050A RID: 1290 RVA: 0x00030E59 File Offset: 0x0002F059
+	// Token: 0x0600050B RID: 1291 RVA: 0x00030E81 File Offset: 0x0002F081
 	private void OnClick()
 	{
 		if (this.isColliderEnabled && this.onClick != null)
@@ -43,7 +43,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050B RID: 1291 RVA: 0x00030E7C File Offset: 0x0002F07C
+	// Token: 0x0600050C RID: 1292 RVA: 0x00030EA4 File Offset: 0x0002F0A4
 	private void OnDoubleClick()
 	{
 		if (this.isColliderEnabled && this.onDoubleClick != null)
@@ -52,7 +52,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050C RID: 1292 RVA: 0x00030E9F File Offset: 0x0002F09F
+	// Token: 0x0600050D RID: 1293 RVA: 0x00030EC7 File Offset: 0x0002F0C7
 	private void OnHover(bool isOver)
 	{
 		if (this.isColliderEnabled && this.onHover != null)
@@ -61,7 +61,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050D RID: 1293 RVA: 0x00030EC3 File Offset: 0x0002F0C3
+	// Token: 0x0600050E RID: 1294 RVA: 0x00030EEB File Offset: 0x0002F0EB
 	private void OnPress(bool isPressed)
 	{
 		if (this.isColliderEnabled && this.onPress != null)
@@ -70,7 +70,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050E RID: 1294 RVA: 0x00030EE7 File Offset: 0x0002F0E7
+	// Token: 0x0600050F RID: 1295 RVA: 0x00030F0F File Offset: 0x0002F10F
 	private void OnSelect(bool selected)
 	{
 		if (this.isColliderEnabled && this.onSelect != null)
@@ -79,7 +79,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050F RID: 1295 RVA: 0x00030F0B File Offset: 0x0002F10B
+	// Token: 0x06000510 RID: 1296 RVA: 0x00030F33 File Offset: 0x0002F133
 	private void OnScroll(float delta)
 	{
 		if (this.isColliderEnabled && this.onScroll != null)
@@ -88,7 +88,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000510 RID: 1296 RVA: 0x00030F2F File Offset: 0x0002F12F
+	// Token: 0x06000511 RID: 1297 RVA: 0x00030F57 File Offset: 0x0002F157
 	private void OnDragStart()
 	{
 		if (this.onDragStart != null)
@@ -97,7 +97,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000511 RID: 1297 RVA: 0x00030F4A File Offset: 0x0002F14A
+	// Token: 0x06000512 RID: 1298 RVA: 0x00030F72 File Offset: 0x0002F172
 	private void OnDrag(Vector2 delta)
 	{
 		if (this.onDrag != null)
@@ -106,7 +106,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000512 RID: 1298 RVA: 0x00030F66 File Offset: 0x0002F166
+	// Token: 0x06000513 RID: 1299 RVA: 0x00030F8E File Offset: 0x0002F18E
 	private void OnDragOver()
 	{
 		if (this.isColliderEnabled && this.onDragOver != null)
@@ -115,7 +115,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000513 RID: 1299 RVA: 0x00030F89 File Offset: 0x0002F189
+	// Token: 0x06000514 RID: 1300 RVA: 0x00030FB1 File Offset: 0x0002F1B1
 	private void OnDragOut()
 	{
 		if (this.isColliderEnabled && this.onDragOut != null)
@@ -124,7 +124,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000514 RID: 1300 RVA: 0x00030FAC File Offset: 0x0002F1AC
+	// Token: 0x06000515 RID: 1301 RVA: 0x00030FD4 File Offset: 0x0002F1D4
 	private void OnDragEnd()
 	{
 		if (this.onDragEnd != null)
@@ -133,7 +133,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000515 RID: 1301 RVA: 0x00030FC7 File Offset: 0x0002F1C7
+	// Token: 0x06000516 RID: 1302 RVA: 0x00030FEF File Offset: 0x0002F1EF
 	private void OnDrop(GameObject go)
 	{
 		if (this.isColliderEnabled && this.onDrop != null)
@@ -142,7 +142,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000516 RID: 1302 RVA: 0x00030FEB File Offset: 0x0002F1EB
+	// Token: 0x06000517 RID: 1303 RVA: 0x00031013 File Offset: 0x0002F213
 	private void OnKey(KeyCode key)
 	{
 		if (this.isColliderEnabled && this.onKey != null)
@@ -151,7 +151,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000517 RID: 1303 RVA: 0x0003100F File Offset: 0x0002F20F
+	// Token: 0x06000518 RID: 1304 RVA: 0x00031037 File Offset: 0x0002F237
 	private void OnTooltip(bool show)
 	{
 		if (this.isColliderEnabled && this.onTooltip != null)
@@ -160,7 +160,7 @@ public class UIEventListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000518 RID: 1304 RVA: 0x00031034 File Offset: 0x0002F234
+	// Token: 0x06000519 RID: 1305 RVA: 0x0003105C File Offset: 0x0002F25C
 	public void Clear()
 	{
 		this.onSubmit = null;
@@ -180,7 +180,7 @@ public class UIEventListener : MonoBehaviour
 		this.onTooltip = null;
 	}
 
-	// Token: 0x06000519 RID: 1305 RVA: 0x000310AC File Offset: 0x0002F2AC
+	// Token: 0x0600051A RID: 1306 RVA: 0x000310D4 File Offset: 0x0002F2D4
 	public static UIEventListener Get(GameObject go)
 	{
 		UIEventListener uieventListener = go.GetComponent<UIEventListener>();
@@ -191,78 +191,78 @@ public class UIEventListener : MonoBehaviour
 		return uieventListener;
 	}
 
-	// Token: 0x04000554 RID: 1364
+	// Token: 0x04000556 RID: 1366
 	public object parameter;
 
-	// Token: 0x04000555 RID: 1365
+	// Token: 0x04000557 RID: 1367
 	public UIEventListener.VoidDelegate onSubmit;
 
-	// Token: 0x04000556 RID: 1366
+	// Token: 0x04000558 RID: 1368
 	public UIEventListener.VoidDelegate onClick;
 
-	// Token: 0x04000557 RID: 1367
+	// Token: 0x04000559 RID: 1369
 	public UIEventListener.VoidDelegate onDoubleClick;
 
-	// Token: 0x04000558 RID: 1368
+	// Token: 0x0400055A RID: 1370
 	public UIEventListener.BoolDelegate onHover;
 
-	// Token: 0x04000559 RID: 1369
+	// Token: 0x0400055B RID: 1371
 	public UIEventListener.BoolDelegate onPress;
 
-	// Token: 0x0400055A RID: 1370
+	// Token: 0x0400055C RID: 1372
 	public UIEventListener.BoolDelegate onSelect;
 
-	// Token: 0x0400055B RID: 1371
+	// Token: 0x0400055D RID: 1373
 	public UIEventListener.FloatDelegate onScroll;
 
-	// Token: 0x0400055C RID: 1372
+	// Token: 0x0400055E RID: 1374
 	public UIEventListener.VoidDelegate onDragStart;
 
-	// Token: 0x0400055D RID: 1373
+	// Token: 0x0400055F RID: 1375
 	public UIEventListener.VectorDelegate onDrag;
 
-	// Token: 0x0400055E RID: 1374
+	// Token: 0x04000560 RID: 1376
 	public UIEventListener.VoidDelegate onDragOver;
 
-	// Token: 0x0400055F RID: 1375
+	// Token: 0x04000561 RID: 1377
 	public UIEventListener.VoidDelegate onDragOut;
 
-	// Token: 0x04000560 RID: 1376
+	// Token: 0x04000562 RID: 1378
 	public UIEventListener.VoidDelegate onDragEnd;
 
-	// Token: 0x04000561 RID: 1377
+	// Token: 0x04000563 RID: 1379
 	public UIEventListener.ObjectDelegate onDrop;
 
-	// Token: 0x04000562 RID: 1378
+	// Token: 0x04000564 RID: 1380
 	public UIEventListener.KeyCodeDelegate onKey;
 
-	// Token: 0x04000563 RID: 1379
+	// Token: 0x04000565 RID: 1381
 	public UIEventListener.BoolDelegate onTooltip;
 
-	// Token: 0x04000564 RID: 1380
+	// Token: 0x04000566 RID: 1382
 	public bool needsActiveCollider = true;
 
-	// Token: 0x02000644 RID: 1604
-	// (Invoke) Token: 0x06002AB0 RID: 10928
+	// Token: 0x0200065A RID: 1626
+	// (Invoke) Token: 0x06002B06 RID: 11014
 	public delegate void VoidDelegate(GameObject go);
 
-	// Token: 0x02000645 RID: 1605
-	// (Invoke) Token: 0x06002AB4 RID: 10932
+	// Token: 0x0200065B RID: 1627
+	// (Invoke) Token: 0x06002B0A RID: 11018
 	public delegate void BoolDelegate(GameObject go, bool state);
 
-	// Token: 0x02000646 RID: 1606
-	// (Invoke) Token: 0x06002AB8 RID: 10936
+	// Token: 0x0200065C RID: 1628
+	// (Invoke) Token: 0x06002B0E RID: 11022
 	public delegate void FloatDelegate(GameObject go, float delta);
 
-	// Token: 0x02000647 RID: 1607
-	// (Invoke) Token: 0x06002ABC RID: 10940
+	// Token: 0x0200065D RID: 1629
+	// (Invoke) Token: 0x06002B12 RID: 11026
 	public delegate void VectorDelegate(GameObject go, Vector2 delta);
 
-	// Token: 0x02000648 RID: 1608
-	// (Invoke) Token: 0x06002AC0 RID: 10944
+	// Token: 0x0200065E RID: 1630
+	// (Invoke) Token: 0x06002B16 RID: 11030
 	public delegate void ObjectDelegate(GameObject go, GameObject obj);
 
-	// Token: 0x02000649 RID: 1609
-	// (Invoke) Token: 0x06002AC4 RID: 10948
+	// Token: 0x0200065F RID: 1631
+	// (Invoke) Token: 0x06002B1A RID: 11034
 	public delegate void KeyCodeDelegate(GameObject go, KeyCode key);
 }

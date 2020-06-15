@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200015B RID: 347
+// Token: 0x0200015C RID: 348
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/BleachBypass")]
 public class CameraFilterPack_Colors_BleachBypass : MonoBehaviour
 {
 	// Token: 0x1700027B RID: 635
-	// (get) Token: 0x06000D34 RID: 3380 RVA: 0x0006A6D4 File Offset: 0x000688D4
+	// (get) Token: 0x06000D3B RID: 3387 RVA: 0x0006B404 File Offset: 0x00069604
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Colors_BleachBypass : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D35 RID: 3381 RVA: 0x0006A708 File Offset: 0x00068908
+	// Token: 0x06000D3C RID: 3388 RVA: 0x0006B438 File Offset: 0x00069638
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Colors_BleachBypass");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Colors_BleachBypass : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D36 RID: 3382 RVA: 0x0006A72C File Offset: 0x0006892C
+	// Token: 0x06000D3D RID: 3389 RVA: 0x0006B45C File Offset: 0x0006965C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Colors_BleachBypass : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D37 RID: 3383 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D3E RID: 3390 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D38 RID: 3384 RVA: 0x0006A7E2 File Offset: 0x000689E2
+	// Token: 0x06000D3F RID: 3391 RVA: 0x0006B512 File Offset: 0x00069712
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Colors_BleachBypass : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FF5 RID: 4085
+	// Token: 0x04001014 RID: 4116
 	public Shader SCShader;
 
-	// Token: 0x04000FF6 RID: 4086
+	// Token: 0x04001015 RID: 4117
 	private float TimeX = 1f;
 
-	// Token: 0x04000FF7 RID: 4087
+	// Token: 0x04001016 RID: 4118
 	private Material SCMaterial;
 
-	// Token: 0x04000FF8 RID: 4088
+	// Token: 0x04001017 RID: 4119
 	[Range(-1f, 2f)]
 	public float Value = 1f;
 }

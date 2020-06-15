@@ -6,24 +6,24 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000567 RID: 1383
+	// Token: 0x0200057D RID: 1405
 	public class LayerGridGraph : GridGraph, IUpdatableGraph
 	{
-		// Token: 0x060024D9 RID: 9433 RVA: 0x0019B1F7 File Offset: 0x001993F7
+		// Token: 0x0600252F RID: 9519 RVA: 0x001A0DE3 File Offset: 0x0019EFE3
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
 			this.RemoveGridGraphFromStatic();
 		}
 
-		// Token: 0x060024DA RID: 9434 RVA: 0x0019B205 File Offset: 0x00199405
+		// Token: 0x06002530 RID: 9520 RVA: 0x001A0DF1 File Offset: 0x0019EFF1
 		private void RemoveGridGraphFromStatic()
 		{
 			LevelGridNode.SetGridGraph(this.active.data.GetGraphIndex(this), null);
 		}
 
-		// Token: 0x17000585 RID: 1413
-		// (get) Token: 0x060024DB RID: 9435 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x1700058B RID: 1419
+		// (get) Token: 0x06002531 RID: 9521 RVA: 0x0002D199 File Offset: 0x0002B399
 		public override bool uniformWidthDepthGrid
 		{
 			get
@@ -32,8 +32,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000586 RID: 1414
-		// (get) Token: 0x060024DC RID: 9436 RVA: 0x0019B21E File Offset: 0x0019941E
+		// Token: 0x1700058C RID: 1420
+		// (get) Token: 0x06002532 RID: 9522 RVA: 0x001A0E0A File Offset: 0x0019F00A
 		public override int LayerCount
 		{
 			get
@@ -42,7 +42,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024DD RID: 9437 RVA: 0x0019B228 File Offset: 0x00199428
+		// Token: 0x06002533 RID: 9523 RVA: 0x001A0E14 File Offset: 0x0019F014
 		public override int CountNodes()
 		{
 			if (this.nodes == null)
@@ -60,7 +60,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x060024DE RID: 9438 RVA: 0x0019B264 File Offset: 0x00199464
+		// Token: 0x06002534 RID: 9524 RVA: 0x001A0E50 File Offset: 0x0019F050
 		public override void GetNodes(Action<GraphNode> action)
 		{
 			if (this.nodes == null)
@@ -76,7 +76,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024DF RID: 9439 RVA: 0x0019B2A8 File Offset: 0x001994A8
+		// Token: 0x06002535 RID: 9525 RVA: 0x001A0E94 File Offset: 0x0019F094
 		protected override List<GraphNode> GetNodesInRegion(Bounds b, GraphUpdateShape shape)
 		{
 			IntRect rectFromBounds = base.GetRectFromBounds(b);
@@ -104,7 +104,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x060024E0 RID: 9440 RVA: 0x0019B3C0 File Offset: 0x001995C0
+		// Token: 0x06002536 RID: 9526 RVA: 0x001A0FAC File Offset: 0x0019F1AC
 		public override List<GraphNode> GetNodesInRegion(IntRect rect)
 		{
 			List<GraphNode> list = ListPool<GraphNode>.Claim();
@@ -133,7 +133,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x060024E1 RID: 9441 RVA: 0x0019B4A4 File Offset: 0x001996A4
+		// Token: 0x06002537 RID: 9527 RVA: 0x001A1090 File Offset: 0x0019F290
 		public override int GetNodesInRegion(IntRect rect, GridNodeBase[] buffer)
 		{
 			IntRect b = new IntRect(0, 0, this.width - 1, this.depth - 1);
@@ -170,7 +170,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x060024E2 RID: 9442 RVA: 0x0019B5A4 File Offset: 0x001997A4
+		// Token: 0x06002538 RID: 9528 RVA: 0x001A1190 File Offset: 0x0019F390
 		public override GridNodeBase GetNode(int x, int z)
 		{
 			if (x < 0 || z < 0 || x >= this.width || z >= this.depth)
@@ -180,7 +180,7 @@ namespace Pathfinding
 			return this.nodes[x + z * this.width];
 		}
 
-		// Token: 0x060024E3 RID: 9443 RVA: 0x0019B5D4 File Offset: 0x001997D4
+		// Token: 0x06002539 RID: 9529 RVA: 0x001A11C0 File Offset: 0x0019F3C0
 		public GridNodeBase GetNode(int x, int z, int layer)
 		{
 			if (x < 0 || z < 0 || x >= this.width || z >= this.depth || layer < 0 || layer >= this.layerCount)
@@ -190,7 +190,7 @@ namespace Pathfinding
 			return this.nodes[x + z * this.width + layer * this.width * this.depth];
 		}
 
-		// Token: 0x060024E4 RID: 9444 RVA: 0x0019B62C File Offset: 0x0019982C
+		// Token: 0x0600253A RID: 9530 RVA: 0x001A1218 File Offset: 0x0019F418
 		void IUpdatableGraph.UpdateArea(GraphUpdateObject o)
 		{
 			if (this.nodes == null || this.nodes.Length != this.width * this.depth * this.layerCount)
@@ -347,7 +347,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024E5 RID: 9445 RVA: 0x0019BBB0 File Offset: 0x00199DB0
+		// Token: 0x0600253B RID: 9531 RVA: 0x001A179C File Offset: 0x0019F99C
 		protected override IEnumerable<Progress> ScanInternal()
 		{
 			if (this.nodeSize <= 0f)
@@ -449,7 +449,7 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x060024E6 RID: 9446 RVA: 0x0019BBC0 File Offset: 0x00199DC0
+		// Token: 0x0600253C RID: 9532 RVA: 0x001A17AC File Offset: 0x0019F9AC
 		private LinkedLevelNode SampleCell(int x, int z)
 		{
 			LinkedLevelNode linkedLevelNode = null;
@@ -506,10 +506,10 @@ namespace Pathfinding
 			return linkedLevelNode;
 		}
 
-		// Token: 0x060024E7 RID: 9447 RVA: 0x0019BD9C File Offset: 0x00199F9C
+		// Token: 0x0600253D RID: 9533 RVA: 0x001A1988 File Offset: 0x0019FB88
 		public override void RecalculateCell(int x, int z, bool resetPenalties = true, bool resetTags = true)
 		{
-			float num = Mathf.Cos(this.maxSlope * 0.017453292f);
+			float num = Mathf.Cos(this.maxSlope * 0.0174532924f);
 			int i = 0;
 			LinkedLevelNode linkedLevelNode = this.SampleCell(x, z);
 			while (linkedLevelNode != null)
@@ -557,7 +557,7 @@ namespace Pathfinding
 				}
 				if (flag || resetTags)
 				{
-					levelGridNode.Tag = 0u;
+					levelGridNode.Tag = 0U;
 				}
 				if (linkedLevelNode.hit.normal != Vector3.zero && (this.penaltyAngle || num > 0.0001f))
 				{
@@ -591,7 +591,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024E8 RID: 9448 RVA: 0x0019C038 File Offset: 0x0019A238
+		// Token: 0x0600253E RID: 9534 RVA: 0x001A1C24 File Offset: 0x0019FE24
 		private void AddLayers(int count)
 		{
 			int num = this.layerCount + count;
@@ -616,7 +616,7 @@ namespace Pathfinding
 			this.layerCount = num;
 		}
 
-		// Token: 0x060024E9 RID: 9449 RVA: 0x0019C0D8 File Offset: 0x0019A2D8
+		// Token: 0x0600253F RID: 9535 RVA: 0x001A1CC4 File Offset: 0x0019FEC4
 		protected override bool ErosionAnyFalseConnections(GraphNode baseNode)
 		{
 			LevelGridNode levelGridNode = baseNode as LevelGridNode;
@@ -643,28 +643,28 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x060024EA RID: 9450 RVA: 0x0019C12C File Offset: 0x0019A32C
+		// Token: 0x06002540 RID: 9536 RVA: 0x001A1D18 File Offset: 0x0019FF18
 		[Obsolete("CalculateConnections no longer takes a node array, it just uses the one on the graph")]
 		public void CalculateConnections(LevelGridNode[] nodes, LevelGridNode node, int x, int z, int layerIndex)
 		{
 			this.CalculateConnections(x, z, layerIndex);
 		}
 
-		// Token: 0x060024EB RID: 9451 RVA: 0x0019C13C File Offset: 0x0019A33C
+		// Token: 0x06002541 RID: 9537 RVA: 0x001A1D28 File Offset: 0x0019FF28
 		public override void CalculateConnections(GridNodeBase baseNode)
 		{
 			LevelGridNode levelGridNode = baseNode as LevelGridNode;
 			this.CalculateConnections(levelGridNode.XCoordinateInGrid, levelGridNode.ZCoordinateInGrid, levelGridNode.LayerCoordinateInGrid);
 		}
 
-		// Token: 0x060024EC RID: 9452 RVA: 0x0019C168 File Offset: 0x0019A368
+		// Token: 0x06002542 RID: 9538 RVA: 0x001A1D54 File Offset: 0x0019FF54
 		[Obsolete("Use CalculateConnections(x,z,layerIndex) or CalculateConnections(node) instead")]
 		public void CalculateConnections(int x, int z, int layerIndex, LevelGridNode node)
 		{
 			this.CalculateConnections(x, z, layerIndex);
 		}
 
-		// Token: 0x060024ED RID: 9453 RVA: 0x0019C174 File Offset: 0x0019A374
+		// Token: 0x06002543 RID: 9539 RVA: 0x001A1D60 File Offset: 0x0019FF60
 		public override void CalculateConnections(int x, int z)
 		{
 			for (int i = 0; i < this.layerCount; i++)
@@ -673,7 +673,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024EE RID: 9454 RVA: 0x0019C19C File Offset: 0x0019A39C
+		// Token: 0x06002544 RID: 9540 RVA: 0x001A1D88 File Offset: 0x0019FF88
 		public void CalculateConnections(int x, int z, int layerIndex)
 		{
 			LevelGridNode levelGridNode = this.nodes[z * this.width + x + this.width * this.depth * layerIndex];
@@ -733,7 +733,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024EF RID: 9455 RVA: 0x0019C3E4 File Offset: 0x0019A5E4
+		// Token: 0x06002545 RID: 9541 RVA: 0x001A1FD0 File Offset: 0x001A01D0
 		public override NNInfoInternal GetNearest(Vector3 position, NNConstraint constraint, GraphNode hint)
 		{
 			if (this.nodes == null || this.depth * this.width * this.layerCount != this.nodes.Length)
@@ -752,7 +752,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x060024F0 RID: 9456 RVA: 0x0019C4CC File Offset: 0x0019A6CC
+		// Token: 0x06002546 RID: 9542 RVA: 0x001A20B8 File Offset: 0x001A02B8
 		private LevelGridNode GetNearestNode(Vector3 position, int x, int z, NNConstraint constraint)
 		{
 			int num = this.width * z + x;
@@ -774,7 +774,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x060024F1 RID: 9457 RVA: 0x0019C554 File Offset: 0x0019A754
+		// Token: 0x06002547 RID: 9543 RVA: 0x001A2140 File Offset: 0x001A0340
 		public override NNInfoInternal GetNearestForce(Vector3 position, NNConstraint constraint)
 		{
 			if (this.nodes == null || this.depth * this.width * this.layerCount != this.nodes.Length || this.layerCount == 0)
@@ -896,14 +896,14 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x060024F2 RID: 9458 RVA: 0x0019C8EB File Offset: 0x0019AAEB
+		// Token: 0x06002548 RID: 9544 RVA: 0x001A24D7 File Offset: 0x001A06D7
 		[Obsolete("Use node.GetConnection instead")]
 		public static bool CheckConnection(LevelGridNode node, int dir)
 		{
 			return node.GetConnection(dir);
 		}
 
-		// Token: 0x060024F3 RID: 9459 RVA: 0x0019C8F4 File Offset: 0x0019AAF4
+		// Token: 0x06002549 RID: 9545 RVA: 0x001A24E0 File Offset: 0x001A06E0
 		protected override void SerializeExtraInfo(GraphSerializationContext ctx)
 		{
 			if (this.nodes == null)
@@ -926,7 +926,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024F4 RID: 9460 RVA: 0x0019C970 File Offset: 0x0019AB70
+		// Token: 0x0600254A RID: 9546 RVA: 0x001A255C File Offset: 0x001A075C
 		protected override void DeserializeExtraInfo(GraphSerializationContext ctx)
 		{
 			int num = ctx.reader.ReadInt32();
@@ -950,7 +950,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060024F5 RID: 9461 RVA: 0x0019C9F0 File Offset: 0x0019ABF0
+		// Token: 0x0600254B RID: 9547 RVA: 0x001A25DC File Offset: 0x001A07DC
 		protected override void PostDeserialization(GraphSerializationContext ctx)
 		{
 			base.UpdateTransform();
@@ -985,25 +985,25 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04004084 RID: 16516
+		// Token: 0x04004162 RID: 16738
 		[JsonMember]
 		internal int layerCount;
 
-		// Token: 0x04004085 RID: 16517
+		// Token: 0x04004163 RID: 16739
 		[JsonMember]
 		public float mergeSpanRange = 0.5f;
 
-		// Token: 0x04004086 RID: 16518
+		// Token: 0x04004164 RID: 16740
 		[JsonMember]
 		public float characterHeight = 0.4f;
 
-		// Token: 0x04004087 RID: 16519
+		// Token: 0x04004165 RID: 16741
 		internal int lastScannedWidth;
 
-		// Token: 0x04004088 RID: 16520
+		// Token: 0x04004166 RID: 16742
 		internal int lastScannedDepth;
 
-		// Token: 0x04004089 RID: 16521
+		// Token: 0x04004167 RID: 16743
 		public new LevelGridNode[] nodes;
 	}
 }

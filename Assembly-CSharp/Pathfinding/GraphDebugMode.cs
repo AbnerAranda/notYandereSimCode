@@ -2,22 +2,22 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000552 RID: 1362
+	// Token: 0x02000568 RID: 1384
 	public enum GraphDebugMode
 	{
-		// Token: 0x04003FEB RID: 16363
+		// Token: 0x040040C9 RID: 16585
 		Areas,
-		// Token: 0x04003FEC RID: 16364
+		// Token: 0x040040CA RID: 16586
 		G,
-		// Token: 0x04003FED RID: 16365
+		// Token: 0x040040CB RID: 16587
 		H,
-		// Token: 0x04003FEE RID: 16366
+		// Token: 0x040040CC RID: 16588
 		F,
-		// Token: 0x04003FEF RID: 16367
+		// Token: 0x040040CD RID: 16589
 		Penalty,
-		// Token: 0x04003FF0 RID: 16368
+		// Token: 0x040040CE RID: 16590
 		Connections,
-		// Token: 0x04003FF1 RID: 16369
+		// Token: 0x040040CF RID: 16591
 		Tags
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RealTime : MonoBehaviour
 {
 	// Token: 0x1700007B RID: 123
-	// (get) Token: 0x060004B5 RID: 1205 RVA: 0x0002CD63 File Offset: 0x0002AF63
+	// (get) Token: 0x060004B6 RID: 1206 RVA: 0x0002CD8B File Offset: 0x0002AF8B
 	public static float time
 	{
 		get
@@ -15,7 +15,7 @@ public class RealTime : MonoBehaviour
 	}
 
 	// Token: 0x1700007C RID: 124
-	// (get) Token: 0x060004B6 RID: 1206 RVA: 0x0002CD6A File Offset: 0x0002AF6A
+	// (get) Token: 0x060004B7 RID: 1207 RVA: 0x0002CD92 File Offset: 0x0002AF92
 	public static float deltaTime
 	{
 		get

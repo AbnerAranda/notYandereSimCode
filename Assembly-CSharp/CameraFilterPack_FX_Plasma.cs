@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001AD RID: 429
+// Token: 0x020001AE RID: 430
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/Plasma")]
 public class CameraFilterPack_FX_Plasma : MonoBehaviour
 {
 	// Token: 0x170002CD RID: 717
-	// (get) Token: 0x06000F21 RID: 3873 RVA: 0x00071D7E File Offset: 0x0006FF7E
+	// (get) Token: 0x06000F28 RID: 3880 RVA: 0x00072AAE File Offset: 0x00070CAE
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_Plasma : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F22 RID: 3874 RVA: 0x00071DB2 File Offset: 0x0006FFB2
+	// Token: 0x06000F29 RID: 3881 RVA: 0x00072AE2 File Offset: 0x00070CE2
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_Plasma");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_Plasma : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F23 RID: 3875 RVA: 0x00071DD4 File Offset: 0x0006FFD4
+	// Token: 0x06000F2A RID: 3882 RVA: 0x00072B04 File Offset: 0x00070D04
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_FX_Plasma : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F24 RID: 3876 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F2B RID: 3883 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F25 RID: 3877 RVA: 0x00071E8A File Offset: 0x0007008A
+	// Token: 0x06000F2C RID: 3884 RVA: 0x00072BBA File Offset: 0x00070DBA
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_FX_Plasma : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011D9 RID: 4569
+	// Token: 0x040011F8 RID: 4600
 	public Shader SCShader;
 
-	// Token: 0x040011DA RID: 4570
+	// Token: 0x040011F9 RID: 4601
 	private float TimeX = 1f;
 
-	// Token: 0x040011DB RID: 4571
+	// Token: 0x040011FA RID: 4602
 	private Material SCMaterial;
 
-	// Token: 0x040011DC RID: 4572
+	// Token: 0x040011FB RID: 4603
 	[Range(0f, 20f)]
 	private float Value = 6f;
 }

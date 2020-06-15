@@ -3,26 +3,26 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000535 RID: 1333
+	// Token: 0x0200054B RID: 1355
 	internal class WorkItemProcessor : IWorkItemContext
 	{
-		// Token: 0x1700054F RID: 1359
-		// (get) Token: 0x0600233B RID: 9019 RVA: 0x0019433C File Offset: 0x0019253C
-		// (set) Token: 0x0600233C RID: 9020 RVA: 0x00194344 File Offset: 0x00192544
+		// Token: 0x17000555 RID: 1365
+		// (get) Token: 0x06002391 RID: 9105 RVA: 0x00199F28 File Offset: 0x00198128
+		// (set) Token: 0x06002392 RID: 9106 RVA: 0x00199F30 File Offset: 0x00198130
 		public bool workItemsInProgressRightNow { get; private set; }
 
-		// Token: 0x17000550 RID: 1360
-		// (get) Token: 0x0600233D RID: 9021 RVA: 0x0019434D File Offset: 0x0019254D
-		// (set) Token: 0x0600233E RID: 9022 RVA: 0x00194355 File Offset: 0x00192555
+		// Token: 0x17000556 RID: 1366
+		// (get) Token: 0x06002393 RID: 9107 RVA: 0x00199F39 File Offset: 0x00198139
+		// (set) Token: 0x06002394 RID: 9108 RVA: 0x00199F41 File Offset: 0x00198141
 		public bool workItemsInProgress { get; private set; }
 
-		// Token: 0x0600233F RID: 9023 RVA: 0x0019435E File Offset: 0x0019255E
+		// Token: 0x06002395 RID: 9109 RVA: 0x00199F4A File Offset: 0x0019814A
 		void IWorkItemContext.QueueFloodFill()
 		{
 			this.queuedWorkItemFloodFill = true;
 		}
 
-		// Token: 0x06002340 RID: 9024 RVA: 0x00194367 File Offset: 0x00192567
+		// Token: 0x06002396 RID: 9110 RVA: 0x00199F53 File Offset: 0x00198153
 		public void EnsureValidFloodFill()
 		{
 			if (this.queuedWorkItemFloodFill)
@@ -31,25 +31,25 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002341 RID: 9025 RVA: 0x0019437C File Offset: 0x0019257C
+		// Token: 0x06002397 RID: 9111 RVA: 0x00199F68 File Offset: 0x00198168
 		public WorkItemProcessor(AstarPath astar)
 		{
 			this.astar = astar;
 		}
 
-		// Token: 0x06002342 RID: 9026 RVA: 0x00194396 File Offset: 0x00192596
+		// Token: 0x06002398 RID: 9112 RVA: 0x00199F82 File Offset: 0x00198182
 		public void OnFloodFill()
 		{
 			this.queuedWorkItemFloodFill = false;
 		}
 
-		// Token: 0x06002343 RID: 9027 RVA: 0x0019439F File Offset: 0x0019259F
+		// Token: 0x06002399 RID: 9113 RVA: 0x00199F8B File Offset: 0x0019818B
 		public void AddWorkItem(AstarWorkItem item)
 		{
 			this.workItems.Enqueue(item);
 		}
 
-		// Token: 0x06002344 RID: 9028 RVA: 0x001943B0 File Offset: 0x001925B0
+		// Token: 0x0600239A RID: 9114 RVA: 0x00199F9C File Offset: 0x0019819C
 		public bool ProcessWorkItems(bool force)
 		{
 			if (this.workItemsInProgressRightNow)
@@ -115,19 +115,19 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x04003F58 RID: 16216
+		// Token: 0x04004036 RID: 16438
 		private readonly AstarPath astar;
 
-		// Token: 0x04003F59 RID: 16217
+		// Token: 0x04004037 RID: 16439
 		private readonly WorkItemProcessor.IndexedQueue<AstarWorkItem> workItems = new WorkItemProcessor.IndexedQueue<AstarWorkItem>();
 
-		// Token: 0x04003F5A RID: 16218
+		// Token: 0x04004038 RID: 16440
 		private bool queuedWorkItemFloodFill;
 
-		// Token: 0x02000723 RID: 1827
+		// Token: 0x0200073D RID: 1853
 		private class IndexedQueue<T>
 		{
-			// Token: 0x17000676 RID: 1654
+			// Token: 0x1700067C RID: 1660
 			public T this[int index]
 			{
 				get
@@ -148,12 +148,12 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x17000677 RID: 1655
-			// (get) Token: 0x06002CAB RID: 11435 RVA: 0x001CA773 File Offset: 0x001C8973
-			// (set) Token: 0x06002CAC RID: 11436 RVA: 0x001CA77B File Offset: 0x001C897B
+			// Token: 0x1700067D RID: 1661
+			// (get) Token: 0x06002D0E RID: 11534 RVA: 0x001D041B File Offset: 0x001CE61B
+			// (set) Token: 0x06002D0F RID: 11535 RVA: 0x001D0423 File Offset: 0x001CE623
 			public int Count { get; private set; }
 
-			// Token: 0x06002CAD RID: 11437 RVA: 0x001CA784 File Offset: 0x001C8984
+			// Token: 0x06002D10 RID: 11536 RVA: 0x001D042C File Offset: 0x001CE62C
 			public void Enqueue(T item)
 			{
 				if (this.Count == this.buffer.Length)
@@ -171,7 +171,7 @@ namespace Pathfinding
 				this.Count = count + 1;
 			}
 
-			// Token: 0x06002CAE RID: 11438 RVA: 0x001CA810 File Offset: 0x001C8A10
+			// Token: 0x06002D11 RID: 11537 RVA: 0x001D04B8 File Offset: 0x001CE6B8
 			public T Dequeue()
 			{
 				if (this.Count == 0)
@@ -185,10 +185,10 @@ namespace Pathfinding
 				return result;
 			}
 
-			// Token: 0x04004915 RID: 18709
+			// Token: 0x04004A00 RID: 18944
 			private T[] buffer = new T[4];
 
-			// Token: 0x04004916 RID: 18710
+			// Token: 0x04004A01 RID: 18945
 			private int start;
 		}
 	}

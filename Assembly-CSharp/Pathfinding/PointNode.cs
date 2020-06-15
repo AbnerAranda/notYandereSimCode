@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000570 RID: 1392
+	// Token: 0x02000586 RID: 1414
 	public class PointNode : GraphNode
 	{
-		// Token: 0x06002582 RID: 9602 RVA: 0x0019CBA2 File Offset: 0x0019ADA2
+		// Token: 0x060025D8 RID: 9688 RVA: 0x001A278E File Offset: 0x001A098E
 		public void SetPosition(Int3 value)
 		{
 			this.position = value;
 		}
 
-		// Token: 0x06002583 RID: 9603 RVA: 0x001948E0 File Offset: 0x00192AE0
+		// Token: 0x060025D9 RID: 9689 RVA: 0x0019A4CC File Offset: 0x001986CC
 		public PointNode(AstarPath astar) : base(astar)
 		{
 		}
 
-		// Token: 0x06002584 RID: 9604 RVA: 0x001A04F8 File Offset: 0x0019E6F8
+		// Token: 0x060025DA RID: 9690 RVA: 0x001A60E4 File Offset: 0x001A42E4
 		public override void GetConnections(Action<GraphNode> action)
 		{
 			if (this.connections == null)
@@ -31,7 +31,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002585 RID: 9605 RVA: 0x001A0538 File Offset: 0x0019E738
+		// Token: 0x060025DB RID: 9691 RVA: 0x001A6124 File Offset: 0x001A4324
 		public override void ClearConnections(bool alsoReverse)
 		{
 			if (alsoReverse && this.connections != null)
@@ -44,7 +44,7 @@ namespace Pathfinding
 			this.connections = null;
 		}
 
-		// Token: 0x06002586 RID: 9606 RVA: 0x001A0584 File Offset: 0x0019E784
+		// Token: 0x060025DC RID: 9692 RVA: 0x001A6170 File Offset: 0x001A4370
 		public override void UpdateRecursiveG(Path path, PathNode pathNode, PathHandler handler)
 		{
 			pathNode.UpdateG(path);
@@ -60,7 +60,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002587 RID: 9607 RVA: 0x001A05F4 File Offset: 0x0019E7F4
+		// Token: 0x060025DD RID: 9693 RVA: 0x001A61E0 File Offset: 0x001A43E0
 		public override bool ContainsConnection(GraphNode node)
 		{
 			if (this.connections == null)
@@ -77,7 +77,7 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x06002588 RID: 9608 RVA: 0x001A0638 File Offset: 0x0019E838
+		// Token: 0x060025DE RID: 9694 RVA: 0x001A6224 File Offset: 0x001A4424
 		public override void AddConnection(GraphNode node, uint cost)
 		{
 			if (node == null)
@@ -105,7 +105,7 @@ namespace Pathfinding
 			this.connections = array;
 		}
 
-		// Token: 0x06002589 RID: 9609 RVA: 0x001A06E8 File Offset: 0x0019E8E8
+		// Token: 0x060025DF RID: 9695 RVA: 0x001A62D4 File Offset: 0x001A44D4
 		public override void RemoveConnection(GraphNode node)
 		{
 			if (this.connections == null)
@@ -132,7 +132,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600258A RID: 9610 RVA: 0x001A078C File Offset: 0x0019E98C
+		// Token: 0x060025E0 RID: 9696 RVA: 0x001A6378 File Offset: 0x001A4578
 		public override void Open(Path path, PathNode pathNode, PathHandler handler)
 		{
 			if (this.connections == null)
@@ -168,7 +168,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600258B RID: 9611 RVA: 0x001A087C File Offset: 0x0019EA7C
+		// Token: 0x060025E1 RID: 9697 RVA: 0x001A6468 File Offset: 0x001A4668
 		public override int GetGizmoHashCode()
 		{
 			int num = base.GetGizmoHashCode();
@@ -182,21 +182,21 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x0600258C RID: 9612 RVA: 0x001A08C9 File Offset: 0x0019EAC9
+		// Token: 0x060025E2 RID: 9698 RVA: 0x001A64B5 File Offset: 0x001A46B5
 		public override void SerializeNode(GraphSerializationContext ctx)
 		{
 			base.SerializeNode(ctx);
 			ctx.SerializeInt3(this.position);
 		}
 
-		// Token: 0x0600258D RID: 9613 RVA: 0x001A08DE File Offset: 0x0019EADE
+		// Token: 0x060025E3 RID: 9699 RVA: 0x001A64CA File Offset: 0x001A46CA
 		public override void DeserializeNode(GraphSerializationContext ctx)
 		{
 			base.DeserializeNode(ctx);
 			this.position = ctx.DeserializeInt3();
 		}
 
-		// Token: 0x0600258E RID: 9614 RVA: 0x001A08F4 File Offset: 0x0019EAF4
+		// Token: 0x060025E4 RID: 9700 RVA: 0x001A64E0 File Offset: 0x001A46E0
 		public override void SerializeReferences(GraphSerializationContext ctx)
 		{
 			if (this.connections == null)
@@ -212,7 +212,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600258F RID: 9615 RVA: 0x001A0970 File Offset: 0x0019EB70
+		// Token: 0x060025E5 RID: 9701 RVA: 0x001A655C File Offset: 0x001A475C
 		public override void DeserializeReferences(GraphSerializationContext ctx)
 		{
 			int num = ctx.reader.ReadInt32();
@@ -228,10 +228,10 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x040040BF RID: 16575
+		// Token: 0x0400419D RID: 16797
 		public Connection[] connections;
 
-		// Token: 0x040040C0 RID: 16576
+		// Token: 0x0400419E RID: 16798
 		public GameObject gameObject;
 	}
 }

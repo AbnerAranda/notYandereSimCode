@@ -4,97 +4,97 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C1 RID: 1473
+	// Token: 0x020005D7 RID: 1495
 	public interface IAgent
 	{
-		// Token: 0x170005C1 RID: 1473
-		// (get) Token: 0x0600282E RID: 10286
-		// (set) Token: 0x0600282F RID: 10287
+		// Token: 0x170005C7 RID: 1479
+		// (get) Token: 0x06002884 RID: 10372
+		// (set) Token: 0x06002885 RID: 10373
 		Vector2 Position { get; set; }
 
-		// Token: 0x170005C2 RID: 1474
-		// (get) Token: 0x06002830 RID: 10288
-		// (set) Token: 0x06002831 RID: 10289
+		// Token: 0x170005C8 RID: 1480
+		// (get) Token: 0x06002886 RID: 10374
+		// (set) Token: 0x06002887 RID: 10375
 		float ElevationCoordinate { get; set; }
 
-		// Token: 0x170005C3 RID: 1475
-		// (get) Token: 0x06002832 RID: 10290
+		// Token: 0x170005C9 RID: 1481
+		// (get) Token: 0x06002888 RID: 10376
 		Vector2 CalculatedTargetPoint { get; }
 
-		// Token: 0x170005C4 RID: 1476
-		// (get) Token: 0x06002833 RID: 10291
+		// Token: 0x170005CA RID: 1482
+		// (get) Token: 0x06002889 RID: 10377
 		float CalculatedSpeed { get; }
 
-		// Token: 0x06002834 RID: 10292
+		// Token: 0x0600288A RID: 10378
 		void SetTarget(Vector2 targetPoint, float desiredSpeed, float maxSpeed);
 
-		// Token: 0x170005C5 RID: 1477
-		// (get) Token: 0x06002835 RID: 10293
-		// (set) Token: 0x06002836 RID: 10294
+		// Token: 0x170005CB RID: 1483
+		// (get) Token: 0x0600288B RID: 10379
+		// (set) Token: 0x0600288C RID: 10380
 		bool Locked { get; set; }
 
-		// Token: 0x170005C6 RID: 1478
-		// (get) Token: 0x06002837 RID: 10295
-		// (set) Token: 0x06002838 RID: 10296
+		// Token: 0x170005CC RID: 1484
+		// (get) Token: 0x0600288D RID: 10381
+		// (set) Token: 0x0600288E RID: 10382
 		float Radius { get; set; }
 
-		// Token: 0x170005C7 RID: 1479
-		// (get) Token: 0x06002839 RID: 10297
-		// (set) Token: 0x0600283A RID: 10298
+		// Token: 0x170005CD RID: 1485
+		// (get) Token: 0x0600288F RID: 10383
+		// (set) Token: 0x06002890 RID: 10384
 		float Height { get; set; }
 
-		// Token: 0x170005C8 RID: 1480
-		// (get) Token: 0x0600283B RID: 10299
-		// (set) Token: 0x0600283C RID: 10300
+		// Token: 0x170005CE RID: 1486
+		// (get) Token: 0x06002891 RID: 10385
+		// (set) Token: 0x06002892 RID: 10386
 		float AgentTimeHorizon { get; set; }
 
-		// Token: 0x170005C9 RID: 1481
-		// (get) Token: 0x0600283D RID: 10301
-		// (set) Token: 0x0600283E RID: 10302
+		// Token: 0x170005CF RID: 1487
+		// (get) Token: 0x06002893 RID: 10387
+		// (set) Token: 0x06002894 RID: 10388
 		float ObstacleTimeHorizon { get; set; }
 
-		// Token: 0x170005CA RID: 1482
-		// (get) Token: 0x0600283F RID: 10303
-		// (set) Token: 0x06002840 RID: 10304
+		// Token: 0x170005D0 RID: 1488
+		// (get) Token: 0x06002895 RID: 10389
+		// (set) Token: 0x06002896 RID: 10390
 		int MaxNeighbours { get; set; }
 
-		// Token: 0x170005CB RID: 1483
-		// (get) Token: 0x06002841 RID: 10305
+		// Token: 0x170005D1 RID: 1489
+		// (get) Token: 0x06002897 RID: 10391
 		int NeighbourCount { get; }
 
-		// Token: 0x170005CC RID: 1484
-		// (get) Token: 0x06002842 RID: 10306
-		// (set) Token: 0x06002843 RID: 10307
+		// Token: 0x170005D2 RID: 1490
+		// (get) Token: 0x06002898 RID: 10392
+		// (set) Token: 0x06002899 RID: 10393
 		RVOLayer Layer { get; set; }
 
-		// Token: 0x170005CD RID: 1485
-		// (get) Token: 0x06002844 RID: 10308
-		// (set) Token: 0x06002845 RID: 10309
+		// Token: 0x170005D3 RID: 1491
+		// (get) Token: 0x0600289A RID: 10394
+		// (set) Token: 0x0600289B RID: 10395
 		RVOLayer CollidesWith { get; set; }
 
-		// Token: 0x170005CE RID: 1486
-		// (get) Token: 0x06002846 RID: 10310
-		// (set) Token: 0x06002847 RID: 10311
+		// Token: 0x170005D4 RID: 1492
+		// (get) Token: 0x0600289C RID: 10396
+		// (set) Token: 0x0600289D RID: 10397
 		bool DebugDraw { get; set; }
 
-		// Token: 0x170005CF RID: 1487
-		// (get) Token: 0x06002848 RID: 10312
+		// Token: 0x170005D5 RID: 1493
+		// (get) Token: 0x0600289E RID: 10398
 		[Obsolete]
 		List<ObstacleVertex> NeighbourObstacles { get; }
 
-		// Token: 0x170005D0 RID: 1488
-		// (get) Token: 0x06002849 RID: 10313
-		// (set) Token: 0x0600284A RID: 10314
+		// Token: 0x170005D6 RID: 1494
+		// (get) Token: 0x0600289F RID: 10399
+		// (set) Token: 0x060028A0 RID: 10400
 		float Priority { get; set; }
 
-		// Token: 0x170005D1 RID: 1489
-		// (set) Token: 0x0600284B RID: 10315
+		// Token: 0x170005D7 RID: 1495
+		// (set) Token: 0x060028A1 RID: 10401
 		Action PreCalculationCallback { set; }
 
-		// Token: 0x0600284C RID: 10316
+		// Token: 0x060028A2 RID: 10402
 		void SetCollisionNormal(Vector2 normal);
 
-		// Token: 0x0600284D RID: 10317
+		// Token: 0x060028A3 RID: 10403
 		void ForceSetVelocity(Vector2 velocity);
 	}
 }

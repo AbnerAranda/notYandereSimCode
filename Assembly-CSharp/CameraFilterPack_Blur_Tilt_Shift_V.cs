@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000147 RID: 327
+// Token: 0x02000148 RID: 328
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Blur/Tilt_Shift_V")]
 public class CameraFilterPack_Blur_Tilt_Shift_V : MonoBehaviour
 {
 	// Token: 0x17000267 RID: 615
-	// (get) Token: 0x06000CBA RID: 3258 RVA: 0x00068248 File Offset: 0x00066448
+	// (get) Token: 0x06000CC1 RID: 3265 RVA: 0x00068F78 File Offset: 0x00067178
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Blur_Tilt_Shift_V : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CBB RID: 3259 RVA: 0x0006827C File Offset: 0x0006647C
+	// Token: 0x06000CC2 RID: 3266 RVA: 0x00068FAC File Offset: 0x000671AC
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/BlurTiltShift_V");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Blur_Tilt_Shift_V : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CBC RID: 3260 RVA: 0x000682A0 File Offset: 0x000664A0
+	// Token: 0x06000CC3 RID: 3267 RVA: 0x00068FD0 File Offset: 0x000671D0
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (!(this.SCShader != null))
@@ -72,12 +72,12 @@ public class CameraFilterPack_Blur_Tilt_Shift_V : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture, this.material, 0);
 	}
 
-	// Token: 0x06000CBD RID: 3261 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000CC4 RID: 3268 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000CBE RID: 3262 RVA: 0x00068430 File Offset: 0x00066630
+	// Token: 0x06000CC5 RID: 3269 RVA: 0x00069160 File Offset: 0x00067360
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -86,32 +86,32 @@ public class CameraFilterPack_Blur_Tilt_Shift_V : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000F78 RID: 3960
+	// Token: 0x04000F97 RID: 3991
 	public Shader SCShader;
 
-	// Token: 0x04000F79 RID: 3961
+	// Token: 0x04000F98 RID: 3992
 	private float TimeX = 1f;
 
-	// Token: 0x04000F7A RID: 3962
+	// Token: 0x04000F99 RID: 3993
 	private Material SCMaterial;
 
-	// Token: 0x04000F7B RID: 3963
+	// Token: 0x04000F9A RID: 3994
 	[Range(0f, 20f)]
 	public float Amount = 3f;
 
-	// Token: 0x04000F7C RID: 3964
+	// Token: 0x04000F9B RID: 3995
 	[Range(2f, 16f)]
 	public int FastFilter = 8;
 
-	// Token: 0x04000F7D RID: 3965
+	// Token: 0x04000F9C RID: 3996
 	[Range(0f, 1f)]
 	public float Smooth = 0.5f;
 
-	// Token: 0x04000F7E RID: 3966
+	// Token: 0x04000F9D RID: 3997
 	[Range(0f, 1f)]
 	public float Size = 0.5f;
 
-	// Token: 0x04000F7F RID: 3967
+	// Token: 0x04000F9E RID: 3998
 	[Range(-1f, 1f)]
 	public float Position = 0.5f;
 }

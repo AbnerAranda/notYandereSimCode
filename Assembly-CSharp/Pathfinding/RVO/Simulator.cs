@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C4 RID: 1476
+	// Token: 0x020005DA RID: 1498
 	public class Simulator
 	{
-		// Token: 0x170005D2 RID: 1490
-		// (get) Token: 0x0600284E RID: 10318 RVA: 0x001B756C File Offset: 0x001B576C
-		// (set) Token: 0x0600284F RID: 10319 RVA: 0x001B7574 File Offset: 0x001B5774
+		// Token: 0x170005D8 RID: 1496
+		// (get) Token: 0x060028A4 RID: 10404 RVA: 0x001BD158 File Offset: 0x001BB358
+		// (set) Token: 0x060028A5 RID: 10405 RVA: 0x001BD160 File Offset: 0x001BB360
 		public RVOQuadtree Quadtree { get; private set; }
 
-		// Token: 0x170005D3 RID: 1491
-		// (get) Token: 0x06002850 RID: 10320 RVA: 0x001B757D File Offset: 0x001B577D
+		// Token: 0x170005D9 RID: 1497
+		// (get) Token: 0x060028A6 RID: 10406 RVA: 0x001BD169 File Offset: 0x001BB369
 		public float DeltaTime
 		{
 			get
@@ -24,8 +24,8 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005D4 RID: 1492
-		// (get) Token: 0x06002851 RID: 10321 RVA: 0x001B7585 File Offset: 0x001B5785
+		// Token: 0x170005DA RID: 1498
+		// (get) Token: 0x060028A7 RID: 10407 RVA: 0x001BD171 File Offset: 0x001BB371
 		public bool Multithreading
 		{
 			get
@@ -34,9 +34,9 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005D5 RID: 1493
-		// (get) Token: 0x06002852 RID: 10322 RVA: 0x001B759B File Offset: 0x001B579B
-		// (set) Token: 0x06002853 RID: 10323 RVA: 0x001B75A3 File Offset: 0x001B57A3
+		// Token: 0x170005DB RID: 1499
+		// (get) Token: 0x060028A8 RID: 10408 RVA: 0x001BD187 File Offset: 0x001BB387
+		// (set) Token: 0x060028A9 RID: 10409 RVA: 0x001BD18F File Offset: 0x001BB38F
 		public float DesiredDeltaTime
 		{
 			get
@@ -49,19 +49,19 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002854 RID: 10324 RVA: 0x001B75B6 File Offset: 0x001B57B6
+		// Token: 0x060028AA RID: 10410 RVA: 0x001BD1A2 File Offset: 0x001BB3A2
 		public List<Agent> GetAgents()
 		{
 			return this.agents;
 		}
 
-		// Token: 0x06002855 RID: 10325 RVA: 0x001B75BE File Offset: 0x001B57BE
+		// Token: 0x060028AB RID: 10411 RVA: 0x001BD1AA File Offset: 0x001BB3AA
 		public List<ObstacleVertex> GetObstacles()
 		{
 			return this.obstacles;
 		}
 
-		// Token: 0x06002856 RID: 10326 RVA: 0x001B75C8 File Offset: 0x001B57C8
+		// Token: 0x060028AC RID: 10412 RVA: 0x001BD1B4 File Offset: 0x001BB3B4
 		public Simulator(int workers, bool doubleBuffering, MovementPlane movementPlane)
 		{
 			this.workers = new Simulator.Worker[workers];
@@ -77,7 +77,7 @@ namespace Pathfinding.RVO
 			this.obstacles = new List<ObstacleVertex>();
 		}
 
-		// Token: 0x06002857 RID: 10327 RVA: 0x001B7670 File Offset: 0x001B5870
+		// Token: 0x060028AD RID: 10413 RVA: 0x001BD25C File Offset: 0x001BB45C
 		public void ClearAgents()
 		{
 			this.BlockUntilSimulationStepIsDone();
@@ -88,7 +88,7 @@ namespace Pathfinding.RVO
 			this.agents.Clear();
 		}
 
-		// Token: 0x06002858 RID: 10328 RVA: 0x001B76B8 File Offset: 0x001B58B8
+		// Token: 0x060028AE RID: 10414 RVA: 0x001BD2A4 File Offset: 0x001BB4A4
 		public void OnDestroy()
 		{
 			if (this.workers != null)
@@ -100,13 +100,13 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002859 RID: 10329 RVA: 0x001B76F0 File Offset: 0x001B58F0
+		// Token: 0x060028AF RID: 10415 RVA: 0x001BD2DC File Offset: 0x001BB4DC
 		~Simulator()
 		{
 			this.OnDestroy();
 		}
 
-		// Token: 0x0600285A RID: 10330 RVA: 0x001B771C File Offset: 0x001B591C
+		// Token: 0x060028B0 RID: 10416 RVA: 0x001BD308 File Offset: 0x001BB508
 		public IAgent AddAgent(IAgent agent)
 		{
 			if (agent == null)
@@ -132,20 +132,20 @@ namespace Pathfinding.RVO
 			return agent;
 		}
 
-		// Token: 0x0600285B RID: 10331 RVA: 0x001B77A0 File Offset: 0x001B59A0
+		// Token: 0x060028B1 RID: 10417 RVA: 0x001BD38C File Offset: 0x001BB58C
 		[Obsolete("Use AddAgent(Vector2,float) instead")]
 		public IAgent AddAgent(Vector3 position)
 		{
 			return this.AddAgent(new Vector2(position.x, position.z), position.y);
 		}
 
-		// Token: 0x0600285C RID: 10332 RVA: 0x001B77BF File Offset: 0x001B59BF
+		// Token: 0x060028B2 RID: 10418 RVA: 0x001BD3AB File Offset: 0x001BB5AB
 		public IAgent AddAgent(Vector2 position, float elevationCoordinate)
 		{
 			return this.AddAgent(new Agent(position, elevationCoordinate));
 		}
 
-		// Token: 0x0600285D RID: 10333 RVA: 0x001B77D0 File Offset: 0x001B59D0
+		// Token: 0x060028B3 RID: 10419 RVA: 0x001BD3BC File Offset: 0x001BB5BC
 		public void RemoveAgent(IAgent agent)
 		{
 			if (agent == null)
@@ -169,7 +169,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x0600285E RID: 10334 RVA: 0x001B7845 File Offset: 0x001B5A45
+		// Token: 0x060028B4 RID: 10420 RVA: 0x001BD431 File Offset: 0x001BB631
 		public ObstacleVertex AddObstacle(ObstacleVertex v)
 		{
 			if (v == null)
@@ -182,13 +182,13 @@ namespace Pathfinding.RVO
 			return v;
 		}
 
-		// Token: 0x0600285F RID: 10335 RVA: 0x001B786E File Offset: 0x001B5A6E
+		// Token: 0x060028B5 RID: 10421 RVA: 0x001BD45A File Offset: 0x001BB65A
 		public ObstacleVertex AddObstacle(Vector3[] vertices, float height, bool cycle = true)
 		{
 			return this.AddObstacle(vertices, height, Matrix4x4.identity, RVOLayer.DefaultObstacle, cycle);
 		}
 
-		// Token: 0x06002860 RID: 10336 RVA: 0x001B7880 File Offset: 0x001B5A80
+		// Token: 0x060028B6 RID: 10422 RVA: 0x001BD46C File Offset: 0x001BB66C
 		public ObstacleVertex AddObstacle(Vector3[] vertices, float height, Matrix4x4 matrix, RVOLayer layer = RVOLayer.DefaultObstacle, bool cycle = true)
 		{
 			if (vertices == null)
@@ -230,7 +230,7 @@ namespace Pathfinding.RVO
 			return obstacleVertex;
 		}
 
-		// Token: 0x06002861 RID: 10337 RVA: 0x001B7918 File Offset: 0x001B5B18
+		// Token: 0x060028B7 RID: 10423 RVA: 0x001BD504 File Offset: 0x001BB704
 		public ObstacleVertex AddObstacle(Vector3 a, Vector3 b, float height)
 		{
 			ObstacleVertex obstacleVertex = new ObstacleVertex();
@@ -254,7 +254,7 @@ namespace Pathfinding.RVO
 			return obstacleVertex;
 		}
 
-		// Token: 0x06002862 RID: 10338 RVA: 0x001B79D8 File Offset: 0x001B5BD8
+		// Token: 0x060028B8 RID: 10424 RVA: 0x001BD5C4 File Offset: 0x001BB7C4
 		public void UpdateObstacle(ObstacleVertex obstacle, Vector3[] vertices, Matrix4x4 matrix)
 		{
 			if (vertices == null)
@@ -304,18 +304,18 @@ namespace Pathfinding.RVO
 			throw new ArgumentException("Obstacle has more vertices than supplied for updating (" + vertices.Length + " supplied)");
 		}
 
-		// Token: 0x06002863 RID: 10339 RVA: 0x001B7B00 File Offset: 0x001B5D00
+		// Token: 0x060028B9 RID: 10425 RVA: 0x001BD6EC File Offset: 0x001BB8EC
 		private void ScheduleCleanObstacles()
 		{
 			this.doCleanObstacles = true;
 		}
 
-		// Token: 0x06002864 RID: 10340 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060028BA RID: 10426 RVA: 0x00002ACE File Offset: 0x00000CCE
 		private void CleanObstacles()
 		{
 		}
 
-		// Token: 0x06002865 RID: 10341 RVA: 0x001B7B09 File Offset: 0x001B5D09
+		// Token: 0x060028BB RID: 10427 RVA: 0x001BD6F5 File Offset: 0x001BB8F5
 		public void RemoveObstacle(ObstacleVertex v)
 		{
 			if (v == null)
@@ -327,13 +327,13 @@ namespace Pathfinding.RVO
 			this.UpdateObstacles();
 		}
 
-		// Token: 0x06002866 RID: 10342 RVA: 0x001B7B32 File Offset: 0x001B5D32
+		// Token: 0x060028BC RID: 10428 RVA: 0x001BD71E File Offset: 0x001BB91E
 		public void UpdateObstacles()
 		{
 			this.doUpdateObstacles = true;
 		}
 
-		// Token: 0x06002867 RID: 10343 RVA: 0x001B7B3C File Offset: 0x001B5D3C
+		// Token: 0x060028BD RID: 10429 RVA: 0x001BD728 File Offset: 0x001BB928
 		private void BuildQuadtree()
 		{
 			this.Quadtree.Clear();
@@ -354,7 +354,7 @@ namespace Pathfinding.RVO
 			this.Quadtree.CalculateSpeeds();
 		}
 
-		// Token: 0x06002868 RID: 10344 RVA: 0x001B7C80 File Offset: 0x001B5E80
+		// Token: 0x060028BE RID: 10430 RVA: 0x001BD86C File Offset: 0x001BBA6C
 		private void BlockUntilSimulationStepIsDone()
 		{
 			if (this.Multithreading && this.doubleBuffering)
@@ -366,7 +366,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002869 RID: 10345 RVA: 0x001B7CC0 File Offset: 0x001B5EC0
+		// Token: 0x060028BF RID: 10431 RVA: 0x001BD8AC File Offset: 0x001BBAAC
 		private void PreCalculation()
 		{
 			for (int i = 0; i < this.agents.Count; i++)
@@ -375,7 +375,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x0600286A RID: 10346 RVA: 0x001B7CF4 File Offset: 0x001B5EF4
+		// Token: 0x060028C0 RID: 10432 RVA: 0x001BD8E0 File Offset: 0x001BBAE0
 		private void CleanAndUpdateObstaclesIfNecessary()
 		{
 			if (this.doCleanObstacles)
@@ -390,7 +390,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x0600286B RID: 10347 RVA: 0x001B7D24 File Offset: 0x001B5F24
+		// Token: 0x060028C1 RID: 10433 RVA: 0x001BD910 File Offset: 0x001BBB10
 		public void Update()
 		{
 			if (this.lastStep < 0f)
@@ -471,71 +471,71 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x04004289 RID: 17033
+		// Token: 0x04004367 RID: 17255
 		private readonly bool doubleBuffering = true;
 
-		// Token: 0x0400428A RID: 17034
+		// Token: 0x04004368 RID: 17256
 		private float desiredDeltaTime = 0.05f;
 
-		// Token: 0x0400428B RID: 17035
+		// Token: 0x04004369 RID: 17257
 		private readonly Simulator.Worker[] workers;
 
-		// Token: 0x0400428C RID: 17036
+		// Token: 0x0400436A RID: 17258
 		private List<Agent> agents;
 
-		// Token: 0x0400428D RID: 17037
+		// Token: 0x0400436B RID: 17259
 		public List<ObstacleVertex> obstacles;
 
-		// Token: 0x0400428F RID: 17039
+		// Token: 0x0400436D RID: 17261
 		private float deltaTime;
 
-		// Token: 0x04004290 RID: 17040
+		// Token: 0x0400436E RID: 17262
 		private float lastStep = -99999f;
 
-		// Token: 0x04004291 RID: 17041
+		// Token: 0x0400436F RID: 17263
 		private bool doUpdateObstacles;
 
-		// Token: 0x04004292 RID: 17042
+		// Token: 0x04004370 RID: 17264
 		private bool doCleanObstacles;
 
-		// Token: 0x04004293 RID: 17043
+		// Token: 0x04004371 RID: 17265
 		public float symmetryBreakingBias = 0.1f;
 
-		// Token: 0x04004294 RID: 17044
+		// Token: 0x04004372 RID: 17266
 		public readonly MovementPlane movementPlane;
 
-		// Token: 0x04004295 RID: 17045
+		// Token: 0x04004373 RID: 17267
 		private Simulator.WorkerContext coroutineWorkerContext = new Simulator.WorkerContext();
 
-		// Token: 0x02000769 RID: 1897
+		// Token: 0x02000783 RID: 1923
 		internal class WorkerContext
 		{
-			// Token: 0x04004A3B RID: 19003
+			// Token: 0x04004B26 RID: 19238
 			public Agent.VOBuffer vos = new Agent.VOBuffer(16);
 
-			// Token: 0x04004A3C RID: 19004
+			// Token: 0x04004B27 RID: 19239
 			public const int KeepCount = 3;
 
-			// Token: 0x04004A3D RID: 19005
+			// Token: 0x04004B28 RID: 19240
 			public Vector2[] bestPos = new Vector2[3];
 
-			// Token: 0x04004A3E RID: 19006
+			// Token: 0x04004B29 RID: 19241
 			public float[] bestSizes = new float[3];
 
-			// Token: 0x04004A3F RID: 19007
+			// Token: 0x04004B2A RID: 19242
 			public float[] bestScores = new float[4];
 
-			// Token: 0x04004A40 RID: 19008
+			// Token: 0x04004B2B RID: 19243
 			public Vector2[] samplePos = new Vector2[50];
 
-			// Token: 0x04004A41 RID: 19009
+			// Token: 0x04004B2C RID: 19244
 			public float[] sampleSize = new float[50];
 		}
 
-		// Token: 0x0200076A RID: 1898
+		// Token: 0x02000784 RID: 1924
 		private class Worker
 		{
-			// Token: 0x06002D83 RID: 11651 RVA: 0x001CF150 File Offset: 0x001CD350
+			// Token: 0x06002DE6 RID: 11750 RVA: 0x001D4DF8 File Offset: 0x001D2FF8
 			public Worker(Simulator sim)
 			{
 				this.simulator = sim;
@@ -546,7 +546,7 @@ namespace Pathfinding.RVO
 				}.Start();
 			}
 
-			// Token: 0x06002D84 RID: 11652 RVA: 0x001CF1B5 File Offset: 0x001CD3B5
+			// Token: 0x06002DE7 RID: 11751 RVA: 0x001D4E5D File Offset: 0x001D305D
 			public void Execute(int task)
 			{
 				this.task = task;
@@ -554,7 +554,7 @@ namespace Pathfinding.RVO
 				this.runFlag.Set();
 			}
 
-			// Token: 0x06002D85 RID: 11653 RVA: 0x001CF1D6 File Offset: 0x001CD3D6
+			// Token: 0x06002DE8 RID: 11752 RVA: 0x001D4E7E File Offset: 0x001D307E
 			public void WaitOne()
 			{
 				if (!this.terminate)
@@ -563,7 +563,7 @@ namespace Pathfinding.RVO
 				}
 			}
 
-			// Token: 0x06002D86 RID: 11654 RVA: 0x001CF1EC File Offset: 0x001CD3EC
+			// Token: 0x06002DE9 RID: 11753 RVA: 0x001D4E94 File Offset: 0x001D3094
 			public void Terminate()
 			{
 				this.WaitOne();
@@ -571,7 +571,7 @@ namespace Pathfinding.RVO
 				this.Execute(-1);
 			}
 
-			// Token: 0x06002D87 RID: 11655 RVA: 0x001CF204 File Offset: 0x001CD404
+			// Token: 0x06002DEA RID: 11754 RVA: 0x001D4EAC File Offset: 0x001D30AC
 			public void Run()
 			{
 				this.runFlag.WaitOne();
@@ -614,28 +614,28 @@ namespace Pathfinding.RVO
 				}
 			}
 
-			// Token: 0x04004A42 RID: 19010
+			// Token: 0x04004B2D RID: 19245
 			public int start;
 
-			// Token: 0x04004A43 RID: 19011
+			// Token: 0x04004B2E RID: 19246
 			public int end;
 
-			// Token: 0x04004A44 RID: 19012
+			// Token: 0x04004B2F RID: 19247
 			private readonly AutoResetEvent runFlag = new AutoResetEvent(false);
 
-			// Token: 0x04004A45 RID: 19013
+			// Token: 0x04004B30 RID: 19248
 			private readonly ManualResetEvent waitFlag = new ManualResetEvent(true);
 
-			// Token: 0x04004A46 RID: 19014
+			// Token: 0x04004B31 RID: 19249
 			private readonly Simulator simulator;
 
-			// Token: 0x04004A47 RID: 19015
+			// Token: 0x04004B32 RID: 19250
 			private int task;
 
-			// Token: 0x04004A48 RID: 19016
+			// Token: 0x04004B33 RID: 19251
 			private bool terminate;
 
-			// Token: 0x04004A49 RID: 19017
+			// Token: 0x04004B34 RID: 19252
 			private Simulator.WorkerContext context = new Simulator.WorkerContext();
 		}
 	}

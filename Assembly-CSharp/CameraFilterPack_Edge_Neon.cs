@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000194 RID: 404
+// Token: 0x02000195 RID: 405
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Edge/Neon")]
 public class CameraFilterPack_Edge_Neon : MonoBehaviour
 {
 	// Token: 0x170002B4 RID: 692
-	// (get) Token: 0x06000E8B RID: 3723 RVA: 0x0006F9F3 File Offset: 0x0006DBF3
+	// (get) Token: 0x06000E92 RID: 3730 RVA: 0x00070723 File Offset: 0x0006E923
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Edge_Neon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E8C RID: 3724 RVA: 0x0006FA27 File Offset: 0x0006DC27
+	// Token: 0x06000E93 RID: 3731 RVA: 0x00070757 File Offset: 0x0006E957
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Edge_Neon");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Edge_Neon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E8D RID: 3725 RVA: 0x0006FA48 File Offset: 0x0006DC48
+	// Token: 0x06000E94 RID: 3732 RVA: 0x00070778 File Offset: 0x0006E978
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Edge_Neon : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E8E RID: 3726 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E95 RID: 3733 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E8F RID: 3727 RVA: 0x0006FAF7 File Offset: 0x0006DCF7
+	// Token: 0x06000E96 RID: 3734 RVA: 0x00070827 File Offset: 0x0006EA27
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Edge_Neon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400114F RID: 4431
+	// Token: 0x0400116E RID: 4462
 	public Shader SCShader;
 
-	// Token: 0x04001150 RID: 4432
+	// Token: 0x0400116F RID: 4463
 	private float TimeX = 1f;
 
-	// Token: 0x04001151 RID: 4433
+	// Token: 0x04001170 RID: 4464
 	private Material SCMaterial;
 
-	// Token: 0x04001152 RID: 4434
+	// Token: 0x04001171 RID: 4465
 	[Range(1f, 10f)]
 	public float EdgeWeight = 1f;
 }

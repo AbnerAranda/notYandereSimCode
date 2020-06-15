@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000175 RID: 373
+// Token: 0x02000176 RID: 374
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Distortion/Water_Drop")]
 public class CameraFilterPack_Distortion_Water_Drop : MonoBehaviour
 {
 	// Token: 0x17000295 RID: 661
-	// (get) Token: 0x06000DD0 RID: 3536 RVA: 0x0006CAE2 File Offset: 0x0006ACE2
+	// (get) Token: 0x06000DD7 RID: 3543 RVA: 0x0006D812 File Offset: 0x0006BA12
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Distortion_Water_Drop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DD1 RID: 3537 RVA: 0x0006CB16 File Offset: 0x0006AD16
+	// Token: 0x06000DD8 RID: 3544 RVA: 0x0006D846 File Offset: 0x0006BA46
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Distortion_Water_Drop");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Distortion_Water_Drop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DD2 RID: 3538 RVA: 0x0006CB38 File Offset: 0x0006AD38
+	// Token: 0x06000DD9 RID: 3545 RVA: 0x0006D868 File Offset: 0x0006BA68
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Distortion_Water_Drop : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000DD3 RID: 3539 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000DDA RID: 3546 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000DD4 RID: 3540 RVA: 0x0006CC29 File Offset: 0x0006AE29
+	// Token: 0x06000DDB RID: 3547 RVA: 0x0006D959 File Offset: 0x0006BB59
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Distortion_Water_Drop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001087 RID: 4231
+	// Token: 0x040010A6 RID: 4262
 	public Shader SCShader;
 
-	// Token: 0x04001088 RID: 4232
+	// Token: 0x040010A7 RID: 4263
 	private float TimeX = 1f;
 
-	// Token: 0x04001089 RID: 4233
+	// Token: 0x040010A8 RID: 4264
 	private Material SCMaterial;
 
-	// Token: 0x0400108A RID: 4234
+	// Token: 0x040010A9 RID: 4265
 	[Range(-1f, 1f)]
 	public float CenterX;
 
-	// Token: 0x0400108B RID: 4235
+	// Token: 0x040010AA RID: 4266
 	[Range(-1f, 1f)]
 	public float CenterY;
 
-	// Token: 0x0400108C RID: 4236
+	// Token: 0x040010AB RID: 4267
 	[Range(0f, 10f)]
 	public float WaveIntensity = 1f;
 
-	// Token: 0x0400108D RID: 4237
+	// Token: 0x040010AC RID: 4268
 	[Range(0f, 20f)]
 	public int NumberOfWaves = 5;
 }

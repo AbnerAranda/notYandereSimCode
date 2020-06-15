@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Pathfinding.Serialization
 {
-	// Token: 0x020005B8 RID: 1464
+	// Token: 0x020005CE RID: 1486
 	public class GraphSerializationContext
 	{
-		// Token: 0x060027D9 RID: 10201 RVA: 0x001B5313 File Offset: 0x001B3513
+		// Token: 0x0600282F RID: 10287 RVA: 0x001BAEFF File Offset: 0x001B90FF
 		public GraphSerializationContext(BinaryReader reader, GraphNode[] id2NodeMapping, uint graphIndex, GraphMeta meta)
 		{
 			this.reader = reader;
@@ -16,19 +16,19 @@ namespace Pathfinding.Serialization
 			this.meta = meta;
 		}
 
-		// Token: 0x060027DA RID: 10202 RVA: 0x001B5338 File Offset: 0x001B3538
+		// Token: 0x06002830 RID: 10288 RVA: 0x001BAF24 File Offset: 0x001B9124
 		public GraphSerializationContext(BinaryWriter writer)
 		{
 			this.writer = writer;
 		}
 
-		// Token: 0x060027DB RID: 10203 RVA: 0x001B5347 File Offset: 0x001B3547
+		// Token: 0x06002831 RID: 10289 RVA: 0x001BAF33 File Offset: 0x001B9133
 		public void SerializeNodeReference(GraphNode node)
 		{
 			this.writer.Write((node == null) ? -1 : node.NodeIndex);
 		}
 
-		// Token: 0x060027DC RID: 10204 RVA: 0x001B5360 File Offset: 0x001B3560
+		// Token: 0x06002832 RID: 10290 RVA: 0x001BAF4C File Offset: 0x001B914C
 		public GraphNode DeserializeNodeReference()
 		{
 			int num = this.reader.ReadInt32();
@@ -48,7 +48,7 @@ namespace Pathfinding.Serialization
 			return graphNode;
 		}
 
-		// Token: 0x060027DD RID: 10205 RVA: 0x001B53B8 File Offset: 0x001B35B8
+		// Token: 0x06002833 RID: 10291 RVA: 0x001BAFA4 File Offset: 0x001B91A4
 		public void SerializeVector3(Vector3 v)
 		{
 			this.writer.Write(v.x);
@@ -56,13 +56,13 @@ namespace Pathfinding.Serialization
 			this.writer.Write(v.z);
 		}
 
-		// Token: 0x060027DE RID: 10206 RVA: 0x001B53ED File Offset: 0x001B35ED
+		// Token: 0x06002834 RID: 10292 RVA: 0x001BAFD9 File Offset: 0x001B91D9
 		public Vector3 DeserializeVector3()
 		{
 			return new Vector3(this.reader.ReadSingle(), this.reader.ReadSingle(), this.reader.ReadSingle());
 		}
 
-		// Token: 0x060027DF RID: 10207 RVA: 0x001B5415 File Offset: 0x001B3615
+		// Token: 0x06002835 RID: 10293 RVA: 0x001BB001 File Offset: 0x001B9201
 		public void SerializeInt3(Int3 v)
 		{
 			this.writer.Write(v.x);
@@ -70,13 +70,13 @@ namespace Pathfinding.Serialization
 			this.writer.Write(v.z);
 		}
 
-		// Token: 0x060027E0 RID: 10208 RVA: 0x001B544A File Offset: 0x001B364A
+		// Token: 0x06002836 RID: 10294 RVA: 0x001BB036 File Offset: 0x001B9236
 		public Int3 DeserializeInt3()
 		{
 			return new Int3(this.reader.ReadInt32(), this.reader.ReadInt32(), this.reader.ReadInt32());
 		}
 
-		// Token: 0x060027E1 RID: 10209 RVA: 0x001B5472 File Offset: 0x001B3672
+		// Token: 0x06002837 RID: 10295 RVA: 0x001BB05E File Offset: 0x001B925E
 		public int DeserializeInt(int defaultValue)
 		{
 			if (this.reader.BaseStream.Position <= this.reader.BaseStream.Length - 4L)
@@ -86,7 +86,7 @@ namespace Pathfinding.Serialization
 			return defaultValue;
 		}
 
-		// Token: 0x060027E2 RID: 10210 RVA: 0x001B54A6 File Offset: 0x001B36A6
+		// Token: 0x06002838 RID: 10296 RVA: 0x001BB092 File Offset: 0x001B9292
 		public float DeserializeFloat(float defaultValue)
 		{
 			if (this.reader.BaseStream.Position <= this.reader.BaseStream.Length - 4L)
@@ -96,7 +96,7 @@ namespace Pathfinding.Serialization
 			return defaultValue;
 		}
 
-		// Token: 0x060027E3 RID: 10211 RVA: 0x001B54DC File Offset: 0x001B36DC
+		// Token: 0x06002839 RID: 10297 RVA: 0x001BB0C8 File Offset: 0x001B92C8
 		public UnityEngine.Object DeserializeUnityObject()
 		{
 			if (this.reader.ReadInt32() == 2147483647)
@@ -143,19 +143,19 @@ namespace Pathfinding.Serialization
 			return null;
 		}
 
-		// Token: 0x0400423D RID: 16957
+		// Token: 0x0400431B RID: 17179
 		private readonly GraphNode[] id2NodeMapping;
 
-		// Token: 0x0400423E RID: 16958
+		// Token: 0x0400431C RID: 17180
 		public readonly BinaryReader reader;
 
-		// Token: 0x0400423F RID: 16959
+		// Token: 0x0400431D RID: 17181
 		public readonly BinaryWriter writer;
 
-		// Token: 0x04004240 RID: 16960
+		// Token: 0x0400431E RID: 17182
 		public readonly uint graphIndex;
 
-		// Token: 0x04004241 RID: 16961
+		// Token: 0x0400431F RID: 17183
 		public readonly GraphMeta meta;
 	}
 }

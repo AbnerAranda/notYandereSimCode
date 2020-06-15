@@ -6,19 +6,19 @@ using UnityEngine.Serialization;
 
 namespace Pathfinding
 {
-	// Token: 0x0200058A RID: 1418
+	// Token: 0x020005A0 RID: 1440
 	[AddComponentMenu("Pathfinding/Navmesh/Navmesh Cut")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_navmesh_cut.php")]
 	public class NavmeshCut : NavmeshClipper
 	{
-		// Token: 0x0600268A RID: 9866 RVA: 0x001A8088 File Offset: 0x001A6288
+		// Token: 0x060026E0 RID: 9952 RVA: 0x001ADC74 File Offset: 0x001ABE74
 		protected override void Awake()
 		{
 			base.Awake();
 			this.tr = base.transform;
 		}
 
-		// Token: 0x0600268B RID: 9867 RVA: 0x001A809C File Offset: 0x001A629C
+		// Token: 0x060026E1 RID: 9953 RVA: 0x001ADC88 File Offset: 0x001ABE88
 		protected override void OnEnable()
 		{
 			base.OnEnable();
@@ -26,24 +26,24 @@ namespace Pathfinding
 			this.lastRotation = this.tr.rotation;
 		}
 
-		// Token: 0x0600268C RID: 9868 RVA: 0x001A80CF File Offset: 0x001A62CF
+		// Token: 0x060026E2 RID: 9954 RVA: 0x001ADCBB File Offset: 0x001ABEBB
 		public override void ForceUpdate()
 		{
 			this.lastPosition = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
 		}
 
-		// Token: 0x0600268D RID: 9869 RVA: 0x001A80EC File Offset: 0x001A62EC
+		// Token: 0x060026E3 RID: 9955 RVA: 0x001ADCD8 File Offset: 0x001ABED8
 		public override bool RequiresUpdate()
 		{
 			return (this.tr.position - this.lastPosition).sqrMagnitude > this.updateDistance * this.updateDistance || (this.useRotationAndScale && Quaternion.Angle(this.lastRotation, this.tr.rotation) > this.updateRotationDistance);
 		}
 
-		// Token: 0x0600268E RID: 9870 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060026E4 RID: 9956 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void UsedForCut()
 		{
 		}
 
-		// Token: 0x0600268F RID: 9871 RVA: 0x001A8150 File Offset: 0x001A6350
+		// Token: 0x060026E5 RID: 9957 RVA: 0x001ADD3C File Offset: 0x001ABF3C
 		internal override void NotifyUpdated()
 		{
 			this.lastPosition = this.tr.position;
@@ -53,7 +53,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002690 RID: 9872 RVA: 0x001A817C File Offset: 0x001A637C
+		// Token: 0x060026E6 RID: 9958 RVA: 0x001ADD68 File Offset: 0x001ABF68
 		private void CalculateMeshContour()
 		{
 			if (this.mesh == null)
@@ -127,7 +127,7 @@ namespace Pathfinding
 			this.contours = list.ToArray();
 		}
 
-		// Token: 0x06002691 RID: 9873 RVA: 0x001A83A8 File Offset: 0x001A65A8
+		// Token: 0x060026E7 RID: 9959 RVA: 0x001ADF94 File Offset: 0x001AC194
 		internal override Rect GetBounds(GraphTransform inverseTranform)
 		{
 			List<List<Vector3>> list = ListPool<List<Vector3>>.Claim();
@@ -156,7 +156,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002692 RID: 9874 RVA: 0x001A84AC File Offset: 0x001A66AC
+		// Token: 0x060026E8 RID: 9960 RVA: 0x001AE098 File Offset: 0x001AC298
 		public void GetContour(List<List<Vector3>> buffer)
 		{
 			if (this.circleResolution < 3)
@@ -182,7 +182,7 @@ namespace Pathfinding
 				List<Vector3> list = ListPool<Vector3>.Claim(this.circleResolution);
 				for (int i = 0; i < this.circleResolution; i++)
 				{
-					list.Add(new Vector3(Mathf.Cos((float)(i * 2) * 3.1415927f / (float)this.circleResolution), 0f, Mathf.Sin((float)(i * 2) * 3.1415927f / (float)this.circleResolution)) * this.circleRadius);
+					list.Add(new Vector3(Mathf.Cos((float)(i * 2) * 3.14159274f / (float)this.circleResolution), 0f, Mathf.Sin((float)(i * 2) * 3.14159274f / (float)this.circleResolution)) * this.circleRadius);
 				}
 				bool reverse = this.circleRadius < 0f;
 				this.TransformBuffer(list, reverse);
@@ -216,7 +216,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002693 RID: 9875 RVA: 0x001A8714 File Offset: 0x001A6914
+		// Token: 0x060026E9 RID: 9961 RVA: 0x001AE300 File Offset: 0x001AC500
 		private void TransformBuffer(List<Vector3> buffer, bool reverse)
 		{
 			Vector3 vector = this.center;
@@ -244,7 +244,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002694 RID: 9876 RVA: 0x001A87C0 File Offset: 0x001A69C0
+		// Token: 0x060026EA RID: 9962 RVA: 0x001AE3AC File Offset: 0x001AC5AC
 		public void OnDrawGizmos()
 		{
 			if (this.tr == null)
@@ -267,13 +267,13 @@ namespace Pathfinding
 			ListPool<List<Vector3>>.Release(ref list);
 		}
 
-		// Token: 0x06002695 RID: 9877 RVA: 0x001A884F File Offset: 0x001A6A4F
+		// Token: 0x060026EB RID: 9963 RVA: 0x001AE43B File Offset: 0x001AC63B
 		internal float GetY(GraphTransform transform)
 		{
 			return transform.InverseTransform(this.useRotationAndScale ? this.tr.TransformPoint(this.center) : (this.tr.position + this.center)).y;
 		}
 
-		// Token: 0x06002696 RID: 9878 RVA: 0x001A8890 File Offset: 0x001A6A90
+		// Token: 0x060026EC RID: 9964 RVA: 0x001AE47C File Offset: 0x001AC67C
 		public void OnDrawGizmosSelected()
 		{
 			List<List<Vector3>> list = ListPool<List<Vector3>>.Claim();
@@ -307,85 +307,85 @@ namespace Pathfinding
 			ListPool<List<Vector3>>.Release(ref list);
 		}
 
-		// Token: 0x04004168 RID: 16744
+		// Token: 0x04004246 RID: 16966
 		[Tooltip("Shape of the cut")]
 		public NavmeshCut.MeshType type;
 
-		// Token: 0x04004169 RID: 16745
+		// Token: 0x04004247 RID: 16967
 		[Tooltip("The contour(s) of the mesh will be extracted. This mesh should only be a 2D surface, not a volume (see documentation).")]
 		public Mesh mesh;
 
-		// Token: 0x0400416A RID: 16746
+		// Token: 0x04004248 RID: 16968
 		public Vector2 rectangleSize = new Vector2(1f, 1f);
 
-		// Token: 0x0400416B RID: 16747
+		// Token: 0x04004249 RID: 16969
 		public float circleRadius = 1f;
 
-		// Token: 0x0400416C RID: 16748
+		// Token: 0x0400424A RID: 16970
 		public int circleResolution = 6;
 
-		// Token: 0x0400416D RID: 16749
+		// Token: 0x0400424B RID: 16971
 		public float height = 1f;
 
-		// Token: 0x0400416E RID: 16750
+		// Token: 0x0400424C RID: 16972
 		[Tooltip("Scale of the custom mesh")]
 		public float meshScale = 1f;
 
-		// Token: 0x0400416F RID: 16751
+		// Token: 0x0400424D RID: 16973
 		public Vector3 center;
 
-		// Token: 0x04004170 RID: 16752
+		// Token: 0x0400424E RID: 16974
 		[Tooltip("Distance between positions to require an update of the navmesh\nA smaller distance gives better accuracy, but requires more updates when moving the object over time, so it is often slower.")]
 		public float updateDistance = 0.4f;
 
-		// Token: 0x04004171 RID: 16753
+		// Token: 0x0400424F RID: 16975
 		[Tooltip("Only makes a split in the navmesh, but does not remove the geometry to make a hole")]
 		public bool isDual;
 
-		// Token: 0x04004172 RID: 16754
+		// Token: 0x04004250 RID: 16976
 		public bool cutsAddedGeom = true;
 
-		// Token: 0x04004173 RID: 16755
+		// Token: 0x04004251 RID: 16977
 		[Tooltip("How many degrees rotation that is required for an update to the navmesh. Should be between 0 and 180.")]
 		public float updateRotationDistance = 10f;
 
-		// Token: 0x04004174 RID: 16756
+		// Token: 0x04004252 RID: 16978
 		[Tooltip("Includes rotation in calculations. This is slower since a lot more matrix multiplications are needed but gives more flexibility.")]
 		[FormerlySerializedAs("useRotation")]
 		public bool useRotationAndScale;
 
-		// Token: 0x04004175 RID: 16757
+		// Token: 0x04004253 RID: 16979
 		private Vector3[][] contours;
 
-		// Token: 0x04004176 RID: 16758
+		// Token: 0x04004254 RID: 16980
 		protected Transform tr;
 
-		// Token: 0x04004177 RID: 16759
+		// Token: 0x04004255 RID: 16981
 		private Mesh lastMesh;
 
-		// Token: 0x04004178 RID: 16760
+		// Token: 0x04004256 RID: 16982
 		private Vector3 lastPosition;
 
-		// Token: 0x04004179 RID: 16761
+		// Token: 0x04004257 RID: 16983
 		private Quaternion lastRotation;
 
-		// Token: 0x0400417A RID: 16762
+		// Token: 0x04004258 RID: 16984
 		private static readonly Dictionary<Int2, int> edges = new Dictionary<Int2, int>();
 
-		// Token: 0x0400417B RID: 16763
+		// Token: 0x04004259 RID: 16985
 		private static readonly Dictionary<int, int> pointers = new Dictionary<int, int>();
 
-		// Token: 0x0400417C RID: 16764
-		public static readonly Color GizmoColor = new Color(0.14509805f, 0.72156864f, 0.9372549f);
+		// Token: 0x0400425A RID: 16986
+		public static readonly Color GizmoColor = new Color(0.145098045f, 0.721568644f, 0.9372549f);
 
-		// Token: 0x02000757 RID: 1879
+		// Token: 0x02000771 RID: 1905
 		public enum MeshType
 		{
-			// Token: 0x040049FF RID: 18943
+			// Token: 0x04004AEA RID: 19178
 			Rectangle,
-			// Token: 0x04004A00 RID: 18944
+			// Token: 0x04004AEB RID: 19179
 			Circle,
-			// Token: 0x04004A01 RID: 18945
+			// Token: 0x04004AEC RID: 19180
 			CustomMesh
 		}
 	}

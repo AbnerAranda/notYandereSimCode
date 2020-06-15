@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003A2 RID: 930
+// Token: 0x020003A7 RID: 935
 public class RivalPhoneScript : MonoBehaviour
 {
-	// Token: 0x060019C4 RID: 6596 RVA: 0x000FBAF2 File Offset: 0x000F9CF2
+	// Token: 0x060019E5 RID: 6629 RVA: 0x000FE1F6 File Offset: 0x000FC3F6
 	private void Start()
 	{
 		this.OriginalParent = base.transform.parent;
@@ -12,7 +12,7 @@ public class RivalPhoneScript : MonoBehaviour
 		this.OriginalRotation = base.transform.localRotation;
 	}
 
-	// Token: 0x060019C5 RID: 6597 RVA: 0x000FBB28 File Offset: 0x000F9D28
+	// Token: 0x060019E6 RID: 6630 RVA: 0x000FE22C File Offset: 0x000FC42C
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -36,7 +36,7 @@ public class RivalPhoneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060019C6 RID: 6598 RVA: 0x000FBC58 File Offset: 0x000F9E58
+	// Token: 0x060019E7 RID: 6631 RVA: 0x000FE35C File Offset: 0x000FC55C
 	public void ReturnToOrigin()
 	{
 		base.transform.parent = this.OriginalParent;
@@ -49,30 +49,30 @@ public class RivalPhoneScript : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x04002845 RID: 10309
+	// Token: 0x040028A2 RID: 10402
 	public DoorGapScript StolenPhoneDropoff;
 
-	// Token: 0x04002846 RID: 10310
+	// Token: 0x040028A3 RID: 10403
 	public Renderer MyRenderer;
 
-	// Token: 0x04002847 RID: 10311
+	// Token: 0x040028A4 RID: 10404
 	public PromptScript Prompt;
 
-	// Token: 0x04002848 RID: 10312
+	// Token: 0x040028A5 RID: 10405
 	public bool LewdPhotos;
 
-	// Token: 0x04002849 RID: 10313
+	// Token: 0x040028A6 RID: 10406
 	public bool Stolen;
 
-	// Token: 0x0400284A RID: 10314
+	// Token: 0x040028A7 RID: 10407
 	public int StudentID;
 
-	// Token: 0x0400284B RID: 10315
+	// Token: 0x040028A8 RID: 10408
 	public Vector3 OriginalPosition;
 
-	// Token: 0x0400284C RID: 10316
+	// Token: 0x040028A9 RID: 10409
 	public Quaternion OriginalRotation;
 
-	// Token: 0x0400284D RID: 10317
+	// Token: 0x040028AA RID: 10410
 	public Transform OriginalParent;
 }

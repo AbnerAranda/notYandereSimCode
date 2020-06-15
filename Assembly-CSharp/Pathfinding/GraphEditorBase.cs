@@ -3,11 +3,11 @@ using Pathfinding.Serialization;
 
 namespace Pathfinding
 {
-	// Token: 0x02000524 RID: 1316
+	// Token: 0x0200053A RID: 1338
 	[JsonOptIn]
 	public class GraphEditorBase
 	{
-		// Token: 0x04003EFD RID: 16125
+		// Token: 0x04003FDB RID: 16347
 		public NavGraph target;
 	}
 }

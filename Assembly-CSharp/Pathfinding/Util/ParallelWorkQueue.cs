@@ -4,10 +4,10 @@ using System.Threading;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005DF RID: 1503
+	// Token: 0x020005F5 RID: 1525
 	public class ParallelWorkQueue<T>
 	{
-		// Token: 0x06002971 RID: 10609 RVA: 0x001BE703 File Offset: 0x001BC903
+		// Token: 0x060029C7 RID: 10695 RVA: 0x001C42EF File Offset: 0x001C24EF
 		public ParallelWorkQueue(Queue<T> queue)
 		{
 			this.queue = queue;
@@ -15,7 +15,7 @@ namespace Pathfinding.Util
 			this.threadCount = Math.Min(this.initialCount, Math.Max(1, AstarPath.CalculateThreadCount(ThreadCount.AutomaticHighLoad)));
 		}
 
-		// Token: 0x06002972 RID: 10610 RVA: 0x001BE73C File Offset: 0x001BC93C
+		// Token: 0x060029C8 RID: 10696 RVA: 0x001C4328 File Offset: 0x001C2528
 		public IEnumerable<int> Run(int progressTimeoutMillis)
 		{
 			if (this.initialCount != this.queue.Count)
@@ -57,7 +57,7 @@ namespace Pathfinding.Util
 			yield break;
 		}
 
-		// Token: 0x06002973 RID: 10611 RVA: 0x001BE754 File Offset: 0x001BC954
+		// Token: 0x060029C9 RID: 10697 RVA: 0x001C4340 File Offset: 0x001C2540
 		private void RunTask(int threadIndex)
 		{
 			try
@@ -92,22 +92,22 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0400432A RID: 17194
+		// Token: 0x04004408 RID: 17416
 		public Action<T, int> action;
 
-		// Token: 0x0400432B RID: 17195
+		// Token: 0x04004409 RID: 17417
 		public readonly int threadCount;
 
-		// Token: 0x0400432C RID: 17196
+		// Token: 0x0400440A RID: 17418
 		private readonly Queue<T> queue;
 
-		// Token: 0x0400432D RID: 17197
+		// Token: 0x0400440B RID: 17419
 		private readonly int initialCount;
 
-		// Token: 0x0400432E RID: 17198
+		// Token: 0x0400440C RID: 17420
 		private ManualResetEvent[] waitEvents;
 
-		// Token: 0x0400432F RID: 17199
+		// Token: 0x0400440D RID: 17421
 		private Exception innerException;
 	}
 }

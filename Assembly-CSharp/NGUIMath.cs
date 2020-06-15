@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x02000076 RID: 118
 public static class NGUIMath
 {
-	// Token: 0x060003CD RID: 973 RVA: 0x00023112 File Offset: 0x00021312
+	// Token: 0x060003CE RID: 974 RVA: 0x0002313A File Offset: 0x0002133A
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static float Lerp(float from, float to, float factor)
@@ -13,7 +13,7 @@ public static class NGUIMath
 		return from * (1f - factor) + to * factor;
 	}
 
-	// Token: 0x060003CE RID: 974 RVA: 0x00023121 File Offset: 0x00021321
+	// Token: 0x060003CF RID: 975 RVA: 0x00023149 File Offset: 0x00021349
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static int ClampIndex(int val, int max)
@@ -29,7 +29,7 @@ public static class NGUIMath
 		return val;
 	}
 
-	// Token: 0x060003CF RID: 975 RVA: 0x00023132 File Offset: 0x00021332
+	// Token: 0x060003D0 RID: 976 RVA: 0x0002315A File Offset: 0x0002135A
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static int RepeatIndex(int val, int max)
@@ -49,7 +49,7 @@ public static class NGUIMath
 		return val;
 	}
 
-	// Token: 0x060003D0 RID: 976 RVA: 0x0002314F File Offset: 0x0002134F
+	// Token: 0x060003D1 RID: 977 RVA: 0x00023177 File Offset: 0x00021377
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static float WrapAngle(float angle)
@@ -65,7 +65,7 @@ public static class NGUIMath
 		return angle;
 	}
 
-	// Token: 0x060003D1 RID: 977 RVA: 0x00023178 File Offset: 0x00021378
+	// Token: 0x060003D2 RID: 978 RVA: 0x000231A0 File Offset: 0x000213A0
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static float Wrap01(float val)
@@ -73,7 +73,7 @@ public static class NGUIMath
 		return val - (float)Mathf.FloorToInt(val);
 	}
 
-	// Token: 0x060003D2 RID: 978 RVA: 0x00023184 File Offset: 0x00021384
+	// Token: 0x060003D3 RID: 979 RVA: 0x000231AC File Offset: 0x000213AC
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static int HexToDecimal(char ch)
@@ -143,7 +143,7 @@ public static class NGUIMath
 		return 10;
 	}
 
-	// Token: 0x060003D3 RID: 979 RVA: 0x00023242 File Offset: 0x00021442
+	// Token: 0x060003D4 RID: 980 RVA: 0x0002326A File Offset: 0x0002146A
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static char DecimalToHexChar(int num)
@@ -159,7 +159,7 @@ public static class NGUIMath
 		return (char)(65 + num - 10);
 	}
 
-	// Token: 0x060003D4 RID: 980 RVA: 0x0002325F File Offset: 0x0002145F
+	// Token: 0x060003D5 RID: 981 RVA: 0x00023287 File Offset: 0x00021487
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static string DecimalToHex8(int num)
@@ -168,7 +168,7 @@ public static class NGUIMath
 		return num.ToString("X2");
 	}
 
-	// Token: 0x060003D5 RID: 981 RVA: 0x00023276 File Offset: 0x00021476
+	// Token: 0x060003D6 RID: 982 RVA: 0x0002329E File Offset: 0x0002149E
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static string DecimalToHex24(int num)
@@ -177,7 +177,7 @@ public static class NGUIMath
 		return num.ToString("X6");
 	}
 
-	// Token: 0x060003D6 RID: 982 RVA: 0x0002328D File Offset: 0x0002148D
+	// Token: 0x060003D7 RID: 983 RVA: 0x000232B5 File Offset: 0x000214B5
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static string DecimalToHex32(int num)
@@ -185,7 +185,7 @@ public static class NGUIMath
 		return num.ToString("X8");
 	}
 
-	// Token: 0x060003D7 RID: 983 RVA: 0x0002329C File Offset: 0x0002149C
+	// Token: 0x060003D8 RID: 984 RVA: 0x000232C4 File Offset: 0x000214C4
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static int ColorToInt(Color c)
@@ -193,7 +193,7 @@ public static class NGUIMath
 		return 0 | Mathf.RoundToInt(c.r * 255f) << 24 | Mathf.RoundToInt(c.g * 255f) << 16 | Mathf.RoundToInt(c.b * 255f) << 8 | Mathf.RoundToInt(c.a * 255f);
 	}
 
-	// Token: 0x060003D8 RID: 984 RVA: 0x000232FC File Offset: 0x000214FC
+	// Token: 0x060003D9 RID: 985 RVA: 0x00023324 File Offset: 0x00021524
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static Color IntToColor(int val)
@@ -207,7 +207,7 @@ public static class NGUIMath
 		return black;
 	}
 
-	// Token: 0x060003D9 RID: 985 RVA: 0x00023364 File Offset: 0x00021564
+	// Token: 0x060003DA RID: 986 RVA: 0x0002338C File Offset: 0x0002158C
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static string IntToBinary(int val, int bits)
@@ -225,7 +225,7 @@ public static class NGUIMath
 		return text;
 	}
 
-	// Token: 0x060003DA RID: 986 RVA: 0x000233BD File Offset: 0x000215BD
+	// Token: 0x060003DB RID: 987 RVA: 0x000233E5 File Offset: 0x000215E5
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public static Color HexToColor(uint val)
@@ -233,7 +233,7 @@ public static class NGUIMath
 		return NGUIMath.IntToColor((int)val);
 	}
 
-	// Token: 0x060003DB RID: 987 RVA: 0x000233C8 File Offset: 0x000215C8
+	// Token: 0x060003DC RID: 988 RVA: 0x000233F0 File Offset: 0x000215F0
 	public static Rect ConvertToTexCoords(Rect rect, int width, int height)
 	{
 		Rect result = rect;
@@ -247,7 +247,7 @@ public static class NGUIMath
 		return result;
 	}
 
-	// Token: 0x060003DC RID: 988 RVA: 0x0002343C File Offset: 0x0002163C
+	// Token: 0x060003DD RID: 989 RVA: 0x00023464 File Offset: 0x00021664
 	public static Rect ConvertToPixels(Rect rect, int width, int height, bool round)
 	{
 		Rect result = rect;
@@ -268,7 +268,7 @@ public static class NGUIMath
 		return result;
 	}
 
-	// Token: 0x060003DD RID: 989 RVA: 0x0002350C File Offset: 0x0002170C
+	// Token: 0x060003DE RID: 990 RVA: 0x00023534 File Offset: 0x00021734
 	public static Rect MakePixelPerfect(Rect rect)
 	{
 		rect.xMin = (float)Mathf.RoundToInt(rect.xMin);
@@ -278,7 +278,7 @@ public static class NGUIMath
 		return rect;
 	}
 
-	// Token: 0x060003DE RID: 990 RVA: 0x0002356C File Offset: 0x0002176C
+	// Token: 0x060003DF RID: 991 RVA: 0x00023594 File Offset: 0x00021794
 	public static Rect MakePixelPerfect(Rect rect, int width, int height)
 	{
 		rect = NGUIMath.ConvertToPixels(rect, width, height, true);
@@ -289,7 +289,7 @@ public static class NGUIMath
 		return NGUIMath.ConvertToTexCoords(rect, width, height);
 	}
 
-	// Token: 0x060003DF RID: 991 RVA: 0x000235DC File Offset: 0x000217DC
+	// Token: 0x060003E0 RID: 992 RVA: 0x00023604 File Offset: 0x00021804
 	public static Vector2 ConstrainRect(Vector2 minRect, Vector2 maxRect, Vector2 minArea, Vector2 maxArea)
 	{
 		Vector2 zero = Vector2.zero;
@@ -328,7 +328,7 @@ public static class NGUIMath
 		return zero;
 	}
 
-	// Token: 0x060003E0 RID: 992 RVA: 0x0002370C File Offset: 0x0002190C
+	// Token: 0x060003E1 RID: 993 RVA: 0x00023734 File Offset: 0x00021934
 	public static Bounds CalculateAbsoluteWidgetBounds(Transform trans)
 	{
 		if (!(trans != null))
@@ -386,25 +386,25 @@ public static class NGUIMath
 		return result;
 	}
 
-	// Token: 0x060003E1 RID: 993 RVA: 0x0002388D File Offset: 0x00021A8D
+	// Token: 0x060003E2 RID: 994 RVA: 0x000238B5 File Offset: 0x00021AB5
 	public static Bounds CalculateRelativeWidgetBounds(Transform trans)
 	{
 		return NGUIMath.CalculateRelativeWidgetBounds(trans, trans, !trans.gameObject.activeSelf, true);
 	}
 
-	// Token: 0x060003E2 RID: 994 RVA: 0x000238A5 File Offset: 0x00021AA5
+	// Token: 0x060003E3 RID: 995 RVA: 0x000238CD File Offset: 0x00021ACD
 	public static Bounds CalculateRelativeWidgetBounds(Transform trans, bool considerInactive)
 	{
 		return NGUIMath.CalculateRelativeWidgetBounds(trans, trans, considerInactive, true);
 	}
 
-	// Token: 0x060003E3 RID: 995 RVA: 0x000238B0 File Offset: 0x00021AB0
+	// Token: 0x060003E4 RID: 996 RVA: 0x000238D8 File Offset: 0x00021AD8
 	public static Bounds CalculateRelativeWidgetBounds(Transform relativeTo, Transform content)
 	{
 		return NGUIMath.CalculateRelativeWidgetBounds(relativeTo, content, !content.gameObject.activeSelf, true);
 	}
 
-	// Token: 0x060003E4 RID: 996 RVA: 0x000238C8 File Offset: 0x00021AC8
+	// Token: 0x060003E5 RID: 997 RVA: 0x000238F0 File Offset: 0x00021AF0
 	public static Bounds CalculateRelativeWidgetBounds(Transform relativeTo, Transform content, bool considerInactive, bool considerChildren = true)
 	{
 		if (content != null && relativeTo != null)
@@ -424,7 +424,7 @@ public static class NGUIMath
 		return new Bounds(Vector3.zero, Vector3.zero);
 	}
 
-	// Token: 0x060003E5 RID: 997 RVA: 0x00023958 File Offset: 0x00021B58
+	// Token: 0x060003E6 RID: 998 RVA: 0x00023980 File Offset: 0x00021B80
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	private static void CalculateRelativeWidgetBounds(Transform content, bool considerInactive, bool isRoot, ref Matrix4x4 toLocal, ref Vector3 vMin, ref Vector3 vMax, ref bool isSet, bool considerChildren)
@@ -523,7 +523,7 @@ public static class NGUIMath
 		}
 	}
 
-	// Token: 0x060003E6 RID: 998 RVA: 0x00023BC8 File Offset: 0x00021DC8
+	// Token: 0x060003E7 RID: 999 RVA: 0x00023BF0 File Offset: 0x00021DF0
 	public static Vector3 SpringDampen(ref Vector3 velocity, float strength, float deltaTime)
 	{
 		if (deltaTime > 1f)
@@ -538,7 +538,7 @@ public static class NGUIMath
 		return a * 0.06f;
 	}
 
-	// Token: 0x060003E7 RID: 999 RVA: 0x00023C40 File Offset: 0x00021E40
+	// Token: 0x060003E8 RID: 1000 RVA: 0x00023C68 File Offset: 0x00021E68
 	public static Vector2 SpringDampen(ref Vector2 velocity, float strength, float deltaTime)
 	{
 		if (deltaTime > 1f)
@@ -553,7 +553,7 @@ public static class NGUIMath
 		return a * 0.06f;
 	}
 
-	// Token: 0x060003E8 RID: 1000 RVA: 0x00023CB8 File Offset: 0x00021EB8
+	// Token: 0x060003E9 RID: 1001 RVA: 0x00023CE0 File Offset: 0x00021EE0
 	public static float SpringLerp(float strength, float deltaTime)
 	{
 		if (deltaTime > 1f)
@@ -570,7 +570,7 @@ public static class NGUIMath
 		return num2;
 	}
 
-	// Token: 0x060003E9 RID: 1001 RVA: 0x00023D0C File Offset: 0x00021F0C
+	// Token: 0x060003EA RID: 1002 RVA: 0x00023D34 File Offset: 0x00021F34
 	public static float SpringLerp(float from, float to, float strength, float deltaTime)
 	{
 		if (deltaTime > 1f)
@@ -586,25 +586,25 @@ public static class NGUIMath
 		return from;
 	}
 
-	// Token: 0x060003EA RID: 1002 RVA: 0x00023D55 File Offset: 0x00021F55
+	// Token: 0x060003EB RID: 1003 RVA: 0x00023D7D File Offset: 0x00021F7D
 	public static Vector2 SpringLerp(Vector2 from, Vector2 to, float strength, float deltaTime)
 	{
 		return Vector2.Lerp(from, to, NGUIMath.SpringLerp(strength, deltaTime));
 	}
 
-	// Token: 0x060003EB RID: 1003 RVA: 0x00023D65 File Offset: 0x00021F65
+	// Token: 0x060003EC RID: 1004 RVA: 0x00023D8D File Offset: 0x00021F8D
 	public static Vector3 SpringLerp(Vector3 from, Vector3 to, float strength, float deltaTime)
 	{
 		return Vector3.Lerp(from, to, NGUIMath.SpringLerp(strength, deltaTime));
 	}
 
-	// Token: 0x060003EC RID: 1004 RVA: 0x00023D75 File Offset: 0x00021F75
+	// Token: 0x060003ED RID: 1005 RVA: 0x00023D9D File Offset: 0x00021F9D
 	public static Quaternion SpringLerp(Quaternion from, Quaternion to, float strength, float deltaTime)
 	{
 		return Quaternion.Slerp(from, to, NGUIMath.SpringLerp(strength, deltaTime));
 	}
 
-	// Token: 0x060003ED RID: 1005 RVA: 0x00023D88 File Offset: 0x00021F88
+	// Token: 0x060003EE RID: 1006 RVA: 0x00023DB0 File Offset: 0x00021FB0
 	public static float RotateTowards(float from, float to, float maxAngle)
 	{
 		float num = NGUIMath.WrapAngle(to - from);
@@ -615,7 +615,7 @@ public static class NGUIMath
 		return from + num;
 	}
 
-	// Token: 0x060003EE RID: 1006 RVA: 0x00023DB4 File Offset: 0x00021FB4
+	// Token: 0x060003EF RID: 1007 RVA: 0x00023DDC File Offset: 0x00021FDC
 	private static float DistancePointToLineSegment(Vector2 point, Vector2 a, Vector2 b)
 	{
 		float sqrMagnitude = (b - a).sqrMagnitude;
@@ -636,7 +636,7 @@ public static class NGUIMath
 		return (point - b2).magnitude;
 	}
 
-	// Token: 0x060003EF RID: 1007 RVA: 0x00023E54 File Offset: 0x00022054
+	// Token: 0x060003F0 RID: 1008 RVA: 0x00023E7C File Offset: 0x0002207C
 	public static float DistanceToRectangle(Vector2[] screenPoints, Vector2 mousePos)
 	{
 		bool flag = false;
@@ -669,7 +669,7 @@ public static class NGUIMath
 		return 0f;
 	}
 
-	// Token: 0x060003F0 RID: 1008 RVA: 0x00023F70 File Offset: 0x00022170
+	// Token: 0x060003F1 RID: 1009 RVA: 0x00023F98 File Offset: 0x00022198
 	public static float DistanceToRectangle(Vector3[] worldPoints, Vector2 mousePos, Camera cam)
 	{
 		Vector2[] array = new Vector2[4];
@@ -680,7 +680,7 @@ public static class NGUIMath
 		return NGUIMath.DistanceToRectangle(array, mousePos);
 	}
 
-	// Token: 0x060003F1 RID: 1009 RVA: 0x00023FB0 File Offset: 0x000221B0
+	// Token: 0x060003F2 RID: 1010 RVA: 0x00023FD8 File Offset: 0x000221D8
 	public static Vector2 GetPivotOffset(UIWidget.Pivot pv)
 	{
 		Vector2 zero = Vector2.zero;
@@ -711,7 +711,7 @@ public static class NGUIMath
 		return zero;
 	}
 
-	// Token: 0x060003F2 RID: 1010 RVA: 0x00024044 File Offset: 0x00022244
+	// Token: 0x060003F3 RID: 1011 RVA: 0x0002406C File Offset: 0x0002226C
 	public static UIWidget.Pivot GetPivot(Vector2 offset)
 	{
 		if (offset.x == 0f)
@@ -752,13 +752,13 @@ public static class NGUIMath
 		}
 	}
 
-	// Token: 0x060003F3 RID: 1011 RVA: 0x000240CA File Offset: 0x000222CA
+	// Token: 0x060003F4 RID: 1012 RVA: 0x000240F2 File Offset: 0x000222F2
 	public static void MoveWidget(UIRect w, float x, float y)
 	{
 		NGUIMath.MoveRect(w, x, y);
 	}
 
-	// Token: 0x060003F4 RID: 1012 RVA: 0x000240D4 File Offset: 0x000222D4
+	// Token: 0x060003F5 RID: 1013 RVA: 0x000240FC File Offset: 0x000222FC
 	public static void MoveRect(UIRect rect, float x, float y)
 	{
 		int num = Mathf.FloorToInt(x + 0.5f);
@@ -791,13 +791,13 @@ public static class NGUIMath
 		}
 	}
 
-	// Token: 0x060003F5 RID: 1013 RVA: 0x000241C9 File Offset: 0x000223C9
+	// Token: 0x060003F6 RID: 1014 RVA: 0x000241F1 File Offset: 0x000223F1
 	public static void ResizeWidget(UIWidget w, UIWidget.Pivot pivot, float x, float y, int minWidth, int minHeight)
 	{
 		NGUIMath.ResizeWidget(w, pivot, x, y, 2, 2, 100000, 100000);
 	}
 
-	// Token: 0x060003F6 RID: 1014 RVA: 0x000241E0 File Offset: 0x000223E0
+	// Token: 0x060003F7 RID: 1015 RVA: 0x00024208 File Offset: 0x00022408
 	public static void ResizeWidget(UIWidget w, UIWidget.Pivot pivot, float x, float y, int minWidth, int minHeight, int maxWidth, int maxHeight)
 	{
 		if (pivot == UIWidget.Pivot.Center)
@@ -849,19 +849,19 @@ public static class NGUIMath
 		}
 	}
 
-	// Token: 0x060003F7 RID: 1015 RVA: 0x000243AC File Offset: 0x000225AC
+	// Token: 0x060003F8 RID: 1016 RVA: 0x000243D4 File Offset: 0x000225D4
 	public static void AdjustWidget(UIWidget w, float left, float bottom, float right, float top)
 	{
 		NGUIMath.AdjustWidget(w, left, bottom, right, top, 2, 2, 100000, 100000);
 	}
 
-	// Token: 0x060003F8 RID: 1016 RVA: 0x000243D0 File Offset: 0x000225D0
+	// Token: 0x060003F9 RID: 1017 RVA: 0x000243F8 File Offset: 0x000225F8
 	public static void AdjustWidget(UIWidget w, float left, float bottom, float right, float top, int minWidth, int minHeight)
 	{
 		NGUIMath.AdjustWidget(w, left, bottom, right, top, minWidth, minHeight, 100000, 100000);
 	}
 
-	// Token: 0x060003F9 RID: 1017 RVA: 0x000243F8 File Offset: 0x000225F8
+	// Token: 0x060003FA RID: 1018 RVA: 0x00024420 File Offset: 0x00022620
 	public static void AdjustWidget(UIWidget w, float left, float bottom, float right, float top, int minWidth, int minHeight, int maxWidth, int maxHeight)
 	{
 		Vector2 pivotOffset = w.pivotOffset;
@@ -1017,7 +1017,7 @@ public static class NGUIMath
 		}
 	}
 
-	// Token: 0x060003FA RID: 1018 RVA: 0x00024A68 File Offset: 0x00022C68
+	// Token: 0x060003FB RID: 1019 RVA: 0x00024A90 File Offset: 0x00022C90
 	public static int AdjustByDPI(float height)
 	{
 		float num = Screen.dpi;
@@ -1034,7 +1034,7 @@ public static class NGUIMath
 		return num2;
 	}
 
-	// Token: 0x060003FB RID: 1019 RVA: 0x00024ABC File Offset: 0x00022CBC
+	// Token: 0x060003FC RID: 1020 RVA: 0x00024AE4 File Offset: 0x00022CE4
 	public static Vector2 ScreenToPixels(Vector2 pos, Transform relativeTo)
 	{
 		int layer = relativeTo.gameObject.layer;
@@ -1048,7 +1048,7 @@ public static class NGUIMath
 		return relativeTo.InverseTransformPoint(position);
 	}
 
-	// Token: 0x060003FC RID: 1020 RVA: 0x00024B18 File Offset: 0x00022D18
+	// Token: 0x060003FD RID: 1021 RVA: 0x00024B40 File Offset: 0x00022D40
 	public static Vector2 ScreenToParentPixels(Vector2 pos, Transform relativeTo)
 	{
 		int layer = relativeTo.gameObject.layer;
@@ -1066,7 +1066,7 @@ public static class NGUIMath
 		return (relativeTo != null) ? relativeTo.InverseTransformPoint(vector) : vector;
 	}
 
-	// Token: 0x060003FD RID: 1021 RVA: 0x00024B93 File Offset: 0x00022D93
+	// Token: 0x060003FE RID: 1022 RVA: 0x00024BBB File Offset: 0x00022DBB
 	public static Vector3 WorldToLocalPoint(Vector3 worldPos, Camera worldCam, Camera uiCam, Transform relativeTo)
 	{
 		worldPos = worldCam.WorldToViewportPoint(worldPos);
@@ -1083,7 +1083,7 @@ public static class NGUIMath
 		return relativeTo.InverseTransformPoint(worldPos);
 	}
 
-	// Token: 0x060003FE RID: 1022 RVA: 0x00024BCC File Offset: 0x00022DCC
+	// Token: 0x060003FF RID: 1023 RVA: 0x00024BF4 File Offset: 0x00022DF4
 	public static void OverlayPosition(this Transform trans, Vector3 worldPos, Camera worldCam, Camera myCam)
 	{
 		worldPos = worldCam.WorldToViewportPoint(worldPos);
@@ -1092,7 +1092,7 @@ public static class NGUIMath
 		trans.localPosition = ((parent != null) ? parent.InverseTransformPoint(worldPos) : worldPos);
 	}
 
-	// Token: 0x060003FF RID: 1023 RVA: 0x00024C0C File Offset: 0x00022E0C
+	// Token: 0x06000400 RID: 1024 RVA: 0x00024C34 File Offset: 0x00022E34
 	public static void OverlayPosition(this Transform trans, Vector3 worldPos, Camera worldCam)
 	{
 		Camera camera = NGUITools.FindCameraForLayer(trans.gameObject.layer);
@@ -1102,7 +1102,7 @@ public static class NGUIMath
 		}
 	}
 
-	// Token: 0x06000400 RID: 1024 RVA: 0x00024C3C File Offset: 0x00022E3C
+	// Token: 0x06000401 RID: 1025 RVA: 0x00024C64 File Offset: 0x00022E64
 	public static void OverlayPosition(this Transform trans, Transform target)
 	{
 		Camera camera = NGUITools.FindCameraForLayer(trans.gameObject.layer);

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000591 RID: 1425
+	// Token: 0x020005A7 RID: 1447
 	public class ABPath : Path
 	{
-		// Token: 0x170005B7 RID: 1463
-		// (get) Token: 0x060026BB RID: 9915 RVA: 0x0002291C File Offset: 0x00020B1C
+		// Token: 0x170005BD RID: 1469
+		// (get) Token: 0x06002711 RID: 10001 RVA: 0x00022944 File Offset: 0x00020B44
 		protected virtual bool hasEndPoint
 		{
 			get
@@ -17,7 +17,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026BD RID: 9917 RVA: 0x001A933D File Offset: 0x001A753D
+		// Token: 0x06002713 RID: 10003 RVA: 0x001AEF29 File Offset: 0x001AD129
 		public static ABPath Construct(Vector3 start, Vector3 end, OnPathDelegate callback = null)
 		{
 			ABPath path = PathPool.GetPath<ABPath>();
@@ -25,14 +25,14 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026BE RID: 9918 RVA: 0x001A934D File Offset: 0x001A754D
+		// Token: 0x06002714 RID: 10004 RVA: 0x001AEF39 File Offset: 0x001AD139
 		protected void Setup(Vector3 start, Vector3 end, OnPathDelegate callbackDelegate)
 		{
 			this.callback = callbackDelegate;
 			this.UpdateStartEnd(start, end);
 		}
 
-		// Token: 0x060026BF RID: 9919 RVA: 0x001A935E File Offset: 0x001A755E
+		// Token: 0x06002715 RID: 10005 RVA: 0x001AEF4A File Offset: 0x001AD14A
 		protected void UpdateStartEnd(Vector3 start, Vector3 end)
 		{
 			this.originalStartPoint = start;
@@ -43,7 +43,7 @@ namespace Pathfinding
 			this.hTarget = (Int3)end;
 		}
 
-		// Token: 0x060026C0 RID: 9920 RVA: 0x001A9394 File Offset: 0x001A7594
+		// Token: 0x06002716 RID: 10006 RVA: 0x001AEF80 File Offset: 0x001AD180
 		internal override uint GetConnectionSpecialCost(GraphNode a, GraphNode b, uint currentCost)
 		{
 			if (this.startNode != null && this.endNode != null)
@@ -79,7 +79,7 @@ namespace Pathfinding
 			return currentCost;
 		}
 
-		// Token: 0x060026C1 RID: 9921 RVA: 0x001A95B4 File Offset: 0x001A77B4
+		// Token: 0x06002717 RID: 10007 RVA: 0x001AF1A0 File Offset: 0x001AD3A0
 		protected override void Reset()
 		{
 			base.Reset();
@@ -97,7 +97,7 @@ namespace Pathfinding
 			this.gridSpecialCaseNode = null;
 		}
 
-		// Token: 0x060026C2 RID: 9922 RVA: 0x001A9638 File Offset: 0x001A7838
+		// Token: 0x06002718 RID: 10008 RVA: 0x001AF224 File Offset: 0x001AD424
 		protected virtual bool EndPointGridGraphSpecialCase(GraphNode closestWalkableEndNode)
 		{
 			GridNode gridNode = closestWalkableEndNode as GridNode;
@@ -156,7 +156,7 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x060026C3 RID: 9923 RVA: 0x001A97E0 File Offset: 0x001A79E0
+		// Token: 0x06002719 RID: 10009 RVA: 0x001AF3CC File Offset: 0x001AD5CC
 		private void SetFlagOnSurroundingGridNodes(GridNode gridNode, int flag, bool flagState)
 		{
 			GridGraph gridGraph = GridNode.GetGridGraph(gridNode.GraphIndex);
@@ -197,7 +197,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026C4 RID: 9924 RVA: 0x001A98FC File Offset: 0x001A7AFC
+		// Token: 0x0600271A RID: 10010 RVA: 0x001AF4E8 File Offset: 0x001AD6E8
 		protected override void Prepare()
 		{
 			this.nnConstraint.tags = this.enabledTags;
@@ -249,7 +249,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026C5 RID: 9925 RVA: 0x001A9A74 File Offset: 0x001A7C74
+		// Token: 0x0600271B RID: 10011 RVA: 0x001AF660 File Offset: 0x001AD860
 		protected virtual void CompletePathIfStartIsValidTarget()
 		{
 			if (this.hasEndPoint && this.pathHandler.GetPathNode(this.startNode).flag1)
@@ -259,7 +259,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026C6 RID: 9926 RVA: 0x001A9AC4 File Offset: 0x001A7CC4
+		// Token: 0x0600271C RID: 10012 RVA: 0x001AF6B0 File Offset: 0x001AD8B0
 		protected override void Initialize()
 		{
 			if (this.startNode != null)
@@ -274,7 +274,7 @@ namespace Pathfinding
 			pathNode.node = this.startNode;
 			pathNode.pathID = this.pathHandler.PathID;
 			pathNode.parent = null;
-			pathNode.cost = 0u;
+			pathNode.cost = 0U;
 			pathNode.G = base.GetTraversalCost(this.startNode);
 			pathNode.H = base.CalculateHScore(this.startNode);
 			this.CompletePathIfStartIsValidTarget();
@@ -299,7 +299,7 @@ namespace Pathfinding
 			base.FailWithError("No open points, the start node didn't open any nodes");
 		}
 
-		// Token: 0x060026C7 RID: 9927 RVA: 0x001A9BF8 File Offset: 0x001A7DF8
+		// Token: 0x0600271D RID: 10013 RVA: 0x001AF7E4 File Offset: 0x001AD9E4
 		protected override void Cleanup()
 		{
 			if (this.startNode != null)
@@ -324,7 +324,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026C8 RID: 9928 RVA: 0x001A9C94 File Offset: 0x001A7E94
+		// Token: 0x0600271E RID: 10014 RVA: 0x001AF880 File Offset: 0x001ADA80
 		private void CompleteWith(GraphNode node)
 		{
 			if (this.endNode != node)
@@ -340,7 +340,7 @@ namespace Pathfinding
 			base.CompleteState = PathCompleteState.Complete;
 		}
 
-		// Token: 0x060026C9 RID: 9929 RVA: 0x001A9CE0 File Offset: 0x001A7EE0
+		// Token: 0x0600271F RID: 10015 RVA: 0x001AF8CC File Offset: 0x001ADACC
 		protected override void CalculateStep(long targetTick)
 		{
 			int num = 0;
@@ -398,7 +398,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026CA RID: 9930 RVA: 0x001A9E3C File Offset: 0x001A803C
+		// Token: 0x06002720 RID: 10016 RVA: 0x001AFA28 File Offset: 0x001ADC28
 		internal override string DebugString(PathLog logMode)
 		{
 			if (logMode == PathLog.None || (!base.error && logMode == PathLog.OnlyErrors))
@@ -445,7 +445,7 @@ namespace Pathfinding
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x060026CB RID: 9931 RVA: 0x001A9FAC File Offset: 0x001A81AC
+		// Token: 0x06002721 RID: 10017 RVA: 0x001AFB98 File Offset: 0x001ADD98
 		[Obsolete]
 		public Vector3 GetMovementVector(Vector3 point)
 		{
@@ -471,37 +471,37 @@ namespace Pathfinding
 			return this.vectorPath[num2 + 1] - point;
 		}
 
-		// Token: 0x04004188 RID: 16776
+		// Token: 0x04004266 RID: 16998
 		public GraphNode startNode;
 
-		// Token: 0x04004189 RID: 16777
+		// Token: 0x04004267 RID: 16999
 		public GraphNode endNode;
 
-		// Token: 0x0400418A RID: 16778
+		// Token: 0x04004268 RID: 17000
 		public Vector3 originalStartPoint;
 
-		// Token: 0x0400418B RID: 16779
+		// Token: 0x04004269 RID: 17001
 		public Vector3 originalEndPoint;
 
-		// Token: 0x0400418C RID: 16780
+		// Token: 0x0400426A RID: 17002
 		public Vector3 startPoint;
 
-		// Token: 0x0400418D RID: 16781
+		// Token: 0x0400426B RID: 17003
 		public Vector3 endPoint;
 
-		// Token: 0x0400418E RID: 16782
+		// Token: 0x0400426C RID: 17004
 		public Int3 startIntPoint;
 
-		// Token: 0x0400418F RID: 16783
+		// Token: 0x0400426D RID: 17005
 		public bool calculatePartial;
 
-		// Token: 0x04004190 RID: 16784
+		// Token: 0x0400426E RID: 17006
 		protected PathNode partialBestTarget;
 
-		// Token: 0x04004191 RID: 16785
+		// Token: 0x0400426F RID: 17007
 		protected int[] endNodeCosts;
 
-		// Token: 0x04004192 RID: 16786
+		// Token: 0x04004270 RID: 17008
 		private GridNode gridSpecialCaseNode;
 	}
 }

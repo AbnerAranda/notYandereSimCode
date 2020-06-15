@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000521 RID: 1313
+	// Token: 0x02000537 RID: 1335
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_animation_link.php")]
 	public class AnimationLink : NodeLink2
 	{
-		// Token: 0x0600225F RID: 8799 RVA: 0x0018E9E4 File Offset: 0x0018CBE4
+		// Token: 0x060022B5 RID: 8885 RVA: 0x001945D0 File Offset: 0x001927D0
 		private static Transform SearchRec(Transform tr, string name)
 		{
 			int childCount = tr.childCount;
@@ -29,7 +29,7 @@ namespace Pathfinding
 			return null;
 		}
 
-		// Token: 0x06002260 RID: 8800 RVA: 0x0018EA30 File Offset: 0x0018CC30
+		// Token: 0x060022B6 RID: 8886 RVA: 0x0019461C File Offset: 0x0019281C
 		public void CalculateOffsets(List<Vector3> trace, out Vector3 endPosition)
 		{
 			endPosition = base.transform.position;
@@ -100,7 +100,7 @@ namespace Pathfinding
 			endPosition = vector;
 		}
 
-		// Token: 0x06002261 RID: 8801 RVA: 0x0018ED38 File Offset: 0x0018CF38
+		// Token: 0x060022B7 RID: 8887 RVA: 0x00194924 File Offset: 0x00192B24
 		public override void OnDrawGizmosSelected()
 		{
 			base.OnDrawGizmosSelected();
@@ -114,30 +114,30 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003ECD RID: 16077
+		// Token: 0x04003FAB RID: 16299
 		public string clip;
 
-		// Token: 0x04003ECE RID: 16078
+		// Token: 0x04003FAC RID: 16300
 		public float animSpeed = 1f;
 
-		// Token: 0x04003ECF RID: 16079
+		// Token: 0x04003FAD RID: 16301
 		public bool reverseAnim = true;
 
-		// Token: 0x04003ED0 RID: 16080
+		// Token: 0x04003FAE RID: 16302
 		public GameObject referenceMesh;
 
-		// Token: 0x04003ED1 RID: 16081
+		// Token: 0x04003FAF RID: 16303
 		public AnimationLink.LinkClip[] sequence;
 
-		// Token: 0x04003ED2 RID: 16082
+		// Token: 0x04003FB0 RID: 16304
 		public string boneRoot = "bn_COG_Root";
 
-		// Token: 0x02000713 RID: 1811
+		// Token: 0x0200072D RID: 1837
 		[Serializable]
 		public class LinkClip
 		{
-			// Token: 0x17000672 RID: 1650
-			// (get) Token: 0x06002C7D RID: 11389 RVA: 0x001C9EA3 File Offset: 0x001C80A3
+			// Token: 0x17000678 RID: 1656
+			// (get) Token: 0x06002CE0 RID: 11488 RVA: 0x001CFB4B File Offset: 0x001CDD4B
 			public string name
 			{
 				get
@@ -150,13 +150,13 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x040048D4 RID: 18644
+			// Token: 0x040049BF RID: 18879
 			public AnimationClip clip;
 
-			// Token: 0x040048D5 RID: 18645
+			// Token: 0x040049C0 RID: 18880
 			public Vector3 velocity;
 
-			// Token: 0x040048D6 RID: 18646
+			// Token: 0x040049C1 RID: 18881
 			public int loopCount = 1;
 		}
 	}

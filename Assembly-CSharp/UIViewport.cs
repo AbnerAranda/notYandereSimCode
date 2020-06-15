@@ -7,7 +7,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/UI/Viewport Camera")]
 public class UIViewport : MonoBehaviour
 {
-	// Token: 0x06000930 RID: 2352 RVA: 0x00048F72 File Offset: 0x00047172
+	// Token: 0x06000931 RID: 2353 RVA: 0x00048F9A File Offset: 0x0004719A
 	private void Start()
 	{
 		this.mCam = base.GetComponent<Camera>();
@@ -17,7 +17,7 @@ public class UIViewport : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000931 RID: 2353 RVA: 0x00048F9C File Offset: 0x0004719C
+	// Token: 0x06000932 RID: 2354 RVA: 0x00048FC4 File Offset: 0x000471C4
 	private void LateUpdate()
 	{
 		if (this.topLeft != null && this.bottomRight != null)
@@ -43,18 +43,18 @@ public class UIViewport : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040007C0 RID: 1984
+	// Token: 0x040007C2 RID: 1986
 	public Camera sourceCamera;
 
-	// Token: 0x040007C1 RID: 1985
+	// Token: 0x040007C3 RID: 1987
 	public Transform topLeft;
 
-	// Token: 0x040007C2 RID: 1986
+	// Token: 0x040007C4 RID: 1988
 	public Transform bottomRight;
 
-	// Token: 0x040007C3 RID: 1987
+	// Token: 0x040007C5 RID: 1989
 	public float fullSize = 1f;
 
-	// Token: 0x040007C4 RID: 1988
+	// Token: 0x040007C6 RID: 1990
 	private Camera mCam;
 }

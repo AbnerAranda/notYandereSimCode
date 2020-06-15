@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000515 RID: 1301
+	// Token: 0x0200052B RID: 1323
 	public class RichPath
 	{
-		// Token: 0x0600213E RID: 8510 RVA: 0x00189057 File Offset: 0x00187257
+		// Token: 0x06002194 RID: 8596 RVA: 0x0018EC43 File Offset: 0x0018CE43
 		public RichPath()
 		{
 			this.Clear();
 		}
 
-		// Token: 0x0600213F RID: 8511 RVA: 0x00189070 File Offset: 0x00187270
+		// Token: 0x06002195 RID: 8597 RVA: 0x0018EC5C File Offset: 0x0018CE5C
 		public void Clear()
 		{
 			this.parts.Clear();
@@ -22,7 +22,7 @@ namespace Pathfinding
 			this.Endpoint = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
 		}
 
-		// Token: 0x06002140 RID: 8512 RVA: 0x001890A0 File Offset: 0x001872A0
+		// Token: 0x06002196 RID: 8598 RVA: 0x0018EC8C File Offset: 0x0018CE8C
 		public void Initialize(Seeker seeker, Path path, bool mergePartEndpoints, bool simplificationMode)
 		{
 			if (path.error)
@@ -111,13 +111,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000524 RID: 1316
-		// (get) Token: 0x06002141 RID: 8513 RVA: 0x00189365 File Offset: 0x00187565
-		// (set) Token: 0x06002142 RID: 8514 RVA: 0x0018936D File Offset: 0x0018756D
+		// Token: 0x1700052A RID: 1322
+		// (get) Token: 0x06002197 RID: 8599 RVA: 0x0018EF51 File Offset: 0x0018D151
+		// (set) Token: 0x06002198 RID: 8600 RVA: 0x0018EF59 File Offset: 0x0018D159
 		public Vector3 Endpoint { get; private set; }
 
-		// Token: 0x17000525 RID: 1317
-		// (get) Token: 0x06002143 RID: 8515 RVA: 0x00189376 File Offset: 0x00187576
+		// Token: 0x1700052B RID: 1323
+		// (get) Token: 0x06002199 RID: 8601 RVA: 0x0018EF62 File Offset: 0x0018D162
 		public bool CompletedAllParts
 		{
 			get
@@ -126,8 +126,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000526 RID: 1318
-		// (get) Token: 0x06002144 RID: 8516 RVA: 0x0018938E File Offset: 0x0018758E
+		// Token: 0x1700052C RID: 1324
+		// (get) Token: 0x0600219A RID: 8602 RVA: 0x0018EF7A File Offset: 0x0018D17A
 		public bool IsLastPart
 		{
 			get
@@ -136,13 +136,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002145 RID: 8517 RVA: 0x001893A8 File Offset: 0x001875A8
+		// Token: 0x0600219B RID: 8603 RVA: 0x0018EF94 File Offset: 0x0018D194
 		public void NextPart()
 		{
 			this.currentPart = Mathf.Min(this.currentPart + 1, this.parts.Count);
 		}
 
-		// Token: 0x06002146 RID: 8518 RVA: 0x001893C8 File Offset: 0x001875C8
+		// Token: 0x0600219C RID: 8604 RVA: 0x0018EFB4 File Offset: 0x0018D1B4
 		public RichPathPart GetCurrentPart()
 		{
 			if (this.parts.Count == 0)
@@ -156,16 +156,16 @@ namespace Pathfinding
 			return this.parts[this.currentPart];
 		}
 
-		// Token: 0x04003E7A RID: 15994
+		// Token: 0x04003F58 RID: 16216
 		private int currentPart;
 
-		// Token: 0x04003E7B RID: 15995
+		// Token: 0x04003F59 RID: 16217
 		private readonly List<RichPathPart> parts = new List<RichPathPart>();
 
-		// Token: 0x04003E7C RID: 15996
+		// Token: 0x04003F5A RID: 16218
 		public Seeker seeker;
 
-		// Token: 0x04003E7D RID: 15997
+		// Token: 0x04003F5B RID: 16219
 		public ITransform transform;
 	}
 }

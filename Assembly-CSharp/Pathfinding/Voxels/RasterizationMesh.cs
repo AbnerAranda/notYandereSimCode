@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005AC RID: 1452
+	// Token: 0x020005C2 RID: 1474
 	public class RasterizationMesh
 	{
-		// Token: 0x06002779 RID: 10105 RVA: 0x000045DB File Offset: 0x000027DB
+		// Token: 0x060027CF RID: 10191 RVA: 0x000045DB File Offset: 0x000027DB
 		public RasterizationMesh()
 		{
 		}
 
-		// Token: 0x0600277A RID: 10106 RVA: 0x001AF42C File Offset: 0x001AD62C
+		// Token: 0x060027D0 RID: 10192 RVA: 0x001B5018 File Offset: 0x001B3218
 		public RasterizationMesh(Vector3[] vertices, int[] triangles, Bounds bounds)
 		{
 			this.matrix = Matrix4x4.identity;
@@ -25,7 +25,7 @@ namespace Pathfinding.Voxels
 			this.area = 0;
 		}
 
-		// Token: 0x0600277B RID: 10107 RVA: 0x001AF480 File Offset: 0x001AD680
+		// Token: 0x060027D1 RID: 10193 RVA: 0x001B506C File Offset: 0x001B326C
 		public RasterizationMesh(Vector3[] vertices, int[] triangles, Bounds bounds, Matrix4x4 matrix)
 		{
 			this.matrix = matrix;
@@ -38,7 +38,7 @@ namespace Pathfinding.Voxels
 			this.area = 0;
 		}
 
-		// Token: 0x0600277C RID: 10108 RVA: 0x001AF4D0 File Offset: 0x001AD6D0
+		// Token: 0x060027D2 RID: 10194 RVA: 0x001B50BC File Offset: 0x001B32BC
 		public void RecalculateBounds()
 		{
 			Bounds bounds = new Bounds(this.matrix.MultiplyPoint3x4(this.vertices[0]), Vector3.zero);
@@ -49,7 +49,7 @@ namespace Pathfinding.Voxels
 			this.bounds = bounds;
 		}
 
-		// Token: 0x0600277D RID: 10109 RVA: 0x001AF536 File Offset: 0x001AD736
+		// Token: 0x060027D3 RID: 10195 RVA: 0x001B5122 File Offset: 0x001B3322
 		public void Pool()
 		{
 			if (this.pool)
@@ -59,31 +59,31 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x040041F5 RID: 16885
+		// Token: 0x040042D3 RID: 17107
 		public MeshFilter original;
 
-		// Token: 0x040041F6 RID: 16886
+		// Token: 0x040042D4 RID: 17108
 		public int area;
 
-		// Token: 0x040041F7 RID: 16887
+		// Token: 0x040042D5 RID: 17109
 		public Vector3[] vertices;
 
-		// Token: 0x040041F8 RID: 16888
+		// Token: 0x040042D6 RID: 17110
 		public int[] triangles;
 
-		// Token: 0x040041F9 RID: 16889
+		// Token: 0x040042D7 RID: 17111
 		public int numVertices;
 
-		// Token: 0x040041FA RID: 16890
+		// Token: 0x040042D8 RID: 17112
 		public int numTriangles;
 
-		// Token: 0x040041FB RID: 16891
+		// Token: 0x040042D9 RID: 17113
 		public Bounds bounds;
 
-		// Token: 0x040041FC RID: 16892
+		// Token: 0x040042DA RID: 17114
 		public Matrix4x4 matrix;
 
-		// Token: 0x040041FD RID: 16893
+		// Token: 0x040042DB RID: 17115
 		public bool pool;
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(UIWidget))]
 public class SetColorPickerColor : MonoBehaviour
 {
-	// Token: 0x06000136 RID: 310 RVA: 0x000132AB File Offset: 0x000114AB
+	// Token: 0x06000137 RID: 311 RVA: 0x000132D3 File Offset: 0x000114D3
 	public void SetToCurrent()
 	{
 		if (this.mWidget == null)
@@ -18,7 +18,7 @@ public class SetColorPickerColor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040002C8 RID: 712
+	// Token: 0x040002CA RID: 714
 	[NonSerialized]
 	private UIWidget mWidget;
 }

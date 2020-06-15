@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000265 RID: 613
+// Token: 0x02000266 RID: 614
 public class DetectionCameraScript : MonoBehaviour
 {
-	// Token: 0x0600133A RID: 4922 RVA: 0x000A0794 File Offset: 0x0009E994
+	// Token: 0x06001341 RID: 4929 RVA: 0x000A1720 File Offset: 0x0009F920
 	private void Update()
 	{
 		base.transform.position = this.YandereChan.transform.position + Vector3.up * 100f;
 		base.transform.eulerAngles = new Vector3(90f, base.transform.eulerAngles.y, base.transform.eulerAngles.z);
 	}
 
-	// Token: 0x040019F7 RID: 6647
+	// Token: 0x04001A16 RID: 6678
 	public Transform YandereChan;
 }

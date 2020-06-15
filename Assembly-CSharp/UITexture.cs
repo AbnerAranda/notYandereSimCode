@@ -8,8 +8,8 @@ using UnityEngine;
 public class UITexture : UIBasicSprite
 {
 	// Token: 0x170001DF RID: 479
-	// (get) Token: 0x06000913 RID: 2323 RVA: 0x000481CC File Offset: 0x000463CC
-	// (set) Token: 0x06000914 RID: 2324 RVA: 0x00048200 File Offset: 0x00046400
+	// (get) Token: 0x06000914 RID: 2324 RVA: 0x000481F4 File Offset: 0x000463F4
+	// (set) Token: 0x06000915 RID: 2325 RVA: 0x00048228 File Offset: 0x00046428
 	public override Texture mainTexture
 	{
 		get
@@ -43,8 +43,8 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E0 RID: 480
-	// (get) Token: 0x06000915 RID: 2325 RVA: 0x00032AFB File Offset: 0x00030CFB
-	// (set) Token: 0x06000916 RID: 2326 RVA: 0x00048273 File Offset: 0x00046473
+	// (get) Token: 0x06000916 RID: 2326 RVA: 0x00032B23 File Offset: 0x00030D23
+	// (set) Token: 0x06000917 RID: 2327 RVA: 0x0004829B File Offset: 0x0004649B
 	public override Material material
 	{
 		get
@@ -65,8 +65,8 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E1 RID: 481
-	// (get) Token: 0x06000917 RID: 2327 RVA: 0x000482A4 File Offset: 0x000464A4
-	// (set) Token: 0x06000918 RID: 2328 RVA: 0x000482E4 File Offset: 0x000464E4
+	// (get) Token: 0x06000918 RID: 2328 RVA: 0x000482CC File Offset: 0x000464CC
+	// (set) Token: 0x06000919 RID: 2329 RVA: 0x0004830C File Offset: 0x0004650C
 	public override Shader shader
 	{
 		get
@@ -101,7 +101,7 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E2 RID: 482
-	// (get) Token: 0x06000919 RID: 2329 RVA: 0x00048360 File Offset: 0x00046560
+	// (get) Token: 0x0600091A RID: 2330 RVA: 0x00048388 File Offset: 0x00046588
 	public override bool premultipliedAlpha
 	{
 		get
@@ -116,8 +116,8 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E3 RID: 483
-	// (get) Token: 0x0600091A RID: 2330 RVA: 0x000483BE File Offset: 0x000465BE
-	// (set) Token: 0x0600091B RID: 2331 RVA: 0x000483C6 File Offset: 0x000465C6
+	// (get) Token: 0x0600091B RID: 2331 RVA: 0x000483E6 File Offset: 0x000465E6
+	// (set) Token: 0x0600091C RID: 2332 RVA: 0x000483EE File Offset: 0x000465EE
 	public override Vector4 border
 	{
 		get
@@ -135,8 +135,8 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E4 RID: 484
-	// (get) Token: 0x0600091C RID: 2332 RVA: 0x000483E3 File Offset: 0x000465E3
-	// (set) Token: 0x0600091D RID: 2333 RVA: 0x000483EB File Offset: 0x000465EB
+	// (get) Token: 0x0600091D RID: 2333 RVA: 0x0004840B File Offset: 0x0004660B
+	// (set) Token: 0x0600091E RID: 2334 RVA: 0x00048413 File Offset: 0x00046613
 	public Rect uvRect
 	{
 		get
@@ -154,7 +154,7 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E5 RID: 485
-	// (get) Token: 0x0600091E RID: 2334 RVA: 0x00048408 File Offset: 0x00046608
+	// (get) Token: 0x0600091F RID: 2335 RVA: 0x00048430 File Offset: 0x00046630
 	public override Vector4 drawingDimensions
 	{
 		get
@@ -224,8 +224,8 @@ public class UITexture : UIBasicSprite
 	}
 
 	// Token: 0x170001E6 RID: 486
-	// (get) Token: 0x0600091F RID: 2335 RVA: 0x000485E5 File Offset: 0x000467E5
-	// (set) Token: 0x06000920 RID: 2336 RVA: 0x000485ED File Offset: 0x000467ED
+	// (get) Token: 0x06000920 RID: 2336 RVA: 0x0004860D File Offset: 0x0004680D
+	// (set) Token: 0x06000921 RID: 2337 RVA: 0x00048615 File Offset: 0x00046815
 	public bool fixedAspect
 	{
 		get
@@ -243,7 +243,7 @@ public class UITexture : UIBasicSprite
 		}
 	}
 
-	// Token: 0x06000921 RID: 2337 RVA: 0x00048624 File Offset: 0x00046824
+	// Token: 0x06000922 RID: 2338 RVA: 0x0004864C File Offset: 0x0004684C
 	public override void MakePixelPerfect()
 	{
 		base.MakePixelPerfect();
@@ -273,7 +273,7 @@ public class UITexture : UIBasicSprite
 		}
 	}
 
-	// Token: 0x06000922 RID: 2338 RVA: 0x000486A4 File Offset: 0x000468A4
+	// Token: 0x06000923 RID: 2339 RVA: 0x000486CC File Offset: 0x000468CC
 	protected override void OnUpdate()
 	{
 		base.OnUpdate();
@@ -308,7 +308,7 @@ public class UITexture : UIBasicSprite
 		}
 	}
 
-	// Token: 0x06000923 RID: 2339 RVA: 0x00048780 File Offset: 0x00046980
+	// Token: 0x06000924 RID: 2340 RVA: 0x000487A8 File Offset: 0x000469A8
 	public override void OnFill(List<Vector3> verts, List<Vector2> uvs, List<Color> cols)
 	{
 		Texture mainTexture = this.mainTexture;
@@ -341,32 +341,32 @@ public class UITexture : UIBasicSprite
 		}
 	}
 
-	// Token: 0x040007AC RID: 1964
+	// Token: 0x040007AE RID: 1966
 	[HideInInspector]
 	[SerializeField]
 	private Rect mRect = new Rect(0f, 0f, 1f, 1f);
 
-	// Token: 0x040007AD RID: 1965
+	// Token: 0x040007AF RID: 1967
 	[HideInInspector]
 	[SerializeField]
 	private Texture mTexture;
 
-	// Token: 0x040007AE RID: 1966
+	// Token: 0x040007B0 RID: 1968
 	[HideInInspector]
 	[SerializeField]
 	private Shader mShader;
 
-	// Token: 0x040007AF RID: 1967
+	// Token: 0x040007B1 RID: 1969
 	[HideInInspector]
 	[SerializeField]
 	private Vector4 mBorder = Vector4.zero;
 
-	// Token: 0x040007B0 RID: 1968
+	// Token: 0x040007B2 RID: 1970
 	[HideInInspector]
 	[SerializeField]
 	private bool mFixedAspect;
 
-	// Token: 0x040007B1 RID: 1969
+	// Token: 0x040007B3 RID: 1971
 	[NonSerialized]
 	private int mPMA = -1;
 }

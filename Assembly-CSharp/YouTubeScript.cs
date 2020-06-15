@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200048C RID: 1164
+// Token: 0x02000492 RID: 1170
 public class YouTubeScript : MonoBehaviour
 {
-	// Token: 0x06001DF0 RID: 7664 RVA: 0x00176E6C File Offset: 0x0017506C
+	// Token: 0x06001E1F RID: 7711 RVA: 0x0017AE6C File Offset: 0x0017906C
 	private void Update()
 	{
 		if (Input.GetKeyDown("space"))
@@ -18,9 +18,9 @@ public class YouTubeScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003BAB RID: 15275
+	// Token: 0x04003C37 RID: 15415
 	public float Strength;
 
-	// Token: 0x04003BAC RID: 15276
+	// Token: 0x04003C38 RID: 15416
 	public bool Begin;
 }

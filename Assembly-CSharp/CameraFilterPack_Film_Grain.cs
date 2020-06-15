@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B5 RID: 437
+// Token: 0x020001B6 RID: 438
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Film/Grain")]
 public class CameraFilterPack_Film_Grain : MonoBehaviour
 {
 	// Token: 0x170002D5 RID: 725
-	// (get) Token: 0x06000F51 RID: 3921 RVA: 0x000728E9 File Offset: 0x00070AE9
+	// (get) Token: 0x06000F58 RID: 3928 RVA: 0x00073619 File Offset: 0x00071819
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Film_Grain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F52 RID: 3922 RVA: 0x0007291D File Offset: 0x00070B1D
+	// Token: 0x06000F59 RID: 3929 RVA: 0x0007364D File Offset: 0x0007184D
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Film_Grain");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Film_Grain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F53 RID: 3923 RVA: 0x00072940 File Offset: 0x00070B40
+	// Token: 0x06000F5A RID: 3930 RVA: 0x00073670 File Offset: 0x00071870
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Film_Grain : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F54 RID: 3924 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F5B RID: 3931 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F55 RID: 3925 RVA: 0x000729F6 File Offset: 0x00070BF6
+	// Token: 0x06000F5C RID: 3932 RVA: 0x00073726 File Offset: 0x00071926
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Film_Grain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001203 RID: 4611
+	// Token: 0x04001222 RID: 4642
 	public Shader SCShader;
 
-	// Token: 0x04001204 RID: 4612
+	// Token: 0x04001223 RID: 4643
 	private float TimeX = 1f;
 
-	// Token: 0x04001205 RID: 4613
+	// Token: 0x04001224 RID: 4644
 	private Material SCMaterial;
 
-	// Token: 0x04001206 RID: 4614
+	// Token: 0x04001225 RID: 4645
 	[Range(-64f, 64f)]
 	public float Value = 32f;
 }

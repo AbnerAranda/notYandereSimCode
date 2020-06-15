@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000215 RID: 533
+// Token: 0x02000216 RID: 534
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/VHS/Tracking")]
 public class CameraFilterPack_VHS_Tracking : MonoBehaviour
 {
 	// Token: 0x17000335 RID: 821
-	// (get) Token: 0x060011B4 RID: 4532 RVA: 0x0007DC95 File Offset: 0x0007BE95
+	// (get) Token: 0x060011BB RID: 4539 RVA: 0x0007E9C5 File Offset: 0x0007CBC5
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_VHS_Tracking : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011B5 RID: 4533 RVA: 0x0007DCC9 File Offset: 0x0007BEC9
+	// Token: 0x060011BC RID: 4540 RVA: 0x0007E9F9 File Offset: 0x0007CBF9
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/VHS_Tracking");
@@ -32,7 +32,7 @@ public class CameraFilterPack_VHS_Tracking : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011B6 RID: 4534 RVA: 0x0007DCEC File Offset: 0x0007BEEC
+	// Token: 0x060011BD RID: 4541 RVA: 0x0007EA1C File Offset: 0x0007CC1C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_VHS_Tracking : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060011B7 RID: 4535 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060011BE RID: 4542 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060011B8 RID: 4536 RVA: 0x0007DDA2 File Offset: 0x0007BFA2
+	// Token: 0x060011BF RID: 4543 RVA: 0x0007EAD2 File Offset: 0x0007CCD2
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_VHS_Tracking : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040014B5 RID: 5301
+	// Token: 0x040014D4 RID: 5332
 	public Shader SCShader;
 
-	// Token: 0x040014B6 RID: 5302
+	// Token: 0x040014D5 RID: 5333
 	private float TimeX = 1f;
 
-	// Token: 0x040014B7 RID: 5303
+	// Token: 0x040014D6 RID: 5334
 	private Material SCMaterial;
 
-	// Token: 0x040014B8 RID: 5304
+	// Token: 0x040014D7 RID: 5335
 	[Range(0f, 2f)]
 	public float Tracking = 1f;
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D2 RID: 1490
+	// Token: 0x020005E8 RID: 1512
 	public static class MovementUtilities
 	{
-		// Token: 0x0600290F RID: 10511 RVA: 0x001BB0F0 File Offset: 0x001B92F0
+		// Token: 0x06002965 RID: 10597 RVA: 0x001C0CDC File Offset: 0x001BEEDC
 		public static Vector2 ClampVelocity(Vector2 velocity, float maxSpeed, float slowdownFactor, bool slowWhenNotFacingTarget, Vector2 forward)
 		{
 			float num = maxSpeed * slowdownFactor;
@@ -18,7 +18,7 @@ namespace Pathfinding.Util
 				float num4 = Mathf.Clamp(num3 + 0.707f, 0.2f, 1f);
 				num *= num4;
 				num2 = Mathf.Min(num2, num);
-				float f = Mathf.Min(Mathf.Acos(Mathf.Clamp(num3, -1f, 1f)), (20f + 180f * (1f - slowdownFactor * slowdownFactor)) * 0.017453292f);
+				float f = Mathf.Min(Mathf.Acos(Mathf.Clamp(num3, -1f, 1f)), (20f + 180f * (1f - slowdownFactor * slowdownFactor)) * 0.0174532924f);
 				float num5 = Mathf.Sin(f);
 				float num6 = Mathf.Cos(f);
 				num5 *= Mathf.Sign(vector.x * forward.y - vector.y * forward.x);
@@ -27,7 +27,7 @@ namespace Pathfinding.Util
 			return Vector2.ClampMagnitude(velocity, num);
 		}
 
-		// Token: 0x06002910 RID: 10512 RVA: 0x001BB204 File Offset: 0x001B9404
+		// Token: 0x06002966 RID: 10598 RVA: 0x001C0DF0 File Offset: 0x001BEFF0
 		public static Vector2 CalculateAccelerationToReachPoint(Vector2 deltaPosition, Vector2 targetVelocity, Vector2 currentVelocity, float forwardsAcceleration, float rotationSpeed, float maxSpeed, Vector2 forwardsVector)
 		{
 			if (forwardsAcceleration <= 0f)
@@ -35,7 +35,7 @@ namespace Pathfinding.Util
 				return Vector2.zero;
 			}
 			float magnitude = currentVelocity.magnitude;
-			float a = magnitude * rotationSpeed * 0.017453292f;
+			float a = magnitude * rotationSpeed * 0.0174532924f;
 			a = Mathf.Max(a, forwardsAcceleration);
 			deltaPosition = VectorMath.ComplexMultiplyConjugate(deltaPosition, forwardsVector);
 			targetVelocity = VectorMath.ComplexMultiplyConjugate(targetVelocity, forwardsVector);

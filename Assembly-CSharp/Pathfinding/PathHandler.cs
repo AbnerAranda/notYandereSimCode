@@ -3,11 +3,11 @@ using System.Text;
 
 namespace Pathfinding
 {
-	// Token: 0x0200053E RID: 1342
+	// Token: 0x02000554 RID: 1364
 	public class PathHandler
 	{
-		// Token: 0x1700056E RID: 1390
-		// (get) Token: 0x060023D9 RID: 9177 RVA: 0x0019599C File Offset: 0x00193B9C
+		// Token: 0x17000574 RID: 1396
+		// (get) Token: 0x0600242F RID: 9263 RVA: 0x0019B588 File Offset: 0x00199788
 		public ushort PathID
 		{
 			get
@@ -16,32 +16,32 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023DA RID: 9178 RVA: 0x001959A4 File Offset: 0x00193BA4
+		// Token: 0x06002430 RID: 9264 RVA: 0x0019B590 File Offset: 0x00199790
 		public PathHandler(int threadID, int totalThreadCount)
 		{
 			this.threadID = threadID;
 			this.totalThreadCount = totalThreadCount;
 		}
 
-		// Token: 0x060023DB RID: 9179 RVA: 0x001959E1 File Offset: 0x00193BE1
+		// Token: 0x06002431 RID: 9265 RVA: 0x0019B5CD File Offset: 0x001997CD
 		public void InitializeForPath(Path p)
 		{
 			this.pathID = p.pathID;
 			this.heap.Clear();
 		}
 
-		// Token: 0x060023DC RID: 9180 RVA: 0x001959FA File Offset: 0x00193BFA
+		// Token: 0x06002432 RID: 9266 RVA: 0x0019B5E6 File Offset: 0x001997E6
 		public void DestroyNode(GraphNode node)
 		{
 			PathNode pathNode = this.GetPathNode(node);
 			pathNode.node = null;
 			pathNode.parent = null;
 			pathNode.pathID = 0;
-			pathNode.G = 0u;
-			pathNode.H = 0u;
+			pathNode.G = 0U;
+			pathNode.H = 0U;
 		}
 
-		// Token: 0x060023DD RID: 9181 RVA: 0x00195A28 File Offset: 0x00193C28
+		// Token: 0x06002433 RID: 9267 RVA: 0x0019B614 File Offset: 0x00199814
 		public void InitializeNode(GraphNode node)
 		{
 			int nodeIndex = node.NodeIndex;
@@ -58,19 +58,19 @@ namespace Pathfinding
 			this.nodes[nodeIndex].node = node;
 		}
 
-		// Token: 0x060023DE RID: 9182 RVA: 0x00195AA0 File Offset: 0x00193CA0
+		// Token: 0x06002434 RID: 9268 RVA: 0x0019B68C File Offset: 0x0019988C
 		public PathNode GetPathNode(int nodeIndex)
 		{
 			return this.nodes[nodeIndex];
 		}
 
-		// Token: 0x060023DF RID: 9183 RVA: 0x00195AAA File Offset: 0x00193CAA
+		// Token: 0x06002435 RID: 9269 RVA: 0x0019B696 File Offset: 0x00199896
 		public PathNode GetPathNode(GraphNode node)
 		{
 			return this.nodes[node.NodeIndex];
 		}
 
-		// Token: 0x060023E0 RID: 9184 RVA: 0x00195ABC File Offset: 0x00193CBC
+		// Token: 0x06002436 RID: 9270 RVA: 0x0019B6A8 File Offset: 0x001998A8
 		public void ClearPathIDs()
 		{
 			for (int i = 0; i < this.nodes.Length; i++)
@@ -82,22 +82,22 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003F9A RID: 16282
+		// Token: 0x04004078 RID: 16504
 		private ushort pathID;
 
-		// Token: 0x04003F9B RID: 16283
+		// Token: 0x04004079 RID: 16505
 		public readonly int threadID;
 
-		// Token: 0x04003F9C RID: 16284
+		// Token: 0x0400407A RID: 16506
 		public readonly int totalThreadCount;
 
-		// Token: 0x04003F9D RID: 16285
+		// Token: 0x0400407B RID: 16507
 		public readonly BinaryHeap heap = new BinaryHeap(128);
 
-		// Token: 0x04003F9E RID: 16286
+		// Token: 0x0400407C RID: 16508
 		public PathNode[] nodes = new PathNode[0];
 
-		// Token: 0x04003F9F RID: 16287
+		// Token: 0x0400407D RID: 16509
 		public readonly StringBuilder DebugStringBuilder = new StringBuilder();
 	}
 }

@@ -4,24 +4,24 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x020005A5 RID: 1445
+	// Token: 0x020005BB RID: 1467
 	[ExecuteInEditMode]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_unity_reference_helper.php")]
 	public class UnityReferenceHelper : MonoBehaviour
 	{
-		// Token: 0x0600275B RID: 10075 RVA: 0x001ADD8B File Offset: 0x001ABF8B
+		// Token: 0x060027B1 RID: 10161 RVA: 0x001B3977 File Offset: 0x001B1B77
 		public string GetGUID()
 		{
 			return this.guid;
 		}
 
-		// Token: 0x0600275C RID: 10076 RVA: 0x001ADD93 File Offset: 0x001ABF93
+		// Token: 0x060027B2 RID: 10162 RVA: 0x001B397F File Offset: 0x001B1B7F
 		public void Awake()
 		{
 			this.Reset();
 		}
 
-		// Token: 0x0600275D RID: 10077 RVA: 0x001ADD9C File Offset: 0x001ABF9C
+		// Token: 0x060027B3 RID: 10163 RVA: 0x001B3988 File Offset: 0x001B1B88
 		public void Reset()
 		{
 			if (string.IsNullOrEmpty(this.guid))
@@ -41,7 +41,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x040041CB RID: 16843
+		// Token: 0x040042A9 RID: 17065
 		[HideInInspector]
 		[SerializeField]
 		private string guid;

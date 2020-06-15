@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020002EB RID: 747
+// Token: 0x020002EE RID: 750
 public class HomeDarknessScript : MonoBehaviour
 {
-	// Token: 0x06001715 RID: 5909 RVA: 0x000C2F70 File Offset: 0x000C1170
+	// Token: 0x06001732 RID: 5938 RVA: 0x000C508C File Offset: 0x000C328C
 	private void Start()
 	{
 		if (GameGlobals.LoveSick)
@@ -15,7 +15,7 @@ public class HomeDarknessScript : MonoBehaviour
 		this.Sprite.color = new Color(this.Sprite.color.r, this.Sprite.color.g, this.Sprite.color.b, 1f);
 	}
 
-	// Token: 0x06001716 RID: 5910 RVA: 0x000C2FF0 File Offset: 0x000C11F0
+	// Token: 0x06001733 RID: 5939 RVA: 0x000C510C File Offset: 0x000C330C
 	private void Update()
 	{
 		if (this.FadeOut)
@@ -120,6 +120,11 @@ public class HomeDarknessScript : MonoBehaviour
 						Physics.SyncTransforms();
 						return;
 					}
+					else if (this.HomeExit.ID == 4)
+					{
+						SceneManager.LoadScene("StalkerHouseScene");
+						return;
+					}
 				}
 			}
 		}
@@ -133,7 +138,7 @@ public class HomeDarknessScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001717 RID: 5911 RVA: 0x000C3501 File Offset: 0x000C1701
+	// Token: 0x06001734 RID: 5940 RVA: 0x000C5639 File Offset: 0x000C3839
 	private void CheckForOsanaThursday()
 	{
 		Debug.Log("Time to check if we need to display the Osana-walks-to-school cutscene...");
@@ -148,33 +153,33 @@ public class HomeDarknessScript : MonoBehaviour
 		SceneManager.LoadScene("LoadingScene");
 	}
 
-	// Token: 0x04001F3A RID: 7994
+	// Token: 0x04001F87 RID: 8071
 	public HomeVideoGamesScript HomeVideoGames;
 
-	// Token: 0x04001F3B RID: 7995
+	// Token: 0x04001F88 RID: 8072
 	public HomeYandereScript HomeYandere;
 
-	// Token: 0x04001F3C RID: 7996
+	// Token: 0x04001F89 RID: 8073
 	public HomeCameraScript HomeCamera;
 
-	// Token: 0x04001F3D RID: 7997
+	// Token: 0x04001F8A RID: 8074
 	public HomeExitScript HomeExit;
 
-	// Token: 0x04001F3E RID: 7998
+	// Token: 0x04001F8B RID: 8075
 	public InputDeviceScript InputDevice;
 
-	// Token: 0x04001F3F RID: 7999
+	// Token: 0x04001F8C RID: 8076
 	public UILabel BasementLabel;
 
-	// Token: 0x04001F40 RID: 8000
+	// Token: 0x04001F8D RID: 8077
 	public UISprite Sprite;
 
-	// Token: 0x04001F41 RID: 8001
+	// Token: 0x04001F8E RID: 8078
 	public bool Cyberstalking;
 
-	// Token: 0x04001F42 RID: 8002
+	// Token: 0x04001F8F RID: 8079
 	public bool FadeSlow;
 
-	// Token: 0x04001F43 RID: 8003
+	// Token: 0x04001F90 RID: 8080
 	public bool FadeOut;
 }

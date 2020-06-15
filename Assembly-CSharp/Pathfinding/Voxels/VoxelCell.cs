@@ -2,10 +2,10 @@
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005B0 RID: 1456
+	// Token: 0x020005C6 RID: 1478
 	public struct VoxelCell
 	{
-		// Token: 0x0600277F RID: 10111 RVA: 0x001AF558 File Offset: 0x001AD758
+		// Token: 0x060027D5 RID: 10197 RVA: 0x001B5144 File Offset: 0x001B3344
 		public void AddSpan(uint bottom, uint top, int area, int voxelWalkableClimb)
 		{
 			VoxelSpan voxelSpan = new VoxelSpan(bottom, top, area);
@@ -59,7 +59,7 @@ namespace Pathfinding.Voxels
 			this.firstSpan = voxelSpan;
 		}
 
-		// Token: 0x04004208 RID: 16904
+		// Token: 0x040042E6 RID: 17126
 		public VoxelSpan firstSpan;
 	}
 }

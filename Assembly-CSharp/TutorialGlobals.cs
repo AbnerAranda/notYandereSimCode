@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020002D0 RID: 720
+// Token: 0x020002D3 RID: 723
 public static class TutorialGlobals
 {
-	// Token: 0x17000410 RID: 1040
-	// (get) Token: 0x0600166F RID: 5743 RVA: 0x000BB0CF File Offset: 0x000B92CF
-	// (set) Token: 0x06001670 RID: 5744 RVA: 0x000BB0EF File Offset: 0x000B92EF
+	// Token: 0x17000415 RID: 1045
+	// (get) Token: 0x0600168C RID: 5772 RVA: 0x000BCDD3 File Offset: 0x000BAFD3
+	// (set) Token: 0x0600168D RID: 5773 RVA: 0x000BCDF3 File Offset: 0x000BAFF3
 	public static bool IgnoreClothing
 	{
 		get
@@ -18,9 +18,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000411 RID: 1041
-	// (get) Token: 0x06001671 RID: 5745 RVA: 0x000BB110 File Offset: 0x000B9310
-	// (set) Token: 0x06001672 RID: 5746 RVA: 0x000BB130 File Offset: 0x000B9330
+	// Token: 0x17000416 RID: 1046
+	// (get) Token: 0x0600168E RID: 5774 RVA: 0x000BCE14 File Offset: 0x000BB014
+	// (set) Token: 0x0600168F RID: 5775 RVA: 0x000BCE34 File Offset: 0x000BB034
 	public static bool IgnoreCouncil
 	{
 		get
@@ -33,9 +33,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000412 RID: 1042
-	// (get) Token: 0x06001673 RID: 5747 RVA: 0x000BB151 File Offset: 0x000B9351
-	// (set) Token: 0x06001674 RID: 5748 RVA: 0x000BB171 File Offset: 0x000B9371
+	// Token: 0x17000417 RID: 1047
+	// (get) Token: 0x06001690 RID: 5776 RVA: 0x000BCE55 File Offset: 0x000BB055
+	// (set) Token: 0x06001691 RID: 5777 RVA: 0x000BCE75 File Offset: 0x000BB075
 	public static bool IgnoreTeacher
 	{
 		get
@@ -48,9 +48,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000413 RID: 1043
-	// (get) Token: 0x06001675 RID: 5749 RVA: 0x000BB192 File Offset: 0x000B9392
-	// (set) Token: 0x06001676 RID: 5750 RVA: 0x000BB1B2 File Offset: 0x000B93B2
+	// Token: 0x17000418 RID: 1048
+	// (get) Token: 0x06001692 RID: 5778 RVA: 0x000BCE96 File Offset: 0x000BB096
+	// (set) Token: 0x06001693 RID: 5779 RVA: 0x000BCEB6 File Offset: 0x000BB0B6
 	public static bool IgnoreLocker
 	{
 		get
@@ -63,9 +63,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000414 RID: 1044
-	// (get) Token: 0x06001677 RID: 5751 RVA: 0x000BB1D3 File Offset: 0x000B93D3
-	// (set) Token: 0x06001678 RID: 5752 RVA: 0x000BB1F3 File Offset: 0x000B93F3
+	// Token: 0x17000419 RID: 1049
+	// (get) Token: 0x06001694 RID: 5780 RVA: 0x000BCED7 File Offset: 0x000BB0D7
+	// (set) Token: 0x06001695 RID: 5781 RVA: 0x000BCEF7 File Offset: 0x000BB0F7
 	public static bool IgnorePolice
 	{
 		get
@@ -78,9 +78,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000415 RID: 1045
-	// (get) Token: 0x06001679 RID: 5753 RVA: 0x000BB214 File Offset: 0x000B9414
-	// (set) Token: 0x0600167A RID: 5754 RVA: 0x000BB234 File Offset: 0x000B9434
+	// Token: 0x1700041A RID: 1050
+	// (get) Token: 0x06001696 RID: 5782 RVA: 0x000BCF18 File Offset: 0x000BB118
+	// (set) Token: 0x06001697 RID: 5783 RVA: 0x000BCF38 File Offset: 0x000BB138
 	public static bool IgnoreSanity
 	{
 		get
@@ -93,9 +93,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000416 RID: 1046
-	// (get) Token: 0x0600167B RID: 5755 RVA: 0x000BB255 File Offset: 0x000B9455
-	// (set) Token: 0x0600167C RID: 5756 RVA: 0x000BB275 File Offset: 0x000B9475
+	// Token: 0x1700041B RID: 1051
+	// (get) Token: 0x06001698 RID: 5784 RVA: 0x000BCF59 File Offset: 0x000BB159
+	// (set) Token: 0x06001699 RID: 5785 RVA: 0x000BCF79 File Offset: 0x000BB179
 	public static bool IgnoreSenpai
 	{
 		get
@@ -108,9 +108,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000417 RID: 1047
-	// (get) Token: 0x0600167D RID: 5757 RVA: 0x000BB296 File Offset: 0x000B9496
-	// (set) Token: 0x0600167E RID: 5758 RVA: 0x000BB2B6 File Offset: 0x000B94B6
+	// Token: 0x1700041C RID: 1052
+	// (get) Token: 0x0600169A RID: 5786 RVA: 0x000BCF9A File Offset: 0x000BB19A
+	// (set) Token: 0x0600169B RID: 5787 RVA: 0x000BCFBA File Offset: 0x000BB1BA
 	public static bool IgnoreVision
 	{
 		get
@@ -123,9 +123,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000418 RID: 1048
-	// (get) Token: 0x0600167F RID: 5759 RVA: 0x000BB2D7 File Offset: 0x000B94D7
-	// (set) Token: 0x06001680 RID: 5760 RVA: 0x000BB2F7 File Offset: 0x000B94F7
+	// Token: 0x1700041D RID: 1053
+	// (get) Token: 0x0600169C RID: 5788 RVA: 0x000BCFDB File Offset: 0x000BB1DB
+	// (set) Token: 0x0600169D RID: 5789 RVA: 0x000BCFFB File Offset: 0x000BB1FB
 	public static bool IgnoreWeapon
 	{
 		get
@@ -138,9 +138,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x17000419 RID: 1049
-	// (get) Token: 0x06001681 RID: 5761 RVA: 0x000BB318 File Offset: 0x000B9518
-	// (set) Token: 0x06001682 RID: 5762 RVA: 0x000BB338 File Offset: 0x000B9538
+	// Token: 0x1700041E RID: 1054
+	// (get) Token: 0x0600169E RID: 5790 RVA: 0x000BD01C File Offset: 0x000BB21C
+	// (set) Token: 0x0600169F RID: 5791 RVA: 0x000BD03C File Offset: 0x000BB23C
 	public static bool IgnoreBlood
 	{
 		get
@@ -153,9 +153,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x1700041A RID: 1050
-	// (get) Token: 0x06001683 RID: 5763 RVA: 0x000BB359 File Offset: 0x000B9559
-	// (set) Token: 0x06001684 RID: 5764 RVA: 0x000BB379 File Offset: 0x000B9579
+	// Token: 0x1700041F RID: 1055
+	// (get) Token: 0x060016A0 RID: 5792 RVA: 0x000BD05D File Offset: 0x000BB25D
+	// (set) Token: 0x060016A1 RID: 5793 RVA: 0x000BD07D File Offset: 0x000BB27D
 	public static bool IgnoreClass
 	{
 		get
@@ -168,9 +168,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x1700041B RID: 1051
-	// (get) Token: 0x06001685 RID: 5765 RVA: 0x000BB39A File Offset: 0x000B959A
-	// (set) Token: 0x06001686 RID: 5766 RVA: 0x000BB3BA File Offset: 0x000B95BA
+	// Token: 0x17000420 RID: 1056
+	// (get) Token: 0x060016A2 RID: 5794 RVA: 0x000BD09E File Offset: 0x000BB29E
+	// (set) Token: 0x060016A3 RID: 5795 RVA: 0x000BD0BE File Offset: 0x000BB2BE
 	public static bool IgnorePhoto
 	{
 		get
@@ -183,9 +183,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x1700041C RID: 1052
-	// (get) Token: 0x06001687 RID: 5767 RVA: 0x000BB3DB File Offset: 0x000B95DB
-	// (set) Token: 0x06001688 RID: 5768 RVA: 0x000BB3FB File Offset: 0x000B95FB
+	// Token: 0x17000421 RID: 1057
+	// (get) Token: 0x060016A4 RID: 5796 RVA: 0x000BD0DF File Offset: 0x000BB2DF
+	// (set) Token: 0x060016A5 RID: 5797 RVA: 0x000BD0FF File Offset: 0x000BB2FF
 	public static bool IgnoreClub
 	{
 		get
@@ -198,9 +198,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x1700041D RID: 1053
-	// (get) Token: 0x06001689 RID: 5769 RVA: 0x000BB41C File Offset: 0x000B961C
-	// (set) Token: 0x0600168A RID: 5770 RVA: 0x000BB43C File Offset: 0x000B963C
+	// Token: 0x17000422 RID: 1058
+	// (get) Token: 0x060016A6 RID: 5798 RVA: 0x000BD120 File Offset: 0x000BB320
+	// (set) Token: 0x060016A7 RID: 5799 RVA: 0x000BD140 File Offset: 0x000BB340
 	public static bool IgnoreInfo
 	{
 		get
@@ -213,9 +213,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x1700041E RID: 1054
-	// (get) Token: 0x0600168B RID: 5771 RVA: 0x000BB45D File Offset: 0x000B965D
-	// (set) Token: 0x0600168C RID: 5772 RVA: 0x000BB47D File Offset: 0x000B967D
+	// Token: 0x17000423 RID: 1059
+	// (get) Token: 0x060016A8 RID: 5800 RVA: 0x000BD161 File Offset: 0x000BB361
+	// (set) Token: 0x060016A9 RID: 5801 RVA: 0x000BD181 File Offset: 0x000BB381
 	public static bool IgnorePool
 	{
 		get
@@ -228,9 +228,9 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x1700041F RID: 1055
-	// (get) Token: 0x0600168D RID: 5773 RVA: 0x000BB49E File Offset: 0x000B969E
-	// (set) Token: 0x0600168E RID: 5774 RVA: 0x000BB4BE File Offset: 0x000B96BE
+	// Token: 0x17000424 RID: 1060
+	// (get) Token: 0x060016AA RID: 5802 RVA: 0x000BD1A2 File Offset: 0x000BB3A2
+	// (set) Token: 0x060016AB RID: 5803 RVA: 0x000BD1C2 File Offset: 0x000BB3C2
 	public static bool IgnoreRep
 	{
 		get
@@ -243,7 +243,7 @@ public static class TutorialGlobals
 		}
 	}
 
-	// Token: 0x0600168F RID: 5775 RVA: 0x000BB4E0 File Offset: 0x000B96E0
+	// Token: 0x060016AC RID: 5804 RVA: 0x000BD1E4 File Offset: 0x000BB3E4
 	public static void DeleteAll()
 	{
 		Globals.Delete("Profile_" + GameGlobals.Profile + "_IgnoreClothing");
@@ -264,51 +264,51 @@ public static class TutorialGlobals
 		Globals.Delete("Profile_" + GameGlobals.Profile + "_IgnoreClass");
 	}
 
-	// Token: 0x04001DCB RID: 7627
+	// Token: 0x04001E15 RID: 7701
 	private const string Str_IgnoreClothing = "IgnoreClothing";
 
-	// Token: 0x04001DCC RID: 7628
+	// Token: 0x04001E16 RID: 7702
 	private const string Str_IgnoreCouncil = "IgnoreCouncil";
 
-	// Token: 0x04001DCD RID: 7629
+	// Token: 0x04001E17 RID: 7703
 	private const string Str_IgnoreTeacher = "IgnoreTeacher";
 
-	// Token: 0x04001DCE RID: 7630
+	// Token: 0x04001E18 RID: 7704
 	private const string Str_IgnoreLocker = "IgnoreLocker";
 
-	// Token: 0x04001DCF RID: 7631
+	// Token: 0x04001E19 RID: 7705
 	private const string Str_IgnorePolice = "IgnorePolice";
 
-	// Token: 0x04001DD0 RID: 7632
+	// Token: 0x04001E1A RID: 7706
 	private const string Str_IgnoreSanity = "IgnoreSanity";
 
-	// Token: 0x04001DD1 RID: 7633
+	// Token: 0x04001E1B RID: 7707
 	private const string Str_IgnoreSenpai = "IgnoreSenpai";
 
-	// Token: 0x04001DD2 RID: 7634
+	// Token: 0x04001E1C RID: 7708
 	private const string Str_IgnoreVision = "IgnoreVision";
 
-	// Token: 0x04001DD3 RID: 7635
+	// Token: 0x04001E1D RID: 7709
 	private const string Str_IgnoreWeapon = "IgnoreWeapon";
 
-	// Token: 0x04001DD4 RID: 7636
+	// Token: 0x04001E1E RID: 7710
 	private const string Str_IgnoreBlood = "IgnoreBlood";
 
-	// Token: 0x04001DD5 RID: 7637
+	// Token: 0x04001E1F RID: 7711
 	private const string Str_IgnoreClass = "IgnoreClass";
 
-	// Token: 0x04001DD6 RID: 7638
+	// Token: 0x04001E20 RID: 7712
 	private const string Str_IgnorePhoto = "IgnorePhoto";
 
-	// Token: 0x04001DD7 RID: 7639
+	// Token: 0x04001E21 RID: 7713
 	private const string Str_IgnoreClub = "IgnoreClub";
 
-	// Token: 0x04001DD8 RID: 7640
+	// Token: 0x04001E22 RID: 7714
 	private const string Str_IgnoreInfo = "IgnoreInfo";
 
-	// Token: 0x04001DD9 RID: 7641
+	// Token: 0x04001E23 RID: 7715
 	private const string Str_IgnorePool = "IgnorePool";
 
-	// Token: 0x04001DDA RID: 7642
+	// Token: 0x04001E24 RID: 7716
 	private const string Str_IgnoreRep = "IgnoreClass";
 }

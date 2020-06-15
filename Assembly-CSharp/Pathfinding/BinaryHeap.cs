@@ -2,11 +2,11 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000523 RID: 1315
+	// Token: 0x02000539 RID: 1337
 	public class BinaryHeap
 	{
-		// Token: 0x17000533 RID: 1331
-		// (get) Token: 0x06002268 RID: 8808 RVA: 0x0018FCA9 File Offset: 0x0018DEA9
+		// Token: 0x17000539 RID: 1337
+		// (get) Token: 0x060022BE RID: 8894 RVA: 0x00195895 File Offset: 0x00193A95
 		public bool isEmpty
 		{
 			get
@@ -15,13 +15,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002269 RID: 8809 RVA: 0x0018FCB7 File Offset: 0x0018DEB7
+		// Token: 0x060022BF RID: 8895 RVA: 0x001958A3 File Offset: 0x00193AA3
 		private static int RoundUpToNextMultipleMod1(int v)
 		{
 			return v + (4 - (v - 1) % 4) % 4;
 		}
 
-		// Token: 0x0600226A RID: 8810 RVA: 0x0018FCC4 File Offset: 0x0018DEC4
+		// Token: 0x060022C0 RID: 8896 RVA: 0x001958B0 File Offset: 0x00193AB0
 		public BinaryHeap(int capacity)
 		{
 			capacity = BinaryHeap.RoundUpToNextMultipleMod1(capacity);
@@ -29,7 +29,7 @@ namespace Pathfinding
 			this.numberOfItems = 0;
 		}
 
-		// Token: 0x0600226B RID: 8811 RVA: 0x0018FCF4 File Offset: 0x0018DEF4
+		// Token: 0x060022C1 RID: 8897 RVA: 0x001958E0 File Offset: 0x00193AE0
 		public void Clear()
 		{
 			for (int i = 0; i < this.numberOfItems; i++)
@@ -39,19 +39,19 @@ namespace Pathfinding
 			this.numberOfItems = 0;
 		}
 
-		// Token: 0x0600226C RID: 8812 RVA: 0x0018FD34 File Offset: 0x0018DF34
+		// Token: 0x060022C2 RID: 8898 RVA: 0x00195920 File Offset: 0x00193B20
 		internal PathNode GetNode(int i)
 		{
 			return this.heap[i].node;
 		}
 
-		// Token: 0x0600226D RID: 8813 RVA: 0x0018FD47 File Offset: 0x0018DF47
+		// Token: 0x060022C3 RID: 8899 RVA: 0x00195933 File Offset: 0x00193B33
 		internal void SetF(int i, uint f)
 		{
 			this.heap[i].F = f;
 		}
 
-		// Token: 0x0600226E RID: 8814 RVA: 0x0018FD5C File Offset: 0x0018DF5C
+		// Token: 0x060022C4 RID: 8900 RVA: 0x00195948 File Offset: 0x00193B48
 		private void Expand()
 		{
 			int num = BinaryHeap.RoundUpToNextMultipleMod1(Math.Max(this.heap.Length + 4, Math.Min(65533, (int)Math.Round((double)((float)this.heap.Length * this.growthFactor)))));
@@ -64,7 +64,7 @@ namespace Pathfinding
 			this.heap = array;
 		}
 
-		// Token: 0x0600226F RID: 8815 RVA: 0x0018FDCC File Offset: 0x0018DFCC
+		// Token: 0x060022C5 RID: 8901 RVA: 0x001959B8 File Offset: 0x00193BB8
 		public void Add(PathNode node)
 		{
 			if (node == null)
@@ -80,11 +80,11 @@ namespace Pathfinding
 			{
 				this.Expand();
 			}
-			this.DecreaseKey(new BinaryHeap.Tuple(0u, node), (ushort)this.numberOfItems);
+			this.DecreaseKey(new BinaryHeap.Tuple(0U, node), (ushort)this.numberOfItems);
 			this.numberOfItems++;
 		}
 
-		// Token: 0x06002270 RID: 8816 RVA: 0x0018FE4C File Offset: 0x0018E04C
+		// Token: 0x060022C6 RID: 8902 RVA: 0x00195A38 File Offset: 0x00193C38
 		private void DecreaseKey(BinaryHeap.Tuple node, ushort index)
 		{
 			int num = (int)index;
@@ -105,7 +105,7 @@ namespace Pathfinding
 			node.node.heapIndex = (ushort)num;
 		}
 
-		// Token: 0x06002271 RID: 8817 RVA: 0x0018FF20 File Offset: 0x0018E120
+		// Token: 0x060022C7 RID: 8903 RVA: 0x00195B0C File Offset: 0x00193D0C
 		public PathNode Remove()
 		{
 			PathNode node = this.heap[0].node;
@@ -161,7 +161,7 @@ namespace Pathfinding
 			return node;
 		}
 
-		// Token: 0x06002272 RID: 8818 RVA: 0x00190194 File Offset: 0x0018E394
+		// Token: 0x060022C8 RID: 8904 RVA: 0x00195D80 File Offset: 0x00193F80
 		private void Validate()
 		{
 			for (int i = 1; i < this.numberOfItems; i++)
@@ -189,7 +189,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002273 RID: 8819 RVA: 0x00190284 File Offset: 0x0018E484
+		// Token: 0x060022C9 RID: 8905 RVA: 0x00195E70 File Offset: 0x00194070
 		public void Rebuild()
 		{
 			for (int i = 2; i < this.numberOfItems; i++)
@@ -213,38 +213,38 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003EF7 RID: 16119
+		// Token: 0x04003FD5 RID: 16341
 		public int numberOfItems;
 
-		// Token: 0x04003EF8 RID: 16120
+		// Token: 0x04003FD6 RID: 16342
 		public float growthFactor = 2f;
 
-		// Token: 0x04003EF9 RID: 16121
+		// Token: 0x04003FD7 RID: 16343
 		private const int D = 4;
 
-		// Token: 0x04003EFA RID: 16122
+		// Token: 0x04003FD8 RID: 16344
 		private const bool SortGScores = true;
 
-		// Token: 0x04003EFB RID: 16123
+		// Token: 0x04003FD9 RID: 16345
 		public const ushort NotInHeap = 65535;
 
-		// Token: 0x04003EFC RID: 16124
+		// Token: 0x04003FDA RID: 16346
 		private BinaryHeap.Tuple[] heap;
 
-		// Token: 0x02000717 RID: 1815
+		// Token: 0x02000731 RID: 1841
 		private struct Tuple
 		{
-			// Token: 0x06002C91 RID: 11409 RVA: 0x001CA04B File Offset: 0x001C824B
+			// Token: 0x06002CF4 RID: 11508 RVA: 0x001CFCF3 File Offset: 0x001CDEF3
 			public Tuple(uint f, PathNode node)
 			{
 				this.F = f;
 				this.node = node;
 			}
 
-			// Token: 0x040048EC RID: 18668
+			// Token: 0x040049D7 RID: 18903
 			public PathNode node;
 
-			// Token: 0x040048ED RID: 18669
+			// Token: 0x040049D8 RID: 18904
 			public uint F;
 		}
 	}

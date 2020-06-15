@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Globalization;
 using UnityEngine;
 
-// Token: 0x020002E6 RID: 742
+// Token: 0x020002E9 RID: 745
 public class HomeClockScript : MonoBehaviour
 {
-	// Token: 0x06001705 RID: 5893 RVA: 0x000C28BC File Offset: 0x000C0ABC
+	// Token: 0x06001722 RID: 5922 RVA: 0x000C49D4 File Offset: 0x000C2BD4
 	private void Start()
 	{
 		this.DayLabel.text = this.GetWeekdayText(DateGlobals.Weekday);
@@ -19,7 +20,7 @@ public class HomeClockScript : MonoBehaviour
 		this.UpdateMoneyLabel();
 	}
 
-	// Token: 0x06001706 RID: 5894 RVA: 0x000C291C File Offset: 0x000C0B1C
+	// Token: 0x06001723 RID: 5923 RVA: 0x000C4A34 File Offset: 0x000C2C34
 	private void Update()
 	{
 		if (this.ShakeMoney)
@@ -36,7 +37,7 @@ public class HomeClockScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001707 RID: 5895 RVA: 0x000C2A28 File Offset: 0x000C0C28
+	// Token: 0x06001724 RID: 5924 RVA: 0x000C4B40 File Offset: 0x000C2D40
 	private string GetWeekdayText(DayOfWeek weekday)
 	{
 		if (weekday == DayOfWeek.Sunday)
@@ -66,13 +67,13 @@ public class HomeClockScript : MonoBehaviour
 		return "SATURDAY";
 	}
 
-	// Token: 0x06001708 RID: 5896 RVA: 0x000C2A78 File Offset: 0x000C0C78
+	// Token: 0x06001725 RID: 5925 RVA: 0x000C4B90 File Offset: 0x000C2D90
 	public void UpdateMoneyLabel()
 	{
-		this.MoneyLabel.text = "$" + PlayerGlobals.Money.ToString("F2");
+		this.MoneyLabel.text = "$" + PlayerGlobals.Money.ToString("F2", NumberFormatInfo.InvariantInfo);
 	}
 
-	// Token: 0x06001709 RID: 5897 RVA: 0x000C2AAC File Offset: 0x000C0CAC
+	// Token: 0x06001726 RID: 5926 RVA: 0x000C4BC9 File Offset: 0x000C2DC9
 	public void MoneyFail()
 	{
 		this.ShakeMoney = true;
@@ -82,27 +83,27 @@ public class HomeClockScript : MonoBehaviour
 		this.MyAudio.Play();
 	}
 
-	// Token: 0x04001F24 RID: 7972
+	// Token: 0x04001F71 RID: 8049
 	public UILabel MoneyLabel;
 
-	// Token: 0x04001F25 RID: 7973
+	// Token: 0x04001F72 RID: 8050
 	public UILabel HourLabel;
 
-	// Token: 0x04001F26 RID: 7974
+	// Token: 0x04001F73 RID: 8051
 	public UILabel DayLabel;
 
-	// Token: 0x04001F27 RID: 7975
+	// Token: 0x04001F74 RID: 8052
 	public AudioSource MyAudio;
 
-	// Token: 0x04001F28 RID: 7976
+	// Token: 0x04001F75 RID: 8053
 	public bool ShakeMoney;
 
-	// Token: 0x04001F29 RID: 7977
+	// Token: 0x04001F76 RID: 8054
 	public float Shake;
 
-	// Token: 0x04001F2A RID: 7978
+	// Token: 0x04001F77 RID: 8055
 	public float G;
 
-	// Token: 0x04001F2B RID: 7979
+	// Token: 0x04001F78 RID: 8056
 	public float B;
 }

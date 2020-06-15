@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000349 RID: 841
+// Token: 0x0200034D RID: 845
 public class OfferHelpScript : MonoBehaviour
 {
-	// Token: 0x06001884 RID: 6276 RVA: 0x000E003D File Offset: 0x000DE23D
+	// Token: 0x060018A4 RID: 6308 RVA: 0x000E2419 File Offset: 0x000E0619
 	private void Start()
 	{
 		this.Prompt.enabled = true;
 	}
 
-	// Token: 0x06001885 RID: 6277 RVA: 0x000E004C File Offset: 0x000DE24C
+	// Token: 0x060018A5 RID: 6309 RVA: 0x000E2428 File Offset: 0x000E0628
 	private void Update()
 	{
 		if (!this.Unable)
@@ -118,10 +118,10 @@ public class OfferHelpScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001886 RID: 6278 RVA: 0x000E05B0 File Offset: 0x000DE7B0
+	// Token: 0x060018A6 RID: 6310 RVA: 0x000E298C File Offset: 0x000E0B8C
 	public void UpdateLocation()
 	{
-		Debug.Log("The ''Offer Help'' prompt was told to update its location.");
+		Debug.Log("The ''Offer Help'' prompt for Student " + this.EventStudentID + " was told to update its location.");
 		this.Student = this.StudentManager.Students[this.EventStudentID];
 		if (this.Student.CurrentDestination == this.StudentManager.MeetSpots.List[7])
 		{
@@ -143,6 +143,16 @@ public class OfferHelpScript : MonoBehaviour
 			base.transform.position = this.Locations[4].position;
 			base.transform.eulerAngles = this.Locations[4].eulerAngles;
 		}
+		if (this.EventStudentID == 11)
+		{
+			if (!PlayerGlobals.GetStudentFriend(11))
+			{
+				this.Prompt.Label[0].text = "     Must Befriend Student First";
+				this.Unable = true;
+			}
+			this.Prompt.MyCollider.enabled = true;
+			return;
+		}
 		if (this.EventStudentID == 30)
 		{
 			if (!PlayerGlobals.GetStudentFriend(30))
@@ -159,7 +169,7 @@ public class OfferHelpScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001887 RID: 6279 RVA: 0x000E079C File Offset: 0x000DE99C
+	// Token: 0x060018A7 RID: 6311 RVA: 0x000E2BD0 File Offset: 0x000E0DD0
 	public void Continue()
 	{
 		Debug.Log("Proceeding to next line.");
@@ -184,9 +194,14 @@ public class OfferHelpScript : MonoBehaviour
 		}
 		if (this.EventPhase == this.EventSpeech.Length)
 		{
-			if (this.EventStudentID == 30)
+			if (this.EventStudentID == 11)
 			{
+				Debug.Log("Scheme #6 has advanced to stage 5.");
 				SchemeGlobals.SetSchemeStage(6, 5);
+			}
+			else if (this.EventStudentID == 30)
+			{
+				SchemeGlobals.HelpingKokona = true;
 			}
 			this.Student.CurrentDestination = this.Student.Destinations[this.Student.Phase];
 			this.Student.Pathfinding.target = this.Student.Destinations[this.Student.Phase];
@@ -199,54 +214,54 @@ public class OfferHelpScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002404 RID: 9220
+	// Token: 0x04002454 RID: 9300
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04002405 RID: 9221
+	// Token: 0x04002455 RID: 9301
 	public JukeboxScript Jukebox;
 
-	// Token: 0x04002406 RID: 9222
+	// Token: 0x04002456 RID: 9302
 	public StudentScript Student;
 
-	// Token: 0x04002407 RID: 9223
+	// Token: 0x04002457 RID: 9303
 	public YandereScript Yandere;
 
-	// Token: 0x04002408 RID: 9224
+	// Token: 0x04002458 RID: 9304
 	public PromptScript Prompt;
 
-	// Token: 0x04002409 RID: 9225
+	// Token: 0x04002459 RID: 9305
 	public UILabel EventSubtitle;
 
-	// Token: 0x0400240A RID: 9226
+	// Token: 0x0400245A RID: 9306
 	public Transform[] Locations;
 
-	// Token: 0x0400240B RID: 9227
+	// Token: 0x0400245B RID: 9307
 	public AudioClip[] EventClip;
 
-	// Token: 0x0400240C RID: 9228
+	// Token: 0x0400245C RID: 9308
 	public string[] EventSpeech;
 
-	// Token: 0x0400240D RID: 9229
+	// Token: 0x0400245D RID: 9309
 	public string[] EventAnim;
 
-	// Token: 0x0400240E RID: 9230
+	// Token: 0x0400245E RID: 9310
 	public int[] EventSpeaker;
 
-	// Token: 0x0400240F RID: 9231
+	// Token: 0x0400245F RID: 9311
 	public bool Offering;
 
-	// Token: 0x04002410 RID: 9232
+	// Token: 0x04002460 RID: 9312
 	public bool Spoken;
 
-	// Token: 0x04002411 RID: 9233
+	// Token: 0x04002461 RID: 9313
 	public bool Unable;
 
-	// Token: 0x04002412 RID: 9234
+	// Token: 0x04002462 RID: 9314
 	public int EventStudentID;
 
-	// Token: 0x04002413 RID: 9235
+	// Token: 0x04002463 RID: 9315
 	public int EventPhase = 1;
 
-	// Token: 0x04002414 RID: 9236
+	// Token: 0x04002464 RID: 9316
 	public float Timer;
 }

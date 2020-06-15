@@ -68,7 +68,6 @@ public class MissionModeMenuScript : MonoBehaviour
 	// Token: 0x060000AC RID: 172 RVA: 0x0000A6E4 File Offset: 0x000088E4
 	private void Update()
 	{
-		AudioSource component = base.GetComponent<AudioSource>();
 		if (this.Phase == 1)
 		{
 			this.Speed += Time.deltaTime;
@@ -81,7 +80,7 @@ public class MissionModeMenuScript : MonoBehaviour
 				{
 					if (!this.InfoSpoke[0])
 					{
-						component.PlayOneShot(this.InfoLines[0]);
+						this.MyAudio.PlayOneShot(this.InfoLines[0]);
 						this.InfoSpoke[0] = true;
 					}
 					this.InfoChan.localEulerAngles = new Vector3(this.InfoChan.localEulerAngles.x, Mathf.Lerp(this.InfoChan.localEulerAngles.y, 180f, Time.deltaTime * (this.Speed - 3f)), this.InfoChan.localEulerAngles.z);
@@ -121,7 +120,7 @@ public class MissionModeMenuScript : MonoBehaviour
 			{
 				if (!this.InfoSpoke[0])
 				{
-					component.PlayOneShot(this.InfoLines[0]);
+					this.MyAudio.PlayOneShot(this.InfoLines[0]);
 					this.InfoSpoke[0] = true;
 				}
 				this.InfoChan.localEulerAngles = new Vector3(this.InfoChan.localEulerAngles.x, 180f, this.InfoChan.localEulerAngles.z);
@@ -178,7 +177,7 @@ public class MissionModeMenuScript : MonoBehaviour
 			{
 				if (!this.InfoSpoke[this.Selected])
 				{
-					component.PlayOneShot(this.InfoLines[this.Selected]);
+					this.MyAudio.PlayOneShot(this.InfoLines[this.Selected]);
 					this.InfoSpoke[this.Selected] = true;
 				}
 				if (this.Selected == 1)
@@ -392,7 +391,7 @@ public class MissionModeMenuScript : MonoBehaviour
 			Transform parent = this.Option[1].parent;
 			parent.localPosition = new Vector3(parent.localPosition.x - this.Speed * 1000f * Time.deltaTime, parent.localPosition.y, parent.localPosition.z);
 			base.transform.position = new Vector3(base.transform.position.x, base.transform.position.y, base.transform.position.z - this.Speed * Time.deltaTime);
-			this.Jukebox.GetComponent<AudioSource>().volume -= Time.deltaTime;
+			this.Jukebox.volume -= Time.deltaTime;
 			this.Header.color = new Color(this.Header.color.r, this.Header.color.g, this.Header.color.b, this.Header.color.a - Time.deltaTime);
 			if (this.Darkness.color.a == 1f)
 			{
@@ -1108,6 +1107,7 @@ public class MissionModeMenuScript : MonoBehaviour
 	// Token: 0x060000B6 RID: 182 RVA: 0x0000DE38 File Offset: 0x0000C038
 	public void UpdateGraphics()
 	{
+		Debug.Log("Populating the Mission Mode criteria list!");
 		this.TargetID = MissionModeGlobals.MissionTarget;
 		if (this.TargetNumber > 9 && this.TargetNumber < 21)
 		{
@@ -1128,6 +1128,7 @@ public class MissionModeMenuScript : MonoBehaviour
 			this.TargetName = this.JSON.Students[MissionModeGlobals.MissionTarget].Name;
 		}
 		this.Descs[1].text = "Kill " + this.TargetName + ".";
+		this.ChangeLabel(this.Descs[1]);
 		for (int i = 2; i < this.Objectives.Length; i++)
 		{
 			this.Objectives[i].gameObject.SetActive(false);
@@ -1138,6 +1139,7 @@ public class MissionModeMenuScript : MonoBehaviour
 			{
 				this.Objectives[j].gameObject.SetActive(true);
 				this.Icons[j].mainTexture = this.ConditionIcons[MissionModeGlobals.GetMissionCondition(j)];
+				this.ChangeLabel(this.Descs[j]);
 				if (MissionModeGlobals.GetMissionCondition(j) > 3)
 				{
 					this.Descs[j].text = this.ConditionDescs[MissionModeGlobals.GetMissionCondition(j)];
@@ -1165,7 +1167,7 @@ public class MissionModeMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000B7 RID: 183 RVA: 0x0000E0B4 File Offset: 0x0000C2B4
+	// Token: 0x060000B7 RID: 183 RVA: 0x0000E0DA File Offset: 0x0000C2DA
 	private void UpdatePopulation()
 	{
 		this.CustomPopulationLabel.text = "";
@@ -1173,7 +1175,7 @@ public class MissionModeMenuScript : MonoBehaviour
 		OptionGlobals.HighPopulation = false;
 	}
 
-	// Token: 0x060000B8 RID: 184 RVA: 0x0000E0DC File Offset: 0x0000C2DC
+	// Token: 0x060000B8 RID: 184 RVA: 0x0000E104 File Offset: 0x0000C304
 	private void UpdateObjectiveHighlight()
 	{
 		if (this.Row < 1)
@@ -1231,7 +1233,7 @@ public class MissionModeMenuScript : MonoBehaviour
 		this.PromptBar.UpdateButtons();
 	}
 
-	// Token: 0x060000B9 RID: 185 RVA: 0x0000E2D0 File Offset: 0x0000C4D0
+	// Token: 0x060000B9 RID: 185 RVA: 0x0000E2F8 File Offset: 0x0000C4F8
 	private void CalculateMissionID()
 	{
 		this.TargetString = ((this.TargetID < 10) ? "0" : "") + this.TargetID.ToString();
@@ -1277,10 +1279,10 @@ public class MissionModeMenuScript : MonoBehaviour
 		this.MissionIDLabel.text = this.MissionID;
 	}
 
-	// Token: 0x060000BA RID: 186 RVA: 0x0000E4F8 File Offset: 0x0000C6F8
+	// Token: 0x060000BA RID: 186 RVA: 0x0000E520 File Offset: 0x0000C720
 	private void StartMission()
 	{
-		base.GetComponent<AudioSource>().PlayOneShot(this.InfoLines[6]);
+		this.MyAudio.PlayOneShot(this.InfoLines[6]);
 		Globals.DeleteAll();
 		OptionGlobals.TutorialsOff = true;
 		SchoolGlobals.SchoolAtmosphere = 1f - (float)this.Difficulty * 0.1f;
@@ -1319,7 +1321,7 @@ public class MissionModeMenuScript : MonoBehaviour
 		this.Phase = 4;
 	}
 
-	// Token: 0x060000BB RID: 187 RVA: 0x0000E620 File Offset: 0x0000C820
+	// Token: 0x060000BB RID: 187 RVA: 0x0000E648 File Offset: 0x0000C848
 	private void ChangeFont()
 	{
 		foreach (UILabel uilabel in UnityEngine.Object.FindObjectsOfType<UILabel>())
@@ -1331,6 +1333,12 @@ public class MissionModeMenuScript : MonoBehaviour
 				uilabel.height = 100;
 			}
 		}
+	}
+
+	// Token: 0x060000BC RID: 188 RVA: 0x0000E69D File Offset: 0x0000C89D
+	private void ChangeLabel(UILabel Text)
+	{
+		Text.trueTypeFont = this.Arial;
 	}
 
 	// Token: 0x04000186 RID: 390
@@ -1523,83 +1531,86 @@ public class MissionModeMenuScript : MonoBehaviour
 	public AudioSource Jukebox;
 
 	// Token: 0x040001C5 RID: 453
-	public AudioClip[] InfoLines;
+	public AudioSource MyAudio;
 
 	// Token: 0x040001C6 RID: 454
-	public bool[] InfoSpoke;
+	public AudioClip[] InfoLines;
 
 	// Token: 0x040001C7 RID: 455
-	public int TargetNumber;
+	public bool[] InfoSpoke;
 
 	// Token: 0x040001C8 RID: 456
-	public int WeaponNumber;
+	public int TargetNumber;
 
 	// Token: 0x040001C9 RID: 457
-	public int ClothingNumber;
+	public int WeaponNumber;
 
 	// Token: 0x040001CA RID: 458
-	public int DisposalNumber;
+	public int ClothingNumber;
 
 	// Token: 0x040001CB RID: 459
-	public int NemesisNumber;
+	public int DisposalNumber;
 
 	// Token: 0x040001CC RID: 460
-	public int PopulationNumber;
+	public int NemesisNumber;
 
 	// Token: 0x040001CD RID: 461
-	public int Condition5Number;
+	public int PopulationNumber;
 
 	// Token: 0x040001CE RID: 462
-	public int Condition6Number;
+	public int Condition5Number;
 
 	// Token: 0x040001CF RID: 463
-	public int Condition7Number;
+	public int Condition6Number;
 
 	// Token: 0x040001D0 RID: 464
-	public int Condition8Number;
+	public int Condition7Number;
 
 	// Token: 0x040001D1 RID: 465
-	public int Condition9Number;
+	public int Condition8Number;
 
 	// Token: 0x040001D2 RID: 466
-	public int Condition10Number;
+	public int Condition9Number;
 
 	// Token: 0x040001D3 RID: 467
-	public int Condition11Number;
+	public int Condition10Number;
 
 	// Token: 0x040001D4 RID: 468
-	public int Condition12Number;
+	public int Condition11Number;
 
 	// Token: 0x040001D5 RID: 469
-	public int Condition13Number;
+	public int Condition12Number;
 
 	// Token: 0x040001D6 RID: 470
-	public int Condition14Number;
+	public int Condition13Number;
 
 	// Token: 0x040001D7 RID: 471
-	public int Condition15Number;
+	public int Condition14Number;
 
 	// Token: 0x040001D8 RID: 472
-	public string TargetString = string.Empty;
+	public int Condition15Number;
 
 	// Token: 0x040001D9 RID: 473
-	public string WeaponString = string.Empty;
+	public string TargetString = string.Empty;
 
 	// Token: 0x040001DA RID: 474
-	public string ClothingString = string.Empty;
+	public string WeaponString = string.Empty;
 
 	// Token: 0x040001DB RID: 475
-	public string DisposalString = string.Empty;
+	public string ClothingString = string.Empty;
 
 	// Token: 0x040001DC RID: 476
-	public string MissionID = string.Empty;
+	public string DisposalString = string.Empty;
 
 	// Token: 0x040001DD RID: 477
-	public string[] ConditionString;
+	public string MissionID = string.Empty;
 
 	// Token: 0x040001DE RID: 478
-	public UILabel MissionIDLabel;
+	public string[] ConditionString;
 
 	// Token: 0x040001DF RID: 479
+	public UILabel MissionIDLabel;
+
+	// Token: 0x040001E0 RID: 480
 	public Font Arial;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200017B RID: 379
+// Token: 0x0200017C RID: 380
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Drawing/Crosshatch")]
 public class CameraFilterPack_Drawing_Crosshatch : MonoBehaviour
 {
 	// Token: 0x1700029B RID: 667
-	// (get) Token: 0x06000DF4 RID: 3572 RVA: 0x0006D41E File Offset: 0x0006B61E
+	// (get) Token: 0x06000DFB RID: 3579 RVA: 0x0006E14E File Offset: 0x0006C34E
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Drawing_Crosshatch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF5 RID: 3573 RVA: 0x0006D452 File Offset: 0x0006B652
+	// Token: 0x06000DFC RID: 3580 RVA: 0x0006E182 File Offset: 0x0006C382
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Drawing_Crosshatch");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Drawing_Crosshatch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF6 RID: 3574 RVA: 0x0006D474 File Offset: 0x0006B674
+	// Token: 0x06000DFD RID: 3581 RVA: 0x0006E1A4 File Offset: 0x0006C3A4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Drawing_Crosshatch : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000DF7 RID: 3575 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000DFE RID: 3582 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000DF8 RID: 3576 RVA: 0x0006D52A File Offset: 0x0006B72A
+	// Token: 0x06000DFF RID: 3583 RVA: 0x0006E25A File Offset: 0x0006C45A
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Drawing_Crosshatch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010AE RID: 4270
+	// Token: 0x040010CD RID: 4301
 	public Shader SCShader;
 
-	// Token: 0x040010AF RID: 4271
+	// Token: 0x040010CE RID: 4302
 	private float TimeX = 1f;
 
-	// Token: 0x040010B0 RID: 4272
+	// Token: 0x040010CF RID: 4303
 	private Material SCMaterial;
 
-	// Token: 0x040010B1 RID: 4273
+	// Token: 0x040010D0 RID: 4304
 	[Range(1f, 10f)]
 	public float Width = 2f;
 }

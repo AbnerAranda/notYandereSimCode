@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002DA RID: 730
+// Token: 0x020002DD RID: 733
 public class GrowShrinkScript : MonoBehaviour
 {
-	// Token: 0x060016D7 RID: 5847 RVA: 0x000BCDF8 File Offset: 0x000BAFF8
+	// Token: 0x060016F4 RID: 5876 RVA: 0x000BEAFC File Offset: 0x000BCCFC
 	private void Start()
 	{
 		this.OriginalPosition = base.transform.localPosition;
 		base.transform.localScale = Vector3.zero;
 	}
 
-	// Token: 0x060016D8 RID: 5848 RVA: 0x000BCE1C File Offset: 0x000BB01C
+	// Token: 0x060016F5 RID: 5877 RVA: 0x000BEB20 File Offset: 0x000BCD20
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -51,7 +51,7 @@ public class GrowShrinkScript : MonoBehaviour
 		base.transform.localScale = new Vector3(this.Scale, this.Scale, this.Scale);
 	}
 
-	// Token: 0x060016D9 RID: 5849 RVA: 0x000BCFB4 File Offset: 0x000BB1B4
+	// Token: 0x060016F6 RID: 5878 RVA: 0x000BECB8 File Offset: 0x000BCEB8
 	public void Return()
 	{
 		base.transform.localPosition = this.OriginalPosition;
@@ -67,33 +67,33 @@ public class GrowShrinkScript : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001E20 RID: 7712
+	// Token: 0x04001E6A RID: 7786
 	public float FallSpeed;
 
-	// Token: 0x04001E21 RID: 7713
+	// Token: 0x04001E6B RID: 7787
 	public float Threshold = 1f;
 
-	// Token: 0x04001E22 RID: 7714
+	// Token: 0x04001E6C RID: 7788
 	public float Slowdown = 0.5f;
 
-	// Token: 0x04001E23 RID: 7715
+	// Token: 0x04001E6D RID: 7789
 	public float Strength = 1f;
 
-	// Token: 0x04001E24 RID: 7716
+	// Token: 0x04001E6E RID: 7790
 	public float Target = 1f;
 
-	// Token: 0x04001E25 RID: 7717
+	// Token: 0x04001E6F RID: 7791
 	public float Scale;
 
-	// Token: 0x04001E26 RID: 7718
+	// Token: 0x04001E70 RID: 7792
 	public float Speed = 5f;
 
-	// Token: 0x04001E27 RID: 7719
+	// Token: 0x04001E71 RID: 7793
 	public float Timer;
 
-	// Token: 0x04001E28 RID: 7720
+	// Token: 0x04001E72 RID: 7794
 	public bool Shrink;
 
-	// Token: 0x04001E29 RID: 7721
+	// Token: 0x04001E73 RID: 7795
 	public Vector3 OriginalPosition;
 }

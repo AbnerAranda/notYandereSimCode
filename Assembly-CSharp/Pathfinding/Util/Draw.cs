@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D0 RID: 1488
+	// Token: 0x020005E6 RID: 1510
 	public class Draw
 	{
-		// Token: 0x060028FE RID: 10494 RVA: 0x001BAA30 File Offset: 0x001B8C30
+		// Token: 0x06002954 RID: 10580 RVA: 0x001C061C File Offset: 0x001BE81C
 		private void SetColor(Color color)
 		{
 			if (this.gizmos && UnityEngine.Gizmos.color != color)
@@ -15,7 +15,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x060028FF RID: 10495 RVA: 0x001BAA50 File Offset: 0x001B8C50
+		// Token: 0x06002955 RID: 10581 RVA: 0x001C063C File Offset: 0x001BE83C
 		public void Line(Vector3 a, Vector3 b, Color color)
 		{
 			this.SetColor(color);
@@ -27,13 +27,13 @@ namespace Pathfinding.Util
 			UnityEngine.Debug.DrawLine(this.matrix.MultiplyPoint3x4(a), this.matrix.MultiplyPoint3x4(b), color);
 		}
 
-		// Token: 0x06002900 RID: 10496 RVA: 0x001BAAA8 File Offset: 0x001B8CA8
-		public void CircleXZ(Vector3 center, float radius, Color color, float startAngle = 0f, float endAngle = 6.2831855f)
+		// Token: 0x06002956 RID: 10582 RVA: 0x001C0694 File Offset: 0x001BE894
+		public void CircleXZ(Vector3 center, float radius, Color color, float startAngle = 0f, float endAngle = 6.28318548f)
 		{
 			int num = 40;
 			while (startAngle > endAngle)
 			{
-				startAngle -= 6.2831855f;
+				startAngle -= 6.28318548f;
 			}
 			Vector3 b = new Vector3(Mathf.Cos(startAngle) * radius, 0f, Mathf.Sin(startAngle) * radius);
 			for (int i = 0; i <= num; i++)
@@ -44,15 +44,15 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002901 RID: 10497 RVA: 0x001BAB44 File Offset: 0x001B8D44
+		// Token: 0x06002957 RID: 10583 RVA: 0x001C0730 File Offset: 0x001BE930
 		public void Cylinder(Vector3 position, Vector3 up, float height, float radius, Color color)
 		{
 			Vector3 normalized = Vector3.Cross(up, Vector3.one).normalized;
 			this.matrix = Matrix4x4.TRS(position, Quaternion.LookRotation(normalized, up), new Vector3(radius, height, radius));
-			this.CircleXZ(Vector3.zero, 1f, color, 0f, 6.2831855f);
+			this.CircleXZ(Vector3.zero, 1f, color, 0f, 6.28318548f);
 			if (height > 0f)
 			{
-				this.CircleXZ(Vector3.up, 1f, color, 0f, 6.2831855f);
+				this.CircleXZ(Vector3.up, 1f, color, 0f, 6.28318548f);
 				this.Line(new Vector3(1f, 0f, 0f), new Vector3(1f, 1f, 0f), color);
 				this.Line(new Vector3(-1f, 0f, 0f), new Vector3(-1f, 1f, 0f), color);
 				this.Line(new Vector3(0f, 0f, 1f), new Vector3(0f, 1f, 1f), color);
@@ -61,7 +61,7 @@ namespace Pathfinding.Util
 			this.matrix = Matrix4x4.identity;
 		}
 
-		// Token: 0x06002902 RID: 10498 RVA: 0x001BAC90 File Offset: 0x001B8E90
+		// Token: 0x06002958 RID: 10584 RVA: 0x001C087C File Offset: 0x001BEA7C
 		public void CrossXZ(Vector3 position, Color color, float size = 1f)
 		{
 			size *= 0.5f;
@@ -69,7 +69,7 @@ namespace Pathfinding.Util
 			this.Line(position - Vector3.forward * size, position + Vector3.forward * size, color);
 		}
 
-		// Token: 0x06002903 RID: 10499 RVA: 0x001BACF8 File Offset: 0x001B8EF8
+		// Token: 0x06002959 RID: 10585 RVA: 0x001C08E4 File Offset: 0x001BEAE4
 		public void Bezier(Vector3 a, Vector3 b, Color color)
 		{
 			Vector3 vector = b - a;
@@ -92,22 +92,22 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x040042F9 RID: 17145
+		// Token: 0x040043D7 RID: 17367
 		public static readonly Draw Debug = new Draw
 		{
 			gizmos = false
 		};
 
-		// Token: 0x040042FA RID: 17146
+		// Token: 0x040043D8 RID: 17368
 		public static readonly Draw Gizmos = new Draw
 		{
 			gizmos = true
 		};
 
-		// Token: 0x040042FB RID: 17147
+		// Token: 0x040043D9 RID: 17369
 		private bool gizmos;
 
-		// Token: 0x040042FC RID: 17148
+		// Token: 0x040043DA RID: 17370
 		private Matrix4x4 matrix = Matrix4x4.identity;
 	}
 }

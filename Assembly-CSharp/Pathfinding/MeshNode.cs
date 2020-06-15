@@ -6,27 +6,27 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000538 RID: 1336
+	// Token: 0x0200054E RID: 1358
 	public abstract class MeshNode : GraphNode
 	{
-		// Token: 0x0600236F RID: 9071 RVA: 0x001948E0 File Offset: 0x00192AE0
+		// Token: 0x060023C5 RID: 9157 RVA: 0x0019A4CC File Offset: 0x001986CC
 		protected MeshNode(AstarPath astar) : base(astar)
 		{
 		}
 
-		// Token: 0x06002370 RID: 9072
+		// Token: 0x060023C6 RID: 9158
 		public abstract Int3 GetVertex(int i);
 
-		// Token: 0x06002371 RID: 9073
+		// Token: 0x060023C7 RID: 9159
 		public abstract int GetVertexCount();
 
-		// Token: 0x06002372 RID: 9074
+		// Token: 0x060023C8 RID: 9160
 		public abstract Vector3 ClosestPointOnNode(Vector3 p);
 
-		// Token: 0x06002373 RID: 9075
+		// Token: 0x060023C9 RID: 9161
 		public abstract Vector3 ClosestPointOnNodeXZ(Vector3 p);
 
-		// Token: 0x06002374 RID: 9076 RVA: 0x001948EC File Offset: 0x00192AEC
+		// Token: 0x060023CA RID: 9162 RVA: 0x0019A4D8 File Offset: 0x001986D8
 		public override void ClearConnections(bool alsoReverse)
 		{
 			if (alsoReverse && this.connections != null)
@@ -42,7 +42,7 @@ namespace Pathfinding
 			ArrayPool<Connection>.Release(ref this.connections, true);
 		}
 
-		// Token: 0x06002375 RID: 9077 RVA: 0x00194950 File Offset: 0x00192B50
+		// Token: 0x060023CB RID: 9163 RVA: 0x0019A53C File Offset: 0x0019873C
 		public override void GetConnections(Action<GraphNode> action)
 		{
 			if (this.connections == null)
@@ -55,7 +55,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002376 RID: 9078 RVA: 0x00194990 File Offset: 0x00192B90
+		// Token: 0x060023CC RID: 9164 RVA: 0x0019A57C File Offset: 0x0019877C
 		public override void FloodFill(Stack<GraphNode> stack, uint region)
 		{
 			if (this.connections == null)
@@ -73,7 +73,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002377 RID: 9079 RVA: 0x001949E4 File Offset: 0x00192BE4
+		// Token: 0x060023CD RID: 9165 RVA: 0x0019A5D0 File Offset: 0x001987D0
 		public override bool ContainsConnection(GraphNode node)
 		{
 			for (int i = 0; i < this.connections.Length; i++)
@@ -86,7 +86,7 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x06002378 RID: 9080 RVA: 0x00194A1C File Offset: 0x00192C1C
+		// Token: 0x060023CE RID: 9166 RVA: 0x0019A608 File Offset: 0x00198808
 		public override void UpdateRecursiveG(Path path, PathNode pathNode, PathHandler handler)
 		{
 			pathNode.UpdateG(path);
@@ -102,13 +102,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002379 RID: 9081 RVA: 0x00194A89 File Offset: 0x00192C89
+		// Token: 0x060023CF RID: 9167 RVA: 0x0019A675 File Offset: 0x00198875
 		public override void AddConnection(GraphNode node, uint cost)
 		{
 			this.AddConnection(node, cost, -1);
 		}
 
-		// Token: 0x0600237A RID: 9082 RVA: 0x00194A94 File Offset: 0x00192C94
+		// Token: 0x060023D0 RID: 9168 RVA: 0x0019A680 File Offset: 0x00198880
 		public void AddConnection(GraphNode node, uint cost, int shapeEdge)
 		{
 			if (node == null)
@@ -141,7 +141,7 @@ namespace Pathfinding
 			this.connections = array;
 		}
 
-		// Token: 0x0600237B RID: 9083 RVA: 0x00194B80 File Offset: 0x00192D80
+		// Token: 0x060023D1 RID: 9169 RVA: 0x0019A76C File Offset: 0x0019896C
 		public override void RemoveConnection(GraphNode node)
 		{
 			if (this.connections == null)
@@ -172,19 +172,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600237C RID: 9084 RVA: 0x00194C39 File Offset: 0x00192E39
+		// Token: 0x060023D2 RID: 9170 RVA: 0x0019A825 File Offset: 0x00198A25
 		public virtual bool ContainsPoint(Int3 point)
 		{
 			return this.ContainsPoint((Vector3)point);
 		}
 
-		// Token: 0x0600237D RID: 9085
+		// Token: 0x060023D3 RID: 9171
 		public abstract bool ContainsPoint(Vector3 point);
 
-		// Token: 0x0600237E RID: 9086
+		// Token: 0x060023D4 RID: 9172
 		public abstract bool ContainsPointInGraphSpace(Int3 point);
 
-		// Token: 0x0600237F RID: 9087 RVA: 0x00194C48 File Offset: 0x00192E48
+		// Token: 0x060023D5 RID: 9173 RVA: 0x0019A834 File Offset: 0x00198A34
 		public override int GetGizmoHashCode()
 		{
 			int num = base.GetGizmoHashCode();
@@ -198,7 +198,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x06002380 RID: 9088 RVA: 0x00194C98 File Offset: 0x00192E98
+		// Token: 0x060023D6 RID: 9174 RVA: 0x0019A884 File Offset: 0x00198A84
 		public override void SerializeReferences(GraphSerializationContext ctx)
 		{
 			if (this.connections == null)
@@ -215,7 +215,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002381 RID: 9089 RVA: 0x00194D30 File Offset: 0x00192F30
+		// Token: 0x060023D7 RID: 9175 RVA: 0x0019A91C File Offset: 0x00198B1C
 		public override void DeserializeReferences(GraphSerializationContext ctx)
 		{
 			int num = ctx.reader.ReadInt32();
@@ -231,7 +231,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003F71 RID: 16241
+		// Token: 0x0400404F RID: 16463
 		public Connection[] connections;
 	}
 }

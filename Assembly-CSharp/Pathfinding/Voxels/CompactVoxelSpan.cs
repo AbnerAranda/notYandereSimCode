@@ -2,41 +2,41 @@
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005B2 RID: 1458
+	// Token: 0x020005C8 RID: 1480
 	public struct CompactVoxelSpan
 	{
-		// Token: 0x06002781 RID: 10113 RVA: 0x001AF669 File Offset: 0x001AD869
+		// Token: 0x060027D7 RID: 10199 RVA: 0x001B5255 File Offset: 0x001B3455
 		public CompactVoxelSpan(ushort bottom, uint height)
 		{
-			this.con = 24u;
+			this.con = 24U;
 			this.y = bottom;
 			this.h = height;
 			this.reg = 0;
 		}
 
-		// Token: 0x06002782 RID: 10114 RVA: 0x001AF688 File Offset: 0x001AD888
+		// Token: 0x060027D8 RID: 10200 RVA: 0x001B5274 File Offset: 0x001B3474
 		public void SetConnection(int dir, uint value)
 		{
 			int num = dir * 6;
-			this.con = (uint)(((ulong)this.con & (ulong)(~(63L << (num & 31)))) | (ulong)((ulong)(value & 63u) << num));
+			this.con = (uint)(((ulong)this.con & (ulong)(~(63L << (num & 31)))) | (ulong)((ulong)(value & 63U) << num));
 		}
 
-		// Token: 0x06002783 RID: 10115 RVA: 0x001AF6BC File Offset: 0x001AD8BC
+		// Token: 0x060027D9 RID: 10201 RVA: 0x001B52A8 File Offset: 0x001B34A8
 		public int GetConnection(int dir)
 		{
 			return (int)this.con >> dir * 6 & 63;
 		}
 
-		// Token: 0x0400420B RID: 16907
+		// Token: 0x040042E9 RID: 17129
 		public ushort y;
 
-		// Token: 0x0400420C RID: 16908
+		// Token: 0x040042EA RID: 17130
 		public uint con;
 
-		// Token: 0x0400420D RID: 16909
+		// Token: 0x040042EB RID: 17131
 		public uint h;
 
-		// Token: 0x0400420E RID: 16910
+		// Token: 0x040042EC RID: 17132
 		public int reg;
 	}
 }

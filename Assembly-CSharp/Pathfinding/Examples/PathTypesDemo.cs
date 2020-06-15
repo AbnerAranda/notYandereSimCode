@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F1 RID: 1521
+	// Token: 0x02000607 RID: 1543
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_path_types_demo.php")]
 	public class PathTypesDemo : MonoBehaviour
 	{
-		// Token: 0x060029E7 RID: 10727 RVA: 0x001C1CCC File Offset: 0x001BFECC
+		// Token: 0x06002A3D RID: 10813 RVA: 0x001C78B8 File Offset: 0x001C5AB8
 		private void Update()
 		{
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -36,7 +36,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029E8 RID: 10728 RVA: 0x001C1DA8 File Offset: 0x001BFFA8
+		// Token: 0x06002A3E RID: 10814 RVA: 0x001C7994 File Offset: 0x001C5B94
 		public void OnGUI()
 		{
 			GUILayout.BeginArea(new Rect(5f, 5f, 220f, (float)(Screen.height - 10)), "", "Box");
@@ -121,7 +121,7 @@ namespace Pathfinding.Examples
 			GUILayout.EndArea();
 		}
 
-		// Token: 0x060029E9 RID: 10729 RVA: 0x001C20AC File Offset: 0x001C02AC
+		// Token: 0x06002A3F RID: 10815 RVA: 0x001C7C98 File Offset: 0x001C5E98
 		public void OnPathComplete(Path p)
 		{
 			if (this.lastRender == null)
@@ -149,7 +149,7 @@ namespace Pathfinding.Examples
 			this.lastRender.Add(gameObject);
 		}
 
-		// Token: 0x060029EA RID: 10730 RVA: 0x001C216C File Offset: 0x001C036C
+		// Token: 0x06002A40 RID: 10816 RVA: 0x001C7D58 File Offset: 0x001C5F58
 		private void ClearPrevious()
 		{
 			for (int i = 0; i < this.lastRender.Count; i++)
@@ -159,14 +159,14 @@ namespace Pathfinding.Examples
 			this.lastRender.Clear();
 		}
 
-		// Token: 0x060029EB RID: 10731 RVA: 0x001C21AB File Offset: 0x001C03AB
+		// Token: 0x06002A41 RID: 10817 RVA: 0x001C7D97 File Offset: 0x001C5F97
 		private void OnDestroy()
 		{
 			this.ClearPrevious();
 			this.lastRender = null;
 		}
 
-		// Token: 0x060029EC RID: 10732 RVA: 0x001C21BC File Offset: 0x001C03BC
+		// Token: 0x06002A42 RID: 10818 RVA: 0x001C7DA8 File Offset: 0x001C5FA8
 		private void DemoPath()
 		{
 			Path path = null;
@@ -215,7 +215,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029ED RID: 10733 RVA: 0x001C233C File Offset: 0x001C053C
+		// Token: 0x06002A43 RID: 10819 RVA: 0x001C7F28 File Offset: 0x001C6128
 		private IEnumerator DemoMultiTargetPath()
 		{
 			MultiTargetPath mp = MultiTargetPath.Construct(this.multipoints.ToArray(), this.end.position, null, null);
@@ -261,7 +261,7 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x060029EE RID: 10734 RVA: 0x001C234B File Offset: 0x001C054B
+		// Token: 0x06002A44 RID: 10820 RVA: 0x001C7F37 File Offset: 0x001C6137
 		public IEnumerator DemoConstantPath()
 		{
 			ConstantPath constPath = ConstantPath.Construct(this.end.position, this.searchLength, null);
@@ -337,64 +337,64 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x040043A5 RID: 17317
+		// Token: 0x04004483 RID: 17539
 		public PathTypesDemo.DemoMode activeDemo;
 
-		// Token: 0x040043A6 RID: 17318
+		// Token: 0x04004484 RID: 17540
 		public Transform start;
 
-		// Token: 0x040043A7 RID: 17319
+		// Token: 0x04004485 RID: 17541
 		public Transform end;
 
-		// Token: 0x040043A8 RID: 17320
+		// Token: 0x04004486 RID: 17542
 		public Vector3 pathOffset;
 
-		// Token: 0x040043A9 RID: 17321
+		// Token: 0x04004487 RID: 17543
 		public Material lineMat;
 
-		// Token: 0x040043AA RID: 17322
+		// Token: 0x04004488 RID: 17544
 		public Material squareMat;
 
-		// Token: 0x040043AB RID: 17323
+		// Token: 0x04004489 RID: 17545
 		public float lineWidth;
 
-		// Token: 0x040043AC RID: 17324
+		// Token: 0x0400448A RID: 17546
 		public int searchLength = 1000;
 
-		// Token: 0x040043AD RID: 17325
+		// Token: 0x0400448B RID: 17547
 		public int spread = 100;
 
-		// Token: 0x040043AE RID: 17326
+		// Token: 0x0400448C RID: 17548
 		public float aimStrength;
 
-		// Token: 0x040043AF RID: 17327
+		// Token: 0x0400448D RID: 17549
 		private Path lastPath;
 
-		// Token: 0x040043B0 RID: 17328
+		// Token: 0x0400448E RID: 17550
 		private FloodPath lastFloodPath;
 
-		// Token: 0x040043B1 RID: 17329
+		// Token: 0x0400448F RID: 17551
 		private List<GameObject> lastRender = new List<GameObject>();
 
-		// Token: 0x040043B2 RID: 17330
+		// Token: 0x04004490 RID: 17552
 		private List<Vector3> multipoints = new List<Vector3>();
 
-		// Token: 0x02000787 RID: 1927
+		// Token: 0x020007A1 RID: 1953
 		public enum DemoMode
 		{
-			// Token: 0x04004ADC RID: 19164
+			// Token: 0x04004BC7 RID: 19399
 			ABPath,
-			// Token: 0x04004ADD RID: 19165
+			// Token: 0x04004BC8 RID: 19400
 			MultiTargetPath,
-			// Token: 0x04004ADE RID: 19166
+			// Token: 0x04004BC9 RID: 19401
 			RandomPath,
-			// Token: 0x04004ADF RID: 19167
+			// Token: 0x04004BCA RID: 19402
 			FleePath,
-			// Token: 0x04004AE0 RID: 19168
+			// Token: 0x04004BCB RID: 19403
 			ConstantPath,
-			// Token: 0x04004AE1 RID: 19169
+			// Token: 0x04004BCC RID: 19404
 			FloodPath,
-			// Token: 0x04004AE2 RID: 19170
+			// Token: 0x04004BCD RID: 19405
 			FloodPathTracer
 		}
 	}

@@ -1,23 +1,23 @@
 ﻿using System;
 
-// Token: 0x02000457 RID: 1111
+// Token: 0x0200045C RID: 1116
 public class SerializablePair<T, U>
 {
-	// Token: 0x06001CDC RID: 7388 RVA: 0x00155CFC File Offset: 0x00153EFC
+	// Token: 0x06001D01 RID: 7425 RVA: 0x00159200 File Offset: 0x00157400
 	public SerializablePair(T first, U second)
 	{
 		this.first = first;
 		this.second = second;
 	}
 
-	// Token: 0x06001CDD RID: 7389 RVA: 0x00155D14 File Offset: 0x00153F14
+	// Token: 0x06001D02 RID: 7426 RVA: 0x00159218 File Offset: 0x00157418
 	public SerializablePair() : this(default(T), default(U))
 	{
 	}
 
-	// Token: 0x040035FA RID: 13818
+	// Token: 0x0400366F RID: 13935
 	public T first;
 
-	// Token: 0x040035FB RID: 13819
+	// Token: 0x04003670 RID: 13936
 	public U second;
 }

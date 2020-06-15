@@ -1,62 +1,62 @@
 ﻿using System;
 
-// Token: 0x02000407 RID: 1031
+// Token: 0x0200040C RID: 1036
 public enum StudentInteractionType
 {
-	// Token: 0x04002DFC RID: 11772
+	// Token: 0x04002E63 RID: 11875
 	Idle,
-	// Token: 0x04002DFD RID: 11773
+	// Token: 0x04002E64 RID: 11876
 	Forgiving,
-	// Token: 0x04002DFE RID: 11774
+	// Token: 0x04002E65 RID: 11877
 	ReceivingCompliment,
-	// Token: 0x04002DFF RID: 11775
+	// Token: 0x04002E66 RID: 11878
 	Gossiping,
-	// Token: 0x04002E00 RID: 11776
+	// Token: 0x04002E67 RID: 11879
 	Bye,
-	// Token: 0x04002E01 RID: 11777
+	// Token: 0x04002E68 RID: 11880
 	GivingTask,
-	// Token: 0x04002E02 RID: 11778
+	// Token: 0x04002E69 RID: 11881
 	FollowingPlayer,
-	// Token: 0x04002E03 RID: 11779
+	// Token: 0x04002E6A RID: 11882
 	GoingAway,
-	// Token: 0x04002E04 RID: 11780
+	// Token: 0x04002E6B RID: 11883
 	DistractingTarget,
-	// Token: 0x04002E05 RID: 11781
+	// Token: 0x04002E6C RID: 11884
 	PersonalGrudge,
-	// Token: 0x04002E06 RID: 11782
+	// Token: 0x04002E6D RID: 11885
 	ClubInfo,
-	// Token: 0x04002E07 RID: 11783
+	// Token: 0x04002E6E RID: 11886
 	ClubJoin,
-	// Token: 0x04002E08 RID: 11784
+	// Token: 0x04002E6F RID: 11887
 	ClubQuit,
-	// Token: 0x04002E09 RID: 11785
+	// Token: 0x04002E70 RID: 11888
 	ClubBye,
-	// Token: 0x04002E0A RID: 11786
+	// Token: 0x04002E71 RID: 11889
 	ClubActivity,
-	// Token: 0x04002E0B RID: 11787
+	// Token: 0x04002E72 RID: 11890
 	ClubUnwelcome,
-	// Token: 0x04002E0C RID: 11788
+	// Token: 0x04002E73 RID: 11891
 	ClubKick,
-	// Token: 0x04002E0D RID: 11789
+	// Token: 0x04002E74 RID: 11892
 	ClubGrudge,
-	// Token: 0x04002E0E RID: 11790
+	// Token: 0x04002E75 RID: 11893
 	ClubPractice,
-	// Token: 0x04002E0F RID: 11791
+	// Token: 0x04002E76 RID: 11894
 	NamingCrush,
-	// Token: 0x04002E10 RID: 11792
+	// Token: 0x04002E77 RID: 11895
 	ChangingAppearance,
-	// Token: 0x04002E11 RID: 11793
+	// Token: 0x04002E78 RID: 11896
 	Court,
-	// Token: 0x04002E12 RID: 11794
+	// Token: 0x04002E79 RID: 11897
 	Gift,
-	// Token: 0x04002E13 RID: 11795
+	// Token: 0x04002E7A RID: 11898
 	Feeding,
-	// Token: 0x04002E14 RID: 11796
+	// Token: 0x04002E7B RID: 11899
 	TaskInquiry,
-	// Token: 0x04002E15 RID: 11797
+	// Token: 0x04002E7C RID: 11900
 	TakingSnack,
-	// Token: 0x04002E16 RID: 11798
+	// Token: 0x04002E7D RID: 11901
 	GivingHelp,
-	// Token: 0x04002E17 RID: 11799
+	// Token: 0x04002E7E RID: 11902
 	SentToLocker
 }

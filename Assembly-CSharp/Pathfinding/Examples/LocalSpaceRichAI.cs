@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005EA RID: 1514
+	// Token: 0x02000600 RID: 1536
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_local_space_rich_a_i.php")]
 	public class LocalSpaceRichAI : RichAI
 	{
-		// Token: 0x060029BF RID: 10687 RVA: 0x001C1456 File Offset: 0x001BF656
+		// Token: 0x06002A15 RID: 10773 RVA: 0x001C7042 File Offset: 0x001C5242
 		private void RefreshTransform()
 		{
 			this.graph.Refresh();
@@ -15,14 +15,14 @@ namespace Pathfinding.Examples
 			this.movementPlane = this.graph.transformation;
 		}
 
-		// Token: 0x060029C0 RID: 10688 RVA: 0x001C148A File Offset: 0x001BF68A
+		// Token: 0x06002A16 RID: 10774 RVA: 0x001C7076 File Offset: 0x001C5276
 		protected override void Start()
 		{
 			this.RefreshTransform();
 			base.Start();
 		}
 
-		// Token: 0x060029C1 RID: 10689 RVA: 0x001C1498 File Offset: 0x001BF698
+		// Token: 0x06002A17 RID: 10775 RVA: 0x001C7084 File Offset: 0x001C5284
 		protected override void CalculatePathRequestEndpoints(out Vector3 start, out Vector3 end)
 		{
 			this.RefreshTransform();
@@ -31,14 +31,14 @@ namespace Pathfinding.Examples
 			end = this.graph.transformation.InverseTransform(end);
 		}
 
-		// Token: 0x060029C2 RID: 10690 RVA: 0x001C14EB File Offset: 0x001BF6EB
+		// Token: 0x06002A18 RID: 10776 RVA: 0x001C70D7 File Offset: 0x001C52D7
 		protected override void Update()
 		{
 			this.RefreshTransform();
 			base.Update();
 		}
 
-		// Token: 0x0400438D RID: 17293
+		// Token: 0x0400446B RID: 17515
 		public LocalSpaceGraph graph;
 	}
 }

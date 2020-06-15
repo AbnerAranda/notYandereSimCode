@@ -6,7 +6,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/UI/Stretch")]
 public class UIStretch : MonoBehaviour
 {
-	// Token: 0x060008FA RID: 2298 RVA: 0x000473A8 File Offset: 0x000455A8
+	// Token: 0x060008FB RID: 2299 RVA: 0x000473D0 File Offset: 0x000455D0
 	private void Awake()
 	{
 		this.mAnim = base.GetComponent<Animation>();
@@ -18,13 +18,13 @@ public class UIStretch : MonoBehaviour
 		UICamera.onScreenResize = (UICamera.OnScreenResize)Delegate.Combine(UICamera.onScreenResize, new UICamera.OnScreenResize(this.ScreenSizeChanged));
 	}
 
-	// Token: 0x060008FB RID: 2299 RVA: 0x0004741D File Offset: 0x0004561D
+	// Token: 0x060008FC RID: 2300 RVA: 0x00047445 File Offset: 0x00045645
 	private void OnDestroy()
 	{
 		UICamera.onScreenResize = (UICamera.OnScreenResize)Delegate.Remove(UICamera.onScreenResize, new UICamera.OnScreenResize(this.ScreenSizeChanged));
 	}
 
-	// Token: 0x060008FC RID: 2300 RVA: 0x0004743F File Offset: 0x0004563F
+	// Token: 0x060008FD RID: 2301 RVA: 0x00047467 File Offset: 0x00045667
 	private void ScreenSizeChanged()
 	{
 		if (this.mStarted && this.runOnlyOnce)
@@ -33,7 +33,7 @@ public class UIStretch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008FD RID: 2301 RVA: 0x00047458 File Offset: 0x00045658
+	// Token: 0x060008FE RID: 2302 RVA: 0x00047480 File Offset: 0x00045680
 	private void Start()
 	{
 		if (this.container == null && this.widgetContainer != null)
@@ -50,7 +50,7 @@ public class UIStretch : MonoBehaviour
 		this.mStarted = true;
 	}
 
-	// Token: 0x060008FE RID: 2302 RVA: 0x000474DC File Offset: 0x000456DC
+	// Token: 0x060008FF RID: 2303 RVA: 0x00047504 File Offset: 0x00045704
 	private void Update()
 	{
 		if (this.mAnim != null && this.mAnim.isPlaying)
@@ -230,73 +230,73 @@ public class UIStretch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000791 RID: 1937
+	// Token: 0x04000793 RID: 1939
 	public Camera uiCamera;
 
-	// Token: 0x04000792 RID: 1938
+	// Token: 0x04000794 RID: 1940
 	public GameObject container;
 
-	// Token: 0x04000793 RID: 1939
+	// Token: 0x04000795 RID: 1941
 	public UIStretch.Style style;
 
-	// Token: 0x04000794 RID: 1940
+	// Token: 0x04000796 RID: 1942
 	public bool runOnlyOnce = true;
 
-	// Token: 0x04000795 RID: 1941
+	// Token: 0x04000797 RID: 1943
 	public Vector2 relativeSize = Vector2.one;
 
-	// Token: 0x04000796 RID: 1942
+	// Token: 0x04000798 RID: 1944
 	public Vector2 initialSize = Vector2.one;
 
-	// Token: 0x04000797 RID: 1943
+	// Token: 0x04000799 RID: 1945
 	public Vector2 borderPadding = Vector2.zero;
 
-	// Token: 0x04000798 RID: 1944
+	// Token: 0x0400079A RID: 1946
 	[HideInInspector]
 	[SerializeField]
 	private UIWidget widgetContainer;
 
-	// Token: 0x04000799 RID: 1945
+	// Token: 0x0400079B RID: 1947
 	private Transform mTrans;
 
-	// Token: 0x0400079A RID: 1946
+	// Token: 0x0400079C RID: 1948
 	private UIWidget mWidget;
 
-	// Token: 0x0400079B RID: 1947
+	// Token: 0x0400079D RID: 1949
 	private UISprite mSprite;
 
-	// Token: 0x0400079C RID: 1948
+	// Token: 0x0400079E RID: 1950
 	private UIPanel mPanel;
 
-	// Token: 0x0400079D RID: 1949
+	// Token: 0x0400079F RID: 1951
 	private UIRoot mRoot;
 
-	// Token: 0x0400079E RID: 1950
+	// Token: 0x040007A0 RID: 1952
 	private Animation mAnim;
 
-	// Token: 0x0400079F RID: 1951
+	// Token: 0x040007A1 RID: 1953
 	private Rect mRect;
 
-	// Token: 0x040007A0 RID: 1952
+	// Token: 0x040007A2 RID: 1954
 	private bool mStarted;
 
-	// Token: 0x0200068E RID: 1678
+	// Token: 0x020006A4 RID: 1700
 	[DoNotObfuscateNGUI]
 	public enum Style
 	{
-		// Token: 0x040045EF RID: 17903
+		// Token: 0x040046CD RID: 18125
 		None,
-		// Token: 0x040045F0 RID: 17904
+		// Token: 0x040046CE RID: 18126
 		Horizontal,
-		// Token: 0x040045F1 RID: 17905
+		// Token: 0x040046CF RID: 18127
 		Vertical,
-		// Token: 0x040045F2 RID: 17906
+		// Token: 0x040046D0 RID: 18128
 		Both,
-		// Token: 0x040045F3 RID: 17907
+		// Token: 0x040046D1 RID: 18129
 		BasedOnHeight,
-		// Token: 0x040045F4 RID: 17908
+		// Token: 0x040046D2 RID: 18130
 		FillKeepingRatio,
-		// Token: 0x040045F5 RID: 17909
+		// Token: 0x040046D3 RID: 18131
 		FitInternalKeepingRatio
 	}
 }

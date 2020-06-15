@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F5 RID: 757
+// Token: 0x020002F8 RID: 760
 public class HomeSleepScript : MonoBehaviour
 {
-	// Token: 0x06001742 RID: 5954 RVA: 0x000C829C File Offset: 0x000C649C
+	// Token: 0x0600175F RID: 5983 RVA: 0x000CA490 File Offset: 0x000C8690
 	private void Update()
 	{
 		if (!this.HomeYandere.CanMove && !this.HomeDarkness.FadeOut)
@@ -28,15 +28,15 @@ public class HomeSleepScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002028 RID: 8232
+	// Token: 0x04002075 RID: 8309
 	public HomeDarknessScript HomeDarkness;
 
-	// Token: 0x04002029 RID: 8233
+	// Token: 0x04002076 RID: 8310
 	public HomeYandereScript HomeYandere;
 
-	// Token: 0x0400202A RID: 8234
+	// Token: 0x04002077 RID: 8311
 	public HomeCameraScript HomeCamera;
 
-	// Token: 0x0400202B RID: 8235
+	// Token: 0x04002078 RID: 8312
 	public HomeWindowScript HomeWindow;
 }

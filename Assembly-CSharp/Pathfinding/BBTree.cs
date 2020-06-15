@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000575 RID: 1397
+	// Token: 0x0200058B RID: 1419
 	public class BBTree : IAstarPooledObject
 	{
-		// Token: 0x170005A5 RID: 1445
-		// (get) Token: 0x060025E5 RID: 9701 RVA: 0x001A2CF0 File Offset: 0x001A0EF0
+		// Token: 0x170005AB RID: 1451
+		// (get) Token: 0x0600263B RID: 9787 RVA: 0x001A88DC File Offset: 0x001A6ADC
 		public Rect Size
 		{
 			get
@@ -23,7 +23,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025E6 RID: 9702 RVA: 0x001A2D6C File Offset: 0x001A0F6C
+		// Token: 0x0600263C RID: 9788 RVA: 0x001A8958 File Offset: 0x001A6B58
 		public void Clear()
 		{
 			this.count = 0;
@@ -44,13 +44,13 @@ namespace Pathfinding
 			this.nodeLookup = ArrayPool<TriangleMeshNode>.Claim(0);
 		}
 
-		// Token: 0x060025E7 RID: 9703 RVA: 0x001A2DE3 File Offset: 0x001A0FE3
+		// Token: 0x0600263D RID: 9789 RVA: 0x001A89CF File Offset: 0x001A6BCF
 		void IAstarPooledObject.OnEnterPool()
 		{
 			this.Clear();
 		}
 
-		// Token: 0x060025E8 RID: 9704 RVA: 0x001A2DEC File Offset: 0x001A0FEC
+		// Token: 0x0600263E RID: 9790 RVA: 0x001A89D8 File Offset: 0x001A6BD8
 		private void EnsureCapacity(int c)
 		{
 			if (c > this.tree.Length)
@@ -62,7 +62,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025E9 RID: 9705 RVA: 0x001A2E2C File Offset: 0x001A102C
+		// Token: 0x0600263F RID: 9791 RVA: 0x001A8A18 File Offset: 0x001A6C18
 		private void EnsureNodeCapacity(int c)
 		{
 			if (c > this.nodeLookup.Length)
@@ -74,7 +74,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025EA RID: 9706 RVA: 0x001A2E6C File Offset: 0x001A106C
+		// Token: 0x06002640 RID: 9792 RVA: 0x001A8A58 File Offset: 0x001A6C58
 		private int GetBox(IntRect rect)
 		{
 			if (this.count >= this.tree.Length)
@@ -86,7 +86,7 @@ namespace Pathfinding
 			return this.count - 1;
 		}
 
-		// Token: 0x060025EB RID: 9707 RVA: 0x001A2EC4 File Offset: 0x001A10C4
+		// Token: 0x06002641 RID: 9793 RVA: 0x001A8AB0 File Offset: 0x001A6CB0
 		public void RebuildFrom(TriangleMeshNode[] nodes)
 		{
 			this.Clear();
@@ -118,7 +118,7 @@ namespace Pathfinding
 			ArrayPool<IntRect>.Release(ref array2, false);
 		}
 
-		// Token: 0x060025EC RID: 9708 RVA: 0x001A2FC0 File Offset: 0x001A11C0
+		// Token: 0x06002642 RID: 9794 RVA: 0x001A8BAC File Offset: 0x001A6DAC
 		private static int SplitByX(TriangleMeshNode[] nodes, int[] permutation, int from, int to, int divider)
 		{
 			int num = to;
@@ -136,7 +136,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x060025ED RID: 9709 RVA: 0x001A3008 File Offset: 0x001A1208
+		// Token: 0x06002643 RID: 9795 RVA: 0x001A8BF4 File Offset: 0x001A6DF4
 		private static int SplitByZ(TriangleMeshNode[] nodes, int[] permutation, int from, int to, int divider)
 		{
 			int num = to;
@@ -154,7 +154,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x060025EE RID: 9710 RVA: 0x001A3050 File Offset: 0x001A1250
+		// Token: 0x06002644 RID: 9796 RVA: 0x001A8C3C File Offset: 0x001A6E3C
 		private int RebuildFromInternal(TriangleMeshNode[] nodes, int[] permutation, IntRect[] nodeBounds, int from, int to, bool odd)
 		{
 			IntRect intRect = BBTree.NodeBounds(permutation, nodeBounds, from, to);
@@ -203,7 +203,7 @@ namespace Pathfinding
 			return box;
 		}
 
-		// Token: 0x060025EF RID: 9711 RVA: 0x001A31CC File Offset: 0x001A13CC
+		// Token: 0x06002645 RID: 9797 RVA: 0x001A8DB8 File Offset: 0x001A6FB8
 		private static IntRect NodeBounds(int[] permutation, IntRect[] nodeBounds, int from, int to)
 		{
 			IntRect intRect = nodeBounds[permutation[from]];
@@ -218,7 +218,7 @@ namespace Pathfinding
 			return intRect;
 		}
 
-		// Token: 0x060025F0 RID: 9712 RVA: 0x001A325C File Offset: 0x001A145C
+		// Token: 0x06002646 RID: 9798 RVA: 0x001A8E48 File Offset: 0x001A7048
 		[Conditional("ASTARDEBUG")]
 		private static void DrawDebugRect(IntRect rect)
 		{
@@ -228,7 +228,7 @@ namespace Pathfinding
 			UnityEngine.Debug.DrawLine(new Vector3((float)rect.xmax, 0f, (float)rect.ymin), new Vector3((float)rect.xmax, 0f, (float)rect.ymax), Color.white);
 		}
 
-		// Token: 0x060025F1 RID: 9713 RVA: 0x001A3354 File Offset: 0x001A1554
+		// Token: 0x06002647 RID: 9799 RVA: 0x001A8F40 File Offset: 0x001A7140
 		[Conditional("ASTARDEBUG")]
 		private static void DrawDebugNode(TriangleMeshNode node, float yoffset, Color color)
 		{
@@ -237,14 +237,14 @@ namespace Pathfinding
 			UnityEngine.Debug.DrawLine((Vector3)node.GetVertex(2) + Vector3.up * yoffset, (Vector3)node.GetVertex(0) + Vector3.up * yoffset, color);
 		}
 
-		// Token: 0x060025F2 RID: 9714 RVA: 0x001A341B File Offset: 0x001A161B
+		// Token: 0x06002648 RID: 9800 RVA: 0x001A9007 File Offset: 0x001A7207
 		public NNInfoInternal QueryClosest(Vector3 p, NNConstraint constraint, out float distance)
 		{
 			distance = float.PositiveInfinity;
 			return this.QueryClosest(p, constraint, ref distance, new NNInfoInternal(null));
 		}
 
-		// Token: 0x060025F3 RID: 9715 RVA: 0x001A3434 File Offset: 0x001A1634
+		// Token: 0x06002649 RID: 9801 RVA: 0x001A9020 File Offset: 0x001A7220
 		public NNInfoInternal QueryClosestXZ(Vector3 p, NNConstraint constraint, ref float distance, NNInfoInternal previous)
 		{
 			float num = distance * distance;
@@ -260,7 +260,7 @@ namespace Pathfinding
 			return previous;
 		}
 
-		// Token: 0x060025F4 RID: 9716 RVA: 0x001A3488 File Offset: 0x001A1688
+		// Token: 0x0600264A RID: 9802 RVA: 0x001A9074 File Offset: 0x001A7274
 		private void SearchBoxClosestXZ(int boxi, Vector3 p, ref float closestSqrDist, NNConstraint constraint, ref NNInfoInternal nnInfo)
 		{
 			BBTree.BBTreeBox bbtreeBox = this.tree[boxi];
@@ -305,7 +305,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025F5 RID: 9717 RVA: 0x001A35E0 File Offset: 0x001A17E0
+		// Token: 0x0600264B RID: 9803 RVA: 0x001A91CC File Offset: 0x001A73CC
 		public NNInfoInternal QueryClosest(Vector3 p, NNConstraint constraint, ref float distance, NNInfoInternal previous)
 		{
 			float num = distance * distance;
@@ -321,7 +321,7 @@ namespace Pathfinding
 			return previous;
 		}
 
-		// Token: 0x060025F6 RID: 9718 RVA: 0x001A3634 File Offset: 0x001A1834
+		// Token: 0x0600264C RID: 9804 RVA: 0x001A9220 File Offset: 0x001A7420
 		private void SearchBoxClosest(int boxi, Vector3 p, ref float closestSqrDist, NNConstraint constraint, ref NNInfoInternal nnInfo)
 		{
 			BBTree.BBTreeBox bbtreeBox = this.tree[boxi];
@@ -363,7 +363,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025F7 RID: 9719 RVA: 0x001A3710 File Offset: 0x001A1910
+		// Token: 0x0600264D RID: 9805 RVA: 0x001A92FC File Offset: 0x001A74FC
 		private void GetOrderedChildren(ref int first, ref int second, out float firstDist, out float secondDist, Vector3 p)
 		{
 			firstDist = BBTree.SquaredRectPointDistance(this.tree[first].rect, p);
@@ -379,7 +379,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025F8 RID: 9720 RVA: 0x001A3771 File Offset: 0x001A1971
+		// Token: 0x0600264E RID: 9806 RVA: 0x001A935D File Offset: 0x001A755D
 		public TriangleMeshNode QueryInside(Vector3 p, NNConstraint constraint)
 		{
 			if (this.count == 0 || !this.tree[0].Contains(p))
@@ -389,7 +389,7 @@ namespace Pathfinding
 			return this.SearchBoxInside(0, p, constraint);
 		}
 
-		// Token: 0x060025F9 RID: 9721 RVA: 0x001A379C File Offset: 0x001A199C
+		// Token: 0x0600264F RID: 9807 RVA: 0x001A9388 File Offset: 0x001A7588
 		private TriangleMeshNode SearchBoxInside(int boxi, Vector3 p, NNConstraint constraint)
 		{
 			BBTree.BBTreeBox bbtreeBox = this.tree[boxi];
@@ -431,7 +431,7 @@ namespace Pathfinding
 			return null;
 		}
 
-		// Token: 0x060025FA RID: 9722 RVA: 0x001A3868 File Offset: 0x001A1A68
+		// Token: 0x06002650 RID: 9808 RVA: 0x001A9454 File Offset: 0x001A7654
 		public void OnDrawGizmos()
 		{
 			Gizmos.color = new Color(1f, 1f, 1f, 0.5f);
@@ -442,7 +442,7 @@ namespace Pathfinding
 			this.OnDrawGizmos(0, 0);
 		}
 
-		// Token: 0x060025FB RID: 9723 RVA: 0x001A389C File Offset: 0x001A1A9C
+		// Token: 0x06002651 RID: 9809 RVA: 0x001A9488 File Offset: 0x001A7688
 		private void OnDrawGizmos(int boxi, int depth)
 		{
 			BBTree.BBTreeBox bbtreeBox = this.tree[boxi];
@@ -461,13 +461,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025FC RID: 9724 RVA: 0x001A3984 File Offset: 0x001A1B84
+		// Token: 0x06002652 RID: 9810 RVA: 0x001A9570 File Offset: 0x001A7770
 		private static bool NodeIntersectsCircle(TriangleMeshNode node, Vector3 p, float radius)
 		{
 			return float.IsPositiveInfinity(radius) || (p - node.ClosestPointOnNode(p)).sqrMagnitude < radius * radius;
 		}
 
-		// Token: 0x060025FD RID: 9725 RVA: 0x001A39B8 File Offset: 0x001A1BB8
+		// Token: 0x06002653 RID: 9811 RVA: 0x001A95A4 File Offset: 0x001A77A4
 		private static bool RectIntersectsCircle(IntRect r, Vector3 p, float radius)
 		{
 			if (float.IsPositiveInfinity(radius))
@@ -482,7 +482,7 @@ namespace Pathfinding
 			return (p.x - vector.x) * (p.x - vector.x) + (p.z - vector.z) * (p.z - vector.z) < radius * radius;
 		}
 
-		// Token: 0x060025FE RID: 9726 RVA: 0x001A3A8C File Offset: 0x001A1C8C
+		// Token: 0x06002654 RID: 9812 RVA: 0x001A9678 File Offset: 0x001A7878
 		private static float SquaredRectPointDistance(IntRect r, Vector3 p)
 		{
 			Vector3 vector = p;
@@ -493,26 +493,26 @@ namespace Pathfinding
 			return (p.x - vector.x) * (p.x - vector.x) + (p.z - vector.z) * (p.z - vector.z);
 		}
 
-		// Token: 0x040040F0 RID: 16624
+		// Token: 0x040041CE RID: 16846
 		private BBTree.BBTreeBox[] tree;
 
-		// Token: 0x040040F1 RID: 16625
+		// Token: 0x040041CF RID: 16847
 		private TriangleMeshNode[] nodeLookup;
 
-		// Token: 0x040040F2 RID: 16626
+		// Token: 0x040041D0 RID: 16848
 		private int count;
 
-		// Token: 0x040040F3 RID: 16627
+		// Token: 0x040041D1 RID: 16849
 		private int leafNodes;
 
-		// Token: 0x040040F4 RID: 16628
+		// Token: 0x040041D2 RID: 16850
 		private const int MaximumLeafSize = 4;
 
-		// Token: 0x02000743 RID: 1859
+		// Token: 0x0200075D RID: 1885
 		private struct BBTreeBox
 		{
-			// Token: 0x1700068A RID: 1674
-			// (get) Token: 0x06002D2B RID: 11563 RVA: 0x001CD64B File Offset: 0x001CB84B
+			// Token: 0x17000690 RID: 1680
+			// (get) Token: 0x06002D8E RID: 11662 RVA: 0x001D32F3 File Offset: 0x001D14F3
 			public bool IsLeaf
 			{
 				get
@@ -521,7 +521,7 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x06002D2C RID: 11564 RVA: 0x001CD65C File Offset: 0x001CB85C
+			// Token: 0x06002D8F RID: 11663 RVA: 0x001D3304 File Offset: 0x001D1504
 			public BBTreeBox(IntRect rect)
 			{
 				this.nodeOffset = -1;
@@ -529,7 +529,7 @@ namespace Pathfinding
 				this.left = (this.right = -1);
 			}
 
-			// Token: 0x06002D2D RID: 11565 RVA: 0x001CD688 File Offset: 0x001CB888
+			// Token: 0x06002D90 RID: 11664 RVA: 0x001D3330 File Offset: 0x001D1530
 			public BBTreeBox(int nodeOffset, IntRect rect)
 			{
 				this.nodeOffset = nodeOffset;
@@ -537,23 +537,23 @@ namespace Pathfinding
 				this.left = (this.right = -1);
 			}
 
-			// Token: 0x06002D2E RID: 11566 RVA: 0x001CD6B4 File Offset: 0x001CB8B4
+			// Token: 0x06002D91 RID: 11665 RVA: 0x001D335C File Offset: 0x001D155C
 			public bool Contains(Vector3 point)
 			{
 				Int3 @int = (Int3)point;
 				return this.rect.Contains(@int.x, @int.z);
 			}
 
-			// Token: 0x04004998 RID: 18840
+			// Token: 0x04004A83 RID: 19075
 			public IntRect rect;
 
-			// Token: 0x04004999 RID: 18841
+			// Token: 0x04004A84 RID: 19076
 			public int nodeOffset;
 
-			// Token: 0x0400499A RID: 18842
+			// Token: 0x04004A85 RID: 19077
 			public int left;
 
-			// Token: 0x0400499B RID: 18843
+			// Token: 0x04004A86 RID: 19078
 			public int right;
 		}
 	}

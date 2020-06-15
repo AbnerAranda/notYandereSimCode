@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003CC RID: 972
+// Token: 0x020003D1 RID: 977
 public class SciFiTerminalScript : MonoBehaviour
 {
-	// Token: 0x06001A4C RID: 6732 RVA: 0x00101936 File Offset: 0x000FFB36
+	// Token: 0x06001A6D RID: 6765 RVA: 0x00103FAA File Offset: 0x001021AA
 	private void Start()
 	{
 		if (this.Student.StudentID != 65)
@@ -15,7 +15,7 @@ public class SciFiTerminalScript : MonoBehaviour
 		this.RobotArms = this.Student.StudentManager.RobotArms;
 	}
 
-	// Token: 0x06001A4D RID: 6733 RVA: 0x00101968 File Offset: 0x000FFB68
+	// Token: 0x06001A6E RID: 6766 RVA: 0x00103FDC File Offset: 0x001021DC
 	private void Update()
 	{
 		if (this.RobotArms != null)
@@ -41,15 +41,15 @@ public class SciFiTerminalScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040029AA RID: 10666
+	// Token: 0x04002A0B RID: 10763
 	public StudentScript Student;
 
-	// Token: 0x040029AB RID: 10667
+	// Token: 0x04002A0C RID: 10764
 	public RobotArmScript RobotArms;
 
-	// Token: 0x040029AC RID: 10668
+	// Token: 0x04002A0D RID: 10765
 	public Transform OtherFinger;
 
-	// Token: 0x040029AD RID: 10669
+	// Token: 0x04002A0E RID: 10766
 	public bool Updated;
 }

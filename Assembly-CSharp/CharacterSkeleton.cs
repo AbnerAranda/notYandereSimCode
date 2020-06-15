@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000281 RID: 641
+// Token: 0x02000282 RID: 642
 [Serializable]
 public class CharacterSkeleton
 {
 	// Token: 0x17000358 RID: 856
-	// (get) Token: 0x0600139F RID: 5023 RVA: 0x000AC18F File Offset: 0x000AA38F
+	// (get) Token: 0x060013A7 RID: 5031 RVA: 0x000AD393 File Offset: 0x000AB593
 	public Transform Head
 	{
 		get
@@ -16,7 +16,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000359 RID: 857
-	// (get) Token: 0x060013A0 RID: 5024 RVA: 0x000AC197 File Offset: 0x000AA397
+	// (get) Token: 0x060013A8 RID: 5032 RVA: 0x000AD39B File Offset: 0x000AB59B
 	public Transform Neck
 	{
 		get
@@ -26,7 +26,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700035A RID: 858
-	// (get) Token: 0x060013A1 RID: 5025 RVA: 0x000AC19F File Offset: 0x000AA39F
+	// (get) Token: 0x060013A9 RID: 5033 RVA: 0x000AD3A3 File Offset: 0x000AB5A3
 	public Transform Chest
 	{
 		get
@@ -36,7 +36,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700035B RID: 859
-	// (get) Token: 0x060013A2 RID: 5026 RVA: 0x000AC1A7 File Offset: 0x000AA3A7
+	// (get) Token: 0x060013AA RID: 5034 RVA: 0x000AD3AB File Offset: 0x000AB5AB
 	public Transform Stomach
 	{
 		get
@@ -46,7 +46,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700035C RID: 860
-	// (get) Token: 0x060013A3 RID: 5027 RVA: 0x000AC1AF File Offset: 0x000AA3AF
+	// (get) Token: 0x060013AB RID: 5035 RVA: 0x000AD3B3 File Offset: 0x000AB5B3
 	public Transform Pelvis
 	{
 		get
@@ -56,7 +56,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700035D RID: 861
-	// (get) Token: 0x060013A4 RID: 5028 RVA: 0x000AC1B7 File Offset: 0x000AA3B7
+	// (get) Token: 0x060013AC RID: 5036 RVA: 0x000AD3BB File Offset: 0x000AB5BB
 	public Transform RightShoulder
 	{
 		get
@@ -66,7 +66,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700035E RID: 862
-	// (get) Token: 0x060013A5 RID: 5029 RVA: 0x000AC1BF File Offset: 0x000AA3BF
+	// (get) Token: 0x060013AD RID: 5037 RVA: 0x000AD3C3 File Offset: 0x000AB5C3
 	public Transform LeftShoulder
 	{
 		get
@@ -76,7 +76,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700035F RID: 863
-	// (get) Token: 0x060013A6 RID: 5030 RVA: 0x000AC1C7 File Offset: 0x000AA3C7
+	// (get) Token: 0x060013AE RID: 5038 RVA: 0x000AD3CB File Offset: 0x000AB5CB
 	public Transform RightUpperArm
 	{
 		get
@@ -86,7 +86,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000360 RID: 864
-	// (get) Token: 0x060013A7 RID: 5031 RVA: 0x000AC1CF File Offset: 0x000AA3CF
+	// (get) Token: 0x060013AF RID: 5039 RVA: 0x000AD3D3 File Offset: 0x000AB5D3
 	public Transform LeftUpperArm
 	{
 		get
@@ -96,7 +96,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000361 RID: 865
-	// (get) Token: 0x060013A8 RID: 5032 RVA: 0x000AC1D7 File Offset: 0x000AA3D7
+	// (get) Token: 0x060013B0 RID: 5040 RVA: 0x000AD3DB File Offset: 0x000AB5DB
 	public Transform RightElbow
 	{
 		get
@@ -106,7 +106,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000362 RID: 866
-	// (get) Token: 0x060013A9 RID: 5033 RVA: 0x000AC1DF File Offset: 0x000AA3DF
+	// (get) Token: 0x060013B1 RID: 5041 RVA: 0x000AD3E3 File Offset: 0x000AB5E3
 	public Transform LeftElbow
 	{
 		get
@@ -116,7 +116,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000363 RID: 867
-	// (get) Token: 0x060013AA RID: 5034 RVA: 0x000AC1E7 File Offset: 0x000AA3E7
+	// (get) Token: 0x060013B2 RID: 5042 RVA: 0x000AD3EB File Offset: 0x000AB5EB
 	public Transform RightLowerArm
 	{
 		get
@@ -126,7 +126,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000364 RID: 868
-	// (get) Token: 0x060013AB RID: 5035 RVA: 0x000AC1EF File Offset: 0x000AA3EF
+	// (get) Token: 0x060013B3 RID: 5043 RVA: 0x000AD3F3 File Offset: 0x000AB5F3
 	public Transform LeftLowerArm
 	{
 		get
@@ -136,7 +136,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000365 RID: 869
-	// (get) Token: 0x060013AC RID: 5036 RVA: 0x000AC1F7 File Offset: 0x000AA3F7
+	// (get) Token: 0x060013B4 RID: 5044 RVA: 0x000AD3FB File Offset: 0x000AB5FB
 	public Transform RightPalm
 	{
 		get
@@ -146,7 +146,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000366 RID: 870
-	// (get) Token: 0x060013AD RID: 5037 RVA: 0x000AC1FF File Offset: 0x000AA3FF
+	// (get) Token: 0x060013B5 RID: 5045 RVA: 0x000AD403 File Offset: 0x000AB603
 	public Transform LeftPalm
 	{
 		get
@@ -156,7 +156,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000367 RID: 871
-	// (get) Token: 0x060013AE RID: 5038 RVA: 0x000AC207 File Offset: 0x000AA407
+	// (get) Token: 0x060013B6 RID: 5046 RVA: 0x000AD40B File Offset: 0x000AB60B
 	public Transform RightUpperLeg
 	{
 		get
@@ -166,7 +166,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000368 RID: 872
-	// (get) Token: 0x060013AF RID: 5039 RVA: 0x000AC20F File Offset: 0x000AA40F
+	// (get) Token: 0x060013B7 RID: 5047 RVA: 0x000AD413 File Offset: 0x000AB613
 	public Transform LeftUpperLeg
 	{
 		get
@@ -176,7 +176,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x17000369 RID: 873
-	// (get) Token: 0x060013B0 RID: 5040 RVA: 0x000AC217 File Offset: 0x000AA417
+	// (get) Token: 0x060013B8 RID: 5048 RVA: 0x000AD41B File Offset: 0x000AB61B
 	public Transform RightKnee
 	{
 		get
@@ -186,7 +186,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700036A RID: 874
-	// (get) Token: 0x060013B1 RID: 5041 RVA: 0x000AC21F File Offset: 0x000AA41F
+	// (get) Token: 0x060013B9 RID: 5049 RVA: 0x000AD423 File Offset: 0x000AB623
 	public Transform LeftKnee
 	{
 		get
@@ -196,7 +196,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700036B RID: 875
-	// (get) Token: 0x060013B2 RID: 5042 RVA: 0x000AC227 File Offset: 0x000AA427
+	// (get) Token: 0x060013BA RID: 5050 RVA: 0x000AD42B File Offset: 0x000AB62B
 	public Transform RightLowerLeg
 	{
 		get
@@ -206,7 +206,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700036C RID: 876
-	// (get) Token: 0x060013B3 RID: 5043 RVA: 0x000AC22F File Offset: 0x000AA42F
+	// (get) Token: 0x060013BB RID: 5051 RVA: 0x000AD433 File Offset: 0x000AB633
 	public Transform LeftLowerLeg
 	{
 		get
@@ -216,7 +216,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700036D RID: 877
-	// (get) Token: 0x060013B4 RID: 5044 RVA: 0x000AC237 File Offset: 0x000AA437
+	// (get) Token: 0x060013BC RID: 5052 RVA: 0x000AD43B File Offset: 0x000AB63B
 	public Transform RightFoot
 	{
 		get
@@ -226,7 +226,7 @@ public class CharacterSkeleton
 	}
 
 	// Token: 0x1700036E RID: 878
-	// (get) Token: 0x060013B5 RID: 5045 RVA: 0x000AC23F File Offset: 0x000AA43F
+	// (get) Token: 0x060013BD RID: 5053 RVA: 0x000AD443 File Offset: 0x000AB643
 	public Transform LeftFoot
 	{
 		get
@@ -235,95 +235,95 @@ public class CharacterSkeleton
 		}
 	}
 
-	// Token: 0x04001B28 RID: 6952
+	// Token: 0x04001B48 RID: 6984
 	[SerializeField]
 	private Transform head;
 
-	// Token: 0x04001B29 RID: 6953
+	// Token: 0x04001B49 RID: 6985
 	[SerializeField]
 	private Transform neck;
 
-	// Token: 0x04001B2A RID: 6954
+	// Token: 0x04001B4A RID: 6986
 	[SerializeField]
 	private Transform chest;
 
-	// Token: 0x04001B2B RID: 6955
+	// Token: 0x04001B4B RID: 6987
 	[SerializeField]
 	private Transform stomach;
 
-	// Token: 0x04001B2C RID: 6956
+	// Token: 0x04001B4C RID: 6988
 	[SerializeField]
 	private Transform pelvis;
 
-	// Token: 0x04001B2D RID: 6957
+	// Token: 0x04001B4D RID: 6989
 	[SerializeField]
 	private Transform rightShoulder;
 
-	// Token: 0x04001B2E RID: 6958
+	// Token: 0x04001B4E RID: 6990
 	[SerializeField]
 	private Transform leftShoulder;
 
-	// Token: 0x04001B2F RID: 6959
+	// Token: 0x04001B4F RID: 6991
 	[SerializeField]
 	private Transform rightUpperArm;
 
-	// Token: 0x04001B30 RID: 6960
+	// Token: 0x04001B50 RID: 6992
 	[SerializeField]
 	private Transform leftUpperArm;
 
-	// Token: 0x04001B31 RID: 6961
+	// Token: 0x04001B51 RID: 6993
 	[SerializeField]
 	private Transform rightElbow;
 
-	// Token: 0x04001B32 RID: 6962
+	// Token: 0x04001B52 RID: 6994
 	[SerializeField]
 	private Transform leftElbow;
 
-	// Token: 0x04001B33 RID: 6963
+	// Token: 0x04001B53 RID: 6995
 	[SerializeField]
 	private Transform rightLowerArm;
 
-	// Token: 0x04001B34 RID: 6964
+	// Token: 0x04001B54 RID: 6996
 	[SerializeField]
 	private Transform leftLowerArm;
 
-	// Token: 0x04001B35 RID: 6965
+	// Token: 0x04001B55 RID: 6997
 	[SerializeField]
 	private Transform rightPalm;
 
-	// Token: 0x04001B36 RID: 6966
+	// Token: 0x04001B56 RID: 6998
 	[SerializeField]
 	private Transform leftPalm;
 
-	// Token: 0x04001B37 RID: 6967
+	// Token: 0x04001B57 RID: 6999
 	[SerializeField]
 	private Transform rightUpperLeg;
 
-	// Token: 0x04001B38 RID: 6968
+	// Token: 0x04001B58 RID: 7000
 	[SerializeField]
 	private Transform leftUpperLeg;
 
-	// Token: 0x04001B39 RID: 6969
+	// Token: 0x04001B59 RID: 7001
 	[SerializeField]
 	private Transform rightKnee;
 
-	// Token: 0x04001B3A RID: 6970
+	// Token: 0x04001B5A RID: 7002
 	[SerializeField]
 	private Transform leftKnee;
 
-	// Token: 0x04001B3B RID: 6971
+	// Token: 0x04001B5B RID: 7003
 	[SerializeField]
 	private Transform rightLowerLeg;
 
-	// Token: 0x04001B3C RID: 6972
+	// Token: 0x04001B5C RID: 7004
 	[SerializeField]
 	private Transform leftLowerLeg;
 
-	// Token: 0x04001B3D RID: 6973
+	// Token: 0x04001B5D RID: 7005
 	[SerializeField]
 	private Transform rightFoot;
 
-	// Token: 0x04001B3E RID: 6974
+	// Token: 0x04001B5E RID: 7006
 	[SerializeField]
 	private Transform leftFoot;
 }

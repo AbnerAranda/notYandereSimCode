@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200032F RID: 815
+// Token: 0x02000332 RID: 818
 public class MetalDetectorScript : MonoBehaviour
 {
-	// Token: 0x0600181E RID: 6174 RVA: 0x000D7473 File Offset: 0x000D5673
+	// Token: 0x0600183B RID: 6203 RVA: 0x000D9693 File Offset: 0x000D7893
 	private void Start()
 	{
 		this.MyAudio = base.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x0600181F RID: 6175 RVA: 0x000D7484 File Offset: 0x000D5684
+	// Token: 0x0600183C RID: 6204 RVA: 0x000D96A4 File Offset: 0x000D78A4
 	private void Update()
 	{
 		if (this.Yandere.Armed)
@@ -55,7 +55,7 @@ public class MetalDetectorScript : MonoBehaviour
 		this.MyAudio.volume -= Time.deltaTime * 0.01f;
 	}
 
-	// Token: 0x06001820 RID: 6176 RVA: 0x000D75E0 File Offset: 0x000D57E0
+	// Token: 0x0600183D RID: 6205 RVA: 0x000D9800 File Offset: 0x000D7A00
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.Yandere.enabled)
@@ -128,33 +128,33 @@ public class MetalDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040022F1 RID: 8945
+	// Token: 0x0400233E RID: 9022
 	public MissionModeScript MissionMode;
 
-	// Token: 0x040022F2 RID: 8946
+	// Token: 0x0400233F RID: 9023
 	public YandereScript Yandere;
 
-	// Token: 0x040022F3 RID: 8947
+	// Token: 0x04002340 RID: 9024
 	public PromptScript Prompt;
 
-	// Token: 0x040022F4 RID: 8948
+	// Token: 0x04002341 RID: 9025
 	public ParticleSystem PepperSprayEffect;
 
-	// Token: 0x040022F5 RID: 8949
+	// Token: 0x04002342 RID: 9026
 	public AudioSource MyAudio;
 
-	// Token: 0x040022F6 RID: 8950
+	// Token: 0x04002343 RID: 9027
 	public AudioClip PepperSpraySFX;
 
-	// Token: 0x040022F7 RID: 8951
+	// Token: 0x04002344 RID: 9028
 	public AudioClip Alarm;
 
-	// Token: 0x040022F8 RID: 8952
+	// Token: 0x04002345 RID: 9029
 	public Collider MyCollider;
 
-	// Token: 0x040022F9 RID: 8953
+	// Token: 0x04002346 RID: 9030
 	public float SprayTimer;
 
-	// Token: 0x040022FA RID: 8954
+	// Token: 0x04002347 RID: 9031
 	public bool Spraying;
 }

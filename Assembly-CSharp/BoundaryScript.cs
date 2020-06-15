@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000E8 RID: 232
+// Token: 0x020000E9 RID: 233
 public class BoundaryScript : MonoBehaviour
 {
-	// Token: 0x06000A6E RID: 2670 RVA: 0x00055C44 File Offset: 0x00053E44
+	// Token: 0x06000A75 RID: 2677 RVA: 0x00056958 File Offset: 0x00054B58
 	private void Update()
 	{
 		float z = this.Yandere.position.z;
@@ -42,18 +42,18 @@ public class BoundaryScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000AE7 RID: 2791
+	// Token: 0x04000B06 RID: 2822
 	public TextureCycleScript TextureCycle;
 
-	// Token: 0x04000AE8 RID: 2792
+	// Token: 0x04000B07 RID: 2823
 	public Transform Yandere;
 
-	// Token: 0x04000AE9 RID: 2793
+	// Token: 0x04000B08 RID: 2824
 	public UITexture Static;
 
-	// Token: 0x04000AEA RID: 2794
+	// Token: 0x04000B09 RID: 2825
 	public UILabel Label;
 
-	// Token: 0x04000AEB RID: 2795
+	// Token: 0x04000B0A RID: 2826
 	public float Intensity;
 }

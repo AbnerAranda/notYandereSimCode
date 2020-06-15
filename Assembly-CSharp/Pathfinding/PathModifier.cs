@@ -2,15 +2,15 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000582 RID: 1410
+	// Token: 0x02000598 RID: 1432
 	[Serializable]
 	public abstract class PathModifier : IPathModifier
 	{
-		// Token: 0x170005AB RID: 1451
-		// (get) Token: 0x0600264D RID: 9805
+		// Token: 0x170005B1 RID: 1457
+		// (get) Token: 0x060026A3 RID: 9891
 		public abstract int Order { get; }
 
-		// Token: 0x0600264E RID: 9806 RVA: 0x001A5EC7 File Offset: 0x001A40C7
+		// Token: 0x060026A4 RID: 9892 RVA: 0x001ABAB3 File Offset: 0x001A9CB3
 		public void Awake(Seeker seeker)
 		{
 			this.seeker = seeker;
@@ -20,7 +20,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600264F RID: 9807 RVA: 0x001A5EE0 File Offset: 0x001A40E0
+		// Token: 0x060026A5 RID: 9893 RVA: 0x001ABACC File Offset: 0x001A9CCC
 		public void OnDestroy(Seeker seeker)
 		{
 			if (seeker != null)
@@ -29,15 +29,15 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002650 RID: 9808 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060026A6 RID: 9894 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void PreProcess(Path path)
 		{
 		}
 
-		// Token: 0x06002651 RID: 9809
+		// Token: 0x060026A7 RID: 9895
 		public abstract void Apply(Path path);
 
-		// Token: 0x04004130 RID: 16688
+		// Token: 0x0400420E RID: 16910
 		[NonSerialized]
 		public Seeker seeker;
 	}

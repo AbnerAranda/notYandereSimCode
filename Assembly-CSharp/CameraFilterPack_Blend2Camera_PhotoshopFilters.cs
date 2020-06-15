@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200012E RID: 302
+// Token: 0x0200012F RID: 303
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Blend 2 Camera/PhotoshopFilters")]
 public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 {
 	// Token: 0x1700024E RID: 590
-	// (get) Token: 0x06000C11 RID: 3089 RVA: 0x0006507D File Offset: 0x0006327D
+	// (get) Token: 0x06000C18 RID: 3096 RVA: 0x00065DAD File Offset: 0x00063FAD
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C12 RID: 3090 RVA: 0x000650B4 File Offset: 0x000632B4
+	// Token: 0x06000C19 RID: 3097 RVA: 0x00065DE4 File Offset: 0x00063FE4
 	private void ChangeFilters()
 	{
 		if (this.filterchoice == CameraFilterPack_Blend2Camera_PhotoshopFilters.filters.Darken)
@@ -126,7 +126,7 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C13 RID: 3091 RVA: 0x000652C4 File Offset: 0x000634C4
+	// Token: 0x06000C1A RID: 3098 RVA: 0x00065FF4 File Offset: 0x000641F4
 	private void Start()
 	{
 		this.filterchoicememo = this.filterchoice;
@@ -144,7 +144,7 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C14 RID: 3092 RVA: 0x0006533C File Offset: 0x0006353C
+	// Token: 0x06000C1B RID: 3099 RVA: 0x0006606C File Offset: 0x0006426C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -168,7 +168,7 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000C15 RID: 3093 RVA: 0x0006542C File Offset: 0x0006362C
+	// Token: 0x06000C1C RID: 3100 RVA: 0x0006615C File Offset: 0x0006435C
 	private void OnValidate()
 	{
 		if (this.filterchoice != this.filterchoicememo)
@@ -190,12 +190,12 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C16 RID: 3094 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000C1D RID: 3101 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000C17 RID: 3095 RVA: 0x000654D7 File Offset: 0x000636D7
+	// Token: 0x06000C1E RID: 3102 RVA: 0x00066207 File Offset: 0x00064407
 	private void OnEnable()
 	{
 		if (this.Camera2 != null)
@@ -205,7 +205,7 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C18 RID: 3096 RVA: 0x0006550F File Offset: 0x0006370F
+	// Token: 0x06000C1F RID: 3103 RVA: 0x0006623F File Offset: 0x0006443F
 	private void OnDisable()
 	{
 		if (this.Camera2 != null)
@@ -218,90 +218,90 @@ public class CameraFilterPack_Blend2Camera_PhotoshopFilters : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000EBB RID: 3771
+	// Token: 0x04000EDA RID: 3802
 	private string ShaderName = "CameraFilterPack/Blend2Camera_Darken";
 
-	// Token: 0x04000EBC RID: 3772
+	// Token: 0x04000EDB RID: 3803
 	public Shader SCShader;
 
-	// Token: 0x04000EBD RID: 3773
+	// Token: 0x04000EDC RID: 3804
 	public Camera Camera2;
 
-	// Token: 0x04000EBE RID: 3774
+	// Token: 0x04000EDD RID: 3805
 	public CameraFilterPack_Blend2Camera_PhotoshopFilters.filters filterchoice;
 
-	// Token: 0x04000EBF RID: 3775
+	// Token: 0x04000EDE RID: 3806
 	private CameraFilterPack_Blend2Camera_PhotoshopFilters.filters filterchoicememo;
 
-	// Token: 0x04000EC0 RID: 3776
+	// Token: 0x04000EDF RID: 3807
 	private float TimeX = 1f;
 
-	// Token: 0x04000EC1 RID: 3777
+	// Token: 0x04000EE0 RID: 3808
 	private Material SCMaterial;
 
-	// Token: 0x04000EC2 RID: 3778
+	// Token: 0x04000EE1 RID: 3809
 	[Range(0f, 1f)]
 	public float SwitchCameraToCamera2;
 
-	// Token: 0x04000EC3 RID: 3779
+	// Token: 0x04000EE2 RID: 3810
 	[Range(0f, 1f)]
 	public float BlendFX = 0.5f;
 
-	// Token: 0x04000EC4 RID: 3780
+	// Token: 0x04000EE3 RID: 3811
 	private RenderTexture Camera2tex;
 
-	// Token: 0x02000697 RID: 1687
+	// Token: 0x020006AD RID: 1709
 	public enum filters
 	{
-		// Token: 0x04004618 RID: 17944
+		// Token: 0x040046F6 RID: 18166
 		Darken,
-		// Token: 0x04004619 RID: 17945
+		// Token: 0x040046F7 RID: 18167
 		Multiply,
-		// Token: 0x0400461A RID: 17946
+		// Token: 0x040046F8 RID: 18168
 		ColorBurn,
-		// Token: 0x0400461B RID: 17947
+		// Token: 0x040046F9 RID: 18169
 		LinearBurn,
-		// Token: 0x0400461C RID: 17948
+		// Token: 0x040046FA RID: 18170
 		DarkerColor,
-		// Token: 0x0400461D RID: 17949
+		// Token: 0x040046FB RID: 18171
 		Lighten,
-		// Token: 0x0400461E RID: 17950
+		// Token: 0x040046FC RID: 18172
 		Screen,
-		// Token: 0x0400461F RID: 17951
+		// Token: 0x040046FD RID: 18173
 		ColorDodge,
-		// Token: 0x04004620 RID: 17952
+		// Token: 0x040046FE RID: 18174
 		LinearDodge,
-		// Token: 0x04004621 RID: 17953
+		// Token: 0x040046FF RID: 18175
 		LighterColor,
-		// Token: 0x04004622 RID: 17954
+		// Token: 0x04004700 RID: 18176
 		Overlay,
-		// Token: 0x04004623 RID: 17955
+		// Token: 0x04004701 RID: 18177
 		SoftLight,
-		// Token: 0x04004624 RID: 17956
+		// Token: 0x04004702 RID: 18178
 		HardLight,
-		// Token: 0x04004625 RID: 17957
+		// Token: 0x04004703 RID: 18179
 		VividLight,
-		// Token: 0x04004626 RID: 17958
+		// Token: 0x04004704 RID: 18180
 		LinearLight,
-		// Token: 0x04004627 RID: 17959
+		// Token: 0x04004705 RID: 18181
 		PinLight,
-		// Token: 0x04004628 RID: 17960
+		// Token: 0x04004706 RID: 18182
 		HardMix,
-		// Token: 0x04004629 RID: 17961
+		// Token: 0x04004707 RID: 18183
 		Difference,
-		// Token: 0x0400462A RID: 17962
+		// Token: 0x04004708 RID: 18184
 		Exclusion,
-		// Token: 0x0400462B RID: 17963
+		// Token: 0x04004709 RID: 18185
 		Subtract,
-		// Token: 0x0400462C RID: 17964
+		// Token: 0x0400470A RID: 18186
 		Divide,
-		// Token: 0x0400462D RID: 17965
+		// Token: 0x0400470B RID: 18187
 		Hue,
-		// Token: 0x0400462E RID: 17966
+		// Token: 0x0400470C RID: 18188
 		Saturation,
-		// Token: 0x0400462F RID: 17967
+		// Token: 0x0400470D RID: 18189
 		Color,
-		// Token: 0x04004630 RID: 17968
+		// Token: 0x0400470E RID: 18190
 		Luminosity
 	}
 }

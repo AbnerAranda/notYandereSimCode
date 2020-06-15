@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000172 RID: 370
+// Token: 0x02000173 RID: 371
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Distortion/ShockWave Manual")]
 public class CameraFilterPack_Distortion_ShockWaveManual : MonoBehaviour
 {
 	// Token: 0x17000292 RID: 658
-	// (get) Token: 0x06000DBE RID: 3518 RVA: 0x0006C5F9 File Offset: 0x0006A7F9
+	// (get) Token: 0x06000DC5 RID: 3525 RVA: 0x0006D329 File Offset: 0x0006B529
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Distortion_ShockWaveManual : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DBF RID: 3519 RVA: 0x0006C62D File Offset: 0x0006A82D
+	// Token: 0x06000DC6 RID: 3526 RVA: 0x0006D35D File Offset: 0x0006B55D
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Distortion_ShockWaveManual");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Distortion_ShockWaveManual : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DC0 RID: 3520 RVA: 0x0006C650 File Offset: 0x0006A850
+	// Token: 0x06000DC7 RID: 3527 RVA: 0x0006D380 File Offset: 0x0006B580
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Distortion_ShockWaveManual : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000DC1 RID: 3521 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000DC8 RID: 3528 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000DC2 RID: 3522 RVA: 0x0006C748 File Offset: 0x0006A948
+	// Token: 0x06000DC9 RID: 3529 RVA: 0x0006D478 File Offset: 0x0006B678
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Distortion_ShockWaveManual : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001072 RID: 4210
+	// Token: 0x04001091 RID: 4241
 	public Shader SCShader;
 
-	// Token: 0x04001073 RID: 4211
+	// Token: 0x04001092 RID: 4242
 	private float TimeX = 1f;
 
-	// Token: 0x04001074 RID: 4212
+	// Token: 0x04001093 RID: 4243
 	private Material SCMaterial;
 
-	// Token: 0x04001075 RID: 4213
+	// Token: 0x04001094 RID: 4244
 	[Range(-1.5f, 1.5f)]
 	public float PosX = 0.5f;
 
-	// Token: 0x04001076 RID: 4214
+	// Token: 0x04001095 RID: 4245
 	[Range(-1.5f, 1.5f)]
 	public float PosY = 0.5f;
 
-	// Token: 0x04001077 RID: 4215
+	// Token: 0x04001096 RID: 4246
 	[Range(-0.1f, 2f)]
 	public float Value = 0.5f;
 
-	// Token: 0x04001078 RID: 4216
+	// Token: 0x04001097 RID: 4247
 	[Range(0f, 10f)]
 	public float Size = 1f;
 }

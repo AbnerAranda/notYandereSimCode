@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200014D RID: 333
+// Token: 0x0200014E RID: 334
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/BrightContrastSaturation")]
 public class CameraFilterPack_Color_BrightContrastSaturation : MonoBehaviour
 {
 	// Token: 0x1700026D RID: 621
-	// (get) Token: 0x06000CDE RID: 3294 RVA: 0x00068D0E File Offset: 0x00066F0E
+	// (get) Token: 0x06000CE5 RID: 3301 RVA: 0x00069A3E File Offset: 0x00067C3E
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Color_BrightContrastSaturation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CDF RID: 3295 RVA: 0x00068D42 File Offset: 0x00066F42
+	// Token: 0x06000CE6 RID: 3302 RVA: 0x00069A72 File Offset: 0x00067C72
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Color_BrightContrastSaturation");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Color_BrightContrastSaturation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CE0 RID: 3296 RVA: 0x00068D64 File Offset: 0x00066F64
+	// Token: 0x06000CE7 RID: 3303 RVA: 0x00069A94 File Offset: 0x00067C94
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -53,12 +53,12 @@ public class CameraFilterPack_Color_BrightContrastSaturation : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000CE1 RID: 3297 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000CE8 RID: 3304 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000CE2 RID: 3298 RVA: 0x00068E46 File Offset: 0x00067046
+	// Token: 0x06000CE9 RID: 3305 RVA: 0x00069B76 File Offset: 0x00067D76
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -67,24 +67,24 @@ public class CameraFilterPack_Color_BrightContrastSaturation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FA6 RID: 4006
+	// Token: 0x04000FC5 RID: 4037
 	public Shader SCShader;
 
-	// Token: 0x04000FA7 RID: 4007
+	// Token: 0x04000FC6 RID: 4038
 	private float TimeX = 1f;
 
-	// Token: 0x04000FA8 RID: 4008
+	// Token: 0x04000FC7 RID: 4039
 	private Material SCMaterial;
 
-	// Token: 0x04000FA9 RID: 4009
+	// Token: 0x04000FC8 RID: 4040
 	[Range(0f, 10f)]
 	public float Brightness = 2f;
 
-	// Token: 0x04000FAA RID: 4010
+	// Token: 0x04000FC9 RID: 4041
 	[Range(0f, 10f)]
 	public float Saturation = 1.5f;
 
-	// Token: 0x04000FAB RID: 4011
+	// Token: 0x04000FCA RID: 4042
 	[Range(0f, 10f)]
 	public float Contrast = 1.5f;
 }

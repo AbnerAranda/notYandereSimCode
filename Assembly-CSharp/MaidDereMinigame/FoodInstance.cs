@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace MaidDereMinigame
 {
-	// Token: 0x020004F0 RID: 1264
+	// Token: 0x02000500 RID: 1280
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class FoodInstance : MonoBehaviour
 	{
-		// Token: 0x06001FE1 RID: 8161 RVA: 0x00184C17 File Offset: 0x00182E17
+		// Token: 0x06002023 RID: 8227 RVA: 0x0018A107 File Offset: 0x00188307
 		private void Start()
 		{
 			this.spriteRenderer = base.GetComponent<SpriteRenderer>();
@@ -15,33 +15,33 @@ namespace MaidDereMinigame
 			this.heat = this.timeToCool;
 		}
 
-		// Token: 0x06001FE2 RID: 8162 RVA: 0x00184C47 File Offset: 0x00182E47
+		// Token: 0x06002024 RID: 8228 RVA: 0x0018A137 File Offset: 0x00188337
 		private void Update()
 		{
 			this.heat -= Time.deltaTime;
 			this.warmthMeter.SetFill(this.heat / this.timeToCool);
 		}
 
-		// Token: 0x06001FE3 RID: 8163 RVA: 0x00184C73 File Offset: 0x00182E73
+		// Token: 0x06002025 RID: 8229 RVA: 0x0018A163 File Offset: 0x00188363
 		public void SetHeat(float newHeat)
 		{
 			this.heat = newHeat;
 		}
 
-		// Token: 0x04003D9C RID: 15772
+		// Token: 0x04003E4C RID: 15948
 		public Food food;
 
-		// Token: 0x04003D9D RID: 15773
+		// Token: 0x04003E4D RID: 15949
 		public Meter warmthMeter;
 
-		// Token: 0x04003D9E RID: 15774
+		// Token: 0x04003E4E RID: 15950
 		public float timeToCool = 30f;
 
-		// Token: 0x04003D9F RID: 15775
+		// Token: 0x04003E4F RID: 15951
 		[HideInInspector]
 		public SpriteRenderer spriteRenderer;
 
-		// Token: 0x04003DA0 RID: 15776
+		// Token: 0x04003E50 RID: 15952
 		private float heat;
 	}
 }

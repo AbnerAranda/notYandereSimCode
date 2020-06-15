@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200056F RID: 1391
+	// Token: 0x02000585 RID: 1413
 	public abstract class GridNodeBase : GraphNode
 	{
-		// Token: 0x06002570 RID: 9584 RVA: 0x001948E0 File Offset: 0x00192AE0
+		// Token: 0x060025C6 RID: 9670 RVA: 0x0019A4CC File Offset: 0x001986CC
 		protected GridNodeBase(AstarPath astar) : base(astar)
 		{
 		}
 
-		// Token: 0x17000595 RID: 1429
-		// (get) Token: 0x06002571 RID: 9585 RVA: 0x001A035F File Offset: 0x0019E55F
-		// (set) Token: 0x06002572 RID: 9586 RVA: 0x001A036D File Offset: 0x0019E56D
+		// Token: 0x1700059B RID: 1435
+		// (get) Token: 0x060025C7 RID: 9671 RVA: 0x001A5F4B File Offset: 0x001A414B
+		// (set) Token: 0x060025C8 RID: 9672 RVA: 0x001A5F59 File Offset: 0x001A4159
 		public int NodeInGridIndex
 		{
 			get
@@ -26,8 +26,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000596 RID: 1430
-		// (get) Token: 0x06002573 RID: 9587 RVA: 0x001A0383 File Offset: 0x0019E583
+		// Token: 0x1700059C RID: 1436
+		// (get) Token: 0x060025C9 RID: 9673 RVA: 0x001A5F6F File Offset: 0x001A416F
 		public int XCoordinateInGrid
 		{
 			get
@@ -36,8 +36,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000597 RID: 1431
-		// (get) Token: 0x06002574 RID: 9588 RVA: 0x001A039C File Offset: 0x0019E59C
+		// Token: 0x1700059D RID: 1437
+		// (get) Token: 0x060025CA RID: 9674 RVA: 0x001A5F88 File Offset: 0x001A4188
 		public int ZCoordinateInGrid
 		{
 			get
@@ -46,9 +46,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000598 RID: 1432
-		// (get) Token: 0x06002575 RID: 9589 RVA: 0x001A03B5 File Offset: 0x0019E5B5
-		// (set) Token: 0x06002576 RID: 9590 RVA: 0x001A03C6 File Offset: 0x0019E5C6
+		// Token: 0x1700059E RID: 1438
+		// (get) Token: 0x060025CB RID: 9675 RVA: 0x001A5FA1 File Offset: 0x001A41A1
+		// (set) Token: 0x060025CC RID: 9676 RVA: 0x001A5FB2 File Offset: 0x001A41B2
 		public bool WalkableErosion
 		{
 			get
@@ -61,9 +61,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000599 RID: 1433
-		// (get) Token: 0x06002577 RID: 9591 RVA: 0x001A03E7 File Offset: 0x0019E5E7
-		// (set) Token: 0x06002578 RID: 9592 RVA: 0x001A03F8 File Offset: 0x0019E5F8
+		// Token: 0x1700059F RID: 1439
+		// (get) Token: 0x060025CD RID: 9677 RVA: 0x001A5FD3 File Offset: 0x001A41D3
+		// (set) Token: 0x060025CE RID: 9678 RVA: 0x001A5FE4 File Offset: 0x001A41E4
 		public bool TmpWalkable
 		{
 			get
@@ -76,18 +76,18 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700059A RID: 1434
-		// (get) Token: 0x06002579 RID: 9593
+		// Token: 0x170005A0 RID: 1440
+		// (get) Token: 0x060025CF RID: 9679
 		public abstract bool HasConnectionsToAllEightNeighbours { get; }
 
-		// Token: 0x0600257A RID: 9594 RVA: 0x001A041C File Offset: 0x0019E61C
+		// Token: 0x060025D0 RID: 9680 RVA: 0x001A6008 File Offset: 0x001A4208
 		public override float SurfaceArea()
 		{
 			GridGraph gridGraph = GridNode.GetGridGraph(base.GraphIndex);
 			return gridGraph.nodeSize * gridGraph.nodeSize;
 		}
 
-		// Token: 0x0600257B RID: 9595 RVA: 0x001A0444 File Offset: 0x0019E644
+		// Token: 0x060025D1 RID: 9681 RVA: 0x001A6030 File Offset: 0x001A4230
 		public override Vector3 RandomPointOnSurface()
 		{
 			GridGraph gridGraph = GridNode.GetGridGraph(base.GraphIndex);
@@ -95,16 +95,16 @@ namespace Pathfinding
 			return gridGraph.transform.Transform(a + new Vector3(UnityEngine.Random.value - 0.5f, 0f, UnityEngine.Random.value - 0.5f));
 		}
 
-		// Token: 0x0600257C RID: 9596 RVA: 0x001A04A3 File Offset: 0x0019E6A3
+		// Token: 0x060025D2 RID: 9682 RVA: 0x001A608F File Offset: 0x001A428F
 		public override int GetGizmoHashCode()
 		{
 			return base.GetGizmoHashCode() ^ (int)(109 * this.gridFlags);
 		}
 
-		// Token: 0x0600257D RID: 9597
+		// Token: 0x060025D3 RID: 9683
 		public abstract GridNodeBase GetNeighbourAlongDirection(int direction);
 
-		// Token: 0x0600257E RID: 9598 RVA: 0x001A04B8 File Offset: 0x0019E6B8
+		// Token: 0x060025D4 RID: 9684 RVA: 0x001A60A4 File Offset: 0x001A42A4
 		public override bool ContainsConnection(GraphNode node)
 		{
 			for (int i = 0; i < 8; i++)
@@ -117,45 +117,45 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x0600257F RID: 9599 RVA: 0x001A04DE File Offset: 0x0019E6DE
+		// Token: 0x060025D5 RID: 9685 RVA: 0x001A60CA File Offset: 0x001A42CA
 		public override void AddConnection(GraphNode node, uint cost)
 		{
 			throw new NotImplementedException("GridNodes do not have support for adding manual connections with your current settings.\nPlease disable ASTAR_GRID_NO_CUSTOM_CONNECTIONS in the Optimizations tab in the A* Inspector");
 		}
 
-		// Token: 0x06002580 RID: 9600 RVA: 0x001A04EA File Offset: 0x0019E6EA
+		// Token: 0x060025D6 RID: 9686 RVA: 0x001A60D6 File Offset: 0x001A42D6
 		public override void RemoveConnection(GraphNode node)
 		{
 			throw new NotImplementedException("GridNodes do not have support for adding manual connections with your current settings.\nPlease disable ASTAR_GRID_NO_CUSTOM_CONNECTIONS in the Optimizations tab in the A* Inspector");
 		}
 
-		// Token: 0x06002581 RID: 9601 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060025D7 RID: 9687 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public void ClearCustomConnections(bool alsoReverse)
 		{
 		}
 
-		// Token: 0x040040B7 RID: 16567
+		// Token: 0x04004195 RID: 16789
 		private const int GridFlagsWalkableErosionOffset = 8;
 
-		// Token: 0x040040B8 RID: 16568
+		// Token: 0x04004196 RID: 16790
 		private const int GridFlagsWalkableErosionMask = 256;
 
-		// Token: 0x040040B9 RID: 16569
+		// Token: 0x04004197 RID: 16791
 		private const int GridFlagsWalkableTmpOffset = 9;
 
-		// Token: 0x040040BA RID: 16570
+		// Token: 0x04004198 RID: 16792
 		private const int GridFlagsWalkableTmpMask = 512;
 
-		// Token: 0x040040BB RID: 16571
+		// Token: 0x04004199 RID: 16793
 		protected const int NodeInGridIndexLayerOffset = 24;
 
-		// Token: 0x040040BC RID: 16572
+		// Token: 0x0400419A RID: 16794
 		protected const int NodeInGridIndexMask = 16777215;
 
-		// Token: 0x040040BD RID: 16573
+		// Token: 0x0400419B RID: 16795
 		protected int nodeInGridIndex;
 
-		// Token: 0x040040BE RID: 16574
+		// Token: 0x0400419C RID: 16796
 		protected ushort gridFlags;
 	}
 }

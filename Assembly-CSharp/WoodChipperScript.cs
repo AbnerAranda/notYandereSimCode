@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000467 RID: 1127
+// Token: 0x0200046C RID: 1132
 public class WoodChipperScript : MonoBehaviour
 {
-	// Token: 0x06001D23 RID: 7459 RVA: 0x0015C0A0 File Offset: 0x0015A2A0
+	// Token: 0x06001D4E RID: 7502 RVA: 0x0015FE14 File Offset: 0x0015E014
 	private void Update()
 	{
 		if (this.Yandere.PickUp != null)
@@ -171,7 +171,7 @@ public class WoodChipperScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D24 RID: 7460 RVA: 0x0015C6F0 File Offset: 0x0015A8F0
+	// Token: 0x06001D4F RID: 7503 RVA: 0x00160464 File Offset: 0x0015E664
 	public void SetVictimsMissing()
 	{
 		int[] victimList = this.VictimList;
@@ -181,63 +181,63 @@ public class WoodChipperScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040036EE RID: 14062
+	// Token: 0x04003772 RID: 14194
 	public ParticleSystem BloodSpray;
 
-	// Token: 0x040036EF RID: 14063
+	// Token: 0x04003773 RID: 14195
 	public PromptScript BucketPrompt;
 
-	// Token: 0x040036F0 RID: 14064
+	// Token: 0x04003774 RID: 14196
 	public YandereScript Yandere;
 
-	// Token: 0x040036F1 RID: 14065
+	// Token: 0x04003775 RID: 14197
 	public PickUpScript Bucket;
 
-	// Token: 0x040036F2 RID: 14066
+	// Token: 0x04003776 RID: 14198
 	public PromptScript Prompt;
 
-	// Token: 0x040036F3 RID: 14067
+	// Token: 0x04003777 RID: 14199
 	public AudioClip CloseAudio;
 
-	// Token: 0x040036F4 RID: 14068
+	// Token: 0x04003778 RID: 14200
 	public AudioClip ShredAudio;
 
-	// Token: 0x040036F5 RID: 14069
+	// Token: 0x04003779 RID: 14201
 	public AudioClip OpenAudio;
 
-	// Token: 0x040036F6 RID: 14070
+	// Token: 0x0400377A RID: 14202
 	public Transform BucketPoint;
 
-	// Token: 0x040036F7 RID: 14071
+	// Token: 0x0400377B RID: 14203
 	public Transform DumpPoint;
 
-	// Token: 0x040036F8 RID: 14072
+	// Token: 0x0400377C RID: 14204
 	public Transform Lid;
 
-	// Token: 0x040036F9 RID: 14073
+	// Token: 0x0400377D RID: 14205
 	public float Rotation;
 
-	// Token: 0x040036FA RID: 14074
+	// Token: 0x0400377E RID: 14206
 	public float Timer;
 
-	// Token: 0x040036FB RID: 14075
+	// Token: 0x0400377F RID: 14207
 	public bool Shredding;
 
-	// Token: 0x040036FC RID: 14076
+	// Token: 0x04003780 RID: 14208
 	public bool Occupied;
 
-	// Token: 0x040036FD RID: 14077
+	// Token: 0x04003781 RID: 14209
 	public bool Open;
 
-	// Token: 0x040036FE RID: 14078
+	// Token: 0x04003782 RID: 14210
 	public int VictimID;
 
-	// Token: 0x040036FF RID: 14079
+	// Token: 0x04003783 RID: 14211
 	public int Victims;
 
-	// Token: 0x04003700 RID: 14080
+	// Token: 0x04003784 RID: 14212
 	public int ID;
 
-	// Token: 0x04003701 RID: 14081
+	// Token: 0x04003785 RID: 14213
 	public int[] VictimList;
 }

@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005AB RID: 1451
+	// Token: 0x020005C1 RID: 1473
 	[Obsolete("Use RasterizationMesh instead")]
 	public class ExtraMesh : RasterizationMesh
 	{
-		// Token: 0x06002777 RID: 10103 RVA: 0x001AF413 File Offset: 0x001AD613
+		// Token: 0x060027CD RID: 10189 RVA: 0x001B4FFF File Offset: 0x001B31FF
 		public ExtraMesh(Vector3[] vertices, int[] triangles, Bounds bounds) : base(vertices, triangles, bounds)
 		{
 		}
 
-		// Token: 0x06002778 RID: 10104 RVA: 0x001AF41E File Offset: 0x001AD61E
+		// Token: 0x060027CE RID: 10190 RVA: 0x001B500A File Offset: 0x001B320A
 		public ExtraMesh(Vector3[] vertices, int[] triangles, Bounds bounds, Matrix4x4 matrix) : base(vertices, triangles, bounds, matrix)
 		{
 		}

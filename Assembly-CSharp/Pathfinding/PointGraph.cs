@@ -7,22 +7,22 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000573 RID: 1395
+	// Token: 0x02000589 RID: 1417
 	[JsonOptIn]
 	public class PointGraph : NavGraph, IUpdatableGraph
 	{
-		// Token: 0x1700059B RID: 1435
-		// (get) Token: 0x060025AE RID: 9646 RVA: 0x001A1405 File Offset: 0x0019F605
-		// (set) Token: 0x060025AF RID: 9647 RVA: 0x001A140D File Offset: 0x0019F60D
+		// Token: 0x170005A1 RID: 1441
+		// (get) Token: 0x06002604 RID: 9732 RVA: 0x001A6FF1 File Offset: 0x001A51F1
+		// (set) Token: 0x06002605 RID: 9733 RVA: 0x001A6FF9 File Offset: 0x001A51F9
 		public int nodeCount { get; protected set; }
 
-		// Token: 0x060025B0 RID: 9648 RVA: 0x001A1416 File Offset: 0x0019F616
+		// Token: 0x06002606 RID: 9734 RVA: 0x001A7002 File Offset: 0x001A5202
 		public override int CountNodes()
 		{
 			return this.nodeCount;
 		}
 
-		// Token: 0x060025B1 RID: 9649 RVA: 0x001A1420 File Offset: 0x0019F620
+		// Token: 0x06002607 RID: 9735 RVA: 0x001A700C File Offset: 0x001A520C
 		public override void GetNodes(Action<GraphNode> action)
 		{
 			if (this.nodes == null)
@@ -36,19 +36,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025B2 RID: 9650 RVA: 0x001A1457 File Offset: 0x0019F657
+		// Token: 0x06002608 RID: 9736 RVA: 0x001A7043 File Offset: 0x001A5243
 		public override NNInfoInternal GetNearest(Vector3 position, NNConstraint constraint, GraphNode hint)
 		{
 			return this.GetNearestInternal(position, constraint, true);
 		}
 
-		// Token: 0x060025B3 RID: 9651 RVA: 0x001A1462 File Offset: 0x0019F662
+		// Token: 0x06002609 RID: 9737 RVA: 0x001A704E File Offset: 0x001A524E
 		public override NNInfoInternal GetNearestForce(Vector3 position, NNConstraint constraint)
 		{
 			return this.GetNearestInternal(position, constraint, false);
 		}
 
-		// Token: 0x060025B4 RID: 9652 RVA: 0x001A1470 File Offset: 0x0019F670
+		// Token: 0x0600260A RID: 9738 RVA: 0x001A705C File Offset: 0x001A525C
 		private NNInfoInternal GetNearestInternal(Vector3 position, NNConstraint constraint, bool fastCheck)
 		{
 			if (this.nodes == null)
@@ -86,13 +86,13 @@ namespace Pathfinding
 			return nninfoInternal;
 		}
 
-		// Token: 0x060025B5 RID: 9653 RVA: 0x001A1570 File Offset: 0x0019F770
+		// Token: 0x0600260B RID: 9739 RVA: 0x001A715C File Offset: 0x001A535C
 		public PointNode AddNode(Int3 position)
 		{
 			return this.AddNode<PointNode>(new PointNode(this.active), position);
 		}
 
-		// Token: 0x060025B6 RID: 9654 RVA: 0x001A1584 File Offset: 0x0019F784
+		// Token: 0x0600260C RID: 9740 RVA: 0x001A7170 File Offset: 0x001A5370
 		public T AddNode<T>(T node, Int3 position) where T : PointNode
 		{
 			if (this.nodes == null || this.nodeCount == this.nodes.Length)
@@ -117,7 +117,7 @@ namespace Pathfinding
 			return node;
 		}
 
-		// Token: 0x060025B7 RID: 9655 RVA: 0x001A1650 File Offset: 0x0019F850
+		// Token: 0x0600260D RID: 9741 RVA: 0x001A723C File Offset: 0x001A543C
 		protected static int CountChildren(Transform tr)
 		{
 			int num = 0;
@@ -130,7 +130,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x060025B8 RID: 9656 RVA: 0x001A16B0 File Offset: 0x0019F8B0
+		// Token: 0x0600260E RID: 9742 RVA: 0x001A729C File Offset: 0x001A549C
 		protected void AddChildren(ref int c, Transform tr)
 		{
 			foreach (object obj in tr)
@@ -144,7 +144,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025B9 RID: 9657 RVA: 0x001A1748 File Offset: 0x0019F948
+		// Token: 0x0600260F RID: 9743 RVA: 0x001A7334 File Offset: 0x001A5534
 		public void RebuildNodeLookup()
 		{
 			if (!this.optimizeForSparseGraph || this.nodes == null)
@@ -157,13 +157,13 @@ namespace Pathfinding
 			pointKDTree.Rebuild(array, 0, this.nodeCount);
 		}
 
-		// Token: 0x060025BA RID: 9658 RVA: 0x001A178B File Offset: 0x0019F98B
+		// Token: 0x06002610 RID: 9744 RVA: 0x001A7377 File Offset: 0x001A5577
 		private void AddToLookup(PointNode node)
 		{
 			this.lookupTree.Add(node);
 		}
 
-		// Token: 0x060025BB RID: 9659 RVA: 0x001A179C File Offset: 0x0019F99C
+		// Token: 0x06002611 RID: 9745 RVA: 0x001A7388 File Offset: 0x001A5588
 		protected virtual PointNode[] CreateNodes(int count)
 		{
 			PointNode[] array = new PointNode[count];
@@ -174,7 +174,7 @@ namespace Pathfinding
 			return array;
 		}
 
-		// Token: 0x060025BC RID: 9660 RVA: 0x001A17D0 File Offset: 0x0019F9D0
+		// Token: 0x06002612 RID: 9746 RVA: 0x001A73BC File Offset: 0x001A55BC
 		protected override IEnumerable<Progress> ScanInternal()
 		{
 			yield return new Progress(0f, "Searching for GameObjects");
@@ -239,7 +239,7 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x060025BD RID: 9661 RVA: 0x001A17E0 File Offset: 0x0019F9E0
+		// Token: 0x06002613 RID: 9747 RVA: 0x001A73CC File Offset: 0x001A55CC
 		public void ConnectNodes()
 		{
 			foreach (Progress progress in this.ConnectNodesAsync())
@@ -247,7 +247,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025BE RID: 9662 RVA: 0x001A1828 File Offset: 0x0019FA28
+		// Token: 0x06002614 RID: 9748 RVA: 0x001A7414 File Offset: 0x001A5614
 		private IEnumerable<Progress> ConnectNodesAsync()
 		{
 			if (this.maxDistance >= 0f)
@@ -311,7 +311,7 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x060025BF RID: 9663 RVA: 0x001A1838 File Offset: 0x0019FA38
+		// Token: 0x06002615 RID: 9749 RVA: 0x001A7424 File Offset: 0x001A5624
 		public virtual bool IsValidConnection(GraphNode a, GraphNode b, out float dist)
 		{
 			dist = 0f;
@@ -353,23 +353,23 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025C0 RID: 9664 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x06002616 RID: 9750 RVA: 0x0002D199 File Offset: 0x0002B399
 		GraphUpdateThreading IUpdatableGraph.CanUpdateAsync(GraphUpdateObject o)
 		{
 			return GraphUpdateThreading.UnityThread;
 		}
 
-		// Token: 0x060025C1 RID: 9665 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x06002617 RID: 9751 RVA: 0x00002ACE File Offset: 0x00000CCE
 		void IUpdatableGraph.UpdateAreaInit(GraphUpdateObject o)
 		{
 		}
 
-		// Token: 0x060025C2 RID: 9666 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x06002618 RID: 9752 RVA: 0x00002ACE File Offset: 0x00000CCE
 		void IUpdatableGraph.UpdateAreaPost(GraphUpdateObject o)
 		{
 		}
 
-		// Token: 0x060025C3 RID: 9667 RVA: 0x001A1AF0 File Offset: 0x0019FCF0
+		// Token: 0x06002619 RID: 9753 RVA: 0x001A76DC File Offset: 0x001A58DC
 		void IUpdatableGraph.UpdateArea(GraphUpdateObject guo)
 		{
 			if (this.nodes == null)
@@ -443,20 +443,20 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025C4 RID: 9668 RVA: 0x001A1CC1 File Offset: 0x0019FEC1
+		// Token: 0x0600261A RID: 9754 RVA: 0x001A78AD File Offset: 0x001A5AAD
 		protected override void PostDeserialization(GraphSerializationContext ctx)
 		{
 			this.RebuildNodeLookup();
 		}
 
-		// Token: 0x060025C5 RID: 9669 RVA: 0x001A1CC9 File Offset: 0x0019FEC9
+		// Token: 0x0600261B RID: 9755 RVA: 0x001A78B5 File Offset: 0x001A5AB5
 		public override void RelocateNodes(Matrix4x4 deltaMatrix)
 		{
 			base.RelocateNodes(deltaMatrix);
 			this.RebuildNodeLookup();
 		}
 
-		// Token: 0x060025C6 RID: 9670 RVA: 0x001A1CD8 File Offset: 0x0019FED8
+		// Token: 0x0600261C RID: 9756 RVA: 0x001A78C4 File Offset: 0x001A5AC4
 		protected override void DeserializeSettingsCompatibility(GraphSerializationContext ctx)
 		{
 			base.DeserializeSettingsCompatibility(ctx);
@@ -475,7 +475,7 @@ namespace Pathfinding
 			ctx.reader.ReadBoolean();
 		}
 
-		// Token: 0x060025C7 RID: 9671 RVA: 0x001A1DC0 File Offset: 0x0019FFC0
+		// Token: 0x0600261D RID: 9757 RVA: 0x001A79AC File Offset: 0x001A5BAC
 		protected override void SerializeExtraInfo(GraphSerializationContext ctx)
 		{
 			if (this.nodes == null)
@@ -497,7 +497,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060025C8 RID: 9672 RVA: 0x001A1E38 File Offset: 0x001A0038
+		// Token: 0x0600261E RID: 9758 RVA: 0x001A7A24 File Offset: 0x001A5C24
 		protected override void DeserializeExtraInfo(GraphSerializationContext ctx)
 		{
 			int num = ctx.reader.ReadInt32();
@@ -518,54 +518,54 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x040040C6 RID: 16582
+		// Token: 0x040041A4 RID: 16804
 		[JsonMember]
 		public Transform root;
 
-		// Token: 0x040040C7 RID: 16583
+		// Token: 0x040041A5 RID: 16805
 		[JsonMember]
 		public string searchTag;
 
-		// Token: 0x040040C8 RID: 16584
+		// Token: 0x040041A6 RID: 16806
 		[JsonMember]
 		public float maxDistance;
 
-		// Token: 0x040040C9 RID: 16585
+		// Token: 0x040041A7 RID: 16807
 		[JsonMember]
 		public Vector3 limits;
 
-		// Token: 0x040040CA RID: 16586
+		// Token: 0x040041A8 RID: 16808
 		[JsonMember]
 		public bool raycast = true;
 
-		// Token: 0x040040CB RID: 16587
+		// Token: 0x040041A9 RID: 16809
 		[JsonMember]
 		public bool use2DPhysics;
 
-		// Token: 0x040040CC RID: 16588
+		// Token: 0x040041AA RID: 16810
 		[JsonMember]
 		public bool thickRaycast;
 
-		// Token: 0x040040CD RID: 16589
+		// Token: 0x040041AB RID: 16811
 		[JsonMember]
 		public float thickRaycastRadius = 1f;
 
-		// Token: 0x040040CE RID: 16590
+		// Token: 0x040041AC RID: 16812
 		[JsonMember]
 		public bool recursive = true;
 
-		// Token: 0x040040CF RID: 16591
+		// Token: 0x040041AD RID: 16813
 		[JsonMember]
 		public LayerMask mask;
 
-		// Token: 0x040040D0 RID: 16592
+		// Token: 0x040041AE RID: 16814
 		[JsonMember]
 		public bool optimizeForSparseGraph;
 
-		// Token: 0x040040D1 RID: 16593
+		// Token: 0x040041AF RID: 16815
 		private PointKDTree lookupTree = new PointKDTree();
 
-		// Token: 0x040040D2 RID: 16594
+		// Token: 0x040041B0 RID: 16816
 		public PointNode[] nodes;
 	}
 }

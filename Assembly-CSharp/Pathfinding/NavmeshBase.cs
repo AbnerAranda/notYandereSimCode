@@ -8,23 +8,23 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200056D RID: 1389
+	// Token: 0x02000583 RID: 1411
 	public abstract class NavmeshBase : NavGraph, INavmesh, INavmeshHolder, ITransformedGraph, IRaycastableGraph
 	{
-		// Token: 0x1700058D RID: 1421
-		// (get) Token: 0x0600251F RID: 9503
+		// Token: 0x17000593 RID: 1427
+		// (get) Token: 0x06002575 RID: 9589
 		public abstract float TileWorldSizeX { get; }
 
-		// Token: 0x1700058E RID: 1422
-		// (get) Token: 0x06002520 RID: 9504
+		// Token: 0x17000594 RID: 1428
+		// (get) Token: 0x06002576 RID: 9590
 		public abstract float TileWorldSizeZ { get; }
 
-		// Token: 0x1700058F RID: 1423
-		// (get) Token: 0x06002521 RID: 9505
+		// Token: 0x17000595 RID: 1429
+		// (get) Token: 0x06002577 RID: 9591
 		protected abstract float MaxTileConnectionEdgeDistance { get; }
 
-		// Token: 0x17000590 RID: 1424
-		// (get) Token: 0x06002522 RID: 9506 RVA: 0x0019D488 File Offset: 0x0019B688
+		// Token: 0x17000596 RID: 1430
+		// (get) Token: 0x06002578 RID: 9592 RVA: 0x001A3074 File Offset: 0x001A1274
 		GraphTransform ITransformedGraph.transform
 		{
 			get
@@ -33,77 +33,77 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000591 RID: 1425
-		// (get) Token: 0x06002523 RID: 9507
+		// Token: 0x17000597 RID: 1431
+		// (get) Token: 0x06002579 RID: 9593
 		protected abstract bool RecalculateNormals { get; }
 
-		// Token: 0x06002524 RID: 9508
+		// Token: 0x0600257A RID: 9594
 		public abstract GraphTransform CalculateTransform();
 
-		// Token: 0x06002525 RID: 9509 RVA: 0x0019D490 File Offset: 0x0019B690
+		// Token: 0x0600257B RID: 9595 RVA: 0x001A307C File Offset: 0x001A127C
 		public NavmeshTile GetTile(int x, int z)
 		{
 			return this.tiles[x + z * this.tileXCount];
 		}
 
-		// Token: 0x06002526 RID: 9510 RVA: 0x0019D4A4 File Offset: 0x0019B6A4
+		// Token: 0x0600257C RID: 9596 RVA: 0x001A3090 File Offset: 0x001A1290
 		public Int3 GetVertex(int index)
 		{
 			int num = index >> 12 & 524287;
 			return this.tiles[num].GetVertex(index);
 		}
 
-		// Token: 0x06002527 RID: 9511 RVA: 0x0019D4CC File Offset: 0x0019B6CC
+		// Token: 0x0600257D RID: 9597 RVA: 0x001A30B8 File Offset: 0x001A12B8
 		public Int3 GetVertexInGraphSpace(int index)
 		{
 			int num = index >> 12 & 524287;
 			return this.tiles[num].GetVertexInGraphSpace(index);
 		}
 
-		// Token: 0x06002528 RID: 9512 RVA: 0x0019D4F2 File Offset: 0x0019B6F2
+		// Token: 0x0600257E RID: 9598 RVA: 0x001A30DE File Offset: 0x001A12DE
 		public static int GetTileIndex(int index)
 		{
 			return index >> 12 & 524287;
 		}
 
-		// Token: 0x06002529 RID: 9513 RVA: 0x0019D4FE File Offset: 0x0019B6FE
+		// Token: 0x0600257F RID: 9599 RVA: 0x001A30EA File Offset: 0x001A12EA
 		public int GetVertexArrayIndex(int index)
 		{
 			return index & 4095;
 		}
 
-		// Token: 0x0600252A RID: 9514 RVA: 0x0019D507 File Offset: 0x0019B707
+		// Token: 0x06002580 RID: 9600 RVA: 0x001A30F3 File Offset: 0x001A12F3
 		public void GetTileCoordinates(int tileIndex, out int x, out int z)
 		{
 			z = tileIndex / this.tileXCount;
 			x = tileIndex - z * this.tileXCount;
 		}
 
-		// Token: 0x0600252B RID: 9515 RVA: 0x0019D520 File Offset: 0x0019B720
+		// Token: 0x06002581 RID: 9601 RVA: 0x001A310C File Offset: 0x001A130C
 		public NavmeshTile[] GetTiles()
 		{
 			return this.tiles;
 		}
 
-		// Token: 0x0600252C RID: 9516 RVA: 0x0019D528 File Offset: 0x0019B728
+		// Token: 0x06002582 RID: 9602 RVA: 0x001A3114 File Offset: 0x001A1314
 		public Bounds GetTileBounds(IntRect rect)
 		{
 			return this.GetTileBounds(rect.xmin, rect.ymin, rect.Width, rect.Height);
 		}
 
-		// Token: 0x0600252D RID: 9517 RVA: 0x0019D54A File Offset: 0x0019B74A
+		// Token: 0x06002583 RID: 9603 RVA: 0x001A3136 File Offset: 0x001A1336
 		public Bounds GetTileBounds(int x, int z, int width = 1, int depth = 1)
 		{
 			return this.transform.Transform(this.GetTileBoundsInGraphSpace(x, z, width, depth));
 		}
 
-		// Token: 0x0600252E RID: 9518 RVA: 0x0019D562 File Offset: 0x0019B762
+		// Token: 0x06002584 RID: 9604 RVA: 0x001A314E File Offset: 0x001A134E
 		public Bounds GetTileBoundsInGraphSpace(IntRect rect)
 		{
 			return this.GetTileBoundsInGraphSpace(rect.xmin, rect.ymin, rect.Width, rect.Height);
 		}
 
-		// Token: 0x0600252F RID: 9519 RVA: 0x0019D584 File Offset: 0x0019B784
+		// Token: 0x06002585 RID: 9605 RVA: 0x001A3170 File Offset: 0x001A1370
 		public Bounds GetTileBoundsInGraphSpace(int x, int z, int width = 1, int depth = 1)
 		{
 			Bounds result = default(Bounds);
@@ -111,7 +111,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002530 RID: 9520 RVA: 0x0019D5E4 File Offset: 0x0019B7E4
+		// Token: 0x06002586 RID: 9606 RVA: 0x001A31D0 File Offset: 0x001A13D0
 		public Int2 GetTileCoordinates(Vector3 position)
 		{
 			position = this.transform.InverseTransform(position);
@@ -120,7 +120,7 @@ namespace Pathfinding
 			return new Int2((int)position.x, (int)position.z);
 		}
 
-		// Token: 0x06002531 RID: 9521 RVA: 0x0019D634 File Offset: 0x0019B834
+		// Token: 0x06002587 RID: 9607 RVA: 0x001A3220 File Offset: 0x001A1420
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
@@ -134,13 +134,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002532 RID: 9522 RVA: 0x0019D68B File Offset: 0x0019B88B
+		// Token: 0x06002588 RID: 9608 RVA: 0x001A3277 File Offset: 0x001A1477
 		public override void RelocateNodes(Matrix4x4 deltaMatrix)
 		{
 			this.RelocateNodes(deltaMatrix * this.transform);
 		}
 
-		// Token: 0x06002533 RID: 9523 RVA: 0x0019D6A0 File Offset: 0x0019B8A0
+		// Token: 0x06002589 RID: 9609 RVA: 0x001A328C File Offset: 0x001A148C
 		public void RelocateNodes(GraphTransform newTransform)
 		{
 			this.transform = newTransform;
@@ -163,7 +163,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002534 RID: 9524 RVA: 0x0019D730 File Offset: 0x0019B930
+		// Token: 0x0600258A RID: 9610 RVA: 0x001A331C File Offset: 0x001A151C
 		protected NavmeshTile NewEmptyTile(int x, int z)
 		{
 			return new NavmeshTile
@@ -181,7 +181,7 @@ namespace Pathfinding
 			};
 		}
 
-		// Token: 0x06002535 RID: 9525 RVA: 0x0019D7A0 File Offset: 0x0019B9A0
+		// Token: 0x0600258B RID: 9611 RVA: 0x001A338C File Offset: 0x001A158C
 		public override void GetNodes(Action<GraphNode> action)
 		{
 			if (this.tiles == null)
@@ -204,27 +204,27 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002536 RID: 9526 RVA: 0x0019D820 File Offset: 0x0019BA20
+		// Token: 0x0600258C RID: 9612 RVA: 0x001A340C File Offset: 0x001A160C
 		public IntRect GetTouchingTiles(Bounds bounds)
 		{
 			bounds = this.transform.InverseTransform(bounds);
 			return IntRect.Intersection(new IntRect(Mathf.FloorToInt(bounds.min.x / this.TileWorldSizeX), Mathf.FloorToInt(bounds.min.z / this.TileWorldSizeZ), Mathf.FloorToInt(bounds.max.x / this.TileWorldSizeX), Mathf.FloorToInt(bounds.max.z / this.TileWorldSizeZ)), new IntRect(0, 0, this.tileXCount - 1, this.tileZCount - 1));
 		}
 
-		// Token: 0x06002537 RID: 9527 RVA: 0x0019D8BC File Offset: 0x0019BABC
+		// Token: 0x0600258D RID: 9613 RVA: 0x001A34A8 File Offset: 0x001A16A8
 		public IntRect GetTouchingTilesInGraphSpace(Rect rect)
 		{
 			return IntRect.Intersection(new IntRect(Mathf.FloorToInt(rect.xMin / this.TileWorldSizeX), Mathf.FloorToInt(rect.yMin / this.TileWorldSizeZ), Mathf.FloorToInt(rect.xMax / this.TileWorldSizeX), Mathf.FloorToInt(rect.yMax / this.TileWorldSizeZ)), new IntRect(0, 0, this.tileXCount - 1, this.tileZCount - 1));
 		}
 
-		// Token: 0x06002538 RID: 9528 RVA: 0x0019D938 File Offset: 0x0019BB38
+		// Token: 0x0600258E RID: 9614 RVA: 0x001A3524 File Offset: 0x001A1724
 		public IntRect GetTouchingTilesRound(Bounds bounds)
 		{
 			bounds = this.transform.InverseTransform(bounds);
 			return IntRect.Intersection(new IntRect(Mathf.RoundToInt(bounds.min.x / this.TileWorldSizeX), Mathf.RoundToInt(bounds.min.z / this.TileWorldSizeZ), Mathf.RoundToInt(bounds.max.x / this.TileWorldSizeX) - 1, Mathf.RoundToInt(bounds.max.z / this.TileWorldSizeZ) - 1), new IntRect(0, 0, this.tileXCount - 1, this.tileZCount - 1));
 		}
 
-		// Token: 0x06002539 RID: 9529 RVA: 0x0019D9D8 File Offset: 0x0019BBD8
+		// Token: 0x0600258F RID: 9615 RVA: 0x001A35C4 File Offset: 0x001A17C4
 		protected void ConnectTileWithNeighbours(NavmeshTile tile, bool onlyUnflagged = false)
 		{
 			if (tile.w != 1 || tile.d != 1)
@@ -252,7 +252,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600253A RID: 9530 RVA: 0x0019DA78 File Offset: 0x0019BC78
+		// Token: 0x06002590 RID: 9616 RVA: 0x001A3664 File Offset: 0x001A1864
 		protected void RemoveConnectionsFromTile(NavmeshTile tile)
 		{
 			if (tile.x > 0)
@@ -289,7 +289,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600253B RID: 9531 RVA: 0x0019DBD4 File Offset: 0x0019BDD4
+		// Token: 0x06002591 RID: 9617 RVA: 0x001A37C0 File Offset: 0x001A19C0
 		protected void RemoveConnectionsFromTo(NavmeshTile a, NavmeshTile b)
 		{
 			if (a == null || b == null)
@@ -319,13 +319,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600253C RID: 9532 RVA: 0x0019DC84 File Offset: 0x0019BE84
+		// Token: 0x06002592 RID: 9618 RVA: 0x001A3870 File Offset: 0x001A1A70
 		public override NNInfoInternal GetNearest(Vector3 position, NNConstraint constraint, GraphNode hint)
 		{
 			return this.GetNearestForce(position, (constraint != null && constraint.distanceXZ) ? NavmeshBase.NNConstraintDistanceXZ : null);
 		}
 
-		// Token: 0x0600253D RID: 9533 RVA: 0x0019DCA0 File Offset: 0x0019BEA0
+		// Token: 0x06002593 RID: 9619 RVA: 0x001A388C File Offset: 0x001A1A8C
 		public override NNInfoInternal GetNearestForce(Vector3 position, NNConstraint constraint)
 		{
 			if (this.tiles == null)
@@ -377,7 +377,7 @@ namespace Pathfinding
 			return nninfoInternal;
 		}
 
-		// Token: 0x0600253E RID: 9534 RVA: 0x0019DE50 File Offset: 0x0019C050
+		// Token: 0x06002594 RID: 9620 RVA: 0x001A3A3C File Offset: 0x001A1C3C
 		public GraphNode PointOnNavmesh(Vector3 position, NNConstraint constraint)
 		{
 			if (this.tiles == null)
@@ -397,7 +397,7 @@ namespace Pathfinding
 			return null;
 		}
 
-		// Token: 0x0600253F RID: 9535 RVA: 0x0019DEC4 File Offset: 0x0019C0C4
+		// Token: 0x06002595 RID: 9621 RVA: 0x001A3AB0 File Offset: 0x001A1CB0
 		protected void FillWithEmptyTiles()
 		{
 			for (int i = 0; i < this.tileZCount; i++)
@@ -409,7 +409,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002540 RID: 9536 RVA: 0x0019DF0C File Offset: 0x0019C10C
+		// Token: 0x06002596 RID: 9622 RVA: 0x001A3AF8 File Offset: 0x001A1CF8
 		protected static void CreateNodeConnections(TriangleMeshNode[] nodes)
 		{
 			List<Connection> list = ListPool<Connection>.Claim();
@@ -458,7 +458,7 @@ namespace Pathfinding
 			ListPool<Connection>.Release(ref list);
 		}
 
-		// Token: 0x06002541 RID: 9537 RVA: 0x0019E088 File Offset: 0x0019C288
+		// Token: 0x06002597 RID: 9623 RVA: 0x001A3C74 File Offset: 0x001A1E74
 		protected void ConnectTiles(NavmeshTile tile1, NavmeshTile tile2)
 		{
 			if (tile1 == null || tile2 == null)
@@ -555,7 +555,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002542 RID: 9538 RVA: 0x0019E429 File Offset: 0x0019C629
+		// Token: 0x06002598 RID: 9624 RVA: 0x001A4015 File Offset: 0x001A2215
 		public void StartBatchTileUpdate()
 		{
 			if (this.batchTileUpdate)
@@ -565,7 +565,7 @@ namespace Pathfinding
 			this.batchTileUpdate = true;
 		}
 
-		// Token: 0x06002543 RID: 9539 RVA: 0x0019E448 File Offset: 0x0019C648
+		// Token: 0x06002599 RID: 9625 RVA: 0x001A4034 File Offset: 0x001A2234
 		private void DestroyNodes(List<MeshNode> nodes)
 		{
 			for (int i = 0; i < this.batchNodesToDestroy.Count; i++)
@@ -588,7 +588,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002544 RID: 9540 RVA: 0x0019E4E9 File Offset: 0x0019C6E9
+		// Token: 0x0600259A RID: 9626 RVA: 0x001A40D5 File Offset: 0x001A22D5
 		private void TryConnect(int tileIdx1, int tileIdx2)
 		{
 			if (this.tiles[tileIdx1].flag && this.tiles[tileIdx2].flag && tileIdx1 >= tileIdx2)
@@ -598,7 +598,7 @@ namespace Pathfinding
 			this.ConnectTiles(this.tiles[tileIdx1], this.tiles[tileIdx2]);
 		}
 
-		// Token: 0x06002545 RID: 9541 RVA: 0x0019E524 File Offset: 0x0019C724
+		// Token: 0x0600259B RID: 9627 RVA: 0x001A4110 File Offset: 0x001A2310
 		public void EndBatchTileUpdate()
 		{
 			if (!this.batchTileUpdate)
@@ -640,7 +640,7 @@ namespace Pathfinding
 			this.batchUpdatedTiles.ClearFast<int>();
 		}
 
-		// Token: 0x06002546 RID: 9542 RVA: 0x0019E6B8 File Offset: 0x0019C8B8
+		// Token: 0x0600259C RID: 9628 RVA: 0x001A42A4 File Offset: 0x001A24A4
 		protected void ClearTile(int x, int z)
 		{
 			if (!this.batchTileUpdate)
@@ -664,7 +664,7 @@ namespace Pathfinding
 			this.tiles[x + z * this.tileXCount] = null;
 		}
 
-		// Token: 0x06002547 RID: 9543 RVA: 0x0019E72C File Offset: 0x0019C92C
+		// Token: 0x0600259D RID: 9629 RVA: 0x001A4318 File Offset: 0x001A2518
 		private void PrepareNodeRecycling(int x, int z, Int3[] verts, int[] tris, TriangleMeshNode[] recycledNodeBuffer)
 		{
 			NavmeshTile tile = this.GetTile(x, z);
@@ -715,7 +715,7 @@ namespace Pathfinding
 			ListPool<Connection>.Release(ref list);
 		}
 
-		// Token: 0x06002548 RID: 9544 RVA: 0x0019E914 File Offset: 0x0019CB14
+		// Token: 0x0600259E RID: 9630 RVA: 0x001A4500 File Offset: 0x001A2700
 		public void ReplaceTile(int x, int z, Int3[] verts, int[] tris)
 		{
 			int num = 1;
@@ -801,7 +801,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002549 RID: 9545 RVA: 0x0019EC1C File Offset: 0x0019CE1C
+		// Token: 0x0600259F RID: 9631 RVA: 0x001A4808 File Offset: 0x001A2A08
 		protected void CreateNodes(TriangleMeshNode[] buffer, int[] tris, int tileIndex, uint graphIndex)
 		{
 			if (buffer == null || buffer.Length < tris.Length / 3)
@@ -817,7 +817,7 @@ namespace Pathfinding
 					triangleMeshNode = (buffer[i] = new TriangleMeshNode(this.active));
 				}
 				triangleMeshNode.Walkable = true;
-				triangleMeshNode.Tag = 0u;
+				triangleMeshNode.Tag = 0U;
 				triangleMeshNode.Penalty = this.initialPenalty;
 				triangleMeshNode.GraphIndex = graphIndex;
 				triangleMeshNode.v0 = (tris[i * 3] | tileIndex);
@@ -831,38 +831,38 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600254A RID: 9546 RVA: 0x0019ECFC File Offset: 0x0019CEFC
+		// Token: 0x060025A0 RID: 9632 RVA: 0x001A48E8 File Offset: 0x001A2AE8
 		public bool Linecast(Vector3 origin, Vector3 end)
 		{
 			return this.Linecast(origin, end, base.GetNearest(origin, NNConstraint.None).node);
 		}
 
-		// Token: 0x0600254B RID: 9547 RVA: 0x0019ED17 File Offset: 0x0019CF17
+		// Token: 0x060025A1 RID: 9633 RVA: 0x001A4903 File Offset: 0x001A2B03
 		public bool Linecast(Vector3 origin, Vector3 end, GraphNode hint, out GraphHitInfo hit)
 		{
 			return NavmeshBase.Linecast(this, origin, end, hint, out hit, null);
 		}
 
-		// Token: 0x0600254C RID: 9548 RVA: 0x0019ED28 File Offset: 0x0019CF28
+		// Token: 0x060025A2 RID: 9634 RVA: 0x001A4914 File Offset: 0x001A2B14
 		public bool Linecast(Vector3 origin, Vector3 end, GraphNode hint)
 		{
 			GraphHitInfo graphHitInfo;
 			return NavmeshBase.Linecast(this, origin, end, hint, out graphHitInfo, null);
 		}
 
-		// Token: 0x0600254D RID: 9549 RVA: 0x0019ED41 File Offset: 0x0019CF41
+		// Token: 0x060025A3 RID: 9635 RVA: 0x001A492D File Offset: 0x001A2B2D
 		public bool Linecast(Vector3 origin, Vector3 end, GraphNode hint, out GraphHitInfo hit, List<GraphNode> trace)
 		{
 			return NavmeshBase.Linecast(this, origin, end, hint, out hit, trace);
 		}
 
-		// Token: 0x0600254E RID: 9550 RVA: 0x0019ED17 File Offset: 0x0019CF17
+		// Token: 0x060025A4 RID: 9636 RVA: 0x001A4903 File Offset: 0x001A2B03
 		public static bool Linecast(NavmeshBase graph, Vector3 origin, Vector3 end, GraphNode hint, out GraphHitInfo hit)
 		{
 			return NavmeshBase.Linecast(graph, origin, end, hint, out hit, null);
 		}
 
-		// Token: 0x0600254F RID: 9551 RVA: 0x0019ED50 File Offset: 0x0019CF50
+		// Token: 0x060025A5 RID: 9637 RVA: 0x001A493C File Offset: 0x001A2B3C
 		static NavmeshBase()
 		{
 			Side[] array = new Side[3];
@@ -891,7 +891,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002550 RID: 9552 RVA: 0x0019EE34 File Offset: 0x0019D034
+		// Token: 0x060025A6 RID: 9638 RVA: 0x001A4A20 File Offset: 0x001A2C20
 		public static bool Linecast(NavmeshBase graph, Vector3 origin, Vector3 end, GraphNode hint, out GraphHitInfo hit, List<GraphNode> trace)
 		{
 			hit = default(GraphHitInfo);
@@ -1022,7 +1022,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x06002551 RID: 9553 RVA: 0x0019F1D0 File Offset: 0x0019D3D0
+		// Token: 0x060025A7 RID: 9639 RVA: 0x001A4DBC File Offset: 0x001A2FBC
 		public override void OnDrawGizmos(RetainedGizmos gizmos, bool drawNodes)
 		{
 			if (!drawNodes)
@@ -1081,7 +1081,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002552 RID: 9554 RVA: 0x0019F3A4 File Offset: 0x0019D5A4
+		// Token: 0x060025A8 RID: 9640 RVA: 0x001A4F90 File Offset: 0x001A3190
 		private void CreateNavmeshSurfaceVisualization(NavmeshTile tile, GraphGizmoHelper helper)
 		{
 			Vector3[] array = ArrayPool<Vector3>.Claim(tile.nodes.Length * 3);
@@ -1111,7 +1111,7 @@ namespace Pathfinding
 			ArrayPool<Color>.Release(ref array2, false);
 		}
 
-		// Token: 0x06002553 RID: 9555 RVA: 0x0019F4A8 File Offset: 0x0019D6A8
+		// Token: 0x060025A9 RID: 9641 RVA: 0x001A5094 File Offset: 0x001A3294
 		private static void CreateNavmeshOutlineVisualization(NavmeshTile tile, GraphGizmoHelper helper)
 		{
 			bool[] array = new bool[3];
@@ -1149,7 +1149,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002554 RID: 9556 RVA: 0x0019F5DC File Offset: 0x0019D7DC
+		// Token: 0x060025AA RID: 9642 RVA: 0x001A51C8 File Offset: 0x001A33C8
 		protected override void SerializeExtraInfo(GraphSerializationContext ctx)
 		{
 			BinaryWriter writer = ctx.writer;
@@ -1200,7 +1200,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002555 RID: 9557 RVA: 0x0019F788 File Offset: 0x0019D988
+		// Token: 0x060025AB RID: 9643 RVA: 0x001A5374 File Offset: 0x001A3574
 		protected override void DeserializeExtraInfo(GraphSerializationContext ctx)
 		{
 			BinaryReader reader = ctx.reader;
@@ -1298,7 +1298,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002556 RID: 9558 RVA: 0x0019FAC8 File Offset: 0x0019DCC8
+		// Token: 0x060025AC RID: 9644 RVA: 0x001A56B4 File Offset: 0x001A38B4
 		protected override void PostDeserialization(GraphSerializationContext ctx)
 		{
 			if (ctx.meta.version < AstarSerializer.V4_1_0 && this.tiles != null)
@@ -1332,72 +1332,72 @@ namespace Pathfinding
 			this.transform = this.CalculateTransform();
 		}
 
-		// Token: 0x0400409D RID: 16541
+		// Token: 0x0400417B RID: 16763
 		public const int VertexIndexMask = 4095;
 
-		// Token: 0x0400409E RID: 16542
+		// Token: 0x0400417C RID: 16764
 		public const int TileIndexMask = 524287;
 
-		// Token: 0x0400409F RID: 16543
+		// Token: 0x0400417D RID: 16765
 		public const int TileIndexOffset = 12;
 
-		// Token: 0x040040A0 RID: 16544
+		// Token: 0x0400417E RID: 16766
 		[JsonMember]
 		public Vector3 forcedBoundsSize = new Vector3(100f, 40f, 100f);
 
-		// Token: 0x040040A1 RID: 16545
+		// Token: 0x0400417F RID: 16767
 		[JsonMember]
 		public bool showMeshOutline = true;
 
-		// Token: 0x040040A2 RID: 16546
+		// Token: 0x04004180 RID: 16768
 		[JsonMember]
 		public bool showNodeConnections;
 
-		// Token: 0x040040A3 RID: 16547
+		// Token: 0x04004181 RID: 16769
 		[JsonMember]
 		public bool showMeshSurface;
 
-		// Token: 0x040040A4 RID: 16548
+		// Token: 0x04004182 RID: 16770
 		public int tileXCount;
 
-		// Token: 0x040040A5 RID: 16549
+		// Token: 0x04004183 RID: 16771
 		public int tileZCount;
 
-		// Token: 0x040040A6 RID: 16550
+		// Token: 0x04004184 RID: 16772
 		protected NavmeshTile[] tiles;
 
-		// Token: 0x040040A7 RID: 16551
+		// Token: 0x04004185 RID: 16773
 		[JsonMember]
 		public bool nearestSearchOnlyXZ;
 
-		// Token: 0x040040A8 RID: 16552
+		// Token: 0x04004186 RID: 16774
 		private bool batchTileUpdate;
 
-		// Token: 0x040040A9 RID: 16553
+		// Token: 0x04004187 RID: 16775
 		private List<int> batchUpdatedTiles = new List<int>();
 
-		// Token: 0x040040AA RID: 16554
+		// Token: 0x04004188 RID: 16776
 		private List<MeshNode> batchNodesToDestroy = new List<MeshNode>();
 
-		// Token: 0x040040AB RID: 16555
+		// Token: 0x04004189 RID: 16777
 		public GraphTransform transform = new GraphTransform(Matrix4x4.identity);
 
-		// Token: 0x040040AC RID: 16556
+		// Token: 0x0400418A RID: 16778
 		public Action<NavmeshTile[]> OnRecalculatedTiles;
 
-		// Token: 0x040040AD RID: 16557
+		// Token: 0x0400418B RID: 16779
 		private static readonly NNConstraint NNConstraintDistanceXZ = new NNConstraint
 		{
 			distanceXZ = true
 		};
 
-		// Token: 0x040040AE RID: 16558
+		// Token: 0x0400418C RID: 16780
 		private Dictionary<int, int> nodeRecyclingHashBuffer = new Dictionary<int, int>();
 
-		// Token: 0x040040AF RID: 16559
+		// Token: 0x0400418D RID: 16781
 		private static readonly NNConstraint NNConstraintNone = NNConstraint.None;
 
-		// Token: 0x040040B0 RID: 16560
+		// Token: 0x0400418E RID: 16782
 		private static readonly byte[] LinecastShapeEdgeLookup = new byte[64];
 	}
 }

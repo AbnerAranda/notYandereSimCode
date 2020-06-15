@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000517 RID: 1303
+	// Token: 0x0200052D RID: 1325
 	public class RichFunnel : RichPathPart
 	{
-		// Token: 0x06002149 RID: 8521 RVA: 0x00189424 File Offset: 0x00187624
+		// Token: 0x0600219F RID: 8607 RVA: 0x0018F010 File Offset: 0x0018D210
 		public RichFunnel()
 		{
 			this.left = ListPool<Vector3>.Claim();
@@ -17,7 +17,7 @@ namespace Pathfinding
 			this.graph = null;
 		}
 
-		// Token: 0x0600214A RID: 8522 RVA: 0x00189472 File Offset: 0x00187672
+		// Token: 0x060021A0 RID: 8608 RVA: 0x0018F05E File Offset: 0x0018D25E
 		public RichFunnel Initialize(RichPath path, NavmeshBase graph)
 		{
 			if (graph == null)
@@ -33,7 +33,7 @@ namespace Pathfinding
 			return this;
 		}
 
-		// Token: 0x0600214B RID: 8523 RVA: 0x001894AA File Offset: 0x001876AA
+		// Token: 0x060021A1 RID: 8609 RVA: 0x0018F096 File Offset: 0x0018D296
 		public override void OnEnterPool()
 		{
 			this.left.Clear();
@@ -44,8 +44,8 @@ namespace Pathfinding
 			this.checkForDestroyedNodesCounter = 0;
 		}
 
-		// Token: 0x17000527 RID: 1319
-		// (get) Token: 0x0600214C RID: 8524 RVA: 0x001894E4 File Offset: 0x001876E4
+		// Token: 0x1700052D RID: 1325
+		// (get) Token: 0x060021A2 RID: 8610 RVA: 0x0018F0D0 File Offset: 0x0018D2D0
 		public TriangleMeshNode CurrentNode
 		{
 			get
@@ -59,7 +59,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600214D RID: 8525 RVA: 0x00189510 File Offset: 0x00187710
+		// Token: 0x060021A3 RID: 8611 RVA: 0x0018F0FC File Offset: 0x0018D2FC
 		public void BuildFunnelCorridor(List<GraphNode> nodes, int start, int end)
 		{
 			this.exactStart = (nodes[start] as MeshNode).ClosestPointOnNode(this.exactStart);
@@ -110,7 +110,7 @@ namespace Pathfinding
 			this.right.Add(this.exactEnd);
 		}
 
-		// Token: 0x0600214E RID: 8526 RVA: 0x001896D8 File Offset: 0x001878D8
+		// Token: 0x060021A4 RID: 8612 RVA: 0x0018F2C4 File Offset: 0x0018D4C4
 		private void SimplifyPath(IRaycastableGraph graph, List<GraphNode> nodes, int start, int end, List<GraphNode> result, Vector3 startPoint, Vector3 endPoint)
 		{
 			if (graph == null)
@@ -187,7 +187,7 @@ namespace Pathfinding
 			Debug.LogError("Was the path really long or have we got cought in an infinite loop?");
 		}
 
-		// Token: 0x0600214F RID: 8527 RVA: 0x00189960 File Offset: 0x00187B60
+		// Token: 0x060021A5 RID: 8613 RVA: 0x0018F54C File Offset: 0x0018D74C
 		private void UpdateFunnelCorridor(int splitIndex, List<TriangleMeshNode> prefix)
 		{
 			this.nodes.RemoveRange(0, splitIndex);
@@ -204,7 +204,7 @@ namespace Pathfinding
 			this.right.Add(this.exactEnd);
 		}
 
-		// Token: 0x06002150 RID: 8528 RVA: 0x00189A28 File Offset: 0x00187C28
+		// Token: 0x060021A6 RID: 8614 RVA: 0x0018F614 File Offset: 0x0018D814
 		private bool CheckForDestroyedNodes()
 		{
 			int i = 0;
@@ -220,8 +220,8 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x17000528 RID: 1320
-		// (get) Token: 0x06002151 RID: 8529 RVA: 0x00189A64 File Offset: 0x00187C64
+		// Token: 0x1700052E RID: 1326
+		// (get) Token: 0x060021A7 RID: 8615 RVA: 0x0018F650 File Offset: 0x0018D850
 		public float DistanceToEndOfPath
 		{
 			get
@@ -232,7 +232,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002152 RID: 8530 RVA: 0x00189AA4 File Offset: 0x00187CA4
+		// Token: 0x060021A8 RID: 8616 RVA: 0x0018F690 File Offset: 0x0018D890
 		public Vector3 ClampToNavmesh(Vector3 position)
 		{
 			if (this.path.transform != null)
@@ -247,7 +247,7 @@ namespace Pathfinding
 			return position;
 		}
 
-		// Token: 0x06002153 RID: 8531 RVA: 0x00189AFC File Offset: 0x00187CFC
+		// Token: 0x060021A9 RID: 8617 RVA: 0x0018F6E8 File Offset: 0x0018D8E8
 		public Vector3 Update(Vector3 position, List<Vector3> buffer, int numCorners, out bool lastCorner, out bool requiresRepath)
 		{
 			if (this.path.transform != null)
@@ -289,7 +289,7 @@ namespace Pathfinding
 			return position;
 		}
 
-		// Token: 0x06002154 RID: 8532 RVA: 0x00189BF8 File Offset: 0x00187DF8
+		// Token: 0x060021AA RID: 8618 RVA: 0x0018F7E4 File Offset: 0x0018D9E4
 		private bool ClampToNavmeshInternal(ref Vector3 position)
 		{
 			TriangleMeshNode triangleMeshNode = this.nodes[this.currentNode];
@@ -367,13 +367,13 @@ namespace Pathfinding
 			return this.currentNode + 1 < this.nodes.Count && this.nodes[this.currentNode + 1].Destroyed;
 		}
 
-		// Token: 0x06002155 RID: 8533 RVA: 0x00189E1D File Offset: 0x0018801D
+		// Token: 0x060021AB RID: 8619 RVA: 0x0018FA09 File Offset: 0x0018DC09
 		public void FindWalls(List<Vector3> wallBuffer, float range)
 		{
 			this.FindWalls(this.currentNode, wallBuffer, this.currentPosition, range);
 		}
 
-		// Token: 0x06002156 RID: 8534 RVA: 0x00189E34 File Offset: 0x00188034
+		// Token: 0x060021AC RID: 8620 RVA: 0x0018FA20 File Offset: 0x0018DC20
 		private void FindWalls(int nodeIndex, List<Vector3> wallBuffer, Vector3 position, float range)
 		{
 			if (range <= 0f)
@@ -469,7 +469,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002157 RID: 8535 RVA: 0x0018A0B8 File Offset: 0x001882B8
+		// Token: 0x060021AD RID: 8621 RVA: 0x0018FCA4 File Offset: 0x0018DEA4
 		private bool FindNextCorners(Vector3 origin, int startIndex, List<Vector3> funnelPath, int numCorners, out bool lastCorner)
 		{
 			lastCorner = false;
@@ -594,49 +594,49 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x04003E7F RID: 15999
+		// Token: 0x04003F5D RID: 16221
 		private readonly List<Vector3> left;
 
-		// Token: 0x04003E80 RID: 16000
+		// Token: 0x04003F5E RID: 16222
 		private readonly List<Vector3> right;
 
-		// Token: 0x04003E81 RID: 16001
+		// Token: 0x04003F5F RID: 16223
 		private List<TriangleMeshNode> nodes;
 
-		// Token: 0x04003E82 RID: 16002
+		// Token: 0x04003F60 RID: 16224
 		public Vector3 exactStart;
 
-		// Token: 0x04003E83 RID: 16003
+		// Token: 0x04003F61 RID: 16225
 		public Vector3 exactEnd;
 
-		// Token: 0x04003E84 RID: 16004
+		// Token: 0x04003F62 RID: 16226
 		private NavmeshBase graph;
 
-		// Token: 0x04003E85 RID: 16005
+		// Token: 0x04003F63 RID: 16227
 		private int currentNode;
 
-		// Token: 0x04003E86 RID: 16006
+		// Token: 0x04003F64 RID: 16228
 		private Vector3 currentPosition;
 
-		// Token: 0x04003E87 RID: 16007
+		// Token: 0x04003F65 RID: 16229
 		private int checkForDestroyedNodesCounter;
 
-		// Token: 0x04003E88 RID: 16008
+		// Token: 0x04003F66 RID: 16230
 		private RichPath path;
 
-		// Token: 0x04003E89 RID: 16009
+		// Token: 0x04003F67 RID: 16231
 		private int[] triBuffer = new int[3];
 
-		// Token: 0x04003E8A RID: 16010
+		// Token: 0x04003F68 RID: 16232
 		public bool funnelSimplification = true;
 
-		// Token: 0x04003E8B RID: 16011
+		// Token: 0x04003F69 RID: 16233
 		private static Queue<TriangleMeshNode> navmeshClampQueue = new Queue<TriangleMeshNode>();
 
-		// Token: 0x04003E8C RID: 16012
+		// Token: 0x04003F6A RID: 16234
 		private static List<TriangleMeshNode> navmeshClampList = new List<TriangleMeshNode>();
 
-		// Token: 0x04003E8D RID: 16013
+		// Token: 0x04003F6B RID: 16235
 		private static Dictionary<TriangleMeshNode, TriangleMeshNode> navmeshClampDict = new Dictionary<TriangleMeshNode, TriangleMeshNode>();
 	}
 }

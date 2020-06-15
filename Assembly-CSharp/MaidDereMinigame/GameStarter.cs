@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace MaidDereMinigame
 {
-	// Token: 0x020004F6 RID: 1270
+	// Token: 0x02000506 RID: 1286
 	public class GameStarter : MonoBehaviour
 	{
-		// Token: 0x06001FFA RID: 8186 RVA: 0x00185088 File Offset: 0x00183288
+		// Token: 0x0600203C RID: 8252 RVA: 0x0018A578 File Offset: 0x00188778
 		private void Awake()
 		{
 			this.spriteRenderer = base.GetComponent<SpriteRenderer>();
@@ -18,7 +18,7 @@ namespace MaidDereMinigame
 			GameController.Instance.whiteFadeOutPost = this.whiteFadeOutPost;
 		}
 
-		// Token: 0x06001FFB RID: 8187 RVA: 0x001850DC File Offset: 0x001832DC
+		// Token: 0x0600203D RID: 8253 RVA: 0x0018A5CC File Offset: 0x001887CC
 		public void SetGameTime(float gameTime)
 		{
 			int num = Mathf.CeilToInt(gameTime);
@@ -38,14 +38,14 @@ namespace MaidDereMinigame
 			this.EndGame();
 		}
 
-		// Token: 0x06001FFC RID: 8188 RVA: 0x0018512C File Offset: 0x0018332C
+		// Token: 0x0600203E RID: 8254 RVA: 0x0018A61C File Offset: 0x0018881C
 		public void EndGame()
 		{
 			base.StartCoroutine(this.EndGameRoutine());
 			SFXController.PlaySound(SFXController.Sounds.GameSuccess);
 		}
 
-		// Token: 0x06001FFD RID: 8189 RVA: 0x00185141 File Offset: 0x00183341
+		// Token: 0x0600203F RID: 8255 RVA: 0x0018A631 File Offset: 0x00188831
 		private IEnumerator CountdownToStart()
 		{
 			yield return new WaitForSeconds(GameController.Instance.activeDifficultyVariables.transitionTime);
@@ -62,7 +62,7 @@ namespace MaidDereMinigame
 			yield break;
 		}
 
-		// Token: 0x06001FFE RID: 8190 RVA: 0x00185150 File Offset: 0x00183350
+		// Token: 0x06002040 RID: 8256 RVA: 0x0018A640 File Offset: 0x00188840
 		private IEnumerator EndGameRoutine()
 		{
 			GameController.SetPause(true);
@@ -73,31 +73,31 @@ namespace MaidDereMinigame
 			yield break;
 		}
 
-		// Token: 0x06001FFF RID: 8191 RVA: 0x0018515F File Offset: 0x0018335F
+		// Token: 0x06002041 RID: 8257 RVA: 0x0018A64F File Offset: 0x0018884F
 		public void SetAudioPitch(float value)
 		{
 			this.audioSource.pitch = value;
 		}
 
-		// Token: 0x04003DBF RID: 15807
+		// Token: 0x04003E6F RID: 15983
 		public List<Sprite> numbers;
 
-		// Token: 0x04003DC0 RID: 15808
+		// Token: 0x04003E70 RID: 15984
 		public SpriteRenderer whiteFadeOutPost;
 
-		// Token: 0x04003DC1 RID: 15809
+		// Token: 0x04003E71 RID: 15985
 		public Sprite timeUp;
 
-		// Token: 0x04003DC2 RID: 15810
+		// Token: 0x04003E72 RID: 15986
 		public TipPage tipPage;
 
-		// Token: 0x04003DC3 RID: 15811
+		// Token: 0x04003E73 RID: 15987
 		private AudioSource audioSource;
 
-		// Token: 0x04003DC4 RID: 15812
+		// Token: 0x04003E74 RID: 15988
 		private SpriteRenderer spriteRenderer;
 
-		// Token: 0x04003DC5 RID: 15813
+		// Token: 0x04003E75 RID: 15989
 		private int timeToStart = 3;
 	}
 }

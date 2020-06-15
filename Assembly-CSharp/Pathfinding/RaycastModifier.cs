@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000585 RID: 1413
+	// Token: 0x0200059B RID: 1435
 	[AddComponentMenu("Pathfinding/Modifiers/Raycast Modifier")]
 	[RequireComponent(typeof(Seeker))]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_raycast_modifier.php")]
 	[Serializable]
 	public class RaycastModifier : MonoModifier
 	{
-		// Token: 0x170005AE RID: 1454
-		// (get) Token: 0x06002661 RID: 9825 RVA: 0x001A5A6B File Offset: 0x001A3C6B
+		// Token: 0x170005B4 RID: 1460
+		// (get) Token: 0x060026B7 RID: 9911 RVA: 0x001AB657 File Offset: 0x001A9857
 		public override int Order
 		{
 			get
@@ -22,7 +22,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002662 RID: 9826 RVA: 0x001A6698 File Offset: 0x001A4898
+		// Token: 0x060026B8 RID: 9912 RVA: 0x001AC284 File Offset: 0x001AA484
 		public override void Apply(Path p)
 		{
 			if (!this.useRaycasting && !this.useGraphRaycasting)
@@ -60,7 +60,7 @@ namespace Pathfinding
 			p.vectorPath = list;
 		}
 
-		// Token: 0x06002663 RID: 9827 RVA: 0x001A67A0 File Offset: 0x001A49A0
+		// Token: 0x060026B9 RID: 9913 RVA: 0x001AC38C File Offset: 0x001AA58C
 		private List<Vector3> ApplyGreedy(Path p, List<Vector3> points)
 		{
 			bool flag = points.Count == p.path.Count;
@@ -115,7 +115,7 @@ namespace Pathfinding
 			return points;
 		}
 
-		// Token: 0x06002664 RID: 9828 RVA: 0x001A6928 File Offset: 0x001A4B28
+		// Token: 0x060026BA RID: 9914 RVA: 0x001AC514 File Offset: 0x001AA714
 		private List<Vector3> ApplyDP(Path p, List<Vector3> points)
 		{
 			if (RaycastModifier.DPCosts.Length < points.Count)
@@ -158,7 +158,7 @@ namespace Pathfinding
 			return points;
 		}
 
-		// Token: 0x06002665 RID: 9829 RVA: 0x001A6B18 File Offset: 0x001A4D18
+		// Token: 0x060026BB RID: 9915 RVA: 0x001AC704 File Offset: 0x001AA904
 		protected bool ValidateLine(GraphNode n1, GraphNode n2, Vector3 v1, Vector3 v2)
 		{
 			if (this.useRaycasting)
@@ -220,37 +220,37 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x04004138 RID: 16696
+		// Token: 0x04004216 RID: 16918
 		public bool useRaycasting = true;
 
-		// Token: 0x04004139 RID: 16697
+		// Token: 0x04004217 RID: 16919
 		public LayerMask mask = -1;
 
-		// Token: 0x0400413A RID: 16698
+		// Token: 0x04004218 RID: 16920
 		[Tooltip("Checks around the line between two points, not just the exact line.\nMake sure the ground is either too far below or is not inside the mask since otherwise the raycast might always hit the ground.")]
 		public bool thickRaycast;
 
-		// Token: 0x0400413B RID: 16699
+		// Token: 0x04004219 RID: 16921
 		[Tooltip("Distance from the ray which will be checked for colliders")]
 		public float thickRaycastRadius;
 
-		// Token: 0x0400413C RID: 16700
+		// Token: 0x0400421A RID: 16922
 		[Tooltip("Check for intersections with 2D colliders instead of 3D colliders.")]
 		public bool use2DPhysics;
 
-		// Token: 0x0400413D RID: 16701
+		// Token: 0x0400421B RID: 16923
 		[Tooltip("Offset from the original positions to perform the raycast.\nCan be useful to avoid the raycast intersecting the ground or similar things you do not want to it intersect")]
 		public Vector3 raycastOffset = Vector3.zero;
 
-		// Token: 0x0400413E RID: 16702
+		// Token: 0x0400421C RID: 16924
 		[Tooltip("Use raycasting on the graphs. Only currently works with GridGraph and NavmeshGraph and RecastGraph. This is a pro version feature.")]
 		public bool useGraphRaycasting;
 
-		// Token: 0x0400413F RID: 16703
+		// Token: 0x0400421D RID: 16925
 		[Tooltip("When using the high quality mode the script will try harder to find a shorter path. This is significantly slower than the greedy low quality approach.")]
 		public RaycastModifier.Quality quality = RaycastModifier.Quality.Medium;
 
-		// Token: 0x04004140 RID: 16704
+		// Token: 0x0400421E RID: 16926
 		private static readonly int[] iterationsByQuality = new int[]
 		{
 			1,
@@ -259,25 +259,25 @@ namespace Pathfinding
 			3
 		};
 
-		// Token: 0x04004141 RID: 16705
+		// Token: 0x0400421F RID: 16927
 		private static List<Vector3> buffer = new List<Vector3>();
 
-		// Token: 0x04004142 RID: 16706
+		// Token: 0x04004220 RID: 16928
 		private static float[] DPCosts = new float[16];
 
-		// Token: 0x04004143 RID: 16707
+		// Token: 0x04004221 RID: 16929
 		private static int[] DPParents = new int[16];
 
-		// Token: 0x02000753 RID: 1875
+		// Token: 0x0200076D RID: 1901
 		public enum Quality
 		{
-			// Token: 0x040049EC RID: 18924
+			// Token: 0x04004AD7 RID: 19159
 			Low,
-			// Token: 0x040049ED RID: 18925
+			// Token: 0x04004AD8 RID: 19160
 			Medium,
-			// Token: 0x040049EE RID: 18926
+			// Token: 0x04004AD9 RID: 19161
 			High,
-			// Token: 0x040049EF RID: 18927
+			// Token: 0x04004ADA RID: 19162
 			Highest
 		}
 	}

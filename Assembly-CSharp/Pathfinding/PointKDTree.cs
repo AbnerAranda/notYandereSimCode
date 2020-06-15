@@ -4,10 +4,10 @@ using Pathfinding.Util;
 
 namespace Pathfinding
 {
-	// Token: 0x0200057A RID: 1402
+	// Token: 0x02000590 RID: 1424
 	public class PointKDTree
 	{
-		// Token: 0x06002616 RID: 9750 RVA: 0x001A4BD0 File Offset: 0x001A2DD0
+		// Token: 0x0600266C RID: 9836 RVA: 0x001AA7BC File Offset: 0x001A89BC
 		public PointKDTree()
 		{
 			this.tree[1] = new PointKDTree.Node
@@ -16,14 +16,14 @@ namespace Pathfinding
 			};
 		}
 
-		// Token: 0x06002617 RID: 9751 RVA: 0x001A4C28 File Offset: 0x001A2E28
+		// Token: 0x0600266D RID: 9837 RVA: 0x001AA814 File Offset: 0x001A8A14
 		public void Add(GraphNode node)
 		{
 			this.numNodes++;
 			this.Add(node, 1, 0);
 		}
 
-		// Token: 0x06002618 RID: 9752 RVA: 0x001A4C44 File Offset: 0x001A2E44
+		// Token: 0x0600266E RID: 9838 RVA: 0x001AA830 File Offset: 0x001A8A30
 		public void Rebuild(GraphNode[] nodes, int start, int end)
 		{
 			if (start < 0 || end < start || end > nodes.Length)
@@ -47,7 +47,7 @@ namespace Pathfinding
 			this.Build(1, new List<GraphNode>(nodes), start, end);
 		}
 
-		// Token: 0x06002619 RID: 9753 RVA: 0x001A4CD4 File Offset: 0x001A2ED4
+		// Token: 0x0600266F RID: 9839 RVA: 0x001AA8C0 File Offset: 0x001A8AC0
 		private GraphNode[] GetOrCreateList()
 		{
 			if (this.arrayCache.Count <= 0)
@@ -57,7 +57,7 @@ namespace Pathfinding
 			return this.arrayCache.Pop();
 		}
 
-		// Token: 0x0600261A RID: 9754 RVA: 0x001A4CF7 File Offset: 0x001A2EF7
+		// Token: 0x06002670 RID: 9840 RVA: 0x001AA8E3 File Offset: 0x001A8AE3
 		private int Size(int index)
 		{
 			if (this.tree[index].data == null)
@@ -67,7 +67,7 @@ namespace Pathfinding
 			return (int)this.tree[index].count;
 		}
 
-		// Token: 0x0600261B RID: 9755 RVA: 0x001A4D34 File Offset: 0x001A2F34
+		// Token: 0x06002671 RID: 9841 RVA: 0x001AA920 File Offset: 0x001A8B20
 		private void CollectAndClear(int index, List<GraphNode> buffer)
 		{
 			GraphNode[] data = this.tree[index].data;
@@ -87,13 +87,13 @@ namespace Pathfinding
 			this.CollectAndClear(index * 2 + 1, buffer);
 		}
 
-		// Token: 0x0600261C RID: 9756 RVA: 0x001A4DB6 File Offset: 0x001A2FB6
+		// Token: 0x06002672 RID: 9842 RVA: 0x001AA9A2 File Offset: 0x001A8BA2
 		private static int MaxAllowedSize(int numNodes, int depth)
 		{
 			return Math.Min(5 * numNodes / 2 >> depth, 3 * numNodes / 4);
 		}
 
-		// Token: 0x0600261D RID: 9757 RVA: 0x001A4DCC File Offset: 0x001A2FCC
+		// Token: 0x06002673 RID: 9843 RVA: 0x001AA9B8 File Offset: 0x001A8BB8
 		private void Rebalance(int index)
 		{
 			this.CollectAndClear(index, this.largeList);
@@ -101,7 +101,7 @@ namespace Pathfinding
 			this.largeList.ClearFast<GraphNode>();
 		}
 
-		// Token: 0x0600261E RID: 9758 RVA: 0x001A4E00 File Offset: 0x001A3000
+		// Token: 0x06002674 RID: 9844 RVA: 0x001AA9EC File Offset: 0x001A8BEC
 		private void EnsureSize(int index)
 		{
 			if (index >= this.tree.Length)
@@ -112,7 +112,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600261F RID: 9759 RVA: 0x001A4E44 File Offset: 0x001A3044
+		// Token: 0x06002675 RID: 9845 RVA: 0x001AAA30 File Offset: 0x001A8C30
 		private void Build(int index, List<GraphNode> nodes, int start, int end)
 		{
 			this.EnsureSize(index);
@@ -144,7 +144,7 @@ namespace Pathfinding
 			this.Build(index * 2 + 1, nodes, num2, end);
 		}
 
-		// Token: 0x06002620 RID: 9760 RVA: 0x001A5030 File Offset: 0x001A3230
+		// Token: 0x06002676 RID: 9846 RVA: 0x001AAC1C File Offset: 0x001A8E1C
 		private void Add(GraphNode point, int index, int depth = 0)
 		{
 			while (this.tree[index].data == null)
@@ -169,7 +169,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002621 RID: 9761 RVA: 0x001A5108 File Offset: 0x001A3308
+		// Token: 0x06002677 RID: 9847 RVA: 0x001AACF4 File Offset: 0x001A8EF4
 		public GraphNode GetNearest(Int3 point, NNConstraint constraint)
 		{
 			GraphNode result = null;
@@ -178,7 +178,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002622 RID: 9762 RVA: 0x001A5130 File Offset: 0x001A3330
+		// Token: 0x06002678 RID: 9848 RVA: 0x001AAD1C File Offset: 0x001A8F1C
 		private void GetNearestInternal(int index, Int3 point, NNConstraint constraint, ref GraphNode best, ref long bestSqrDist)
 		{
 			GraphNode[] data = this.tree[index].data;
@@ -204,13 +204,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002623 RID: 9763 RVA: 0x001A520B File Offset: 0x001A340B
+		// Token: 0x06002679 RID: 9849 RVA: 0x001AADF7 File Offset: 0x001A8FF7
 		public void GetInRange(Int3 point, long sqrRadius, List<GraphNode> buffer)
 		{
 			this.GetInRangeInternal(1, point, sqrRadius, buffer);
 		}
 
-		// Token: 0x06002624 RID: 9764 RVA: 0x001A5218 File Offset: 0x001A3418
+		// Token: 0x0600267A RID: 9850 RVA: 0x001AAE04 File Offset: 0x001A9004
 		private void GetInRangeInternal(int index, Int3 point, long sqrRadius, List<GraphNode> buffer)
 		{
 			GraphNode[] data = this.tree[index].data;
@@ -234,25 +234,25 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04004112 RID: 16658
+		// Token: 0x040041F0 RID: 16880
 		public const int LeafSize = 10;
 
-		// Token: 0x04004113 RID: 16659
+		// Token: 0x040041F1 RID: 16881
 		public const int LeafArraySize = 21;
 
-		// Token: 0x04004114 RID: 16660
+		// Token: 0x040041F2 RID: 16882
 		private PointKDTree.Node[] tree = new PointKDTree.Node[16];
 
-		// Token: 0x04004115 RID: 16661
+		// Token: 0x040041F3 RID: 16883
 		private int numNodes;
 
-		// Token: 0x04004116 RID: 16662
+		// Token: 0x040041F4 RID: 16884
 		private readonly List<GraphNode> largeList = new List<GraphNode>();
 
-		// Token: 0x04004117 RID: 16663
+		// Token: 0x040041F5 RID: 16885
 		private readonly Stack<GraphNode[]> arrayCache = new Stack<GraphNode[]>();
 
-		// Token: 0x04004118 RID: 16664
+		// Token: 0x040041F6 RID: 16886
 		private static readonly IComparer<GraphNode>[] comparers = new IComparer<GraphNode>[]
 		{
 			new PointKDTree.CompareX(),
@@ -260,46 +260,46 @@ namespace Pathfinding
 			new PointKDTree.CompareZ()
 		};
 
-		// Token: 0x0200074A RID: 1866
+		// Token: 0x02000764 RID: 1892
 		private struct Node
 		{
-			// Token: 0x040049B9 RID: 18873
+			// Token: 0x04004AA4 RID: 19108
 			public GraphNode[] data;
 
-			// Token: 0x040049BA RID: 18874
+			// Token: 0x04004AA5 RID: 19109
 			public int split;
 
-			// Token: 0x040049BB RID: 18875
+			// Token: 0x04004AA6 RID: 19110
 			public ushort count;
 
-			// Token: 0x040049BC RID: 18876
+			// Token: 0x04004AA7 RID: 19111
 			public byte splitAxis;
 		}
 
-		// Token: 0x0200074B RID: 1867
+		// Token: 0x02000765 RID: 1893
 		private class CompareX : IComparer<GraphNode>
 		{
-			// Token: 0x06002D3A RID: 11578 RVA: 0x001CDB8F File Offset: 0x001CBD8F
+			// Token: 0x06002D9D RID: 11677 RVA: 0x001D3837 File Offset: 0x001D1A37
 			public int Compare(GraphNode lhs, GraphNode rhs)
 			{
 				return lhs.position.x.CompareTo(rhs.position.x);
 			}
 		}
 
-		// Token: 0x0200074C RID: 1868
+		// Token: 0x02000766 RID: 1894
 		private class CompareY : IComparer<GraphNode>
 		{
-			// Token: 0x06002D3C RID: 11580 RVA: 0x001CDBAC File Offset: 0x001CBDAC
+			// Token: 0x06002D9F RID: 11679 RVA: 0x001D3854 File Offset: 0x001D1A54
 			public int Compare(GraphNode lhs, GraphNode rhs)
 			{
 				return lhs.position.y.CompareTo(rhs.position.y);
 			}
 		}
 
-		// Token: 0x0200074D RID: 1869
+		// Token: 0x02000767 RID: 1895
 		private class CompareZ : IComparer<GraphNode>
 		{
-			// Token: 0x06002D3E RID: 11582 RVA: 0x001CDBC9 File Offset: 0x001CBDC9
+			// Token: 0x06002DA1 RID: 11681 RVA: 0x001D3871 File Offset: 0x001D1A71
 			public int Compare(GraphNode lhs, GraphNode rhs)
 			{
 				return lhs.position.z.CompareTo(rhs.position.z);

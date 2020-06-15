@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000599 RID: 1433
+	// Token: 0x020005AF RID: 1455
 	public class RandomPath : ABPath
 	{
-		// Token: 0x170005BC RID: 1468
-		// (get) Token: 0x06002706 RID: 9990 RVA: 0x0002291C File Offset: 0x00020B1C
+		// Token: 0x170005C2 RID: 1474
+		// (get) Token: 0x0600275C RID: 10076 RVA: 0x00022944 File Offset: 0x00020B44
 		internal override bool FloodingPath
 		{
 			get
@@ -16,8 +16,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170005BD RID: 1469
-		// (get) Token: 0x06002707 RID: 9991 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x170005C3 RID: 1475
+		// (get) Token: 0x0600275D RID: 10077 RVA: 0x0002D199 File Offset: 0x0002B399
 		protected override bool hasEndPoint
 		{
 			get
@@ -26,7 +26,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002708 RID: 9992 RVA: 0x001AB818 File Offset: 0x001A9A18
+		// Token: 0x0600275E RID: 10078 RVA: 0x001B1404 File Offset: 0x001AF604
 		protected override void Reset()
 		{
 			base.Reset();
@@ -40,19 +40,19 @@ namespace Pathfinding
 			this.nodesEvaluatedRep = 0;
 		}
 
-		// Token: 0x06002709 RID: 9993 RVA: 0x001AB873 File Offset: 0x001A9A73
+		// Token: 0x0600275F RID: 10079 RVA: 0x001B145F File Offset: 0x001AF65F
 		public RandomPath()
 		{
 		}
 
-		// Token: 0x0600270A RID: 9994 RVA: 0x001AB891 File Offset: 0x001A9A91
+		// Token: 0x06002760 RID: 10080 RVA: 0x001B147D File Offset: 0x001AF67D
 		[Obsolete("This constructor is obsolete. Please use the pooling API and the Construct methods")]
 		public RandomPath(Vector3 start, int length, OnPathDelegate callback = null)
 		{
 			throw new Exception("This constructor is obsolete. Please use the pooling API and the Setup methods");
 		}
 
-		// Token: 0x0600270B RID: 9995 RVA: 0x001AB8B9 File Offset: 0x001A9AB9
+		// Token: 0x06002761 RID: 10081 RVA: 0x001B14A5 File Offset: 0x001AF6A5
 		public static RandomPath Construct(Vector3 start, int length, OnPathDelegate callback = null)
 		{
 			RandomPath path = PathPool.GetPath<RandomPath>();
@@ -60,7 +60,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x0600270C RID: 9996 RVA: 0x001AB8CC File Offset: 0x001A9ACC
+		// Token: 0x06002762 RID: 10082 RVA: 0x001B14B8 File Offset: 0x001AF6B8
 		protected RandomPath Setup(Vector3 start, int length, OnPathDelegate callback)
 		{
 			this.callback = callback;
@@ -73,7 +73,7 @@ namespace Pathfinding
 			return this;
 		}
 
-		// Token: 0x0600270D RID: 9997 RVA: 0x001AB918 File Offset: 0x001A9B18
+		// Token: 0x06002763 RID: 10083 RVA: 0x001B1504 File Offset: 0x001AF704
 		protected override void ReturnPath()
 		{
 			if (this.path != null && this.path.Count > 0)
@@ -89,7 +89,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600270E RID: 9998 RVA: 0x001AB9A0 File Offset: 0x001A9BA0
+		// Token: 0x06002764 RID: 10084 RVA: 0x001B158C File Offset: 0x001AF78C
 		protected override void Prepare()
 		{
 			this.nnConstraint.tags = this.enabledTags;
@@ -113,7 +113,7 @@ namespace Pathfinding
 			this.heuristicScale = this.aimStrength;
 		}
 
-		// Token: 0x0600270F RID: 9999 RVA: 0x001ABA6C File Offset: 0x001A9C6C
+		// Token: 0x06002765 RID: 10085 RVA: 0x001B1658 File Offset: 0x001AF858
 		protected override void Initialize()
 		{
 			PathNode pathNode = this.pathHandler.GetPathNode(this.startNode);
@@ -126,7 +126,7 @@ namespace Pathfinding
 			}
 			pathNode.pathID = base.pathID;
 			pathNode.parent = null;
-			pathNode.cost = 0u;
+			pathNode.cost = 0U;
 			pathNode.G = base.GetTraversalCost(this.startNode);
 			pathNode.H = base.CalculateHScore(this.startNode);
 			this.startNode.Open(this, pathNode, this.pathHandler);
@@ -139,7 +139,7 @@ namespace Pathfinding
 			this.currentR = this.pathHandler.heap.Remove();
 		}
 
-		// Token: 0x06002710 RID: 10000 RVA: 0x001ABB4C File Offset: 0x001A9D4C
+		// Token: 0x06002766 RID: 10086 RVA: 0x001B1738 File Offset: 0x001AF938
 		protected override void CalculateStep(long targetTick)
 		{
 			int num = 0;
@@ -209,31 +209,31 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x040041AD RID: 16813
+		// Token: 0x0400428B RID: 17035
 		public int searchLength;
 
-		// Token: 0x040041AE RID: 16814
+		// Token: 0x0400428C RID: 17036
 		public int spread = 5000;
 
-		// Token: 0x040041AF RID: 16815
+		// Token: 0x0400428D RID: 17037
 		public float aimStrength;
 
-		// Token: 0x040041B0 RID: 16816
+		// Token: 0x0400428E RID: 17038
 		private PathNode chosenNodeR;
 
-		// Token: 0x040041B1 RID: 16817
+		// Token: 0x0400428F RID: 17039
 		private PathNode maxGScoreNodeR;
 
-		// Token: 0x040041B2 RID: 16818
+		// Token: 0x04004290 RID: 17040
 		private int maxGScore;
 
-		// Token: 0x040041B3 RID: 16819
+		// Token: 0x04004291 RID: 17041
 		public Vector3 aim;
 
-		// Token: 0x040041B4 RID: 16820
+		// Token: 0x04004292 RID: 17042
 		private int nodesEvaluatedRep;
 
-		// Token: 0x040041B5 RID: 16821
+		// Token: 0x04004293 RID: 17043
 		private readonly System.Random rnd = new System.Random();
 	}
 }

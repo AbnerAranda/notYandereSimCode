@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003F4 RID: 1012
+// Token: 0x020003F9 RID: 1017
 public class StandScript : MonoBehaviour
 {
-	// Token: 0x06001ADF RID: 6879 RVA: 0x0010DA8D File Offset: 0x0010BC8D
+	// Token: 0x06001B01 RID: 6913 RVA: 0x0011036D File Offset: 0x0010E56D
 	private void Start()
 	{
 		if (GameGlobals.LoveSick)
@@ -13,7 +13,7 @@ public class StandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AE0 RID: 6880 RVA: 0x0010DAA0 File Offset: 0x0010BCA0
+	// Token: 0x06001B02 RID: 6914 RVA: 0x00110380 File Offset: 0x0010E580
 	private void Update()
 	{
 		if (!this.Stand.activeInHierarchy)
@@ -109,7 +109,7 @@ public class StandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AE1 RID: 6881 RVA: 0x0010DF54 File Offset: 0x0010C154
+	// Token: 0x06001B03 RID: 6915 RVA: 0x00110834 File Offset: 0x0010EA34
 	public void Spawn()
 	{
 		this.FalconPunch.MyCollider.enabled = false;
@@ -119,7 +119,7 @@ public class StandScript : MonoBehaviour
 		this.Stand.SetActive(true);
 	}
 
-	// Token: 0x06001AE2 RID: 6882 RVA: 0x0010DFA8 File Offset: 0x0010C1A8
+	// Token: 0x06001B04 RID: 6916 RVA: 0x00110888 File Offset: 0x0010EA88
 	private void Return()
 	{
 		if (Vector3.Distance(this.Stand.transform.localPosition, new Vector3(0f, 0f, -0.5f)) > 0.01f)
@@ -129,51 +129,51 @@ public class StandScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002B8B RID: 11147
+	// Token: 0x04002BED RID: 11245
 	public AmplifyMotionEffect MotionBlur;
 
-	// Token: 0x04002B8C RID: 11148
+	// Token: 0x04002BEE RID: 11246
 	public FalconPunchScript FalconPunch;
 
-	// Token: 0x04002B8D RID: 11149
+	// Token: 0x04002BEF RID: 11247
 	public StandPunchScript StandPunch;
 
-	// Token: 0x04002B8E RID: 11150
+	// Token: 0x04002BF0 RID: 11248
 	public Transform SummonTransform;
 
-	// Token: 0x04002B8F RID: 11151
+	// Token: 0x04002BF1 RID: 11249
 	public GameObject SummonEffect;
 
-	// Token: 0x04002B90 RID: 11152
+	// Token: 0x04002BF2 RID: 11250
 	public GameObject StandCamera;
 
-	// Token: 0x04002B91 RID: 11153
+	// Token: 0x04002BF3 RID: 11251
 	public YandereScript Yandere;
 
-	// Token: 0x04002B92 RID: 11154
+	// Token: 0x04002BF4 RID: 11252
 	public GameObject Stand;
 
-	// Token: 0x04002B93 RID: 11155
+	// Token: 0x04002BF5 RID: 11253
 	public Transform[] Hands;
 
-	// Token: 0x04002B94 RID: 11156
+	// Token: 0x04002BF6 RID: 11254
 	public int FinishPhase;
 
-	// Token: 0x04002B95 RID: 11157
+	// Token: 0x04002BF7 RID: 11255
 	public int Finisher;
 
-	// Token: 0x04002B96 RID: 11158
+	// Token: 0x04002BF8 RID: 11256
 	public int Weapons;
 
-	// Token: 0x04002B97 RID: 11159
+	// Token: 0x04002BF9 RID: 11257
 	public int Phase;
 
-	// Token: 0x04002B98 RID: 11160
+	// Token: 0x04002BFA RID: 11258
 	public AudioClip SummonSFX;
 
-	// Token: 0x04002B99 RID: 11161
+	// Token: 0x04002BFB RID: 11259
 	public bool ReadyForFinisher;
 
-	// Token: 0x04002B9A RID: 11162
+	// Token: 0x04002BFC RID: 11260
 	public bool SFX;
 }

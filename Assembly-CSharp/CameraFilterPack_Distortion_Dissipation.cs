@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000167 RID: 359
+// Token: 0x02000168 RID: 360
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Distortion/Dissipation")]
 public class CameraFilterPack_Distortion_Dissipation : MonoBehaviour
 {
 	// Token: 0x17000287 RID: 647
-	// (get) Token: 0x06000D7C RID: 3452 RVA: 0x0006B6F8 File Offset: 0x000698F8
+	// (get) Token: 0x06000D83 RID: 3459 RVA: 0x0006C428 File Offset: 0x0006A628
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Distortion_Dissipation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D7D RID: 3453 RVA: 0x0006B72C File Offset: 0x0006992C
+	// Token: 0x06000D84 RID: 3460 RVA: 0x0006C45C File Offset: 0x0006A65C
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Distortion_Dissipation");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Distortion_Dissipation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D7E RID: 3454 RVA: 0x0006B750 File Offset: 0x00069950
+	// Token: 0x06000D85 RID: 3461 RVA: 0x0006C480 File Offset: 0x0006A680
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Distortion_Dissipation : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D7F RID: 3455 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D86 RID: 3462 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D80 RID: 3456 RVA: 0x0006B848 File Offset: 0x00069A48
+	// Token: 0x06000D87 RID: 3463 RVA: 0x0006C578 File Offset: 0x0006A778
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Distortion_Dissipation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001039 RID: 4153
+	// Token: 0x04001058 RID: 4184
 	public Shader SCShader;
 
-	// Token: 0x0400103A RID: 4154
+	// Token: 0x04001059 RID: 4185
 	private float TimeX = 1f;
 
-	// Token: 0x0400103B RID: 4155
+	// Token: 0x0400105A RID: 4186
 	private Material SCMaterial;
 
-	// Token: 0x0400103C RID: 4156
+	// Token: 0x0400105B RID: 4187
 	[Range(0f, 2.99f)]
 	public float Dissipation = 1f;
 
-	// Token: 0x0400103D RID: 4157
+	// Token: 0x0400105C RID: 4188
 	[Range(0f, 16f)]
 	private float Colors = 11f;
 
-	// Token: 0x0400103E RID: 4158
+	// Token: 0x0400105D RID: 4189
 	[Range(-1f, 1f)]
 	private float Green_Mod = 1f;
 
-	// Token: 0x0400103F RID: 4159
+	// Token: 0x0400105E RID: 4190
 	[Range(0f, 10f)]
 	private float Value4 = 1f;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000209 RID: 521
+// Token: 0x0200020A RID: 522
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Tiles")]
 public class CameraFilterPack_TV_Tiles : MonoBehaviour
 {
 	// Token: 0x17000329 RID: 809
-	// (get) Token: 0x0600116C RID: 4460 RVA: 0x0007CB22 File Offset: 0x0007AD22
+	// (get) Token: 0x06001173 RID: 4467 RVA: 0x0007D852 File Offset: 0x0007BA52
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Tiles : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116D RID: 4461 RVA: 0x0007CB56 File Offset: 0x0007AD56
+	// Token: 0x06001174 RID: 4468 RVA: 0x0007D886 File Offset: 0x0007BA86
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Tiles");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_Tiles : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116E RID: 4462 RVA: 0x0007CB78 File Offset: 0x0007AD78
+	// Token: 0x06001175 RID: 4469 RVA: 0x0007D8A8 File Offset: 0x0007BAA8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -55,12 +55,12 @@ public class CameraFilterPack_TV_Tiles : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001176 RID: 4470 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001170 RID: 4464 RVA: 0x0007CC86 File Offset: 0x0007AE86
+	// Token: 0x06001177 RID: 4471 RVA: 0x0007D9B6 File Offset: 0x0007BBB6
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -69,32 +69,32 @@ public class CameraFilterPack_TV_Tiles : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400146E RID: 5230
+	// Token: 0x0400148D RID: 5261
 	public Shader SCShader;
 
-	// Token: 0x0400146F RID: 5231
+	// Token: 0x0400148E RID: 5262
 	private float TimeX = 1f;
 
-	// Token: 0x04001470 RID: 5232
+	// Token: 0x0400148F RID: 5263
 	private Material SCMaterial;
 
-	// Token: 0x04001471 RID: 5233
+	// Token: 0x04001490 RID: 5264
 	[Range(0.5f, 2f)]
 	public float Size = 1f;
 
-	// Token: 0x04001472 RID: 5234
+	// Token: 0x04001491 RID: 5265
 	[Range(0f, 10f)]
 	public float Intensity = 4f;
 
-	// Token: 0x04001473 RID: 5235
+	// Token: 0x04001492 RID: 5266
 	[Range(0f, 1f)]
 	public float StretchX = 0.6f;
 
-	// Token: 0x04001474 RID: 5236
+	// Token: 0x04001493 RID: 5267
 	[Range(0f, 1f)]
 	public float StretchY = 0.4f;
 
-	// Token: 0x04001475 RID: 5237
+	// Token: 0x04001494 RID: 5268
 	[Range(0f, 1f)]
 	public float Fade = 0.6f;
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Center Scroll View on Click")]
 public class UICenterOnClick : MonoBehaviour
 {
-	// Token: 0x060001AE RID: 430 RVA: 0x00015934 File Offset: 0x00013B34
+	// Token: 0x060001AF RID: 431 RVA: 0x0001595C File Offset: 0x00013B5C
 	private void OnClick()
 	{
 		UICenterOnChild uicenterOnChild = NGUITools.FindInParents<UICenterOnChild>(base.gameObject);

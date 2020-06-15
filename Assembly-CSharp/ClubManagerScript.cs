@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023E RID: 574
+// Token: 0x0200023F RID: 575
 public class ClubManagerScript : MonoBehaviour
 {
-	// Token: 0x0600125F RID: 4703 RVA: 0x00084090 File Offset: 0x00082290
+	// Token: 0x06001266 RID: 4710 RVA: 0x00084D08 File Offset: 0x00082F08
 	private void Start()
 	{
 		this.ClubWindow.ActivityWindow.localScale = Vector3.zero;
@@ -49,7 +49,7 @@ public class ClubManagerScript : MonoBehaviour
 		this.ID = 0;
 	}
 
-	// Token: 0x06001260 RID: 4704 RVA: 0x00084364 File Offset: 0x00082564
+	// Token: 0x06001267 RID: 4711 RVA: 0x00084FDC File Offset: 0x000831DC
 	private void Update()
 	{
 		if (this.Club != ClubType.None)
@@ -126,7 +126,7 @@ public class ClubManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001261 RID: 4705 RVA: 0x0008468C File Offset: 0x0008288C
+	// Token: 0x06001268 RID: 4712 RVA: 0x00085304 File Offset: 0x00083504
 	public void ClubActivity()
 	{
 		this.StudentManager.StopMoving();
@@ -469,7 +469,7 @@ public class ClubManagerScript : MonoBehaviour
 		this.Watermark.SetActive(false);
 	}
 
-	// Token: 0x06001262 RID: 4706 RVA: 0x00085664 File Offset: 0x00083864
+	// Token: 0x06001269 RID: 4713 RVA: 0x000862DC File Offset: 0x000844DC
 	public void CheckClub(ClubType Check)
 	{
 		if (Check == ClubType.Cooking)
@@ -536,7 +536,7 @@ public class ClubManagerScript : MonoBehaviour
 		{
 			this.LeaderAshamed = true;
 		}
-		if (ClubGlobals.Club == Check)
+		if (this.Yandere.Club == Check)
 		{
 			this.ClubMembers++;
 		}
@@ -678,7 +678,7 @@ public class ClubManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001263 RID: 4707 RVA: 0x00085CAC File Offset: 0x00083EAC
+	// Token: 0x0600126A RID: 4714 RVA: 0x0008692C File Offset: 0x00084B2C
 	public void CheckGrudge(ClubType Check)
 	{
 		if (Check == ClubType.Cooking)
@@ -818,10 +818,10 @@ public class ClubManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001264 RID: 4708 RVA: 0x00085F68 File Offset: 0x00084168
+	// Token: 0x0600126B RID: 4715 RVA: 0x00086BE8 File Offset: 0x00084DE8
 	public void ActivateClubBenefit()
 	{
-		if (ClubGlobals.Club == ClubType.Cooking)
+		if (this.Yandere.Club == ClubType.Cooking)
 		{
 			if (!this.Refrigerator.CookingEvent.EventActive)
 			{
@@ -832,7 +832,7 @@ public class ClubManagerScript : MonoBehaviour
 		}
 		else
 		{
-			if (ClubGlobals.Club == ClubType.Drama)
+			if (this.Yandere.Club == ClubType.Drama)
 			{
 				this.ID = 1;
 				while (this.ID < this.Masks.Length)
@@ -845,37 +845,37 @@ public class ClubManagerScript : MonoBehaviour
 				this.Gloves.Prompt.enabled = true;
 				return;
 			}
-			if (ClubGlobals.Club == ClubType.Occult)
+			if (this.Yandere.Club == ClubType.Occult)
 			{
 				this.StudentManager.UpdatePerception();
 				this.Yandere.Numbness -= 0.5f;
 				return;
 			}
-			if (ClubGlobals.Club == ClubType.Art)
+			if (this.Yandere.Club == ClubType.Art)
 			{
 				this.StudentManager.UpdateBooths();
 				return;
 			}
-			if (ClubGlobals.Club == ClubType.LightMusic)
+			if (this.Yandere.Club == ClubType.LightMusic)
 			{
 				this.Container.enabled = true;
 				this.Container.Prompt.enabled = true;
 				return;
 			}
-			if (ClubGlobals.Club == ClubType.MartialArts)
+			if (this.Yandere.Club == ClubType.MartialArts)
 			{
 				this.StudentManager.UpdateBooths();
 				return;
 			}
-			if (ClubGlobals.Club != ClubType.Photography)
+			if (this.Yandere.Club != ClubType.Photography)
 			{
-				if (ClubGlobals.Club == ClubType.Science)
+				if (this.Yandere.Club == ClubType.Science)
 				{
 					this.BloodCleaner.Prompt.enabled = true;
 					this.StudentManager.UpdateBooths();
 					return;
 				}
-				if (ClubGlobals.Club == ClubType.Sports)
+				if (this.Yandere.Club == ClubType.Sports)
 				{
 					this.Yandere.RunSpeed += 1f;
 					if (this.Yandere.Armed)
@@ -884,7 +884,7 @@ public class ClubManagerScript : MonoBehaviour
 						return;
 					}
 				}
-				else if (ClubGlobals.Club == ClubType.Gardening)
+				else if (this.Yandere.Club == ClubType.Gardening)
 				{
 					this.ShedDoor.Prompt.Label[0].text = "     Open";
 					this.Padlock.SetActive(false);
@@ -895,7 +895,7 @@ public class ClubManagerScript : MonoBehaviour
 						return;
 					}
 				}
-				else if (ClubGlobals.Club == ClubType.Gaming)
+				else if (this.Yandere.Club == ClubType.Gaming)
 				{
 					this.ComputerGames.EnableGames();
 				}
@@ -903,17 +903,17 @@ public class ClubManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001265 RID: 4709 RVA: 0x00086184 File Offset: 0x00084384
+	// Token: 0x0600126C RID: 4716 RVA: 0x00086E44 File Offset: 0x00085044
 	public void DeactivateClubBenefit()
 	{
-		if (ClubGlobals.Club == ClubType.Cooking)
+		if (this.Yandere.Club == ClubType.Cooking)
 		{
 			this.Refrigerator.enabled = false;
 			this.Refrigerator.Prompt.Hide();
 			this.Refrigerator.Prompt.enabled = false;
 			return;
 		}
-		if (ClubGlobals.Club == ClubType.Drama)
+		if (this.Yandere.Club == ClubType.Drama)
 		{
 			this.ID = 1;
 			while (this.ID < this.Masks.Length)
@@ -931,42 +931,42 @@ public class ClubManagerScript : MonoBehaviour
 			this.Gloves.Prompt.enabled = false;
 			return;
 		}
-		if (ClubGlobals.Club == ClubType.Occult)
+		if (this.Yandere.Club == ClubType.Occult)
 		{
-			ClubGlobals.Club = ClubType.None;
+			this.Yandere.Club = ClubType.None;
 			this.StudentManager.UpdatePerception();
 			this.Yandere.Numbness += 0.5f;
 			return;
 		}
-		if (ClubGlobals.Club != ClubType.Art)
+		if (this.Yandere.Club != ClubType.Art)
 		{
-			if (ClubGlobals.Club == ClubType.LightMusic)
+			if (this.Yandere.Club == ClubType.LightMusic)
 			{
 				this.Container.enabled = false;
 				this.Container.Prompt.Hide();
 				this.Container.Prompt.enabled = false;
 				return;
 			}
-			if (ClubGlobals.Club != ClubType.MartialArts && ClubGlobals.Club != ClubType.Photography)
+			if (this.Yandere.Club != ClubType.MartialArts && this.Yandere.Club != ClubType.Photography)
 			{
-				if (ClubGlobals.Club == ClubType.Science)
+				if (this.Yandere.Club == ClubType.Science)
 				{
 					this.BloodCleaner.enabled = false;
 					this.BloodCleaner.Prompt.Hide();
 					this.BloodCleaner.Prompt.enabled = false;
 					return;
 				}
-				if (ClubGlobals.Club == ClubType.Sports)
+				if (this.Yandere.Club == ClubType.Sports)
 				{
 					this.Yandere.RunSpeed -= 1f;
 					if (this.Yandere.Armed)
 					{
-						ClubGlobals.Club = ClubType.None;
+						this.Yandere.Club = ClubType.None;
 						this.Yandere.EquippedWeapon.SuspicionCheck();
 						return;
 					}
 				}
-				else if (ClubGlobals.Club == ClubType.Gardening)
+				else if (this.Yandere.Club == ClubType.Gardening)
 				{
 					if (!this.Yandere.Inventory.ShedKey)
 					{
@@ -977,12 +977,12 @@ public class ClubManagerScript : MonoBehaviour
 					}
 					if (this.Yandere.Armed)
 					{
-						ClubGlobals.Club = ClubType.None;
+						this.Yandere.Club = ClubType.None;
 						this.Yandere.EquippedWeapon.SuspicionCheck();
 						return;
 					}
 				}
-				else if (ClubGlobals.Club == ClubType.Gaming)
+				else if (this.Yandere.Club == ClubType.Gaming)
 				{
 					this.ComputerGames.DeactivateAllBenefits();
 					this.ComputerGames.DisableGames();
@@ -991,7 +991,7 @@ public class ClubManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001266 RID: 4710 RVA: 0x00086420 File Offset: 0x00084620
+	// Token: 0x0600126D RID: 4717 RVA: 0x00087134 File Offset: 0x00085334
 	public void UpdateMasks()
 	{
 		bool flag = this.Yandere.Mask != null;
@@ -1003,228 +1003,228 @@ public class ClubManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040015F3 RID: 5619
+	// Token: 0x04001612 RID: 5650
 	public ShoulderCameraScript ShoulderCamera;
 
-	// Token: 0x040015F4 RID: 5620
+	// Token: 0x04001613 RID: 5651
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x040015F5 RID: 5621
+	// Token: 0x04001614 RID: 5652
 	public ComputerGamesScript ComputerGames;
 
-	// Token: 0x040015F6 RID: 5622
+	// Token: 0x04001615 RID: 5653
 	public BloodCleanerScript BloodCleaner;
 
-	// Token: 0x040015F7 RID: 5623
+	// Token: 0x04001616 RID: 5654
 	public RefrigeratorScript Refrigerator;
 
-	// Token: 0x040015F8 RID: 5624
+	// Token: 0x04001617 RID: 5655
 	public ClubWindowScript ClubWindow;
 
-	// Token: 0x040015F9 RID: 5625
+	// Token: 0x04001618 RID: 5656
 	public ContainerScript Container;
 
-	// Token: 0x040015FA RID: 5626
+	// Token: 0x04001619 RID: 5657
 	public PromptBarScript PromptBar;
 
-	// Token: 0x040015FB RID: 5627
+	// Token: 0x0400161A RID: 5658
 	public TranqCaseScript TranqCase;
 
-	// Token: 0x040015FC RID: 5628
+	// Token: 0x0400161B RID: 5659
 	public YandereScript Yandere;
 
-	// Token: 0x040015FD RID: 5629
+	// Token: 0x0400161C RID: 5660
 	public RPG_Camera MainCamera;
 
-	// Token: 0x040015FE RID: 5630
+	// Token: 0x0400161D RID: 5661
 	public DoorScript ShedDoor;
 
-	// Token: 0x040015FF RID: 5631
+	// Token: 0x0400161E RID: 5662
 	public PoliceScript Police;
 
-	// Token: 0x04001600 RID: 5632
+	// Token: 0x0400161F RID: 5663
 	public GloveScript Gloves;
 
-	// Token: 0x04001601 RID: 5633
+	// Token: 0x04001620 RID: 5664
 	public UISprite Darkness;
 
-	// Token: 0x04001602 RID: 5634
+	// Token: 0x04001621 RID: 5665
 	public GameObject Reputation;
 
-	// Token: 0x04001603 RID: 5635
+	// Token: 0x04001622 RID: 5666
 	public GameObject Heartrate;
 
-	// Token: 0x04001604 RID: 5636
+	// Token: 0x04001623 RID: 5667
 	public GameObject Watermark;
 
-	// Token: 0x04001605 RID: 5637
+	// Token: 0x04001624 RID: 5668
 	public GameObject Padlock;
 
-	// Token: 0x04001606 RID: 5638
+	// Token: 0x04001625 RID: 5669
 	public GameObject Ritual;
 
-	// Token: 0x04001607 RID: 5639
+	// Token: 0x04001626 RID: 5670
 	public GameObject Clock;
 
-	// Token: 0x04001608 RID: 5640
+	// Token: 0x04001627 RID: 5671
 	public GameObject Cake;
 
-	// Token: 0x04001609 RID: 5641
+	// Token: 0x04001628 RID: 5672
 	public AudioClip[] MotivationalQuotes;
 
-	// Token: 0x0400160A RID: 5642
+	// Token: 0x04001629 RID: 5673
 	public Transform[] ClubPatrolPoints;
 
-	// Token: 0x0400160B RID: 5643
+	// Token: 0x0400162A RID: 5674
 	public GameObject[] ClubPosters;
 
-	// Token: 0x0400160C RID: 5644
+	// Token: 0x0400162B RID: 5675
 	public GameObject[] GameScreens;
 
-	// Token: 0x0400160D RID: 5645
+	// Token: 0x0400162C RID: 5676
 	public Transform[] ClubVantages;
 
-	// Token: 0x0400160E RID: 5646
+	// Token: 0x0400162D RID: 5677
 	public MaskScript[] Masks;
 
-	// Token: 0x0400160F RID: 5647
+	// Token: 0x0400162E RID: 5678
 	public GameObject[] Cultists;
 
-	// Token: 0x04001610 RID: 5648
+	// Token: 0x0400162F RID: 5679
 	public Transform[] Club1ActivitySpots;
 
-	// Token: 0x04001611 RID: 5649
+	// Token: 0x04001630 RID: 5680
 	public Transform[] Club4ActivitySpots;
 
-	// Token: 0x04001612 RID: 5650
+	// Token: 0x04001631 RID: 5681
 	public Transform[] Club6ActivitySpots;
 
-	// Token: 0x04001613 RID: 5651
+	// Token: 0x04001632 RID: 5682
 	public Transform Club7ActivitySpot;
 
-	// Token: 0x04001614 RID: 5652
+	// Token: 0x04001633 RID: 5683
 	public Transform[] Club8ActivitySpots;
 
-	// Token: 0x04001615 RID: 5653
+	// Token: 0x04001634 RID: 5684
 	public Transform[] Club10ActivitySpots;
 
-	// Token: 0x04001616 RID: 5654
+	// Token: 0x04001635 RID: 5685
 	public int[] Club1Students;
 
-	// Token: 0x04001617 RID: 5655
+	// Token: 0x04001636 RID: 5686
 	public int[] Club2Students;
 
-	// Token: 0x04001618 RID: 5656
+	// Token: 0x04001637 RID: 5687
 	public int[] Club3Students;
 
-	// Token: 0x04001619 RID: 5657
+	// Token: 0x04001638 RID: 5688
 	public int[] Club4Students;
 
-	// Token: 0x0400161A RID: 5658
+	// Token: 0x04001639 RID: 5689
 	public int[] Club5Students;
 
-	// Token: 0x0400161B RID: 5659
+	// Token: 0x0400163A RID: 5690
 	public int[] Club6Students;
 
-	// Token: 0x0400161C RID: 5660
+	// Token: 0x0400163B RID: 5691
 	public int[] Club7Students;
 
-	// Token: 0x0400161D RID: 5661
+	// Token: 0x0400163C RID: 5692
 	public int[] Club8Students;
 
-	// Token: 0x0400161E RID: 5662
+	// Token: 0x0400163D RID: 5693
 	public int[] Club9Students;
 
-	// Token: 0x0400161F RID: 5663
+	// Token: 0x0400163E RID: 5694
 	public int[] Club10Students;
 
-	// Token: 0x04001620 RID: 5664
+	// Token: 0x0400163F RID: 5695
 	public int[] Club11Students;
 
-	// Token: 0x04001621 RID: 5665
+	// Token: 0x04001640 RID: 5696
 	public int[] Club14Students;
 
-	// Token: 0x04001622 RID: 5666
+	// Token: 0x04001641 RID: 5697
 	public bool LeaderAshamed;
 
-	// Token: 0x04001623 RID: 5667
+	// Token: 0x04001642 RID: 5698
 	public bool ClubEffect;
 
-	// Token: 0x04001624 RID: 5668
+	// Token: 0x04001643 RID: 5699
 	public AudioClip OccultAmbience;
 
-	// Token: 0x04001625 RID: 5669
+	// Token: 0x04001644 RID: 5700
 	public int ClubPhase;
 
-	// Token: 0x04001626 RID: 5670
+	// Token: 0x04001645 RID: 5701
 	public int Phase = 1;
 
-	// Token: 0x04001627 RID: 5671
+	// Token: 0x04001646 RID: 5702
 	public ClubType Club;
 
-	// Token: 0x04001628 RID: 5672
+	// Token: 0x04001647 RID: 5703
 	public int ID;
 
-	// Token: 0x04001629 RID: 5673
+	// Token: 0x04001648 RID: 5704
 	public float TimeLimit;
 
-	// Token: 0x0400162A RID: 5674
+	// Token: 0x04001649 RID: 5705
 	public float Timer;
 
-	// Token: 0x0400162B RID: 5675
+	// Token: 0x0400164A RID: 5706
 	public ClubType[] ClubArray;
 
-	// Token: 0x0400162C RID: 5676
+	// Token: 0x0400164B RID: 5707
 	public bool LeaderMissing;
 
-	// Token: 0x0400162D RID: 5677
+	// Token: 0x0400164C RID: 5708
 	public bool LeaderDead;
 
-	// Token: 0x0400162E RID: 5678
+	// Token: 0x0400164D RID: 5709
 	public int ClubMembers;
 
-	// Token: 0x0400162F RID: 5679
+	// Token: 0x0400164E RID: 5710
 	public int[] Club1IDs;
 
-	// Token: 0x04001630 RID: 5680
+	// Token: 0x0400164F RID: 5711
 	public int[] Club2IDs;
 
-	// Token: 0x04001631 RID: 5681
+	// Token: 0x04001650 RID: 5712
 	public int[] Club3IDs;
 
-	// Token: 0x04001632 RID: 5682
+	// Token: 0x04001651 RID: 5713
 	public int[] Club4IDs;
 
-	// Token: 0x04001633 RID: 5683
+	// Token: 0x04001652 RID: 5714
 	public int[] Club5IDs;
 
-	// Token: 0x04001634 RID: 5684
+	// Token: 0x04001653 RID: 5715
 	public int[] Club6IDs;
 
-	// Token: 0x04001635 RID: 5685
+	// Token: 0x04001654 RID: 5716
 	public int[] Club7IDs;
 
-	// Token: 0x04001636 RID: 5686
+	// Token: 0x04001655 RID: 5717
 	public int[] Club8IDs;
 
-	// Token: 0x04001637 RID: 5687
+	// Token: 0x04001656 RID: 5718
 	public int[] Club9IDs;
 
-	// Token: 0x04001638 RID: 5688
+	// Token: 0x04001657 RID: 5719
 	public int[] Club10IDs;
 
-	// Token: 0x04001639 RID: 5689
+	// Token: 0x04001658 RID: 5720
 	public int[] Club11IDs;
 
-	// Token: 0x0400163A RID: 5690
+	// Token: 0x04001659 RID: 5721
 	public int[] Club14IDs;
 
-	// Token: 0x0400163B RID: 5691
+	// Token: 0x0400165A RID: 5722
 	public int[] ClubIDs;
 
-	// Token: 0x0400163C RID: 5692
+	// Token: 0x0400165B RID: 5723
 	public bool LeaderGrudge;
 
-	// Token: 0x0400163D RID: 5693
+	// Token: 0x0400165C RID: 5724
 	public bool ClubGrudge;
 }

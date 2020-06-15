@@ -2,7 +2,7 @@
 
 namespace Pathfinding
 {
-	// Token: 0x0200054D RID: 1357
-	// (Invoke) Token: 0x06002423 RID: 9251
+	// Token: 0x02000563 RID: 1379
+	// (Invoke) Token: 0x06002479 RID: 9337
 	public delegate void OnScanDelegate(AstarPath script);
 }

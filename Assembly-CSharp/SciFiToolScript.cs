@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003CD RID: 973
+// Token: 0x020003D2 RID: 978
 public class SciFiToolScript : MonoBehaviour
 {
-	// Token: 0x06001A4F RID: 6735 RVA: 0x00101A1B File Offset: 0x000FFC1B
+	// Token: 0x06001A70 RID: 6768 RVA: 0x0010408F File Offset: 0x0010228F
 	private void Start()
 	{
 		this.Target = this.Student.StudentManager.ToolTarget;
 	}
 
-	// Token: 0x06001A50 RID: 6736 RVA: 0x00101A33 File Offset: 0x000FFC33
+	// Token: 0x06001A71 RID: 6769 RVA: 0x001040A7 File Offset: 0x001022A7
 	private void Update()
 	{
 		if ((double)Vector3.Distance(this.Tip.position, this.Target.position) < 0.1)
@@ -21,15 +21,15 @@ public class SciFiToolScript : MonoBehaviour
 		this.Sparks.Stop();
 	}
 
-	// Token: 0x040029AE RID: 10670
+	// Token: 0x04002A0F RID: 10767
 	public StudentScript Student;
 
-	// Token: 0x040029AF RID: 10671
+	// Token: 0x04002A10 RID: 10768
 	public ParticleSystem Sparks;
 
-	// Token: 0x040029B0 RID: 10672
+	// Token: 0x04002A11 RID: 10769
 	public Transform Target;
 
-	// Token: 0x040029B1 RID: 10673
+	// Token: 0x04002A12 RID: 10770
 	public Transform Tip;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000117 RID: 279
+// Token: 0x02000118 RID: 280
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Blend 2 Camera/Blend")]
 public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 {
 	// Token: 0x17000237 RID: 567
-	// (get) Token: 0x06000B5B RID: 2907 RVA: 0x00061E62 File Offset: 0x00060062
+	// (get) Token: 0x06000B62 RID: 2914 RVA: 0x00062B92 File Offset: 0x00060D92
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B5C RID: 2908 RVA: 0x00061E98 File Offset: 0x00060098
+	// Token: 0x06000B63 RID: 2915 RVA: 0x00062BC8 File Offset: 0x00060DC8
 	private void Start()
 	{
 		if (this.Camera2 != null)
@@ -37,7 +37,7 @@ public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B5D RID: 2909 RVA: 0x00061EFC File Offset: 0x000600FC
+	// Token: 0x06000B64 RID: 2916 RVA: 0x00062C2C File Offset: 0x00060E2C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -57,7 +57,7 @@ public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B5E RID: 2910 RVA: 0x00061FC8 File Offset: 0x000601C8
+	// Token: 0x06000B65 RID: 2917 RVA: 0x00062CF8 File Offset: 0x00060EF8
 	private void OnValidate()
 	{
 		if (this.Camera2 != null)
@@ -67,12 +67,12 @@ public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B5F RID: 2911 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B66 RID: 2918 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B60 RID: 2912 RVA: 0x00061FC8 File Offset: 0x000601C8
+	// Token: 0x06000B67 RID: 2919 RVA: 0x00062CF8 File Offset: 0x00060EF8
 	private void OnEnable()
 	{
 		if (this.Camera2 != null)
@@ -82,7 +82,7 @@ public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B61 RID: 2913 RVA: 0x00062000 File Offset: 0x00060200
+	// Token: 0x06000B68 RID: 2920 RVA: 0x00062D30 File Offset: 0x00060F30
 	private void OnDisable()
 	{
 		if (this.Camera2 != null)
@@ -95,25 +95,25 @@ public class CameraFilterPack_Blend2Camera_Blend : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DF1 RID: 3569
+	// Token: 0x04000E10 RID: 3600
 	private string ShaderName = "CameraFilterPack/Blend2Camera_Blend";
 
-	// Token: 0x04000DF2 RID: 3570
+	// Token: 0x04000E11 RID: 3601
 	public Shader SCShader;
 
-	// Token: 0x04000DF3 RID: 3571
+	// Token: 0x04000E12 RID: 3602
 	public Camera Camera2;
 
-	// Token: 0x04000DF4 RID: 3572
+	// Token: 0x04000E13 RID: 3603
 	private float TimeX = 1f;
 
-	// Token: 0x04000DF5 RID: 3573
+	// Token: 0x04000E14 RID: 3604
 	private Material SCMaterial;
 
-	// Token: 0x04000DF6 RID: 3574
+	// Token: 0x04000E15 RID: 3605
 	[Range(0f, 1f)]
 	public float BlendFX = 0.5f;
 
-	// Token: 0x04000DF7 RID: 3575
+	// Token: 0x04000E16 RID: 3606
 	private RenderTexture Camera2tex;
 }

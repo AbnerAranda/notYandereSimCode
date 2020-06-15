@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001CB RID: 459
+// Token: 0x020001CC RID: 460
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Light/Rainbow2")]
 public class CameraFilterPack_Light_Rainbow2 : MonoBehaviour
 {
 	// Token: 0x170002EB RID: 747
-	// (get) Token: 0x06000FD5 RID: 4053 RVA: 0x0007527E File Offset: 0x0007347E
+	// (get) Token: 0x06000FDC RID: 4060 RVA: 0x00075FAE File Offset: 0x000741AE
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Light_Rainbow2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FD6 RID: 4054 RVA: 0x000752B2 File Offset: 0x000734B2
+	// Token: 0x06000FDD RID: 4061 RVA: 0x00075FE2 File Offset: 0x000741E2
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Light_Rainbow2");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Light_Rainbow2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FD7 RID: 4055 RVA: 0x000752D4 File Offset: 0x000734D4
+	// Token: 0x06000FDE RID: 4062 RVA: 0x00076004 File Offset: 0x00074204
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Light_Rainbow2 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000FD8 RID: 4056 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000FDF RID: 4063 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000FD9 RID: 4057 RVA: 0x0007538A File Offset: 0x0007358A
+	// Token: 0x06000FE0 RID: 4064 RVA: 0x000760BA File Offset: 0x000742BA
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Light_Rainbow2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040012BB RID: 4795
+	// Token: 0x040012DA RID: 4826
 	public Shader SCShader;
 
-	// Token: 0x040012BC RID: 4796
+	// Token: 0x040012DB RID: 4827
 	private float TimeX = 1f;
 
-	// Token: 0x040012BD RID: 4797
+	// Token: 0x040012DC RID: 4828
 	private Material SCMaterial;
 
-	// Token: 0x040012BE RID: 4798
+	// Token: 0x040012DD RID: 4829
 	[Range(0.01f, 5f)]
 	public float Value = 1.5f;
 }

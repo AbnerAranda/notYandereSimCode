@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200058B RID: 1419
+	// Token: 0x020005A1 RID: 1441
 	[AddComponentMenu("Pathfinding/Navmesh/RelevantGraphSurface")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_relevant_graph_surface.php")]
 	public class RelevantGraphSurface : VersionedMonoBehaviour
 	{
-		// Token: 0x170005B3 RID: 1459
-		// (get) Token: 0x06002699 RID: 9881 RVA: 0x001A8AC4 File Offset: 0x001A6CC4
+		// Token: 0x170005B9 RID: 1465
+		// (get) Token: 0x060026EF RID: 9967 RVA: 0x001AE6B0 File Offset: 0x001AC8B0
 		public Vector3 Position
 		{
 			get
@@ -18,8 +18,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170005B4 RID: 1460
-		// (get) Token: 0x0600269A RID: 9882 RVA: 0x001A8ACC File Offset: 0x001A6CCC
+		// Token: 0x170005BA RID: 1466
+		// (get) Token: 0x060026F0 RID: 9968 RVA: 0x001AE6B8 File Offset: 0x001AC8B8
 		public RelevantGraphSurface Next
 		{
 			get
@@ -28,8 +28,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170005B5 RID: 1461
-		// (get) Token: 0x0600269B RID: 9883 RVA: 0x001A8AD4 File Offset: 0x001A6CD4
+		// Token: 0x170005BB RID: 1467
+		// (get) Token: 0x060026F1 RID: 9969 RVA: 0x001AE6C0 File Offset: 0x001AC8C0
 		public RelevantGraphSurface Prev
 		{
 			get
@@ -38,8 +38,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170005B6 RID: 1462
-		// (get) Token: 0x0600269C RID: 9884 RVA: 0x001A8ADC File Offset: 0x001A6CDC
+		// Token: 0x170005BC RID: 1468
+		// (get) Token: 0x060026F2 RID: 9970 RVA: 0x001AE6C8 File Offset: 0x001AC8C8
 		public static RelevantGraphSurface Root
 		{
 			get
@@ -48,13 +48,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600269D RID: 9885 RVA: 0x001A8AE3 File Offset: 0x001A6CE3
+		// Token: 0x060026F3 RID: 9971 RVA: 0x001AE6CF File Offset: 0x001AC8CF
 		public void UpdatePosition()
 		{
 			this.position = base.transform.position;
 		}
 
-		// Token: 0x0600269E RID: 9886 RVA: 0x001A8AF6 File Offset: 0x001A6CF6
+		// Token: 0x060026F4 RID: 9972 RVA: 0x001AE6E2 File Offset: 0x001AC8E2
 		private void OnEnable()
 		{
 			this.UpdatePosition();
@@ -68,7 +68,7 @@ namespace Pathfinding
 			RelevantGraphSurface.root = this;
 		}
 
-		// Token: 0x0600269F RID: 9887 RVA: 0x001A8B30 File Offset: 0x001A6D30
+		// Token: 0x060026F5 RID: 9973 RVA: 0x001AE71C File Offset: 0x001AC91C
 		private void OnDisable()
 		{
 			if (RelevantGraphSurface.root == this)
@@ -94,7 +94,7 @@ namespace Pathfinding
 			this.next = null;
 		}
 
-		// Token: 0x060026A0 RID: 9888 RVA: 0x001A8BBC File Offset: 0x001A6DBC
+		// Token: 0x060026F6 RID: 9974 RVA: 0x001AE7A8 File Offset: 0x001AC9A8
 		public static void UpdateAllPositions()
 		{
 			RelevantGraphSurface relevantGraphSurface = RelevantGraphSurface.root;
@@ -105,7 +105,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026A1 RID: 9889 RVA: 0x001A8BE8 File Offset: 0x001A6DE8
+		// Token: 0x060026F7 RID: 9975 RVA: 0x001AE7D4 File Offset: 0x001AC9D4
 		public static void FindAllGraphSurfaces()
 		{
 			RelevantGraphSurface[] array = UnityEngine.Object.FindObjectsOfType(typeof(RelevantGraphSurface)) as RelevantGraphSurface[];
@@ -116,33 +116,33 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026A2 RID: 9890 RVA: 0x001A8C28 File Offset: 0x001A6E28
+		// Token: 0x060026F8 RID: 9976 RVA: 0x001AE814 File Offset: 0x001ACA14
 		public void OnDrawGizmos()
 		{
-			Gizmos.color = new Color(0.22352941f, 0.827451f, 0.18039216f, 0.4f);
+			Gizmos.color = new Color(0.223529413f, 0.827451f, 0.180392161f, 0.4f);
 			Gizmos.DrawLine(base.transform.position - Vector3.up * this.maxRange, base.transform.position + Vector3.up * this.maxRange);
 		}
 
-		// Token: 0x060026A3 RID: 9891 RVA: 0x001A8C98 File Offset: 0x001A6E98
+		// Token: 0x060026F9 RID: 9977 RVA: 0x001AE884 File Offset: 0x001ACA84
 		public void OnDrawGizmosSelected()
 		{
-			Gizmos.color = new Color(0.22352941f, 0.827451f, 0.18039216f);
+			Gizmos.color = new Color(0.223529413f, 0.827451f, 0.180392161f);
 			Gizmos.DrawLine(base.transform.position - Vector3.up * this.maxRange, base.transform.position + Vector3.up * this.maxRange);
 		}
 
-		// Token: 0x0400417D RID: 16765
+		// Token: 0x0400425B RID: 16987
 		private static RelevantGraphSurface root;
 
-		// Token: 0x0400417E RID: 16766
+		// Token: 0x0400425C RID: 16988
 		public float maxRange = 1f;
 
-		// Token: 0x0400417F RID: 16767
+		// Token: 0x0400425D RID: 16989
 		private RelevantGraphSurface prev;
 
-		// Token: 0x04004180 RID: 16768
+		// Token: 0x0400425E RID: 16990
 		private RelevantGraphSurface next;
 
-		// Token: 0x04004181 RID: 16769
+		// Token: 0x0400425F RID: 16991
 		private Vector3 position;
 	}
 }

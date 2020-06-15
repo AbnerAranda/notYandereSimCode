@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000150 RID: 336
+// Token: 0x02000151 RID: 337
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/Contrast")]
 public class CameraFilterPack_Color_Contrast : MonoBehaviour
 {
 	// Token: 0x17000270 RID: 624
-	// (get) Token: 0x06000CF0 RID: 3312 RVA: 0x00069160 File Offset: 0x00067360
+	// (get) Token: 0x06000CF7 RID: 3319 RVA: 0x00069E90 File Offset: 0x00068090
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Color_Contrast : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CF1 RID: 3313 RVA: 0x00069194 File Offset: 0x00067394
+	// Token: 0x06000CF8 RID: 3320 RVA: 0x00069EC4 File Offset: 0x000680C4
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Color_Contrast");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Color_Contrast : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CF2 RID: 3314 RVA: 0x000691B8 File Offset: 0x000673B8
+	// Token: 0x06000CF9 RID: 3321 RVA: 0x00069EE8 File Offset: 0x000680E8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Color_Contrast : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000CF3 RID: 3315 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000CFA RID: 3322 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000CF4 RID: 3316 RVA: 0x0006926E File Offset: 0x0006746E
+	// Token: 0x06000CFB RID: 3323 RVA: 0x00069F9E File Offset: 0x0006819E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Color_Contrast : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FB6 RID: 4022
+	// Token: 0x04000FD5 RID: 4053
 	public Shader SCShader;
 
-	// Token: 0x04000FB7 RID: 4023
+	// Token: 0x04000FD6 RID: 4054
 	private float TimeX = 1f;
 
-	// Token: 0x04000FB8 RID: 4024
+	// Token: 0x04000FD7 RID: 4055
 	private Material SCMaterial;
 
-	// Token: 0x04000FB9 RID: 4025
+	// Token: 0x04000FD8 RID: 4056
 	[Range(0f, 10f)]
 	public float Contrast = 4.5f;
 }

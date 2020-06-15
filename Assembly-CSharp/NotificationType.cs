@@ -1,44 +1,44 @@
 ﻿using System;
 
-// Token: 0x02000342 RID: 834
+// Token: 0x02000346 RID: 838
 public enum NotificationType
 {
-	// Token: 0x040023CA RID: 9162
+	// Token: 0x04002419 RID: 9241
 	Bloody,
-	// Token: 0x040023CB RID: 9163
+	// Token: 0x0400241A RID: 9242
 	Body,
-	// Token: 0x040023CC RID: 9164
+	// Token: 0x0400241B RID: 9243
 	Insane,
-	// Token: 0x040023CD RID: 9165
+	// Token: 0x0400241C RID: 9244
 	Armed,
-	// Token: 0x040023CE RID: 9166
+	// Token: 0x0400241D RID: 9245
 	Lewd,
-	// Token: 0x040023CF RID: 9167
+	// Token: 0x0400241E RID: 9246
 	Intrude,
-	// Token: 0x040023D0 RID: 9168
+	// Token: 0x0400241F RID: 9247
 	Late,
-	// Token: 0x040023D1 RID: 9169
+	// Token: 0x04002420 RID: 9248
 	Info,
-	// Token: 0x040023D2 RID: 9170
+	// Token: 0x04002421 RID: 9249
 	Topic,
-	// Token: 0x040023D3 RID: 9171
+	// Token: 0x04002422 RID: 9250
 	Opinion,
-	// Token: 0x040023D4 RID: 9172
+	// Token: 0x04002423 RID: 9251
 	Complete,
-	// Token: 0x040023D5 RID: 9173
+	// Token: 0x04002424 RID: 9252
 	Exfiltrate,
-	// Token: 0x040023D6 RID: 9174
+	// Token: 0x04002425 RID: 9253
 	Evidence,
-	// Token: 0x040023D7 RID: 9175
+	// Token: 0x04002426 RID: 9254
 	ClassSoon,
-	// Token: 0x040023D8 RID: 9176
+	// Token: 0x04002427 RID: 9255
 	ClassNow,
-	// Token: 0x040023D9 RID: 9177
+	// Token: 0x04002428 RID: 9256
 	Eavesdropping,
-	// Token: 0x040023DA RID: 9178
+	// Token: 0x04002429 RID: 9257
 	Persona,
-	// Token: 0x040023DB RID: 9179
+	// Token: 0x0400242A RID: 9258
 	Clothing,
-	// Token: 0x040023DC RID: 9180
+	// Token: 0x0400242B RID: 9259
 	Custom
 }

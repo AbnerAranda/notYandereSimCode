@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020003BA RID: 954
+// Token: 0x020003BF RID: 959
 [Serializable]
 public class SaveFileSaveData
 {
-	// Token: 0x06001A0D RID: 6669 RVA: 0x000FE173 File Offset: 0x000FC373
+	// Token: 0x06001A2E RID: 6702 RVA: 0x00100877 File Offset: 0x000FEA77
 	public static SaveFileSaveData ReadFromGlobals()
 	{
 		return new SaveFileSaveData
@@ -13,12 +13,12 @@ public class SaveFileSaveData
 		};
 	}
 
-	// Token: 0x06001A0E RID: 6670 RVA: 0x000FE185 File Offset: 0x000FC385
+	// Token: 0x06001A2F RID: 6703 RVA: 0x00100889 File Offset: 0x000FEA89
 	public static void WriteToGlobals(SaveFileSaveData data)
 	{
 		SaveFileGlobals.CurrentSaveFile = data.currentSaveFile;
 	}
 
-	// Token: 0x040028DE RID: 10462
+	// Token: 0x0400293B RID: 10555
 	public int currentSaveFile;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000341 RID: 833
+// Token: 0x02000345 RID: 837
 public class NoteWindowScript : MonoBehaviour
 {
-	// Token: 0x06001869 RID: 6249 RVA: 0x000DE1B4 File Offset: 0x000DC3B4
+	// Token: 0x06001889 RID: 6281 RVA: 0x000E0520 File Offset: 0x000DE720
 	private void Start()
 	{
 		this.SubMenu.transform.localScale = Vector3.zero;
@@ -17,7 +17,7 @@ public class NoteWindowScript : MonoBehaviour
 		this.UpdateSubLabels();
 	}
 
-	// Token: 0x0600186A RID: 6250 RVA: 0x000DE260 File Offset: 0x000DC460
+	// Token: 0x0600188A RID: 6282 RVA: 0x000E05CC File Offset: 0x000DE7CC
 	public void BecomeLifeNote()
 	{
 		this.Stationery.mainTexture = this.LifeNoteTexture;
@@ -47,7 +47,7 @@ public class NoteWindowScript : MonoBehaviour
 		this.LifeNote = true;
 	}
 
-	// Token: 0x0600186B RID: 6251 RVA: 0x000DE434 File Offset: 0x000DC634
+	// Token: 0x0600188B RID: 6283 RVA: 0x000E07A0 File Offset: 0x000DE9A0
 	private void Update()
 	{
 		float t = Time.unscaledDeltaTime * 10f;
@@ -140,12 +140,19 @@ public class NoteWindowScript : MonoBehaviour
 						this.NoteLocker.NoteLeft = true;
 						if (this.NoteLocker.Student.StudentID == 30)
 						{
-							if (this.SlotLabels[1].text == this.Subjects[10])
+							if (this.SlotLabels[1].text == this.Subjects[9])
 							{
 								this.NoteLocker.Success = true;
 							}
 						}
-						else if (this.NoteLocker.Student.StudentID == 5 && this.NoteLocker.Student.Bullied && this.SlotLabels[1].text == this.Subjects[7] && this.MeetID > 7)
+						else if (this.NoteLocker.Student.StudentID == 5)
+						{
+							if (this.NoteLocker.Student.Bullied && this.SlotLabels[1].text == this.Subjects[7] && this.MeetID > 7)
+							{
+								this.NoteLocker.Success = true;
+							}
+						}
+						else if (this.NoteLocker.Student.StudentID == 11 && this.SlotLabels[1].text == this.Subjects[10])
 						{
 							this.NoteLocker.Success = true;
 						}
@@ -186,7 +193,7 @@ public class NoteWindowScript : MonoBehaviour
 								this.NoteLocker.Success = true;
 							}
 						}
-						else if (this.NoteLocker.Student.Club == ClubType.Bully && (this.SlotLabels[1].text == this.Subjects[5] || this.SlotLabels[1].text == this.Subjects[9]))
+						else if (this.NoteLocker.Student.Club == ClubType.Bully && (this.SlotLabels[1].text == this.Subjects[5] || this.SlotLabels[1].text == this.Subjects[10]))
 						{
 							this.NoteLocker.Success = true;
 						}
@@ -261,7 +268,7 @@ public class NoteWindowScript : MonoBehaviour
 			UISprite uisprite = this.SlotHighlights[this.Slot];
 			if (!this.Fade)
 			{
-				uisprite.color = new Color(uisprite.color.r, uisprite.color.g, uisprite.color.b, uisprite.color.a + 0.016666668f);
+				uisprite.color = new Color(uisprite.color.r, uisprite.color.g, uisprite.color.b, uisprite.color.a + 0.0166666675f);
 				if (uisprite.color.a >= 0.5f)
 				{
 					this.Fade = true;
@@ -270,7 +277,7 @@ public class NoteWindowScript : MonoBehaviour
 			}
 			else
 			{
-				uisprite.color = new Color(uisprite.color.r, uisprite.color.g, uisprite.color.b, uisprite.color.a - 0.016666668f);
+				uisprite.color = new Color(uisprite.color.r, uisprite.color.g, uisprite.color.b, uisprite.color.a - 0.0166666675f);
 				if (uisprite.color.a <= 0f)
 				{
 					this.Fade = false;
@@ -288,7 +295,7 @@ public class NoteWindowScript : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600186C RID: 6252 RVA: 0x000DF05C File Offset: 0x000DD25C
+	// Token: 0x0600188C RID: 6284 RVA: 0x000E140C File Offset: 0x000DF60C
 	private void UpdateHighlights()
 	{
 		for (int i = 1; i < this.SlotHighlights.Length; i++)
@@ -298,7 +305,7 @@ public class NoteWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600186D RID: 6253 RVA: 0x000DF0B8 File Offset: 0x000DD2B8
+	// Token: 0x0600188D RID: 6285 RVA: 0x000E1468 File Offset: 0x000DF668
 	private void UpdateSubLabels()
 	{
 		if (this.Slot == 1)
@@ -312,6 +319,10 @@ public class NoteWindowScript : MonoBehaviour
 				this.ID++;
 			}
 			if (!EventGlobals.Event1)
+			{
+				this.SubLabels[9].text = "??????????";
+			}
+			if (!EventGlobals.OsanaEvent1 || !EventGlobals.OsanaEvent2)
 			{
 				this.SubLabels[10].text = "??????????";
 				return;
@@ -353,7 +364,7 @@ public class NoteWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600186E RID: 6254 RVA: 0x000DF298 File Offset: 0x000DD498
+	// Token: 0x0600188E RID: 6286 RVA: 0x000E1668 File Offset: 0x000DF868
 	public void CheckForCompletion()
 	{
 		if (this.SlotsFilled[1] && this.SlotsFilled[2] && this.SlotsFilled[3])
@@ -363,7 +374,7 @@ public class NoteWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600186F RID: 6255 RVA: 0x000DF2E8 File Offset: 0x000DD4E8
+	// Token: 0x0600188F RID: 6287 RVA: 0x000E16B8 File Offset: 0x000DF8B8
 	private void Exit()
 	{
 		this.UpdateHighlights();
@@ -391,7 +402,7 @@ public class NoteWindowScript : MonoBehaviour
 		this.SlotsFilled[3] = false;
 	}
 
-	// Token: 0x06001870 RID: 6256 RVA: 0x000DF430 File Offset: 0x000DD630
+	// Token: 0x06001890 RID: 6288 RVA: 0x000E1800 File Offset: 0x000DFA00
 	private void DisableOptions()
 	{
 		if (this.Clock.HourTime >= 7.25f)
@@ -446,102 +457,102 @@ public class NoteWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040023A8 RID: 9128
+	// Token: 0x040023F7 RID: 9207
 	public InputManagerScript InputManager;
 
-	// Token: 0x040023A9 RID: 9129
+	// Token: 0x040023F8 RID: 9208
 	public NoteLockerScript NoteLocker;
 
-	// Token: 0x040023AA RID: 9130
+	// Token: 0x040023F9 RID: 9209
 	public PromptBarScript PromptBar;
 
-	// Token: 0x040023AB RID: 9131
+	// Token: 0x040023FA RID: 9210
 	public YandereScript Yandere;
 
-	// Token: 0x040023AC RID: 9132
+	// Token: 0x040023FB RID: 9211
 	public ClockScript Clock;
 
-	// Token: 0x040023AD RID: 9133
+	// Token: 0x040023FC RID: 9212
 	public Transform SubHighlight;
 
-	// Token: 0x040023AE RID: 9134
+	// Token: 0x040023FD RID: 9213
 	public Transform SubMenu;
 
-	// Token: 0x040023AF RID: 9135
+	// Token: 0x040023FE RID: 9214
 	public UISprite[] SlotHighlights;
 
-	// Token: 0x040023B0 RID: 9136
+	// Token: 0x040023FF RID: 9215
 	public UILabel[] SlotLabels;
 
-	// Token: 0x040023B1 RID: 9137
+	// Token: 0x04002400 RID: 9216
 	public UILabel[] SubLabels;
 
-	// Token: 0x040023B2 RID: 9138
+	// Token: 0x04002401 RID: 9217
 	public string[] OriginalText;
 
-	// Token: 0x040023B3 RID: 9139
+	// Token: 0x04002402 RID: 9218
 	public string[] Subjects;
 
-	// Token: 0x040023B4 RID: 9140
+	// Token: 0x04002403 RID: 9219
 	public string[] Locations;
 
-	// Token: 0x040023B5 RID: 9141
+	// Token: 0x04002404 RID: 9220
 	public string[] Times;
 
-	// Token: 0x040023B6 RID: 9142
+	// Token: 0x04002405 RID: 9221
 	public float[] Hours;
 
-	// Token: 0x040023B7 RID: 9143
+	// Token: 0x04002406 RID: 9222
 	public bool[] SlotsFilled;
 
-	// Token: 0x040023B8 RID: 9144
+	// Token: 0x04002407 RID: 9223
 	public int SubSlot;
 
-	// Token: 0x040023B9 RID: 9145
+	// Token: 0x04002408 RID: 9224
 	public int MeetID;
 
-	// Token: 0x040023BA RID: 9146
+	// Token: 0x04002409 RID: 9225
 	public int Slot = 1;
 
-	// Token: 0x040023BB RID: 9147
+	// Token: 0x0400240A RID: 9226
 	public float Rotation;
 
-	// Token: 0x040023BC RID: 9148
+	// Token: 0x0400240B RID: 9227
 	public float TimeID;
 
-	// Token: 0x040023BD RID: 9149
+	// Token: 0x0400240C RID: 9228
 	public int ID;
 
-	// Token: 0x040023BE RID: 9150
+	// Token: 0x0400240D RID: 9229
 	public bool Selecting;
 
-	// Token: 0x040023BF RID: 9151
+	// Token: 0x0400240E RID: 9230
 	public bool Fade;
 
-	// Token: 0x040023C0 RID: 9152
+	// Token: 0x0400240F RID: 9231
 	public bool Show;
 
-	// Token: 0x040023C1 RID: 9153
+	// Token: 0x04002410 RID: 9232
 	public UITexture Stationery;
 
-	// Token: 0x040023C2 RID: 9154
+	// Token: 0x04002411 RID: 9233
 	public UISprite Background1;
 
-	// Token: 0x040023C3 RID: 9155
+	// Token: 0x04002412 RID: 9234
 	public UISprite Background2;
 
-	// Token: 0x040023C4 RID: 9156
+	// Token: 0x04002413 RID: 9235
 	public Texture LifeNoteTexture;
 
-	// Token: 0x040023C5 RID: 9157
+	// Token: 0x04002414 RID: 9236
 	public UILabel[] Labels;
 
-	// Token: 0x040023C6 RID: 9158
+	// Token: 0x04002415 RID: 9237
 	public bool LifeNote;
 
-	// Token: 0x040023C7 RID: 9159
+	// Token: 0x04002416 RID: 9238
 	public int TargetStudent;
 
-	// Token: 0x040023C8 RID: 9160
+	// Token: 0x04002417 RID: 9239
 	public string[] MurderMethods;
 }

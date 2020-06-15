@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200017E RID: 382
+// Token: 0x0200017F RID: 383
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Drawing/Halftone")]
 public class CameraFilterPack_Drawing_Halftone : MonoBehaviour
 {
 	// Token: 0x1700029E RID: 670
-	// (get) Token: 0x06000E06 RID: 3590 RVA: 0x0006D8C1 File Offset: 0x0006BAC1
+	// (get) Token: 0x06000E0D RID: 3597 RVA: 0x0006E5F1 File Offset: 0x0006C7F1
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Drawing_Halftone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E07 RID: 3591 RVA: 0x0006D8F5 File Offset: 0x0006BAF5
+	// Token: 0x06000E0E RID: 3598 RVA: 0x0006E625 File Offset: 0x0006C825
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Drawing_Halftone");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Drawing_Halftone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E08 RID: 3592 RVA: 0x0006D918 File Offset: 0x0006BB18
+	// Token: 0x06000E0F RID: 3599 RVA: 0x0006E648 File Offset: 0x0006C848
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Drawing_Halftone : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E09 RID: 3593 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E10 RID: 3600 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E0A RID: 3594 RVA: 0x0006D9B4 File Offset: 0x0006BBB4
+	// Token: 0x06000E11 RID: 3601 RVA: 0x0006E6E4 File Offset: 0x0006C8E4
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,20 +65,20 @@ public class CameraFilterPack_Drawing_Halftone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010C1 RID: 4289
+	// Token: 0x040010E0 RID: 4320
 	public Shader SCShader;
 
-	// Token: 0x040010C2 RID: 4290
+	// Token: 0x040010E1 RID: 4321
 	private float TimeX = 1f;
 
-	// Token: 0x040010C3 RID: 4291
+	// Token: 0x040010E2 RID: 4322
 	private Material SCMaterial;
 
-	// Token: 0x040010C4 RID: 4292
+	// Token: 0x040010E3 RID: 4323
 	[Range(0f, 1f)]
 	public float Threshold = 0.6f;
 
-	// Token: 0x040010C5 RID: 4293
+	// Token: 0x040010E4 RID: 4324
 	[Range(1f, 16f)]
 	public float DotSize = 4f;
 }

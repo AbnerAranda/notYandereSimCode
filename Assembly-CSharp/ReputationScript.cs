@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200038D RID: 909
+// Token: 0x02000392 RID: 914
 public class ReputationScript : MonoBehaviour
 {
-	// Token: 0x06001993 RID: 6547 RVA: 0x000F997B File Offset: 0x000F7B7B
+	// Token: 0x060019B4 RID: 6580 RVA: 0x000FC007 File Offset: 0x000FA207
 	private void Start()
 	{
 		if (MissionModeGlobals.MissionMode)
@@ -15,7 +15,7 @@ public class ReputationScript : MonoBehaviour
 		this.Bully();
 	}
 
-	// Token: 0x06001994 RID: 6548 RVA: 0x000F999C File Offset: 0x000F7B9C
+	// Token: 0x060019B5 RID: 6581 RVA: 0x000FC028 File Offset: 0x000FA228
 	private void Update()
 	{
 		if (this.Phase == 1)
@@ -100,64 +100,64 @@ public class ReputationScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001995 RID: 6549 RVA: 0x000F9DEF File Offset: 0x000F7FEF
+	// Token: 0x060019B6 RID: 6582 RVA: 0x000FC47B File Offset: 0x000FA67B
 	private void Bully()
 	{
 		this.FlowerVase.SetActive(false);
 	}
 
-	// Token: 0x06001996 RID: 6550 RVA: 0x000F9E00 File Offset: 0x000F8000
+	// Token: 0x060019B7 RID: 6583 RVA: 0x000FC48C File Offset: 0x000FA68C
 	public void UpdateRep()
 	{
 		this.Reputation += this.PendingRep;
 		this.PendingRep = 0f;
 		this.CheckedRep++;
-		if (ClubGlobals.Club == ClubType.Delinquent && this.Reputation > -33.33333f)
+		if (this.StudentManager.Yandere.Club == ClubType.Delinquent && this.Reputation > -33.33333f)
 		{
 			this.Reputation = -33.33333f;
 		}
 		this.StudentManager.WipePendingRep();
 	}
 
-	// Token: 0x04002772 RID: 10098
+	// Token: 0x040027CF RID: 10191
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04002773 RID: 10099
+	// Token: 0x040027D0 RID: 10192
 	public ArmDetectorScript ArmDetector;
 
-	// Token: 0x04002774 RID: 10100
+	// Token: 0x040027D1 RID: 10193
 	public PortalScript Portal;
 
-	// Token: 0x04002775 RID: 10101
+	// Token: 0x040027D2 RID: 10194
 	public Transform CurrentRepMarker;
 
-	// Token: 0x04002776 RID: 10102
+	// Token: 0x040027D3 RID: 10195
 	public Transform PendingRepMarker;
 
-	// Token: 0x04002777 RID: 10103
+	// Token: 0x040027D4 RID: 10196
 	public UILabel PendingRepLabel;
 
-	// Token: 0x04002778 RID: 10104
+	// Token: 0x040027D5 RID: 10197
 	public ClockScript Clock;
 
-	// Token: 0x04002779 RID: 10105
+	// Token: 0x040027D6 RID: 10198
 	public float Reputation;
 
-	// Token: 0x0400277A RID: 10106
+	// Token: 0x040027D7 RID: 10199
 	public float PendingRep;
 
-	// Token: 0x0400277B RID: 10107
+	// Token: 0x040027D8 RID: 10200
 	public int CheckedRep = 1;
 
-	// Token: 0x0400277C RID: 10108
+	// Token: 0x040027D9 RID: 10201
 	public int Phase;
 
-	// Token: 0x0400277D RID: 10109
+	// Token: 0x040027DA RID: 10202
 	public bool MissionMode;
 
-	// Token: 0x0400277E RID: 10110
+	// Token: 0x040027DB RID: 10203
 	public GameObject FlowerVase;
 
-	// Token: 0x0400277F RID: 10111
+	// Token: 0x040027DC RID: 10204
 	public GameObject Grafitti;
 }

@@ -5,18 +5,11 @@ using UnityEngine.SceneManagement;
 // Token: 0x020000C2 RID: 194
 public class AlphabetScript : MonoBehaviour
 {
-	// Token: 0x060009EB RID: 2539 RVA: 0x0004E01C File Offset: 0x0004C21C
+	// Token: 0x060009EC RID: 2540 RVA: 0x0004E224 File Offset: 0x0004C424
 	private void Start()
 	{
 		if (GameGlobals.AlphabetMode)
 		{
-			this.TargetLabel.text = string.Concat(new object[]
-			{
-				"(",
-				this.CurrentTarget,
-				"/77) Current Target: ",
-				this.StudentManager.JSON.Students[this.IDs[this.CurrentTarget]].Name
-			});
 			this.TargetLabel.transform.parent.gameObject.SetActive(true);
 			this.StudentManager.Yandere.NoDebug = true;
 			this.BodyHidingLockers.SetActive(true);
@@ -27,15 +20,17 @@ public class AlphabetScript : MonoBehaviour
 			this.PuzzleCube.SetActive(true);
 			this.WeaponBag.SetActive(true);
 			ClassGlobals.PhysicalGrade = 5;
+			this.UpdateText();
 			return;
 		}
 		this.TargetLabel.transform.parent.gameObject.SetActive(false);
 		this.BombLabel.transform.parent.gameObject.SetActive(false);
+		UnityEngine.Object.Destroy(this.Music[1].transform.parent.gameObject);
 		base.gameObject.SetActive(false);
 		base.enabled = false;
 	}
 
-	// Token: 0x060009EC RID: 2540 RVA: 0x0004E160 File Offset: 0x0004C360
+	// Token: 0x060009ED RID: 2541 RVA: 0x0004E330 File Offset: 0x0004C530
 	private void Update()
 	{
 		if (this.CurrentTarget < this.IDs.Length)
@@ -75,13 +70,15 @@ public class AlphabetScript : MonoBehaviour
 			}
 			this.LocalArrow.LookAt(this.StudentManager.Students[this.IDs[this.CurrentTarget]].transform.position);
 			base.transform.eulerAngles = this.LocalArrow.eulerAngles - new Vector3(0f, this.StudentManager.MainCamera.transform.eulerAngles.y, 0f);
-			if ((this.StudentManager.Yandere.Attacking && this.StudentManager.Yandere.TargetStudent.StudentID != this.IDs[this.CurrentTarget]) || this.StudentManager.Police.Show)
+			if ((this.StudentManager.Yandere.Attacking && this.StudentManager.Yandere.TargetStudent.StudentID != this.IDs[this.CurrentTarget]) || (this.StudentManager.Yandere.Struggling && this.StudentManager.Yandere.TargetStudent.StudentID != this.IDs[this.CurrentTarget]) || this.StudentManager.Police.Show)
 			{
 				this.ChallengeFailed.enabled = true;
 			}
 			if (!this.StudentManager.Students[this.IDs[this.CurrentTarget]].Alive)
 			{
 				this.CurrentTarget++;
+				int num = this.CurrentTarget + 1;
+				int num2 = this.Music.Length;
 				if (this.CurrentTarget > 77)
 				{
 					this.TargetLabel.text = "Challenge Complete!";
@@ -89,13 +86,7 @@ public class AlphabetScript : MonoBehaviour
 				}
 				else
 				{
-					this.TargetLabel.text = string.Concat(new object[]
-					{
-						"(",
-						this.CurrentTarget,
-						"/77) Current Target: ",
-						this.StudentManager.Students[this.IDs[this.CurrentTarget]].Name
-					});
+					this.UpdateText();
 				}
 			}
 			if (this.ChallengeFailed.enabled)
@@ -109,63 +100,102 @@ public class AlphabetScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000874 RID: 2164
-	public StudentManagerScript StudentManager;
-
-	// Token: 0x04000875 RID: 2165
-	public GameObject BodyHidingLockers;
+	// Token: 0x060009EE RID: 2542 RVA: 0x0004E698 File Offset: 0x0004C898
+	public void UpdateText()
+	{
+		this.TargetLabel.text = string.Concat(new object[]
+		{
+			"(",
+			this.CurrentTarget,
+			"/77) Current Target: ",
+			this.StudentManager.JSON.Students[this.IDs[this.CurrentTarget]].Name
+		});
+		if (this.RemainingBombs > 0)
+		{
+			this.BombLabel.transform.parent.gameObject.SetActive(true);
+			if (this.BombTexture.color.a < 1f)
+			{
+				if (this.Inventory.StinkBomb)
+				{
+					this.BombTexture.color = new Color(0f, 0.5f, 0f, 1f);
+					return;
+				}
+				if (this.Inventory.AmnesiaBomb)
+				{
+					this.BombTexture.color = new Color(1f, 0.5f, 1f, 1f);
+					return;
+				}
+				this.BombTexture.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+			}
+		}
+	}
 
 	// Token: 0x04000876 RID: 2166
-	public GameObject AmnesiaBombBox;
+	public StudentManagerScript StudentManager;
 
 	// Token: 0x04000877 RID: 2167
-	public GameObject SmokeBombBox;
+	public InventoryScript Inventory;
 
 	// Token: 0x04000878 RID: 2168
-	public GameObject StinkBombBox;
+	public GameObject BodyHidingLockers;
 
 	// Token: 0x04000879 RID: 2169
-	public GameObject AmnesiaBomb;
+	public GameObject AmnesiaBombBox;
 
 	// Token: 0x0400087A RID: 2170
-	public GameObject PuzzleCube;
+	public GameObject SmokeBombBox;
 
 	// Token: 0x0400087B RID: 2171
-	public GameObject SuperRobot;
+	public GameObject StinkBombBox;
 
 	// Token: 0x0400087C RID: 2172
-	public GameObject SmokeBomb;
+	public GameObject AmnesiaBomb;
 
 	// Token: 0x0400087D RID: 2173
-	public GameObject StinkBomb;
+	public GameObject PuzzleCube;
 
 	// Token: 0x0400087E RID: 2174
-	public GameObject WeaponBag;
+	public GameObject SuperRobot;
 
 	// Token: 0x0400087F RID: 2175
-	public UILabel ChallengeFailed;
+	public GameObject SmokeBomb;
 
 	// Token: 0x04000880 RID: 2176
-	public UILabel TargetLabel;
+	public GameObject StinkBomb;
 
 	// Token: 0x04000881 RID: 2177
-	public UILabel BombLabel;
+	public GameObject WeaponBag;
 
 	// Token: 0x04000882 RID: 2178
-	public Transform LocalArrow;
+	public UILabel ChallengeFailed;
 
 	// Token: 0x04000883 RID: 2179
-	public Transform Yandere;
+	public UILabel TargetLabel;
 
 	// Token: 0x04000884 RID: 2180
-	public int RemainingBombs;
+	public UILabel BombLabel;
 
 	// Token: 0x04000885 RID: 2181
-	public int CurrentTarget;
+	public UITexture BombTexture;
 
 	// Token: 0x04000886 RID: 2182
-	public float Timer;
+	public Transform LocalArrow;
 
 	// Token: 0x04000887 RID: 2183
+	public Transform Yandere;
+
+	// Token: 0x04000888 RID: 2184
+	public int RemainingBombs;
+
+	// Token: 0x04000889 RID: 2185
+	public int CurrentTarget;
+
+	// Token: 0x0400088A RID: 2186
+	public float Timer;
+
+	// Token: 0x0400088B RID: 2187
 	public int[] IDs;
+
+	// Token: 0x0400088C RID: 2188
+	public AudioSource[] Music;
 }

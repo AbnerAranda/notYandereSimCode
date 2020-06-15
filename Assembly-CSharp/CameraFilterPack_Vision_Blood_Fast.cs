@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000219 RID: 537
+// Token: 0x0200021A RID: 538
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Vision/Blood_Fast")]
 public class CameraFilterPack_Vision_Blood_Fast : MonoBehaviour
 {
 	// Token: 0x17000339 RID: 825
-	// (get) Token: 0x060011CC RID: 4556 RVA: 0x0007E349 File Offset: 0x0007C549
+	// (get) Token: 0x060011D3 RID: 4563 RVA: 0x0007F079 File Offset: 0x0007D279
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Vision_Blood_Fast : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CD RID: 4557 RVA: 0x0007E37D File Offset: 0x0007C57D
+	// Token: 0x060011D4 RID: 4564 RVA: 0x0007F0AD File Offset: 0x0007D2AD
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Vision_Blood_Fast");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Vision_Blood_Fast : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CE RID: 4558 RVA: 0x0007E3A0 File Offset: 0x0007C5A0
+	// Token: 0x060011D5 RID: 4565 RVA: 0x0007F0D0 File Offset: 0x0007D2D0
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Vision_Blood_Fast : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060011CF RID: 4559 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060011D6 RID: 4566 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060011D0 RID: 4560 RVA: 0x0007E498 File Offset: 0x0007C698
+	// Token: 0x060011D7 RID: 4567 RVA: 0x0007F1C8 File Offset: 0x0007D3C8
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Vision_Blood_Fast : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040014D0 RID: 5328
+	// Token: 0x040014EF RID: 5359
 	public Shader SCShader;
 
-	// Token: 0x040014D1 RID: 5329
+	// Token: 0x040014F0 RID: 5360
 	private float TimeX = 1f;
 
-	// Token: 0x040014D2 RID: 5330
+	// Token: 0x040014F1 RID: 5361
 	private Material SCMaterial;
 
-	// Token: 0x040014D3 RID: 5331
+	// Token: 0x040014F2 RID: 5362
 	[Range(0.01f, 1f)]
 	public float HoleSize = 0.6f;
 
-	// Token: 0x040014D4 RID: 5332
+	// Token: 0x040014F3 RID: 5363
 	[Range(-1f, 1f)]
 	public float HoleSmooth = 0.3f;
 
-	// Token: 0x040014D5 RID: 5333
+	// Token: 0x040014F4 RID: 5364
 	[Range(-2f, 2f)]
 	public float Color1 = 0.2f;
 
-	// Token: 0x040014D6 RID: 5334
+	// Token: 0x040014F5 RID: 5365
 	[Range(-2f, 2f)]
 	public float Color2 = 0.9f;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000303 RID: 771
+// Token: 0x02000306 RID: 774
 public class InputDeviceScript : MonoBehaviour
 {
-	// Token: 0x06001770 RID: 6000 RVA: 0x000CA8F4 File Offset: 0x000C8AF4
+	// Token: 0x0600178D RID: 6029 RVA: 0x000CCB18 File Offset: 0x000CAD18
 	private void Update()
 	{
 		this.MouseDelta = Input.mousePosition - this.MousePrevious;
@@ -44,18 +44,18 @@ public class InputDeviceScript : MonoBehaviour
 		this.Vertical = Input.GetAxis("Vertical");
 	}
 
-	// Token: 0x040020A4 RID: 8356
+	// Token: 0x040020F1 RID: 8433
 	public InputDeviceType Type = InputDeviceType.Gamepad;
 
-	// Token: 0x040020A5 RID: 8357
+	// Token: 0x040020F2 RID: 8434
 	public Vector3 MousePrevious;
 
-	// Token: 0x040020A6 RID: 8358
+	// Token: 0x040020F3 RID: 8435
 	public Vector3 MouseDelta;
 
-	// Token: 0x040020A7 RID: 8359
+	// Token: 0x040020F4 RID: 8436
 	public float Horizontal;
 
-	// Token: 0x040020A8 RID: 8360
+	// Token: 0x040020F5 RID: 8437
 	public float Vertical;
 }

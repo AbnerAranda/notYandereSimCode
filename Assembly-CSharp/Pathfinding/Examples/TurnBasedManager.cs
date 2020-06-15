@@ -6,17 +6,17 @@ using UnityEngine.EventSystems;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005EE RID: 1518
+	// Token: 0x02000604 RID: 1540
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_turn_based_manager.php")]
 	public class TurnBasedManager : MonoBehaviour
 	{
-		// Token: 0x060029D2 RID: 10706 RVA: 0x001C165E File Offset: 0x001BF85E
+		// Token: 0x06002A28 RID: 10792 RVA: 0x001C724A File Offset: 0x001C544A
 		private void Awake()
 		{
 			this.eventSystem = UnityEngine.Object.FindObjectOfType<EventSystem>();
 		}
 
-		// Token: 0x060029D3 RID: 10707 RVA: 0x001C166C File Offset: 0x001BF86C
+		// Token: 0x06002A29 RID: 10793 RVA: 0x001C7258 File Offset: 0x001C5458
 		private void Update()
 		{
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -41,7 +41,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029D4 RID: 10708 RVA: 0x001C16F8 File Offset: 0x001BF8F8
+		// Token: 0x06002A2A RID: 10794 RVA: 0x001C72E4 File Offset: 0x001C54E4
 		private void HandleButtonUnderRay(Ray ray)
 		{
 			Astar3DButton byRay = this.GetByRay<Astar3DButton>(ray);
@@ -54,7 +54,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029D5 RID: 10709 RVA: 0x001C1750 File Offset: 0x001BF950
+		// Token: 0x06002A2B RID: 10795 RVA: 0x001C733C File Offset: 0x001C553C
 		private T GetByRay<T>(Ray ray) where T : class
 		{
 			RaycastHit raycastHit;
@@ -65,13 +65,13 @@ namespace Pathfinding.Examples
 			return default(T);
 		}
 
-		// Token: 0x060029D6 RID: 10710 RVA: 0x001C178D File Offset: 0x001BF98D
+		// Token: 0x06002A2C RID: 10796 RVA: 0x001C7379 File Offset: 0x001C5579
 		private void Select(TurnBasedAI unit)
 		{
 			this.selected = unit;
 		}
 
-		// Token: 0x060029D7 RID: 10711 RVA: 0x001C1796 File Offset: 0x001BF996
+		// Token: 0x06002A2D RID: 10797 RVA: 0x001C7382 File Offset: 0x001C5582
 		private IEnumerator MoveToNode(TurnBasedAI unit, GraphNode node)
 		{
 			ABPath path = ABPath.Construct(unit.transform.position, (Vector3)node.position, null);
@@ -92,7 +92,7 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x060029D8 RID: 10712 RVA: 0x001C17B3 File Offset: 0x001BF9B3
+		// Token: 0x06002A2E RID: 10798 RVA: 0x001C739F File Offset: 0x001C559F
 		private static IEnumerator MoveAlongPath(TurnBasedAI unit, ABPath path, float speed)
 		{
 			if (path.error || path.vectorPath.Count == 0)
@@ -126,7 +126,7 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x060029D9 RID: 10713 RVA: 0x001C17D0 File Offset: 0x001BF9D0
+		// Token: 0x06002A2F RID: 10799 RVA: 0x001C73BC File Offset: 0x001C55BC
 		private void DestroyPossibleMoves()
 		{
 			foreach (GameObject obj in this.possibleMoves)
@@ -136,7 +136,7 @@ namespace Pathfinding.Examples
 			this.possibleMoves.Clear();
 		}
 
-		// Token: 0x060029DA RID: 10714 RVA: 0x001C182C File Offset: 0x001BFA2C
+		// Token: 0x06002A30 RID: 10800 RVA: 0x001C7418 File Offset: 0x001C5618
 		private void GeneratePossibleMoves(TurnBasedAI unit)
 		{
 			ConstantPath constantPath = ConstantPath.Construct(unit.transform.position, unit.movementPoints * 1000 + 1, null);
@@ -154,35 +154,35 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x04004395 RID: 17301
+		// Token: 0x04004473 RID: 17523
 		private TurnBasedAI selected;
 
-		// Token: 0x04004396 RID: 17302
+		// Token: 0x04004474 RID: 17524
 		public float movementSpeed;
 
-		// Token: 0x04004397 RID: 17303
+		// Token: 0x04004475 RID: 17525
 		public GameObject nodePrefab;
 
-		// Token: 0x04004398 RID: 17304
+		// Token: 0x04004476 RID: 17526
 		public LayerMask layerMask;
 
-		// Token: 0x04004399 RID: 17305
+		// Token: 0x04004477 RID: 17527
 		private List<GameObject> possibleMoves = new List<GameObject>();
 
-		// Token: 0x0400439A RID: 17306
+		// Token: 0x04004478 RID: 17528
 		private EventSystem eventSystem;
 
-		// Token: 0x0400439B RID: 17307
+		// Token: 0x04004479 RID: 17529
 		public TurnBasedManager.State state;
 
-		// Token: 0x02000784 RID: 1924
+		// Token: 0x0200079E RID: 1950
 		public enum State
 		{
-			// Token: 0x04004AC6 RID: 19142
+			// Token: 0x04004BB1 RID: 19377
 			SelectUnit,
-			// Token: 0x04004AC7 RID: 19143
+			// Token: 0x04004BB2 RID: 19378
 			SelectTarget,
-			// Token: 0x04004AC8 RID: 19144
+			// Token: 0x04004BB3 RID: 19379
 			Move
 		}
 	}

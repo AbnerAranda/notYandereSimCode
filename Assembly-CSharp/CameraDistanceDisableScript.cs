@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000224 RID: 548
+// Token: 0x02000225 RID: 549
 public class CameraDistanceDisableScript : MonoBehaviour
 {
-	// Token: 0x0600120E RID: 4622 RVA: 0x0007F76D File Offset: 0x0007D96D
+	// Token: 0x06001215 RID: 4629 RVA: 0x0008049D File Offset: 0x0007E69D
 	private void Update()
 	{
 		if (Vector3.Distance(this.Yandere.position, this.RenderTarget.position) > 15f)
@@ -15,12 +15,12 @@ public class CameraDistanceDisableScript : MonoBehaviour
 		this.MyCamera.enabled = true;
 	}
 
-	// Token: 0x0400152A RID: 5418
+	// Token: 0x04001549 RID: 5449
 	public Transform RenderTarget;
 
-	// Token: 0x0400152B RID: 5419
+	// Token: 0x0400154A RID: 5450
 	public Transform Yandere;
 
-	// Token: 0x0400152C RID: 5420
+	// Token: 0x0400154B RID: 5451
 	public Camera MyCamera;
 }

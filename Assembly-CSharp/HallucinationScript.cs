@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002DC RID: 732
+// Token: 0x020002DF RID: 735
 public class HallucinationScript : MonoBehaviour
 {
-	// Token: 0x060016DE RID: 5854 RVA: 0x000BD158 File Offset: 0x000BB358
+	// Token: 0x060016FB RID: 5883 RVA: 0x000BEE5C File Offset: 0x000BD05C
 	private void Start()
 	{
 		this.YandereHairRenderer.material = this.Black;
@@ -26,7 +26,7 @@ public class HallucinationScript : MonoBehaviour
 		this.MakeTransparent();
 	}
 
-	// Token: 0x060016DF RID: 5855 RVA: 0x000BD240 File Offset: 0x000BB440
+	// Token: 0x060016FC RID: 5884 RVA: 0x000BEF44 File Offset: 0x000BD144
 	private void Update()
 	{
 		if (this.Yandere.Sanity < 33.33333f)
@@ -102,7 +102,7 @@ public class HallucinationScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060016E0 RID: 5856 RVA: 0x000BD6A8 File Offset: 0x000BB8A8
+	// Token: 0x060016FD RID: 5885 RVA: 0x000BF3AC File Offset: 0x000BD5AC
 	private void MakeTransparent()
 	{
 		this.Alpha = 0f;
@@ -124,51 +124,51 @@ public class HallucinationScript : MonoBehaviour
 		this.SawRenderer.material.SetFloat("_Alpha", this.Alpha);
 	}
 
-	// Token: 0x04001E30 RID: 7728
+	// Token: 0x04001E7A RID: 7802
 	public SkinnedMeshRenderer YandereHairRenderer;
 
-	// Token: 0x04001E31 RID: 7729
+	// Token: 0x04001E7B RID: 7803
 	public SkinnedMeshRenderer YandereRenderer;
 
-	// Token: 0x04001E32 RID: 7730
+	// Token: 0x04001E7C RID: 7804
 	public SkinnedMeshRenderer RivalHairRenderer;
 
-	// Token: 0x04001E33 RID: 7731
+	// Token: 0x04001E7D RID: 7805
 	public SkinnedMeshRenderer RivalRenderer;
 
-	// Token: 0x04001E34 RID: 7732
+	// Token: 0x04001E7E RID: 7806
 	public Animation YandereAnimation;
 
-	// Token: 0x04001E35 RID: 7733
+	// Token: 0x04001E7F RID: 7807
 	public Animation RivalAnimation;
 
-	// Token: 0x04001E36 RID: 7734
+	// Token: 0x04001E80 RID: 7808
 	public YandereScript Yandere;
 
-	// Token: 0x04001E37 RID: 7735
+	// Token: 0x04001E81 RID: 7809
 	public Material Black;
 
-	// Token: 0x04001E38 RID: 7736
+	// Token: 0x04001E82 RID: 7810
 	public bool Hallucinate;
 
-	// Token: 0x04001E39 RID: 7737
+	// Token: 0x04001E83 RID: 7811
 	public float Alpha;
 
-	// Token: 0x04001E3A RID: 7738
+	// Token: 0x04001E84 RID: 7812
 	public float Timer;
 
-	// Token: 0x04001E3B RID: 7739
+	// Token: 0x04001E85 RID: 7813
 	public int Weapon;
 
-	// Token: 0x04001E3C RID: 7740
+	// Token: 0x04001E86 RID: 7814
 	public Renderer[] WeaponRenderers;
 
-	// Token: 0x04001E3D RID: 7741
+	// Token: 0x04001E87 RID: 7815
 	public Renderer SawRenderer;
 
-	// Token: 0x04001E3E RID: 7742
+	// Token: 0x04001E88 RID: 7816
 	public GameObject[] Weapons;
 
-	// Token: 0x04001E3F RID: 7743
+	// Token: 0x04001E89 RID: 7817
 	public string[] WeaponName;
 }

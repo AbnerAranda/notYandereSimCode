@@ -1,20 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000432 RID: 1074
+// Token: 0x02000437 RID: 1079
 public class TributeScript : MonoBehaviour
 {
-	// Token: 0x06001C6F RID: 7279 RVA: 0x00153CF4 File Offset: 0x00151EF4
+	// Token: 0x06001C94 RID: 7316 RVA: 0x001571F0 File Offset: 0x001553F0
 	private void Start()
 	{
-		if (GameGlobals.LoveSick || MissionModeGlobals.MissionMode)
+		if (GameGlobals.LoveSick || MissionModeGlobals.MissionMode || GameGlobals.AlphabetMode)
 		{
 			base.enabled = false;
 		}
 		this.Rainey.SetActive(false);
 	}
 
-	// Token: 0x06001C70 RID: 7280 RVA: 0x00153D18 File Offset: 0x00151F18
+	// Token: 0x06001C95 RID: 7317 RVA: 0x0015721C File Offset: 0x0015541C
 	private void Update()
 	{
 		if (this.RiggedAttacher.gameObject.activeInHierarchy)
@@ -68,45 +68,45 @@ public class TributeScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003560 RID: 13664
+	// Token: 0x040035D5 RID: 13781
 	public RiggedAccessoryAttacher RiggedAttacher;
 
-	// Token: 0x04003561 RID: 13665
+	// Token: 0x040035D6 RID: 13782
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04003562 RID: 13666
+	// Token: 0x040035D7 RID: 13783
 	public HenshinScript Henshin;
 
-	// Token: 0x04003563 RID: 13667
+	// Token: 0x040035D8 RID: 13784
 	public YandereScript Yandere;
 
-	// Token: 0x04003564 RID: 13668
+	// Token: 0x040035D9 RID: 13785
 	public GameObject Rainey;
 
-	// Token: 0x04003565 RID: 13669
+	// Token: 0x040035DA RID: 13786
 	public string[] MiyukiLetters;
 
-	// Token: 0x04003566 RID: 13670
+	// Token: 0x040035DB RID: 13787
 	public string[] NurseLetters;
 
-	// Token: 0x04003567 RID: 13671
+	// Token: 0x040035DC RID: 13788
 	public string[] AzurLane;
 
-	// Token: 0x04003568 RID: 13672
+	// Token: 0x040035DD RID: 13789
 	public string[] Letter;
 
-	// Token: 0x04003569 RID: 13673
+	// Token: 0x040035DE RID: 13790
 	public int MiyukiID;
 
-	// Token: 0x0400356A RID: 13674
+	// Token: 0x040035DF RID: 13791
 	public int NurseID;
 
-	// Token: 0x0400356B RID: 13675
+	// Token: 0x040035E0 RID: 13792
 	public int AzurID;
 
-	// Token: 0x0400356C RID: 13676
+	// Token: 0x040035E1 RID: 13793
 	public int ID;
 
-	// Token: 0x0400356D RID: 13677
+	// Token: 0x040035E2 RID: 13794
 	public Mesh ThiccMesh;
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005B6 RID: 1462
+	// Token: 0x020005CC RID: 1484
 	public class Utility
 	{
-		// Token: 0x060027C1 RID: 10177 RVA: 0x001B4227 File Offset: 0x001B2427
+		// Token: 0x06002817 RID: 10263 RVA: 0x001B9E13 File Offset: 0x001B8013
 		public static float Min(float a, float b, float c)
 		{
 			a = ((a < b) ? a : b);
@@ -19,7 +19,7 @@ namespace Pathfinding.Voxels
 			return a;
 		}
 
-		// Token: 0x060027C2 RID: 10178 RVA: 0x001B423A File Offset: 0x001B243A
+		// Token: 0x06002818 RID: 10264 RVA: 0x001B9E26 File Offset: 0x001B8026
 		public static float Max(float a, float b, float c)
 		{
 			a = ((a > b) ? a : b);
@@ -30,7 +30,7 @@ namespace Pathfinding.Voxels
 			return a;
 		}
 
-		// Token: 0x060027C3 RID: 10179 RVA: 0x001B424D File Offset: 0x001B244D
+		// Token: 0x06002819 RID: 10265 RVA: 0x001B9E39 File Offset: 0x001B8039
 		public static int Max(int a, int b, int c, int d)
 		{
 			a = ((a > b) ? a : b);
@@ -42,7 +42,7 @@ namespace Pathfinding.Voxels
 			return a;
 		}
 
-		// Token: 0x060027C4 RID: 10180 RVA: 0x001B426A File Offset: 0x001B246A
+		// Token: 0x0600281A RID: 10266 RVA: 0x001B9E56 File Offset: 0x001B8056
 		public static int Min(int a, int b, int c, int d)
 		{
 			a = ((a < b) ? a : b);
@@ -54,7 +54,7 @@ namespace Pathfinding.Voxels
 			return a;
 		}
 
-		// Token: 0x060027C5 RID: 10181 RVA: 0x001B424D File Offset: 0x001B244D
+		// Token: 0x0600281B RID: 10267 RVA: 0x001B9E39 File Offset: 0x001B8039
 		public static float Max(float a, float b, float c, float d)
 		{
 			a = ((a > b) ? a : b);
@@ -66,7 +66,7 @@ namespace Pathfinding.Voxels
 			return a;
 		}
 
-		// Token: 0x060027C6 RID: 10182 RVA: 0x001B426A File Offset: 0x001B246A
+		// Token: 0x0600281C RID: 10268 RVA: 0x001B9E56 File Offset: 0x001B8056
 		public static float Min(float a, float b, float c, float d)
 		{
 			a = ((a < b) ? a : b);
@@ -78,7 +78,7 @@ namespace Pathfinding.Voxels
 			return a;
 		}
 
-		// Token: 0x060027C7 RID: 10183 RVA: 0x001B4287 File Offset: 0x001B2487
+		// Token: 0x0600281D RID: 10269 RVA: 0x001B9E73 File Offset: 0x001B8073
 		public static void CopyVector(float[] a, int i, Vector3 v)
 		{
 			a[i] = v.x;
@@ -86,7 +86,7 @@ namespace Pathfinding.Voxels
 			a[i + 2] = v.z;
 		}
 
-		// Token: 0x060027C8 RID: 10184 RVA: 0x001B42A8 File Offset: 0x001B24A8
+		// Token: 0x0600281E RID: 10270 RVA: 0x001B9E94 File Offset: 0x001B8094
 		public static Int3[] RemoveDuplicateVertices(Int3[] vertices, int[] triangles)
 		{
 			Dictionary<Int3, int> dictionary = ObjectPoolSimple<Dictionary<Int3, int>>.Claim();

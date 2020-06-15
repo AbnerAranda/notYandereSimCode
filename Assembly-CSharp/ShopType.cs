@@ -1,26 +1,26 @@
 ﻿using System;
 
-// Token: 0x020003FB RID: 1019
+// Token: 0x02000400 RID: 1024
 public enum ShopType
 {
-	// Token: 0x04002BD6 RID: 11222
+	// Token: 0x04002C38 RID: 11320
 	Nonfunctional,
-	// Token: 0x04002BD7 RID: 11223
+	// Token: 0x04002C39 RID: 11321
 	Hardware,
-	// Token: 0x04002BD8 RID: 11224
+	// Token: 0x04002C3A RID: 11322
 	Manga,
-	// Token: 0x04002BD9 RID: 11225
+	// Token: 0x04002C3B RID: 11323
 	Maid,
-	// Token: 0x04002BDA RID: 11226
+	// Token: 0x04002C3C RID: 11324
 	Salon,
-	// Token: 0x04002BDB RID: 11227
+	// Token: 0x04002C3D RID: 11325
 	Gift,
-	// Token: 0x04002BDC RID: 11228
+	// Token: 0x04002C3E RID: 11326
 	Convenience,
-	// Token: 0x04002BDD RID: 11229
+	// Token: 0x04002C3F RID: 11327
 	Games,
-	// Token: 0x04002BDE RID: 11230
+	// Token: 0x04002C40 RID: 11328
 	Electronics,
-	// Token: 0x04002BDF RID: 11231
+	// Token: 0x04002C41 RID: 11329
 	Lingerie
 }

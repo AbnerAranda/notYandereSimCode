@@ -2,11 +2,11 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000542 RID: 1346
+	// Token: 0x02000558 RID: 1368
 	public class PathNNConstraint : NNConstraint
 	{
-		// Token: 0x17000572 RID: 1394
-		// (get) Token: 0x060023EC RID: 9196 RVA: 0x00195E4D File Offset: 0x0019404D
+		// Token: 0x17000578 RID: 1400
+		// (get) Token: 0x06002442 RID: 9282 RVA: 0x0019BA39 File Offset: 0x00199C39
 		public new static PathNNConstraint Default
 		{
 			get
@@ -18,7 +18,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023ED RID: 9197 RVA: 0x00195E5B File Offset: 0x0019405B
+		// Token: 0x06002443 RID: 9283 RVA: 0x0019BA47 File Offset: 0x00199C47
 		public virtual void SetStart(GraphNode node)
 		{
 			if (node != null)

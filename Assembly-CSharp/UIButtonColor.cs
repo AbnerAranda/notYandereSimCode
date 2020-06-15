@@ -7,8 +7,8 @@ using UnityEngine;
 public class UIButtonColor : UIWidgetContainer
 {
 	// Token: 0x1700001F RID: 31
-	// (get) Token: 0x0600016E RID: 366 RVA: 0x00014495 File Offset: 0x00012695
-	// (set) Token: 0x0600016F RID: 367 RVA: 0x0001449D File Offset: 0x0001269D
+	// (get) Token: 0x0600016F RID: 367 RVA: 0x000144BD File Offset: 0x000126BD
+	// (set) Token: 0x06000170 RID: 368 RVA: 0x000144C5 File Offset: 0x000126C5
 	public UIButtonColor.State state
 	{
 		get
@@ -22,8 +22,8 @@ public class UIButtonColor : UIWidgetContainer
 	}
 
 	// Token: 0x17000020 RID: 32
-	// (get) Token: 0x06000170 RID: 368 RVA: 0x000144A7 File Offset: 0x000126A7
-	// (set) Token: 0x06000171 RID: 369 RVA: 0x000144C0 File Offset: 0x000126C0
+	// (get) Token: 0x06000171 RID: 369 RVA: 0x000144CF File Offset: 0x000126CF
+	// (set) Token: 0x06000172 RID: 370 RVA: 0x000144E8 File Offset: 0x000126E8
 	public Color defaultColor
 	{
 		get
@@ -48,8 +48,8 @@ public class UIButtonColor : UIWidgetContainer
 	}
 
 	// Token: 0x17000021 RID: 33
-	// (get) Token: 0x06000172 RID: 370 RVA: 0x000144F8 File Offset: 0x000126F8
-	// (set) Token: 0x06000173 RID: 371 RVA: 0x00014500 File Offset: 0x00012700
+	// (get) Token: 0x06000173 RID: 371 RVA: 0x00014520 File Offset: 0x00012720
+	// (set) Token: 0x06000174 RID: 372 RVA: 0x00014528 File Offset: 0x00012728
 	public virtual bool isEnabled
 	{
 		get
@@ -62,13 +62,13 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x06000174 RID: 372 RVA: 0x00014509 File Offset: 0x00012709
+	// Token: 0x06000175 RID: 373 RVA: 0x00014531 File Offset: 0x00012731
 	public void ResetDefaultColor()
 	{
 		this.defaultColor = this.mStartingColor;
 	}
 
-	// Token: 0x06000175 RID: 373 RVA: 0x00014517 File Offset: 0x00012717
+	// Token: 0x06000176 RID: 374 RVA: 0x0001453F File Offset: 0x0001273F
 	public void CacheDefaultColor()
 	{
 		if (!this.mInitDone)
@@ -77,7 +77,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x06000176 RID: 374 RVA: 0x00014527 File Offset: 0x00012727
+	// Token: 0x06000177 RID: 375 RVA: 0x0001454F File Offset: 0x0001274F
 	private void Start()
 	{
 		if (!this.mInitDone)
@@ -90,7 +90,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x06000177 RID: 375 RVA: 0x00014548 File Offset: 0x00012748
+	// Token: 0x06000178 RID: 376 RVA: 0x00014570 File Offset: 0x00012770
 	protected virtual void OnInit()
 	{
 		this.mInitDone = true;
@@ -129,7 +129,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x06000178 RID: 376 RVA: 0x0001465C File Offset: 0x0001285C
+	// Token: 0x06000179 RID: 377 RVA: 0x00014684 File Offset: 0x00012884
 	protected virtual void OnEnable()
 	{
 		if (this.mInitDone)
@@ -150,7 +150,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x06000179 RID: 377 RVA: 0x000146C8 File Offset: 0x000128C8
+	// Token: 0x0600017A RID: 378 RVA: 0x000146F0 File Offset: 0x000128F0
 	protected virtual void OnDisable()
 	{
 		if (this.mInitDone && this.mState != UIButtonColor.State.Normal)
@@ -168,7 +168,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x0600017A RID: 378 RVA: 0x00014723 File Offset: 0x00012923
+	// Token: 0x0600017B RID: 379 RVA: 0x0001474B File Offset: 0x0001294B
 	protected virtual void OnHover(bool isOver)
 	{
 		if (this.isEnabled)
@@ -184,7 +184,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x0600017B RID: 379 RVA: 0x00014758 File Offset: 0x00012958
+	// Token: 0x0600017C RID: 380 RVA: 0x00014780 File Offset: 0x00012980
 	protected virtual void OnPress(bool isPressed)
 	{
 		if (this.isEnabled)
@@ -223,7 +223,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x0600017C RID: 380 RVA: 0x000147FA File Offset: 0x000129FA
+	// Token: 0x0600017D RID: 381 RVA: 0x00014822 File Offset: 0x00012A22
 	protected virtual void OnDragOver()
 	{
 		if (this.isEnabled)
@@ -239,7 +239,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x0600017D RID: 381 RVA: 0x00014828 File Offset: 0x00012A28
+	// Token: 0x0600017E RID: 382 RVA: 0x00014850 File Offset: 0x00012A50
 	protected virtual void OnDragOut()
 	{
 		if (this.isEnabled)
@@ -255,7 +255,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x0600017E RID: 382 RVA: 0x00014856 File Offset: 0x00012A56
+	// Token: 0x0600017F RID: 383 RVA: 0x0001487E File Offset: 0x00012A7E
 	public virtual void SetState(UIButtonColor.State state, bool instant)
 	{
 		if (!this.mInitDone)
@@ -270,7 +270,7 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x0600017F RID: 383 RVA: 0x00014884 File Offset: 0x00012A84
+	// Token: 0x06000180 RID: 384 RVA: 0x000148AC File Offset: 0x00012AAC
 	public void UpdateColor(bool instant)
 	{
 		if (!this.mInitDone)
@@ -303,52 +303,52 @@ public class UIButtonColor : UIWidgetContainer
 		}
 	}
 
-	// Token: 0x04000306 RID: 774
+	// Token: 0x04000308 RID: 776
 	public GameObject tweenTarget;
 
-	// Token: 0x04000307 RID: 775
-	public Color hover = new Color(0.88235295f, 0.78431374f, 0.5882353f, 1f);
-
-	// Token: 0x04000308 RID: 776
-	public Color pressed = new Color(0.7176471f, 0.6392157f, 0.48235294f, 1f);
-
 	// Token: 0x04000309 RID: 777
-	public Color disabledColor = Color.grey;
+	public Color hover = new Color(0.882352948f, 0.784313738f, 0.5882353f, 1f);
 
 	// Token: 0x0400030A RID: 778
-	public float duration = 0.2f;
+	public Color pressed = new Color(0.7176471f, 0.6392157f, 0.482352942f, 1f);
 
 	// Token: 0x0400030B RID: 779
-	[NonSerialized]
-	protected Color mStartingColor;
+	public Color disabledColor = Color.grey;
 
 	// Token: 0x0400030C RID: 780
-	[NonSerialized]
-	protected Color mDefaultColor;
+	public float duration = 0.2f;
 
 	// Token: 0x0400030D RID: 781
 	[NonSerialized]
-	protected bool mInitDone;
+	protected Color mStartingColor;
 
 	// Token: 0x0400030E RID: 782
 	[NonSerialized]
-	protected UIWidget mWidget;
+	protected Color mDefaultColor;
 
 	// Token: 0x0400030F RID: 783
 	[NonSerialized]
+	protected bool mInitDone;
+
+	// Token: 0x04000310 RID: 784
+	[NonSerialized]
+	protected UIWidget mWidget;
+
+	// Token: 0x04000311 RID: 785
+	[NonSerialized]
 	protected UIButtonColor.State mState;
 
-	// Token: 0x02000610 RID: 1552
+	// Token: 0x02000626 RID: 1574
 	[DoNotObfuscateNGUI]
 	public enum State
 	{
-		// Token: 0x0400447F RID: 17535
+		// Token: 0x0400455D RID: 17757
 		Normal,
-		// Token: 0x04004480 RID: 17536
+		// Token: 0x0400455E RID: 17758
 		Hover,
-		// Token: 0x04004481 RID: 17537
+		// Token: 0x0400455F RID: 17759
 		Pressed,
-		// Token: 0x04004482 RID: 17538
+		// Token: 0x04004560 RID: 17760
 		Disabled
 	}
 }

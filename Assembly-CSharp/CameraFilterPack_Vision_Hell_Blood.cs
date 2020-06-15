@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200021C RID: 540
+// Token: 0x0200021D RID: 541
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Vision/Hell_Blood")]
 public class CameraFilterPack_Vision_Hell_Blood : MonoBehaviour
 {
 	// Token: 0x1700033C RID: 828
-	// (get) Token: 0x060011DE RID: 4574 RVA: 0x0007E841 File Offset: 0x0007CA41
+	// (get) Token: 0x060011E5 RID: 4581 RVA: 0x0007F571 File Offset: 0x0007D771
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Vision_Hell_Blood : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011DF RID: 4575 RVA: 0x0007E875 File Offset: 0x0007CA75
+	// Token: 0x060011E6 RID: 4582 RVA: 0x0007F5A5 File Offset: 0x0007D7A5
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Vision_Hell_Blood");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Vision_Hell_Blood : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011E0 RID: 4576 RVA: 0x0007E898 File Offset: 0x0007CA98
+	// Token: 0x060011E7 RID: 4583 RVA: 0x0007F5C8 File Offset: 0x0007D7C8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -58,12 +58,12 @@ public class CameraFilterPack_Vision_Hell_Blood : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060011E1 RID: 4577 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060011E8 RID: 4584 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060011E2 RID: 4578 RVA: 0x0007E9EE File Offset: 0x0007CBEE
+	// Token: 0x060011E9 RID: 4585 RVA: 0x0007F71E File Offset: 0x0007D91E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -72,43 +72,43 @@ public class CameraFilterPack_Vision_Hell_Blood : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040014E5 RID: 5349
+	// Token: 0x04001504 RID: 5380
 	public Shader SCShader;
 
-	// Token: 0x040014E6 RID: 5350
+	// Token: 0x04001505 RID: 5381
 	private float TimeX = 1f;
 
-	// Token: 0x040014E7 RID: 5351
+	// Token: 0x04001506 RID: 5382
 	private Material SCMaterial;
 
-	// Token: 0x040014E8 RID: 5352
+	// Token: 0x04001507 RID: 5383
 	[Range(0f, 1f)]
 	public float Hole_Size = 0.57f;
 
-	// Token: 0x040014E9 RID: 5353
+	// Token: 0x04001508 RID: 5384
 	[Range(0f, 0.5f)]
 	public float Hole_Smooth = 0.362f;
 
-	// Token: 0x040014EA RID: 5354
+	// Token: 0x04001509 RID: 5385
 	[Range(-2f, 2f)]
 	public float Hole_Speed = 0.85f;
 
-	// Token: 0x040014EB RID: 5355
+	// Token: 0x0400150A RID: 5386
 	[Range(-10f, 10f)]
 	public float Intensity = 0.24f;
 
-	// Token: 0x040014EC RID: 5356
+	// Token: 0x0400150B RID: 5387
 	public Color ColorBlood = new Color(1f, 0f, 0f, 1f);
 
-	// Token: 0x040014ED RID: 5357
+	// Token: 0x0400150C RID: 5388
 	[Range(-1f, 1f)]
 	public float BloodAlternative1;
 
-	// Token: 0x040014EE RID: 5358
+	// Token: 0x0400150D RID: 5389
 	[Range(-1f, 1f)]
 	public float BloodAlternative2;
 
-	// Token: 0x040014EF RID: 5359
+	// Token: 0x0400150E RID: 5390
 	[Range(-1f, 1f)]
 	public float BloodAlternative3 = -1f;
 }

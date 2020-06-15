@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000FB RID: 251
+// Token: 0x020000FC RID: 252
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/3D/Binary")]
 public class CameraFilterPack_3D_Binary : MonoBehaviour
 {
 	// Token: 0x1700021B RID: 539
-	// (get) Token: 0x06000AB3 RID: 2739 RVA: 0x0005DAA2 File Offset: 0x0005BCA2
+	// (get) Token: 0x06000ABA RID: 2746 RVA: 0x0005E7D2 File Offset: 0x0005C9D2
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_3D_Binary : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AB4 RID: 2740 RVA: 0x0005DAD6 File Offset: 0x0005BCD6
+	// Token: 0x06000ABB RID: 2747 RVA: 0x0005E806 File Offset: 0x0005CA06
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_3D_Binary1") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_3D_Binary : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AB5 RID: 2741 RVA: 0x0005DB0C File Offset: 0x0005BD0C
+	// Token: 0x06000ABC RID: 2748 RVA: 0x0005E83C File Offset: 0x0005CA3C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -63,12 +63,12 @@ public class CameraFilterPack_3D_Binary : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000AB6 RID: 2742 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000ABD RID: 2749 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000AB7 RID: 2743 RVA: 0x0005DCAE File Offset: 0x0005BEAE
+	// Token: 0x06000ABE RID: 2750 RVA: 0x0005E9DE File Offset: 0x0005CBDE
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -77,48 +77,48 @@ public class CameraFilterPack_3D_Binary : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CA7 RID: 3239
+	// Token: 0x04000CC6 RID: 3270
 	public Shader SCShader;
 
-	// Token: 0x04000CA8 RID: 3240
+	// Token: 0x04000CC7 RID: 3271
 	private float TimeX = 1f;
 
-	// Token: 0x04000CA9 RID: 3241
+	// Token: 0x04000CC8 RID: 3272
 	public bool _Visualize;
 
-	// Token: 0x04000CAA RID: 3242
+	// Token: 0x04000CC9 RID: 3273
 	private Material SCMaterial;
 
-	// Token: 0x04000CAB RID: 3243
+	// Token: 0x04000CCA RID: 3274
 	[Range(0f, 100f)]
 	public float _FixDistance = 2f;
 
-	// Token: 0x04000CAC RID: 3244
+	// Token: 0x04000CCB RID: 3275
 	[Range(-5f, 5f)]
 	public float LightIntensity;
 
-	// Token: 0x04000CAD RID: 3245
+	// Token: 0x04000CCC RID: 3276
 	[Range(0f, 8f)]
 	public float MatrixSize = 2f;
 
-	// Token: 0x04000CAE RID: 3246
+	// Token: 0x04000CCD RID: 3277
 	[Range(-4f, 4f)]
 	public float MatrixSpeed = 1f;
 
-	// Token: 0x04000CAF RID: 3247
+	// Token: 0x04000CCE RID: 3278
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04000CB0 RID: 3248
+	// Token: 0x04000CCF RID: 3279
 	[Range(0f, 1f)]
 	public float FadeFromBinary;
 
-	// Token: 0x04000CB1 RID: 3249
+	// Token: 0x04000CD0 RID: 3280
 	public Color _MatrixColor = new Color(1f, 0.3f, 0.3f, 1f);
 
-	// Token: 0x04000CB2 RID: 3250
+	// Token: 0x04000CD1 RID: 3281
 	public static Color ChangeColorRGB;
 
-	// Token: 0x04000CB3 RID: 3251
+	// Token: 0x04000CD2 RID: 3282
 	private Texture2D Texture2;
 }

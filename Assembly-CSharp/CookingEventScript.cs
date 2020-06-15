@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000249 RID: 585
+// Token: 0x0200024A RID: 586
 public class CookingEventScript : MonoBehaviour
 {
-	// Token: 0x06001297 RID: 4759 RVA: 0x0008C414 File Offset: 0x0008A614
+	// Token: 0x0600129E RID: 4766 RVA: 0x0008D314 File Offset: 0x0008B514
 	private void Start()
 	{
 		this.Octodog.SetActive(false);
@@ -23,7 +23,7 @@ public class CookingEventScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001298 RID: 4760 RVA: 0x0008C494 File Offset: 0x0008A694
+	// Token: 0x0600129F RID: 4767 RVA: 0x0008D394 File Offset: 0x0008B594
 	private void Update()
 	{
 		Input.GetKeyDown(KeyCode.Space);
@@ -294,12 +294,15 @@ public class CookingEventScript : MonoBehaviour
 					this.EventSubtitle.transform.localScale = new Vector3(num2, num2, num2);
 					return;
 				}
-				this.EventSubtitle.transform.localScale = Vector3.zero;
+				if (num < 11f)
+				{
+					this.EventSubtitle.transform.localScale = Vector3.zero;
+				}
 			}
 		}
 	}
 
-	// Token: 0x06001299 RID: 4761 RVA: 0x0008D4F0 File Offset: 0x0008B6F0
+	// Token: 0x060012A0 RID: 4768 RVA: 0x0008E3F8 File Offset: 0x0008C5F8
 	private void EndEvent()
 	{
 		if (!this.EventOver)
@@ -342,105 +345,105 @@ public class CookingEventScript : MonoBehaviour
 		this.EventCheck = false;
 	}
 
-	// Token: 0x040016D2 RID: 5842
+	// Token: 0x040016F1 RID: 5873
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x040016D3 RID: 5843
+	// Token: 0x040016F2 RID: 5874
 	public RefrigeratorScript Snacks;
 
-	// Token: 0x040016D4 RID: 5844
+	// Token: 0x040016F3 RID: 5875
 	public SchemesScript Schemes;
 
-	// Token: 0x040016D5 RID: 5845
+	// Token: 0x040016F4 RID: 5876
 	public YandereScript Yandere;
 
-	// Token: 0x040016D6 RID: 5846
+	// Token: 0x040016F5 RID: 5877
 	public ClockScript Clock;
 
-	// Token: 0x040016D7 RID: 5847
+	// Token: 0x040016F6 RID: 5878
 	public GameObject Refrigerator;
 
-	// Token: 0x040016D8 RID: 5848
+	// Token: 0x040016F7 RID: 5879
 	public GameObject RivalPhone;
 
-	// Token: 0x040016D9 RID: 5849
+	// Token: 0x040016F8 RID: 5880
 	public GameObject Octodog;
 
-	// Token: 0x040016DA RID: 5850
+	// Token: 0x040016F9 RID: 5881
 	public GameObject Sausage;
 
-	// Token: 0x040016DB RID: 5851
+	// Token: 0x040016FA RID: 5882
 	public Transform CookingClub;
 
-	// Token: 0x040016DC RID: 5852
+	// Token: 0x040016FB RID: 5883
 	public Transform JarLid;
 
-	// Token: 0x040016DD RID: 5853
+	// Token: 0x040016FC RID: 5884
 	public Transform Knife;
 
-	// Token: 0x040016DE RID: 5854
+	// Token: 0x040016FD RID: 5885
 	public Transform Plate;
 
-	// Token: 0x040016DF RID: 5855
+	// Token: 0x040016FE RID: 5886
 	public Transform Jar;
 
-	// Token: 0x040016E0 RID: 5856
+	// Token: 0x040016FF RID: 5887
 	public Transform[] Octodogs;
 
-	// Token: 0x040016E1 RID: 5857
+	// Token: 0x04001700 RID: 5888
 	public StudentScript EventStudent;
 
-	// Token: 0x040016E2 RID: 5858
+	// Token: 0x04001701 RID: 5889
 	public UILabel EventSubtitle;
 
-	// Token: 0x040016E3 RID: 5859
+	// Token: 0x04001702 RID: 5890
 	public Transform[] EventLocations;
 
-	// Token: 0x040016E4 RID: 5860
+	// Token: 0x04001703 RID: 5891
 	public AudioClip[] EventClip;
 
-	// Token: 0x040016E5 RID: 5861
+	// Token: 0x04001704 RID: 5892
 	public string[] EventSpeech;
 
-	// Token: 0x040016E6 RID: 5862
+	// Token: 0x04001705 RID: 5893
 	public string[] EventAnim;
 
-	// Token: 0x040016E7 RID: 5863
+	// Token: 0x04001706 RID: 5894
 	public int[] ClubMembers;
 
-	// Token: 0x040016E8 RID: 5864
+	// Token: 0x04001707 RID: 5895
 	public GameObject VoiceClip;
 
-	// Token: 0x040016E9 RID: 5865
+	// Token: 0x04001708 RID: 5896
 	public bool EventActive;
 
-	// Token: 0x040016EA RID: 5866
+	// Token: 0x04001709 RID: 5897
 	public bool EventCheck;
 
-	// Token: 0x040016EB RID: 5867
+	// Token: 0x0400170A RID: 5898
 	public bool EventOver;
 
-	// Token: 0x040016EC RID: 5868
+	// Token: 0x0400170B RID: 5899
 	public int EventStudentID;
 
-	// Token: 0x040016ED RID: 5869
+	// Token: 0x0400170C RID: 5900
 	public float EventTime = 7f;
 
-	// Token: 0x040016EE RID: 5870
+	// Token: 0x0400170D RID: 5901
 	public int EventPhase = 1;
 
-	// Token: 0x040016EF RID: 5871
+	// Token: 0x0400170E RID: 5902
 	public DayOfWeek EventDay = DayOfWeek.Tuesday;
 
-	// Token: 0x040016F0 RID: 5872
+	// Token: 0x0400170F RID: 5903
 	public int Loop;
 
-	// Token: 0x040016F1 RID: 5873
+	// Token: 0x04001710 RID: 5904
 	public float CurrentClipLength;
 
-	// Token: 0x040016F2 RID: 5874
+	// Token: 0x04001711 RID: 5905
 	public float Rotation;
 
-	// Token: 0x040016F3 RID: 5875
+	// Token: 0x04001712 RID: 5906
 	public float Timer;
 }

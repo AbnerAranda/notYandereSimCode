@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002CB RID: 715
+// Token: 0x020002CE RID: 718
 public static class SenpaiGlobals
 {
-	// Token: 0x170003F2 RID: 1010
-	// (get) Token: 0x060015DA RID: 5594 RVA: 0x000B8D5F File Offset: 0x000B6F5F
-	// (set) Token: 0x060015DB RID: 5595 RVA: 0x000B8D7F File Offset: 0x000B6F7F
+	// Token: 0x170003F7 RID: 1015
+	// (get) Token: 0x060015F7 RID: 5623 RVA: 0x000BAA63 File Offset: 0x000B8C63
+	// (set) Token: 0x060015F8 RID: 5624 RVA: 0x000BAA83 File Offset: 0x000B8C83
 	public static bool CustomSenpai
 	{
 		get
@@ -19,9 +19,9 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x170003F3 RID: 1011
-	// (get) Token: 0x060015DC RID: 5596 RVA: 0x000B8DA0 File Offset: 0x000B6FA0
-	// (set) Token: 0x060015DD RID: 5597 RVA: 0x000B8DC0 File Offset: 0x000B6FC0
+	// Token: 0x170003F8 RID: 1016
+	// (get) Token: 0x060015F9 RID: 5625 RVA: 0x000BAAA4 File Offset: 0x000B8CA4
+	// (set) Token: 0x060015FA RID: 5626 RVA: 0x000BAAC4 File Offset: 0x000B8CC4
 	public static string SenpaiEyeColor
 	{
 		get
@@ -34,9 +34,9 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x170003F4 RID: 1012
-	// (get) Token: 0x060015DE RID: 5598 RVA: 0x000B8DE1 File Offset: 0x000B6FE1
-	// (set) Token: 0x060015DF RID: 5599 RVA: 0x000B8E01 File Offset: 0x000B7001
+	// Token: 0x170003F9 RID: 1017
+	// (get) Token: 0x060015FB RID: 5627 RVA: 0x000BAAE5 File Offset: 0x000B8CE5
+	// (set) Token: 0x060015FC RID: 5628 RVA: 0x000BAB05 File Offset: 0x000B8D05
 	public static int SenpaiEyeWear
 	{
 		get
@@ -49,9 +49,9 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x170003F5 RID: 1013
-	// (get) Token: 0x060015E0 RID: 5600 RVA: 0x000B8E22 File Offset: 0x000B7022
-	// (set) Token: 0x060015E1 RID: 5601 RVA: 0x000B8E42 File Offset: 0x000B7042
+	// Token: 0x170003FA RID: 1018
+	// (get) Token: 0x060015FD RID: 5629 RVA: 0x000BAB26 File Offset: 0x000B8D26
+	// (set) Token: 0x060015FE RID: 5630 RVA: 0x000BAB46 File Offset: 0x000B8D46
 	public static int SenpaiFacialHair
 	{
 		get
@@ -64,9 +64,9 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x170003F6 RID: 1014
-	// (get) Token: 0x060015E2 RID: 5602 RVA: 0x000B8E63 File Offset: 0x000B7063
-	// (set) Token: 0x060015E3 RID: 5603 RVA: 0x000B8E83 File Offset: 0x000B7083
+	// Token: 0x170003FB RID: 1019
+	// (get) Token: 0x060015FF RID: 5631 RVA: 0x000BAB67 File Offset: 0x000B8D67
+	// (set) Token: 0x06001600 RID: 5632 RVA: 0x000BAB87 File Offset: 0x000B8D87
 	public static string SenpaiHairColor
 	{
 		get
@@ -79,9 +79,9 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x170003F7 RID: 1015
-	// (get) Token: 0x060015E4 RID: 5604 RVA: 0x000B8EA4 File Offset: 0x000B70A4
-	// (set) Token: 0x060015E5 RID: 5605 RVA: 0x000B8EC4 File Offset: 0x000B70C4
+	// Token: 0x170003FC RID: 1020
+	// (get) Token: 0x06001601 RID: 5633 RVA: 0x000BABA8 File Offset: 0x000B8DA8
+	// (set) Token: 0x06001602 RID: 5634 RVA: 0x000BABC8 File Offset: 0x000B8DC8
 	public static int SenpaiHairStyle
 	{
 		get
@@ -94,9 +94,9 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x170003F8 RID: 1016
-	// (get) Token: 0x060015E6 RID: 5606 RVA: 0x000B8EE5 File Offset: 0x000B70E5
-	// (set) Token: 0x060015E7 RID: 5607 RVA: 0x000B8F05 File Offset: 0x000B7105
+	// Token: 0x170003FD RID: 1021
+	// (get) Token: 0x06001603 RID: 5635 RVA: 0x000BABE9 File Offset: 0x000B8DE9
+	// (set) Token: 0x06001604 RID: 5636 RVA: 0x000BAC09 File Offset: 0x000B8E09
 	public static int SenpaiSkinColor
 	{
 		get
@@ -109,7 +109,7 @@ public static class SenpaiGlobals
 		}
 	}
 
-	// Token: 0x060015E8 RID: 5608 RVA: 0x000B8F28 File Offset: 0x000B7128
+	// Token: 0x06001605 RID: 5637 RVA: 0x000BAC2C File Offset: 0x000B8E2C
 	public static void DeleteAll()
 	{
 		Globals.Delete("Profile_" + GameGlobals.Profile + "_CustomSenpai");
@@ -121,24 +121,24 @@ public static class SenpaiGlobals
 		Globals.Delete("Profile_" + GameGlobals.Profile + "_SenpaiSkinColor");
 	}
 
-	// Token: 0x04001D90 RID: 7568
+	// Token: 0x04001DDA RID: 7642
 	private const string Str_CustomSenpai = "CustomSenpai";
 
-	// Token: 0x04001D91 RID: 7569
+	// Token: 0x04001DDB RID: 7643
 	private const string Str_SenpaiEyeColor = "SenpaiEyeColor";
 
-	// Token: 0x04001D92 RID: 7570
+	// Token: 0x04001DDC RID: 7644
 	private const string Str_SenpaiEyeWear = "SenpaiEyeWear";
 
-	// Token: 0x04001D93 RID: 7571
+	// Token: 0x04001DDD RID: 7645
 	private const string Str_SenpaiFacialHair = "SenpaiFacialHair";
 
-	// Token: 0x04001D94 RID: 7572
+	// Token: 0x04001DDE RID: 7646
 	private const string Str_SenpaiHairColor = "SenpaiHairColor";
 
-	// Token: 0x04001D95 RID: 7573
+	// Token: 0x04001DDF RID: 7647
 	private const string Str_SenpaiHairStyle = "SenpaiHairStyle";
 
-	// Token: 0x04001D96 RID: 7574
+	// Token: 0x04001DE0 RID: 7648
 	private const string Str_SenpaiSkinColor = "SenpaiSkinColor";
 }

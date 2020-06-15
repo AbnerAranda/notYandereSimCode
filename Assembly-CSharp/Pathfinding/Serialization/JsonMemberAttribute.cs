@@ -2,7 +2,7 @@
 
 namespace Pathfinding.Serialization
 {
-	// Token: 0x020005BC RID: 1468
+	// Token: 0x020005D2 RID: 1490
 	public class JsonMemberAttribute : Attribute
 	{
 	}

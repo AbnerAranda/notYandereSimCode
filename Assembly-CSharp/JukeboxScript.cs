@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000313 RID: 787
+// Token: 0x02000316 RID: 790
 public class JukeboxScript : MonoBehaviour
 {
-	// Token: 0x060017C2 RID: 6082 RVA: 0x000CFFF0 File Offset: 0x000CE1F0
+	// Token: 0x060017DF RID: 6111 RVA: 0x000D2218 File Offset: 0x000D0418
 	public void Start()
 	{
 		if (this.BGM == 0)
@@ -93,7 +93,7 @@ public class JukeboxScript : MonoBehaviour
 		this.Hitman.time = 26f;
 	}
 
-	// Token: 0x060017C3 RID: 6083 RVA: 0x000D0250 File Offset: 0x000CE450
+	// Token: 0x060017E0 RID: 6112 RVA: 0x000D2478 File Offset: 0x000D0678
 	private void Update()
 	{
 		if (!this.Yandere.PauseScreen.Show && !this.Yandere.EasterEggMenu.activeInHierarchy && Input.GetKeyDown(KeyCode.M))
@@ -111,57 +111,57 @@ public class JukeboxScript : MonoBehaviour
 					this.NoSanity.Play();
 					this.StartMusic = true;
 				}
-				if (this.Yandere.Sanity >= 66.666664f)
+				if (this.Yandere.Sanity >= 66.6666641f)
 				{
-					this.FullSanity.volume = Mathf.MoveTowards(this.FullSanity.volume, this.Volume * this.Dip - this.ClubDip, 0.016666668f * this.FadeSpeed);
-					this.HalfSanity.volume = Mathf.MoveTowards(this.HalfSanity.volume, 0f, 0.016666668f * this.FadeSpeed);
-					this.NoSanity.volume = Mathf.MoveTowards(this.NoSanity.volume, 0f, 0.016666668f * this.FadeSpeed);
+					this.FullSanity.volume = Mathf.MoveTowards(this.FullSanity.volume, this.Volume * this.Dip - this.ClubDip, 0.0166666675f * this.FadeSpeed);
+					this.HalfSanity.volume = Mathf.MoveTowards(this.HalfSanity.volume, 0f, 0.0166666675f * this.FadeSpeed);
+					this.NoSanity.volume = Mathf.MoveTowards(this.NoSanity.volume, 0f, 0.0166666675f * this.FadeSpeed);
 				}
-				else if (this.Yandere.Sanity >= 33.333332f)
+				else if (this.Yandere.Sanity >= 33.3333321f)
 				{
-					this.FullSanity.volume = Mathf.MoveTowards(this.FullSanity.volume, 0f, 0.016666668f * this.FadeSpeed);
-					this.HalfSanity.volume = Mathf.MoveTowards(this.HalfSanity.volume, this.Volume * this.Dip - this.ClubDip, 0.016666668f * this.FadeSpeed);
-					this.NoSanity.volume = Mathf.MoveTowards(this.NoSanity.volume, 0f, 0.016666668f * this.FadeSpeed);
+					this.FullSanity.volume = Mathf.MoveTowards(this.FullSanity.volume, 0f, 0.0166666675f * this.FadeSpeed);
+					this.HalfSanity.volume = Mathf.MoveTowards(this.HalfSanity.volume, this.Volume * this.Dip - this.ClubDip, 0.0166666675f * this.FadeSpeed);
+					this.NoSanity.volume = Mathf.MoveTowards(this.NoSanity.volume, 0f, 0.0166666675f * this.FadeSpeed);
 				}
 				else
 				{
-					this.FullSanity.volume = Mathf.MoveTowards(this.FullSanity.volume, 0f, 0.016666668f * this.FadeSpeed);
-					this.HalfSanity.volume = Mathf.MoveTowards(this.HalfSanity.volume, 0f, 0.016666668f * this.FadeSpeed);
-					this.NoSanity.volume = Mathf.MoveTowards(this.NoSanity.volume, this.Volume * this.Dip - this.ClubDip, 0.016666668f * this.FadeSpeed);
+					this.FullSanity.volume = Mathf.MoveTowards(this.FullSanity.volume, 0f, 0.0166666675f * this.FadeSpeed);
+					this.HalfSanity.volume = Mathf.MoveTowards(this.HalfSanity.volume, 0f, 0.0166666675f * this.FadeSpeed);
+					this.NoSanity.volume = Mathf.MoveTowards(this.NoSanity.volume, this.Volume * this.Dip - this.ClubDip, 0.0166666675f * this.FadeSpeed);
 				}
 			}
 		}
 		else
 		{
-			this.AttackOnTitan.volume = Mathf.MoveTowards(this.AttackOnTitan.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Megalovania.volume = Mathf.MoveTowards(this.Megalovania.volume, this.Volume * this.Dip, 0.16666667f);
-			this.MissionMode.volume = Mathf.MoveTowards(this.MissionMode.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Skeletons.volume = Mathf.MoveTowards(this.Skeletons.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Vaporwave.volume = Mathf.MoveTowards(this.Vaporwave.volume, this.Volume * this.Dip, 0.16666667f);
-			this.AzurLane.volume = Mathf.MoveTowards(this.AzurLane.volume, this.Volume * this.Dip, 0.16666667f);
-			this.LifeNote.volume = Mathf.MoveTowards(this.LifeNote.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Berserk.volume = Mathf.MoveTowards(this.Berserk.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Metroid.volume = Mathf.MoveTowards(this.Metroid.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Nuclear.volume = Mathf.MoveTowards(this.Nuclear.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Slender.volume = Mathf.MoveTowards(this.Slender.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Sukeban.volume = Mathf.MoveTowards(this.Sukeban.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Custom.volume = Mathf.MoveTowards(this.Custom.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Hatred.volume = Mathf.MoveTowards(this.Hatred.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Hitman.volume = Mathf.MoveTowards(this.Hitman.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Touhou.volume = Mathf.MoveTowards(this.Touhou.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Falcon.volume = Mathf.MoveTowards(this.Falcon.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Miyuki.volume = Mathf.MoveTowards(this.Miyuki.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Demon.volume = Mathf.MoveTowards(this.Demon.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Ebola.volume = Mathf.MoveTowards(this.Ebola.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Ninja.volume = Mathf.MoveTowards(this.Ninja.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Punch.volume = Mathf.MoveTowards(this.Punch.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Galo.volume = Mathf.MoveTowards(this.Galo.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Jojo.volume = Mathf.MoveTowards(this.Jojo.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Lied.volume = Mathf.MoveTowards(this.Lied.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Nier.volume = Mathf.MoveTowards(this.Nier.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Sith.volume = Mathf.MoveTowards(this.Sith.volume, this.Volume * this.Dip, 0.16666667f);
-			this.DK.volume = Mathf.MoveTowards(this.DK.volume, this.Volume * this.Dip, 0.16666667f);
-			this.Horror.volume = Mathf.MoveTowards(this.Horror.volume, this.Volume * this.Dip, 0.16666667f);
+			this.AttackOnTitan.volume = Mathf.MoveTowards(this.AttackOnTitan.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Megalovania.volume = Mathf.MoveTowards(this.Megalovania.volume, this.Volume * this.Dip, 0.166666672f);
+			this.MissionMode.volume = Mathf.MoveTowards(this.MissionMode.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Skeletons.volume = Mathf.MoveTowards(this.Skeletons.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Vaporwave.volume = Mathf.MoveTowards(this.Vaporwave.volume, this.Volume * this.Dip, 0.166666672f);
+			this.AzurLane.volume = Mathf.MoveTowards(this.AzurLane.volume, this.Volume * this.Dip, 0.166666672f);
+			this.LifeNote.volume = Mathf.MoveTowards(this.LifeNote.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Berserk.volume = Mathf.MoveTowards(this.Berserk.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Metroid.volume = Mathf.MoveTowards(this.Metroid.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Nuclear.volume = Mathf.MoveTowards(this.Nuclear.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Slender.volume = Mathf.MoveTowards(this.Slender.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Sukeban.volume = Mathf.MoveTowards(this.Sukeban.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Custom.volume = Mathf.MoveTowards(this.Custom.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Hatred.volume = Mathf.MoveTowards(this.Hatred.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Hitman.volume = Mathf.MoveTowards(this.Hitman.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Touhou.volume = Mathf.MoveTowards(this.Touhou.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Falcon.volume = Mathf.MoveTowards(this.Falcon.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Miyuki.volume = Mathf.MoveTowards(this.Miyuki.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Demon.volume = Mathf.MoveTowards(this.Demon.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Ebola.volume = Mathf.MoveTowards(this.Ebola.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Ninja.volume = Mathf.MoveTowards(this.Ninja.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Punch.volume = Mathf.MoveTowards(this.Punch.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Galo.volume = Mathf.MoveTowards(this.Galo.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Jojo.volume = Mathf.MoveTowards(this.Jojo.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Lied.volume = Mathf.MoveTowards(this.Lied.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Nier.volume = Mathf.MoveTowards(this.Nier.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Sith.volume = Mathf.MoveTowards(this.Sith.volume, this.Volume * this.Dip, 0.166666672f);
+			this.DK.volume = Mathf.MoveTowards(this.DK.volume, this.Volume * this.Dip, 0.166666672f);
+			this.Horror.volume = Mathf.MoveTowards(this.Horror.volume, this.Volume * this.Dip, 0.166666672f);
 		}
 		if (!this.Yandere.PauseScreen.Show && !this.Yandere.Noticed && this.Yandere.CanMove && this.Yandere.EasterEggMenu.activeInHierarchy && !this.Egg)
 		{
@@ -335,7 +335,7 @@ public class JukeboxScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017C4 RID: 6084 RVA: 0x000D0E14 File Offset: 0x000CF014
+	// Token: 0x060017E1 RID: 6113 RVA: 0x000D303C File Offset: 0x000D123C
 	public void StartStopMusic()
 	{
 		if (this.Custom.isPlaying)
@@ -361,7 +361,7 @@ public class JukeboxScript : MonoBehaviour
 		this.Volume = 0f;
 	}
 
-	// Token: 0x060017C5 RID: 6085 RVA: 0x000D0EB9 File Offset: 0x000CF0B9
+	// Token: 0x060017E2 RID: 6114 RVA: 0x000D30E1 File Offset: 0x000D12E1
 	public void Shipgirl()
 	{
 		this.Egg = true;
@@ -369,7 +369,7 @@ public class JukeboxScript : MonoBehaviour
 		this.AzurLane.enabled = true;
 	}
 
-	// Token: 0x060017C6 RID: 6086 RVA: 0x000D0ED4 File Offset: 0x000CF0D4
+	// Token: 0x060017E3 RID: 6115 RVA: 0x000D30FC File Offset: 0x000D12FC
 	public void MiyukiMusic()
 	{
 		this.Egg = true;
@@ -377,7 +377,7 @@ public class JukeboxScript : MonoBehaviour
 		this.Miyuki.enabled = true;
 	}
 
-	// Token: 0x060017C7 RID: 6087 RVA: 0x000D0EEF File Offset: 0x000CF0EF
+	// Token: 0x060017E4 RID: 6116 RVA: 0x000D3117 File Offset: 0x000D1317
 	public void KillVolume()
 	{
 		this.FullSanity.volume = 0f;
@@ -386,7 +386,7 @@ public class JukeboxScript : MonoBehaviour
 		this.Volume = 0.5f;
 	}
 
-	// Token: 0x060017C8 RID: 6088 RVA: 0x000D0F2C File Offset: 0x000CF12C
+	// Token: 0x060017E5 RID: 6117 RVA: 0x000D3154 File Offset: 0x000D1354
 	public void GameOver()
 	{
 		this.AttackOnTitan.Stop();
@@ -423,7 +423,7 @@ public class JukeboxScript : MonoBehaviour
 		this.NoSanity.Stop();
 	}
 
-	// Token: 0x060017C9 RID: 6089 RVA: 0x000D1099 File Offset: 0x000CF299
+	// Token: 0x060017E6 RID: 6118 RVA: 0x000D32C1 File Offset: 0x000D14C1
 	public void PlayJojo()
 	{
 		this.Egg = true;
@@ -431,7 +431,7 @@ public class JukeboxScript : MonoBehaviour
 		this.Jojo.enabled = true;
 	}
 
-	// Token: 0x060017CA RID: 6090 RVA: 0x000D10B4 File Offset: 0x000CF2B4
+	// Token: 0x060017E7 RID: 6119 RVA: 0x000D32DC File Offset: 0x000D14DC
 	public void PlayCustom()
 	{
 		this.Egg = true;
@@ -440,219 +440,219 @@ public class JukeboxScript : MonoBehaviour
 		this.Custom.Play();
 	}
 
-	// Token: 0x040021B1 RID: 8625
+	// Token: 0x040021FE RID: 8702
 	public YandereScript Yandere;
 
-	// Token: 0x040021B2 RID: 8626
+	// Token: 0x040021FF RID: 8703
 	public AudioSource SFX;
 
-	// Token: 0x040021B3 RID: 8627
+	// Token: 0x04002200 RID: 8704
 	public AudioSource AttackOnTitan;
 
-	// Token: 0x040021B4 RID: 8628
+	// Token: 0x04002201 RID: 8705
 	public AudioSource Megalovania;
 
-	// Token: 0x040021B5 RID: 8629
+	// Token: 0x04002202 RID: 8706
 	public AudioSource MissionMode;
 
-	// Token: 0x040021B6 RID: 8630
+	// Token: 0x04002203 RID: 8707
 	public AudioSource Skeletons;
 
-	// Token: 0x040021B7 RID: 8631
+	// Token: 0x04002204 RID: 8708
 	public AudioSource Vaporwave;
 
-	// Token: 0x040021B8 RID: 8632
+	// Token: 0x04002205 RID: 8709
 	public AudioSource AzurLane;
 
-	// Token: 0x040021B9 RID: 8633
+	// Token: 0x04002206 RID: 8710
 	public AudioSource LifeNote;
 
-	// Token: 0x040021BA RID: 8634
+	// Token: 0x04002207 RID: 8711
 	public AudioSource Berserk;
 
-	// Token: 0x040021BB RID: 8635
+	// Token: 0x04002208 RID: 8712
 	public AudioSource Metroid;
 
-	// Token: 0x040021BC RID: 8636
+	// Token: 0x04002209 RID: 8713
 	public AudioSource Nuclear;
 
-	// Token: 0x040021BD RID: 8637
+	// Token: 0x0400220A RID: 8714
 	public AudioSource Slender;
 
-	// Token: 0x040021BE RID: 8638
+	// Token: 0x0400220B RID: 8715
 	public AudioSource Sukeban;
 
-	// Token: 0x040021BF RID: 8639
+	// Token: 0x0400220C RID: 8716
 	public AudioSource Custom;
 
-	// Token: 0x040021C0 RID: 8640
+	// Token: 0x0400220D RID: 8717
 	public AudioSource Hatred;
 
-	// Token: 0x040021C1 RID: 8641
+	// Token: 0x0400220E RID: 8718
 	public AudioSource Hitman;
 
-	// Token: 0x040021C2 RID: 8642
+	// Token: 0x0400220F RID: 8719
 	public AudioSource Horror;
 
-	// Token: 0x040021C3 RID: 8643
+	// Token: 0x04002210 RID: 8720
 	public AudioSource Touhou;
 
-	// Token: 0x040021C4 RID: 8644
+	// Token: 0x04002211 RID: 8721
 	public AudioSource Falcon;
 
-	// Token: 0x040021C5 RID: 8645
+	// Token: 0x04002212 RID: 8722
 	public AudioSource Miyuki;
 
-	// Token: 0x040021C6 RID: 8646
+	// Token: 0x04002213 RID: 8723
 	public AudioSource Ebola;
 
-	// Token: 0x040021C7 RID: 8647
+	// Token: 0x04002214 RID: 8724
 	public AudioSource Demon;
 
-	// Token: 0x040021C8 RID: 8648
+	// Token: 0x04002215 RID: 8725
 	public AudioSource Ninja;
 
-	// Token: 0x040021C9 RID: 8649
+	// Token: 0x04002216 RID: 8726
 	public AudioSource Punch;
 
-	// Token: 0x040021CA RID: 8650
+	// Token: 0x04002217 RID: 8727
 	public AudioSource Galo;
 
-	// Token: 0x040021CB RID: 8651
+	// Token: 0x04002218 RID: 8728
 	public AudioSource Jojo;
 
-	// Token: 0x040021CC RID: 8652
+	// Token: 0x04002219 RID: 8729
 	public AudioSource Lied;
 
-	// Token: 0x040021CD RID: 8653
+	// Token: 0x0400221A RID: 8730
 	public AudioSource Nier;
 
-	// Token: 0x040021CE RID: 8654
+	// Token: 0x0400221B RID: 8731
 	public AudioSource Sith;
 
-	// Token: 0x040021CF RID: 8655
+	// Token: 0x0400221C RID: 8732
 	public AudioSource DK;
 
-	// Token: 0x040021D0 RID: 8656
+	// Token: 0x0400221D RID: 8733
 	public AudioSource Confession;
 
-	// Token: 0x040021D1 RID: 8657
+	// Token: 0x0400221E RID: 8734
 	public AudioSource FullSanity;
 
-	// Token: 0x040021D2 RID: 8658
+	// Token: 0x0400221F RID: 8735
 	public AudioSource HalfSanity;
 
-	// Token: 0x040021D3 RID: 8659
+	// Token: 0x04002220 RID: 8736
 	public AudioSource NoSanity;
 
-	// Token: 0x040021D4 RID: 8660
+	// Token: 0x04002221 RID: 8737
 	public AudioSource Chase;
 
-	// Token: 0x040021D5 RID: 8661
+	// Token: 0x04002222 RID: 8738
 	public float LastVolume;
 
-	// Token: 0x040021D6 RID: 8662
+	// Token: 0x04002223 RID: 8739
 	public float FadeSpeed;
 
-	// Token: 0x040021D7 RID: 8663
+	// Token: 0x04002224 RID: 8740
 	public float ClubDip;
 
-	// Token: 0x040021D8 RID: 8664
+	// Token: 0x04002225 RID: 8741
 	public float Volume;
 
-	// Token: 0x040021D9 RID: 8665
+	// Token: 0x04002226 RID: 8742
 	public int Track;
 
-	// Token: 0x040021DA RID: 8666
+	// Token: 0x04002227 RID: 8743
 	public int BGM;
 
-	// Token: 0x040021DB RID: 8667
+	// Token: 0x04002228 RID: 8744
 	public float Dip = 1f;
 
-	// Token: 0x040021DC RID: 8668
+	// Token: 0x04002229 RID: 8745
 	public bool StartMusic;
 
-	// Token: 0x040021DD RID: 8669
+	// Token: 0x0400222A RID: 8746
 	public bool Egg;
 
-	// Token: 0x040021DE RID: 8670
+	// Token: 0x0400222B RID: 8747
 	public AudioClip[] FullSanities;
 
-	// Token: 0x040021DF RID: 8671
+	// Token: 0x0400222C RID: 8748
 	public AudioClip[] HalfSanities;
 
-	// Token: 0x040021E0 RID: 8672
+	// Token: 0x0400222D RID: 8749
 	public AudioClip[] NoSanities;
 
-	// Token: 0x040021E1 RID: 8673
+	// Token: 0x0400222E RID: 8750
 	public AudioClip[] OriginalFull;
 
-	// Token: 0x040021E2 RID: 8674
+	// Token: 0x0400222F RID: 8751
 	public AudioClip[] OriginalHalf;
 
-	// Token: 0x040021E3 RID: 8675
+	// Token: 0x04002230 RID: 8752
 	public AudioClip[] OriginalNo;
 
-	// Token: 0x040021E4 RID: 8676
+	// Token: 0x04002231 RID: 8753
 	public AudioClip[] AlternateFull;
 
-	// Token: 0x040021E5 RID: 8677
+	// Token: 0x04002232 RID: 8754
 	public AudioClip[] AlternateHalf;
 
-	// Token: 0x040021E6 RID: 8678
+	// Token: 0x04002233 RID: 8755
 	public AudioClip[] AlternateNo;
 
-	// Token: 0x040021E7 RID: 8679
+	// Token: 0x04002234 RID: 8756
 	public AudioClip[] ThirdFull;
 
-	// Token: 0x040021E8 RID: 8680
+	// Token: 0x04002235 RID: 8757
 	public AudioClip[] ThirdHalf;
 
-	// Token: 0x040021E9 RID: 8681
+	// Token: 0x04002236 RID: 8758
 	public AudioClip[] ThirdNo;
 
-	// Token: 0x040021EA RID: 8682
+	// Token: 0x04002237 RID: 8759
 	public AudioClip[] FourthFull;
 
-	// Token: 0x040021EB RID: 8683
+	// Token: 0x04002238 RID: 8760
 	public AudioClip[] FourthHalf;
 
-	// Token: 0x040021EC RID: 8684
+	// Token: 0x04002239 RID: 8761
 	public AudioClip[] FourthNo;
 
-	// Token: 0x040021ED RID: 8685
+	// Token: 0x0400223A RID: 8762
 	public AudioClip[] FifthFull;
 
-	// Token: 0x040021EE RID: 8686
+	// Token: 0x0400223B RID: 8763
 	public AudioClip[] FifthHalf;
 
-	// Token: 0x040021EF RID: 8687
+	// Token: 0x0400223C RID: 8764
 	public AudioClip[] FifthNo;
 
-	// Token: 0x040021F0 RID: 8688
+	// Token: 0x0400223D RID: 8765
 	public AudioClip[] SixthFull;
 
-	// Token: 0x040021F1 RID: 8689
+	// Token: 0x0400223E RID: 8766
 	public AudioClip[] SixthHalf;
 
-	// Token: 0x040021F2 RID: 8690
+	// Token: 0x0400223F RID: 8767
 	public AudioClip[] SixthNo;
 
-	// Token: 0x040021F3 RID: 8691
+	// Token: 0x04002240 RID: 8768
 	public AudioClip[] SeventhFull;
 
-	// Token: 0x040021F4 RID: 8692
+	// Token: 0x04002241 RID: 8769
 	public AudioClip[] SeventhHalf;
 
-	// Token: 0x040021F5 RID: 8693
+	// Token: 0x04002242 RID: 8770
 	public AudioClip[] SeventhNo;
 
-	// Token: 0x040021F6 RID: 8694
+	// Token: 0x04002243 RID: 8771
 	public AudioClip[] EighthFull;
 
-	// Token: 0x040021F7 RID: 8695
+	// Token: 0x04002244 RID: 8772
 	public AudioClip[] EighthHalf;
 
-	// Token: 0x040021F8 RID: 8696
+	// Token: 0x04002245 RID: 8773
 	public AudioClip[] EighthNo;
 }

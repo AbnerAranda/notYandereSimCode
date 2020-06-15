@@ -7,8 +7,8 @@ using UnityEngine;
 public class UIDragObject : MonoBehaviour
 {
 	// Token: 0x17000023 RID: 35
-	// (get) Token: 0x060001D3 RID: 467 RVA: 0x000165EB File Offset: 0x000147EB
-	// (set) Token: 0x060001D4 RID: 468 RVA: 0x000165F3 File Offset: 0x000147F3
+	// (get) Token: 0x060001D4 RID: 468 RVA: 0x00016613 File Offset: 0x00014813
+	// (set) Token: 0x060001D5 RID: 469 RVA: 0x0001661B File Offset: 0x0001481B
 	public Vector3 dragMovement
 	{
 		get
@@ -21,7 +21,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D5 RID: 469 RVA: 0x000165FC File Offset: 0x000147FC
+	// Token: 0x060001D6 RID: 470 RVA: 0x00016624 File Offset: 0x00014824
 	private void OnEnable()
 	{
 		if (this.scrollWheelFactor != 0f)
@@ -40,13 +40,13 @@ public class UIDragObject : MonoBehaviour
 		this.mTargetPos = ((this.target != null) ? this.target.position : Vector3.zero);
 	}
 
-	// Token: 0x060001D6 RID: 470 RVA: 0x0001669D File Offset: 0x0001489D
+	// Token: 0x060001D7 RID: 471 RVA: 0x000166C5 File Offset: 0x000148C5
 	private void OnDisable()
 	{
 		this.mStarted = false;
 	}
 
-	// Token: 0x060001D7 RID: 471 RVA: 0x000166A8 File Offset: 0x000148A8
+	// Token: 0x060001D8 RID: 472 RVA: 0x000166D0 File Offset: 0x000148D0
 	private void FindPanel()
 	{
 		this.panelRegion = ((this.target != null) ? UIPanel.Find(this.target.transform.parent) : null);
@@ -56,7 +56,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D8 RID: 472 RVA: 0x000166F8 File Offset: 0x000148F8
+	// Token: 0x060001D9 RID: 473 RVA: 0x00016720 File Offset: 0x00014920
 	private void UpdateBounds()
 	{
 		if (this.contentRect)
@@ -77,7 +77,7 @@ public class UIDragObject : MonoBehaviour
 		this.mBounds = NGUIMath.CalculateRelativeWidgetBounds(this.panelRegion.cachedTransform, this.target);
 	}
 
-	// Token: 0x060001D9 RID: 473 RVA: 0x000167A4 File Offset: 0x000149A4
+	// Token: 0x060001DA RID: 474 RVA: 0x000167CC File Offset: 0x000149CC
 	private void OnPress(bool pressed)
 	{
 		if (UICamera.currentTouchID == -2 || UICamera.currentTouchID == -3)
@@ -124,7 +124,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DA RID: 474 RVA: 0x00016900 File Offset: 0x00014B00
+	// Token: 0x060001DB RID: 475 RVA: 0x00016928 File Offset: 0x00014B28
 	private void OnDrag(Vector2 delta)
 	{
 		if (this.mPressed && this.mTouchID == UICamera.currentTouchID && base.enabled && NGUITools.GetActive(base.gameObject) && this.target != null)
@@ -166,7 +166,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DB RID: 475 RVA: 0x00016AB4 File Offset: 0x00014CB4
+	// Token: 0x060001DC RID: 476 RVA: 0x00016ADC File Offset: 0x00014CDC
 	private void Move(Vector3 worldDelta)
 	{
 		if (this.panelRegion != null)
@@ -210,7 +210,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DC RID: 476 RVA: 0x00016BCC File Offset: 0x00014DCC
+	// Token: 0x060001DD RID: 477 RVA: 0x00016BF4 File Offset: 0x00014DF4
 	private void LateUpdate()
 	{
 		if (this.target == null)
@@ -256,7 +256,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DD RID: 477 RVA: 0x00016CF4 File Offset: 0x00014EF4
+	// Token: 0x060001DE RID: 478 RVA: 0x00016D1C File Offset: 0x00014F1C
 	public void CancelMovement()
 	{
 		if (this.target != null)
@@ -272,7 +272,7 @@ public class UIDragObject : MonoBehaviour
 		this.mScroll = Vector3.zero;
 	}
 
-	// Token: 0x060001DE RID: 478 RVA: 0x00016D9C File Offset: 0x00014F9C
+	// Token: 0x060001DF RID: 479 RVA: 0x00016DC4 File Offset: 0x00014FC4
 	public void CancelSpring()
 	{
 		SpringPosition component = this.target.GetComponent<SpringPosition>();
@@ -282,7 +282,7 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DF RID: 479 RVA: 0x00016DC5 File Offset: 0x00014FC5
+	// Token: 0x060001E0 RID: 480 RVA: 0x00016DED File Offset: 0x00014FED
 	private void OnScroll(float delta)
 	{
 		if (base.enabled && NGUITools.GetActive(base.gameObject))
@@ -291,72 +291,72 @@ public class UIDragObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400034A RID: 842
+	// Token: 0x0400034C RID: 844
 	public Transform target;
 
-	// Token: 0x0400034B RID: 843
+	// Token: 0x0400034D RID: 845
 	public UIPanel panelRegion;
 
-	// Token: 0x0400034C RID: 844
+	// Token: 0x0400034E RID: 846
 	public Vector3 scrollMomentum = Vector3.zero;
 
-	// Token: 0x0400034D RID: 845
+	// Token: 0x0400034F RID: 847
 	public bool restrictWithinPanel;
 
-	// Token: 0x0400034E RID: 846
+	// Token: 0x04000350 RID: 848
 	public UIRect contentRect;
 
-	// Token: 0x0400034F RID: 847
+	// Token: 0x04000351 RID: 849
 	public UIDragObject.DragEffect dragEffect = UIDragObject.DragEffect.MomentumAndSpring;
 
-	// Token: 0x04000350 RID: 848
+	// Token: 0x04000352 RID: 850
 	public float momentumAmount = 35f;
 
-	// Token: 0x04000351 RID: 849
+	// Token: 0x04000353 RID: 851
 	[SerializeField]
 	protected Vector3 scale = new Vector3(1f, 1f, 0f);
 
-	// Token: 0x04000352 RID: 850
+	// Token: 0x04000354 RID: 852
 	[SerializeField]
 	[HideInInspector]
 	private float scrollWheelFactor;
 
-	// Token: 0x04000353 RID: 851
+	// Token: 0x04000355 RID: 853
 	private Plane mPlane;
 
-	// Token: 0x04000354 RID: 852
+	// Token: 0x04000356 RID: 854
 	private Vector3 mTargetPos;
 
-	// Token: 0x04000355 RID: 853
+	// Token: 0x04000357 RID: 855
 	private Vector3 mLastPos;
 
-	// Token: 0x04000356 RID: 854
+	// Token: 0x04000358 RID: 856
 	private Vector3 mMomentum = Vector3.zero;
 
-	// Token: 0x04000357 RID: 855
+	// Token: 0x04000359 RID: 857
 	private Vector3 mScroll = Vector3.zero;
 
-	// Token: 0x04000358 RID: 856
+	// Token: 0x0400035A RID: 858
 	private Bounds mBounds;
 
-	// Token: 0x04000359 RID: 857
+	// Token: 0x0400035B RID: 859
 	private int mTouchID;
 
-	// Token: 0x0400035A RID: 858
+	// Token: 0x0400035C RID: 860
 	private bool mStarted;
 
-	// Token: 0x0400035B RID: 859
+	// Token: 0x0400035D RID: 861
 	private bool mPressed;
 
-	// Token: 0x02000614 RID: 1556
+	// Token: 0x0200062A RID: 1578
 	[DoNotObfuscateNGUI]
 	public enum DragEffect
 	{
-		// Token: 0x04004490 RID: 17552
+		// Token: 0x0400456E RID: 17774
 		None,
-		// Token: 0x04004491 RID: 17553
+		// Token: 0x0400456F RID: 17775
 		Momentum,
-		// Token: 0x04004492 RID: 17554
+		// Token: 0x04004570 RID: 17776
 		MomentumAndSpring
 	}
 }

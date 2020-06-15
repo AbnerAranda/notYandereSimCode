@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200020C RID: 524
+// Token: 0x0200020D RID: 525
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/VHS/VCR Distortion")]
 public class CameraFilterPack_TV_Vcr : MonoBehaviour
 {
 	// Token: 0x1700032C RID: 812
-	// (get) Token: 0x0600117E RID: 4478 RVA: 0x0007D039 File Offset: 0x0007B239
+	// (get) Token: 0x06001185 RID: 4485 RVA: 0x0007DD69 File Offset: 0x0007BF69
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Vcr : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600117F RID: 4479 RVA: 0x0007D06D File Offset: 0x0007B26D
+	// Token: 0x06001186 RID: 4486 RVA: 0x0007DD9D File Offset: 0x0007BF9D
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Vcr");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_Vcr : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001180 RID: 4480 RVA: 0x0007D090 File Offset: 0x0007B290
+	// Token: 0x06001187 RID: 4487 RVA: 0x0007DDC0 File Offset: 0x0007BFC0
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_TV_Vcr : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001181 RID: 4481 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001188 RID: 4488 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001182 RID: 4482 RVA: 0x0007D116 File Offset: 0x0007B316
+	// Token: 0x06001189 RID: 4489 RVA: 0x0007DE46 File Offset: 0x0007C046
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,16 +64,16 @@ public class CameraFilterPack_TV_Vcr : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001484 RID: 5252
+	// Token: 0x040014A3 RID: 5283
 	public Shader SCShader;
 
-	// Token: 0x04001485 RID: 5253
+	// Token: 0x040014A4 RID: 5284
 	private float TimeX = 1f;
 
-	// Token: 0x04001486 RID: 5254
+	// Token: 0x040014A5 RID: 5285
 	[Range(1f, 10f)]
 	public float Distortion = 1f;
 
-	// Token: 0x04001487 RID: 5255
+	// Token: 0x040014A6 RID: 5286
 	private Material SCMaterial;
 }

@@ -4,10 +4,10 @@ using Pathfinding.Util;
 
 namespace Pathfinding
 {
-	// Token: 0x020005A2 RID: 1442
+	// Token: 0x020005B8 RID: 1464
 	public static class GraphUpdateUtilities
 	{
-		// Token: 0x06002744 RID: 10052 RVA: 0x001AD314 File Offset: 0x001AB514
+		// Token: 0x0600279A RID: 10138 RVA: 0x001B2F00 File Offset: 0x001B1100
 		public static bool UpdateGraphsNoBlock(GraphUpdateObject guo, GraphNode node1, GraphNode node2, bool alwaysRevert = false)
 		{
 			List<GraphNode> list = ListPool<GraphNode>.Claim();
@@ -18,7 +18,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002745 RID: 10053 RVA: 0x001AD344 File Offset: 0x001AB544
+		// Token: 0x0600279B RID: 10139 RVA: 0x001B2F30 File Offset: 0x001B1130
 		public static bool UpdateGraphsNoBlock(GraphUpdateObject guo, List<GraphNode> nodes, bool alwaysRevert = false)
 		{
 			for (int i = 0; i < nodes.Count; i++)

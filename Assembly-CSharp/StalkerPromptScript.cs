@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003F0 RID: 1008
+// Token: 0x020003F5 RID: 1013
 public class StalkerPromptScript : MonoBehaviour
 {
-	// Token: 0x06001AD4 RID: 6868 RVA: 0x0010D0DC File Offset: 0x0010B2DC
+	// Token: 0x06001AF5 RID: 6901 RVA: 0x0010F948 File Offset: 0x0010DB48
 	private void Update()
 	{
 		base.transform.LookAt(this.Yandere.MainCamera.transform);
@@ -27,15 +27,15 @@ public class StalkerPromptScript : MonoBehaviour
 		this.MySprite.color = new Color(1f, 1f, 1f, this.Alpha);
 	}
 
-	// Token: 0x04002B69 RID: 11113
+	// Token: 0x04002BCA RID: 11210
 	public StalkerYandereScript Yandere;
 
-	// Token: 0x04002B6A RID: 11114
+	// Token: 0x04002BCB RID: 11211
 	public UISprite MySprite;
 
-	// Token: 0x04002B6B RID: 11115
+	// Token: 0x04002BCC RID: 11212
 	public float Alpha;
 
-	// Token: 0x04002B6C RID: 11116
+	// Token: 0x04002BCD RID: 11213
 	public int ID;
 }

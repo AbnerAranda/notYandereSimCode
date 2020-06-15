@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002B0 RID: 688
+// Token: 0x020002B2 RID: 690
 public class GazerEyesScript : MonoBehaviour
 {
-	// Token: 0x06001435 RID: 5173 RVA: 0x000B2294 File Offset: 0x000B0494
+	// Token: 0x06001444 RID: 5188 RVA: 0x000B3B44 File Offset: 0x000B1D44
 	private void Start()
 	{
 		base.GetComponent<Animation>()["Eyeballs_Run"].speed = 0f;
@@ -12,7 +12,7 @@ public class GazerEyesScript : MonoBehaviour
 		base.GetComponent<Animation>()["Eyeballs_Idle"].speed = 0f;
 	}
 
-	// Token: 0x06001436 RID: 5174 RVA: 0x000B22F0 File Offset: 0x000B04F0
+	// Token: 0x06001445 RID: 5189 RVA: 0x000B3BA0 File Offset: 0x000B1DA0
 	private void Update()
 	{
 		this.StudentManager.UpdateStudents(0);
@@ -83,7 +83,7 @@ public class GazerEyesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001437 RID: 5175 RVA: 0x000B25BC File Offset: 0x000B07BC
+	// Token: 0x06001446 RID: 5190 RVA: 0x000B3E6C File Offset: 0x000B206C
 	public void ChangeEffect()
 	{
 		this.Effect++;
@@ -100,7 +100,7 @@ public class GazerEyesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001438 RID: 5176 RVA: 0x000B2664 File Offset: 0x000B0864
+	// Token: 0x06001447 RID: 5191 RVA: 0x000B3F14 File Offset: 0x000B2114
 	public void Attack()
 	{
 		if (!this.Shinigami)
@@ -157,7 +157,7 @@ public class GazerEyesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001439 RID: 5177 RVA: 0x000B2960 File Offset: 0x000B0B60
+	// Token: 0x06001448 RID: 5192 RVA: 0x000B4210 File Offset: 0x000B2410
 	public void ElectrocuteStudent(StudentScript Target)
 	{
 		Target.EmptyHands();
@@ -168,6 +168,7 @@ public class GazerEyesScript : MonoBehaviour
 		Target.CharacterAnimation[Target.ElectroAnim].speed = 0.85f;
 		Target.CharacterAnimation[Target.ElectroAnim].time = 2f;
 		Target.CharacterAnimation.CrossFade(Target.ElectroAnim);
+		Target.CharacterAnimation[Target.WetAnim].weight = 0f;
 		Target.Pathfinding.canSearch = false;
 		Target.Pathfinding.canMove = false;
 		Target.EatingSnack = false;
@@ -186,7 +187,6 @@ public class GazerEyesScript : MonoBehaviour
 		Target.tag = "Blood";
 		Target.Ragdoll.ElectrocutionAnimation = true;
 		Target.Ragdoll.Disturbing = true;
-		Target.Dying = true;
 		Target.MurderSuicidePhase = 100;
 		Target.SpawnAlarmDisc();
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.StudentManager.LightSwitch.Electricity, Target.transform.position, Quaternion.identity);
@@ -210,51 +210,51 @@ public class GazerEyesScript : MonoBehaviour
 		AudioSource.PlayClipAtPoint(this.StudentManager.LightSwitch.Flick[2], Target.transform.position + Vector3.up);
 	}
 
-	// Token: 0x04001CC4 RID: 7364
+	// Token: 0x04001CFC RID: 7420
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04001CC5 RID: 7365
+	// Token: 0x04001CFD RID: 7421
 	public YandereScript Yandere;
 
-	// Token: 0x04001CC6 RID: 7366
+	// Token: 0x04001CFE RID: 7422
 	public GameObject FemaleBloodyScream;
 
-	// Token: 0x04001CC7 RID: 7367
+	// Token: 0x04001CFF RID: 7423
 	public GameObject MaleBloodyScream;
 
-	// Token: 0x04001CC8 RID: 7368
+	// Token: 0x04001D00 RID: 7424
 	public GameObject ParticleEffect;
 
-	// Token: 0x04001CC9 RID: 7369
+	// Token: 0x04001D01 RID: 7425
 	public GameObject Laser;
 
-	// Token: 0x04001CCA RID: 7370
+	// Token: 0x04001D02 RID: 7426
 	public SkinnedMeshRenderer[] Eyes;
 
-	// Token: 0x04001CCB RID: 7371
+	// Token: 0x04001D03 RID: 7427
 	public float[] BlinkStrength;
 
-	// Token: 0x04001CCC RID: 7372
+	// Token: 0x04001D04 RID: 7428
 	public Texture[] EyeTextures;
 
-	// Token: 0x04001CCD RID: 7373
+	// Token: 0x04001D05 RID: 7429
 	public bool[] Blink;
 
-	// Token: 0x04001CCE RID: 7374
+	// Token: 0x04001D06 RID: 7430
 	public float RandomNumber;
 
-	// Token: 0x04001CCF RID: 7375
+	// Token: 0x04001D07 RID: 7431
 	public float AnimTime;
 
-	// Token: 0x04001CD0 RID: 7376
+	// Token: 0x04001D08 RID: 7432
 	public bool Attacking;
 
-	// Token: 0x04001CD1 RID: 7377
+	// Token: 0x04001D09 RID: 7433
 	public int Effect;
 
-	// Token: 0x04001CD2 RID: 7378
+	// Token: 0x04001D0A RID: 7434
 	public int ID;
 
-	// Token: 0x04001CD3 RID: 7379
+	// Token: 0x04001D0B RID: 7435
 	public bool Shinigami;
 }

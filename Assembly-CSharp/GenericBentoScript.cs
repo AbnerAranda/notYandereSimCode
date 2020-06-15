@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002B2 RID: 690
+// Token: 0x020002B4 RID: 692
 public class GenericBentoScript : MonoBehaviour
 {
-	// Token: 0x0600143D RID: 5181 RVA: 0x000B2D5C File Offset: 0x000B0F5C
+	// Token: 0x0600144C RID: 5196 RVA: 0x000B4620 File Offset: 0x000B2820
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -63,7 +63,7 @@ public class GenericBentoScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600143E RID: 5182 RVA: 0x000B2F50 File Offset: 0x000B1150
+	// Token: 0x0600144D RID: 5197 RVA: 0x000B4814 File Offset: 0x000B2A14
 	private void ShutOff()
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.EmptyGameObject, base.transform.position, Quaternion.identity);
@@ -83,7 +83,7 @@ public class GenericBentoScript : MonoBehaviour
 		this.Prompt.Hide();
 	}
 
-	// Token: 0x0600143F RID: 5183 RVA: 0x000B30B4 File Offset: 0x000B12B4
+	// Token: 0x0600144E RID: 5198 RVA: 0x000B4978 File Offset: 0x000B2B78
 	public void UpdatePrompts()
 	{
 		this.Prompt.HideButton[0] = true;
@@ -108,30 +108,30 @@ public class GenericBentoScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001CD9 RID: 7385
+	// Token: 0x04001D11 RID: 7441
 	public GameObject EmptyGameObject;
 
-	// Token: 0x04001CDA RID: 7386
+	// Token: 0x04001D12 RID: 7442
 	public Transform PoisonSpot;
 
-	// Token: 0x04001CDB RID: 7387
+	// Token: 0x04001D13 RID: 7443
 	public PromptScript Prompt;
 
-	// Token: 0x04001CDC RID: 7388
+	// Token: 0x04001D14 RID: 7444
 	public bool Emetic;
 
-	// Token: 0x04001CDD RID: 7389
+	// Token: 0x04001D15 RID: 7445
 	public bool Tranquil;
 
-	// Token: 0x04001CDE RID: 7390
+	// Token: 0x04001D16 RID: 7446
 	public bool Headache;
 
-	// Token: 0x04001CDF RID: 7391
+	// Token: 0x04001D17 RID: 7447
 	public bool Lethal;
 
-	// Token: 0x04001CE0 RID: 7392
+	// Token: 0x04001D18 RID: 7448
 	public bool Tampered;
 
-	// Token: 0x04001CE1 RID: 7393
+	// Token: 0x04001D19 RID: 7449
 	public int StudentID;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020000F6 RID: 246
+// Token: 0x020000F7 RID: 247
 public class CalendarScript : MonoBehaviour
 {
-	// Token: 0x06000AA0 RID: 2720 RVA: 0x00057E7C File Offset: 0x0005607C
+	// Token: 0x06000AA7 RID: 2727 RVA: 0x00058BAC File Offset: 0x00056DAC
 	private void Start()
 	{
 		Debug.Log("Upon entering the Calendar screen, DateGlobals.Weekday is: " + DateGlobals.Weekday);
@@ -67,7 +67,7 @@ public class CalendarScript : MonoBehaviour
 		this.LoveSickCheck();
 	}
 
-	// Token: 0x06000AA1 RID: 2721 RVA: 0x000582C4 File Offset: 0x000564C4
+	// Token: 0x06000AA8 RID: 2728 RVA: 0x00058FF4 File Offset: 0x000571F4
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -235,7 +235,7 @@ public class CalendarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AA2 RID: 2722 RVA: 0x00058880 File Offset: 0x00056A80
+	// Token: 0x06000AA9 RID: 2729 RVA: 0x000595B0 File Offset: 0x000577B0
 	public void LoveSickCheck()
 	{
 		if (GameGlobals.LoveSick)
@@ -276,69 +276,69 @@ public class CalendarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B3C RID: 2876
+	// Token: 0x04000B5B RID: 2907
 	public SelectiveGrayscale GrayscaleEffect;
 
-	// Token: 0x04000B3D RID: 2877
+	// Token: 0x04000B5C RID: 2908
 	public ChallengeScript Challenge;
 
-	// Token: 0x04000B3E RID: 2878
+	// Token: 0x04000B5D RID: 2909
 	public Vignetting Vignette;
 
-	// Token: 0x04000B3F RID: 2879
+	// Token: 0x04000B5E RID: 2910
 	public GameObject ConfirmationWindow;
 
-	// Token: 0x04000B40 RID: 2880
+	// Token: 0x04000B5F RID: 2911
 	public UILabel AtmosphereLabel;
 
-	// Token: 0x04000B41 RID: 2881
+	// Token: 0x04000B60 RID: 2912
 	public UIPanel ChallengePanel;
 
-	// Token: 0x04000B42 RID: 2882
+	// Token: 0x04000B61 RID: 2913
 	public UIPanel CalendarPanel;
 
-	// Token: 0x04000B43 RID: 2883
+	// Token: 0x04000B62 RID: 2914
 	public UISprite Darkness;
 
-	// Token: 0x04000B44 RID: 2884
+	// Token: 0x04000B63 RID: 2915
 	public UITexture Cloud;
 
-	// Token: 0x04000B45 RID: 2885
+	// Token: 0x04000B64 RID: 2916
 	public UITexture Sun;
 
-	// Token: 0x04000B46 RID: 2886
+	// Token: 0x04000B65 RID: 2917
 	public Transform Highlight;
 
-	// Token: 0x04000B47 RID: 2887
+	// Token: 0x04000B66 RID: 2918
 	public Transform Continue;
 
-	// Token: 0x04000B48 RID: 2888
+	// Token: 0x04000B67 RID: 2919
 	public UILabel[] DayNumber;
 
-	// Token: 0x04000B49 RID: 2889
+	// Token: 0x04000B68 RID: 2920
 	public UILabel WeekNumber;
 
-	// Token: 0x04000B4A RID: 2890
+	// Token: 0x04000B69 RID: 2921
 	public bool Incremented;
 
-	// Token: 0x04000B4B RID: 2891
+	// Token: 0x04000B6A RID: 2922
 	public bool LoveSick;
 
-	// Token: 0x04000B4C RID: 2892
+	// Token: 0x04000B6B RID: 2923
 	public bool FadeOut;
 
-	// Token: 0x04000B4D RID: 2893
+	// Token: 0x04000B6C RID: 2924
 	public bool Switch;
 
-	// Token: 0x04000B4E RID: 2894
+	// Token: 0x04000B6D RID: 2925
 	public bool Reset;
 
-	// Token: 0x04000B4F RID: 2895
+	// Token: 0x04000B6E RID: 2926
 	public float Timer;
 
-	// Token: 0x04000B50 RID: 2896
+	// Token: 0x04000B6F RID: 2927
 	public float Target;
 
-	// Token: 0x04000B51 RID: 2897
+	// Token: 0x04000B70 RID: 2928
 	public int Phase = 1;
 }

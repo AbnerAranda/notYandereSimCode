@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001AA RID: 426
+// Token: 0x020001AB RID: 427
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/Hypno")]
 public class CameraFilterPack_FX_Hypno : MonoBehaviour
 {
 	// Token: 0x170002CA RID: 714
-	// (get) Token: 0x06000F0F RID: 3855 RVA: 0x000719A2 File Offset: 0x0006FBA2
+	// (get) Token: 0x06000F16 RID: 3862 RVA: 0x000726D2 File Offset: 0x000708D2
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_Hypno : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F10 RID: 3856 RVA: 0x000719D6 File Offset: 0x0006FBD6
+	// Token: 0x06000F17 RID: 3863 RVA: 0x00072706 File Offset: 0x00070906
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_Hypno");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_Hypno : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F11 RID: 3857 RVA: 0x000719F8 File Offset: 0x0006FBF8
+	// Token: 0x06000F18 RID: 3864 RVA: 0x00072728 File Offset: 0x00070928
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_FX_Hypno : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F12 RID: 3858 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F19 RID: 3865 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F13 RID: 3859 RVA: 0x00071AF0 File Offset: 0x0006FCF0
+	// Token: 0x06000F1A RID: 3866 RVA: 0x00072820 File Offset: 0x00070A20
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_FX_Hypno : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011CC RID: 4556
+	// Token: 0x040011EB RID: 4587
 	public Shader SCShader;
 
-	// Token: 0x040011CD RID: 4557
+	// Token: 0x040011EC RID: 4588
 	private float TimeX = 1f;
 
-	// Token: 0x040011CE RID: 4558
+	// Token: 0x040011ED RID: 4589
 	private Material SCMaterial;
 
-	// Token: 0x040011CF RID: 4559
+	// Token: 0x040011EE RID: 4590
 	[Range(0f, 1f)]
 	public float Speed = 1f;
 
-	// Token: 0x040011D0 RID: 4560
+	// Token: 0x040011EF RID: 4591
 	[Range(-2f, 2f)]
 	public float Red;
 
-	// Token: 0x040011D1 RID: 4561
+	// Token: 0x040011F0 RID: 4592
 	[Range(-2f, 2f)]
 	public float Green = 1f;
 
-	// Token: 0x040011D2 RID: 4562
+	// Token: 0x040011F1 RID: 4593
 	[Range(-2f, 2f)]
 	public float Blue = 1f;
 }

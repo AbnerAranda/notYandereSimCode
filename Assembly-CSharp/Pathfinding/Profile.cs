@@ -4,41 +4,41 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x020005A4 RID: 1444
+	// Token: 0x020005BA RID: 1466
 	public class Profile
 	{
-		// Token: 0x06002750 RID: 10064 RVA: 0x001ADB85 File Offset: 0x001ABD85
+		// Token: 0x060027A6 RID: 10150 RVA: 0x001B3771 File Offset: 0x001B1971
 		public int ControlValue()
 		{
 			return this.control;
 		}
 
-		// Token: 0x06002751 RID: 10065 RVA: 0x001ADB8D File Offset: 0x001ABD8D
+		// Token: 0x060027A7 RID: 10151 RVA: 0x001B3779 File Offset: 0x001B1979
 		public Profile(string name)
 		{
 			this.name = name;
 			this.watch = new Stopwatch();
 		}
 
-		// Token: 0x06002752 RID: 10066 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060027A8 RID: 10152 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public static void WriteCSV(string path, params Profile[] profiles)
 		{
 		}
 
-		// Token: 0x06002753 RID: 10067 RVA: 0x001ADBB2 File Offset: 0x001ABDB2
+		// Token: 0x060027A9 RID: 10153 RVA: 0x001B379E File Offset: 0x001B199E
 		public void Run(Action action)
 		{
 			action();
 		}
 
-		// Token: 0x06002754 RID: 10068 RVA: 0x001ADBBA File Offset: 0x001ABDBA
+		// Token: 0x060027AA RID: 10154 RVA: 0x001B37A6 File Offset: 0x001B19A6
 		[Conditional("PROFILE")]
 		public void Start()
 		{
 			this.watch.Start();
 		}
 
-		// Token: 0x06002755 RID: 10069 RVA: 0x001ADBC7 File Offset: 0x001ABDC7
+		// Token: 0x060027AB RID: 10155 RVA: 0x001B37B3 File Offset: 0x001B19B3
 		[Conditional("PROFILE")]
 		public void Stop()
 		{
@@ -46,21 +46,21 @@ namespace Pathfinding
 			this.watch.Stop();
 		}
 
-		// Token: 0x06002756 RID: 10070 RVA: 0x001ADBE2 File Offset: 0x001ABDE2
+		// Token: 0x060027AC RID: 10156 RVA: 0x001B37CE File Offset: 0x001B19CE
 		[Conditional("PROFILE")]
 		public void Log()
 		{
 			UnityEngine.Debug.Log(this.ToString());
 		}
 
-		// Token: 0x06002757 RID: 10071 RVA: 0x001ADBEF File Offset: 0x001ABDEF
+		// Token: 0x060027AD RID: 10157 RVA: 0x001B37DB File Offset: 0x001B19DB
 		[Conditional("PROFILE")]
 		public void ConsoleLog()
 		{
 			Console.WriteLine(this.ToString());
 		}
 
-		// Token: 0x06002758 RID: 10072 RVA: 0x001ADBFC File Offset: 0x001ABDFC
+		// Token: 0x060027AE RID: 10158 RVA: 0x001B37E8 File Offset: 0x001B19E8
 		[Conditional("PROFILE")]
 		public void Stop(int control)
 		{
@@ -83,7 +83,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002759 RID: 10073 RVA: 0x001ADC78 File Offset: 0x001ABE78
+		// Token: 0x060027AF RID: 10159 RVA: 0x001B3864 File Offset: 0x001B1A64
 		[Conditional("PROFILE")]
 		public void Control(Profile other)
 		{
@@ -103,7 +103,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600275A RID: 10074 RVA: 0x001ADCF4 File Offset: 0x001ABEF4
+		// Token: 0x060027B0 RID: 10160 RVA: 0x001B38E0 File Offset: 0x001B1AE0
 		public override string ToString()
 		{
 			return string.Concat(new object[]
@@ -118,28 +118,28 @@ namespace Pathfinding
 			});
 		}
 
-		// Token: 0x040041C3 RID: 16835
+		// Token: 0x040042A1 RID: 17057
 		private const bool PROFILE_MEM = false;
 
-		// Token: 0x040041C4 RID: 16836
+		// Token: 0x040042A2 RID: 17058
 		public readonly string name;
 
-		// Token: 0x040041C5 RID: 16837
+		// Token: 0x040042A3 RID: 17059
 		private readonly Stopwatch watch;
 
-		// Token: 0x040041C6 RID: 16838
+		// Token: 0x040042A4 RID: 17060
 		private int counter;
 
-		// Token: 0x040041C7 RID: 16839
+		// Token: 0x040042A5 RID: 17061
 		private long mem;
 
-		// Token: 0x040041C8 RID: 16840
+		// Token: 0x040042A6 RID: 17062
 		private long smem;
 
-		// Token: 0x040041C9 RID: 16841
+		// Token: 0x040042A7 RID: 17063
 		private int control = 1073741824;
 
-		// Token: 0x040041CA RID: 16842
+		// Token: 0x040042A8 RID: 17064
 		private const bool dontCountFirst = false;
 	}
 }

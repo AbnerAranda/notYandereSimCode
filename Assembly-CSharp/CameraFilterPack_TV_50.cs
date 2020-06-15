@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F3 RID: 499
+// Token: 0x020001F4 RID: 500
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/50s")]
 public class CameraFilterPack_TV_50 : MonoBehaviour
 {
 	// Token: 0x17000313 RID: 787
-	// (get) Token: 0x060010E8 RID: 4328 RVA: 0x0007A925 File Offset: 0x00078B25
+	// (get) Token: 0x060010EF RID: 4335 RVA: 0x0007B655 File Offset: 0x00079855
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_50 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010E9 RID: 4329 RVA: 0x0007A959 File Offset: 0x00078B59
+	// Token: 0x060010F0 RID: 4336 RVA: 0x0007B689 File Offset: 0x00079889
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_50");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_50 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010EA RID: 4330 RVA: 0x0007A97C File Offset: 0x00078B7C
+	// Token: 0x060010F1 RID: 4337 RVA: 0x0007B6AC File Offset: 0x000798AC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_TV_50 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010EB RID: 4331 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010F2 RID: 4338 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010EC RID: 4332 RVA: 0x0007AA32 File Offset: 0x00078C32
+	// Token: 0x060010F3 RID: 4339 RVA: 0x0007B762 File Offset: 0x00079962
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_TV_50 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013EB RID: 5099
+	// Token: 0x0400140A RID: 5130
 	public Shader SCShader;
 
-	// Token: 0x040013EC RID: 5100
+	// Token: 0x0400140B RID: 5131
 	private float TimeX = 1f;
 
-	// Token: 0x040013ED RID: 5101
+	// Token: 0x0400140C RID: 5132
 	private Material SCMaterial;
 
-	// Token: 0x040013EE RID: 5102
+	// Token: 0x0400140D RID: 5133
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 }

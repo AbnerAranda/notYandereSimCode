@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200039E RID: 926
+// Token: 0x020003A3 RID: 931
 public class OsanaVendingMachineEventScript : MonoBehaviour
 {
 }

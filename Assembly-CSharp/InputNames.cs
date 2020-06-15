@@ -1,62 +1,62 @@
 ﻿using System;
 
-// Token: 0x02000305 RID: 773
+// Token: 0x02000308 RID: 776
 public static class InputNames
 {
-	// Token: 0x040020B5 RID: 8373
+	// Token: 0x04002102 RID: 8450
 	public const int Mouse_LMB = 0;
 
-	// Token: 0x040020B6 RID: 8374
+	// Token: 0x04002103 RID: 8451
 	public const int Mouse_RMB = 1;
 
-	// Token: 0x040020B7 RID: 8375
+	// Token: 0x04002104 RID: 8452
 	public const int Mouse_MMB = 2;
 
-	// Token: 0x040020B8 RID: 8376
+	// Token: 0x04002105 RID: 8453
 	public const string Xbox_A = "A";
 
-	// Token: 0x040020B9 RID: 8377
+	// Token: 0x04002106 RID: 8454
 	public const string Xbox_B = "B";
 
-	// Token: 0x040020BA RID: 8378
+	// Token: 0x04002107 RID: 8455
 	public const string Xbox_X = "X";
 
-	// Token: 0x040020BB RID: 8379
+	// Token: 0x04002108 RID: 8456
 	public const string Xbox_Y = "Y";
 
-	// Token: 0x040020BC RID: 8380
+	// Token: 0x04002109 RID: 8457
 	public const string Xbox_LB = "LB";
 
-	// Token: 0x040020BD RID: 8381
+	// Token: 0x0400210A RID: 8458
 	public const string Xbox_RB = "RB";
 
-	// Token: 0x040020BE RID: 8382
+	// Token: 0x0400210B RID: 8459
 	public const string Xbox_LT = "LT";
 
-	// Token: 0x040020BF RID: 8383
+	// Token: 0x0400210C RID: 8460
 	public const string Xbox_RT = "RT";
 
-	// Token: 0x040020C0 RID: 8384
+	// Token: 0x0400210D RID: 8461
 	public const string Xbox_LS = "LS";
 
-	// Token: 0x040020C1 RID: 8385
+	// Token: 0x0400210E RID: 8462
 	public const string Xbox_RS = "RS";
 
-	// Token: 0x040020C2 RID: 8386
+	// Token: 0x0400210F RID: 8463
 	public const string Xbox_Start = "Start";
 
-	// Token: 0x040020C3 RID: 8387
+	// Token: 0x04002110 RID: 8464
 	public const string Xbox_Back = "Back";
 
-	// Token: 0x040020C4 RID: 8388
+	// Token: 0x04002111 RID: 8465
 	public const string Yanvania_Horizontal = "VaniaHorizontal";
 
-	// Token: 0x040020C5 RID: 8389
+	// Token: 0x04002112 RID: 8466
 	public const string Yanvania_Vertical = "VaniaVertical";
 
-	// Token: 0x040020C6 RID: 8390
+	// Token: 0x04002113 RID: 8467
 	public const string Yanvania_Attack = "VaniaAttack";
 
-	// Token: 0x040020C7 RID: 8391
+	// Token: 0x04002114 RID: 8468
 	public const string Yanvania_Jump = "VaniaJump";
 }

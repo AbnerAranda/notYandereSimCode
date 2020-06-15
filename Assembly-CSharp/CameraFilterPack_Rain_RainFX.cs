@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001EE RID: 494
+// Token: 0x020001EF RID: 495
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Weather/New Rain FX")]
 public class CameraFilterPack_Rain_RainFX : MonoBehaviour
 {
 	// Token: 0x1700030E RID: 782
-	// (get) Token: 0x060010C9 RID: 4297 RVA: 0x00079F45 File Offset: 0x00078145
+	// (get) Token: 0x060010D0 RID: 4304 RVA: 0x0007AC75 File Offset: 0x00078E75
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Rain_RainFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CA RID: 4298 RVA: 0x00079F7C File Offset: 0x0007817C
+	// Token: 0x060010D1 RID: 4305 RVA: 0x0007ACAC File Offset: 0x00078EAC
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_RainFX_Anm2") as Texture2D);
@@ -34,7 +34,7 @@ public class CameraFilterPack_Rain_RainFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CB RID: 4299 RVA: 0x00079FD4 File Offset: 0x000781D4
+	// Token: 0x060010D2 RID: 4306 RVA: 0x0007AD04 File Offset: 0x00078F04
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -79,12 +79,12 @@ public class CameraFilterPack_Rain_RainFX : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010CC RID: 4300 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010D3 RID: 4307 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010CD RID: 4301 RVA: 0x0007A258 File Offset: 0x00078458
+	// Token: 0x060010D4 RID: 4308 RVA: 0x0007AF88 File Offset: 0x00079188
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -93,36 +93,36 @@ public class CameraFilterPack_Rain_RainFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013C7 RID: 5063
+	// Token: 0x040013E6 RID: 5094
 	public Shader SCShader;
 
-	// Token: 0x040013C8 RID: 5064
+	// Token: 0x040013E7 RID: 5095
 	private float TimeX = 1f;
 
-	// Token: 0x040013C9 RID: 5065
+	// Token: 0x040013E8 RID: 5096
 	private Material SCMaterial;
 
-	// Token: 0x040013CA RID: 5066
+	// Token: 0x040013E9 RID: 5097
 	[Range(-8f, 8f)]
 	public float Speed = 1f;
 
-	// Token: 0x040013CB RID: 5067
+	// Token: 0x040013EA RID: 5098
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x040013CC RID: 5068
+	// Token: 0x040013EB RID: 5099
 	[HideInInspector]
 	public int Count;
 
-	// Token: 0x040013CD RID: 5069
+	// Token: 0x040013EC RID: 5100
 	private Vector4[] Coord = new Vector4[4];
 
-	// Token: 0x040013CE RID: 5070
+	// Token: 0x040013ED RID: 5101
 	public static Color ChangeColorRGB;
 
-	// Token: 0x040013CF RID: 5071
+	// Token: 0x040013EE RID: 5102
 	private Texture2D Texture2;
 
-	// Token: 0x040013D0 RID: 5072
+	// Token: 0x040013EF RID: 5103
 	private Texture2D Texture3;
 }

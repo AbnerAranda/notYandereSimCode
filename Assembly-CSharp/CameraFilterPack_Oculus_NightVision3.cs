@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E3 RID: 483
+// Token: 0x020001E4 RID: 484
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Night Vision/Night Vision 3")]
 public class CameraFilterPack_Oculus_NightVision3 : MonoBehaviour
 {
 	// Token: 0x17000303 RID: 771
-	// (get) Token: 0x06001085 RID: 4229 RVA: 0x00078C9C File Offset: 0x00076E9C
+	// (get) Token: 0x0600108C RID: 4236 RVA: 0x000799CC File Offset: 0x00077BCC
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Oculus_NightVision3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001086 RID: 4230 RVA: 0x00078CD0 File Offset: 0x00076ED0
+	// Token: 0x0600108D RID: 4237 RVA: 0x00079A00 File Offset: 0x00077C00
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Oculus_NightVision3");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Oculus_NightVision3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001087 RID: 4231 RVA: 0x00078CF4 File Offset: 0x00076EF4
+	// Token: 0x0600108E RID: 4238 RVA: 0x00079A24 File Offset: 0x00077C24
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Oculus_NightVision3 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001088 RID: 4232 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x0600108F RID: 4239 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001089 RID: 4233 RVA: 0x00078DA3 File Offset: 0x00076FA3
+	// Token: 0x06001090 RID: 4240 RVA: 0x00079AD3 File Offset: 0x00077CD3
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Oculus_NightVision3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400137D RID: 4989
+	// Token: 0x0400139C RID: 5020
 	public Shader SCShader;
 
-	// Token: 0x0400137E RID: 4990
+	// Token: 0x0400139D RID: 5021
 	private float TimeX = 1f;
 
-	// Token: 0x0400137F RID: 4991
+	// Token: 0x0400139E RID: 5022
 	private Material SCMaterial;
 
-	// Token: 0x04001380 RID: 4992
+	// Token: 0x0400139F RID: 5023
 	[Range(0.2f, 2f)]
 	public float Greenness = 1f;
 }

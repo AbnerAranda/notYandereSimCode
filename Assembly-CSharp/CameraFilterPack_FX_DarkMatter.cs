@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200019C RID: 412
+// Token: 0x0200019D RID: 413
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/DarkMatter")]
 public class CameraFilterPack_FX_DarkMatter : MonoBehaviour
 {
 	// Token: 0x170002BC RID: 700
-	// (get) Token: 0x06000EBB RID: 3771 RVA: 0x000704DF File Offset: 0x0006E6DF
+	// (get) Token: 0x06000EC2 RID: 3778 RVA: 0x0007120F File Offset: 0x0006F40F
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_DarkMatter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EBC RID: 3772 RVA: 0x00070513 File Offset: 0x0006E713
+	// Token: 0x06000EC3 RID: 3779 RVA: 0x00071243 File Offset: 0x0006F443
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_DarkMatter");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_DarkMatter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EBD RID: 3773 RVA: 0x00070534 File Offset: 0x0006E734
+	// Token: 0x06000EC4 RID: 3780 RVA: 0x00071264 File Offset: 0x0006F464
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -56,12 +56,12 @@ public class CameraFilterPack_FX_DarkMatter : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000EBE RID: 3774 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000EC5 RID: 3781 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000EBF RID: 3775 RVA: 0x00070658 File Offset: 0x0006E858
+	// Token: 0x06000EC6 RID: 3782 RVA: 0x00071388 File Offset: 0x0006F588
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -70,36 +70,36 @@ public class CameraFilterPack_FX_DarkMatter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001179 RID: 4473
+	// Token: 0x04001198 RID: 4504
 	public Shader SCShader;
 
-	// Token: 0x0400117A RID: 4474
+	// Token: 0x04001199 RID: 4505
 	private float TimeX = 1f;
 
-	// Token: 0x0400117B RID: 4475
+	// Token: 0x0400119A RID: 4506
 	private Material SCMaterial;
 
-	// Token: 0x0400117C RID: 4476
+	// Token: 0x0400119B RID: 4507
 	[Range(-10f, 10f)]
 	public float Speed = 0.8f;
 
-	// Token: 0x0400117D RID: 4477
+	// Token: 0x0400119C RID: 4508
 	[Range(0f, 1f)]
 	public float Intensity = 1f;
 
-	// Token: 0x0400117E RID: 4478
+	// Token: 0x0400119D RID: 4509
 	[Range(-1f, 2f)]
 	public float PosX = 0.5f;
 
-	// Token: 0x0400117F RID: 4479
+	// Token: 0x0400119E RID: 4510
 	[Range(-1f, 2f)]
 	public float PosY = 0.5f;
 
-	// Token: 0x04001180 RID: 4480
+	// Token: 0x0400119F RID: 4511
 	[Range(-2f, 2f)]
 	public float Zoom = 0.33f;
 
-	// Token: 0x04001181 RID: 4481
+	// Token: 0x040011A0 RID: 4512
 	[Range(0f, 5f)]
 	public float DarkIntensity = 2f;
 }

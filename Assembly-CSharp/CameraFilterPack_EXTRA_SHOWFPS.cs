@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000190 RID: 400
+// Token: 0x02000191 RID: 401
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/EXTRA/SHOWFPS")]
 public class CameraFilterPack_EXTRA_SHOWFPS : MonoBehaviour
 {
 	// Token: 0x170002B0 RID: 688
-	// (get) Token: 0x06000E72 RID: 3698 RVA: 0x0006F453 File Offset: 0x0006D653
+	// (get) Token: 0x06000E79 RID: 3705 RVA: 0x00070183 File Offset: 0x0006E383
 	private Material material
 	{
 		get
@@ -22,7 +22,7 @@ public class CameraFilterPack_EXTRA_SHOWFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E73 RID: 3699 RVA: 0x0006F487 File Offset: 0x0006D687
+	// Token: 0x06000E7A RID: 3706 RVA: 0x000701B7 File Offset: 0x0006E3B7
 	private void Start()
 	{
 		this.FPS = 0;
@@ -35,7 +35,7 @@ public class CameraFilterPack_EXTRA_SHOWFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E74 RID: 3700 RVA: 0x0006F4BC File Offset: 0x0006D6BC
+	// Token: 0x06000E7B RID: 3707 RVA: 0x000701EC File Offset: 0x0006E3EC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -57,7 +57,7 @@ public class CameraFilterPack_EXTRA_SHOWFPS : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E75 RID: 3701 RVA: 0x0006F5B5 File Offset: 0x0006D7B5
+	// Token: 0x06000E7C RID: 3708 RVA: 0x000702E5 File Offset: 0x0006E4E5
 	private IEnumerator FPSX()
 	{
 		for (;;)
@@ -71,14 +71,14 @@ public class CameraFilterPack_EXTRA_SHOWFPS : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E76 RID: 3702 RVA: 0x0006F5C4 File Offset: 0x0006D7C4
+	// Token: 0x06000E7D RID: 3709 RVA: 0x000702F4 File Offset: 0x0006E4F4
 	private void Update()
 	{
 		this.accum += Time.timeScale / Time.deltaTime;
 		this.frames++;
 	}
 
-	// Token: 0x06000E77 RID: 3703 RVA: 0x0006F5EC File Offset: 0x0006D7EC
+	// Token: 0x06000E7E RID: 3710 RVA: 0x0007031C File Offset: 0x0006E51C
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -87,37 +87,37 @@ public class CameraFilterPack_EXTRA_SHOWFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001139 RID: 4409
+	// Token: 0x04001158 RID: 4440
 	public Shader SCShader;
 
-	// Token: 0x0400113A RID: 4410
+	// Token: 0x04001159 RID: 4441
 	private float TimeX = 1f;
 
-	// Token: 0x0400113B RID: 4411
+	// Token: 0x0400115A RID: 4442
 	private Material SCMaterial;
 
-	// Token: 0x0400113C RID: 4412
+	// Token: 0x0400115B RID: 4443
 	[Range(8f, 42f)]
 	public float Size = 12f;
 
-	// Token: 0x0400113D RID: 4413
+	// Token: 0x0400115C RID: 4444
 	[Range(0f, 100f)]
 	private int FPS = 1;
 
-	// Token: 0x0400113E RID: 4414
+	// Token: 0x0400115D RID: 4445
 	[Range(0f, 10f)]
 	private float Value3 = 1f;
 
-	// Token: 0x0400113F RID: 4415
+	// Token: 0x0400115E RID: 4446
 	[Range(0f, 10f)]
 	private float Value4 = 1f;
 
-	// Token: 0x04001140 RID: 4416
+	// Token: 0x0400115F RID: 4447
 	private float accum;
 
-	// Token: 0x04001141 RID: 4417
+	// Token: 0x04001160 RID: 4448
 	private int frames;
 
-	// Token: 0x04001142 RID: 4418
+	// Token: 0x04001161 RID: 4449
 	public float frequency = 0.5f;
 }

@@ -4,25 +4,25 @@ using UnityEngine;
 // Token: 0x020000D4 RID: 212
 public class AttackManagerScript : MonoBehaviour
 {
-	// Token: 0x06000A2A RID: 2602 RVA: 0x00051800 File Offset: 0x0004FA00
+	// Token: 0x06000A2E RID: 2606 RVA: 0x000522D4 File Offset: 0x000504D4
 	private void Awake()
 	{
 		this.Yandere = base.GetComponent<YandereScript>();
 	}
 
-	// Token: 0x06000A2B RID: 2603 RVA: 0x0005180E File Offset: 0x0004FA0E
+	// Token: 0x06000A2F RID: 2607 RVA: 0x000522E2 File Offset: 0x000504E2
 	private void Start()
 	{
 		this.OriginalBloodEffect = this.BloodEffect;
 	}
 
-	// Token: 0x06000A2C RID: 2604 RVA: 0x0005181C File Offset: 0x0004FA1C
+	// Token: 0x06000A30 RID: 2608 RVA: 0x000522F0 File Offset: 0x000504F0
 	public bool IsAttacking()
 	{
 		return this.Victim != null;
 	}
 
-	// Token: 0x06000A2D RID: 2605 RVA: 0x0005182C File Offset: 0x0004FA2C
+	// Token: 0x06000A31 RID: 2609 RVA: 0x00052300 File Offset: 0x00050500
 	private float GetReachDistance(WeaponType weaponType, SanityType sanityType)
 	{
 		if (weaponType == WeaponType.Knife)
@@ -87,12 +87,16 @@ public class AttackManagerScript : MonoBehaviour
 			{
 				return 0.5f;
 			}
+			if (weaponType == WeaponType.Garrote)
+			{
+				return 0.5f;
+			}
 			Debug.LogError("Weapon type \"" + weaponType.ToString() + "\" not implemented.");
 			return 0f;
 		}
 	}
 
-	// Token: 0x06000A2E RID: 2606 RVA: 0x00051910 File Offset: 0x0004FB10
+	// Token: 0x06000A32 RID: 2610 RVA: 0x000523EC File Offset: 0x000505EC
 	public void Attack(GameObject victim, WeaponScript weapon)
 	{
 		this.Victim = victim;
@@ -128,10 +132,9 @@ public class AttackManagerScript : MonoBehaviour
 		this.VictimAnim = this.Yandere.TargetStudent.CharacterAnimation;
 		this.VictimAnim[this.VictimAnimName].time = 0f;
 		this.VictimAnim.CrossFade(this.VictimAnimName);
-		AudioSource component = weapon.gameObject.GetComponent<AudioSource>();
-		component.clip = weapon.GetClip(this.Yandere.Sanity / 100f, this.Stealth);
-		component.time = 0f;
-		component.Play();
+		weapon.MyAudio.clip = weapon.GetClip(this.Yandere.Sanity / 100f, this.Stealth);
+		weapon.MyAudio.time = 0f;
+		weapon.MyAudio.Play();
 		if (weapon.Type == WeaponType.Knife)
 		{
 			weapon.Flip = true;
@@ -139,7 +142,7 @@ public class AttackManagerScript : MonoBehaviour
 		this.Distance = this.GetReachDistance(weapon.Type, sanityType);
 	}
 
-	// Token: 0x06000A2F RID: 2607 RVA: 0x00051B04 File Offset: 0x0004FD04
+	// Token: 0x06000A33 RID: 2611 RVA: 0x000525E4 File Offset: 0x000507E4
 	private void Update()
 	{
 		if (this.IsAttacking())
@@ -179,7 +182,7 @@ public class AttackManagerScript : MonoBehaviour
 				this.LoopCheck(equippedWeapon);
 			}
 			this.SpecialEffect(equippedWeapon, sanityType);
-			if (this.YandereAnim[this.AnimName].time > this.YandereAnim[this.AnimName].length - 0.33333334f)
+			if (this.YandereAnim[this.AnimName].time > this.YandereAnim[this.AnimName].length - 0.333333343f)
 			{
 				this.YandereAnim.CrossFade("f02_idle_00");
 				equippedWeapon.Flip = false;
@@ -210,7 +213,7 @@ public class AttackManagerScript : MonoBehaviour
 				this.Yandere.FollowHips = false;
 				this.Yandere.HipCollider.enabled = false;
 				bool flag = false;
-				if (this.Yandere.EquippedWeapon.Type == WeaponType.Bat && this.Stealth)
+				if (this.Yandere.EquippedWeapon.Type == WeaponType.Bat)
 				{
 					flag = true;
 				}
@@ -228,6 +231,11 @@ public class AttackManagerScript : MonoBehaviour
 				this.CheckForSpecialCase(equippedWeapon);
 				this.Yandere.Blur.enabled = false;
 				this.Yandere.Blur.blurSize = 0f;
+				if (equippedWeapon.Blunt)
+				{
+					this.Yandere.TargetStudent.Ragdoll.NeckSnapped = true;
+					this.Yandere.TargetStudent.NeckSnapped = true;
+				}
 				if (!this.Yandere.Noticed)
 				{
 					this.Yandere.EquippedWeapon.MurderWeapon = true;
@@ -239,7 +247,7 @@ public class AttackManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A30 RID: 2608 RVA: 0x00051F24 File Offset: 0x00050124
+	// Token: 0x06000A34 RID: 2612 RVA: 0x00052A2C File Offset: 0x00050C2C
 	private void SpecialEffect(WeaponScript weapon, SanityType sanityType)
 	{
 		this.BloodEffect = this.OriginalBloodEffect;
@@ -253,7 +261,7 @@ public class AttackManagerScript : MonoBehaviour
 			{
 				if (sanityType == SanityType.High)
 				{
-					if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 1.0666667f)
+					if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 1.06666672f)
 					{
 						this.Yandere.Bloodiness += 20f;
 						this.Yandere.StainWeapon();
@@ -266,7 +274,7 @@ public class AttackManagerScript : MonoBehaviour
 				{
 					if (this.EffectPhase == 0)
 					{
-						if (this.YandereAnim[this.AnimName].time > 2.1666667f)
+						if (this.YandereAnim[this.AnimName].time > 2.16666675f)
 						{
 							this.Yandere.Bloodiness += 20f;
 							this.Yandere.StainWeapon();
@@ -284,7 +292,7 @@ public class AttackManagerScript : MonoBehaviour
 				}
 				else if (this.EffectPhase == 0)
 				{
-					if (this.YandereAnim[this.AnimName].time > 2.7666667f)
+					if (this.YandereAnim[this.AnimName].time > 2.76666665f)
 					{
 						this.Yandere.Bloodiness += 20f;
 						this.Yandere.StainWeapon();
@@ -302,14 +310,14 @@ public class AttackManagerScript : MonoBehaviour
 						return;
 					}
 				}
-				else if (this.EffectPhase == 2 && this.YandereAnim[this.AnimName].time > 4.1666665f)
+				else if (this.EffectPhase == 2 && this.YandereAnim[this.AnimName].time > 4.16666651f)
 				{
 					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
 					this.EffectPhase++;
 					return;
 				}
 			}
-			else if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.96666664f)
+			else if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.966666639f)
 			{
 				this.Yandere.Bloodiness += 20f;
 				this.Yandere.StainWeapon();
@@ -324,7 +332,7 @@ public class AttackManagerScript : MonoBehaviour
 			{
 				if (sanityType == SanityType.High)
 				{
-					if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.48333332f)
+					if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.483333319f)
 					{
 						this.Yandere.Bloodiness += 20f;
 						this.Yandere.StainWeapon();
@@ -346,7 +354,7 @@ public class AttackManagerScript : MonoBehaviour
 							return;
 						}
 					}
-					else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 1.5166667f)
+					else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 1.51666665f)
 					{
 						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.5f, Quaternion.identity);
 						this.EffectPhase++;
@@ -375,7 +383,7 @@ public class AttackManagerScript : MonoBehaviour
 				}
 				else if (this.EffectPhase == 2)
 				{
-					if (this.YandereAnim[this.AnimName].time > 2.3333333f)
+					if (this.YandereAnim[this.AnimName].time > 2.33333325f)
 					{
 						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.6666667f, Quaternion.identity);
 						this.EffectPhase++;
@@ -384,7 +392,7 @@ public class AttackManagerScript : MonoBehaviour
 				}
 				else if (this.EffectPhase == 3)
 				{
-					if (this.YandereAnim[this.AnimName].time > 2.7333333f)
+					if (this.YandereAnim[this.AnimName].time > 2.73333335f)
 					{
 						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.6666667f, Quaternion.identity);
 						this.EffectPhase++;
@@ -393,7 +401,7 @@ public class AttackManagerScript : MonoBehaviour
 				}
 				else if (this.EffectPhase == 4)
 				{
-					if (this.YandereAnim[this.AnimName].time > 3.1333334f)
+					if (this.YandereAnim[this.AnimName].time > 3.13333344f)
 					{
 						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.6666667f, Quaternion.identity);
 						this.EffectPhase++;
@@ -427,7 +435,7 @@ public class AttackManagerScript : MonoBehaviour
 			}
 			else if (this.EffectPhase == 0)
 			{
-				if (this.YandereAnim[this.AnimName].time > 0.36666667f)
+				if (this.YandereAnim[this.AnimName].time > 0.366666675f)
 				{
 					this.Yandere.Bloodiness += 20f;
 					this.Yandere.StainWeapon();
@@ -438,7 +446,7 @@ public class AttackManagerScript : MonoBehaviour
 			}
 			else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 1f)
 			{
-				UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.33333334f, Quaternion.identity);
+				UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.333333343f, Quaternion.identity);
 				this.EffectPhase++;
 				return;
 			}
@@ -448,14 +456,13 @@ public class AttackManagerScript : MonoBehaviour
 			if (this.Stealth)
 			{
 				this.Yandere.TargetStudent.Ragdoll.NeckSnapped = true;
+				this.Yandere.TargetStudent.NeckSnapped = true;
 				return;
 			}
 			if (sanityType == SanityType.High)
 			{
-				if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.73333335f)
+				if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.733333349f)
 				{
-					this.Yandere.Bloodiness += 20f;
-					this.Yandere.StainWeapon();
 					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.5f, Quaternion.identity);
 					this.EffectPhase++;
 					return;
@@ -467,8 +474,6 @@ public class AttackManagerScript : MonoBehaviour
 				{
 					if (this.YandereAnim[this.AnimName].time > 1f)
 					{
-						this.Yandere.Bloodiness += 20f;
-						this.Yandere.StainWeapon();
 						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.5f, Quaternion.identity);
 						this.EffectPhase++;
 						return;
@@ -485,8 +490,6 @@ public class AttackManagerScript : MonoBehaviour
 			{
 				if (this.YandereAnim[this.AnimName].time > 0.7f)
 				{
-					this.Yandere.Bloodiness += 20f;
-					this.Yandere.StainWeapon();
 					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.5f, Quaternion.identity);
 					this.EffectPhase++;
 					return;
@@ -503,7 +506,7 @@ public class AttackManagerScript : MonoBehaviour
 			}
 			else if (this.EffectPhase == 2)
 			{
-				if (this.YandereAnim[this.AnimName].time > 3.7666667f)
+				if (this.YandereAnim[this.AnimName].time > 3.76666665f)
 				{
 					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.5f, Quaternion.identity);
 					this.EffectPhase++;
@@ -534,7 +537,7 @@ public class AttackManagerScript : MonoBehaviour
 					}
 					else if (this.EffectPhase == 1)
 					{
-						if (this.YandereAnim[this.AnimName].time > 0.73333335f)
+						if (this.YandereAnim[this.AnimName].time > 0.733333349f)
 						{
 							this.Yandere.Bloodiness += 20f;
 							this.Yandere.StainWeapon();
@@ -544,7 +547,7 @@ public class AttackManagerScript : MonoBehaviour
 							return;
 						}
 					}
-					else if (this.EffectPhase == 2 && this.YandereAnim[this.AnimName].time > 1.4333333f)
+					else if (this.EffectPhase == 2 && this.YandereAnim[this.AnimName].time > 1.43333328f)
 					{
 						weapon.Spin = false;
 						weapon.BloodSpray[0].Stop();
@@ -578,7 +581,7 @@ public class AttackManagerScript : MonoBehaviour
 					}
 					else if (this.EffectPhase == 2)
 					{
-						if (this.YandereAnim[this.AnimName].time > 1.4333333f)
+						if (this.YandereAnim[this.AnimName].time > 1.43333328f)
 						{
 							weapon.BloodSpray[0].Stop();
 							weapon.BloodSpray[1].Stop();
@@ -588,7 +591,7 @@ public class AttackManagerScript : MonoBehaviour
 					}
 					else if (this.EffectPhase == 3)
 					{
-						if (this.YandereAnim[this.AnimName].time > 2.3666666f)
+						if (this.YandereAnim[this.AnimName].time > 2.36666656f)
 						{
 							weapon.BloodSpray[0].Play();
 							weapon.BloodSpray[1].Play();
@@ -628,7 +631,7 @@ public class AttackManagerScript : MonoBehaviour
 				}
 				else if (this.EffectPhase == 2)
 				{
-					if (this.YandereAnim[this.AnimName].time > 0.73333335f)
+					if (this.YandereAnim[this.AnimName].time > 0.733333349f)
 					{
 						weapon.BloodSpray[0].Stop();
 						weapon.BloodSpray[1].Stop();
@@ -666,72 +669,70 @@ public class AttackManagerScript : MonoBehaviour
 		}
 		else if (weapon.Type == WeaponType.Weight)
 		{
-			if (!this.Stealth)
+			if (this.Stealth)
 			{
-				if (sanityType == SanityType.High)
-				{
-					if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.6666667f)
-					{
-						this.Yandere.Bloodiness += 20f;
-						this.Yandere.StainWeapon();
-						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
-						this.EffectPhase++;
-						return;
-					}
-				}
-				else if (sanityType == SanityType.Medium)
-				{
-					if (this.EffectPhase == 0)
-					{
-						if (this.YandereAnim[this.AnimName].time > 1f)
-						{
-							this.Yandere.Bloodiness += 20f;
-							this.Yandere.StainWeapon();
-							UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
-							this.EffectPhase++;
-							return;
-						}
-					}
-					else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 2.8333333f)
-					{
-						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
-						this.EffectPhase++;
-						return;
-					}
-				}
-				else if (this.EffectPhase == 0)
-				{
-					if (this.YandereAnim[this.AnimName].time > 2.1666667f)
-					{
-						this.Yandere.Bloodiness += 20f;
-						this.Yandere.StainWeapon();
-						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
-						this.EffectPhase++;
-						return;
-					}
-				}
-				else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 4.1666665f)
+				this.Yandere.TargetStudent.Ragdoll.NeckSnapped = true;
+				this.Yandere.TargetStudent.NeckSnapped = true;
+				return;
+			}
+			if (sanityType == SanityType.High)
+			{
+				if (this.EffectPhase == 0 && this.YandereAnim[this.AnimName].time > 0.6666667f)
 				{
 					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
 					this.EffectPhase++;
 					return;
 				}
 			}
-			else
+			else if (sanityType == SanityType.Medium)
 			{
-				this.Yandere.TargetStudent.Ragdoll.NeckSnapped = true;
+				if (this.EffectPhase == 0)
+				{
+					if (this.YandereAnim[this.AnimName].time > 1f)
+					{
+						UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
+						this.EffectPhase++;
+						return;
+					}
+				}
+				else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 2.83333325f)
+				{
+					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
+					this.EffectPhase++;
+					return;
+				}
 			}
+			else if (this.EffectPhase == 0)
+			{
+				if (this.YandereAnim[this.AnimName].time > 2.16666675f)
+				{
+					UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
+					this.EffectPhase++;
+					return;
+				}
+			}
+			else if (this.EffectPhase == 1 && this.YandereAnim[this.AnimName].time > 4.16666651f)
+			{
+				UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, weapon.transform.position + weapon.transform.forward * 0.1f, Quaternion.identity);
+				this.EffectPhase++;
+				return;
+			}
+		}
+		else if (weapon.Type == WeaponType.Garrote)
+		{
+			this.Yandere.TargetStudent.Ragdoll.NeckSnapped = true;
+			this.Yandere.TargetStudent.NeckSnapped = true;
 		}
 	}
 
-	// Token: 0x06000A31 RID: 2609 RVA: 0x000534E4 File Offset: 0x000516E4
+	// Token: 0x06000A35 RID: 2613 RVA: 0x00053F68 File Offset: 0x00052168
 	private void LoopCheck(WeaponScript weapon)
 	{
 		if (Input.GetButtonDown("X") && !this.Yandere.Chased && this.Yandere.Chasers == 0)
 		{
 			if (weapon.Type == WeaponType.Knife)
 			{
-				if (this.YandereAnim[this.AnimName].time > 3.5333333f && this.YandereAnim[this.AnimName].time < 4.1666665f)
+				if (this.YandereAnim[this.AnimName].time > 3.5333333f && this.YandereAnim[this.AnimName].time < 4.16666651f)
 				{
 					this.LoopStart = 106f;
 					this.LoopEnd = 125f;
@@ -741,7 +742,7 @@ public class AttackManagerScript : MonoBehaviour
 			}
 			else if (weapon.Type == WeaponType.Katana)
 			{
-				if (this.YandereAnim[this.AnimName].time > 3.3666666f && this.YandereAnim[this.AnimName].time < 3.9f)
+				if (this.YandereAnim[this.AnimName].time > 3.36666656f && this.YandereAnim[this.AnimName].time < 3.9f)
 				{
 					this.LoopStart = 101f;
 					this.LoopEnd = 117f;
@@ -751,7 +752,7 @@ public class AttackManagerScript : MonoBehaviour
 			}
 			else if (weapon.Type == WeaponType.Bat)
 			{
-				if (this.YandereAnim[this.AnimName].time > 3.7666667f && this.YandereAnim[this.AnimName].time < 4.4f)
+				if (this.YandereAnim[this.AnimName].time > 3.76666665f && this.YandereAnim[this.AnimName].time < 4.4f)
 				{
 					this.LoopStart = 113f;
 					this.LoopEnd = 132f;
@@ -777,13 +778,12 @@ public class AttackManagerScript : MonoBehaviour
 				this.Loop = true;
 			}
 		}
-		AudioSource component = weapon.gameObject.GetComponent<AudioSource>();
 		if (this.PingPong)
 		{
 			if (this.YandereAnim[this.AnimName].time > this.LoopEnd / 30f)
 			{
-				component.pitch = 1f + UnityEngine.Random.Range(0.1f, -0.1f);
-				component.time = this.LoopStart / 30f;
+				weapon.MyAudio.pitch = 1f + UnityEngine.Random.Range(0.1f, -0.1f);
+				weapon.MyAudio.time = this.LoopStart / 30f;
 				this.VictimAnim[this.VictimAnimName].speed = -1f;
 				this.YandereAnim[this.AnimName].speed = -1f;
 				this.EffectPhase = this.LoopPhase;
@@ -791,8 +791,8 @@ public class AttackManagerScript : MonoBehaviour
 			}
 			else if (this.YandereAnim[this.AnimName].time < this.LoopStart / 30f)
 			{
-				component.pitch = 1f + UnityEngine.Random.Range(0.1f, -0.1f);
-				component.time = this.LoopStart / 30f;
+				weapon.MyAudio.pitch = 1f + UnityEngine.Random.Range(0.1f, -0.1f);
+				weapon.MyAudio.time = this.LoopStart / 30f;
 				this.VictimAnim[this.VictimAnimName].speed = 1f;
 				this.YandereAnim[this.AnimName].speed = 1f;
 				this.EffectPhase = this.LoopPhase;
@@ -803,8 +803,8 @@ public class AttackManagerScript : MonoBehaviour
 		}
 		if (this.Loop && this.YandereAnim[this.AnimName].time > this.LoopEnd / 30f)
 		{
-			component.pitch = 1f + UnityEngine.Random.Range(0.1f, -0.1f);
-			component.time = this.LoopStart / 30f;
+			weapon.MyAudio.pitch = 1f + UnityEngine.Random.Range(0.1f, -0.1f);
+			weapon.MyAudio.time = this.LoopStart / 30f;
 			this.VictimAnim[this.VictimAnimName].time = this.LoopStart / 30f;
 			this.YandereAnim[this.AnimName].time = this.LoopStart / 30f;
 			this.AttackTimer = this.LoopStart / 30f;
@@ -813,7 +813,7 @@ public class AttackManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A32 RID: 2610 RVA: 0x00053989 File Offset: 0x00051B89
+	// Token: 0x06000A36 RID: 2614 RVA: 0x00054422 File Offset: 0x00052622
 	private void CheckForSpecialCase(WeaponScript weapon)
 	{
 		if (weapon.WeaponID == 8 && GameGlobals.Paranormal)
@@ -823,60 +823,60 @@ public class AttackManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A40 RID: 2624
+	// Token: 0x04000A55 RID: 2645
 	public GameObject BloodEffect;
 
-	// Token: 0x04000A41 RID: 2625
+	// Token: 0x04000A56 RID: 2646
 	private GameObject OriginalBloodEffect;
 
-	// Token: 0x04000A42 RID: 2626
+	// Token: 0x04000A57 RID: 2647
 	private GameObject Victim;
 
-	// Token: 0x04000A43 RID: 2627
+	// Token: 0x04000A58 RID: 2648
 	private YandereScript Yandere;
 
-	// Token: 0x04000A44 RID: 2628
+	// Token: 0x04000A59 RID: 2649
 	private string VictimAnimName = string.Empty;
 
-	// Token: 0x04000A45 RID: 2629
+	// Token: 0x04000A5A RID: 2650
 	private string AnimName = string.Empty;
 
-	// Token: 0x04000A46 RID: 2630
+	// Token: 0x04000A5B RID: 2651
 	public bool PingPong;
 
-	// Token: 0x04000A47 RID: 2631
+	// Token: 0x04000A5C RID: 2652
 	public bool Stealth;
 
-	// Token: 0x04000A48 RID: 2632
+	// Token: 0x04000A5D RID: 2653
 	public bool Censor;
 
-	// Token: 0x04000A49 RID: 2633
+	// Token: 0x04000A5E RID: 2654
 	public bool Loop;
 
-	// Token: 0x04000A4A RID: 2634
+	// Token: 0x04000A5F RID: 2655
 	public int EffectPhase;
 
-	// Token: 0x04000A4B RID: 2635
+	// Token: 0x04000A60 RID: 2656
 	public int LoopPhase;
 
-	// Token: 0x04000A4C RID: 2636
+	// Token: 0x04000A61 RID: 2657
 	public float AttackTimer;
 
-	// Token: 0x04000A4D RID: 2637
+	// Token: 0x04000A62 RID: 2658
 	public float Distance;
 
-	// Token: 0x04000A4E RID: 2638
+	// Token: 0x04000A63 RID: 2659
 	public float Timer;
 
-	// Token: 0x04000A4F RID: 2639
+	// Token: 0x04000A64 RID: 2660
 	public float LoopStart;
 
-	// Token: 0x04000A50 RID: 2640
+	// Token: 0x04000A65 RID: 2661
 	public float LoopEnd;
 
-	// Token: 0x04000A51 RID: 2641
+	// Token: 0x04000A66 RID: 2662
 	public Animation YandereAnim;
 
-	// Token: 0x04000A52 RID: 2642
+	// Token: 0x04000A67 RID: 2663
 	public Animation VictimAnim;
 }

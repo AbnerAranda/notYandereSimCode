@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200029C RID: 668
+// Token: 0x0200029D RID: 669
 public class FalconPunchScript : MonoBehaviour
 {
-	// Token: 0x060013F8 RID: 5112 RVA: 0x000AE3C7 File Offset: 0x000AC5C7
+	// Token: 0x06001400 RID: 5120 RVA: 0x000AF5CB File Offset: 0x000AD7CB
 	private void Start()
 	{
 		if (this.Mecha)
@@ -13,7 +13,7 @@ public class FalconPunchScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013F9 RID: 5113 RVA: 0x000AE3FC File Offset: 0x000AC5FC
+	// Token: 0x06001401 RID: 5121 RVA: 0x000AF600 File Offset: 0x000AD800
 	private void Update()
 	{
 		if (!this.IgnoreTime)
@@ -30,7 +30,7 @@ public class FalconPunchScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013FA RID: 5114 RVA: 0x000AE468 File Offset: 0x000AC668
+	// Token: 0x06001402 RID: 5122 RVA: 0x000AF66C File Offset: 0x000AD86C
 	private void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("A punch collided with something.");
@@ -89,42 +89,42 @@ public class FalconPunchScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001BFB RID: 7163
+	// Token: 0x04001C1B RID: 7195
 	public GameObject FalconExplosion;
 
-	// Token: 0x04001BFC RID: 7164
+	// Token: 0x04001C1C RID: 7196
 	public Rigidbody MyRigidbody;
 
-	// Token: 0x04001BFD RID: 7165
+	// Token: 0x04001C1D RID: 7197
 	public Collider MyCollider;
 
-	// Token: 0x04001BFE RID: 7166
+	// Token: 0x04001C1E RID: 7198
 	public float Strength = 100f;
 
-	// Token: 0x04001BFF RID: 7167
+	// Token: 0x04001C1F RID: 7199
 	public float Speed = 100f;
 
-	// Token: 0x04001C00 RID: 7168
+	// Token: 0x04001C20 RID: 7200
 	public bool Destructive;
 
-	// Token: 0x04001C01 RID: 7169
+	// Token: 0x04001C21 RID: 7201
 	public bool IgnoreTime;
 
-	// Token: 0x04001C02 RID: 7170
+	// Token: 0x04001C22 RID: 7202
 	public bool Shipgirl;
 
-	// Token: 0x04001C03 RID: 7171
+	// Token: 0x04001C23 RID: 7203
 	public bool Bancho;
 
-	// Token: 0x04001C04 RID: 7172
+	// Token: 0x04001C24 RID: 7204
 	public bool Falcon;
 
-	// Token: 0x04001C05 RID: 7173
+	// Token: 0x04001C25 RID: 7205
 	public bool Mecha;
 
-	// Token: 0x04001C06 RID: 7174
+	// Token: 0x04001C26 RID: 7206
 	public float TimeLimit = 0.5f;
 
-	// Token: 0x04001C07 RID: 7175
+	// Token: 0x04001C27 RID: 7207
 	public float Timer;
 }

@@ -11,10 +11,10 @@ using UnityEngine;
 
 namespace Pathfinding.Serialization
 {
-	// Token: 0x020005BF RID: 1471
+	// Token: 0x020005D5 RID: 1493
 	public class TinyJsonDeserializer
 	{
-		// Token: 0x06002821 RID: 10273 RVA: 0x001B6CE9 File Offset: 0x001B4EE9
+		// Token: 0x06002877 RID: 10359 RVA: 0x001BC8D5 File Offset: 0x001BAAD5
 		public static object Deserialize(string text, Type type, object populate = null)
 		{
 			return new TinyJsonDeserializer
@@ -23,7 +23,7 @@ namespace Pathfinding.Serialization
 			}.Deserialize(type, populate);
 		}
 
-		// Token: 0x06002822 RID: 10274 RVA: 0x001B6D04 File Offset: 0x001B4F04
+		// Token: 0x06002878 RID: 10360 RVA: 0x001BC8F0 File Offset: 0x001BAAF0
 		private object Deserialize(Type tp, object populate = null)
 		{
 			Type typeInfo = WindowsStoreCompatibility.GetTypeInfo(tp);
@@ -154,7 +154,7 @@ namespace Pathfinding.Serialization
 			return obj;
 		}
 
-		// Token: 0x06002823 RID: 10275 RVA: 0x001B7144 File Offset: 0x001B5344
+		// Token: 0x06002879 RID: 10361 RVA: 0x001BCD30 File Offset: 0x001BAF30
 		private UnityEngine.Object DeserializeUnityObject()
 		{
 			this.Eat("{");
@@ -163,7 +163,7 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x06002824 RID: 10276 RVA: 0x001B7164 File Offset: 0x001B5364
+		// Token: 0x0600287A RID: 10362 RVA: 0x001BCD50 File Offset: 0x001BAF50
 		private UnityEngine.Object DeserializeUnityObjectInner()
 		{
 			string a = this.EatField();
@@ -235,7 +235,7 @@ namespace Pathfinding.Serialization
 			return null;
 		}
 
-		// Token: 0x06002825 RID: 10277 RVA: 0x001B731C File Offset: 0x001B551C
+		// Token: 0x0600287B RID: 10363 RVA: 0x001BCF08 File Offset: 0x001BB108
 		private void EatWhitespace()
 		{
 			while (char.IsWhiteSpace((char)this.reader.Peek()))
@@ -244,7 +244,7 @@ namespace Pathfinding.Serialization
 			}
 		}
 
-		// Token: 0x06002826 RID: 10278 RVA: 0x001B7340 File Offset: 0x001B5540
+		// Token: 0x0600287C RID: 10364 RVA: 0x001BCF2C File Offset: 0x001BB12C
 		private void Eat(string s)
 		{
 			this.EatWhitespace();
@@ -266,7 +266,7 @@ namespace Pathfinding.Serialization
 			}
 		}
 
-		// Token: 0x06002827 RID: 10279 RVA: 0x001B73D0 File Offset: 0x001B55D0
+		// Token: 0x0600287D RID: 10365 RVA: 0x001BCFBC File Offset: 0x001BB1BC
 		private string EatUntil(string c, bool inString)
 		{
 			this.builder.Length = 0;
@@ -304,7 +304,7 @@ namespace Pathfinding.Serialization
 			return this.builder.ToString();
 		}
 
-		// Token: 0x06002828 RID: 10280 RVA: 0x001B7465 File Offset: 0x001B5665
+		// Token: 0x0600287E RID: 10366 RVA: 0x001BD051 File Offset: 0x001BB251
 		private bool TryEat(char c)
 		{
 			this.EatWhitespace();
@@ -316,7 +316,7 @@ namespace Pathfinding.Serialization
 			return false;
 		}
 
-		// Token: 0x06002829 RID: 10281 RVA: 0x001B748B File Offset: 0x001B568B
+		// Token: 0x0600287F RID: 10367 RVA: 0x001BD077 File Offset: 0x001BB277
 		private string EatField()
 		{
 			string result = this.EatUntil("\",}]", this.TryEat('"'));
@@ -326,7 +326,7 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x0600282A RID: 10282 RVA: 0x001B74BC File Offset: 0x001B56BC
+		// Token: 0x06002880 RID: 10368 RVA: 0x001BD0A8 File Offset: 0x001BB2A8
 		private void SkipFieldData()
 		{
 			int num = 0;
@@ -383,13 +383,13 @@ namespace Pathfinding.Serialization
 			throw new Exception("Should not reach this part");
 		}
 
-		// Token: 0x0400425C RID: 16988
+		// Token: 0x0400433A RID: 17210
 		private TextReader reader;
 
-		// Token: 0x0400425D RID: 16989
+		// Token: 0x0400433B RID: 17211
 		private static readonly NumberFormatInfo numberFormat = NumberFormatInfo.InvariantInfo;
 
-		// Token: 0x0400425E RID: 16990
+		// Token: 0x0400433C RID: 17212
 		private StringBuilder builder = new StringBuilder();
 	}
 }

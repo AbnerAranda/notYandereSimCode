@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C7 RID: 1479
+	// Token: 0x020005DD RID: 1501
 	[AddComponentMenu("Pathfinding/Local Avoidance/RVO Controller")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_r_v_o_1_1_r_v_o_controller.php")]
 	public class RVOController : VersionedMonoBehaviour
 	{
-		// Token: 0x170005D6 RID: 1494
-		// (get) Token: 0x06002875 RID: 10357 RVA: 0x001B863B File Offset: 0x001B683B
-		// (set) Token: 0x06002876 RID: 10358 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x170005DC RID: 1500
+		// (get) Token: 0x060028CB RID: 10443 RVA: 0x001BE227 File Offset: 0x001BC427
+		// (set) Token: 0x060028CC RID: 10444 RVA: 0x00002ACE File Offset: 0x00000CCE
 		[Obsolete("This field is obsolete in version 4.0 and will not affect anything. Use the LegacyRVOController if you need the old behaviour")]
 		public LayerMask mask
 		{
@@ -24,9 +24,9 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005D7 RID: 1495
-		// (get) Token: 0x06002877 RID: 10359 RVA: 0x0002D171 File Offset: 0x0002B371
-		// (set) Token: 0x06002878 RID: 10360 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x170005DD RID: 1501
+		// (get) Token: 0x060028CD RID: 10445 RVA: 0x0002D199 File Offset: 0x0002B399
+		// (set) Token: 0x060028CE RID: 10446 RVA: 0x00002ACE File Offset: 0x00000CCE
 		[Obsolete("This field is obsolete in version 4.0 and will not affect anything. Use the LegacyRVOController if you need the old behaviour")]
 		public bool enableRotation
 		{
@@ -39,9 +39,9 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005D8 RID: 1496
-		// (get) Token: 0x06002879 RID: 10361 RVA: 0x00194851 File Offset: 0x00192A51
-		// (set) Token: 0x0600287A RID: 10362 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x170005DE RID: 1502
+		// (get) Token: 0x060028CF RID: 10447 RVA: 0x0019A43D File Offset: 0x0019863D
+		// (set) Token: 0x060028D0 RID: 10448 RVA: 0x00002ACE File Offset: 0x00000CCE
 		[Obsolete("This field is obsolete in version 4.0 and will not affect anything. Use the LegacyRVOController if you need the old behaviour")]
 		public float rotationSpeed
 		{
@@ -54,9 +54,9 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005D9 RID: 1497
-		// (get) Token: 0x0600287B RID: 10363 RVA: 0x00194851 File Offset: 0x00192A51
-		// (set) Token: 0x0600287C RID: 10364 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x170005DF RID: 1503
+		// (get) Token: 0x060028D1 RID: 10449 RVA: 0x0019A43D File Offset: 0x0019863D
+		// (set) Token: 0x060028D2 RID: 10450 RVA: 0x00002ACE File Offset: 0x00000CCE
 		[Obsolete("This field is obsolete in version 4.0 and will not affect anything. Use the LegacyRVOController if you need the old behaviour")]
 		public float maxSpeed
 		{
@@ -69,8 +69,8 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005DA RID: 1498
-		// (get) Token: 0x0600287D RID: 10365 RVA: 0x001B8643 File Offset: 0x001B6843
+		// Token: 0x170005E0 RID: 1504
+		// (get) Token: 0x060028D3 RID: 10451 RVA: 0x001BE22F File Offset: 0x001BC42F
 		public MovementPlane movementPlane
 		{
 			get
@@ -87,18 +87,18 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005DB RID: 1499
-		// (get) Token: 0x0600287E RID: 10366 RVA: 0x001B8671 File Offset: 0x001B6871
-		// (set) Token: 0x0600287F RID: 10367 RVA: 0x001B8679 File Offset: 0x001B6879
+		// Token: 0x170005E1 RID: 1505
+		// (get) Token: 0x060028D4 RID: 10452 RVA: 0x001BE25D File Offset: 0x001BC45D
+		// (set) Token: 0x060028D5 RID: 10453 RVA: 0x001BE265 File Offset: 0x001BC465
 		public IAgent rvoAgent { get; private set; }
 
-		// Token: 0x170005DC RID: 1500
-		// (get) Token: 0x06002880 RID: 10368 RVA: 0x001B8682 File Offset: 0x001B6882
-		// (set) Token: 0x06002881 RID: 10369 RVA: 0x001B868A File Offset: 0x001B688A
+		// Token: 0x170005E2 RID: 1506
+		// (get) Token: 0x060028D6 RID: 10454 RVA: 0x001BE26E File Offset: 0x001BC46E
+		// (set) Token: 0x060028D7 RID: 10455 RVA: 0x001BE276 File Offset: 0x001BC476
 		public Simulator simulator { get; private set; }
 
-		// Token: 0x170005DD RID: 1501
-		// (get) Token: 0x06002882 RID: 10370 RVA: 0x001B8693 File Offset: 0x001B6893
+		// Token: 0x170005E3 RID: 1507
+		// (get) Token: 0x060028D8 RID: 10456 RVA: 0x001BE27F File Offset: 0x001BC47F
 		public Vector3 position
 		{
 			get
@@ -107,9 +107,9 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005DE RID: 1502
-		// (get) Token: 0x06002883 RID: 10371 RVA: 0x001B86B4 File Offset: 0x001B68B4
-		// (set) Token: 0x06002884 RID: 10372 RVA: 0x001B86E7 File Offset: 0x001B68E7
+		// Token: 0x170005E4 RID: 1508
+		// (get) Token: 0x060028D9 RID: 10457 RVA: 0x001BE2A0 File Offset: 0x001BC4A0
+		// (set) Token: 0x060028DA RID: 10458 RVA: 0x001BE2D3 File Offset: 0x001BC4D3
 		public Vector3 velocity
 		{
 			get
@@ -123,7 +123,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002885 RID: 10373 RVA: 0x001B86FC File Offset: 0x001B68FC
+		// Token: 0x060028DB RID: 10459 RVA: 0x001BE2E8 File Offset: 0x001BC4E8
 		public Vector3 CalculateMovementDelta(float deltaTime)
 		{
 			if (this.rvoAgent == null)
@@ -133,33 +133,33 @@ namespace Pathfinding.RVO
 			return this.To3D(Vector2.ClampMagnitude(this.rvoAgent.CalculatedTargetPoint - this.To2D((this.ai != null) ? this.ai.position : this.tr.position), this.rvoAgent.CalculatedSpeed * deltaTime), 0f);
 		}
 
-		// Token: 0x06002886 RID: 10374 RVA: 0x001B876A File Offset: 0x001B696A
+		// Token: 0x060028DC RID: 10460 RVA: 0x001BE356 File Offset: 0x001BC556
 		public Vector3 CalculateMovementDelta(Vector3 position, float deltaTime)
 		{
 			return this.To3D(Vector2.ClampMagnitude(this.rvoAgent.CalculatedTargetPoint - this.To2D(position), this.rvoAgent.CalculatedSpeed * deltaTime), 0f);
 		}
 
-		// Token: 0x06002887 RID: 10375 RVA: 0x001B87A0 File Offset: 0x001B69A0
+		// Token: 0x060028DD RID: 10461 RVA: 0x001BE38C File Offset: 0x001BC58C
 		public void SetCollisionNormal(Vector3 normal)
 		{
 			this.rvoAgent.SetCollisionNormal(this.To2D(normal));
 		}
 
-		// Token: 0x06002888 RID: 10376 RVA: 0x001B87B4 File Offset: 0x001B69B4
+		// Token: 0x060028DE RID: 10462 RVA: 0x001BE3A0 File Offset: 0x001BC5A0
 		[Obsolete("Set the 'velocity' property instead")]
 		public void ForceSetVelocity(Vector3 velocity)
 		{
 			this.velocity = velocity;
 		}
 
-		// Token: 0x06002889 RID: 10377 RVA: 0x001B87C0 File Offset: 0x001B69C0
+		// Token: 0x060028DF RID: 10463 RVA: 0x001BE3AC File Offset: 0x001BC5AC
 		public Vector2 To2D(Vector3 p)
 		{
 			float num;
 			return this.To2D(p, out num);
 		}
 
-		// Token: 0x0600288A RID: 10378 RVA: 0x001B87D6 File Offset: 0x001B69D6
+		// Token: 0x060028E0 RID: 10464 RVA: 0x001BE3C2 File Offset: 0x001BC5C2
 		public Vector2 To2D(Vector3 p, out float elevation)
 		{
 			if (this.movementPlane == MovementPlane.XY)
@@ -171,7 +171,7 @@ namespace Pathfinding.RVO
 			return new Vector2(p.x, p.z);
 		}
 
-		// Token: 0x0600288B RID: 10379 RVA: 0x001B8815 File Offset: 0x001B6A15
+		// Token: 0x060028E1 RID: 10465 RVA: 0x001BE401 File Offset: 0x001BC601
 		public Vector3 To3D(Vector2 p, float elevationCoordinate)
 		{
 			if (this.movementPlane == MovementPlane.XY)
@@ -181,7 +181,7 @@ namespace Pathfinding.RVO
 			return new Vector3(p.x, elevationCoordinate, p.y);
 		}
 
-		// Token: 0x0600288C RID: 10380 RVA: 0x001B8846 File Offset: 0x001B6A46
+		// Token: 0x060028E2 RID: 10466 RVA: 0x001BE432 File Offset: 0x001BC632
 		private void OnDisable()
 		{
 			if (this.simulator == null)
@@ -191,7 +191,7 @@ namespace Pathfinding.RVO
 			this.simulator.RemoveAgent(this.rvoAgent);
 		}
 
-		// Token: 0x0600288D RID: 10381 RVA: 0x001B8864 File Offset: 0x001B6A64
+		// Token: 0x060028E3 RID: 10467 RVA: 0x001BE450 File Offset: 0x001BC650
 		private void OnEnable()
 		{
 			this.tr = base.transform;
@@ -212,7 +212,7 @@ namespace Pathfinding.RVO
 			this.rvoAgent.PreCalculationCallback = new Action(this.UpdateAgentProperties);
 		}
 
-		// Token: 0x0600288E RID: 10382 RVA: 0x001B8908 File Offset: 0x001B6B08
+		// Token: 0x060028E4 RID: 10468 RVA: 0x001BE4F4 File Offset: 0x001BC6F4
 		protected void UpdateAgentProperties()
 		{
 			this.rvoAgent.Radius = Mathf.Max(0.001f, this.radius);
@@ -236,7 +236,7 @@ namespace Pathfinding.RVO
 			this.rvoAgent.ElevationCoordinate = 0f;
 		}
 
-		// Token: 0x0600288F RID: 10383 RVA: 0x001B8A45 File Offset: 0x001B6C45
+		// Token: 0x060028E5 RID: 10469 RVA: 0x001BE631 File Offset: 0x001BC831
 		public void SetTarget(Vector3 pos, float speed, float maxSpeed)
 		{
 			if (this.simulator == null)
@@ -250,7 +250,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002890 RID: 10384 RVA: 0x001B8A7C File Offset: 0x001B6C7C
+		// Token: 0x060028E6 RID: 10470 RVA: 0x001BE668 File Offset: 0x001BC868
 		public void Move(Vector3 vel)
 		{
 			if (this.simulator == null)
@@ -266,14 +266,14 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x06002891 RID: 10385 RVA: 0x001B8AF1 File Offset: 0x001B6CF1
+		// Token: 0x060028E7 RID: 10471 RVA: 0x001BE6DD File Offset: 0x001BC8DD
 		[Obsolete("Use transform.position instead, the RVOController can now handle that without any issues.")]
 		public void Teleport(Vector3 pos)
 		{
 			this.tr.position = pos;
 		}
 
-		// Token: 0x06002892 RID: 10386 RVA: 0x001B8B00 File Offset: 0x001B6D00
+		// Token: 0x060028E8 RID: 10472 RVA: 0x001BE6EC File Offset: 0x001BC8EC
 		private void OnDrawGizmos()
 		{
 			Color color = RVOController.GizmoColor * (this.locked ? 0.5f : 1f);
@@ -286,70 +286,70 @@ namespace Pathfinding.RVO
 			Draw.Gizmos.Cylinder(vector + this.To3D(Vector2.zero, this.center - this.height * 0.5f), this.To3D(Vector2.zero, 1f), this.height, this.radius, color);
 		}
 
-		// Token: 0x0400429D RID: 17053
+		// Token: 0x0400437B RID: 17275
 		[Tooltip("Radius of the agent")]
 		public float radius = 0.5f;
 
-		// Token: 0x0400429E RID: 17054
+		// Token: 0x0400437C RID: 17276
 		[Tooltip("Height of the agent. In world units")]
 		public float height = 2f;
 
-		// Token: 0x0400429F RID: 17055
+		// Token: 0x0400437D RID: 17277
 		[Tooltip("A locked unit cannot move. Other units will still avoid it. But avoidance quality is not the best")]
 		public bool locked;
 
-		// Token: 0x040042A0 RID: 17056
+		// Token: 0x0400437E RID: 17278
 		[Tooltip("Automatically set #locked to true when desired velocity is approximately zero")]
 		public bool lockWhenNotMoving;
 
-		// Token: 0x040042A1 RID: 17057
+		// Token: 0x0400437F RID: 17279
 		[Tooltip("How far into the future to look for collisions with other agents (in seconds)")]
 		public float agentTimeHorizon = 2f;
 
-		// Token: 0x040042A2 RID: 17058
+		// Token: 0x04004380 RID: 17280
 		[Tooltip("How far into the future to look for collisions with obstacles (in seconds)")]
 		public float obstacleTimeHorizon = 2f;
 
-		// Token: 0x040042A3 RID: 17059
+		// Token: 0x04004381 RID: 17281
 		[Tooltip("Max number of other agents to take into account.\nA smaller value can reduce CPU load, a higher value can lead to better local avoidance quality.")]
 		public int maxNeighbours = 10;
 
-		// Token: 0x040042A4 RID: 17060
+		// Token: 0x04004382 RID: 17282
 		public RVOLayer layer = RVOLayer.DefaultAgent;
 
-		// Token: 0x040042A5 RID: 17061
+		// Token: 0x04004383 RID: 17283
 		[EnumFlag]
 		public RVOLayer collidesWith = (RVOLayer)(-1);
 
-		// Token: 0x040042A6 RID: 17062
+		// Token: 0x04004384 RID: 17284
 		[HideInInspector]
 		[Obsolete]
 		public float wallAvoidForce = 1f;
 
-		// Token: 0x040042A7 RID: 17063
+		// Token: 0x04004385 RID: 17285
 		[HideInInspector]
 		[Obsolete]
 		public float wallAvoidFalloff = 1f;
 
-		// Token: 0x040042A8 RID: 17064
+		// Token: 0x04004386 RID: 17286
 		[Tooltip("How strongly other agents will avoid this agent")]
 		[Range(0f, 1f)]
 		public float priority = 0.5f;
 
-		// Token: 0x040042A9 RID: 17065
+		// Token: 0x04004387 RID: 17287
 		[Tooltip("Center of the agent relative to the pivot point of this game object")]
 		public float center = 1f;
 
-		// Token: 0x040042AC RID: 17068
+		// Token: 0x0400438A RID: 17290
 		protected Transform tr;
 
-		// Token: 0x040042AD RID: 17069
+		// Token: 0x0400438B RID: 17291
 		protected IAstarAI ai;
 
-		// Token: 0x040042AE RID: 17070
+		// Token: 0x0400438C RID: 17292
 		public bool debug;
 
-		// Token: 0x040042AF RID: 17071
-		private static readonly Color GizmoColor = new Color(0.9411765f, 0.8352941f, 0.11764706f);
+		// Token: 0x0400438D RID: 17293
+		private static readonly Color GizmoColor = new Color(0.9411765f, 0.8352941f, 0.117647059f);
 	}
 }

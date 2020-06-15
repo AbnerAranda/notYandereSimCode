@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E1 RID: 481
+// Token: 0x020001E2 RID: 482
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Night Vision/Night Vision 1")]
 public class CameraFilterPack_Oculus_NightVision1 : MonoBehaviour
 {
 	// Token: 0x17000301 RID: 769
-	// (get) Token: 0x06001077 RID: 4215 RVA: 0x00078831 File Offset: 0x00076A31
+	// (get) Token: 0x0600107E RID: 4222 RVA: 0x00079561 File Offset: 0x00077761
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Oculus_NightVision1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001078 RID: 4216 RVA: 0x00078865 File Offset: 0x00076A65
+	// Token: 0x0600107F RID: 4223 RVA: 0x00079595 File Offset: 0x00077795
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Oculus_NightVision1");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Oculus_NightVision1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001079 RID: 4217 RVA: 0x00078888 File Offset: 0x00076A88
+	// Token: 0x06001080 RID: 4224 RVA: 0x000795B8 File Offset: 0x000777B8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -53,12 +53,12 @@ public class CameraFilterPack_Oculus_NightVision1 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x0600107A RID: 4218 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001081 RID: 4225 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x0600107B RID: 4219 RVA: 0x0007896A File Offset: 0x00076B6A
+	// Token: 0x06001082 RID: 4226 RVA: 0x0007969A File Offset: 0x0007789A
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -67,23 +67,23 @@ public class CameraFilterPack_Oculus_NightVision1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001371 RID: 4977
+	// Token: 0x04001390 RID: 5008
 	public Shader SCShader;
 
-	// Token: 0x04001372 RID: 4978
+	// Token: 0x04001391 RID: 5009
 	private float TimeX = 1f;
 
-	// Token: 0x04001373 RID: 4979
+	// Token: 0x04001392 RID: 5010
 	private float Distortion = 1f;
 
-	// Token: 0x04001374 RID: 4980
+	// Token: 0x04001393 RID: 5011
 	private Material SCMaterial;
 
-	// Token: 0x04001375 RID: 4981
+	// Token: 0x04001394 RID: 5012
 	[Range(0f, 100f)]
 	public float Vignette = 1.3f;
 
-	// Token: 0x04001376 RID: 4982
+	// Token: 0x04001395 RID: 5013
 	[Range(1f, 150f)]
 	public float Linecount = 90f;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000357 RID: 855
+// Token: 0x0200035C RID: 860
 public class PersonaSubtitleScript : MonoBehaviour
 {
-	// Token: 0x060018AF RID: 6319 RVA: 0x000E3768 File Offset: 0x000E1968
+	// Token: 0x060018D0 RID: 6352 RVA: 0x000E5B54 File Offset: 0x000E3D54
 	public void UpdateLabel(PersonaType Persona, float Reputation, float Duration)
 	{
 		switch (Persona)
@@ -64,11 +64,11 @@ public class PersonaSubtitleScript : MonoBehaviour
 			}
 			break;
 		}
-		if (Reputation < -0.33333334f)
+		if (Reputation < -0.333333343f)
 		{
 			this.Subtitle.Label.text = this.SubtitleArray[1];
 		}
-		else if (Reputation > 0.33333334f)
+		else if (Reputation > 0.333333343f)
 		{
 			this.Subtitle.Label.text = this.SubtitleArray[3];
 		}
@@ -79,60 +79,60 @@ public class PersonaSubtitleScript : MonoBehaviour
 		this.Subtitle.Timer = Duration;
 	}
 
-	// Token: 0x0400248F RID: 9359
+	// Token: 0x040024E4 RID: 9444
 	public SubtitleScript Subtitle;
 
-	// Token: 0x04002490 RID: 9360
+	// Token: 0x040024E5 RID: 9445
 	public string[] LonerReactions;
 
-	// Token: 0x04002491 RID: 9361
+	// Token: 0x040024E6 RID: 9446
 	public string[] TeachersPetReactions;
 
-	// Token: 0x04002492 RID: 9362
+	// Token: 0x040024E7 RID: 9447
 	public string[] HeroicReactions;
 
-	// Token: 0x04002493 RID: 9363
+	// Token: 0x040024E8 RID: 9448
 	public string[] CowardReactions;
 
-	// Token: 0x04002494 RID: 9364
+	// Token: 0x040024E9 RID: 9449
 	public string[] EvilReactions;
 
-	// Token: 0x04002495 RID: 9365
+	// Token: 0x040024EA RID: 9450
 	public string[] SocialButterflyReactions;
 
-	// Token: 0x04002496 RID: 9366
+	// Token: 0x040024EB RID: 9451
 	public string[] LovestruckReactions;
 
-	// Token: 0x04002497 RID: 9367
+	// Token: 0x040024EC RID: 9452
 	public string[] DangerousReactions;
 
-	// Token: 0x04002498 RID: 9368
+	// Token: 0x040024ED RID: 9453
 	public string[] StrictReactions;
 
-	// Token: 0x04002499 RID: 9369
+	// Token: 0x040024EE RID: 9454
 	public string[] PhoneAddictReactions;
 
-	// Token: 0x0400249A RID: 9370
+	// Token: 0x040024EF RID: 9455
 	public string[] FragileReactions;
 
-	// Token: 0x0400249B RID: 9371
+	// Token: 0x040024F0 RID: 9456
 	public string[] SpitefulReactions;
 
-	// Token: 0x0400249C RID: 9372
+	// Token: 0x040024F1 RID: 9457
 	public string[] SleuthReactions;
 
-	// Token: 0x0400249D RID: 9373
+	// Token: 0x040024F2 RID: 9458
 	public string[] VengefulReactions;
 
-	// Token: 0x0400249E RID: 9374
+	// Token: 0x040024F3 RID: 9459
 	public string[] ProtectiveReactions;
 
-	// Token: 0x0400249F RID: 9375
+	// Token: 0x040024F4 RID: 9460
 	public string[] ViolentReactions;
 
-	// Token: 0x040024A0 RID: 9376
+	// Token: 0x040024F5 RID: 9461
 	public string[] NemesisReactions;
 
-	// Token: 0x040024A1 RID: 9377
+	// Token: 0x040024F6 RID: 9462
 	public string[] SubtitleArray;
 }

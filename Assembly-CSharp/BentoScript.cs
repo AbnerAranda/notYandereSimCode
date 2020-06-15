@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000DA RID: 218
 public class BentoScript : MonoBehaviour
 {
-	// Token: 0x06000A44 RID: 2628 RVA: 0x000545BF File Offset: 0x000527BF
+	// Token: 0x06000A48 RID: 2632 RVA: 0x00055057 File Offset: 0x00053257
 	private void Start()
 	{
 		if (this.Prompt.Yandere != null)
@@ -13,7 +13,7 @@ public class BentoScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A45 RID: 2629 RVA: 0x000545E8 File Offset: 0x000527E8
+	// Token: 0x06000A49 RID: 2633 RVA: 0x00055080 File Offset: 0x00053280
 	private void Update()
 	{
 		if (this.Yandere == null)
@@ -86,21 +86,21 @@ public class BentoScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A7D RID: 2685
+	// Token: 0x04000A92 RID: 2706
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04000A7E RID: 2686
+	// Token: 0x04000A93 RID: 2707
 	public YandereScript Yandere;
 
-	// Token: 0x04000A7F RID: 2687
+	// Token: 0x04000A94 RID: 2708
 	public Transform PoisonSpot;
 
-	// Token: 0x04000A80 RID: 2688
+	// Token: 0x04000A95 RID: 2709
 	public PromptScript Prompt;
 
-	// Token: 0x04000A81 RID: 2689
+	// Token: 0x04000A96 RID: 2710
 	public int Poison;
 
-	// Token: 0x04000A82 RID: 2690
+	// Token: 0x04000A97 RID: 2711
 	public int ID;
 }

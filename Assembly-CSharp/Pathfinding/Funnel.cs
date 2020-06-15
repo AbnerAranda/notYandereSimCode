@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x020005A1 RID: 1441
+	// Token: 0x020005B7 RID: 1463
 	public class Funnel
 	{
-		// Token: 0x06002737 RID: 10039 RVA: 0x001AC7A0 File Offset: 0x001AA9A0
+		// Token: 0x0600278D RID: 10125 RVA: 0x001B238C File Offset: 0x001B058C
 		public static List<Funnel.PathPart> SplitIntoParts(Path path)
 		{
 			List<GraphNode> path2 = path.path;
@@ -80,7 +80,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x06002738 RID: 10040 RVA: 0x001AC9E4 File Offset: 0x001AABE4
+		// Token: 0x0600278E RID: 10126 RVA: 0x001B25D0 File Offset: 0x001B07D0
 		public static Funnel.FunnelPortals ConstructFunnelPortals(List<GraphNode> nodes, Funnel.PathPart part)
 		{
 			if (nodes == null || nodes.Count == 0)
@@ -118,7 +118,7 @@ namespace Pathfinding
 			};
 		}
 
-		// Token: 0x06002739 RID: 10041 RVA: 0x001ACB44 File Offset: 0x001AAD44
+		// Token: 0x0600278F RID: 10127 RVA: 0x001B2730 File Offset: 0x001B0930
 		public static void ShrinkPortals(Funnel.FunnelPortals portals, float shrink)
 		{
 			if (shrink <= 1E-05f)
@@ -139,7 +139,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600273A RID: 10042 RVA: 0x001ACBE8 File Offset: 0x001AADE8
+		// Token: 0x06002790 RID: 10128 RVA: 0x001B27D4 File Offset: 0x001B09D4
 		private static bool UnwrapHelper(Vector3 portalStart, Vector3 portalEnd, Vector3 prevPoint, Vector3 nextPoint, ref Quaternion mRot, ref Vector3 mOffset)
 		{
 			if (VectorMath.IsColinear(portalStart, portalEnd, nextPoint))
@@ -156,7 +156,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x0600273B RID: 10043 RVA: 0x001ACCA0 File Offset: 0x001AAEA0
+		// Token: 0x06002791 RID: 10129 RVA: 0x001B288C File Offset: 0x001B0A8C
 		public static void Unwrap(Funnel.FunnelPortals funnel, Vector2[] left, Vector2[] right)
 		{
 			int num = 1;
@@ -189,7 +189,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600273C RID: 10044 RVA: 0x001ACE84 File Offset: 0x001AB084
+		// Token: 0x06002792 RID: 10130 RVA: 0x001B2A70 File Offset: 0x001B0C70
 		private static int FixFunnel(Vector2[] left, Vector2[] right, int numPortals)
 		{
 			if (numPortals > left.Length || numPortals > right.Length)
@@ -214,31 +214,31 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x0600273D RID: 10045 RVA: 0x001ACF11 File Offset: 0x001AB111
+		// Token: 0x06002793 RID: 10131 RVA: 0x001B2AFD File Offset: 0x001B0CFD
 		protected static Vector2 ToXZ(Vector3 p)
 		{
 			return new Vector2(p.x, p.z);
 		}
 
-		// Token: 0x0600273E RID: 10046 RVA: 0x001ACF24 File Offset: 0x001AB124
+		// Token: 0x06002794 RID: 10132 RVA: 0x001B2B10 File Offset: 0x001B0D10
 		protected static Vector3 FromXZ(Vector2 p)
 		{
 			return new Vector3(p.x, 0f, p.y);
 		}
 
-		// Token: 0x0600273F RID: 10047 RVA: 0x001ACF3C File Offset: 0x001AB13C
+		// Token: 0x06002795 RID: 10133 RVA: 0x001B2B28 File Offset: 0x001B0D28
 		protected static bool RightOrColinear(Vector2 a, Vector2 b)
 		{
 			return a.x * b.y - b.x * a.y <= 0f;
 		}
 
-		// Token: 0x06002740 RID: 10048 RVA: 0x001ACF63 File Offset: 0x001AB163
+		// Token: 0x06002796 RID: 10134 RVA: 0x001B2B4F File Offset: 0x001B0D4F
 		protected static bool LeftOrColinear(Vector2 a, Vector2 b)
 		{
 			return a.x * b.y - b.x * a.y >= 0f;
 		}
 
-		// Token: 0x06002741 RID: 10049 RVA: 0x001ACF8C File Offset: 0x001AB18C
+		// Token: 0x06002797 RID: 10135 RVA: 0x001B2B78 File Offset: 0x001B0D78
 		public static List<Vector3> Calculate(Funnel.FunnelPortals funnel, bool unwrap, bool splitAtEveryPortal)
 		{
 			if (funnel.left.Count != funnel.right.Count)
@@ -303,7 +303,7 @@ namespace Pathfinding
 			return list2;
 		}
 
-		// Token: 0x06002742 RID: 10050 RVA: 0x001AD1B4 File Offset: 0x001AB3B4
+		// Token: 0x06002798 RID: 10136 RVA: 0x001B2DA0 File Offset: 0x001B0FA0
 		private static void Calculate(Vector2[] left, Vector2[] right, int numPortals, int startIndex, List<int> funnelPath, int maxCorners, out bool lastCorner)
 		{
 			if (left.Length != right.Length)
@@ -365,32 +365,32 @@ namespace Pathfinding
 			funnelPath.Add(numPortals - 1);
 		}
 
-		// Token: 0x0200075E RID: 1886
+		// Token: 0x02000778 RID: 1912
 		public struct FunnelPortals
 		{
-			// Token: 0x04004A19 RID: 18969
+			// Token: 0x04004B04 RID: 19204
 			public List<Vector3> left;
 
-			// Token: 0x04004A1A RID: 18970
+			// Token: 0x04004B05 RID: 19205
 			public List<Vector3> right;
 		}
 
-		// Token: 0x0200075F RID: 1887
+		// Token: 0x02000779 RID: 1913
 		public struct PathPart
 		{
-			// Token: 0x04004A1B RID: 18971
+			// Token: 0x04004B06 RID: 19206
 			public int startIndex;
 
-			// Token: 0x04004A1C RID: 18972
+			// Token: 0x04004B07 RID: 19207
 			public int endIndex;
 
-			// Token: 0x04004A1D RID: 18973
+			// Token: 0x04004B08 RID: 19208
 			public Vector3 startPoint;
 
-			// Token: 0x04004A1E RID: 18974
+			// Token: 0x04004B09 RID: 19209
 			public Vector3 endPoint;
 
-			// Token: 0x04004A1F RID: 18975
+			// Token: 0x04004B0A RID: 19210
 			public bool isLink;
 		}
 	}

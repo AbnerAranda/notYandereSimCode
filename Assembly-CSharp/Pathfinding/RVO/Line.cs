@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C5 RID: 1477
+	// Token: 0x020005DB RID: 1499
 	public struct Line
 	{
-		// Token: 0x04004296 RID: 17046
+		// Token: 0x04004374 RID: 17268
 		public Vector2 point;
 
-		// Token: 0x04004297 RID: 17047
+		// Token: 0x04004375 RID: 17269
 		public Vector2 dir;
 	}
 }

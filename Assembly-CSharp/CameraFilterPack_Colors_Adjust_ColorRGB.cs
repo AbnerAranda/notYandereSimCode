@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000158 RID: 344
+// Token: 0x02000159 RID: 345
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/ColorsAdjust/ColorRGB")]
 public class CameraFilterPack_Colors_Adjust_ColorRGB : MonoBehaviour
 {
 	// Token: 0x17000278 RID: 632
-	// (get) Token: 0x06000D20 RID: 3360 RVA: 0x00069BAF File Offset: 0x00067DAF
+	// (get) Token: 0x06000D27 RID: 3367 RVA: 0x0006A8DF File Offset: 0x00068ADF
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Colors_Adjust_ColorRGB : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D21 RID: 3361 RVA: 0x00069BE3 File Offset: 0x00067DE3
+	// Token: 0x06000D28 RID: 3368 RVA: 0x0006A913 File Offset: 0x00068B13
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Colors_Adjust_ColorRGB");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Colors_Adjust_ColorRGB : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D22 RID: 3362 RVA: 0x00069C04 File Offset: 0x00067E04
+	// Token: 0x06000D29 RID: 3369 RVA: 0x0006A934 File Offset: 0x00068B34
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Colors_Adjust_ColorRGB : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D23 RID: 3363 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D2A RID: 3370 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D24 RID: 3364 RVA: 0x00069CFC File Offset: 0x00067EFC
+	// Token: 0x06000D2B RID: 3371 RVA: 0x0006AA2C File Offset: 0x00068C2C
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Colors_Adjust_ColorRGB : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FD8 RID: 4056
+	// Token: 0x04000FF7 RID: 4087
 	public Shader SCShader;
 
-	// Token: 0x04000FD9 RID: 4057
+	// Token: 0x04000FF8 RID: 4088
 	private float TimeX = 1f;
 
-	// Token: 0x04000FDA RID: 4058
+	// Token: 0x04000FF9 RID: 4089
 	private Material SCMaterial;
 
-	// Token: 0x04000FDB RID: 4059
+	// Token: 0x04000FFA RID: 4090
 	[Range(-2f, 2f)]
 	public float Red;
 
-	// Token: 0x04000FDC RID: 4060
+	// Token: 0x04000FFB RID: 4091
 	[Range(-2f, 2f)]
 	public float Green;
 
-	// Token: 0x04000FDD RID: 4061
+	// Token: 0x04000FFC RID: 4092
 	[Range(-2f, 2f)]
 	public float Blue;
 
-	// Token: 0x04000FDE RID: 4062
+	// Token: 0x04000FFD RID: 4093
 	[Range(-1f, 1f)]
 	public float Brightness;
 }

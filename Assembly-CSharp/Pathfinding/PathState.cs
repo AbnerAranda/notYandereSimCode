@@ -2,18 +2,18 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000554 RID: 1364
+	// Token: 0x0200056A RID: 1386
 	public enum PathState
 	{
-		// Token: 0x04003FFF RID: 16383
+		// Token: 0x040040DD RID: 16605
 		Created,
-		// Token: 0x04004000 RID: 16384
+		// Token: 0x040040DE RID: 16606
 		PathQueue,
-		// Token: 0x04004001 RID: 16385
+		// Token: 0x040040DF RID: 16607
 		Processing,
-		// Token: 0x04004002 RID: 16386
+		// Token: 0x040040E0 RID: 16608
 		ReturnQueue,
-		// Token: 0x04004003 RID: 16387
+		// Token: 0x040040E1 RID: 16609
 		Returned
 	}
 }

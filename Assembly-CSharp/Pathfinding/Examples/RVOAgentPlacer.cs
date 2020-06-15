@@ -4,17 +4,17 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E6 RID: 1510
+	// Token: 0x020005FC RID: 1532
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_r_v_o_agent_placer.php")]
 	public class RVOAgentPlacer : MonoBehaviour
 	{
-		// Token: 0x060029AD RID: 10669 RVA: 0x001C0843 File Offset: 0x001BEA43
+		// Token: 0x06002A03 RID: 10755 RVA: 0x001C642F File Offset: 0x001C462F
 		private IEnumerator Start()
 		{
 			yield return null;
 			for (int i = 0; i < this.agents; i++)
 			{
-				float num = (float)i / (float)this.agents * 3.1415927f * 2f;
+				float num = (float)i / (float)this.agents * 3.14159274f * 2f;
 				Vector3 vector = new Vector3((float)Math.Cos((double)num), 0f, (float)Math.Sin((double)num)) * this.ringSize;
 				Vector3 target = -vector + this.goalOffset;
 				GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.prefab, Vector3.zero, Quaternion.Euler(0f, num + 180f, 0f));
@@ -33,31 +33,31 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x060029AE RID: 10670 RVA: 0x001BF971 File Offset: 0x001BDB71
+		// Token: 0x06002A04 RID: 10756 RVA: 0x001C555D File Offset: 0x001C375D
 		public Color GetColor(float angle)
 		{
-			return AstarMath.HSVToRGB(angle * 57.295776f, 0.8f, 0.6f);
+			return AstarMath.HSVToRGB(angle * 57.2957764f, 0.8f, 0.6f);
 		}
 
-		// Token: 0x0400436C RID: 17260
+		// Token: 0x0400444A RID: 17482
 		public int agents = 100;
 
-		// Token: 0x0400436D RID: 17261
+		// Token: 0x0400444B RID: 17483
 		public float ringSize = 100f;
 
-		// Token: 0x0400436E RID: 17262
+		// Token: 0x0400444C RID: 17484
 		public LayerMask mask;
 
-		// Token: 0x0400436F RID: 17263
+		// Token: 0x0400444D RID: 17485
 		public GameObject prefab;
 
-		// Token: 0x04004370 RID: 17264
+		// Token: 0x0400444E RID: 17486
 		public Vector3 goalOffset;
 
-		// Token: 0x04004371 RID: 17265
+		// Token: 0x0400444F RID: 17487
 		public float repathRate = 1f;
 
-		// Token: 0x04004372 RID: 17266
-		private const float rad2Deg = 57.295776f;
+		// Token: 0x04004450 RID: 17488
+		private const float rad2Deg = 57.2957764f;
 	}
 }

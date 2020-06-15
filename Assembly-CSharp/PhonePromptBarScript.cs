@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200035F RID: 863
+// Token: 0x02000364 RID: 868
 public class PhonePromptBarScript : MonoBehaviour
 {
-	// Token: 0x060018C6 RID: 6342 RVA: 0x000E56B4 File Offset: 0x000E38B4
+	// Token: 0x060018E7 RID: 6375 RVA: 0x000E7B60 File Offset: 0x000E5D60
 	private void Start()
 	{
 		base.transform.localPosition = new Vector3(base.transform.localPosition.x, 630f, base.transform.localPosition.z);
 		this.Panel.enabled = false;
 	}
 
-	// Token: 0x060018C7 RID: 6343 RVA: 0x000E5704 File Offset: 0x000E3904
+	// Token: 0x060018E8 RID: 6376 RVA: 0x000E7BB0 File Offset: 0x000E5DB0
 	private void Update()
 	{
 		float t = Time.unscaledDeltaTime * 10f;
@@ -34,12 +34,12 @@ public class PhonePromptBarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040024F3 RID: 9459
+	// Token: 0x0400254A RID: 9546
 	public UIPanel Panel;
 
-	// Token: 0x040024F4 RID: 9460
+	// Token: 0x0400254B RID: 9547
 	public bool Show;
 
-	// Token: 0x040024F5 RID: 9461
+	// Token: 0x0400254C RID: 9548
 	public UILabel Label;
 }

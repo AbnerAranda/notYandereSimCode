@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002B3 RID: 691
+// Token: 0x020002B6 RID: 694
 public class GentlemanScript : MonoBehaviour
 {
-	// Token: 0x06001441 RID: 5185 RVA: 0x000B31D4 File Offset: 0x000B13D4
+	// Token: 0x06001454 RID: 5204 RVA: 0x000B4D1C File Offset: 0x000B2F1C
 	private void Update()
 	{
 		if (Input.GetButtonDown("RB"))
@@ -19,9 +19,9 @@ public class GentlemanScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001CE2 RID: 7394
+	// Token: 0x04001D27 RID: 7463
 	public YandereScript Yandere;
 
-	// Token: 0x04001CE3 RID: 7395
+	// Token: 0x04001D28 RID: 7464
 	public AudioClip[] Clips;
 }

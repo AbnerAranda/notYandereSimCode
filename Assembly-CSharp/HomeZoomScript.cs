@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002FC RID: 764
+// Token: 0x020002FF RID: 767
 public class HomeZoomScript : MonoBehaviour
 {
-	// Token: 0x06001760 RID: 5984 RVA: 0x000C993C File Offset: 0x000C7B3C
+	// Token: 0x0600177D RID: 6013 RVA: 0x000CBB60 File Offset: 0x000C9D60
 	private void Update()
 	{
 		AudioSource component = base.GetComponent<AudioSource>();
@@ -22,8 +22,8 @@ public class HomeZoomScript : MonoBehaviour
 		}
 		if (this.Zoom)
 		{
-			base.transform.localPosition = new Vector3(base.transform.localPosition.x, Mathf.MoveTowards(base.transform.localPosition.y, 1.5f, Time.deltaTime * 0.033333335f), base.transform.localPosition.z);
-			this.YandereDestination.localPosition = Vector3.MoveTowards(this.YandereDestination.localPosition, new Vector3(-1.5f, 1.5f, 1f), Time.deltaTime * 0.033333335f);
+			base.transform.localPosition = new Vector3(base.transform.localPosition.x, Mathf.MoveTowards(base.transform.localPosition.y, 1.5f, Time.deltaTime * 0.0333333351f), base.transform.localPosition.z);
+			this.YandereDestination.localPosition = Vector3.MoveTowards(this.YandereDestination.localPosition, new Vector3(-1.5f, 1.5f, 1f), Time.deltaTime * 0.0333333351f);
 			component.volume += Time.deltaTime * 0.01f;
 			return;
 		}
@@ -32,9 +32,9 @@ public class HomeZoomScript : MonoBehaviour
 		component.volume = 0f;
 	}
 
-	// Token: 0x0400206F RID: 8303
+	// Token: 0x040020BC RID: 8380
 	public Transform YandereDestination;
 
-	// Token: 0x04002070 RID: 8304
+	// Token: 0x040020BD RID: 8381
 	public bool Zoom;
 }

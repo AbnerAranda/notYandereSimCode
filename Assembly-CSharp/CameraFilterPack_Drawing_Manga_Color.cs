@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000186 RID: 390
+// Token: 0x02000187 RID: 391
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Drawing/Manga_Color")]
 public class CameraFilterPack_Drawing_Manga_Color : MonoBehaviour
 {
 	// Token: 0x170002A6 RID: 678
-	// (get) Token: 0x06000E36 RID: 3638 RVA: 0x0006E222 File Offset: 0x0006C422
+	// (get) Token: 0x06000E3D RID: 3645 RVA: 0x0006EF52 File Offset: 0x0006D152
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Drawing_Manga_Color : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E37 RID: 3639 RVA: 0x0006E256 File Offset: 0x0006C456
+	// Token: 0x06000E3E RID: 3646 RVA: 0x0006EF86 File Offset: 0x0006D186
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Drawing_Manga_Color");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Drawing_Manga_Color : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E38 RID: 3640 RVA: 0x0006E278 File Offset: 0x0006C478
+	// Token: 0x06000E3F RID: 3647 RVA: 0x0006EFA8 File Offset: 0x0006D1A8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_Drawing_Manga_Color : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E39 RID: 3641 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E40 RID: 3648 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E3A RID: 3642 RVA: 0x0006E2FE File Offset: 0x0006C4FE
+	// Token: 0x06000E41 RID: 3649 RVA: 0x0006F02E File Offset: 0x0006D22E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,19 +64,19 @@ public class CameraFilterPack_Drawing_Manga_Color : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010E4 RID: 4324
+	// Token: 0x04001103 RID: 4355
 	public Shader SCShader;
 
-	// Token: 0x040010E5 RID: 4325
+	// Token: 0x04001104 RID: 4356
 	private float TimeX = 1f;
 
-	// Token: 0x040010E6 RID: 4326
+	// Token: 0x04001105 RID: 4357
 	private Material SCMaterial;
 
-	// Token: 0x040010E7 RID: 4327
+	// Token: 0x04001106 RID: 4358
 	[Range(1f, 8f)]
 	public float DotSize = 1.6f;
 
-	// Token: 0x040010E8 RID: 4328
+	// Token: 0x04001107 RID: 4359
 	public static float ChangeDotSize;
 }

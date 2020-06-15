@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x0200026A RID: 618
+// Token: 0x0200026B RID: 619
 public class DiscordVerificationScript : MonoBehaviour
 {
-	// Token: 0x06001349 RID: 4937 RVA: 0x000A419F File Offset: 0x000A239F
+	// Token: 0x06001350 RID: 4944 RVA: 0x000A5153 File Offset: 0x000A3353
 	private void Update()
 	{
 		if (Input.GetKeyDown("q"))

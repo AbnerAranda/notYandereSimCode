@@ -2,10 +2,10 @@
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005DE RID: 1502
+	// Token: 0x020005F4 RID: 1524
 	public static class Memory
 	{
-		// Token: 0x0600296D RID: 10605 RVA: 0x001BE5F0 File Offset: 0x001BC7F0
+		// Token: 0x060029C3 RID: 10691 RVA: 0x001C41DC File Offset: 0x001C23DC
 		public static void MemSet<T>(T[] array, T value, int byteSize) where T : struct
 		{
 			if (array == null)
@@ -29,7 +29,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600296E RID: 10606 RVA: 0x001BE654 File Offset: 0x001BC854
+		// Token: 0x060029C4 RID: 10692 RVA: 0x001C4240 File Offset: 0x001C2440
 		public static void MemSet<T>(T[] array, T value, int totalSize, int byteSize) where T : struct
 		{
 			if (array == null)
@@ -52,7 +52,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600296F RID: 10607 RVA: 0x001BE6B4 File Offset: 0x001BC8B4
+		// Token: 0x060029C5 RID: 10693 RVA: 0x001C42A0 File Offset: 0x001C24A0
 		public static T[] ShrinkArray<T>(T[] arr, int newLength)
 		{
 			newLength = Math.Min(newLength, arr.Length);
@@ -61,7 +61,7 @@ namespace Pathfinding.Util
 			return array;
 		}
 
-		// Token: 0x06002970 RID: 10608 RVA: 0x001BE6DC File Offset: 0x001BC8DC
+		// Token: 0x060029C6 RID: 10694 RVA: 0x001C42C8 File Offset: 0x001C24C8
 		public static void Swap<T>(ref T a, ref T b)
 		{
 			T t = a;

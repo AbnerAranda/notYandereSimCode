@@ -6,13 +6,13 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Language Selection")]
 public class LanguageSelection : MonoBehaviour
 {
-	// Token: 0x06000150 RID: 336 RVA: 0x000138CF File Offset: 0x00011ACF
+	// Token: 0x06000151 RID: 337 RVA: 0x000138F7 File Offset: 0x00011AF7
 	private void Awake()
 	{
 		this.mList = base.GetComponent<UIPopupList>();
 	}
 
-	// Token: 0x06000151 RID: 337 RVA: 0x000138DD File Offset: 0x00011ADD
+	// Token: 0x06000152 RID: 338 RVA: 0x00013905 File Offset: 0x00011B05
 	private void Start()
 	{
 		this.mStarted = true;
@@ -23,7 +23,7 @@ public class LanguageSelection : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06000152 RID: 338 RVA: 0x0001391C File Offset: 0x00011B1C
+	// Token: 0x06000153 RID: 339 RVA: 0x00013944 File Offset: 0x00011B44
 	private void OnEnable()
 	{
 		if (this.mStarted)
@@ -32,7 +32,7 @@ public class LanguageSelection : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000153 RID: 339 RVA: 0x0001392C File Offset: 0x00011B2C
+	// Token: 0x06000154 RID: 340 RVA: 0x00013954 File Offset: 0x00011B54
 	public void Refresh()
 	{
 		if (this.mList != null && Localization.knownLanguages != null)
@@ -49,15 +49,15 @@ public class LanguageSelection : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000154 RID: 340 RVA: 0x00013994 File Offset: 0x00011B94
+	// Token: 0x06000155 RID: 341 RVA: 0x000139BC File Offset: 0x00011BBC
 	private void OnLocalize()
 	{
 		this.Refresh();
 	}
 
-	// Token: 0x040002E4 RID: 740
+	// Token: 0x040002E6 RID: 742
 	private UIPopupList mList;
 
-	// Token: 0x040002E5 RID: 741
+	// Token: 0x040002E7 RID: 743
 	private bool mStarted;
 }

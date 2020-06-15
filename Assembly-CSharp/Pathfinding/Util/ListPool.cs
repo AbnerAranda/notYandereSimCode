@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D1 RID: 1489
+	// Token: 0x020005E7 RID: 1511
 	public static class ListPool<T>
 	{
-		// Token: 0x06002906 RID: 10502 RVA: 0x001BADD0 File Offset: 0x001B8FD0
+		// Token: 0x0600295C RID: 10588 RVA: 0x001C09BC File Offset: 0x001BEBBC
 		public static List<T> Claim()
 		{
 			List<List<T>> obj = ListPool<T>.pool;
@@ -28,7 +28,7 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x06002907 RID: 10503 RVA: 0x001BAE5C File Offset: 0x001B905C
+		// Token: 0x0600295D RID: 10589 RVA: 0x001C0A48 File Offset: 0x001BEC48
 		private static int FindCandidate(List<List<T>> pool, int capacity)
 		{
 			List<T> list = null;
@@ -51,7 +51,7 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x06002908 RID: 10504 RVA: 0x001BAECC File Offset: 0x001B90CC
+		// Token: 0x0600295E RID: 10590 RVA: 0x001C0AB8 File Offset: 0x001BECB8
 		public static List<T> Claim(int capacity)
 		{
 			List<List<T>> obj = ListPool<T>.pool;
@@ -85,7 +85,7 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x06002909 RID: 10505 RVA: 0x001BAF88 File Offset: 0x001B9188
+		// Token: 0x0600295F RID: 10591 RVA: 0x001C0B74 File Offset: 0x001BED74
 		public static void Warmup(int count, int size)
 		{
 			List<List<T>> obj = ListPool<T>.pool;
@@ -103,14 +103,14 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600290A RID: 10506 RVA: 0x001BAFF8 File Offset: 0x001B91F8
+		// Token: 0x06002960 RID: 10592 RVA: 0x001C0BE4 File Offset: 0x001BEDE4
 		public static void Release(ref List<T> list)
 		{
 			ListPool<T>.Release(list);
 			list = null;
 		}
 
-		// Token: 0x0600290B RID: 10507 RVA: 0x001BB004 File Offset: 0x001B9204
+		// Token: 0x06002961 RID: 10593 RVA: 0x001C0BF0 File Offset: 0x001BEDF0
 		public static void Release(List<T> list)
 		{
 			list.ClearFast<T>();
@@ -132,7 +132,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600290C RID: 10508 RVA: 0x001BB080 File Offset: 0x001B9280
+		// Token: 0x06002962 RID: 10594 RVA: 0x001C0C6C File Offset: 0x001BEE6C
 		public static void Clear()
 		{
 			List<List<T>> obj = ListPool<T>.pool;
@@ -142,28 +142,28 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600290D RID: 10509 RVA: 0x001BB0C4 File Offset: 0x001B92C4
+		// Token: 0x06002963 RID: 10595 RVA: 0x001C0CB0 File Offset: 0x001BEEB0
 		public static int GetSize()
 		{
 			return ListPool<T>.pool.Count;
 		}
 
-		// Token: 0x040042FD RID: 17149
+		// Token: 0x040043DB RID: 17371
 		private static readonly List<List<T>> pool = new List<List<T>>();
 
-		// Token: 0x040042FE RID: 17150
+		// Token: 0x040043DC RID: 17372
 		private static readonly List<List<T>> largePool = new List<List<T>>();
 
-		// Token: 0x040042FF RID: 17151
+		// Token: 0x040043DD RID: 17373
 		private static readonly HashSet<List<T>> inPool = new HashSet<List<T>>();
 
-		// Token: 0x04004300 RID: 17152
+		// Token: 0x040043DE RID: 17374
 		private const int MaxCapacitySearchLength = 8;
 
-		// Token: 0x04004301 RID: 17153
+		// Token: 0x040043DF RID: 17375
 		private const int LargeThreshold = 5000;
 
-		// Token: 0x04004302 RID: 17154
+		// Token: 0x040043E0 RID: 17376
 		private const int MaxLargePoolSize = 8;
 	}
 }

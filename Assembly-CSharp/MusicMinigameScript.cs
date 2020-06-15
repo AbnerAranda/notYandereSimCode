@@ -251,7 +251,7 @@ public class MusicMinigameScript : MonoBehaviour
 					this.ChibiSway[5] = false;
 					this.ChibiSway[4] = false;
 				}
-				if (this.MyAudio.time > 33f && this.MyAudio.time < 36.833332f)
+				if (this.MyAudio.time > 33f && this.MyAudio.time < 36.8333321f)
 				{
 					this.ChibiSway[1] = true;
 				}
@@ -259,15 +259,15 @@ public class MusicMinigameScript : MonoBehaviour
 				{
 					this.ChibiSway[1] = true;
 				}
-				else if (this.MyAudio.time > 46.833332f && this.MyAudio.time < 49.75f)
+				else if (this.MyAudio.time > 46.8333321f && this.MyAudio.time < 49.75f)
 				{
 					this.ChibiSway[1] = true;
 				}
-				else if (this.MyAudio.time > 50.383335f && this.MyAudio.time < 53f)
+				else if (this.MyAudio.time > 50.3833351f && this.MyAudio.time < 53f)
 				{
 					this.ChibiSway[1] = true;
 				}
-				else if (this.MyAudio.time > 53.916668f && this.MyAudio.time < 59f)
+				else if (this.MyAudio.time > 53.9166679f && this.MyAudio.time < 59f)
 				{
 					this.ChibiSway[1] = true;
 				}
@@ -279,7 +279,7 @@ public class MusicMinigameScript : MonoBehaviour
 				{
 					this.ChibiSway[1] = true;
 				}
-				else if (this.MyAudio.time > 84.05f && this.MyAudio.time < 88.166664f)
+				else if (this.MyAudio.time > 84.05f && this.MyAudio.time < 88.1666641f)
 				{
 					this.ChibiSway[1] = true;
 				}
@@ -287,7 +287,7 @@ public class MusicMinigameScript : MonoBehaviour
 				{
 					this.ChibiSway[1] = true;
 				}
-				else if (this.MyAudio.time > 101.833336f && this.MyAudio.time < 130.58333f)
+				else if (this.MyAudio.time > 101.833336f && this.MyAudio.time < 130.583328f)
 				{
 					this.ChibiSway[1] = true;
 				}
@@ -626,7 +626,7 @@ public class MusicMinigameScript : MonoBehaviour
 		{
 			rootGameObjects[i].SetActive(true);
 		}
-		SceneManager.UnloadSceneAsync(22);
+		SceneManager.UnloadSceneAsync(23);
 	}
 
 	// Token: 0x04000134 RID: 308

@@ -4,13 +4,13 @@
 [Serializable]
 public class InvStat
 {
-	// Token: 0x0600010C RID: 268 RVA: 0x000127AB File Offset: 0x000109AB
+	// Token: 0x0600010D RID: 269 RVA: 0x000127D3 File Offset: 0x000109D3
 	public static string GetName(InvStat.Identifier i)
 	{
 		return i.ToString();
 	}
 
-	// Token: 0x0600010D RID: 269 RVA: 0x000127BC File Offset: 0x000109BC
+	// Token: 0x0600010E RID: 270 RVA: 0x000127E4 File Offset: 0x000109E4
 	public static string GetDescription(InvStat.Identifier i)
 	{
 		switch (i)
@@ -38,7 +38,7 @@ public class InvStat
 		}
 	}
 
-	// Token: 0x0600010E RID: 270 RVA: 0x0001282C File Offset: 0x00010A2C
+	// Token: 0x0600010F RID: 271 RVA: 0x00012854 File Offset: 0x00010A54
 	public static int CompareArmor(InvStat a, InvStat b)
 	{
 		int num = (int)a.id;
@@ -86,7 +86,7 @@ public class InvStat
 		return 0;
 	}
 
-	// Token: 0x0600010F RID: 271 RVA: 0x000128DC File Offset: 0x00010ADC
+	// Token: 0x06000110 RID: 272 RVA: 0x00012904 File Offset: 0x00010B04
 	public static int CompareWeapon(InvStat a, InvStat b)
 	{
 		int num = (int)a.id;
@@ -134,46 +134,46 @@ public class InvStat
 		return 0;
 	}
 
-	// Token: 0x040002A2 RID: 674
+	// Token: 0x040002A4 RID: 676
 	public InvStat.Identifier id;
 
-	// Token: 0x040002A3 RID: 675
+	// Token: 0x040002A5 RID: 677
 	public InvStat.Modifier modifier;
 
-	// Token: 0x040002A4 RID: 676
+	// Token: 0x040002A6 RID: 678
 	public int amount;
 
-	// Token: 0x0200060B RID: 1547
+	// Token: 0x02000621 RID: 1569
 	public enum Identifier
 	{
-		// Token: 0x04004468 RID: 17512
+		// Token: 0x04004546 RID: 17734
 		Strength,
-		// Token: 0x04004469 RID: 17513
+		// Token: 0x04004547 RID: 17735
 		Constitution,
-		// Token: 0x0400446A RID: 17514
+		// Token: 0x04004548 RID: 17736
 		Agility,
-		// Token: 0x0400446B RID: 17515
+		// Token: 0x04004549 RID: 17737
 		Intelligence,
-		// Token: 0x0400446C RID: 17516
+		// Token: 0x0400454A RID: 17738
 		Damage,
-		// Token: 0x0400446D RID: 17517
+		// Token: 0x0400454B RID: 17739
 		Crit,
-		// Token: 0x0400446E RID: 17518
+		// Token: 0x0400454C RID: 17740
 		Armor,
-		// Token: 0x0400446F RID: 17519
+		// Token: 0x0400454D RID: 17741
 		Health,
-		// Token: 0x04004470 RID: 17520
+		// Token: 0x0400454E RID: 17742
 		Mana,
-		// Token: 0x04004471 RID: 17521
+		// Token: 0x0400454F RID: 17743
 		Other
 	}
 
-	// Token: 0x0200060C RID: 1548
+	// Token: 0x02000622 RID: 1570
 	public enum Modifier
 	{
-		// Token: 0x04004473 RID: 17523
+		// Token: 0x04004551 RID: 17745
 		Added,
-		// Token: 0x04004474 RID: 17524
+		// Token: 0x04004552 RID: 17746
 		Percent
 	}
 }

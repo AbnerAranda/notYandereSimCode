@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200045D RID: 1117
+// Token: 0x02000462 RID: 1122
 public class VoidGoddessScript : MonoBehaviour
 {
-	// Token: 0x06001CF1 RID: 7409 RVA: 0x00156074 File Offset: 0x00154274
+	// Token: 0x06001D16 RID: 7446 RVA: 0x00159578 File Offset: 0x00157778
 	private void Start()
 	{
 		if (GameGlobals.AlphabetMode)
@@ -71,7 +71,7 @@ public class VoidGoddessScript : MonoBehaviour
 		this.UpdatePortraits();
 	}
 
-	// Token: 0x06001CF2 RID: 7410 RVA: 0x001563B8 File Offset: 0x001545B8
+	// Token: 0x06001D17 RID: 7447 RVA: 0x001598BC File Offset: 0x00157ABC
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -79,6 +79,7 @@ public class VoidGoddessScript : MonoBehaviour
 			this.Prompt.Circle[0].fillAmount = 1f;
 			if (!this.Goddess.activeInHierarchy)
 			{
+				this.Prompt.Yandere.Police.Invalid = true;
 				this.Prompt.Label[0].text = "     Pass Judgement";
 				this.Prompt.Label[1].text = "     Dismiss";
 				this.Prompt.Label[2].text = "     Follow";
@@ -385,7 +386,7 @@ public class VoidGoddessScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001CF3 RID: 7411 RVA: 0x00156F14 File Offset: 0x00155114
+	// Token: 0x06001D18 RID: 7448 RVA: 0x0015A430 File Offset: 0x00158630
 	private void UpdateHighlight()
 	{
 		if (this.Row < 0)
@@ -408,7 +409,7 @@ public class VoidGoddessScript : MonoBehaviour
 		this.Selected = 1 + this.Row * 10 + this.Column;
 	}
 
-	// Token: 0x06001CF4 RID: 7412 RVA: 0x00156FC4 File Offset: 0x001551C4
+	// Token: 0x06001D19 RID: 7449 RVA: 0x0015A4E0 File Offset: 0x001586E0
 	private void UpdatePortraits()
 	{
 		this.ID = 1;
@@ -433,78 +434,78 @@ public class VoidGoddessScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003609 RID: 13833
+	// Token: 0x0400367E RID: 13950
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x0400360A RID: 13834
+	// Token: 0x0400367F RID: 13951
 	public InputManagerScript InputManager;
 
-	// Token: 0x0400360B RID: 13835
+	// Token: 0x04003680 RID: 13952
 	public PromptScript Prompt;
 
-	// Token: 0x0400360C RID: 13836
+	// Token: 0x04003681 RID: 13953
 	public GameObject BloodyUniform;
 
-	// Token: 0x0400360D RID: 13837
+	// Token: 0x04003682 RID: 13954
 	public GameObject SeveredLimb;
 
-	// Token: 0x0400360E RID: 13838
+	// Token: 0x04003683 RID: 13955
 	public GameObject NewPortrait;
 
-	// Token: 0x0400360F RID: 13839
+	// Token: 0x04003684 RID: 13956
 	public GameObject BloodPool;
 
-	// Token: 0x04003610 RID: 13840
+	// Token: 0x04003685 RID: 13957
 	public GameObject Portrait;
 
-	// Token: 0x04003611 RID: 13841
+	// Token: 0x04003686 RID: 13958
 	public GameObject Goddess;
 
-	// Token: 0x04003612 RID: 13842
+	// Token: 0x04003687 RID: 13959
 	public Transform BloodParent;
 
-	// Token: 0x04003613 RID: 13843
+	// Token: 0x04003688 RID: 13960
 	public Transform Highlight;
 
-	// Token: 0x04003614 RID: 13844
+	// Token: 0x04003689 RID: 13961
 	public Transform Window;
 
-	// Token: 0x04003615 RID: 13845
+	// Token: 0x0400368A RID: 13962
 	public Transform Head;
 
-	// Token: 0x04003616 RID: 13846
+	// Token: 0x0400368B RID: 13963
 	public UITexture[] Portraits;
 
-	// Token: 0x04003617 RID: 13847
+	// Token: 0x0400368C RID: 13964
 	public Animation[] Legs;
 
-	// Token: 0x04003618 RID: 13848
+	// Token: 0x0400368D RID: 13965
 	public bool PassingJudgement;
 
-	// Token: 0x04003619 RID: 13849
+	// Token: 0x0400368E RID: 13966
 	public bool Disabled;
 
-	// Token: 0x0400361A RID: 13850
+	// Token: 0x0400368F RID: 13967
 	public bool Follow;
 
-	// Token: 0x0400361B RID: 13851
+	// Token: 0x04003690 RID: 13968
 	public int Selected;
 
-	// Token: 0x0400361C RID: 13852
+	// Token: 0x04003691 RID: 13969
 	public int Column;
 
-	// Token: 0x0400361D RID: 13853
+	// Token: 0x04003692 RID: 13970
 	public int Row;
 
-	// Token: 0x0400361E RID: 13854
+	// Token: 0x04003693 RID: 13971
 	public int ID;
 
-	// Token: 0x0400361F RID: 13855
+	// Token: 0x04003694 RID: 13972
 	public Texture Headmaster;
 
-	// Token: 0x04003620 RID: 13856
+	// Token: 0x04003695 RID: 13973
 	public Texture Counselor;
 
-	// Token: 0x04003621 RID: 13857
+	// Token: 0x04003696 RID: 13974
 	public Texture Infochan;
 }

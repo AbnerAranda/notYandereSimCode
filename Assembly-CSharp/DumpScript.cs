@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000275 RID: 629
+// Token: 0x02000276 RID: 630
 public class DumpScript : MonoBehaviour
 {
-	// Token: 0x0600136F RID: 4975 RVA: 0x000A6F28 File Offset: 0x000A5128
+	// Token: 0x06001377 RID: 4983 RVA: 0x000A7FC0 File Offset: 0x000A61C0
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -15,12 +15,12 @@ public class DumpScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001A8E RID: 6798
+	// Token: 0x04001AAE RID: 6830
 	public SkinnedMeshRenderer MyRenderer;
 
-	// Token: 0x04001A8F RID: 6799
+	// Token: 0x04001AAF RID: 6831
 	public IncineratorScript Incinerator;
 
-	// Token: 0x04001A90 RID: 6800
+	// Token: 0x04001AB0 RID: 6832
 	public float Timer;
 }

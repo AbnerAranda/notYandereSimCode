@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000241 RID: 577
+// Token: 0x02000242 RID: 578
 public class CollectibleScript : MonoBehaviour
 {
-	// Token: 0x0600126C RID: 4716 RVA: 0x00086A20 File Offset: 0x00084C20
+	// Token: 0x06001273 RID: 4723 RVA: 0x00087740 File Offset: 0x00085940
 	private void Start()
 	{
 		if ((this.CollectibleType == CollectibleType.BasementTape && CollectibleGlobals.GetBasementTapeCollected(this.ID)) || (this.CollectibleType == CollectibleType.Manga && CollectibleGlobals.GetMangaCollected(this.ID)) || (this.CollectibleType == CollectibleType.Tape && CollectibleGlobals.GetTapeCollected(this.ID)) || (this.CollectibleType == CollectibleType.Panty && CollectibleGlobals.GetPantyPurchased(11)))
@@ -18,7 +18,7 @@ public class CollectibleScript : MonoBehaviour
 	}
 
 	// Token: 0x17000344 RID: 836
-	// (get) Token: 0x0600126D RID: 4717 RVA: 0x00086AAC File Offset: 0x00084CAC
+	// (get) Token: 0x06001274 RID: 4724 RVA: 0x000877CC File Offset: 0x000859CC
 	public CollectibleType CollectibleType
 	{
 		get
@@ -52,7 +52,7 @@ public class CollectibleScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600126E RID: 4718 RVA: 0x00086B40 File Offset: 0x00084D40
+	// Token: 0x06001275 RID: 4725 RVA: 0x00087860 File Offset: 0x00085A60
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -89,15 +89,15 @@ public class CollectibleScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400165A RID: 5722
+	// Token: 0x04001679 RID: 5753
 	public PromptScript Prompt;
 
-	// Token: 0x0400165B RID: 5723
+	// Token: 0x0400167A RID: 5754
 	public string Name = string.Empty;
 
-	// Token: 0x0400165C RID: 5724
+	// Token: 0x0400167B RID: 5755
 	public int Type;
 
-	// Token: 0x0400165D RID: 5725
+	// Token: 0x0400167C RID: 5756
 	public int ID;
 }

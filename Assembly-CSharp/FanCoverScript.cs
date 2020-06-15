@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200029F RID: 671
+// Token: 0x020002A1 RID: 673
 public class FanCoverScript : MonoBehaviour
 {
-	// Token: 0x06001401 RID: 5121 RVA: 0x000AE9F0 File Offset: 0x000ACBF0
+	// Token: 0x0600140F RID: 5135 RVA: 0x000B027C File Offset: 0x000AE47C
 	private void Start()
 	{
 		if (this.StudentManager.Students[this.RivalID] == null)
@@ -17,7 +17,7 @@ public class FanCoverScript : MonoBehaviour
 		this.Rival = this.StudentManager.Students[this.RivalID];
 	}
 
-	// Token: 0x06001402 RID: 5122 RVA: 0x000AEA50 File Offset: 0x000ACC50
+	// Token: 0x06001410 RID: 5136 RVA: 0x000B02DC File Offset: 0x000AE4DC
 	private void Update()
 	{
 		if (Vector3.Distance(base.transform.position, this.Yandere.transform.position) < 2f)
@@ -127,63 +127,63 @@ public class FanCoverScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C0D RID: 7181
+	// Token: 0x04001C45 RID: 7237
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04001C0E RID: 7182
+	// Token: 0x04001C46 RID: 7238
 	public YandereScript Yandere;
 
-	// Token: 0x04001C0F RID: 7183
+	// Token: 0x04001C47 RID: 7239
 	public PromptScript Prompt;
 
-	// Token: 0x04001C10 RID: 7184
+	// Token: 0x04001C48 RID: 7240
 	public StudentScript Rival;
 
-	// Token: 0x04001C11 RID: 7185
+	// Token: 0x04001C49 RID: 7241
 	public SM_rotateThis Fan;
 
-	// Token: 0x04001C12 RID: 7186
+	// Token: 0x04001C4A RID: 7242
 	public ParticleSystem BloodEffects;
 
-	// Token: 0x04001C13 RID: 7187
+	// Token: 0x04001C4B RID: 7243
 	public Projector BloodProjector;
 
-	// Token: 0x04001C14 RID: 7188
+	// Token: 0x04001C4C RID: 7244
 	public Rigidbody MyRigidbody;
 
-	// Token: 0x04001C15 RID: 7189
+	// Token: 0x04001C4D RID: 7245
 	public Transform MurderSpot;
 
-	// Token: 0x04001C16 RID: 7190
+	// Token: 0x04001C4E RID: 7246
 	public GameObject Explosion;
 
-	// Token: 0x04001C17 RID: 7191
+	// Token: 0x04001C4F RID: 7247
 	public GameObject OfferHelp;
 
-	// Token: 0x04001C18 RID: 7192
+	// Token: 0x04001C50 RID: 7248
 	public GameObject Smoke;
 
-	// Token: 0x04001C19 RID: 7193
+	// Token: 0x04001C51 RID: 7249
 	public AudioClip RivalReaction;
 
-	// Token: 0x04001C1A RID: 7194
+	// Token: 0x04001C52 RID: 7250
 	public AudioSource FanSFX;
 
-	// Token: 0x04001C1B RID: 7195
+	// Token: 0x04001C53 RID: 7251
 	public Texture[] YandereBloodTextures;
 
-	// Token: 0x04001C1C RID: 7196
+	// Token: 0x04001C54 RID: 7252
 	public Texture[] BloodTexture;
 
-	// Token: 0x04001C1D RID: 7197
+	// Token: 0x04001C55 RID: 7253
 	public bool Reacted;
 
-	// Token: 0x04001C1E RID: 7198
+	// Token: 0x04001C56 RID: 7254
 	public float Timer;
 
-	// Token: 0x04001C1F RID: 7199
+	// Token: 0x04001C57 RID: 7255
 	public int RivalID = 11;
 
-	// Token: 0x04001C20 RID: 7200
+	// Token: 0x04001C58 RID: 7256
 	public int Phase;
 }

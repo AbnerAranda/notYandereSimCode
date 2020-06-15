@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000300 RID: 768
+// Token: 0x02000303 RID: 771
 public class IncineratorScript : MonoBehaviour
 {
-	// Token: 0x06001769 RID: 5993 RVA: 0x000C9CB0 File Offset: 0x000C7EB0
+	// Token: 0x06001786 RID: 6022 RVA: 0x000CBED4 File Offset: 0x000CA0D4
 	private void Start()
 	{
 		this.Panel.SetActive(false);
 		this.Prompt.enabled = true;
 	}
 
-	// Token: 0x0600176A RID: 5994 RVA: 0x000C9CCC File Offset: 0x000C7ECC
+	// Token: 0x06001787 RID: 6023 RVA: 0x000CBEF0 File Offset: 0x000CA0F0
 	private void Update()
 	{
 		AudioSource component = base.GetComponent<AudioSource>();
@@ -227,7 +227,7 @@ public class IncineratorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600176B RID: 5995 RVA: 0x000CA734 File Offset: 0x000C8934
+	// Token: 0x06001788 RID: 6024 RVA: 0x000CC958 File Offset: 0x000CAB58
 	public void SetVictimsMissing()
 	{
 		int[] confirmedDead = this.ConfirmedDead;
@@ -237,102 +237,102 @@ public class IncineratorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002075 RID: 8309
+	// Token: 0x040020C2 RID: 8386
 	public YandereScript Yandere;
 
-	// Token: 0x04002076 RID: 8310
+	// Token: 0x040020C3 RID: 8387
 	public PromptScript Prompt;
 
-	// Token: 0x04002077 RID: 8311
+	// Token: 0x040020C4 RID: 8388
 	public ClockScript Clock;
 
-	// Token: 0x04002078 RID: 8312
+	// Token: 0x040020C5 RID: 8389
 	public AudioClip IncineratorActivate;
 
-	// Token: 0x04002079 RID: 8313
+	// Token: 0x040020C6 RID: 8390
 	public AudioClip IncineratorClose;
 
-	// Token: 0x0400207A RID: 8314
+	// Token: 0x040020C7 RID: 8391
 	public AudioClip IncineratorOpen;
 
-	// Token: 0x0400207B RID: 8315
+	// Token: 0x040020C8 RID: 8392
 	public AudioSource FlameSound;
 
-	// Token: 0x0400207C RID: 8316
+	// Token: 0x040020C9 RID: 8393
 	public ParticleSystem Flames;
 
-	// Token: 0x0400207D RID: 8317
+	// Token: 0x040020CA RID: 8394
 	public ParticleSystem Smoke;
 
-	// Token: 0x0400207E RID: 8318
+	// Token: 0x040020CB RID: 8395
 	public Transform DumpPoint;
 
-	// Token: 0x0400207F RID: 8319
+	// Token: 0x040020CC RID: 8396
 	public Transform RightDoor;
 
-	// Token: 0x04002080 RID: 8320
+	// Token: 0x040020CD RID: 8397
 	public Transform LeftDoor;
 
-	// Token: 0x04002081 RID: 8321
+	// Token: 0x040020CE RID: 8398
 	public GameObject Panel;
 
-	// Token: 0x04002082 RID: 8322
+	// Token: 0x040020CF RID: 8399
 	public UILabel TimeLabel;
 
-	// Token: 0x04002083 RID: 8323
+	// Token: 0x040020D0 RID: 8400
 	public UISprite Circle;
 
-	// Token: 0x04002084 RID: 8324
+	// Token: 0x040020D1 RID: 8401
 	public bool YandereHoldingEvidence;
 
-	// Token: 0x04002085 RID: 8325
+	// Token: 0x040020D2 RID: 8402
 	public bool Ready;
 
-	// Token: 0x04002086 RID: 8326
+	// Token: 0x040020D3 RID: 8403
 	public bool Open;
 
-	// Token: 0x04002087 RID: 8327
+	// Token: 0x040020D4 RID: 8404
 	public int DestroyedEvidence;
 
-	// Token: 0x04002088 RID: 8328
+	// Token: 0x040020D5 RID: 8405
 	public int BloodyClothing;
 
-	// Token: 0x04002089 RID: 8329
+	// Token: 0x040020D6 RID: 8406
 	public int MurderWeapons;
 
-	// Token: 0x0400208A RID: 8330
+	// Token: 0x040020D7 RID: 8407
 	public int BodyParts;
 
-	// Token: 0x0400208B RID: 8331
+	// Token: 0x040020D8 RID: 8408
 	public int Corpses;
 
-	// Token: 0x0400208C RID: 8332
+	// Token: 0x040020D9 RID: 8409
 	public int Victims;
 
-	// Token: 0x0400208D RID: 8333
+	// Token: 0x040020DA RID: 8410
 	public int Limbs;
 
-	// Token: 0x0400208E RID: 8334
+	// Token: 0x040020DB RID: 8411
 	public int ID;
 
-	// Token: 0x0400208F RID: 8335
+	// Token: 0x040020DC RID: 8412
 	public float OpenTimer;
 
-	// Token: 0x04002090 RID: 8336
+	// Token: 0x040020DD RID: 8413
 	public float Timer;
 
-	// Token: 0x04002091 RID: 8337
+	// Token: 0x040020DE RID: 8414
 	public int[] EvidenceList;
 
-	// Token: 0x04002092 RID: 8338
+	// Token: 0x040020DF RID: 8415
 	public int[] CorpseList;
 
-	// Token: 0x04002093 RID: 8339
+	// Token: 0x040020E0 RID: 8416
 	public int[] VictimList;
 
-	// Token: 0x04002094 RID: 8340
+	// Token: 0x040020E1 RID: 8417
 	public int[] LimbList;
 
-	// Token: 0x04002095 RID: 8341
+	// Token: 0x040020E2 RID: 8418
 	public int[] ConfirmedDead;
 }

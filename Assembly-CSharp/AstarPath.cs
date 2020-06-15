@@ -1451,12 +1451,12 @@ public class AstarPath : VersionedMonoBehaviour
 	// Token: 0x0400003A RID: 58
 	private static int waitForPathDepth = 0;
 
-	// Token: 0x020005FA RID: 1530
+	// Token: 0x02000610 RID: 1552
 	public enum AstarDistribution
 	{
-		// Token: 0x0400440D RID: 17421
+		// Token: 0x040044EB RID: 17643
 		WebsiteDownload,
-		// Token: 0x0400440E RID: 17422
+		// Token: 0x040044EC RID: 17644
 		AssetStore
 	}
 }

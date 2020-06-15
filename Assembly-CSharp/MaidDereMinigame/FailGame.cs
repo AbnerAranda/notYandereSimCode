@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace MaidDereMinigame
 {
-	// Token: 0x02000504 RID: 1284
+	// Token: 0x02000514 RID: 1300
 	public class FailGame : MonoBehaviour
 	{
-		// Token: 0x170004CF RID: 1231
-		// (get) Token: 0x0600202D RID: 8237 RVA: 0x0018592C File Offset: 0x00183B2C
+		// Token: 0x170004D5 RID: 1237
+		// (get) Token: 0x0600206F RID: 8303 RVA: 0x0018AE1C File Offset: 0x0018901C
 		public static FailGame Instance
 		{
 			get
@@ -21,7 +21,7 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x0600202E RID: 8238 RVA: 0x0018594C File Offset: 0x00183B4C
+		// Token: 0x06002070 RID: 8304 RVA: 0x0018AE3C File Offset: 0x0018903C
 		private void Awake()
 		{
 			this.spriteRenderer = base.GetComponent<SpriteRenderer>();
@@ -29,7 +29,7 @@ namespace MaidDereMinigame
 			this.targetTransitionTime = GameController.Instance.activeDifficultyVariables.transitionTime * this.fadeMultiplier;
 		}
 
-		// Token: 0x0600202F RID: 8239 RVA: 0x00185998 File Offset: 0x00183B98
+		// Token: 0x06002071 RID: 8305 RVA: 0x0018AE88 File Offset: 0x00189088
 		public static void GameFailed()
 		{
 			FailGame.Instance.StartCoroutine(FailGame.Instance.GameFailedRoutine());
@@ -37,7 +37,7 @@ namespace MaidDereMinigame
 			SFXController.PlaySound(SFXController.Sounds.GameFail);
 		}
 
-		// Token: 0x06002030 RID: 8240 RVA: 0x001859CA File Offset: 0x00183BCA
+		// Token: 0x06002072 RID: 8306 RVA: 0x0018AEBA File Offset: 0x001890BA
 		private IEnumerator GameFailedRoutine()
 		{
 			UnityEngine.Object.FindObjectOfType<InteractionMenu>().gameObject.SetActive(false);
@@ -64,7 +64,7 @@ namespace MaidDereMinigame
 			yield break;
 		}
 
-		// Token: 0x06002031 RID: 8241 RVA: 0x001859D9 File Offset: 0x00183BD9
+		// Token: 0x06002073 RID: 8307 RVA: 0x0018AEC9 File Offset: 0x001890C9
 		private IEnumerator SlowPitch()
 		{
 			GameStarter starter = UnityEngine.Object.FindObjectOfType<GameStarter>();
@@ -79,22 +79,22 @@ namespace MaidDereMinigame
 			yield break;
 		}
 
-		// Token: 0x04003DE1 RID: 15841
+		// Token: 0x04003E91 RID: 16017
 		private static FailGame instance;
 
-		// Token: 0x04003DE2 RID: 15842
+		// Token: 0x04003E92 RID: 16018
 		public float fadeMultiplier = 2f;
 
-		// Token: 0x04003DE3 RID: 15843
+		// Token: 0x04003E93 RID: 16019
 		private SpriteRenderer spriteRenderer;
 
-		// Token: 0x04003DE4 RID: 15844
+		// Token: 0x04003E94 RID: 16020
 		private SpriteRenderer textRenderer;
 
-		// Token: 0x04003DE5 RID: 15845
+		// Token: 0x04003E95 RID: 16021
 		private float targetTransitionTime;
 
-		// Token: 0x04003DE6 RID: 15846
+		// Token: 0x04003E96 RID: 16022
 		private float transitionTime;
 	}
 }

@@ -2,21 +2,21 @@
 
 namespace UnityEngine.PostProcessing
 {
-	// Token: 0x020004CF RID: 1231
+	// Token: 0x020004DF RID: 1247
 	public class PostProcessingContext
 	{
-		// Token: 0x170004B8 RID: 1208
-		// (get) Token: 0x06001F21 RID: 7969 RVA: 0x0017F170 File Offset: 0x0017D370
-		// (set) Token: 0x06001F22 RID: 7970 RVA: 0x0017F178 File Offset: 0x0017D378
+		// Token: 0x170004BE RID: 1214
+		// (get) Token: 0x06001F63 RID: 8035 RVA: 0x0018463C File Offset: 0x0018283C
+		// (set) Token: 0x06001F64 RID: 8036 RVA: 0x00184644 File Offset: 0x00182844
 		public bool interrupted { get; private set; }
 
-		// Token: 0x06001F23 RID: 7971 RVA: 0x0017F181 File Offset: 0x0017D381
+		// Token: 0x06001F65 RID: 8037 RVA: 0x0018464D File Offset: 0x0018284D
 		public void Interrupt()
 		{
 			this.interrupted = true;
 		}
 
-		// Token: 0x06001F24 RID: 7972 RVA: 0x0017F18A File Offset: 0x0017D38A
+		// Token: 0x06001F66 RID: 8038 RVA: 0x00184656 File Offset: 0x00182856
 		public PostProcessingContext Reset()
 		{
 			this.profile = null;
@@ -27,8 +27,8 @@ namespace UnityEngine.PostProcessing
 			return this;
 		}
 
-		// Token: 0x170004B9 RID: 1209
-		// (get) Token: 0x06001F25 RID: 7973 RVA: 0x0017F1B0 File Offset: 0x0017D3B0
+		// Token: 0x170004BF RID: 1215
+		// (get) Token: 0x06001F67 RID: 8039 RVA: 0x0018467C File Offset: 0x0018287C
 		public bool isGBufferAvailable
 		{
 			get
@@ -37,8 +37,8 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x170004BA RID: 1210
-		// (get) Token: 0x06001F26 RID: 7974 RVA: 0x0017F1C0 File Offset: 0x0017D3C0
+		// Token: 0x170004C0 RID: 1216
+		// (get) Token: 0x06001F68 RID: 8040 RVA: 0x0018468C File Offset: 0x0018288C
 		public bool isHdr
 		{
 			get
@@ -47,8 +47,8 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x170004BB RID: 1211
-		// (get) Token: 0x06001F27 RID: 7975 RVA: 0x0017F1CD File Offset: 0x0017D3CD
+		// Token: 0x170004C1 RID: 1217
+		// (get) Token: 0x06001F69 RID: 8041 RVA: 0x00184699 File Offset: 0x00182899
 		public int width
 		{
 			get
@@ -57,8 +57,8 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x170004BC RID: 1212
-		// (get) Token: 0x06001F28 RID: 7976 RVA: 0x0017F1DA File Offset: 0x0017D3DA
+		// Token: 0x170004C2 RID: 1218
+		// (get) Token: 0x06001F6A RID: 8042 RVA: 0x001846A6 File Offset: 0x001828A6
 		public int height
 		{
 			get
@@ -67,8 +67,8 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x170004BD RID: 1213
-		// (get) Token: 0x06001F29 RID: 7977 RVA: 0x0017F1E7 File Offset: 0x0017D3E7
+		// Token: 0x170004C3 RID: 1219
+		// (get) Token: 0x06001F6B RID: 8043 RVA: 0x001846B3 File Offset: 0x001828B3
 		public Rect viewport
 		{
 			get
@@ -77,16 +77,16 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x04003CA8 RID: 15528
+		// Token: 0x04003D58 RID: 15704
 		public PostProcessingProfile profile;
 
-		// Token: 0x04003CA9 RID: 15529
+		// Token: 0x04003D59 RID: 15705
 		public Camera camera;
 
-		// Token: 0x04003CAA RID: 15530
+		// Token: 0x04003D5A RID: 15706
 		public MaterialFactory materialFactory;
 
-		// Token: 0x04003CAB RID: 15531
+		// Token: 0x04003D5B RID: 15707
 		public RenderTextureFactory renderTextureFactory;
 	}
 }

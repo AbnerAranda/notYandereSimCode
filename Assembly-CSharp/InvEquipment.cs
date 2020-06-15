@@ -6,7 +6,7 @@ using UnityEngine;
 public class InvEquipment : MonoBehaviour
 {
 	// Token: 0x17000015 RID: 21
-	// (get) Token: 0x060000FB RID: 251 RVA: 0x000121D8 File Offset: 0x000103D8
+	// (get) Token: 0x060000FC RID: 252 RVA: 0x00012200 File Offset: 0x00010400
 	public InvGameItem[] equippedItems
 	{
 		get
@@ -15,7 +15,7 @@ public class InvEquipment : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000FC RID: 252 RVA: 0x000121E0 File Offset: 0x000103E0
+	// Token: 0x060000FD RID: 253 RVA: 0x00012208 File Offset: 0x00010408
 	public InvGameItem Replace(InvBaseItem.Slot slot, InvGameItem item)
 	{
 		InvBaseItem invBaseItem = (item != null) ? item.baseItem : null;
@@ -64,7 +64,7 @@ public class InvEquipment : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x060000FD RID: 253 RVA: 0x000122E0 File Offset: 0x000104E0
+	// Token: 0x060000FE RID: 254 RVA: 0x00012308 File Offset: 0x00010508
 	public InvGameItem Equip(InvGameItem item)
 	{
 		if (item != null)
@@ -79,7 +79,7 @@ public class InvEquipment : MonoBehaviour
 		return item;
 	}
 
-	// Token: 0x060000FE RID: 254 RVA: 0x00012324 File Offset: 0x00010524
+	// Token: 0x060000FF RID: 255 RVA: 0x0001234C File Offset: 0x0001054C
 	public InvGameItem Unequip(InvGameItem item)
 	{
 		if (item != null)
@@ -93,13 +93,13 @@ public class InvEquipment : MonoBehaviour
 		return item;
 	}
 
-	// Token: 0x060000FF RID: 255 RVA: 0x0001234D File Offset: 0x0001054D
+	// Token: 0x06000100 RID: 256 RVA: 0x00012375 File Offset: 0x00010575
 	public InvGameItem Unequip(InvBaseItem.Slot slot)
 	{
 		return this.Replace(slot, null);
 	}
 
-	// Token: 0x06000100 RID: 256 RVA: 0x00012358 File Offset: 0x00010558
+	// Token: 0x06000101 RID: 257 RVA: 0x00012380 File Offset: 0x00010580
 	public bool HasEquipped(InvGameItem item)
 	{
 		if (this.mItems != null)
@@ -118,7 +118,7 @@ public class InvEquipment : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000101 RID: 257 RVA: 0x00012390 File Offset: 0x00010590
+	// Token: 0x06000102 RID: 258 RVA: 0x000123B8 File Offset: 0x000105B8
 	public bool HasEquipped(InvBaseItem.Slot slot)
 	{
 		if (this.mItems != null)
@@ -138,7 +138,7 @@ public class InvEquipment : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000102 RID: 258 RVA: 0x000123D8 File Offset: 0x000105D8
+	// Token: 0x06000103 RID: 259 RVA: 0x00012400 File Offset: 0x00010600
 	public InvGameItem GetItem(InvBaseItem.Slot slot)
 	{
 		if (slot != InvBaseItem.Slot.None)
@@ -152,9 +152,9 @@ public class InvEquipment : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0400029C RID: 668
+	// Token: 0x0400029E RID: 670
 	private InvGameItem[] mItems;
 
-	// Token: 0x0400029D RID: 669
+	// Token: 0x0400029F RID: 671
 	private InvAttachmentPoint[] mAttachments;
 }

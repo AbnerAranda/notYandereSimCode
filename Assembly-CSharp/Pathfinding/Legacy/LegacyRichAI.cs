@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Pathfinding.Legacy
 {
-	// Token: 0x020005A8 RID: 1448
+	// Token: 0x020005BE RID: 1470
 	[RequireComponent(typeof(Seeker))]
 	[AddComponentMenu("Pathfinding/Legacy/AI/Legacy RichAI (3D, for navmesh)")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_legacy_1_1_legacy_rich_a_i.php")]
 	public class LegacyRichAI : RichAI
 	{
-		// Token: 0x06002769 RID: 10089 RVA: 0x001AE4D7 File Offset: 0x001AC6D7
+		// Token: 0x060027BF RID: 10175 RVA: 0x001B40C3 File Offset: 0x001B22C3
 		protected override void Awake()
 		{
 			base.Awake();
@@ -24,7 +24,7 @@ namespace Pathfinding.Legacy
 			}
 		}
 
-		// Token: 0x0600276A RID: 10090 RVA: 0x001AE518 File Offset: 0x001AC718
+		// Token: 0x060027C0 RID: 10176 RVA: 0x001B4104 File Offset: 0x001B2304
 		protected override void Update()
 		{
 			LegacyRichAI.deltaTime = Mathf.Min(Time.smoothDeltaTime * 2f, Time.deltaTime);
@@ -184,7 +184,7 @@ namespace Pathfinding.Legacy
 			this.lastDeltaTime = Time.deltaTime;
 		}
 
-		// Token: 0x0600276B RID: 10091 RVA: 0x001AEC7C File Offset: 0x001ACE7C
+		// Token: 0x060027C1 RID: 10177 RVA: 0x001B4868 File Offset: 0x001B2A68
 		private new Vector3 RaycastPosition(Vector3 position, float lasty)
 		{
 			if (this.raycastingForGroundPlacement)
@@ -200,7 +200,7 @@ namespace Pathfinding.Legacy
 			return position;
 		}
 
-		// Token: 0x0600276C RID: 10092 RVA: 0x001AECFC File Offset: 0x001ACEFC
+		// Token: 0x060027C2 RID: 10178 RVA: 0x001B48E8 File Offset: 0x001B2AE8
 		private bool RotateTowards(Vector3 trotdir)
 		{
 			trotdir.y = 0f;
@@ -216,22 +216,22 @@ namespace Pathfinding.Legacy
 			return false;
 		}
 
-		// Token: 0x040041D6 RID: 16854
+		// Token: 0x040042B4 RID: 17076
 		public bool preciseSlowdown = true;
 
-		// Token: 0x040041D7 RID: 16855
+		// Token: 0x040042B5 RID: 17077
 		public bool raycastingForGroundPlacement;
 
-		// Token: 0x040041D8 RID: 16856
+		// Token: 0x040042B6 RID: 17078
 		private new Vector3 velocity;
 
-		// Token: 0x040041D9 RID: 16857
+		// Token: 0x040042B7 RID: 17079
 		private Vector3 lastTargetPoint;
 
-		// Token: 0x040041DA RID: 16858
+		// Token: 0x040042B8 RID: 17080
 		private Vector3 currentTargetDirection;
 
-		// Token: 0x040041DB RID: 16859
+		// Token: 0x040042B9 RID: 17081
 		private static float deltaTime;
 	}
 }

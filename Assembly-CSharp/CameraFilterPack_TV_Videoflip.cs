@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200020E RID: 526
+// Token: 0x0200020F RID: 527
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Videoflip")]
 public class CameraFilterPack_TV_Videoflip : MonoBehaviour
 {
 	// Token: 0x1700032E RID: 814
-	// (get) Token: 0x0600118A RID: 4490 RVA: 0x0007D26E File Offset: 0x0007B46E
+	// (get) Token: 0x06001191 RID: 4497 RVA: 0x0007DF9E File Offset: 0x0007C19E
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Videoflip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600118B RID: 4491 RVA: 0x0007D2A2 File Offset: 0x0007B4A2
+	// Token: 0x06001192 RID: 4498 RVA: 0x0007DFD2 File Offset: 0x0007C1D2
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Videoflip");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_Videoflip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600118C RID: 4492 RVA: 0x0007D2C4 File Offset: 0x0007B4C4
+	// Token: 0x06001193 RID: 4499 RVA: 0x0007DFF4 File Offset: 0x0007C1F4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_TV_Videoflip : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x0600118D RID: 4493 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001194 RID: 4500 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x0600118E RID: 4494 RVA: 0x0007D361 File Offset: 0x0007B561
+	// Token: 0x06001195 RID: 4501 RVA: 0x0007E091 File Offset: 0x0007C291
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,12 +64,12 @@ public class CameraFilterPack_TV_Videoflip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400148B RID: 5259
+	// Token: 0x040014AA RID: 5290
 	public Shader SCShader;
 
-	// Token: 0x0400148C RID: 5260
+	// Token: 0x040014AB RID: 5291
 	private float TimeX = 1f;
 
-	// Token: 0x0400148D RID: 5261
+	// Token: 0x040014AC RID: 5292
 	private Material SCMaterial;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002A3 RID: 675
+// Token: 0x020002A5 RID: 677
 public class FoldedUniformScript : MonoBehaviour
 {
-	// Token: 0x0600140B RID: 5131 RVA: 0x000AF750 File Offset: 0x000AD950
+	// Token: 0x0600141A RID: 5146 RVA: 0x000B0FF8 File Offset: 0x000AF1F8
 	private void Start()
 	{
 		this.Yandere = GameObject.Find("YandereChan").GetComponent<YandereScript>();
@@ -24,7 +24,7 @@ public class FoldedUniformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600140C RID: 5132 RVA: 0x000AF840 File Offset: 0x000ADA40
+	// Token: 0x0600141B RID: 5147 RVA: 0x000B10E8 File Offset: 0x000AF2E8
 	private void Update()
 	{
 		if (this.Clean)
@@ -72,27 +72,27 @@ public class FoldedUniformScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C34 RID: 7220
+	// Token: 0x04001C6C RID: 7276
 	public YandereScript Yandere;
 
-	// Token: 0x04001C35 RID: 7221
+	// Token: 0x04001C6D RID: 7277
 	public PromptScript Prompt;
 
-	// Token: 0x04001C36 RID: 7222
+	// Token: 0x04001C6E RID: 7278
 	public GameObject SteamCloud;
 
-	// Token: 0x04001C37 RID: 7223
+	// Token: 0x04001C6F RID: 7279
 	public bool InPosition = true;
 
-	// Token: 0x04001C38 RID: 7224
+	// Token: 0x04001C70 RID: 7280
 	public bool Clean;
 
-	// Token: 0x04001C39 RID: 7225
+	// Token: 0x04001C71 RID: 7281
 	public bool Spare;
 
-	// Token: 0x04001C3A RID: 7226
+	// Token: 0x04001C72 RID: 7282
 	public float Timer;
 
-	// Token: 0x04001C3B RID: 7227
+	// Token: 0x04001C73 RID: 7283
 	public int Type;
 }

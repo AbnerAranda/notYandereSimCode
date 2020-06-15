@@ -3,10 +3,10 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000465 RID: 1125
+// Token: 0x0200046A RID: 1130
 public class WelcomeScript : MonoBehaviour
 {
-	// Token: 0x06001D1D RID: 7453 RVA: 0x0015B818 File Offset: 0x00159A18
+	// Token: 0x06001D48 RID: 7496 RVA: 0x0015F58C File Offset: 0x0015D78C
 	private void Start()
 	{
 		Time.timeScale = 1f;
@@ -46,7 +46,7 @@ public class WelcomeScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D1E RID: 7454 RVA: 0x0015BAC0 File Offset: 0x00159CC0
+	// Token: 0x06001D49 RID: 7497 RVA: 0x0015F834 File Offset: 0x0015DA34
 	private void Update()
 	{
 		Input.GetKeyDown(KeyCode.S);
@@ -108,49 +108,49 @@ public class WelcomeScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040036DD RID: 14045
+	// Token: 0x04003761 RID: 14177
 	[SerializeField]
 	private JsonScript JSON;
 
-	// Token: 0x040036DE RID: 14046
+	// Token: 0x04003762 RID: 14178
 	[SerializeField]
 	private GameObject WelcomePanel;
 
-	// Token: 0x040036DF RID: 14047
+	// Token: 0x04003763 RID: 14179
 	[SerializeField]
 	private UILabel[] FlashingLabels;
 
-	// Token: 0x040036E0 RID: 14048
+	// Token: 0x04003764 RID: 14180
 	[SerializeField]
 	private UILabel AltBeginLabel;
 
-	// Token: 0x040036E1 RID: 14049
+	// Token: 0x04003765 RID: 14181
 	[SerializeField]
 	private UILabel BeginLabel;
 
-	// Token: 0x040036E2 RID: 14050
+	// Token: 0x04003766 RID: 14182
 	[SerializeField]
 	private UISprite Darkness;
 
-	// Token: 0x040036E3 RID: 14051
+	// Token: 0x04003767 RID: 14183
 	[SerializeField]
 	private bool Continue;
 
-	// Token: 0x040036E4 RID: 14052
+	// Token: 0x04003768 RID: 14184
 	[SerializeField]
 	private bool FlashRed;
 
-	// Token: 0x040036E5 RID: 14053
+	// Token: 0x04003769 RID: 14185
 	[SerializeField]
 	private float VersionNumber;
 
-	// Token: 0x040036E6 RID: 14054
+	// Token: 0x0400376A RID: 14186
 	[SerializeField]
 	private float Timer;
 
-	// Token: 0x040036E7 RID: 14055
+	// Token: 0x0400376B RID: 14187
 	private string Text;
 
-	// Token: 0x040036E8 RID: 14056
+	// Token: 0x0400376C RID: 14188
 	private int ID;
 }

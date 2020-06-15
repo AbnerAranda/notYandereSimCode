@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200057F RID: 1407
+	// Token: 0x02000595 RID: 1429
 	[AddComponentMenu("Pathfinding/Modifiers/Alternative Path")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_alternative_path.php")]
 	[Serializable]
 	public class AlternativePath : MonoModifier
 	{
-		// Token: 0x170005A8 RID: 1448
-		// (get) Token: 0x06002640 RID: 9792 RVA: 0x001A5BF7 File Offset: 0x001A3DF7
+		// Token: 0x170005AE RID: 1454
+		// (get) Token: 0x06002696 RID: 9878 RVA: 0x001AB7E3 File Offset: 0x001A99E3
 		public override int Order
 		{
 			get
@@ -20,7 +20,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002641 RID: 9793 RVA: 0x001A5BFB File Offset: 0x001A3DFB
+		// Token: 0x06002697 RID: 9879 RVA: 0x001AB7E7 File Offset: 0x001A99E7
 		public override void Apply(Path p)
 		{
 			if (this == null)
@@ -30,20 +30,20 @@ namespace Pathfinding
 			this.ApplyNow(p.path);
 		}
 
-		// Token: 0x06002642 RID: 9794 RVA: 0x001A5C13 File Offset: 0x001A3E13
+		// Token: 0x06002698 RID: 9880 RVA: 0x001AB7FF File Offset: 0x001A99FF
 		protected void OnDestroy()
 		{
 			this.destroyed = true;
 			this.ClearOnDestroy();
 		}
 
-		// Token: 0x06002643 RID: 9795 RVA: 0x001A5C22 File Offset: 0x001A3E22
+		// Token: 0x06002699 RID: 9881 RVA: 0x001AB80E File Offset: 0x001A9A0E
 		private void ClearOnDestroy()
 		{
 			this.InversePrevious();
 		}
 
-		// Token: 0x06002644 RID: 9796 RVA: 0x001A5C2C File Offset: 0x001A3E2C
+		// Token: 0x0600269A RID: 9882 RVA: 0x001AB818 File Offset: 0x001A9A18
 		private void InversePrevious()
 		{
 			if (this.prevNodes != null)
@@ -54,7 +54,7 @@ namespace Pathfinding
 					if ((ulong)this.prevNodes[i].Penalty < (ulong)((long)this.prevPenalty))
 					{
 						flag = true;
-						this.prevNodes[i].Penalty = 0u;
+						this.prevNodes[i].Penalty = 0U;
 					}
 					else
 					{
@@ -68,7 +68,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002645 RID: 9797 RVA: 0x001A5CC8 File Offset: 0x001A3EC8
+		// Token: 0x0600269B RID: 9883 RVA: 0x001AB8B4 File Offset: 0x001A9AB4
 		private void ApplyNow(List<GraphNode> nodes)
 		{
 			this.InversePrevious();
@@ -88,22 +88,22 @@ namespace Pathfinding
 			this.prevPenalty = this.penalty;
 		}
 
-		// Token: 0x04004128 RID: 16680
+		// Token: 0x04004206 RID: 16902
 		public int penalty = 1000;
 
-		// Token: 0x04004129 RID: 16681
+		// Token: 0x04004207 RID: 16903
 		public int randomStep = 10;
 
-		// Token: 0x0400412A RID: 16682
+		// Token: 0x04004208 RID: 16904
 		private List<GraphNode> prevNodes = new List<GraphNode>();
 
-		// Token: 0x0400412B RID: 16683
+		// Token: 0x04004209 RID: 16905
 		private int prevPenalty;
 
-		// Token: 0x0400412C RID: 16684
+		// Token: 0x0400420A RID: 16906
 		private readonly System.Random rnd = new System.Random();
 
-		// Token: 0x0400412D RID: 16685
+		// Token: 0x0400420B RID: 16907
 		private bool destroyed;
 	}
 }

@@ -10,10 +10,10 @@ using UnityEngine;
 
 namespace Pathfinding.Serialization
 {
-	// Token: 0x020005BE RID: 1470
+	// Token: 0x020005D4 RID: 1492
 	public class TinyJsonSerializer
 	{
-		// Token: 0x06002813 RID: 10259 RVA: 0x001B66B8 File Offset: 0x001B48B8
+		// Token: 0x06002869 RID: 10345 RVA: 0x001BC2A4 File Offset: 0x001BA4A4
 		public static void Serialize(object obj, StringBuilder output)
 		{
 			new TinyJsonSerializer
@@ -22,7 +22,7 @@ namespace Pathfinding.Serialization
 			}.Serialize(obj);
 		}
 
-		// Token: 0x06002814 RID: 10260 RVA: 0x001B66CC File Offset: 0x001B48CC
+		// Token: 0x0600286A RID: 10346 RVA: 0x001BC2B8 File Offset: 0x001BA4B8
 		private TinyJsonSerializer()
 		{
 			this.serializers[typeof(float)] = delegate(object v)
@@ -71,7 +71,7 @@ namespace Pathfinding.Serialization
 			};
 		}
 
-		// Token: 0x06002815 RID: 10261 RVA: 0x001B6830 File Offset: 0x001B4A30
+		// Token: 0x0600286B RID: 10347 RVA: 0x001BC41C File Offset: 0x001BA61C
 		private void Serialize(object obj)
 		{
 			if (obj == null)
@@ -135,13 +135,13 @@ namespace Pathfinding.Serialization
 			this.output.Append("}");
 		}
 
-		// Token: 0x06002816 RID: 10262 RVA: 0x001B6A09 File Offset: 0x001B4C09
+		// Token: 0x0600286C RID: 10348 RVA: 0x001BC5F5 File Offset: 0x001BA7F5
 		private void QuotedField(string name, string contents)
 		{
 			this.output.AppendFormat("\"{0}\": \"{1}\"", name, contents);
 		}
 
-		// Token: 0x06002817 RID: 10263 RVA: 0x001B6A20 File Offset: 0x001B4C20
+		// Token: 0x0600286D RID: 10349 RVA: 0x001BC60C File Offset: 0x001BA80C
 		private void SerializeUnityObject(UnityEngine.Object obj)
 		{
 			if (obj == null)
@@ -175,13 +175,13 @@ namespace Pathfinding.Serialization
 			this.output.Append("}");
 		}
 
-		// Token: 0x04004259 RID: 16985
+		// Token: 0x04004337 RID: 17207
 		private StringBuilder output = new StringBuilder();
 
-		// Token: 0x0400425A RID: 16986
+		// Token: 0x04004338 RID: 17208
 		private Dictionary<Type, Action<object>> serializers = new Dictionary<Type, Action<object>>();
 
-		// Token: 0x0400425B RID: 16987
+		// Token: 0x04004339 RID: 17209
 		private static readonly CultureInfo invariantCulture = CultureInfo.InvariantCulture;
 	}
 }

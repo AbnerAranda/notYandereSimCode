@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001EC RID: 492
+// Token: 0x020001ED RID: 493
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Pixelisation/OilPaintHQ")]
 public class CameraFilterPack_Pixelisation_OilPaintHQ : MonoBehaviour
 {
 	// Token: 0x1700030C RID: 780
-	// (get) Token: 0x060010BD RID: 4285 RVA: 0x00079C7E File Offset: 0x00077E7E
+	// (get) Token: 0x060010C4 RID: 4292 RVA: 0x0007A9AE File Offset: 0x00078BAE
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Pixelisation_OilPaintHQ : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010BE RID: 4286 RVA: 0x00079CB2 File Offset: 0x00077EB2
+	// Token: 0x060010C5 RID: 4293 RVA: 0x0007A9E2 File Offset: 0x00078BE2
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Pixelisation_OilPaintHQ");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Pixelisation_OilPaintHQ : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010BF RID: 4287 RVA: 0x00079CD4 File Offset: 0x00077ED4
+	// Token: 0x060010C6 RID: 4294 RVA: 0x0007AA04 File Offset: 0x00078C04
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Pixelisation_OilPaintHQ : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010C0 RID: 4288 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010C7 RID: 4295 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010C1 RID: 4289 RVA: 0x00079D8A File Offset: 0x00077F8A
+	// Token: 0x060010C8 RID: 4296 RVA: 0x0007AABA File Offset: 0x00078CBA
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Pixelisation_OilPaintHQ : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013BC RID: 5052
+	// Token: 0x040013DB RID: 5083
 	public Shader SCShader;
 
-	// Token: 0x040013BD RID: 5053
+	// Token: 0x040013DC RID: 5084
 	private float TimeX = 1f;
 
-	// Token: 0x040013BE RID: 5054
+	// Token: 0x040013DD RID: 5085
 	private Material SCMaterial;
 
-	// Token: 0x040013BF RID: 5055
+	// Token: 0x040013DE RID: 5086
 	[Range(0f, 5f)]
 	public float Value = 2f;
 }

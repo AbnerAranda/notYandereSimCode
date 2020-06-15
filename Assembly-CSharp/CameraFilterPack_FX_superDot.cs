@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B3 RID: 435
+// Token: 0x020001B4 RID: 436
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/SuperDot")]
 public class CameraFilterPack_FX_superDot : MonoBehaviour
 {
 	// Token: 0x170002D3 RID: 723
-	// (get) Token: 0x06000F45 RID: 3909 RVA: 0x00072622 File Offset: 0x00070822
+	// (get) Token: 0x06000F4C RID: 3916 RVA: 0x00073352 File Offset: 0x00071552
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_superDot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F46 RID: 3910 RVA: 0x00072656 File Offset: 0x00070856
+	// Token: 0x06000F4D RID: 3917 RVA: 0x00073386 File Offset: 0x00071586
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_superDot");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_superDot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F47 RID: 3911 RVA: 0x00072678 File Offset: 0x00070878
+	// Token: 0x06000F4E RID: 3918 RVA: 0x000733A8 File Offset: 0x000715A8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_FX_superDot : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F48 RID: 3912 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F4F RID: 3919 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F49 RID: 3913 RVA: 0x00072715 File Offset: 0x00070915
+	// Token: 0x06000F50 RID: 3920 RVA: 0x00073445 File Offset: 0x00071645
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,12 +64,12 @@ public class CameraFilterPack_FX_superDot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011F9 RID: 4601
+	// Token: 0x04001218 RID: 4632
 	public Shader SCShader;
 
-	// Token: 0x040011FA RID: 4602
+	// Token: 0x04001219 RID: 4633
 	private float TimeX = 1f;
 
-	// Token: 0x040011FB RID: 4603
+	// Token: 0x0400121A RID: 4634
 	private Material SCMaterial;
 }

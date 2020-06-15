@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Globalization;
 using UnityEngine;
 
-// Token: 0x020003FD RID: 1021
+// Token: 0x02000402 RID: 1026
 public class StreetShopScript : MonoBehaviour
 {
-	// Token: 0x06001B02 RID: 6914 RVA: 0x00110444 File Offset: 0x0010E644
+	// Token: 0x06001B24 RID: 6948 RVA: 0x00112D34 File Offset: 0x00110F34
 	private void Start()
 	{
 		this.MyLabel.color = new Color(1f, 1f, 1f, 0f);
 	}
 
-	// Token: 0x06001B03 RID: 6915 RVA: 0x0011046C File Offset: 0x0010E66C
+	// Token: 0x06001B25 RID: 6949 RVA: 0x00112D5C File Offset: 0x00110F5C
 	private void Update()
 	{
 		if (Vector3.Distance(this.Yandere.transform.position, base.transform.position) < 1f)
@@ -132,12 +133,12 @@ public class StreetShopScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001B04 RID: 6916 RVA: 0x00110A24 File Offset: 0x0010EC24
+	// Token: 0x06001B26 RID: 6950 RVA: 0x00113314 File Offset: 0x00111514
 	private void UpdateShopInterface()
 	{
 		this.Yandere.MainCamera.GetComponent<RPG_Camera>().enabled = false;
 		this.StreetShopInterface.StoreNameLabel.text = this.StoreName;
-		this.StreetShopInterface.MoneyLabel.text = "$" + PlayerGlobals.Money.ToString("F2");
+		this.StreetShopInterface.MoneyLabel.text = "$" + PlayerGlobals.Money.ToString("F2", NumberFormatInfo.InvariantInfo);
 		this.StreetShopInterface.Shopkeeper.mainTexture = this.ShopkeeperPortraits[1];
 		this.StreetShopInterface.SpeechBubbleLabel.text = this.ShopkeeperSpeeches[1];
 		this.StreetShopInterface.ShopkeeperPortraits = this.ShopkeeperPortraits;
@@ -166,90 +167,90 @@ public class StreetShopScript : MonoBehaviour
 		this.StreetShopInterface.UpdateIcons();
 	}
 
-	// Token: 0x04002BFF RID: 11263
+	// Token: 0x04002C61 RID: 11361
 	public StreetShopInterfaceScript StreetShopInterface;
 
-	// Token: 0x04002C00 RID: 11264
+	// Token: 0x04002C62 RID: 11362
 	public StreetManagerScript StreetManager;
 
-	// Token: 0x04002C01 RID: 11265
+	// Token: 0x04002C63 RID: 11363
 	public InputDeviceScript InputDevice;
 
-	// Token: 0x04002C02 RID: 11266
+	// Token: 0x04002C64 RID: 11364
 	public StalkerYandereScript Yandere;
 
-	// Token: 0x04002C03 RID: 11267
+	// Token: 0x04002C65 RID: 11365
 	public PromptBarScript PromptBar;
 
-	// Token: 0x04002C04 RID: 11268
+	// Token: 0x04002C66 RID: 11366
 	public HomeClockScript HomeClock;
 
-	// Token: 0x04002C05 RID: 11269
+	// Token: 0x04002C67 RID: 11367
 	public GameObject BinocularOverlay;
 
-	// Token: 0x04002C06 RID: 11270
+	// Token: 0x04002C68 RID: 11368
 	public Renderer BinocularRenderer;
 
-	// Token: 0x04002C07 RID: 11271
+	// Token: 0x04002C69 RID: 11369
 	public Camera BinocularCamera;
 
-	// Token: 0x04002C08 RID: 11272
+	// Token: 0x04002C6A RID: 11370
 	public AudioSource MyAudio;
 
-	// Token: 0x04002C09 RID: 11273
+	// Token: 0x04002C6B RID: 11371
 	public AudioClip InsertCoin;
 
-	// Token: 0x04002C0A RID: 11274
+	// Token: 0x04002C6C RID: 11372
 	public AudioClip Fail;
 
-	// Token: 0x04002C0B RID: 11275
+	// Token: 0x04002C6D RID: 11373
 	public UILabel MyLabel;
 
-	// Token: 0x04002C0C RID: 11276
+	// Token: 0x04002C6E RID: 11374
 	public Texture[] ShopkeeperPortraits;
 
-	// Token: 0x04002C0D RID: 11277
+	// Token: 0x04002C6F RID: 11375
 	public string[] ShopkeeperSpeeches;
 
-	// Token: 0x04002C0E RID: 11278
+	// Token: 0x04002C70 RID: 11376
 	public bool[] AdultProducts;
 
-	// Token: 0x04002C0F RID: 11279
+	// Token: 0x04002C71 RID: 11377
 	public string[] Products;
 
-	// Token: 0x04002C10 RID: 11280
+	// Token: 0x04002C72 RID: 11378
 	public float[] Costs;
 
-	// Token: 0x04002C11 RID: 11281
+	// Token: 0x04002C73 RID: 11379
 	public float RotationX;
 
-	// Token: 0x04002C12 RID: 11282
+	// Token: 0x04002C74 RID: 11380
 	public float RotationY;
 
-	// Token: 0x04002C13 RID: 11283
+	// Token: 0x04002C75 RID: 11381
 	public float Alpha;
 
-	// Token: 0x04002C14 RID: 11284
+	// Token: 0x04002C76 RID: 11382
 	public float Zoom;
 
-	// Token: 0x04002C15 RID: 11285
+	// Token: 0x04002C77 RID: 11383
 	public int ShopkeeperPosition = 500;
 
-	// Token: 0x04002C16 RID: 11286
+	// Token: 0x04002C78 RID: 11384
 	public int Limit;
 
-	// Token: 0x04002C17 RID: 11287
+	// Token: 0x04002C79 RID: 11385
 	public bool Binoculars;
 
-	// Token: 0x04002C18 RID: 11288
+	// Token: 0x04002C7A RID: 11386
 	public bool MaidCafe;
 
-	// Token: 0x04002C19 RID: 11289
+	// Token: 0x04002C7B RID: 11387
 	public bool Exit;
 
-	// Token: 0x04002C1A RID: 11290
+	// Token: 0x04002C7C RID: 11388
 	public string StoreName;
 
-	// Token: 0x04002C1B RID: 11291
+	// Token: 0x04002C7D RID: 11389
 	public ShopType StoreType;
 }

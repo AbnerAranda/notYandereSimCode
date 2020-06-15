@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000378 RID: 888
+// Token: 0x0200037D RID: 893
 public class PracticeWindowScript : MonoBehaviour
 {
-	// Token: 0x06001937 RID: 6455 RVA: 0x000F1032 File Offset: 0x000EF232
+	// Token: 0x06001958 RID: 6488 RVA: 0x000F363E File Offset: 0x000F183E
 	private void Start()
 	{
 		this.Window.SetActive(false);
 	}
 
-	// Token: 0x06001938 RID: 6456 RVA: 0x000F1040 File Offset: 0x000EF240
+	// Token: 0x06001959 RID: 6489 RVA: 0x000F364C File Offset: 0x000F184C
 	private void Update()
 	{
 		if (this.Window.activeInHierarchy)
@@ -204,7 +204,7 @@ public class PracticeWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001939 RID: 6457 RVA: 0x000F1A0C File Offset: 0x000EFC0C
+	// Token: 0x0600195A RID: 6490 RVA: 0x000F4018 File Offset: 0x000F2218
 	public void Finish()
 	{
 		for (int i = 1; i < 6; i++)
@@ -220,7 +220,7 @@ public class PracticeWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600193A RID: 6458 RVA: 0x000F1ABC File Offset: 0x000EFCBC
+	// Token: 0x0600195B RID: 6491 RVA: 0x000F40C8 File Offset: 0x000F22C8
 	public void UpdateWindow()
 	{
 		this.PromptBar.ClearButtons();
@@ -294,7 +294,7 @@ public class PracticeWindowScript : MonoBehaviour
 		this.UpdateHighlight();
 	}
 
-	// Token: 0x0600193B RID: 6459 RVA: 0x000F2014 File Offset: 0x000F0214
+	// Token: 0x0600195C RID: 6492 RVA: 0x000F4620 File Offset: 0x000F2820
 	public void UpdateHighlight()
 	{
 		if (this.Selected < 1)
@@ -308,78 +308,78 @@ public class PracticeWindowScript : MonoBehaviour
 		this.Highlight.localPosition = new Vector3(0f, (float)(660 - 220 * this.Selected), 0f);
 	}
 
-	// Token: 0x04002649 RID: 9801
+	// Token: 0x040026A2 RID: 9890
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x0400264A RID: 9802
+	// Token: 0x040026A3 RID: 9891
 	public DialogueWheelScript DialogueWheel;
 
-	// Token: 0x0400264B RID: 9803
+	// Token: 0x040026A4 RID: 9892
 	public InputManagerScript InputManager;
 
-	// Token: 0x0400264C RID: 9804
+	// Token: 0x040026A5 RID: 9893
 	public StudentScript SparringPartner;
 
-	// Token: 0x0400264D RID: 9805
+	// Token: 0x040026A6 RID: 9894
 	public PromptBarScript PromptBar;
 
-	// Token: 0x0400264E RID: 9806
+	// Token: 0x040026A7 RID: 9895
 	public YandereScript Yandere;
 
-	// Token: 0x0400264F RID: 9807
+	// Token: 0x040026A8 RID: 9896
 	public WeaponScript Baton;
 
-	// Token: 0x04002650 RID: 9808
+	// Token: 0x040026A9 RID: 9897
 	public Transform[] KneelSpot;
 
-	// Token: 0x04002651 RID: 9809
+	// Token: 0x040026AA RID: 9898
 	public Transform[] SparSpot;
 
-	// Token: 0x04002652 RID: 9810
+	// Token: 0x040026AB RID: 9899
 	public string[] Difficulties;
 
-	// Token: 0x04002653 RID: 9811
+	// Token: 0x040026AC RID: 9900
 	public Texture[] AlbumCovers;
 
-	// Token: 0x04002654 RID: 9812
+	// Token: 0x040026AD RID: 9901
 	public UITexture[] Texture;
 
-	// Token: 0x04002655 RID: 9813
+	// Token: 0x040026AE RID: 9902
 	public UILabel[] Label;
 
-	// Token: 0x04002656 RID: 9814
+	// Token: 0x040026AF RID: 9903
 	public Transform Highlight;
 
-	// Token: 0x04002657 RID: 9815
+	// Token: 0x040026B0 RID: 9904
 	public GameObject Window;
 
-	// Token: 0x04002658 RID: 9816
+	// Token: 0x040026B1 RID: 9905
 	public UISprite Darkness;
 
-	// Token: 0x04002659 RID: 9817
+	// Token: 0x040026B2 RID: 9906
 	public int Selected;
 
-	// Token: 0x0400265A RID: 9818
+	// Token: 0x040026B3 RID: 9907
 	public int ClubID;
 
-	// Token: 0x0400265B RID: 9819
+	// Token: 0x040026B4 RID: 9908
 	public int ID = 1;
 
-	// Token: 0x0400265C RID: 9820
+	// Token: 0x040026B5 RID: 9909
 	public ClubType Club;
 
-	// Token: 0x0400265D RID: 9821
+	// Token: 0x040026B6 RID: 9910
 	public bool PlayedRhythmMinigame;
 
-	// Token: 0x0400265E RID: 9822
+	// Token: 0x040026B7 RID: 9911
 	public bool ButtonUp;
 
-	// Token: 0x0400265F RID: 9823
+	// Token: 0x040026B8 RID: 9912
 	public bool FadeOut;
 
-	// Token: 0x04002660 RID: 9824
+	// Token: 0x040026B9 RID: 9913
 	public bool FadeIn;
 
-	// Token: 0x04002661 RID: 9825
+	// Token: 0x040026BA RID: 9914
 	public float Timer;
 }

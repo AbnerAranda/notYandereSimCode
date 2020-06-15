@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001A2 RID: 418
+// Token: 0x020001A3 RID: 419
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/Earth Quake")]
 public class CameraFilterPack_FX_EarthQuake : MonoBehaviour
 {
 	// Token: 0x170002C2 RID: 706
-	// (get) Token: 0x06000EDF RID: 3807 RVA: 0x00070F75 File Offset: 0x0006F175
+	// (get) Token: 0x06000EE6 RID: 3814 RVA: 0x00071CA5 File Offset: 0x0006FEA5
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_EarthQuake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EE0 RID: 3808 RVA: 0x00070FA9 File Offset: 0x0006F1A9
+	// Token: 0x06000EE7 RID: 3815 RVA: 0x00071CD9 File Offset: 0x0006FED9
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_EarthQuake");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_EarthQuake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EE1 RID: 3809 RVA: 0x00070FCC File Offset: 0x0006F1CC
+	// Token: 0x06000EE8 RID: 3816 RVA: 0x00071CFC File Offset: 0x0006FEFC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_FX_EarthQuake : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000EE2 RID: 3810 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000EE9 RID: 3817 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000EE3 RID: 3811 RVA: 0x000710C4 File Offset: 0x0006F2C4
+	// Token: 0x06000EEA RID: 3818 RVA: 0x00071DF4 File Offset: 0x0006FFF4
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_FX_EarthQuake : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011A9 RID: 4521
+	// Token: 0x040011C8 RID: 4552
 	public Shader SCShader;
 
-	// Token: 0x040011AA RID: 4522
+	// Token: 0x040011C9 RID: 4553
 	private float TimeX = 1f;
 
-	// Token: 0x040011AB RID: 4523
+	// Token: 0x040011CA RID: 4554
 	private Material SCMaterial;
 
-	// Token: 0x040011AC RID: 4524
+	// Token: 0x040011CB RID: 4555
 	[Range(0f, 100f)]
 	public float Speed = 15f;
 
-	// Token: 0x040011AD RID: 4525
+	// Token: 0x040011CC RID: 4556
 	[Range(0f, 0.2f)]
 	public float X = 0.008f;
 
-	// Token: 0x040011AE RID: 4526
+	// Token: 0x040011CD RID: 4557
 	[Range(0f, 0.2f)]
 	public float Y = 0.008f;
 
-	// Token: 0x040011AF RID: 4527
+	// Token: 0x040011CE RID: 4558
 	[Range(0f, 0.2f)]
 	private float Value4 = 1f;
 }

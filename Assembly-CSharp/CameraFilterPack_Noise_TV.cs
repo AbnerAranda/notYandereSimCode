@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001DE RID: 478
+// Token: 0x020001DF RID: 479
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Noise/TV")]
 public class CameraFilterPack_Noise_TV : MonoBehaviour
 {
 	// Token: 0x170002FE RID: 766
-	// (get) Token: 0x06001065 RID: 4197 RVA: 0x000782E4 File Offset: 0x000764E4
+	// (get) Token: 0x0600106C RID: 4204 RVA: 0x00079014 File Offset: 0x00077214
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Noise_TV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001066 RID: 4198 RVA: 0x00078318 File Offset: 0x00076518
+	// Token: 0x0600106D RID: 4205 RVA: 0x00079048 File Offset: 0x00077248
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_TV_Noise") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Noise_TV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001067 RID: 4199 RVA: 0x00078350 File Offset: 0x00076550
+	// Token: 0x0600106E RID: 4206 RVA: 0x00079080 File Offset: 0x00077280
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -56,12 +56,12 @@ public class CameraFilterPack_Noise_TV : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001068 RID: 4200 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x0600106F RID: 4207 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001069 RID: 4201 RVA: 0x0007845E File Offset: 0x0007665E
+	// Token: 0x06001070 RID: 4208 RVA: 0x0007918E File Offset: 0x0007738E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -70,31 +70,31 @@ public class CameraFilterPack_Noise_TV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001359 RID: 4953
+	// Token: 0x04001378 RID: 4984
 	public Shader SCShader;
 
-	// Token: 0x0400135A RID: 4954
+	// Token: 0x04001379 RID: 4985
 	private float TimeX = 1f;
 
-	// Token: 0x0400135B RID: 4955
+	// Token: 0x0400137A RID: 4986
 	private Material SCMaterial;
 
-	// Token: 0x0400135C RID: 4956
+	// Token: 0x0400137B RID: 4987
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x0400135D RID: 4957
+	// Token: 0x0400137C RID: 4988
 	[Range(0f, 10f)]
 	private float Value2 = 1f;
 
-	// Token: 0x0400135E RID: 4958
+	// Token: 0x0400137D RID: 4989
 	[Range(0f, 10f)]
 	private float Value3 = 1f;
 
-	// Token: 0x0400135F RID: 4959
+	// Token: 0x0400137E RID: 4990
 	[Range(0f, 10f)]
 	private float Value4 = 1f;
 
-	// Token: 0x04001360 RID: 4960
+	// Token: 0x0400137F RID: 4991
 	private Texture2D Texture2;
 }

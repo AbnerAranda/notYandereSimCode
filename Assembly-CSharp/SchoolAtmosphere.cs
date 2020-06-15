@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020003CA RID: 970
+// Token: 0x020003CF RID: 975
 public static class SchoolAtmosphere
 {
-	// Token: 0x17000462 RID: 1122
-	// (get) Token: 0x06001A48 RID: 6728 RVA: 0x001018A0 File Offset: 0x000FFAA0
+	// Token: 0x17000467 RID: 1127
+	// (get) Token: 0x06001A69 RID: 6761 RVA: 0x00103F14 File Offset: 0x00102114
 	public static SchoolAtmosphereType Type
 	{
 		get
@@ -14,7 +14,7 @@ public static class SchoolAtmosphere
 			{
 				return SchoolAtmosphereType.High;
 			}
-			if (schoolAtmosphere > 0.33333334f)
+			if (schoolAtmosphere > 0.333333343f)
 			{
 				return SchoolAtmosphereType.Medium;
 			}

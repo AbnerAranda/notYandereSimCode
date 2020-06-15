@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200052A RID: 1322
+	// Token: 0x02000540 RID: 1344
 	[AddComponentMenu("Pathfinding/Link")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_node_link.php")]
 	public class NodeLink : GraphModifier
 	{
-		// Token: 0x1700053E RID: 1342
-		// (get) Token: 0x060022CC RID: 8908 RVA: 0x00191A71 File Offset: 0x0018FC71
+		// Token: 0x17000544 RID: 1348
+		// (get) Token: 0x06002322 RID: 8994 RVA: 0x0019765D File Offset: 0x0019585D
 		public Transform Start
 		{
 			get
@@ -19,8 +19,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700053F RID: 1343
-		// (get) Token: 0x060022CD RID: 8909 RVA: 0x00191A79 File Offset: 0x0018FC79
+		// Token: 0x17000545 RID: 1349
+		// (get) Token: 0x06002323 RID: 8995 RVA: 0x00197665 File Offset: 0x00195865
 		public Transform End
 		{
 			get
@@ -29,7 +29,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022CE RID: 8910 RVA: 0x00191A81 File Offset: 0x0018FC81
+		// Token: 0x06002324 RID: 8996 RVA: 0x0019766D File Offset: 0x0019586D
 		public override void OnPostScan()
 		{
 			if (AstarPath.active.isScanning)
@@ -44,13 +44,13 @@ namespace Pathfinding
 			}));
 		}
 
-		// Token: 0x060022CF RID: 8911 RVA: 0x00191AB1 File Offset: 0x0018FCB1
+		// Token: 0x06002325 RID: 8997 RVA: 0x0019769D File Offset: 0x0019589D
 		public void InternalOnPostScan()
 		{
 			this.Apply();
 		}
 
-		// Token: 0x060022D0 RID: 8912 RVA: 0x00191AB9 File Offset: 0x0018FCB9
+		// Token: 0x06002326 RID: 8998 RVA: 0x001976A5 File Offset: 0x001958A5
 		public override void OnGraphsPostUpdate()
 		{
 			if (!AstarPath.active.isScanning)
@@ -63,7 +63,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022D1 RID: 8913 RVA: 0x00191AE4 File Offset: 0x0018FCE4
+		// Token: 0x06002327 RID: 8999 RVA: 0x001976D0 File Offset: 0x001958D0
 		public virtual void Apply()
 		{
 			if (this.Start == null || this.End == null || AstarPath.active == null)
@@ -96,7 +96,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022D2 RID: 8914 RVA: 0x00191BB8 File Offset: 0x0018FDB8
+		// Token: 0x06002328 RID: 9000 RVA: 0x001977A4 File Offset: 0x001959A4
 		public void OnDrawGizmos()
 		{
 			if (this.Start == null || this.End == null)
@@ -106,16 +106,16 @@ namespace Pathfinding
 			Draw.Gizmos.Bezier(this.Start.position, this.End.position, this.deleteConnection ? Color.red : Color.green);
 		}
 
-		// Token: 0x04003F18 RID: 16152
+		// Token: 0x04003FF6 RID: 16374
 		public Transform end;
 
-		// Token: 0x04003F19 RID: 16153
+		// Token: 0x04003FF7 RID: 16375
 		public float costFactor = 1f;
 
-		// Token: 0x04003F1A RID: 16154
+		// Token: 0x04003FF8 RID: 16376
 		public bool oneWay;
 
-		// Token: 0x04003F1B RID: 16155
+		// Token: 0x04003FF9 RID: 16377
 		public bool deleteConnection;
 	}
 }

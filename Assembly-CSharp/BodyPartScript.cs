@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000E5 RID: 229
+// Token: 0x020000E6 RID: 230
 public class BodyPartScript : MonoBehaviour
 {
-	// Token: 0x04000AC0 RID: 2752
+	// Token: 0x04000ADE RID: 2782
 	public bool Sacrifice;
 
-	// Token: 0x04000AC1 RID: 2753
+	// Token: 0x04000ADF RID: 2783
 	public int StudentID;
 
-	// Token: 0x04000AC2 RID: 2754
+	// Token: 0x04000AE0 RID: 2784
 	public int Type;
 }

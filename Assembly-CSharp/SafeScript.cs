@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003AA RID: 938
+// Token: 0x020003AF RID: 943
 public class SafeScript : MonoBehaviour
 {
-	// Token: 0x060019DD RID: 6621 RVA: 0x000FCB11 File Offset: 0x000FAD11
+	// Token: 0x060019FE RID: 6654 RVA: 0x000FF215 File Offset: 0x000FD415
 	private void Start()
 	{
 		this.ContentsPrompt.MyCollider.enabled = false;
 		this.SafePrompt.enabled = false;
 	}
 
-	// Token: 0x060019DE RID: 6622 RVA: 0x000FCB30 File Offset: 0x000FAD30
+	// Token: 0x060019FF RID: 6655 RVA: 0x000FF234 File Offset: 0x000FD434
 	private void Update()
 	{
 		if (this.Key.activeInHierarchy && this.KeyPrompt.Circle[0].fillAmount == 0f)
@@ -68,27 +68,27 @@ public class SafeScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002876 RID: 10358
+	// Token: 0x040028D3 RID: 10451
 	public MissionModeScript MissionMode;
 
-	// Token: 0x04002877 RID: 10359
+	// Token: 0x040028D4 RID: 10452
 	public PromptScript ContentsPrompt;
 
-	// Token: 0x04002878 RID: 10360
+	// Token: 0x040028D5 RID: 10453
 	public PromptScript SafePrompt;
 
-	// Token: 0x04002879 RID: 10361
+	// Token: 0x040028D6 RID: 10454
 	public PromptScript KeyPrompt;
 
-	// Token: 0x0400287A RID: 10362
+	// Token: 0x040028D7 RID: 10455
 	public Transform Door;
 
-	// Token: 0x0400287B RID: 10363
+	// Token: 0x040028D8 RID: 10456
 	public GameObject Key;
 
-	// Token: 0x0400287C RID: 10364
+	// Token: 0x040028D9 RID: 10457
 	public float Rotation;
 
-	// Token: 0x0400287D RID: 10365
+	// Token: 0x040028DA RID: 10458
 	public bool Open;
 }

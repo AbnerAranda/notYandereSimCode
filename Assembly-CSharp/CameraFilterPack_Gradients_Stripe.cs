@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001C7 RID: 455
+// Token: 0x020001C8 RID: 456
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Gradients/Stripe")]
 public class CameraFilterPack_Gradients_Stripe : MonoBehaviour
 {
 	// Token: 0x170002E7 RID: 743
-	// (get) Token: 0x06000FBD RID: 4029 RVA: 0x00074CEA File Offset: 0x00072EEA
+	// (get) Token: 0x06000FC4 RID: 4036 RVA: 0x00075A1A File Offset: 0x00073C1A
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Gradients_Stripe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FBE RID: 4030 RVA: 0x00074D1E File Offset: 0x00072F1E
+	// Token: 0x06000FC5 RID: 4037 RVA: 0x00075A4E File Offset: 0x00073C4E
 	private void Start()
 	{
 		this.SCShader = Shader.Find(this.ShaderName);
@@ -32,7 +32,7 @@ public class CameraFilterPack_Gradients_Stripe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FBF RID: 4031 RVA: 0x00074D40 File Offset: 0x00072F40
+	// Token: 0x06000FC6 RID: 4038 RVA: 0x00075A70 File Offset: 0x00073C70
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -52,12 +52,12 @@ public class CameraFilterPack_Gradients_Stripe : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000FC0 RID: 4032 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000FC7 RID: 4039 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000FC1 RID: 4033 RVA: 0x00074E0C File Offset: 0x0007300C
+	// Token: 0x06000FC8 RID: 4040 RVA: 0x00075B3C File Offset: 0x00073D3C
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -66,23 +66,23 @@ public class CameraFilterPack_Gradients_Stripe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040012A5 RID: 4773
+	// Token: 0x040012C4 RID: 4804
 	public Shader SCShader;
 
-	// Token: 0x040012A6 RID: 4774
+	// Token: 0x040012C5 RID: 4805
 	private string ShaderName = "CameraFilterPack/Gradients_Stripe";
 
-	// Token: 0x040012A7 RID: 4775
+	// Token: 0x040012C6 RID: 4806
 	private float TimeX = 1f;
 
-	// Token: 0x040012A8 RID: 4776
+	// Token: 0x040012C7 RID: 4807
 	private Material SCMaterial;
 
-	// Token: 0x040012A9 RID: 4777
+	// Token: 0x040012C8 RID: 4808
 	[Range(0f, 1f)]
 	public float Switch = 1f;
 
-	// Token: 0x040012AA RID: 4778
+	// Token: 0x040012C9 RID: 4809
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 }

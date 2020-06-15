@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200040E RID: 1038
+// Token: 0x02000413 RID: 1043
 public class SuicideCutsceneScript : MonoBehaviour
 {
-	// Token: 0x06001BEA RID: 7146 RVA: 0x00146AC4 File Offset: 0x00144CC4
+	// Token: 0x06001C0E RID: 7182 RVA: 0x00149E5C File Offset: 0x0014805C
 	private void Start()
 	{
 		this.PointLight.color = new Color(0.1f, 0.1f, 0.1f, 1f);
 		this.Door.eulerAngles = new Vector3(0f, 0f, 0f);
 	}
 
-	// Token: 0x06001BEB RID: 7147 RVA: 0x00146B14 File Offset: 0x00144D14
+	// Token: 0x06001C0F RID: 7183 RVA: 0x00149EAC File Offset: 0x001480AC
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -24,18 +24,18 @@ public class SuicideCutsceneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040033CC RID: 13260
+	// Token: 0x04003441 RID: 13377
 	public Light PointLight;
 
-	// Token: 0x040033CD RID: 13261
+	// Token: 0x04003442 RID: 13378
 	public Transform Door;
 
-	// Token: 0x040033CE RID: 13262
+	// Token: 0x04003443 RID: 13379
 	public float Timer;
 
-	// Token: 0x040033CF RID: 13263
+	// Token: 0x04003444 RID: 13380
 	public float Rotation;
 
-	// Token: 0x040033D0 RID: 13264
+	// Token: 0x04003445 RID: 13381
 	public float Speed;
 }

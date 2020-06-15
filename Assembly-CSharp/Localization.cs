@@ -6,8 +6,8 @@ using UnityEngine;
 public static class Localization
 {
 	// Token: 0x1700006D RID: 109
-	// (get) Token: 0x060003A1 RID: 929 RVA: 0x00021D0A File Offset: 0x0001FF0A
-	// (set) Token: 0x060003A2 RID: 930 RVA: 0x00021D2E File Offset: 0x0001FF2E
+	// (get) Token: 0x060003A2 RID: 930 RVA: 0x00021D32 File Offset: 0x0001FF32
+	// (set) Token: 0x060003A3 RID: 931 RVA: 0x00021D56 File Offset: 0x0001FF56
 	public static Dictionary<string, string[]> dictionary
 	{
 		get
@@ -26,7 +26,7 @@ public static class Localization
 	}
 
 	// Token: 0x1700006E RID: 110
-	// (get) Token: 0x060003A3 RID: 931 RVA: 0x00021D3F File Offset: 0x0001FF3F
+	// (get) Token: 0x060003A4 RID: 932 RVA: 0x00021D67 File Offset: 0x0001FF67
 	public static string[] knownLanguages
 	{
 		get
@@ -40,8 +40,8 @@ public static class Localization
 	}
 
 	// Token: 0x1700006F RID: 111
-	// (get) Token: 0x060003A4 RID: 932 RVA: 0x00021D63 File Offset: 0x0001FF63
-	// (set) Token: 0x060003A5 RID: 933 RVA: 0x00021D95 File Offset: 0x0001FF95
+	// (get) Token: 0x060003A5 RID: 933 RVA: 0x00021D8B File Offset: 0x0001FF8B
+	// (set) Token: 0x060003A6 RID: 934 RVA: 0x00021DBD File Offset: 0x0001FFBD
 	public static string language
 	{
 		get
@@ -63,7 +63,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060003A6 RID: 934 RVA: 0x00021DB1 File Offset: 0x0001FFB1
+	// Token: 0x060003A7 RID: 935 RVA: 0x00021DD9 File Offset: 0x0001FFD9
 	public static bool Reload()
 	{
 		Localization.localizationHasBeenSet = false;
@@ -79,7 +79,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060003A7 RID: 935 RVA: 0x00021DE4 File Offset: 0x0001FFE4
+	// Token: 0x060003A8 RID: 936 RVA: 0x00021E0C File Offset: 0x0002000C
 	private static bool LoadDictionary(string value, bool merge = false)
 	{
 		byte[] array = null;
@@ -131,7 +131,7 @@ public static class Localization
 		return false;
 	}
 
-	// Token: 0x060003A8 RID: 936 RVA: 0x00021E94 File Offset: 0x00020094
+	// Token: 0x060003A9 RID: 937 RVA: 0x00021EBC File Offset: 0x000200BC
 	private static bool LoadAndSelect(string value)
 	{
 		if (!string.IsNullOrEmpty(value))
@@ -158,21 +158,21 @@ public static class Localization
 		return false;
 	}
 
-	// Token: 0x060003A9 RID: 937 RVA: 0x00021F00 File Offset: 0x00020100
+	// Token: 0x060003AA RID: 938 RVA: 0x00021F28 File Offset: 0x00020128
 	public static void Load(TextAsset asset)
 	{
 		ByteReader byteReader = new ByteReader(asset);
 		Localization.Set(asset.name, byteReader.ReadDictionary());
 	}
 
-	// Token: 0x060003AA RID: 938 RVA: 0x00021F28 File Offset: 0x00020128
+	// Token: 0x060003AB RID: 939 RVA: 0x00021F50 File Offset: 0x00020150
 	public static void Set(string languageName, byte[] bytes)
 	{
 		ByteReader byteReader = new ByteReader(bytes);
 		Localization.Set(languageName, byteReader.ReadDictionary());
 	}
 
-	// Token: 0x060003AB RID: 939 RVA: 0x00021F48 File Offset: 0x00020148
+	// Token: 0x060003AC RID: 940 RVA: 0x00021F70 File Offset: 0x00020170
 	public static void ReplaceKey(string key, string val)
 	{
 		if (!string.IsNullOrEmpty(val))
@@ -183,25 +183,25 @@ public static class Localization
 		Localization.mReplacement.Remove(key);
 	}
 
-	// Token: 0x060003AC RID: 940 RVA: 0x00021F6B File Offset: 0x0002016B
+	// Token: 0x060003AD RID: 941 RVA: 0x00021F93 File Offset: 0x00020193
 	public static void ClearReplacements()
 	{
 		Localization.mReplacement.Clear();
 	}
 
-	// Token: 0x060003AD RID: 941 RVA: 0x00021F77 File Offset: 0x00020177
+	// Token: 0x060003AE RID: 942 RVA: 0x00021F9F File Offset: 0x0002019F
 	public static bool LoadCSV(TextAsset asset, bool merge = false)
 	{
 		return Localization.LoadCSV(asset.bytes, asset, merge);
 	}
 
-	// Token: 0x060003AE RID: 942 RVA: 0x00021F86 File Offset: 0x00020186
+	// Token: 0x060003AF RID: 943 RVA: 0x00021FAE File Offset: 0x000201AE
 	public static bool LoadCSV(byte[] bytes, bool merge = false)
 	{
 		return Localization.LoadCSV(bytes, null, merge);
 	}
 
-	// Token: 0x060003AF RID: 943 RVA: 0x00021F90 File Offset: 0x00020190
+	// Token: 0x060003B0 RID: 944 RVA: 0x00021FB8 File Offset: 0x000201B8
 	private static bool HasLanguage(string languageName)
 	{
 		int i = 0;
@@ -217,7 +217,7 @@ public static class Localization
 		return false;
 	}
 
-	// Token: 0x060003B0 RID: 944 RVA: 0x00021FC4 File Offset: 0x000201C4
+	// Token: 0x060003B1 RID: 945 RVA: 0x00021FEC File Offset: 0x000201EC
 	private static bool LoadCSV(byte[] bytes, TextAsset asset, bool merge = false)
 	{
 		if (bytes == null)
@@ -317,7 +317,7 @@ public static class Localization
 		return true;
 	}
 
-	// Token: 0x060003B1 RID: 945 RVA: 0x00022260 File Offset: 0x00020460
+	// Token: 0x060003B2 RID: 946 RVA: 0x00022288 File Offset: 0x00020488
 	private static void AddCSV(BetterList<string> newValues, string[] newLanguages, Dictionary<string, int> languageIndices)
 	{
 		if (newValues.size < 2)
@@ -352,7 +352,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060003B2 RID: 946 RVA: 0x00022304 File Offset: 0x00020504
+	// Token: 0x060003B3 RID: 947 RVA: 0x0002232C File Offset: 0x0002052C
 	private static string[] ExtractStrings(BetterList<string> added, string[] newLanguages, Dictionary<string, int> languageIndices)
 	{
 		if (newLanguages == null)
@@ -385,7 +385,7 @@ public static class Localization
 		return array2;
 	}
 
-	// Token: 0x060003B3 RID: 947 RVA: 0x000223AC File Offset: 0x000205AC
+	// Token: 0x060003B4 RID: 948 RVA: 0x000223D4 File Offset: 0x000205D4
 	private static bool SelectLanguage(string language)
 	{
 		Localization.mLanguageIndex = -1;
@@ -415,7 +415,7 @@ public static class Localization
 		return false;
 	}
 
-	// Token: 0x060003B4 RID: 948 RVA: 0x00022434 File Offset: 0x00020634
+	// Token: 0x060003B5 RID: 949 RVA: 0x0002245C File Offset: 0x0002065C
 	public static void Set(string languageName, Dictionary<string, string> dictionary)
 	{
 		Localization.mLanguage = languageName;
@@ -434,7 +434,7 @@ public static class Localization
 		UIRoot.Broadcast("OnLocalize");
 	}
 
-	// Token: 0x060003B5 RID: 949 RVA: 0x00022492 File Offset: 0x00020692
+	// Token: 0x060003B6 RID: 950 RVA: 0x000224BA File Offset: 0x000206BA
 	public static void Set(string key, string value)
 	{
 		if (Localization.mOldDictionary.ContainsKey(key))
@@ -445,7 +445,7 @@ public static class Localization
 		Localization.mOldDictionary.Add(key, value);
 	}
 
-	// Token: 0x060003B6 RID: 950 RVA: 0x000224BC File Offset: 0x000206BC
+	// Token: 0x060003B7 RID: 951 RVA: 0x000224E4 File Offset: 0x000206E4
 	public static bool Has(string key)
 	{
 		if (string.IsNullOrEmpty(key))
@@ -513,7 +513,7 @@ public static class Localization
 		return Localization.mReplacement.ContainsKey(key) || (Localization.mLanguageIndex != -1 && Localization.mDictionary.ContainsKey(key)) || Localization.mOldDictionary.ContainsKey(key);
 	}
 
-	// Token: 0x060003B7 RID: 951 RVA: 0x00022614 File Offset: 0x00020814
+	// Token: 0x060003B8 RID: 952 RVA: 0x0002263C File Offset: 0x0002083C
 	public static string Get(string key, bool warnIfMissing = true)
 	{
 		if (string.IsNullOrEmpty(key))
@@ -609,7 +609,7 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060003B8 RID: 952 RVA: 0x000227E8 File Offset: 0x000209E8
+	// Token: 0x060003B9 RID: 953 RVA: 0x00022810 File Offset: 0x00020A10
 	public static string Format(string key, object parameter)
 	{
 		string result;
@@ -625,7 +625,7 @@ public static class Localization
 		return result;
 	}
 
-	// Token: 0x060003B9 RID: 953 RVA: 0x0002282C File Offset: 0x00020A2C
+	// Token: 0x060003BA RID: 954 RVA: 0x00022854 File Offset: 0x00020A54
 	public static string Format(string key, object arg0, object arg1)
 	{
 		string result;
@@ -641,7 +641,7 @@ public static class Localization
 		return result;
 	}
 
-	// Token: 0x060003BA RID: 954 RVA: 0x00022870 File Offset: 0x00020A70
+	// Token: 0x060003BB RID: 955 RVA: 0x00022898 File Offset: 0x00020A98
 	public static string Format(string key, object arg0, object arg1, object arg2)
 	{
 		string result;
@@ -657,7 +657,7 @@ public static class Localization
 		return result;
 	}
 
-	// Token: 0x060003BB RID: 955 RVA: 0x000228B8 File Offset: 0x00020AB8
+	// Token: 0x060003BC RID: 956 RVA: 0x000228E0 File Offset: 0x00020AE0
 	public static string Format(string key, params object[] parameters)
 	{
 		string result;
@@ -680,7 +680,7 @@ public static class Localization
 	}
 
 	// Token: 0x17000070 RID: 112
-	// (get) Token: 0x060003BC RID: 956 RVA: 0x0002291C File Offset: 0x00020B1C
+	// (get) Token: 0x060003BD RID: 957 RVA: 0x00022944 File Offset: 0x00020B44
 	[Obsolete("Localization is now always active. You no longer need to check this property.")]
 	public static bool isActive
 	{
@@ -690,14 +690,14 @@ public static class Localization
 		}
 	}
 
-	// Token: 0x060003BD RID: 957 RVA: 0x0002291F File Offset: 0x00020B1F
+	// Token: 0x060003BE RID: 958 RVA: 0x00022947 File Offset: 0x00020B47
 	[Obsolete("Use Localization.Get instead")]
 	public static string Localize(string key)
 	{
 		return Localization.Get(key, true);
 	}
 
-	// Token: 0x060003BE RID: 958 RVA: 0x00022928 File Offset: 0x00020B28
+	// Token: 0x060003BF RID: 959 RVA: 0x00022950 File Offset: 0x00020B50
 	public static bool Exists(string key)
 	{
 		if (!Localization.localizationHasBeenSet)
@@ -707,7 +707,7 @@ public static class Localization
 		return Localization.mDictionary.ContainsKey(key) || Localization.mOldDictionary.ContainsKey(key);
 	}
 
-	// Token: 0x060003BF RID: 959 RVA: 0x00022960 File Offset: 0x00020B60
+	// Token: 0x060003C0 RID: 960 RVA: 0x00022988 File Offset: 0x00020B88
 	public static void Set(string language, string key, string text)
 	{
 		string[] knownLanguages = Localization.knownLanguages;
@@ -759,41 +759,41 @@ public static class Localization
 		array2[num2 - 1] = text;
 	}
 
-	// Token: 0x040004C3 RID: 1219
+	// Token: 0x040004C5 RID: 1221
 	public static Localization.LoadFunction loadFunction;
 
-	// Token: 0x040004C4 RID: 1220
+	// Token: 0x040004C6 RID: 1222
 	public static Localization.OnLocalizeNotification onLocalize;
 
-	// Token: 0x040004C5 RID: 1221
+	// Token: 0x040004C7 RID: 1223
 	public static bool localizationHasBeenSet = false;
 
-	// Token: 0x040004C6 RID: 1222
+	// Token: 0x040004C8 RID: 1224
 	private static string[] mLanguages = null;
 
-	// Token: 0x040004C7 RID: 1223
+	// Token: 0x040004C9 RID: 1225
 	private static Dictionary<string, string> mOldDictionary = new Dictionary<string, string>();
 
-	// Token: 0x040004C8 RID: 1224
+	// Token: 0x040004CA RID: 1226
 	private static Dictionary<string, string[]> mDictionary = new Dictionary<string, string[]>();
 
-	// Token: 0x040004C9 RID: 1225
+	// Token: 0x040004CB RID: 1227
 	private static Dictionary<string, string> mReplacement = new Dictionary<string, string>();
 
-	// Token: 0x040004CA RID: 1226
+	// Token: 0x040004CC RID: 1228
 	private static int mLanguageIndex = -1;
 
-	// Token: 0x040004CB RID: 1227
+	// Token: 0x040004CD RID: 1229
 	private static string mLanguage;
 
-	// Token: 0x040004CC RID: 1228
+	// Token: 0x040004CE RID: 1230
 	private static bool mMerging = false;
 
-	// Token: 0x02000633 RID: 1587
-	// (Invoke) Token: 0x06002A97 RID: 10903
+	// Token: 0x02000649 RID: 1609
+	// (Invoke) Token: 0x06002AED RID: 10989
 	public delegate byte[] LoadFunction(string path);
 
-	// Token: 0x02000634 RID: 1588
-	// (Invoke) Token: 0x06002A9B RID: 10907
+	// Token: 0x0200064A RID: 1610
+	// (Invoke) Token: 0x06002AF1 RID: 10993
 	public delegate void OnLocalizeNotification();
 }

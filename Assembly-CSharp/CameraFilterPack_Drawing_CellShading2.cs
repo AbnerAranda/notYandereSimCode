@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000179 RID: 377
+// Token: 0x0200017A RID: 378
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Drawing/CellShading2")]
 public class CameraFilterPack_Drawing_CellShading2 : MonoBehaviour
 {
 	// Token: 0x17000299 RID: 665
-	// (get) Token: 0x06000DE8 RID: 3560 RVA: 0x0006D188 File Offset: 0x0006B388
+	// (get) Token: 0x06000DEF RID: 3567 RVA: 0x0006DEB8 File Offset: 0x0006C0B8
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Drawing_CellShading2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DE9 RID: 3561 RVA: 0x0006D1BC File Offset: 0x0006B3BC
+	// Token: 0x06000DF0 RID: 3568 RVA: 0x0006DEEC File Offset: 0x0006C0EC
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Drawing_CellShading2");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Drawing_CellShading2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DEA RID: 3562 RVA: 0x0006D1E0 File Offset: 0x0006B3E0
+	// Token: 0x06000DF1 RID: 3569 RVA: 0x0006DF10 File Offset: 0x0006C110
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -53,12 +53,12 @@ public class CameraFilterPack_Drawing_CellShading2 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000DEB RID: 3563 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000DF2 RID: 3570 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000DEC RID: 3564 RVA: 0x0006D2BB File Offset: 0x0006B4BB
+	// Token: 0x06000DF3 RID: 3571 RVA: 0x0006DFEB File Offset: 0x0006C1EB
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -67,24 +67,24 @@ public class CameraFilterPack_Drawing_CellShading2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010A4 RID: 4260
+	// Token: 0x040010C3 RID: 4291
 	public Shader SCShader;
 
-	// Token: 0x040010A5 RID: 4261
+	// Token: 0x040010C4 RID: 4292
 	private float TimeX = 1f;
 
-	// Token: 0x040010A6 RID: 4262
+	// Token: 0x040010C5 RID: 4293
 	private Material SCMaterial;
 
-	// Token: 0x040010A7 RID: 4263
+	// Token: 0x040010C6 RID: 4294
 	[Range(0f, 1f)]
 	public float EdgeSize = 0.1f;
 
-	// Token: 0x040010A8 RID: 4264
+	// Token: 0x040010C7 RID: 4295
 	[Range(0f, 10f)]
 	public float ColorLevel = 4f;
 
-	// Token: 0x040010A9 RID: 4265
+	// Token: 0x040010C8 RID: 4296
 	[Range(0f, 1f)]
 	public float Blur = 1f;
 }

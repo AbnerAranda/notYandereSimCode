@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000260 RID: 608
+// Token: 0x02000261 RID: 609
 public class DemonArmScript : MonoBehaviour
 {
-	// Token: 0x06001329 RID: 4905 RVA: 0x0009F950 File Offset: 0x0009DB50
+	// Token: 0x06001330 RID: 4912 RVA: 0x000A08DC File Offset: 0x0009EADC
 	private void Start()
 	{
 		this.MyAnimation = base.GetComponent<Animation>();
@@ -15,7 +15,7 @@ public class DemonArmScript : MonoBehaviour
 		this.MyAnimation[this.AttackAnim].speed = 0f;
 	}
 
-	// Token: 0x0600132A RID: 4906 RVA: 0x0009F9B0 File Offset: 0x0009DBB0
+	// Token: 0x06001331 RID: 4913 RVA: 0x000A093C File Offset: 0x0009EB3C
 	private void Update()
 	{
 		if (!this.Rising)
@@ -25,7 +25,7 @@ public class DemonArmScript : MonoBehaviour
 				this.MyAnimation.CrossFade(this.IdleAnim);
 				return;
 			}
-			this.AnimTime += 0.016666668f;
+			this.AnimTime += 0.0166666675f;
 			this.MyAnimation[this.AttackAnim].time = this.AnimTime;
 			if (!this.Attacked)
 			{
@@ -59,7 +59,7 @@ public class DemonArmScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600132B RID: 4907 RVA: 0x0009FB40 File Offset: 0x0009DD40
+	// Token: 0x06001332 RID: 4914 RVA: 0x000A0ACC File Offset: 0x0009ECCC
 	private void OnTriggerEnter(Collider other)
 	{
 		StudentScript component = other.gameObject.GetComponent<StudentScript>();
@@ -74,36 +74,36 @@ public class DemonArmScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040019C3 RID: 6595
+	// Token: 0x040019E2 RID: 6626
 	public GameObject DismembermentCollider;
 
-	// Token: 0x040019C4 RID: 6596
+	// Token: 0x040019E3 RID: 6627
 	public Animation MyAnimation;
 
-	// Token: 0x040019C5 RID: 6597
+	// Token: 0x040019E4 RID: 6628
 	public Collider ClawCollider;
 
-	// Token: 0x040019C6 RID: 6598
+	// Token: 0x040019E5 RID: 6629
 	public bool Attacking;
 
-	// Token: 0x040019C7 RID: 6599
+	// Token: 0x040019E6 RID: 6630
 	public bool Attacked;
 
-	// Token: 0x040019C8 RID: 6600
+	// Token: 0x040019E7 RID: 6631
 	public bool Rising = true;
 
-	// Token: 0x040019C9 RID: 6601
+	// Token: 0x040019E8 RID: 6632
 	public string IdleAnim = "DemonArmIdle";
 
-	// Token: 0x040019CA RID: 6602
+	// Token: 0x040019E9 RID: 6633
 	public string AttackAnim = "DemonArmAttack";
 
-	// Token: 0x040019CB RID: 6603
+	// Token: 0x040019EA RID: 6634
 	public AudioClip Whoosh;
 
-	// Token: 0x040019CC RID: 6604
+	// Token: 0x040019EB RID: 6635
 	public float AnimSpeed = 1f;
 
-	// Token: 0x040019CD RID: 6605
+	// Token: 0x040019EC RID: 6636
 	public float AnimTime;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000192 RID: 402
+// Token: 0x02000193 RID: 403
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Edge/Edge_filter")]
 public class CameraFilterPack_Edge_Edge_filter : MonoBehaviour
 {
 	// Token: 0x170002B2 RID: 690
-	// (get) Token: 0x06000E7F RID: 3711 RVA: 0x0006F773 File Offset: 0x0006D973
+	// (get) Token: 0x06000E86 RID: 3718 RVA: 0x000704A3 File Offset: 0x0006E6A3
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Edge_Edge_filter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E80 RID: 3712 RVA: 0x0006F7A7 File Offset: 0x0006D9A7
+	// Token: 0x06000E87 RID: 3719 RVA: 0x000704D7 File Offset: 0x0006E6D7
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Edge_Edge_filter");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Edge_Edge_filter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E81 RID: 3713 RVA: 0x0006F7C8 File Offset: 0x0006D9C8
+	// Token: 0x06000E88 RID: 3720 RVA: 0x000704F8 File Offset: 0x0006E6F8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -53,12 +53,12 @@ public class CameraFilterPack_Edge_Edge_filter : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E82 RID: 3714 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E89 RID: 3721 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E83 RID: 3715 RVA: 0x0006F8A3 File Offset: 0x0006DAA3
+	// Token: 0x06000E8A RID: 3722 RVA: 0x000705D3 File Offset: 0x0006E7D3
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -67,24 +67,24 @@ public class CameraFilterPack_Edge_Edge_filter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001146 RID: 4422
+	// Token: 0x04001165 RID: 4453
 	public Shader SCShader;
 
-	// Token: 0x04001147 RID: 4423
+	// Token: 0x04001166 RID: 4454
 	private float TimeX = 1f;
 
-	// Token: 0x04001148 RID: 4424
+	// Token: 0x04001167 RID: 4455
 	private Material SCMaterial;
 
-	// Token: 0x04001149 RID: 4425
+	// Token: 0x04001168 RID: 4456
 	[Range(0f, 10f)]
 	public float RedAmplifier;
 
-	// Token: 0x0400114A RID: 4426
+	// Token: 0x04001169 RID: 4457
 	[Range(0f, 10f)]
 	public float GreenAmplifier = 2f;
 
-	// Token: 0x0400114B RID: 4427
+	// Token: 0x0400116A RID: 4458
 	[Range(0f, 10f)]
 	public float BlueAmplifier;
 }

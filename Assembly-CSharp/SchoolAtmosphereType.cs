@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020003C9 RID: 969
+// Token: 0x020003CE RID: 974
 public enum SchoolAtmosphereType
 {
-	// Token: 0x040029A3 RID: 10659
+	// Token: 0x04002A04 RID: 10756
 	High,
-	// Token: 0x040029A4 RID: 10660
+	// Token: 0x04002A05 RID: 10757
 	Medium,
-	// Token: 0x040029A5 RID: 10661
+	// Token: 0x04002A06 RID: 10758
 	Low
 }

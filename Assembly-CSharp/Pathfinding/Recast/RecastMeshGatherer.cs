@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace Pathfinding.Recast
 {
-	// Token: 0x020005B7 RID: 1463
+	// Token: 0x020005CD RID: 1485
 	internal class RecastMeshGatherer
 	{
-		// Token: 0x060027CA RID: 10186 RVA: 0x001B437C File Offset: 0x001B257C
+		// Token: 0x06002820 RID: 10272 RVA: 0x001B9F68 File Offset: 0x001B8168
 		public RecastMeshGatherer(Bounds bounds, int terrainSampleSize, LayerMask mask, List<string> tagMask, float colliderRasterizeDetail)
 		{
 			terrainSampleSize = Math.Max(terrainSampleSize, 1);
@@ -20,7 +20,7 @@ namespace Pathfinding.Recast
 			this.colliderRasterizeDetail = colliderRasterizeDetail;
 		}
 
-		// Token: 0x060027CB RID: 10187 RVA: 0x001B43D4 File Offset: 0x001B25D4
+		// Token: 0x06002821 RID: 10273 RVA: 0x001B9FC0 File Offset: 0x001B81C0
 		private static List<MeshFilter> FilterMeshes(MeshFilter[] meshFilters, List<string> tagMask, LayerMask layerMask)
 		{
 			List<MeshFilter> list = new List<MeshFilter>(meshFilters.Length / 3);
@@ -35,7 +35,7 @@ namespace Pathfinding.Recast
 			return list;
 		}
 
-		// Token: 0x060027CC RID: 10188 RVA: 0x001B4464 File Offset: 0x001B2664
+		// Token: 0x06002822 RID: 10274 RVA: 0x001BA050 File Offset: 0x001B8250
 		public void CollectSceneMeshes(List<RasterizationMesh> meshes)
 		{
 			if (this.tagMask.Count > 0 || this.mask != 0)
@@ -78,7 +78,7 @@ namespace Pathfinding.Recast
 			}
 		}
 
-		// Token: 0x060027CD RID: 10189 RVA: 0x001B45A8 File Offset: 0x001B27A8
+		// Token: 0x06002823 RID: 10275 RVA: 0x001BA194 File Offset: 0x001B8394
 		public void CollectRecastMeshObjs(List<RasterizationMesh> buffer)
 		{
 			List<RecastMeshObj> list = ListPool<RecastMeshObj>.Claim();
@@ -130,7 +130,7 @@ namespace Pathfinding.Recast
 			ListPool<RecastMeshObj>.Release(ref list);
 		}
 
-		// Token: 0x060027CE RID: 10190 RVA: 0x001B4750 File Offset: 0x001B2950
+		// Token: 0x06002824 RID: 10276 RVA: 0x001BA33C File Offset: 0x001B853C
 		public void CollectTerrainMeshes(bool rasterizeTrees, float desiredChunkSize, List<RasterizationMesh> result)
 		{
 			Terrain[] activeTerrains = Terrain.activeTerrains;
@@ -150,7 +150,7 @@ namespace Pathfinding.Recast
 			}
 		}
 
-		// Token: 0x060027CF RID: 10191 RVA: 0x001B47A4 File Offset: 0x001B29A4
+		// Token: 0x06002825 RID: 10277 RVA: 0x001BA390 File Offset: 0x001B8590
 		private void GenerateTerrainChunks(Terrain terrain, Bounds bounds, float desiredChunkSize, List<RasterizationMesh> result)
 		{
 			TerrainData terrainData = terrain.terrainData;
@@ -191,13 +191,13 @@ namespace Pathfinding.Recast
 			}
 		}
 
-		// Token: 0x060027D0 RID: 10192 RVA: 0x001B4972 File Offset: 0x001B2B72
+		// Token: 0x06002826 RID: 10278 RVA: 0x001BA55E File Offset: 0x001B875E
 		private static int CeilDivision(int lhs, int rhs)
 		{
 			return (lhs + rhs - 1) / rhs;
 		}
 
-		// Token: 0x060027D1 RID: 10193 RVA: 0x001B497C File Offset: 0x001B2B7C
+		// Token: 0x06002827 RID: 10279 RVA: 0x001BA568 File Offset: 0x001B8768
 		private RasterizationMesh GenerateHeightmapChunk(float[,] heights, Vector3 sampleSize, Vector3 offset, int x0, int z0, int width, int depth, int stride)
 		{
 			int num = RecastMeshGatherer.CeilDivision(width, this.terrainSampleSize) + 1;
@@ -240,7 +240,7 @@ namespace Pathfinding.Recast
 			return rasterizationMesh;
 		}
 
-		// Token: 0x060027D2 RID: 10194 RVA: 0x001B4B24 File Offset: 0x001B2D24
+		// Token: 0x06002828 RID: 10280 RVA: 0x001BA710 File Offset: 0x001B8910
 		private void CollectTreeMeshes(Terrain terrain, List<RasterizationMesh> result)
 		{
 			TerrainData terrainData = terrain.terrainData;
@@ -273,7 +273,7 @@ namespace Pathfinding.Recast
 			}
 		}
 
-		// Token: 0x060027D3 RID: 10195 RVA: 0x001B4C8C File Offset: 0x001B2E8C
+		// Token: 0x06002829 RID: 10281 RVA: 0x001BA878 File Offset: 0x001B8A78
 		public void CollectColliderMeshes(List<RasterizationMesh> result)
 		{
 			Collider[] array = Physics.OverlapSphere(this.bounds.center, this.bounds.size.magnitude, -1, QueryTriggerInteraction.Ignore);
@@ -294,13 +294,13 @@ namespace Pathfinding.Recast
 			this.capsuleCache.Clear();
 		}
 
-		// Token: 0x060027D4 RID: 10196 RVA: 0x001B4D88 File Offset: 0x001B2F88
+		// Token: 0x0600282A RID: 10282 RVA: 0x001BA974 File Offset: 0x001B8B74
 		private RasterizationMesh RasterizeCollider(Collider col)
 		{
 			return this.RasterizeCollider(col, col.transform.localToWorldMatrix);
 		}
 
-		// Token: 0x060027D5 RID: 10197 RVA: 0x001B4D9C File Offset: 0x001B2F9C
+		// Token: 0x0600282B RID: 10283 RVA: 0x001BA988 File Offset: 0x001B8B88
 		private RasterizationMesh RasterizeCollider(Collider col, Matrix4x4 localToWorldMatrix)
 		{
 			RasterizationMesh result = null;
@@ -334,7 +334,7 @@ namespace Pathfinding.Recast
 			return result;
 		}
 
-		// Token: 0x060027D6 RID: 10198 RVA: 0x001B4EF0 File Offset: 0x001B30F0
+		// Token: 0x0600282C RID: 10284 RVA: 0x001BAADC File Offset: 0x001B8CDC
 		private RasterizationMesh RasterizeBoxCollider(BoxCollider collider, Matrix4x4 localToWorldMatrix)
 		{
 			Matrix4x4 matrix4x = Matrix4x4.TRS(collider.center, Quaternion.identity, collider.size * 0.5f);
@@ -342,7 +342,7 @@ namespace Pathfinding.Recast
 			return new RasterizationMesh(RecastMeshGatherer.BoxColliderVerts, RecastMeshGatherer.BoxColliderTris, collider.bounds, matrix4x);
 		}
 
-		// Token: 0x060027D7 RID: 10199 RVA: 0x001B4F3C File Offset: 0x001B313C
+		// Token: 0x0600282D RID: 10285 RVA: 0x001BAB28 File Offset: 0x001B8D28
 		private RasterizationMesh RasterizeCapsuleCollider(float radius, float height, Bounds bounds, Matrix4x4 localToWorldMatrix)
 		{
 			int num = Mathf.Max(4, Mathf.RoundToInt(this.colliderRasterizeDetail * Mathf.Sqrt(localToWorldMatrix.MultiplyVector(Vector3.one).magnitude)));
@@ -370,7 +370,7 @@ namespace Pathfinding.Recast
 				{
 					for (int k = 0; k < num2; k++)
 					{
-						array[k + j * num2] = new Vector3(Mathf.Cos((float)k * 3.1415927f * 2f / (float)num2) * Mathf.Sin((float)j * 3.1415927f / (float)(num - 1)), Mathf.Cos((float)j * 3.1415927f / (float)(num - 1)) + ((j < num / 2) ? height : (-height)), Mathf.Sin((float)k * 3.1415927f * 2f / (float)num2) * Mathf.Sin((float)j * 3.1415927f / (float)(num - 1)));
+						array[k + j * num2] = new Vector3(Mathf.Cos((float)k * 3.14159274f * 2f / (float)num2) * Mathf.Sin((float)j * 3.14159274f / (float)(num - 1)), Mathf.Cos((float)j * 3.14159274f / (float)(num - 1)) + ((j < num / 2) ? height : (-height)), Mathf.Sin((float)k * 3.14159274f * 2f / (float)num2) * Mathf.Sin((float)j * 3.14159274f / (float)(num - 1)));
 					}
 				}
 				array[array.Length - 2] = Vector3.down;
@@ -419,22 +419,22 @@ namespace Pathfinding.Recast
 			return new RasterizationMesh(array, tris, bounds, localToWorldMatrix);
 		}
 
-		// Token: 0x04004235 RID: 16949
+		// Token: 0x04004313 RID: 17171
 		private readonly int terrainSampleSize;
 
-		// Token: 0x04004236 RID: 16950
+		// Token: 0x04004314 RID: 17172
 		private readonly LayerMask mask;
 
-		// Token: 0x04004237 RID: 16951
+		// Token: 0x04004315 RID: 17173
 		private readonly List<string> tagMask;
 
-		// Token: 0x04004238 RID: 16952
+		// Token: 0x04004316 RID: 17174
 		private readonly float colliderRasterizeDetail;
 
-		// Token: 0x04004239 RID: 16953
+		// Token: 0x04004317 RID: 17175
 		private readonly Bounds bounds;
 
-		// Token: 0x0400423A RID: 16954
+		// Token: 0x04004318 RID: 17176
 		private static readonly int[] BoxColliderTris = new int[]
 		{
 			0,
@@ -475,7 +475,7 @@ namespace Pathfinding.Recast
 			4
 		};
 
-		// Token: 0x0400423B RID: 16955
+		// Token: 0x04004319 RID: 17177
 		private static readonly Vector3[] BoxColliderVerts = new Vector3[]
 		{
 			new Vector3(-1f, -1f, -1f),
@@ -488,22 +488,22 @@ namespace Pathfinding.Recast
 			new Vector3(-1f, 1f, 1f)
 		};
 
-		// Token: 0x0400423C RID: 16956
+		// Token: 0x0400431A RID: 17178
 		private List<RecastMeshGatherer.CapsuleCache> capsuleCache = new List<RecastMeshGatherer.CapsuleCache>();
 
-		// Token: 0x02000762 RID: 1890
+		// Token: 0x0200077C RID: 1916
 		private class CapsuleCache
 		{
-			// Token: 0x04004A2B RID: 18987
+			// Token: 0x04004B16 RID: 19222
 			public int rows;
 
-			// Token: 0x04004A2C RID: 18988
+			// Token: 0x04004B17 RID: 19223
 			public float height;
 
-			// Token: 0x04004A2D RID: 18989
+			// Token: 0x04004B18 RID: 19224
 			public Vector3[] verts;
 
-			// Token: 0x04004A2E RID: 18990
+			// Token: 0x04004B19 RID: 19225
 			public int[] tris;
 		}
 	}

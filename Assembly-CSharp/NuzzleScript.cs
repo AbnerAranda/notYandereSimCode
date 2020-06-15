@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000346 RID: 838
+// Token: 0x0200034A RID: 842
 public class NuzzleScript : MonoBehaviour
 {
-	// Token: 0x0600187C RID: 6268 RVA: 0x000DFCC9 File Offset: 0x000DDEC9
+	// Token: 0x0600189C RID: 6300 RVA: 0x000E20A5 File Offset: 0x000E02A5
 	private void Start()
 	{
 		this.OriginalRotation = base.transform.localEulerAngles;
 	}
 
-	// Token: 0x0600187D RID: 6269 RVA: 0x000DFCDC File Offset: 0x000DDEDC
+	// Token: 0x0600189D RID: 6301 RVA: 0x000E20B8 File Offset: 0x000E02B8
 	private void Update()
 	{
 		if (!this.Down)
@@ -32,18 +32,18 @@ public class NuzzleScript : MonoBehaviour
 		base.transform.localEulerAngles = this.OriginalRotation + new Vector3(this.Rotate, 0f, 0f);
 	}
 
-	// Token: 0x040023F2 RID: 9202
+	// Token: 0x04002442 RID: 9282
 	public Vector3 OriginalRotation;
 
-	// Token: 0x040023F3 RID: 9203
+	// Token: 0x04002443 RID: 9283
 	public float Rotate;
 
-	// Token: 0x040023F4 RID: 9204
+	// Token: 0x04002444 RID: 9284
 	public float Limit;
 
-	// Token: 0x040023F5 RID: 9205
+	// Token: 0x04002445 RID: 9285
 	public float Speed;
 
-	// Token: 0x040023F6 RID: 9206
+	// Token: 0x04002446 RID: 9286
 	private bool Down;
 }

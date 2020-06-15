@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005CE RID: 1486
+	// Token: 0x020005E4 RID: 1508
 	public static class ArrayPool<T>
 	{
-		// Token: 0x060028F8 RID: 10488 RVA: 0x001BA724 File Offset: 0x001B8924
+		// Token: 0x0600294E RID: 10574 RVA: 0x001C0310 File Offset: 0x001BE510
 		public static T[] Claim(int minimumLength)
 		{
 			if (minimumLength <= 0)
@@ -39,7 +39,7 @@ namespace Pathfinding.Util
 			return new T[1 << num];
 		}
 
-		// Token: 0x060028F9 RID: 10489 RVA: 0x001BA7E0 File Offset: 0x001B89E0
+		// Token: 0x0600294F RID: 10575 RVA: 0x001C03CC File Offset: 0x001BE5CC
 		public static T[] ClaimWithExactLength(int length)
 		{
 			if (length != 0 && (length & length - 1) == 0)
@@ -61,7 +61,7 @@ namespace Pathfinding.Util
 			return new T[length];
 		}
 
-		// Token: 0x060028FA RID: 10490 RVA: 0x001BA860 File Offset: 0x001B8A60
+		// Token: 0x06002950 RID: 10576 RVA: 0x001C044C File Offset: 0x001BE64C
 		public static void Release(ref T[] array, bool allowNonPowerOfTwo = false)
 		{
 			if (array == null)
@@ -113,16 +113,16 @@ namespace Pathfinding.Util
 			array = null;
 		}
 
-		// Token: 0x040042F5 RID: 17141
+		// Token: 0x040043D3 RID: 17363
 		private const int MaximumExactArrayLength = 256;
 
-		// Token: 0x040042F6 RID: 17142
+		// Token: 0x040043D4 RID: 17364
 		private static readonly Stack<T[]>[] pool = new Stack<T[]>[31];
 
-		// Token: 0x040042F7 RID: 17143
+		// Token: 0x040043D5 RID: 17365
 		private static readonly Stack<T[]>[] exactPool = new Stack<T[]>[257];
 
-		// Token: 0x040042F8 RID: 17144
+		// Token: 0x040043D6 RID: 17366
 		private static readonly HashSet<T[]> inPool = new HashSet<T[]>();
 	}
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 public abstract class UIItemSlot : MonoBehaviour
 {
 	// Token: 0x17000011 RID: 17
-	// (get) Token: 0x060000DD RID: 221
+	// (get) Token: 0x060000DE RID: 222
 	protected abstract InvGameItem observedItem { get; }
 
-	// Token: 0x060000DE RID: 222
+	// Token: 0x060000DF RID: 223
 	protected abstract InvGameItem Replace(InvGameItem item);
 
-	// Token: 0x060000DF RID: 223 RVA: 0x00011944 File Offset: 0x0000FB44
+	// Token: 0x060000E0 RID: 224 RVA: 0x0001196C File Offset: 0x0000FB6C
 	private void OnTooltip(bool show)
 	{
 		InvGameItem invGameItem = show ? this.mItem : null;
@@ -73,7 +73,7 @@ public abstract class UIItemSlot : MonoBehaviour
 		UITooltip.Hide();
 	}
 
-	// Token: 0x060000E0 RID: 224 RVA: 0x00011AC2 File Offset: 0x0000FCC2
+	// Token: 0x060000E1 RID: 225 RVA: 0x00011AEA File Offset: 0x0000FCEA
 	private void OnClick()
 	{
 		if (UIItemSlot.mDraggedItem != null)
@@ -92,7 +92,7 @@ public abstract class UIItemSlot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E1 RID: 225 RVA: 0x00011B00 File Offset: 0x0000FD00
+	// Token: 0x060000E2 RID: 226 RVA: 0x00011B28 File Offset: 0x0000FD28
 	private void OnDrag(Vector2 delta)
 	{
 		if (UIItemSlot.mDraggedItem == null && this.mItem != null)
@@ -104,7 +104,7 @@ public abstract class UIItemSlot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E2 RID: 226 RVA: 0x00011B3C File Offset: 0x0000FD3C
+	// Token: 0x060000E3 RID: 227 RVA: 0x00011B64 File Offset: 0x0000FD64
 	private void OnDrop(GameObject go)
 	{
 		InvGameItem invGameItem = this.Replace(UIItemSlot.mDraggedItem);
@@ -124,7 +124,7 @@ public abstract class UIItemSlot : MonoBehaviour
 		this.UpdateCursor();
 	}
 
-	// Token: 0x060000E3 RID: 227 RVA: 0x00011B94 File Offset: 0x0000FD94
+	// Token: 0x060000E4 RID: 228 RVA: 0x00011BBC File Offset: 0x0000FDBC
 	private void UpdateCursor()
 	{
 		if (UIItemSlot.mDraggedItem != null && UIItemSlot.mDraggedItem.baseItem != null)
@@ -135,7 +135,7 @@ public abstract class UIItemSlot : MonoBehaviour
 		UICursor.Clear();
 	}
 
-	// Token: 0x060000E4 RID: 228 RVA: 0x00011BE4 File Offset: 0x0000FDE4
+	// Token: 0x060000E5 RID: 229 RVA: 0x00011C0C File Offset: 0x0000FE0C
 	private void Update()
 	{
 		InvGameItem observedItem = this.observedItem;
@@ -173,30 +173,30 @@ public abstract class UIItemSlot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000276 RID: 630
+	// Token: 0x04000278 RID: 632
 	public UISprite icon;
 
-	// Token: 0x04000277 RID: 631
+	// Token: 0x04000279 RID: 633
 	public UIWidget background;
 
-	// Token: 0x04000278 RID: 632
+	// Token: 0x0400027A RID: 634
 	public UILabel label;
 
-	// Token: 0x04000279 RID: 633
+	// Token: 0x0400027B RID: 635
 	public AudioClip grabSound;
 
-	// Token: 0x0400027A RID: 634
+	// Token: 0x0400027C RID: 636
 	public AudioClip placeSound;
 
-	// Token: 0x0400027B RID: 635
+	// Token: 0x0400027D RID: 637
 	public AudioClip errorSound;
 
-	// Token: 0x0400027C RID: 636
+	// Token: 0x0400027E RID: 638
 	private InvGameItem mItem;
 
-	// Token: 0x0400027D RID: 637
+	// Token: 0x0400027F RID: 639
 	private string mText = "";
 
-	// Token: 0x0400027E RID: 638
+	// Token: 0x04000280 RID: 640
 	private static InvGameItem mDraggedItem;
 }

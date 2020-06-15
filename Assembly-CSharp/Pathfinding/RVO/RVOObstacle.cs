@@ -4,44 +4,44 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C9 RID: 1481
+	// Token: 0x020005DF RID: 1503
 	public abstract class RVOObstacle : VersionedMonoBehaviour
 	{
-		// Token: 0x0600289D RID: 10397
+		// Token: 0x060028F3 RID: 10483
 		protected abstract void CreateObstacles();
 
-		// Token: 0x170005DF RID: 1503
-		// (get) Token: 0x0600289E RID: 10398
+		// Token: 0x170005E5 RID: 1509
+		// (get) Token: 0x060028F4 RID: 10484
 		protected abstract bool ExecuteInEditor { get; }
 
-		// Token: 0x170005E0 RID: 1504
-		// (get) Token: 0x0600289F RID: 10399
+		// Token: 0x170005E6 RID: 1510
+		// (get) Token: 0x060028F5 RID: 10485
 		protected abstract bool LocalCoordinates { get; }
 
-		// Token: 0x170005E1 RID: 1505
-		// (get) Token: 0x060028A0 RID: 10400
+		// Token: 0x170005E7 RID: 1511
+		// (get) Token: 0x060028F6 RID: 10486
 		protected abstract bool StaticObstacle { get; }
 
-		// Token: 0x170005E2 RID: 1506
-		// (get) Token: 0x060028A1 RID: 10401
+		// Token: 0x170005E8 RID: 1512
+		// (get) Token: 0x060028F7 RID: 10487
 		protected abstract float Height { get; }
 
-		// Token: 0x060028A2 RID: 10402
+		// Token: 0x060028F8 RID: 10488
 		protected abstract bool AreGizmosDirty();
 
-		// Token: 0x060028A3 RID: 10403 RVA: 0x001B8E69 File Offset: 0x001B7069
+		// Token: 0x060028F9 RID: 10489 RVA: 0x001BEA55 File Offset: 0x001BCC55
 		public void OnDrawGizmos()
 		{
 			this.OnDrawGizmos(false);
 		}
 
-		// Token: 0x060028A4 RID: 10404 RVA: 0x001B8E72 File Offset: 0x001B7072
+		// Token: 0x060028FA RID: 10490 RVA: 0x001BEA5E File Offset: 0x001BCC5E
 		public void OnDrawGizmosSelected()
 		{
 			this.OnDrawGizmos(true);
 		}
 
-		// Token: 0x060028A5 RID: 10405 RVA: 0x001B8E7C File Offset: 0x001B707C
+		// Token: 0x060028FB RID: 10491 RVA: 0x001BEA68 File Offset: 0x001BCC68
 		public void OnDrawGizmos(bool selected)
 		{
 			this.gizmoDrawing = true;
@@ -101,7 +101,7 @@ namespace Pathfinding.RVO
 			this.gizmoDrawing = false;
 		}
 
-		// Token: 0x060028A6 RID: 10406 RVA: 0x001B90FF File Offset: 0x001B72FF
+		// Token: 0x060028FC RID: 10492 RVA: 0x001BECEB File Offset: 0x001BCEEB
 		protected virtual Matrix4x4 GetMatrix()
 		{
 			if (!this.LocalCoordinates)
@@ -111,7 +111,7 @@ namespace Pathfinding.RVO
 			return base.transform.localToWorldMatrix;
 		}
 
-		// Token: 0x060028A7 RID: 10407 RVA: 0x001B911C File Offset: 0x001B731C
+		// Token: 0x060028FD RID: 10493 RVA: 0x001BED08 File Offset: 0x001BCF08
 		public void OnDisable()
 		{
 			if (this.addedObstacles != null)
@@ -127,7 +127,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x060028A8 RID: 10408 RVA: 0x001B9174 File Offset: 0x001B7374
+		// Token: 0x060028FE RID: 10494 RVA: 0x001BED60 File Offset: 0x001BCF60
 		public void OnEnable()
 		{
 			if (this.addedObstacles != null)
@@ -151,7 +151,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x060028A9 RID: 10409 RVA: 0x001B91F0 File Offset: 0x001B73F0
+		// Token: 0x060028FF RID: 10495 RVA: 0x001BEDDC File Offset: 0x001BCFDC
 		public void Start()
 		{
 			this.addedObstacles = new List<ObstacleVertex>();
@@ -160,7 +160,7 @@ namespace Pathfinding.RVO
 			this.CreateObstacles();
 		}
 
-		// Token: 0x060028AA RID: 10410 RVA: 0x001B921C File Offset: 0x001B741C
+		// Token: 0x06002900 RID: 10496 RVA: 0x001BEE08 File Offset: 0x001BD008
 		public void Update()
 		{
 			Matrix4x4 matrix = this.GetMatrix();
@@ -174,7 +174,7 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x060028AB RID: 10411 RVA: 0x001B927F File Offset: 0x001B747F
+		// Token: 0x06002901 RID: 10497 RVA: 0x001BEE6B File Offset: 0x001BD06B
 		protected void FindSimulator()
 		{
 			if (RVOSimulator.active == null)
@@ -184,7 +184,7 @@ namespace Pathfinding.RVO
 			this.sim = RVOSimulator.active.GetSimulator();
 		}
 
-		// Token: 0x060028AC RID: 10412 RVA: 0x001B92AC File Offset: 0x001B74AC
+		// Token: 0x06002902 RID: 10498 RVA: 0x001BEE98 File Offset: 0x001BD098
 		protected void AddObstacle(Vector3[] vertices, float height)
 		{
 			if (vertices == null)
@@ -220,14 +220,14 @@ namespace Pathfinding.RVO
 			this.AddObstacleInternal(vertices, height);
 		}
 
-		// Token: 0x060028AD RID: 10413 RVA: 0x001B9346 File Offset: 0x001B7546
+		// Token: 0x06002903 RID: 10499 RVA: 0x001BEF32 File Offset: 0x001BD132
 		private void AddObstacleInternal(Vector3[] vertices, float height)
 		{
 			this.addedObstacles.Add(this.sim.AddObstacle(vertices, height, this.GetMatrix(), this.layer, true));
 			this.sourceObstacles.Add(vertices);
 		}
 
-		// Token: 0x060028AE RID: 10414 RVA: 0x001B937C File Offset: 0x001B757C
+		// Token: 0x06002904 RID: 10500 RVA: 0x001BEF68 File Offset: 0x001BD168
 		private void WindCorrectly(Vector3[] vertices)
 		{
 			int num = 0;
@@ -270,39 +270,39 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x040042B3 RID: 17075
+		// Token: 0x04004391 RID: 17297
 		public RVOObstacle.ObstacleVertexWinding obstacleMode;
 
-		// Token: 0x040042B4 RID: 17076
+		// Token: 0x04004392 RID: 17298
 		public RVOLayer layer = RVOLayer.DefaultObstacle;
 
-		// Token: 0x040042B5 RID: 17077
+		// Token: 0x04004393 RID: 17299
 		protected Simulator sim;
 
-		// Token: 0x040042B6 RID: 17078
+		// Token: 0x04004394 RID: 17300
 		private List<ObstacleVertex> addedObstacles;
 
-		// Token: 0x040042B7 RID: 17079
+		// Token: 0x04004395 RID: 17301
 		private List<Vector3[]> sourceObstacles;
 
-		// Token: 0x040042B8 RID: 17080
+		// Token: 0x04004396 RID: 17302
 		private bool gizmoDrawing;
 
-		// Token: 0x040042B9 RID: 17081
+		// Token: 0x04004397 RID: 17303
 		private List<Vector3[]> gizmoVerts;
 
-		// Token: 0x040042BA RID: 17082
+		// Token: 0x04004398 RID: 17304
 		private RVOObstacle.ObstacleVertexWinding _obstacleMode;
 
-		// Token: 0x040042BB RID: 17083
+		// Token: 0x04004399 RID: 17305
 		private Matrix4x4 prevUpdateMatrix;
 
-		// Token: 0x0200076F RID: 1903
+		// Token: 0x02000789 RID: 1929
 		public enum ObstacleVertexWinding
 		{
-			// Token: 0x04004A5E RID: 19038
+			// Token: 0x04004B49 RID: 19273
 			KeepOut,
-			// Token: 0x04004A5F RID: 19039
+			// Token: 0x04004B4A RID: 19274
 			KeepIn
 		}
 	}

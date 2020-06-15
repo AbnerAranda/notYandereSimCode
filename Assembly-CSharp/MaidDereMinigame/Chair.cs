@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace MaidDereMinigame
 {
-	// Token: 0x020004EA RID: 1258
+	// Token: 0x020004FA RID: 1274
 	public class Chair : MonoBehaviour
 	{
-		// Token: 0x170004C9 RID: 1225
-		// (get) Token: 0x06001FC7 RID: 8135 RVA: 0x00184150 File Offset: 0x00182350
+		// Token: 0x170004CF RID: 1231
+		// (get) Token: 0x06002009 RID: 8201 RVA: 0x00189640 File Offset: 0x00187840
 		public static Chairs AllChairs
 		{
 			get
@@ -24,8 +24,8 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x170004CA RID: 1226
-		// (get) Token: 0x06001FC8 RID: 8136 RVA: 0x001841A4 File Offset: 0x001823A4
+		// Token: 0x170004D0 RID: 1232
+		// (get) Token: 0x0600200A RID: 8202 RVA: 0x00189694 File Offset: 0x00187894
 		public static Chair RandomChair
 		{
 			get
@@ -48,16 +48,16 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x06001FC9 RID: 8137 RVA: 0x0018422C File Offset: 0x0018242C
+		// Token: 0x0600200B RID: 8203 RVA: 0x0018971C File Offset: 0x0018791C
 		private void OnDestroy()
 		{
 			Chair.chairs = null;
 		}
 
-		// Token: 0x04003D81 RID: 15745
+		// Token: 0x04003E31 RID: 15921
 		private static Chairs chairs;
 
-		// Token: 0x04003D82 RID: 15746
+		// Token: 0x04003E32 RID: 15922
 		public bool available = true;
 	}
 }

@@ -5,10 +5,10 @@ using UnityEngine.Rendering;
 
 namespace AmplifyMotion
 {
-	// Token: 0x020004DA RID: 1242
+	// Token: 0x020004EA RID: 1258
 	internal class ParticleState : MotionState
 	{
-		// Token: 0x06001F5C RID: 8028 RVA: 0x001803C0 File Offset: 0x0017E5C0
+		// Token: 0x06001F9E RID: 8094 RVA: 0x0018588C File Offset: 0x00183A8C
 		public ParticleState(AmplifyMotionCamera owner, AmplifyMotionObjectBase obj) : base(owner, obj)
 		{
 			this.m_particleSystem = this.m_obj.GetComponent<ParticleSystem>();
@@ -17,7 +17,7 @@ namespace AmplifyMotion
 			this.rotationBySpeed = this.m_particleSystem.rotationBySpeed;
 		}
 
-		// Token: 0x06001F5D RID: 8029 RVA: 0x00180419 File Offset: 0x0017E619
+		// Token: 0x06001F9F RID: 8095 RVA: 0x001858E5 File Offset: 0x00183AE5
 		private void IssueError(string message)
 		{
 			if (!ParticleState.m_uniqueWarnings.Contains(this.m_obj))
@@ -28,7 +28,7 @@ namespace AmplifyMotion
 			this.m_error = true;
 		}
 
-		// Token: 0x06001F5E RID: 8030 RVA: 0x0018044C File Offset: 0x0017E64C
+		// Token: 0x06001FA0 RID: 8096 RVA: 0x00185918 File Offset: 0x00183B18
 		private Mesh CreateBillboardMesh()
 		{
 			int[] triangles = new int[]
@@ -62,7 +62,7 @@ namespace AmplifyMotion
 			};
 		}
 
-		// Token: 0x06001F5F RID: 8031 RVA: 0x00180558 File Offset: 0x0017E758
+		// Token: 0x06001FA1 RID: 8097 RVA: 0x00185A24 File Offset: 0x00183C24
 		private Mesh CreateStretchedBillboardMesh()
 		{
 			int[] triangles = new int[]
@@ -96,7 +96,7 @@ namespace AmplifyMotion
 			};
 		}
 
-		// Token: 0x06001F60 RID: 8032 RVA: 0x00180664 File Offset: 0x0017E864
+		// Token: 0x06001FA2 RID: 8098 RVA: 0x00185B30 File Offset: 0x00183D30
 		internal override void Initialize()
 		{
 			if (this.m_renderer == null)
@@ -130,7 +130,7 @@ namespace AmplifyMotion
 			this.m_wasVisible = false;
 		}
 
-		// Token: 0x06001F61 RID: 8033 RVA: 0x0018078C File Offset: 0x0017E98C
+		// Token: 0x06001FA3 RID: 8099 RVA: 0x00185C58 File Offset: 0x00183E58
 		private void RemoveDeadParticles()
 		{
 			this.m_listToRemove.Clear();
@@ -155,7 +155,7 @@ namespace AmplifyMotion
 			}
 		}
 
-		// Token: 0x06001F62 RID: 8034 RVA: 0x00180848 File Offset: 0x0017EA48
+		// Token: 0x06001FA4 RID: 8100 RVA: 0x00185D14 File Offset: 0x00183F14
 		internal override void UpdateTransform(CommandBuffer updateCB, bool starting)
 		{
 			int maxParticles = this.m_particleSystem.main.maxParticles;
@@ -253,7 +253,7 @@ namespace AmplifyMotion
 			this.m_wasVisible = this.m_renderer.isVisible;
 		}
 
-		// Token: 0x06001F63 RID: 8035 RVA: 0x00180BEC File Offset: 0x0017EDEC
+		// Token: 0x06001FA5 RID: 8101 RVA: 0x001860B8 File Offset: 0x001842B8
 		internal override void RenderVectors(Camera camera, CommandBuffer renderCB, float scale, Quality quality)
 		{
 			if (this.m_initialized && !this.m_error && this.m_renderer.isVisible)
@@ -292,58 +292,58 @@ namespace AmplifyMotion
 			}
 		}
 
-		// Token: 0x04003CE5 RID: 15589
+		// Token: 0x04003D95 RID: 15765
 		public ParticleSystem m_particleSystem;
 
-		// Token: 0x04003CE6 RID: 15590
+		// Token: 0x04003D96 RID: 15766
 		public ParticleSystemRenderer m_renderer;
 
-		// Token: 0x04003CE7 RID: 15591
+		// Token: 0x04003D97 RID: 15767
 		private Mesh m_mesh;
 
-		// Token: 0x04003CE8 RID: 15592
+		// Token: 0x04003D98 RID: 15768
 		private ParticleSystem.RotationOverLifetimeModule rotationOverLifetime;
 
-		// Token: 0x04003CE9 RID: 15593
+		// Token: 0x04003D99 RID: 15769
 		private ParticleSystem.RotationBySpeedModule rotationBySpeed;
 
-		// Token: 0x04003CEA RID: 15594
+		// Token: 0x04003D9A RID: 15770
 		private ParticleSystem.Particle[] m_particles;
 
-		// Token: 0x04003CEB RID: 15595
+		// Token: 0x04003D9B RID: 15771
 		private Dictionary<uint, ParticleState.Particle> m_particleDict;
 
-		// Token: 0x04003CEC RID: 15596
+		// Token: 0x04003D9C RID: 15772
 		private List<uint> m_listToRemove;
 
-		// Token: 0x04003CED RID: 15597
+		// Token: 0x04003D9D RID: 15773
 		private Stack<ParticleState.Particle> m_particleStack;
 
-		// Token: 0x04003CEE RID: 15598
+		// Token: 0x04003D9E RID: 15774
 		private int m_capacity;
 
-		// Token: 0x04003CEF RID: 15599
+		// Token: 0x04003D9F RID: 15775
 		private MotionState.MaterialDesc[] m_sharedMaterials;
 
-		// Token: 0x04003CF0 RID: 15600
+		// Token: 0x04003DA0 RID: 15776
 		private bool m_moved;
 
-		// Token: 0x04003CF1 RID: 15601
+		// Token: 0x04003DA1 RID: 15777
 		private bool m_wasVisible;
 
-		// Token: 0x04003CF2 RID: 15602
+		// Token: 0x04003DA2 RID: 15778
 		private static HashSet<AmplifyMotionObjectBase> m_uniqueWarnings = new HashSet<AmplifyMotionObjectBase>();
 
-		// Token: 0x020006FA RID: 1786
+		// Token: 0x02000713 RID: 1811
 		protected class Particle
 		{
-			// Token: 0x0400485C RID: 18524
+			// Token: 0x04004945 RID: 18757
 			public int refCount;
 
-			// Token: 0x0400485D RID: 18525
+			// Token: 0x04004946 RID: 18758
 			public MotionState.Matrix3x4 prevLocalToWorld;
 
-			// Token: 0x0400485E RID: 18526
+			// Token: 0x04004947 RID: 18759
 			public MotionState.Matrix3x4 currLocalToWorld;
 		}
 	}

@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000522 RID: 1314
+	// Token: 0x02000538 RID: 1336
 	[AddComponentMenu("Pathfinding/Pathfinding Debugger")]
 	[ExecuteInEditMode]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_astar_debugger.php")]
 	public class AstarDebugger : VersionedMonoBehaviour
 	{
-		// Token: 0x06002263 RID: 8803 RVA: 0x0018EDB8 File Offset: 0x0018CFB8
+		// Token: 0x060022B9 RID: 8889 RVA: 0x001949A4 File Offset: 0x00192BA4
 		public void Start()
 		{
 			base.useGUILayout = false;
@@ -31,7 +31,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002264 RID: 8804 RVA: 0x0018EE48 File Offset: 0x0018D048
+		// Token: 0x060022BA RID: 8890 RVA: 0x00194A34 File Offset: 0x00192C34
 		public void LateUpdate()
 		{
 			if (!this.show || (!Application.isPlaying && !this.showInEditor))
@@ -100,13 +100,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002265 RID: 8805 RVA: 0x0018F21A File Offset: 0x0018D41A
+		// Token: 0x060022BB RID: 8891 RVA: 0x00194E06 File Offset: 0x00193006
 		private void DrawGraphLine(int index, Matrix4x4 m, float x1, float x2, float y1, float y2, Color color)
 		{
 			Debug.DrawLine(this.cam.ScreenToWorldPoint(m.MultiplyPoint3x4(new Vector3(x1, y1))), this.cam.ScreenToWorldPoint(m.MultiplyPoint3x4(new Vector3(x2, y2))), color);
 		}
 
-		// Token: 0x06002266 RID: 8806 RVA: 0x0018F258 File Offset: 0x0018D458
+		// Token: 0x060022BC RID: 8892 RVA: 0x00194E44 File Offset: 0x00193044
 		public void OnGUI()
 		{
 			if (!this.show || (!Application.isPlaying && !this.showInEditor))
@@ -227,7 +227,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002267 RID: 8807 RVA: 0x0018F9E8 File Offset: 0x0018DBE8
+		// Token: 0x060022BD RID: 8893 RVA: 0x001955D4 File Offset: 0x001937D4
 		public AstarDebugger()
 		{
 			AstarDebugger.PathTypeDebug[] array = new AstarDebugger.PathTypeDebug[7];
@@ -242,131 +242,131 @@ namespace Pathfinding
 			base..ctor();
 		}
 
-		// Token: 0x04003ED3 RID: 16083
+		// Token: 0x04003FB1 RID: 16305
 		public int yOffset = 5;
 
-		// Token: 0x04003ED4 RID: 16084
+		// Token: 0x04003FB2 RID: 16306
 		public bool show = true;
 
-		// Token: 0x04003ED5 RID: 16085
+		// Token: 0x04003FB3 RID: 16307
 		public bool showInEditor;
 
-		// Token: 0x04003ED6 RID: 16086
+		// Token: 0x04003FB4 RID: 16308
 		public bool showFPS;
 
-		// Token: 0x04003ED7 RID: 16087
+		// Token: 0x04003FB5 RID: 16309
 		public bool showPathProfile;
 
-		// Token: 0x04003ED8 RID: 16088
+		// Token: 0x04003FB6 RID: 16310
 		public bool showMemProfile;
 
-		// Token: 0x04003ED9 RID: 16089
+		// Token: 0x04003FB7 RID: 16311
 		public bool showGraph;
 
-		// Token: 0x04003EDA RID: 16090
+		// Token: 0x04003FB8 RID: 16312
 		public int graphBufferSize = 200;
 
-		// Token: 0x04003EDB RID: 16091
+		// Token: 0x04003FB9 RID: 16313
 		public Font font;
 
-		// Token: 0x04003EDC RID: 16092
+		// Token: 0x04003FBA RID: 16314
 		public int fontSize = 12;
 
-		// Token: 0x04003EDD RID: 16093
+		// Token: 0x04003FBB RID: 16315
 		private StringBuilder text = new StringBuilder();
 
-		// Token: 0x04003EDE RID: 16094
+		// Token: 0x04003FBC RID: 16316
 		private string cachedText;
 
-		// Token: 0x04003EDF RID: 16095
+		// Token: 0x04003FBD RID: 16317
 		private float lastUpdate = -999f;
 
-		// Token: 0x04003EE0 RID: 16096
+		// Token: 0x04003FBE RID: 16318
 		private AstarDebugger.GraphPoint[] graph;
 
-		// Token: 0x04003EE1 RID: 16097
+		// Token: 0x04003FBF RID: 16319
 		private float delayedDeltaTime = 1f;
 
-		// Token: 0x04003EE2 RID: 16098
+		// Token: 0x04003FC0 RID: 16320
 		private float lastCollect;
 
-		// Token: 0x04003EE3 RID: 16099
+		// Token: 0x04003FC1 RID: 16321
 		private float lastCollectNum;
 
-		// Token: 0x04003EE4 RID: 16100
+		// Token: 0x04003FC2 RID: 16322
 		private float delta;
 
-		// Token: 0x04003EE5 RID: 16101
+		// Token: 0x04003FC3 RID: 16323
 		private float lastDeltaTime;
 
-		// Token: 0x04003EE6 RID: 16102
+		// Token: 0x04003FC4 RID: 16324
 		private int allocRate;
 
-		// Token: 0x04003EE7 RID: 16103
+		// Token: 0x04003FC5 RID: 16325
 		private int lastAllocMemory;
 
-		// Token: 0x04003EE8 RID: 16104
+		// Token: 0x04003FC6 RID: 16326
 		private float lastAllocSet = -9999f;
 
-		// Token: 0x04003EE9 RID: 16105
+		// Token: 0x04003FC7 RID: 16327
 		private int allocMem;
 
-		// Token: 0x04003EEA RID: 16106
+		// Token: 0x04003FC8 RID: 16328
 		private int collectAlloc;
 
-		// Token: 0x04003EEB RID: 16107
+		// Token: 0x04003FC9 RID: 16329
 		private int peakAlloc;
 
-		// Token: 0x04003EEC RID: 16108
+		// Token: 0x04003FCA RID: 16330
 		private int fpsDropCounterSize = 200;
 
-		// Token: 0x04003EED RID: 16109
+		// Token: 0x04003FCB RID: 16331
 		private float[] fpsDrops;
 
-		// Token: 0x04003EEE RID: 16110
+		// Token: 0x04003FCC RID: 16332
 		private Rect boxRect;
 
-		// Token: 0x04003EEF RID: 16111
+		// Token: 0x04003FCD RID: 16333
 		private GUIStyle style;
 
-		// Token: 0x04003EF0 RID: 16112
+		// Token: 0x04003FCE RID: 16334
 		private Camera cam;
 
-		// Token: 0x04003EF1 RID: 16113
+		// Token: 0x04003FCF RID: 16335
 		private float graphWidth = 100f;
 
-		// Token: 0x04003EF2 RID: 16114
+		// Token: 0x04003FD0 RID: 16336
 		private float graphHeight = 100f;
 
-		// Token: 0x04003EF3 RID: 16115
+		// Token: 0x04003FD1 RID: 16337
 		private float graphOffset = 50f;
 
-		// Token: 0x04003EF4 RID: 16116
+		// Token: 0x04003FD2 RID: 16338
 		private int maxVecPool;
 
-		// Token: 0x04003EF5 RID: 16117
+		// Token: 0x04003FD3 RID: 16339
 		private int maxNodePool;
 
-		// Token: 0x04003EF6 RID: 16118
+		// Token: 0x04003FD4 RID: 16340
 		private AstarDebugger.PathTypeDebug[] debugTypes;
 
-		// Token: 0x02000714 RID: 1812
+		// Token: 0x0200072E RID: 1838
 		private struct GraphPoint
 		{
-			// Token: 0x040048D7 RID: 18647
+			// Token: 0x040049C2 RID: 18882
 			public float fps;
 
-			// Token: 0x040048D8 RID: 18648
+			// Token: 0x040049C3 RID: 18883
 			public float memory;
 
-			// Token: 0x040048D9 RID: 18649
+			// Token: 0x040049C4 RID: 18884
 			public bool collectEvent;
 		}
 
-		// Token: 0x02000715 RID: 1813
+		// Token: 0x0200072F RID: 1839
 		private struct PathTypeDebug
 		{
-			// Token: 0x06002C7F RID: 11391 RVA: 0x001C9ED3 File Offset: 0x001C80D3
+			// Token: 0x06002CE2 RID: 11490 RVA: 0x001CFB7B File Offset: 0x001CDD7B
 			public PathTypeDebug(string name, Func<int> getSize, Func<int> getTotalCreated)
 			{
 				this.name = name;
@@ -374,7 +374,7 @@ namespace Pathfinding
 				this.getTotalCreated = getTotalCreated;
 			}
 
-			// Token: 0x06002C80 RID: 11392 RVA: 0x001C9EEC File Offset: 0x001C80EC
+			// Token: 0x06002CE3 RID: 11491 RVA: 0x001CFB94 File Offset: 0x001CDD94
 			public void Print(StringBuilder text)
 			{
 				int num = this.getTotalCreated();
@@ -384,13 +384,13 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x040048DA RID: 18650
+			// Token: 0x040049C5 RID: 18885
 			private string name;
 
-			// Token: 0x040048DB RID: 18651
+			// Token: 0x040049C6 RID: 18886
 			private Func<int> getSize;
 
-			// Token: 0x040048DC RID: 18652
+			// Token: 0x040049C7 RID: 18887
 			private Func<int> getTotalCreated;
 		}
 	}

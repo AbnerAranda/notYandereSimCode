@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000E6 RID: 230
+// Token: 0x020000E7 RID: 231
 public class BoneScript : MonoBehaviour
 {
-	// Token: 0x06000A67 RID: 2663 RVA: 0x00055980 File Offset: 0x00053B80
+	// Token: 0x06000A6E RID: 2670 RVA: 0x00056694 File Offset: 0x00054894
 	private void Start()
 	{
 		base.transform.eulerAngles = new Vector3(base.transform.eulerAngles.x, UnityEngine.Random.Range(0f, 360f), base.transform.eulerAngles.z);
 		this.Origin = base.transform.position.y;
-		base.GetComponent<AudioSource>().pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+		this.MyAudio.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
 	}
 
-	// Token: 0x06000A68 RID: 2664 RVA: 0x000559FC File Offset: 0x00053BFC
+	// Token: 0x06000A6F RID: 2671 RVA: 0x00056710 File Offset: 0x00054910
 	private void Update()
 	{
 		if (this.Drop)
@@ -33,7 +33,7 @@ public class BoneScript : MonoBehaviour
 		this.Drop = true;
 	}
 
-	// Token: 0x06000A69 RID: 2665 RVA: 0x00055B20 File Offset: 0x00053D20
+	// Token: 0x06000A70 RID: 2672 RVA: 0x00056834 File Offset: 0x00054A34
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.layer == 9)
@@ -50,12 +50,15 @@ public class BoneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000AC3 RID: 2755
+	// Token: 0x04000AE1 RID: 2785
+	public AudioSource MyAudio;
+
+	// Token: 0x04000AE2 RID: 2786
 	public float Height;
 
-	// Token: 0x04000AC4 RID: 2756
+	// Token: 0x04000AE3 RID: 2787
 	public float Origin;
 
-	// Token: 0x04000AC5 RID: 2757
+	// Token: 0x04000AE4 RID: 2788
 	public bool Drop;
 }

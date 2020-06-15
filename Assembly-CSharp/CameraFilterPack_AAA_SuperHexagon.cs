@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200010D RID: 269
+// Token: 0x0200010E RID: 270
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/AAA/Super Hexagon")]
 public class CameraFilterPack_AAA_SuperHexagon : MonoBehaviour
 {
 	// Token: 0x1700022D RID: 557
-	// (get) Token: 0x06000B1F RID: 2847 RVA: 0x000609D0 File Offset: 0x0005EBD0
+	// (get) Token: 0x06000B26 RID: 2854 RVA: 0x00061700 File Offset: 0x0005F900
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_AAA_SuperHexagon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B20 RID: 2848 RVA: 0x00060A04 File Offset: 0x0005EC04
+	// Token: 0x06000B27 RID: 2855 RVA: 0x00061734 File Offset: 0x0005F934
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/AAA_Super_Hexagon");
@@ -32,7 +32,7 @@ public class CameraFilterPack_AAA_SuperHexagon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B21 RID: 2849 RVA: 0x00060A28 File Offset: 0x0005EC28
+	// Token: 0x06000B28 RID: 2856 RVA: 0x00061758 File Offset: 0x0005F958
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -59,12 +59,12 @@ public class CameraFilterPack_AAA_SuperHexagon : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B22 RID: 2850 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B29 RID: 2857 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B23 RID: 2851 RVA: 0x00060B98 File Offset: 0x0005ED98
+	// Token: 0x06000B2A RID: 2858 RVA: 0x000618C8 File Offset: 0x0005FAC8
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -73,38 +73,38 @@ public class CameraFilterPack_AAA_SuperHexagon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000D90 RID: 3472
+	// Token: 0x04000DAF RID: 3503
 	public Shader SCShader;
 
-	// Token: 0x04000D91 RID: 3473
+	// Token: 0x04000DB0 RID: 3504
 	[Range(0f, 1f)]
 	public float _AlphaHexa = 1f;
 
-	// Token: 0x04000D92 RID: 3474
+	// Token: 0x04000DB1 RID: 3505
 	private float TimeX = 1f;
 
-	// Token: 0x04000D93 RID: 3475
+	// Token: 0x04000DB2 RID: 3506
 	private Material SCMaterial;
 
-	// Token: 0x04000D94 RID: 3476
+	// Token: 0x04000DB3 RID: 3507
 	[Range(0.2f, 10f)]
 	public float HexaSize = 2.5f;
 
-	// Token: 0x04000D95 RID: 3477
+	// Token: 0x04000DB4 RID: 3508
 	public float _BorderSize = 1f;
 
-	// Token: 0x04000D96 RID: 3478
+	// Token: 0x04000DB5 RID: 3509
 	public Color _BorderColor = new Color(0.75f, 0.75f, 1f, 1f);
 
-	// Token: 0x04000D97 RID: 3479
+	// Token: 0x04000DB6 RID: 3510
 	public Color _HexaColor = new Color(0f, 0.5f, 1f, 1f);
 
-	// Token: 0x04000D98 RID: 3480
+	// Token: 0x04000DB7 RID: 3511
 	public float _SpotSize = 2.5f;
 
-	// Token: 0x04000D99 RID: 3481
+	// Token: 0x04000DB8 RID: 3512
 	public Vector2 center = new Vector2(0.5f, 0.5f);
 
-	// Token: 0x04000D9A RID: 3482
+	// Token: 0x04000DB9 RID: 3513
 	public float Radius = 0.25f;
 }

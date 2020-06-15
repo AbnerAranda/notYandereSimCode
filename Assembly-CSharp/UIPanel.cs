@@ -8,8 +8,8 @@ using UnityEngine;
 public class UIPanel : UIRect
 {
 	// Token: 0x1700019D RID: 413
-	// (get) Token: 0x06000840 RID: 2112 RVA: 0x0004284B File Offset: 0x00040A4B
-	// (set) Token: 0x06000841 RID: 2113 RVA: 0x00042853 File Offset: 0x00040A53
+	// (get) Token: 0x06000841 RID: 2113 RVA: 0x00042873 File Offset: 0x00040A73
+	// (set) Token: 0x06000842 RID: 2114 RVA: 0x0004287B File Offset: 0x00040A7B
 	public string sortingLayerName
 	{
 		get
@@ -27,7 +27,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x1700019E RID: 414
-	// (get) Token: 0x06000842 RID: 2114 RVA: 0x0004287C File Offset: 0x00040A7C
+	// (get) Token: 0x06000843 RID: 2115 RVA: 0x000428A4 File Offset: 0x00040AA4
 	public static int nextUnusedDepth
 	{
 		get
@@ -49,7 +49,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x1700019F RID: 415
-	// (get) Token: 0x06000843 RID: 2115 RVA: 0x000428CA File Offset: 0x00040ACA
+	// (get) Token: 0x06000844 RID: 2116 RVA: 0x000428F2 File Offset: 0x00040AF2
 	public override bool canBeAnchored
 	{
 		get
@@ -59,8 +59,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A0 RID: 416
-	// (get) Token: 0x06000844 RID: 2116 RVA: 0x000428D5 File Offset: 0x00040AD5
-	// (set) Token: 0x06000845 RID: 2117 RVA: 0x000428E0 File Offset: 0x00040AE0
+	// (get) Token: 0x06000845 RID: 2117 RVA: 0x000428FD File Offset: 0x00040AFD
+	// (set) Token: 0x06000846 RID: 2118 RVA: 0x00042908 File Offset: 0x00040B08
 	public override float alpha
 	{
 		get
@@ -89,8 +89,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A1 RID: 417
-	// (get) Token: 0x06000846 RID: 2118 RVA: 0x00042963 File Offset: 0x00040B63
-	// (set) Token: 0x06000847 RID: 2119 RVA: 0x0004296B File Offset: 0x00040B6B
+	// (get) Token: 0x06000847 RID: 2119 RVA: 0x0004298B File Offset: 0x00040B8B
+	// (set) Token: 0x06000848 RID: 2120 RVA: 0x00042993 File Offset: 0x00040B93
 	public int depth
 	{
 		get
@@ -108,8 +108,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A2 RID: 418
-	// (get) Token: 0x06000848 RID: 2120 RVA: 0x00042993 File Offset: 0x00040B93
-	// (set) Token: 0x06000849 RID: 2121 RVA: 0x0004299B File Offset: 0x00040B9B
+	// (get) Token: 0x06000849 RID: 2121 RVA: 0x000429BB File Offset: 0x00040BBB
+	// (set) Token: 0x0600084A RID: 2122 RVA: 0x000429C3 File Offset: 0x00040BC3
 	public int sortingOrder
 	{
 		get
@@ -126,7 +126,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x000429C0 File Offset: 0x00040BC0
+	// Token: 0x0600084B RID: 2123 RVA: 0x000429E8 File Offset: 0x00040BE8
 	public static int CompareFunc(UIPanel a, UIPanel b)
 	{
 		if (!(a != b) || !(a != null) || !(b != null))
@@ -149,7 +149,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A3 RID: 419
-	// (get) Token: 0x0600084B RID: 2123 RVA: 0x00042A1B File Offset: 0x00040C1B
+	// (get) Token: 0x0600084C RID: 2124 RVA: 0x00042A43 File Offset: 0x00040C43
 	public float width
 	{
 		get
@@ -159,7 +159,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A4 RID: 420
-	// (get) Token: 0x0600084C RID: 2124 RVA: 0x00042A28 File Offset: 0x00040C28
+	// (get) Token: 0x0600084D RID: 2125 RVA: 0x00042A50 File Offset: 0x00040C50
 	public float height
 	{
 		get
@@ -169,7 +169,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A5 RID: 421
-	// (get) Token: 0x0600084D RID: 2125 RVA: 0x0002D171 File Offset: 0x0002B371
+	// (get) Token: 0x0600084E RID: 2126 RVA: 0x0002D199 File Offset: 0x0002B399
 	public bool halfPixelOffset
 	{
 		get
@@ -179,7 +179,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A6 RID: 422
-	// (get) Token: 0x0600084E RID: 2126 RVA: 0x00042A35 File Offset: 0x00040C35
+	// (get) Token: 0x0600084F RID: 2127 RVA: 0x00042A5D File Offset: 0x00040C5D
 	public bool usedForUI
 	{
 		get
@@ -189,7 +189,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A7 RID: 423
-	// (get) Token: 0x0600084F RID: 2127 RVA: 0x00042A54 File Offset: 0x00040C54
+	// (get) Token: 0x06000850 RID: 2128 RVA: 0x00042A7C File Offset: 0x00040C7C
 	public Vector3 drawCallOffset
 	{
 		get
@@ -215,8 +215,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A8 RID: 424
-	// (get) Token: 0x06000850 RID: 2128 RVA: 0x00042B0D File Offset: 0x00040D0D
-	// (set) Token: 0x06000851 RID: 2129 RVA: 0x00042B15 File Offset: 0x00040D15
+	// (get) Token: 0x06000851 RID: 2129 RVA: 0x00042B35 File Offset: 0x00040D35
+	// (set) Token: 0x06000852 RID: 2130 RVA: 0x00042B3D File Offset: 0x00040D3D
 	public UIDrawCall.Clipping clipping
 	{
 		get
@@ -235,7 +235,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001A9 RID: 425
-	// (get) Token: 0x06000852 RID: 2130 RVA: 0x00042B35 File Offset: 0x00040D35
+	// (get) Token: 0x06000853 RID: 2131 RVA: 0x00042B5D File Offset: 0x00040D5D
 	public UIPanel parentPanel
 	{
 		get
@@ -245,7 +245,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001AA RID: 426
-	// (get) Token: 0x06000853 RID: 2131 RVA: 0x00042B40 File Offset: 0x00040D40
+	// (get) Token: 0x06000854 RID: 2132 RVA: 0x00042B68 File Offset: 0x00040D68
 	public int clipCount
 	{
 		get
@@ -265,7 +265,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001AB RID: 427
-	// (get) Token: 0x06000854 RID: 2132 RVA: 0x00042B7A File Offset: 0x00040D7A
+	// (get) Token: 0x06000855 RID: 2133 RVA: 0x00042BA2 File Offset: 0x00040DA2
 	public bool hasClipping
 	{
 		get
@@ -275,7 +275,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001AC RID: 428
-	// (get) Token: 0x06000855 RID: 2133 RVA: 0x00042B90 File Offset: 0x00040D90
+	// (get) Token: 0x06000856 RID: 2134 RVA: 0x00042BB8 File Offset: 0x00040DB8
 	public bool hasCumulativeClipping
 	{
 		get
@@ -285,7 +285,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001AD RID: 429
-	// (get) Token: 0x06000856 RID: 2134 RVA: 0x00042B9B File Offset: 0x00040D9B
+	// (get) Token: 0x06000857 RID: 2135 RVA: 0x00042BC3 File Offset: 0x00040DC3
 	[Obsolete("Use 'hasClipping' or 'hasCumulativeClipping' instead")]
 	public bool clipsChildren
 	{
@@ -296,8 +296,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001AE RID: 430
-	// (get) Token: 0x06000857 RID: 2135 RVA: 0x00042BA3 File Offset: 0x00040DA3
-	// (set) Token: 0x06000858 RID: 2136 RVA: 0x00042BAC File Offset: 0x00040DAC
+	// (get) Token: 0x06000858 RID: 2136 RVA: 0x00042BCB File Offset: 0x00040DCB
+	// (set) Token: 0x06000859 RID: 2137 RVA: 0x00042BD4 File Offset: 0x00040DD4
 	public Vector2 clipOffset
 	{
 		get
@@ -318,7 +318,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000859 RID: 2137 RVA: 0x00042C18 File Offset: 0x00040E18
+	// Token: 0x0600085A RID: 2138 RVA: 0x00042C40 File Offset: 0x00040E40
 	private void InvalidateClipping()
 	{
 		this.mResized = true;
@@ -337,8 +337,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001AF RID: 431
-	// (get) Token: 0x0600085A RID: 2138 RVA: 0x00042C73 File Offset: 0x00040E73
-	// (set) Token: 0x0600085B RID: 2139 RVA: 0x00042C7B File Offset: 0x00040E7B
+	// (get) Token: 0x0600085B RID: 2139 RVA: 0x00042C9B File Offset: 0x00040E9B
+	// (set) Token: 0x0600085C RID: 2140 RVA: 0x00042CA3 File Offset: 0x00040EA3
 	public Texture2D clipTexture
 	{
 		get
@@ -355,8 +355,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001B0 RID: 432
-	// (get) Token: 0x0600085C RID: 2140 RVA: 0x00042C92 File Offset: 0x00040E92
-	// (set) Token: 0x0600085D RID: 2141 RVA: 0x00042C9A File Offset: 0x00040E9A
+	// (get) Token: 0x0600085D RID: 2141 RVA: 0x00042CBA File Offset: 0x00040EBA
+	// (set) Token: 0x0600085E RID: 2142 RVA: 0x00042CC2 File Offset: 0x00040EC2
 	[Obsolete("Use 'finalClipRegion' or 'baseClipRegion' instead")]
 	public Vector4 clipRange
 	{
@@ -371,8 +371,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001B1 RID: 433
-	// (get) Token: 0x0600085E RID: 2142 RVA: 0x00042CA3 File Offset: 0x00040EA3
-	// (set) Token: 0x0600085F RID: 2143 RVA: 0x00042CAC File Offset: 0x00040EAC
+	// (get) Token: 0x0600085F RID: 2143 RVA: 0x00042CCB File Offset: 0x00040ECB
+	// (set) Token: 0x06000860 RID: 2144 RVA: 0x00042CD4 File Offset: 0x00040ED4
 	public Vector4 baseClipRegion
 	{
 		get
@@ -400,7 +400,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001B2 RID: 434
-	// (get) Token: 0x06000860 RID: 2144 RVA: 0x00042D70 File Offset: 0x00040F70
+	// (get) Token: 0x06000861 RID: 2145 RVA: 0x00042D98 File Offset: 0x00040F98
 	public Vector4 finalClipRegion
 	{
 		get
@@ -421,8 +421,8 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001B3 RID: 435
-	// (get) Token: 0x06000861 RID: 2145 RVA: 0x00042E51 File Offset: 0x00041051
-	// (set) Token: 0x06000862 RID: 2146 RVA: 0x00042E59 File Offset: 0x00041059
+	// (get) Token: 0x06000862 RID: 2146 RVA: 0x00042E79 File Offset: 0x00041079
+	// (set) Token: 0x06000863 RID: 2147 RVA: 0x00042E81 File Offset: 0x00041081
 	public Vector2 clipSoftness
 	{
 		get
@@ -439,7 +439,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001B4 RID: 436
-	// (get) Token: 0x06000863 RID: 2147 RVA: 0x00042E70 File Offset: 0x00041070
+	// (get) Token: 0x06000864 RID: 2148 RVA: 0x00042E98 File Offset: 0x00041098
 	public override Vector3[] localCorners
 	{
 		get
@@ -467,7 +467,7 @@ public class UIPanel : UIRect
 	}
 
 	// Token: 0x170001B5 RID: 437
-	// (get) Token: 0x06000864 RID: 2148 RVA: 0x00042F7C File Offset: 0x0004117C
+	// (get) Token: 0x06000865 RID: 2149 RVA: 0x00042FA4 File Offset: 0x000411A4
 	public override Vector3[] worldCorners
 	{
 		get
@@ -512,7 +512,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000865 RID: 2149 RVA: 0x00043198 File Offset: 0x00041398
+	// Token: 0x06000866 RID: 2150 RVA: 0x000431C0 File Offset: 0x000413C0
 	public override Vector3[] GetSides(Transform relativeTo)
 	{
 		if (this.mClipping != UIDrawCall.Clipping.None)
@@ -557,14 +557,14 @@ public class UIPanel : UIRect
 		return base.GetSides(relativeTo);
 	}
 
-	// Token: 0x06000866 RID: 2150 RVA: 0x00043382 File Offset: 0x00041582
+	// Token: 0x06000867 RID: 2151 RVA: 0x000433AA File Offset: 0x000415AA
 	public override void Invalidate(bool includeChildren)
 	{
 		this.mAlphaFrameID = -1;
 		base.Invalidate(includeChildren);
 	}
 
-	// Token: 0x06000867 RID: 2151 RVA: 0x00043394 File Offset: 0x00041594
+	// Token: 0x06000868 RID: 2152 RVA: 0x000433BC File Offset: 0x000415BC
 	public override float CalculateFinalAlpha(int frameID)
 	{
 		if (this.mAlphaFrameID != frameID)
@@ -576,7 +576,7 @@ public class UIPanel : UIRect
 		return this.finalAlpha;
 	}
 
-	// Token: 0x06000868 RID: 2152 RVA: 0x000433E8 File Offset: 0x000415E8
+	// Token: 0x06000869 RID: 2153 RVA: 0x00043410 File Offset: 0x00041610
 	public override void SetRect(float x, float y, float width, float height)
 	{
 		int num = Mathf.FloorToInt(width + 0.5f);
@@ -618,7 +618,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000869 RID: 2153 RVA: 0x0004350C File Offset: 0x0004170C
+	// Token: 0x0600086A RID: 2154 RVA: 0x00043534 File Offset: 0x00041734
 	public bool IsVisible(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
 	{
 		this.UpdateTransformMatrix();
@@ -641,7 +641,7 @@ public class UIPanel : UIRect
 		return num2 >= this.mMin.x && num4 >= this.mMin.y && num <= this.mMax.x && num3 <= this.mMax.y;
 	}
 
-	// Token: 0x0600086A RID: 2154 RVA: 0x00043630 File Offset: 0x00041830
+	// Token: 0x0600086B RID: 2155 RVA: 0x00043658 File Offset: 0x00041858
 	public bool IsVisible(Vector3 worldPos)
 	{
 		if (this.mAlpha < 0.001f)
@@ -657,7 +657,7 @@ public class UIPanel : UIRect
 		return vector.x >= this.mMin.x && vector.y >= this.mMin.y && vector.x <= this.mMax.x && vector.y <= this.mMax.y;
 	}
 
-	// Token: 0x0600086B RID: 2155 RVA: 0x000436C8 File Offset: 0x000418C8
+	// Token: 0x0600086C RID: 2156 RVA: 0x000436F0 File Offset: 0x000418F0
 	public bool IsVisible(UIWidget w)
 	{
 		UIPanel uipanel = this;
@@ -684,7 +684,7 @@ public class UIPanel : UIRect
 		return true;
 	}
 
-	// Token: 0x0600086C RID: 2156 RVA: 0x00043740 File Offset: 0x00041940
+	// Token: 0x0600086D RID: 2157 RVA: 0x00043768 File Offset: 0x00041968
 	public bool Affects(UIWidget w)
 	{
 		if (w == null)
@@ -712,14 +712,14 @@ public class UIPanel : UIRect
 		return false;
 	}
 
-	// Token: 0x0600086D RID: 2157 RVA: 0x00043794 File Offset: 0x00041994
+	// Token: 0x0600086E RID: 2158 RVA: 0x000437BC File Offset: 0x000419BC
 	[ContextMenu("Force Refresh")]
 	public void RebuildAllDrawCalls()
 	{
 		this.mRebuild = true;
 	}
 
-	// Token: 0x0600086E RID: 2158 RVA: 0x000437A0 File Offset: 0x000419A0
+	// Token: 0x0600086F RID: 2159 RVA: 0x000437C8 File Offset: 0x000419C8
 	public void SetDirty()
 	{
 		int i = 0;
@@ -732,33 +732,33 @@ public class UIPanel : UIRect
 		this.Invalidate(true);
 	}
 
-	// Token: 0x0600086F RID: 2159 RVA: 0x000437DE File Offset: 0x000419DE
+	// Token: 0x06000870 RID: 2160 RVA: 0x00043806 File Offset: 0x00041A06
 	protected override void Awake()
 	{
 		base.Awake();
 	}
 
-	// Token: 0x06000870 RID: 2160 RVA: 0x000437E8 File Offset: 0x000419E8
+	// Token: 0x06000871 RID: 2161 RVA: 0x00043810 File Offset: 0x00041A10
 	private void FindParent()
 	{
 		Transform parent = base.cachedTransform.parent;
 		this.mParentPanel = ((parent != null) ? NGUITools.FindInParents<UIPanel>(parent.gameObject) : null);
 	}
 
-	// Token: 0x06000871 RID: 2161 RVA: 0x0004381E File Offset: 0x00041A1E
+	// Token: 0x06000872 RID: 2162 RVA: 0x00043846 File Offset: 0x00041A46
 	public override void ParentHasChanged()
 	{
 		base.ParentHasChanged();
 		this.FindParent();
 	}
 
-	// Token: 0x06000872 RID: 2162 RVA: 0x0004382C File Offset: 0x00041A2C
+	// Token: 0x06000873 RID: 2163 RVA: 0x00043854 File Offset: 0x00041A54
 	protected override void OnStart()
 	{
 		this.mLayer = base.cachedGameObject.layer;
 	}
 
-	// Token: 0x06000873 RID: 2163 RVA: 0x0004383F File Offset: 0x00041A3F
+	// Token: 0x06000874 RID: 2164 RVA: 0x00043867 File Offset: 0x00041A67
 	protected override void OnEnable()
 	{
 		this.mRebuild = true;
@@ -769,7 +769,7 @@ public class UIPanel : UIRect
 		this.mMatrixFrame = -1;
 	}
 
-	// Token: 0x06000874 RID: 2164 RVA: 0x0004386C File Offset: 0x00041A6C
+	// Token: 0x06000875 RID: 2165 RVA: 0x00043894 File Offset: 0x00041A94
 	protected override void OnInit()
 	{
 		if (UIPanel.list.Contains(this))
@@ -795,7 +795,7 @@ public class UIPanel : UIRect
 		UIPanel.list.Sort(new Comparison<UIPanel>(UIPanel.CompareFunc));
 	}
 
-	// Token: 0x06000875 RID: 2165 RVA: 0x00043934 File Offset: 0x00041B34
+	// Token: 0x06000876 RID: 2166 RVA: 0x0004395C File Offset: 0x00041B5C
 	protected override void OnDisable()
 	{
 		int i = 0;
@@ -821,7 +821,7 @@ public class UIPanel : UIRect
 		base.OnDisable();
 	}
 
-	// Token: 0x06000876 RID: 2166 RVA: 0x000439B8 File Offset: 0x00041BB8
+	// Token: 0x06000877 RID: 2167 RVA: 0x000439E0 File Offset: 0x00041BE0
 	private void UpdateTransformMatrix()
 	{
 		int frameCount = Time.frameCount;
@@ -839,7 +839,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000877 RID: 2167 RVA: 0x00043A84 File Offset: 0x00041C84
+	// Token: 0x06000878 RID: 2168 RVA: 0x00043AAC File Offset: 0x00041CAC
 	protected override void OnAnchor()
 	{
 		if (this.mClipping == UIDrawCall.Clipping.None)
@@ -961,7 +961,7 @@ public class UIPanel : UIRect
 		this.baseClipRegion = new Vector4(x, y, num5, num6);
 	}
 
-	// Token: 0x06000878 RID: 2168 RVA: 0x00043FC8 File Offset: 0x000421C8
+	// Token: 0x06000879 RID: 2169 RVA: 0x00043FF0 File Offset: 0x000421F0
 	private void LateUpdate()
 	{
 		if (UIPanel.mUpdateFrame != Time.frameCount)
@@ -1007,7 +1007,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000879 RID: 2169 RVA: 0x000440D4 File Offset: 0x000422D4
+	// Token: 0x0600087A RID: 2170 RVA: 0x000440FC File Offset: 0x000422FC
 	private void UpdateSelf()
 	{
 		this.mHasMoved = base.cachedTransform.hasChanged;
@@ -1053,14 +1053,14 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x0600087A RID: 2170 RVA: 0x000441C1 File Offset: 0x000423C1
+	// Token: 0x0600087B RID: 2171 RVA: 0x000441E9 File Offset: 0x000423E9
 	public void SortWidgets()
 	{
 		this.mSortWidgets = false;
 		this.widgets.Sort(new Comparison<UIWidget>(UIWidget.PanelCompareFunc));
 	}
 
-	// Token: 0x0600087B RID: 2171 RVA: 0x000441E4 File Offset: 0x000423E4
+	// Token: 0x0600087C RID: 2172 RVA: 0x0004420C File Offset: 0x0004240C
 	private void FillAllDrawCalls()
 	{
 		for (int i = 0; i < this.drawCalls.Count; i++)
@@ -1170,14 +1170,14 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x0600087C RID: 2172 RVA: 0x000444E0 File Offset: 0x000426E0
+	// Token: 0x0600087D RID: 2173 RVA: 0x00044508 File Offset: 0x00042708
 	public bool FillDrawCall(UIDrawCall dc)
 	{
 		bool needsCulling = this.mCam == null || this.mCam.useOcclusionCulling;
 		return this.FillDrawCall(dc, needsCulling);
 	}
 
-	// Token: 0x0600087D RID: 2173 RVA: 0x00044514 File Offset: 0x00042714
+	// Token: 0x0600087E RID: 2174 RVA: 0x0004453C File Offset: 0x0004273C
 	public bool FillDrawCall(UIDrawCall dc, bool needsCulling)
 	{
 		if (dc != null)
@@ -1238,7 +1238,7 @@ public class UIPanel : UIRect
 		return false;
 	}
 
-	// Token: 0x0600087E RID: 2174 RVA: 0x0004467C File Offset: 0x0004287C
+	// Token: 0x0600087F RID: 2175 RVA: 0x000446A4 File Offset: 0x000428A4
 	private void UpdateDrawCalls(int sortOrder)
 	{
 		Transform cachedTransform = base.cachedTransform;
@@ -1306,7 +1306,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x0600087F RID: 2175 RVA: 0x000448D0 File Offset: 0x00042AD0
+	// Token: 0x06000880 RID: 2176 RVA: 0x000448F8 File Offset: 0x00042AF8
 	private void UpdateLayers()
 	{
 		if (this.mLayer != base.cachedGameObject.layer)
@@ -1331,7 +1331,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000880 RID: 2176 RVA: 0x00044988 File Offset: 0x00042B88
+	// Token: 0x06000881 RID: 2177 RVA: 0x000449B0 File Offset: 0x00042BB0
 	private void UpdateWidgets()
 	{
 		bool flag = false;
@@ -1391,7 +1391,7 @@ public class UIPanel : UIRect
 		this.mResized = false;
 	}
 
-	// Token: 0x06000881 RID: 2177 RVA: 0x00044B18 File Offset: 0x00042D18
+	// Token: 0x06000882 RID: 2178 RVA: 0x00044B40 File Offset: 0x00042D40
 	public UIDrawCall FindDrawCall(UIWidget w)
 	{
 		Material material = w.material;
@@ -1428,7 +1428,7 @@ public class UIPanel : UIRect
 		return null;
 	}
 
-	// Token: 0x06000882 RID: 2178 RVA: 0x00044C2C File Offset: 0x00042E2C
+	// Token: 0x06000883 RID: 2179 RVA: 0x00044C54 File Offset: 0x00042E54
 	public void AddWidget(UIWidget w)
 	{
 		this.mUpdateScroll = true;
@@ -1460,7 +1460,7 @@ public class UIPanel : UIRect
 		this.FindDrawCall(w);
 	}
 
-	// Token: 0x06000883 RID: 2179 RVA: 0x00044CE0 File Offset: 0x00042EE0
+	// Token: 0x06000884 RID: 2180 RVA: 0x00044D08 File Offset: 0x00042F08
 	public void RemoveWidget(UIWidget w)
 	{
 		if (this.widgets.Remove(w) && w.drawCall != null)
@@ -1475,7 +1475,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000884 RID: 2180 RVA: 0x00044D46 File Offset: 0x00042F46
+	// Token: 0x06000885 RID: 2181 RVA: 0x00044D6E File Offset: 0x00042F6E
 	public void Refresh()
 	{
 		this.mRebuild = true;
@@ -1486,7 +1486,7 @@ public class UIPanel : UIRect
 		}
 	}
 
-	// Token: 0x06000885 RID: 2181 RVA: 0x00044D74 File Offset: 0x00042F74
+	// Token: 0x06000886 RID: 2182 RVA: 0x00044D9C File Offset: 0x00042F9C
 	public virtual Vector3 CalculateConstrainOffset(Vector2 min, Vector2 max)
 	{
 		Vector4 finalClipRegion = this.finalClipRegion;
@@ -1506,7 +1506,7 @@ public class UIPanel : UIRect
 		return NGUIMath.ConstrainRect(minRect, maxRect, minArea, maxArea);
 	}
 
-	// Token: 0x06000886 RID: 2182 RVA: 0x00044E6C File Offset: 0x0004306C
+	// Token: 0x06000887 RID: 2183 RVA: 0x00044E94 File Offset: 0x00043094
 	public bool ConstrainTargetToBounds(Transform target, ref Bounds targetBounds, bool immediate)
 	{
 		Vector3 vector = targetBounds.min;
@@ -1549,26 +1549,26 @@ public class UIPanel : UIRect
 		return false;
 	}
 
-	// Token: 0x06000887 RID: 2183 RVA: 0x00044F60 File Offset: 0x00043160
+	// Token: 0x06000888 RID: 2184 RVA: 0x00044F88 File Offset: 0x00043188
 	public bool ConstrainTargetToBounds(Transform target, bool immediate)
 	{
 		Bounds bounds = NGUIMath.CalculateRelativeWidgetBounds(base.cachedTransform, target);
 		return this.ConstrainTargetToBounds(target, ref bounds, immediate);
 	}
 
-	// Token: 0x06000888 RID: 2184 RVA: 0x00044F84 File Offset: 0x00043184
+	// Token: 0x06000889 RID: 2185 RVA: 0x00044FAC File Offset: 0x000431AC
 	public static UIPanel Find(Transform trans)
 	{
 		return UIPanel.Find(trans, false, -1);
 	}
 
-	// Token: 0x06000889 RID: 2185 RVA: 0x00044F8E File Offset: 0x0004318E
+	// Token: 0x0600088A RID: 2186 RVA: 0x00044FB6 File Offset: 0x000431B6
 	public static UIPanel Find(Transform trans, bool createIfMissing)
 	{
 		return UIPanel.Find(trans, createIfMissing, -1);
 	}
 
-	// Token: 0x0600088A RID: 2186 RVA: 0x00044F98 File Offset: 0x00043198
+	// Token: 0x0600088B RID: 2187 RVA: 0x00044FC0 File Offset: 0x000431C0
 	public static UIPanel Find(Transform trans, bool createIfMissing, int layer)
 	{
 		UIPanel uipanel = NGUITools.FindInParents<UIPanel>(trans);
@@ -1587,7 +1587,7 @@ public class UIPanel : UIRect
 		return NGUITools.CreateUI(trans, false, layer);
 	}
 
-	// Token: 0x0600088B RID: 2187 RVA: 0x00044FDC File Offset: 0x000431DC
+	// Token: 0x0600088C RID: 2188 RVA: 0x00045004 File Offset: 0x00043204
 	public Vector2 GetWindowSize()
 	{
 		UIRoot root = base.root;
@@ -1599,7 +1599,7 @@ public class UIPanel : UIRect
 		return vector;
 	}
 
-	// Token: 0x0600088C RID: 2188 RVA: 0x00045018 File Offset: 0x00043218
+	// Token: 0x0600088D RID: 2189 RVA: 0x00045040 File Offset: 0x00043240
 	public Vector2 GetViewSize()
 	{
 		if (this.mClipping != UIDrawCall.Clipping.None)
@@ -1609,187 +1609,187 @@ public class UIPanel : UIRect
 		return NGUITools.screenSize;
 	}
 
-	// Token: 0x04000731 RID: 1841
+	// Token: 0x04000733 RID: 1843
 	public static List<UIPanel> list = new List<UIPanel>();
 
-	// Token: 0x04000732 RID: 1842
+	// Token: 0x04000734 RID: 1844
 	public UIPanel.OnGeometryUpdated onGeometryUpdated;
 
-	// Token: 0x04000733 RID: 1843
+	// Token: 0x04000735 RID: 1845
 	public bool showInPanelTool = true;
 
-	// Token: 0x04000734 RID: 1844
+	// Token: 0x04000736 RID: 1846
 	public bool generateNormals;
 
-	// Token: 0x04000735 RID: 1845
+	// Token: 0x04000737 RID: 1847
 	public bool generateUV2;
 
-	// Token: 0x04000736 RID: 1846
+	// Token: 0x04000738 RID: 1848
 	public UIDrawCall.ShadowMode shadowMode;
 
-	// Token: 0x04000737 RID: 1847
+	// Token: 0x04000739 RID: 1849
 	public bool widgetsAreStatic;
 
-	// Token: 0x04000738 RID: 1848
+	// Token: 0x0400073A RID: 1850
 	public bool cullWhileDragging = true;
 
-	// Token: 0x04000739 RID: 1849
+	// Token: 0x0400073B RID: 1851
 	public bool alwaysOnScreen;
 
-	// Token: 0x0400073A RID: 1850
+	// Token: 0x0400073C RID: 1852
 	public bool anchorOffset;
 
-	// Token: 0x0400073B RID: 1851
+	// Token: 0x0400073D RID: 1853
 	public bool softBorderPadding = true;
 
-	// Token: 0x0400073C RID: 1852
+	// Token: 0x0400073E RID: 1854
 	public UIPanel.RenderQueue renderQueue;
 
-	// Token: 0x0400073D RID: 1853
-	public int startingRenderQueue = 3000;
-
-	// Token: 0x0400073E RID: 1854
-	[NonSerialized]
-	public List<UIWidget> widgets = new List<UIWidget>();
-
 	// Token: 0x0400073F RID: 1855
-	[NonSerialized]
-	public List<UIDrawCall> drawCalls = new List<UIDrawCall>();
+	public int startingRenderQueue = 3000;
 
 	// Token: 0x04000740 RID: 1856
 	[NonSerialized]
-	public Matrix4x4 worldToLocal = Matrix4x4.identity;
+	public List<UIWidget> widgets = new List<UIWidget>();
 
 	// Token: 0x04000741 RID: 1857
 	[NonSerialized]
-	public Vector4 drawCallClipRange = new Vector4(0f, 0f, 1f, 1f);
+	public List<UIDrawCall> drawCalls = new List<UIDrawCall>();
 
 	// Token: 0x04000742 RID: 1858
-	public UIPanel.OnClippingMoved onClipMove;
+	[NonSerialized]
+	public Matrix4x4 worldToLocal = Matrix4x4.identity;
 
 	// Token: 0x04000743 RID: 1859
-	public UIPanel.OnCreateMaterial onCreateMaterial;
+	[NonSerialized]
+	public Vector4 drawCallClipRange = new Vector4(0f, 0f, 1f, 1f);
 
 	// Token: 0x04000744 RID: 1860
-	public UIDrawCall.OnCreateDrawCall onCreateDrawCall;
+	public UIPanel.OnClippingMoved onClipMove;
 
 	// Token: 0x04000745 RID: 1861
-	[HideInInspector]
-	[SerializeField]
-	private Texture2D mClipTexture;
+	public UIPanel.OnCreateMaterial onCreateMaterial;
 
 	// Token: 0x04000746 RID: 1862
-	[HideInInspector]
-	[SerializeField]
-	private float mAlpha = 1f;
+	public UIDrawCall.OnCreateDrawCall onCreateDrawCall;
 
 	// Token: 0x04000747 RID: 1863
 	[HideInInspector]
 	[SerializeField]
-	private UIDrawCall.Clipping mClipping;
+	private Texture2D mClipTexture;
 
 	// Token: 0x04000748 RID: 1864
 	[HideInInspector]
 	[SerializeField]
-	private Vector4 mClipRange = new Vector4(0f, 0f, 300f, 200f);
+	private float mAlpha = 1f;
 
 	// Token: 0x04000749 RID: 1865
 	[HideInInspector]
 	[SerializeField]
-	private Vector2 mClipSoftness = new Vector2(4f, 4f);
+	private UIDrawCall.Clipping mClipping;
 
 	// Token: 0x0400074A RID: 1866
 	[HideInInspector]
 	[SerializeField]
-	private int mDepth;
+	private Vector4 mClipRange = new Vector4(0f, 0f, 300f, 200f);
 
 	// Token: 0x0400074B RID: 1867
 	[HideInInspector]
 	[SerializeField]
-	private int mSortingOrder;
+	private Vector2 mClipSoftness = new Vector2(4f, 4f);
 
 	// Token: 0x0400074C RID: 1868
 	[HideInInspector]
 	[SerializeField]
-	private string mSortingLayerName;
+	private int mDepth;
 
 	// Token: 0x0400074D RID: 1869
-	private bool mRebuild;
+	[HideInInspector]
+	[SerializeField]
+	private int mSortingOrder;
 
 	// Token: 0x0400074E RID: 1870
-	private bool mResized;
+	[HideInInspector]
+	[SerializeField]
+	private string mSortingLayerName;
 
 	// Token: 0x0400074F RID: 1871
+	private bool mRebuild;
+
+	// Token: 0x04000750 RID: 1872
+	private bool mResized;
+
+	// Token: 0x04000751 RID: 1873
 	[SerializeField]
 	private Vector2 mClipOffset = Vector2.zero;
 
-	// Token: 0x04000750 RID: 1872
+	// Token: 0x04000752 RID: 1874
 	private int mMatrixFrame = -1;
 
-	// Token: 0x04000751 RID: 1873
+	// Token: 0x04000753 RID: 1875
 	private int mAlphaFrameID;
 
-	// Token: 0x04000752 RID: 1874
+	// Token: 0x04000754 RID: 1876
 	private int mLayer = -1;
 
-	// Token: 0x04000753 RID: 1875
+	// Token: 0x04000755 RID: 1877
 	private static float[] mTemp = new float[4];
 
-	// Token: 0x04000754 RID: 1876
+	// Token: 0x04000756 RID: 1878
 	private Vector2 mMin = Vector2.zero;
 
-	// Token: 0x04000755 RID: 1877
+	// Token: 0x04000757 RID: 1879
 	private Vector2 mMax = Vector2.zero;
 
-	// Token: 0x04000756 RID: 1878
+	// Token: 0x04000758 RID: 1880
 	private bool mSortWidgets;
 
-	// Token: 0x04000757 RID: 1879
+	// Token: 0x04000759 RID: 1881
 	private bool mUpdateScroll;
 
-	// Token: 0x04000758 RID: 1880
+	// Token: 0x0400075A RID: 1882
 	public bool useSortingOrder;
 
-	// Token: 0x04000759 RID: 1881
+	// Token: 0x0400075B RID: 1883
 	private UIPanel mParentPanel;
 
-	// Token: 0x0400075A RID: 1882
+	// Token: 0x0400075C RID: 1884
 	private static Vector3[] mCorners = new Vector3[4];
 
-	// Token: 0x0400075B RID: 1883
+	// Token: 0x0400075D RID: 1885
 	private static int mUpdateFrame = -1;
 
-	// Token: 0x0400075C RID: 1884
+	// Token: 0x0400075E RID: 1886
 	[NonSerialized]
 	private bool mHasMoved;
 
-	// Token: 0x0400075D RID: 1885
+	// Token: 0x0400075F RID: 1887
 	private UIDrawCall.OnRenderCallback mOnRender;
 
-	// Token: 0x0400075E RID: 1886
+	// Token: 0x04000760 RID: 1888
 	private bool mForced;
 
-	// Token: 0x02000682 RID: 1666
+	// Token: 0x02000698 RID: 1688
 	[DoNotObfuscateNGUI]
 	public enum RenderQueue
 	{
-		// Token: 0x040045D8 RID: 17880
+		// Token: 0x040046B6 RID: 18102
 		Automatic,
-		// Token: 0x040045D9 RID: 17881
+		// Token: 0x040046B7 RID: 18103
 		StartAt,
-		// Token: 0x040045DA RID: 17882
+		// Token: 0x040046B8 RID: 18104
 		Explicit
 	}
 
-	// Token: 0x02000683 RID: 1667
-	// (Invoke) Token: 0x06002B4E RID: 11086
+	// Token: 0x02000699 RID: 1689
+	// (Invoke) Token: 0x06002BA4 RID: 11172
 	public delegate void OnGeometryUpdated();
 
-	// Token: 0x02000684 RID: 1668
-	// (Invoke) Token: 0x06002B52 RID: 11090
+	// Token: 0x0200069A RID: 1690
+	// (Invoke) Token: 0x06002BA8 RID: 11176
 	public delegate void OnClippingMoved(UIPanel panel);
 
-	// Token: 0x02000685 RID: 1669
-	// (Invoke) Token: 0x06002B56 RID: 11094
+	// Token: 0x0200069B RID: 1691
+	// (Invoke) Token: 0x06002BAC RID: 11180
 	public delegate Material OnCreateMaterial(UIWidget widget, Material mat);
 }

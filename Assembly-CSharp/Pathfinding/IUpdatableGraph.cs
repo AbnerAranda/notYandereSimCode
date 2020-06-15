@@ -2,19 +2,19 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000546 RID: 1350
+	// Token: 0x0200055C RID: 1372
 	public interface IUpdatableGraph
 	{
-		// Token: 0x060023F8 RID: 9208
+		// Token: 0x0600244E RID: 9294
 		void UpdateArea(GraphUpdateObject o);
 
-		// Token: 0x060023F9 RID: 9209
+		// Token: 0x0600244F RID: 9295
 		void UpdateAreaInit(GraphUpdateObject o);
 
-		// Token: 0x060023FA RID: 9210
+		// Token: 0x06002450 RID: 9296
 		void UpdateAreaPost(GraphUpdateObject o);
 
-		// Token: 0x060023FB RID: 9211
+		// Token: 0x06002451 RID: 9297
 		GraphUpdateThreading CanUpdateAsync(GraphUpdateObject o);
 	}
 }

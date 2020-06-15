@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002A1 RID: 673
+// Token: 0x020002A3 RID: 675
 public class FindStudentLockerScript : MonoBehaviour
 {
-	// Token: 0x06001407 RID: 5127 RVA: 0x000AF3BC File Offset: 0x000AD5BC
+	// Token: 0x06001415 RID: 5141 RVA: 0x000B0C48 File Offset: 0x000AEE48
 	private void Update()
 	{
 		if (this.TargetedStudent == null)
@@ -33,32 +33,46 @@ public class FindStudentLockerScript : MonoBehaviour
 				return;
 			}
 		}
-		else if (this.Phase == 1)
+		else
 		{
-			if (this.TargetedStudent.Meeting)
+			if (!this.TargetedStudent.Alive)
 			{
-				this.Phase++;
+				this.RestorePrompt();
 				return;
 			}
-		}
-		else if (!this.TargetedStudent.Meeting)
-		{
-			this.Prompt.Label[0].text = "     Find Student Locker";
-			this.TargetedStudent = null;
-			this.Prompt.enabled = true;
-			this.Phase = 1;
+			if (this.Phase == 1)
+			{
+				if (this.TargetedStudent.Meeting)
+				{
+					this.Phase++;
+					return;
+				}
+			}
+			else if (!this.TargetedStudent.Meeting)
+			{
+				this.RestorePrompt();
+			}
 		}
 	}
 
-	// Token: 0x04001C2A RID: 7210
+	// Token: 0x06001416 RID: 5142 RVA: 0x000B0E6B File Offset: 0x000AF06B
+	private void RestorePrompt()
+	{
+		this.Prompt.Label[0].text = "     Find Student Locker";
+		this.TargetedStudent = null;
+		this.Prompt.enabled = true;
+		this.Phase = 1;
+	}
+
+	// Token: 0x04001C62 RID: 7266
 	public TutorialWindowScript TutorialWindow;
 
-	// Token: 0x04001C2B RID: 7211
+	// Token: 0x04001C63 RID: 7267
 	public StudentScript TargetedStudent;
 
-	// Token: 0x04001C2C RID: 7212
+	// Token: 0x04001C64 RID: 7268
 	public PromptScript Prompt;
 
-	// Token: 0x04001C2D RID: 7213
+	// Token: 0x04001C65 RID: 7269
 	public int Phase = 1;
 }

@@ -2,17 +2,17 @@
 using UnityEngine;
 using XInputDotNetPure;
 
-// Token: 0x02000225 RID: 549
+// Token: 0x02000226 RID: 550
 public class CameraEffectsScript : MonoBehaviour
 {
-	// Token: 0x06001210 RID: 4624 RVA: 0x0007F7AC File Offset: 0x0007D9AC
+	// Token: 0x06001217 RID: 4631 RVA: 0x000804DC File Offset: 0x0007E6DC
 	private void Start()
 	{
 		this.MurderStreaks.color = new Color(this.MurderStreaks.color.r, this.MurderStreaks.color.g, this.MurderStreaks.color.b, 0f);
 		this.Streaks.color = new Color(this.Streaks.color.r, this.Streaks.color.g, this.Streaks.color.b, 0f);
 	}
 
-	// Token: 0x06001211 RID: 4625 RVA: 0x0007F844 File Offset: 0x0007DA44
+	// Token: 0x06001218 RID: 4632 RVA: 0x00080574 File Offset: 0x0007E774
 	private void Update()
 	{
 		if (this.VibrationCheck)
@@ -43,7 +43,7 @@ public class CameraEffectsScript : MonoBehaviour
 		this.Vignette.chromaticAberration = Mathf.Lerp(this.Vignette.chromaticAberration, this.EffectStrength * 5f, Time.deltaTime);
 	}
 
-	// Token: 0x06001212 RID: 4626 RVA: 0x0007FA4C File Offset: 0x0007DC4C
+	// Token: 0x06001219 RID: 4633 RVA: 0x0008077C File Offset: 0x0007E97C
 	public void Alarm()
 	{
 		GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
@@ -55,7 +55,7 @@ public class CameraEffectsScript : MonoBehaviour
 		this.Yandere.Jukebox.SFX.PlayOneShot(this.Noticed);
 	}
 
-	// Token: 0x06001213 RID: 4627 RVA: 0x0007FAF8 File Offset: 0x0007DCF8
+	// Token: 0x0600121A RID: 4634 RVA: 0x00080828 File Offset: 0x0007EA28
 	public void MurderWitnessed()
 	{
 		GamePad.SetVibration(PlayerIndex.One, 1f, 1f);
@@ -65,7 +65,7 @@ public class CameraEffectsScript : MonoBehaviour
 		this.Yandere.Jukebox.SFX.PlayOneShot(this.Yandere.Noticed ? this.SenpaiNoticed : this.MurderNoticed);
 	}
 
-	// Token: 0x06001214 RID: 4628 RVA: 0x0007FB9C File Offset: 0x0007DD9C
+	// Token: 0x0600121B RID: 4635 RVA: 0x000808CC File Offset: 0x0007EACC
 	public void DisableCamera()
 	{
 		if (!this.OneCamera)
@@ -76,48 +76,48 @@ public class CameraEffectsScript : MonoBehaviour
 		this.OneCamera = false;
 	}
 
-	// Token: 0x0400152D RID: 5421
+	// Token: 0x0400154C RID: 5452
 	public YandereScript Yandere;
 
-	// Token: 0x0400152E RID: 5422
+	// Token: 0x0400154D RID: 5453
 	public Vignetting Vignette;
 
-	// Token: 0x0400152F RID: 5423
+	// Token: 0x0400154E RID: 5454
 	public UITexture MurderStreaks;
 
-	// Token: 0x04001530 RID: 5424
+	// Token: 0x0400154F RID: 5455
 	public UITexture Streaks;
 
-	// Token: 0x04001531 RID: 5425
+	// Token: 0x04001550 RID: 5456
 	public Bloom AlarmBloom;
 
-	// Token: 0x04001532 RID: 5426
+	// Token: 0x04001551 RID: 5457
 	public float EffectStrength;
 
-	// Token: 0x04001533 RID: 5427
+	// Token: 0x04001552 RID: 5458
 	public float VibrationTimer;
 
-	// Token: 0x04001534 RID: 5428
+	// Token: 0x04001553 RID: 5459
 	public Bloom QualityBloom;
 
-	// Token: 0x04001535 RID: 5429
+	// Token: 0x04001554 RID: 5460
 	public Vignetting QualityVignetting;
 
-	// Token: 0x04001536 RID: 5430
+	// Token: 0x04001555 RID: 5461
 	public AntialiasingAsPostEffect QualityAntialiasingAsPostEffect;
 
-	// Token: 0x04001537 RID: 5431
+	// Token: 0x04001556 RID: 5462
 	public bool VibrationCheck;
 
-	// Token: 0x04001538 RID: 5432
+	// Token: 0x04001557 RID: 5463
 	public bool OneCamera;
 
-	// Token: 0x04001539 RID: 5433
+	// Token: 0x04001558 RID: 5464
 	public AudioClip MurderNoticed;
 
-	// Token: 0x0400153A RID: 5434
+	// Token: 0x04001559 RID: 5465
 	public AudioClip SenpaiNoticed;
 
-	// Token: 0x0400153B RID: 5435
+	// Token: 0x0400155A RID: 5466
 	public AudioClip Noticed;
 }

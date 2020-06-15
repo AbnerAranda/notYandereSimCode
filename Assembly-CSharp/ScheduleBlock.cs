@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000290 RID: 656
+// Token: 0x02000291 RID: 657
 [Serializable]
 public class ScheduleBlock
 {
-	// Token: 0x060013D2 RID: 5074 RVA: 0x000AD243 File Offset: 0x000AB443
+	// Token: 0x060013DA RID: 5082 RVA: 0x000AE447 File Offset: 0x000AC647
 	public ScheduleBlock(float time, string destination, string action)
 	{
 		this.time = time;
@@ -12,12 +12,12 @@ public class ScheduleBlock
 		this.action = action;
 	}
 
-	// Token: 0x04001BB1 RID: 7089
+	// Token: 0x04001BD1 RID: 7121
 	public float time;
 
-	// Token: 0x04001BB2 RID: 7090
+	// Token: 0x04001BD2 RID: 7122
 	public string destination;
 
-	// Token: 0x04001BB3 RID: 7091
+	// Token: 0x04001BD3 RID: 7123
 	public string action;
 }

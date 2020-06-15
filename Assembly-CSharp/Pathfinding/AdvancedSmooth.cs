@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200057E RID: 1406
+	// Token: 0x02000594 RID: 1428
 	[AddComponentMenu("Pathfinding/Modifiers/Advanced Smooth")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_advanced_smooth.php")]
 	[Serializable]
 	public class AdvancedSmooth : MonoModifier
 	{
-		// Token: 0x170005A7 RID: 1447
-		// (get) Token: 0x0600263C RID: 9788 RVA: 0x001A5A6B File Offset: 0x001A3C6B
+		// Token: 0x170005AD RID: 1453
+		// (get) Token: 0x06002692 RID: 9874 RVA: 0x001AB657 File Offset: 0x001A9857
 		public override int Order
 		{
 			get
@@ -20,7 +20,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600263D RID: 9789 RVA: 0x001A5A70 File Offset: 0x001A3C70
+		// Token: 0x06002693 RID: 9875 RVA: 0x001AB65C File Offset: 0x001A985C
 		public override void Apply(Path p)
 		{
 			Vector3[] array = p.vectorPath.ToArray();
@@ -60,7 +60,7 @@ namespace Pathfinding
 			p.vectorPath = list;
 		}
 
-		// Token: 0x0600263E RID: 9790 RVA: 0x001A5B74 File Offset: 0x001A3D74
+		// Token: 0x06002694 RID: 9876 RVA: 0x001AB760 File Offset: 0x001A9960
 		private void EvaluatePaths(List<AdvancedSmooth.Turn> turnList, List<Vector3> output)
 		{
 			turnList.Sort();
@@ -79,29 +79,29 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04004125 RID: 16677
+		// Token: 0x04004203 RID: 16899
 		public float turningRadius = 1f;
 
-		// Token: 0x04004126 RID: 16678
+		// Token: 0x04004204 RID: 16900
 		public AdvancedSmooth.MaxTurn turnConstruct1 = new AdvancedSmooth.MaxTurn();
 
-		// Token: 0x04004127 RID: 16679
+		// Token: 0x04004205 RID: 16901
 		public AdvancedSmooth.ConstantTurn turnConstruct2 = new AdvancedSmooth.ConstantTurn();
 
-		// Token: 0x0200074E RID: 1870
+		// Token: 0x02000768 RID: 1896
 		[Serializable]
 		public class MaxTurn : AdvancedSmooth.TurnConstructor
 		{
-			// Token: 0x06002D40 RID: 11584 RVA: 0x001CDBE8 File Offset: 0x001CBDE8
+			// Token: 0x06002DA3 RID: 11683 RVA: 0x001D3890 File Offset: 0x001D1A90
 			public override void OnTangentUpdate()
 			{
 				this.rightCircleCenter = AdvancedSmooth.TurnConstructor.current + AdvancedSmooth.TurnConstructor.normal * AdvancedSmooth.TurnConstructor.turningRadius;
 				this.leftCircleCenter = AdvancedSmooth.TurnConstructor.current - AdvancedSmooth.TurnConstructor.normal * AdvancedSmooth.TurnConstructor.turningRadius;
 				this.vaRight = base.Atan2(AdvancedSmooth.TurnConstructor.current - this.rightCircleCenter);
-				this.vaLeft = this.vaRight + 3.141592653589793;
+				this.vaLeft = this.vaRight + 3.1415926535897931;
 			}
 
-			// Token: 0x06002D41 RID: 11585 RVA: 0x001CDC68 File Offset: 0x001CBE68
+			// Token: 0x06002DA4 RID: 11684 RVA: 0x001D3910 File Offset: 0x001D1B10
 			public override void Prepare(int i, Vector3[] vectorPath)
 			{
 				this.preRightCircleCenter = this.rightCircleCenter;
@@ -111,10 +111,10 @@ namespace Pathfinding
 				this.preVaRight = this.vaRight;
 				this.preVaLeft = this.vaLeft;
 				this.vaRight = base.Atan2(AdvancedSmooth.TurnConstructor.current - this.rightCircleCenter);
-				this.vaLeft = this.vaRight + 3.141592653589793;
+				this.vaLeft = this.vaRight + 3.1415926535897931;
 			}
 
-			// Token: 0x06002D42 RID: 11586 RVA: 0x001CDD18 File Offset: 0x001CBF18
+			// Token: 0x06002DA5 RID: 11685 RVA: 0x001D39C0 File Offset: 0x001D1BC0
 			public override void TangentToTangent(List<AdvancedSmooth.Turn> turnList)
 			{
 				this.alfaRightRight = base.Atan2(this.rightCircleCenter - this.preRightCircleCenter);
@@ -154,8 +154,8 @@ namespace Pathfinding
 				Vector3 a3 = base.AngleToVector(this.alfaLeftRight + this.deltaLeftRight) * AdvancedSmooth.TurnConstructor.turningRadius + this.preLeftCircleCenter;
 				Vector3 a4 = base.AngleToVector(this.alfaLeftLeft + 1.5707963267948966) * AdvancedSmooth.TurnConstructor.turningRadius + this.preLeftCircleCenter;
 				Vector3 b = base.AngleToVector(this.alfaRightRight - 1.5707963267948966) * AdvancedSmooth.TurnConstructor.turningRadius + this.rightCircleCenter;
-				Vector3 b2 = base.AngleToVector(this.alfaRightLeft - this.deltaRightLeft + 3.141592653589793) * AdvancedSmooth.TurnConstructor.turningRadius + this.leftCircleCenter;
-				Vector3 b3 = base.AngleToVector(this.alfaLeftRight + this.deltaLeftRight + 3.141592653589793) * AdvancedSmooth.TurnConstructor.turningRadius + this.rightCircleCenter;
+				Vector3 b2 = base.AngleToVector(this.alfaRightLeft - this.deltaRightLeft + 3.1415926535897931) * AdvancedSmooth.TurnConstructor.turningRadius + this.leftCircleCenter;
+				Vector3 b3 = base.AngleToVector(this.alfaLeftRight + this.deltaLeftRight + 3.1415926535897931) * AdvancedSmooth.TurnConstructor.turningRadius + this.rightCircleCenter;
 				Vector3 b4 = base.AngleToVector(this.alfaLeftLeft + 1.5707963267948966) * AdvancedSmooth.TurnConstructor.turningRadius + this.leftCircleCenter;
 				this.betaRightRight += (double)(a - b).magnitude;
 				this.betaRightLeft += (double)(a2 - b2).magnitude;
@@ -175,7 +175,7 @@ namespace Pathfinding
 				turnList.Add(new AdvancedSmooth.Turn((float)this.betaLeftLeft, this, 5));
 			}
 
-			// Token: 0x06002D43 RID: 11587 RVA: 0x001CE268 File Offset: 0x001CC468
+			// Token: 0x06002DA6 RID: 11686 RVA: 0x001D3F10 File Offset: 0x001D2110
 			public override void PointToTangent(List<AdvancedSmooth.Turn> turnList)
 			{
 				bool flag = false;
@@ -208,7 +208,7 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x06002D44 RID: 11588 RVA: 0x001CE408 File Offset: 0x001CC608
+			// Token: 0x06002DA7 RID: 11687 RVA: 0x001D40B0 File Offset: 0x001D22B0
 			public override void TangentToPoint(List<AdvancedSmooth.Turn> turnList)
 			{
 				bool flag = false;
@@ -241,7 +241,7 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x06002D45 RID: 11589 RVA: 0x001CE528 File Offset: 0x001CC728
+			// Token: 0x06002DA8 RID: 11688 RVA: 0x001D41D0 File Offset: 0x001D23D0
 			public override void GetPath(AdvancedSmooth.Turn turn, List<Vector3> output)
 			{
 				switch (turn.id)
@@ -258,11 +258,11 @@ namespace Pathfinding
 					return;
 				case 3:
 					base.AddCircleSegment(this.preVaRight, this.alfaRightLeft - this.deltaRightLeft, true, this.preRightCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
-					base.AddCircleSegment(this.alfaRightLeft - this.deltaRightLeft + 3.141592653589793, this.vaLeft, false, this.leftCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
+					base.AddCircleSegment(this.alfaRightLeft - this.deltaRightLeft + 3.1415926535897931, this.vaLeft, false, this.leftCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
 					return;
 				case 4:
 					base.AddCircleSegment(this.preVaLeft, this.alfaLeftRight + this.deltaLeftRight, false, this.preLeftCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
-					base.AddCircleSegment(this.alfaLeftRight + this.deltaLeftRight + 3.141592653589793, this.vaRight, true, this.rightCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
+					base.AddCircleSegment(this.alfaLeftRight + this.deltaLeftRight + 3.1415926535897931, this.vaRight, true, this.rightCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
 					return;
 				case 5:
 					base.AddCircleSegment(this.preVaLeft, this.alfaLeftLeft + 1.5707963267948966, false, this.preLeftCircleCenter, output, AdvancedSmooth.TurnConstructor.turningRadius);
@@ -279,77 +279,77 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x040049BD RID: 18877
+			// Token: 0x04004AA8 RID: 19112
 			private Vector3 preRightCircleCenter = Vector3.zero;
 
-			// Token: 0x040049BE RID: 18878
+			// Token: 0x04004AA9 RID: 19113
 			private Vector3 preLeftCircleCenter = Vector3.zero;
 
-			// Token: 0x040049BF RID: 18879
+			// Token: 0x04004AAA RID: 19114
 			private Vector3 rightCircleCenter;
 
-			// Token: 0x040049C0 RID: 18880
+			// Token: 0x04004AAB RID: 19115
 			private Vector3 leftCircleCenter;
 
-			// Token: 0x040049C1 RID: 18881
+			// Token: 0x04004AAC RID: 19116
 			private double vaRight;
 
-			// Token: 0x040049C2 RID: 18882
+			// Token: 0x04004AAD RID: 19117
 			private double vaLeft;
 
-			// Token: 0x040049C3 RID: 18883
+			// Token: 0x04004AAE RID: 19118
 			private double preVaLeft;
 
-			// Token: 0x040049C4 RID: 18884
+			// Token: 0x04004AAF RID: 19119
 			private double preVaRight;
 
-			// Token: 0x040049C5 RID: 18885
+			// Token: 0x04004AB0 RID: 19120
 			private double gammaLeft;
 
-			// Token: 0x040049C6 RID: 18886
+			// Token: 0x04004AB1 RID: 19121
 			private double gammaRight;
 
-			// Token: 0x040049C7 RID: 18887
+			// Token: 0x04004AB2 RID: 19122
 			private double betaRightRight;
 
-			// Token: 0x040049C8 RID: 18888
+			// Token: 0x04004AB3 RID: 19123
 			private double betaRightLeft;
 
-			// Token: 0x040049C9 RID: 18889
+			// Token: 0x04004AB4 RID: 19124
 			private double betaLeftRight;
 
-			// Token: 0x040049CA RID: 18890
+			// Token: 0x04004AB5 RID: 19125
 			private double betaLeftLeft;
 
-			// Token: 0x040049CB RID: 18891
+			// Token: 0x04004AB6 RID: 19126
 			private double deltaRightLeft;
 
-			// Token: 0x040049CC RID: 18892
+			// Token: 0x04004AB7 RID: 19127
 			private double deltaLeftRight;
 
-			// Token: 0x040049CD RID: 18893
+			// Token: 0x04004AB8 RID: 19128
 			private double alfaRightRight;
 
-			// Token: 0x040049CE RID: 18894
+			// Token: 0x04004AB9 RID: 19129
 			private double alfaLeftLeft;
 
-			// Token: 0x040049CF RID: 18895
+			// Token: 0x04004ABA RID: 19130
 			private double alfaRightLeft;
 
-			// Token: 0x040049D0 RID: 18896
+			// Token: 0x04004ABB RID: 19131
 			private double alfaLeftRight;
 		}
 
-		// Token: 0x0200074F RID: 1871
+		// Token: 0x02000769 RID: 1897
 		[Serializable]
 		public class ConstantTurn : AdvancedSmooth.TurnConstructor
 		{
-			// Token: 0x06002D47 RID: 11591 RVA: 0x00002ACE File Offset: 0x00000CCE
+			// Token: 0x06002DAA RID: 11690 RVA: 0x00002ACE File Offset: 0x00000CCE
 			public override void Prepare(int i, Vector3[] vectorPath)
 			{
 			}
 
-			// Token: 0x06002D48 RID: 11592 RVA: 0x001CE754 File Offset: 0x001CC954
+			// Token: 0x06002DAB RID: 11691 RVA: 0x001D43FC File Offset: 0x001D25FC
 			public override void TangentToTangent(List<AdvancedSmooth.Turn> turnList)
 			{
 				Vector3 dir = Vector3.Cross(AdvancedSmooth.TurnConstructor.t1, Vector3.up);
@@ -370,7 +370,7 @@ namespace Pathfinding
 				turnList.Add(new AdvancedSmooth.Turn((float)num, this, 0));
 			}
 
-			// Token: 0x06002D49 RID: 11593 RVA: 0x001CE880 File Offset: 0x001CCA80
+			// Token: 0x06002DAC RID: 11692 RVA: 0x001D4528 File Offset: 0x001D2728
 			public override void GetPath(AdvancedSmooth.Turn turn, List<Vector3> output)
 			{
 				base.AddCircleSegment(this.gamma1, this.gamma2, this.clockwise, this.circleCenter, output, (this.circleCenter - AdvancedSmooth.TurnConstructor.current).magnitude);
@@ -385,49 +385,49 @@ namespace Pathfinding
 				AdvancedSmooth.TurnConstructor.changedPreviousTangent = true;
 			}
 
-			// Token: 0x040049D1 RID: 18897
+			// Token: 0x04004ABC RID: 19132
 			private Vector3 circleCenter;
 
-			// Token: 0x040049D2 RID: 18898
+			// Token: 0x04004ABD RID: 19133
 			private double gamma1;
 
-			// Token: 0x040049D3 RID: 18899
+			// Token: 0x04004ABE RID: 19134
 			private double gamma2;
 
-			// Token: 0x040049D4 RID: 18900
+			// Token: 0x04004ABF RID: 19135
 			private bool clockwise;
 		}
 
-		// Token: 0x02000750 RID: 1872
+		// Token: 0x0200076A RID: 1898
 		public abstract class TurnConstructor
 		{
-			// Token: 0x06002D4B RID: 11595
+			// Token: 0x06002DAE RID: 11694
 			public abstract void Prepare(int i, Vector3[] vectorPath);
 
-			// Token: 0x06002D4C RID: 11596 RVA: 0x00002ACE File Offset: 0x00000CCE
+			// Token: 0x06002DAF RID: 11695 RVA: 0x00002ACE File Offset: 0x00000CCE
 			public virtual void OnTangentUpdate()
 			{
 			}
 
-			// Token: 0x06002D4D RID: 11597 RVA: 0x00002ACE File Offset: 0x00000CCE
+			// Token: 0x06002DB0 RID: 11696 RVA: 0x00002ACE File Offset: 0x00000CCE
 			public virtual void PointToTangent(List<AdvancedSmooth.Turn> turnList)
 			{
 			}
 
-			// Token: 0x06002D4E RID: 11598 RVA: 0x00002ACE File Offset: 0x00000CCE
+			// Token: 0x06002DB1 RID: 11697 RVA: 0x00002ACE File Offset: 0x00000CCE
 			public virtual void TangentToPoint(List<AdvancedSmooth.Turn> turnList)
 			{
 			}
 
-			// Token: 0x06002D4F RID: 11599 RVA: 0x00002ACE File Offset: 0x00000CCE
+			// Token: 0x06002DB2 RID: 11698 RVA: 0x00002ACE File Offset: 0x00000CCE
 			public virtual void TangentToTangent(List<AdvancedSmooth.Turn> turnList)
 			{
 			}
 
-			// Token: 0x06002D50 RID: 11600
+			// Token: 0x06002DB3 RID: 11699
 			public abstract void GetPath(AdvancedSmooth.Turn turn, List<Vector3> output);
 
-			// Token: 0x06002D51 RID: 11601 RVA: 0x001CE940 File Offset: 0x001CCB40
+			// Token: 0x06002DB4 RID: 11700 RVA: 0x001D45E8 File Offset: 0x001D27E8
 			public static void Setup(int i, Vector3[] vectorPath)
 			{
 				AdvancedSmooth.TurnConstructor.current = vectorPath[i];
@@ -443,36 +443,36 @@ namespace Pathfinding
 				AdvancedSmooth.TurnConstructor.normal = AdvancedSmooth.TurnConstructor.normal.normalized;
 			}
 
-			// Token: 0x06002D52 RID: 11602 RVA: 0x001CEA1B File Offset: 0x001CCC1B
+			// Token: 0x06002DB5 RID: 11701 RVA: 0x001D46C3 File Offset: 0x001D28C3
 			public static void PostPrepare()
 			{
 				AdvancedSmooth.TurnConstructor.changedPreviousTangent = false;
 			}
 
-			// Token: 0x06002D53 RID: 11603 RVA: 0x001CEA24 File Offset: 0x001CCC24
+			// Token: 0x06002DB6 RID: 11702 RVA: 0x001D46CC File Offset: 0x001D28CC
 			public void AddCircleSegment(double startAngle, double endAngle, bool clockwise, Vector3 center, List<Vector3> output, float radius)
 			{
-				double num = 0.06283185307179587;
+				double num = 0.062831853071795868;
 				if (clockwise)
 				{
-					while (endAngle > startAngle + 6.283185307179586)
+					while (endAngle > startAngle + 6.2831853071795862)
 					{
-						endAngle -= 6.283185307179586;
+						endAngle -= 6.2831853071795862;
 					}
 					while (endAngle < startAngle)
 					{
-						endAngle += 6.283185307179586;
+						endAngle += 6.2831853071795862;
 					}
 				}
 				else
 				{
-					while (endAngle < startAngle - 6.283185307179586)
+					while (endAngle < startAngle - 6.2831853071795862)
 					{
-						endAngle += 6.283185307179586;
+						endAngle += 6.2831853071795862;
 					}
 					while (endAngle > startAngle)
 					{
-						endAngle -= 6.283185307179586;
+						endAngle -= 6.2831853071795862;
 					}
 				}
 				if (clockwise)
@@ -492,13 +492,13 @@ namespace Pathfinding
 				output.Add(this.AngleToVector(endAngle) * radius + center);
 			}
 
-			// Token: 0x06002D54 RID: 11604 RVA: 0x001CEB10 File Offset: 0x001CCD10
+			// Token: 0x06002DB7 RID: 11703 RVA: 0x001D47B8 File Offset: 0x001D29B8
 			public void DebugCircleSegment(Vector3 center, double startAngle, double endAngle, double radius, Color color)
 			{
-				double num = 0.06283185307179587;
+				double num = 0.062831853071795868;
 				while (endAngle < startAngle)
 				{
-					endAngle += 6.283185307179586;
+					endAngle += 6.2831853071795862;
 				}
 				Vector3 start = this.AngleToVector(startAngle) * (float)radius + center;
 				for (double num2 = startAngle + num; num2 < endAngle; num2 += num)
@@ -508,12 +508,12 @@ namespace Pathfinding
 				Debug.DrawLine(start, this.AngleToVector(endAngle) * (float)radius + center);
 			}
 
-			// Token: 0x06002D55 RID: 11605 RVA: 0x001CEB94 File Offset: 0x001CCD94
+			// Token: 0x06002DB8 RID: 11704 RVA: 0x001D483C File Offset: 0x001D2A3C
 			public void DebugCircle(Vector3 center, double radius, Color color)
 			{
-				double num = 0.06283185307179587;
+				double num = 0.062831853071795868;
 				Vector3 start = this.AngleToVector(-num) * (float)radius + center;
-				for (double num2 = 0.0; num2 < 6.283185307179586; num2 += num)
+				for (double num2 = 0.0; num2 < 6.2831853071795862; num2 += num)
 				{
 					Vector3 vector = this.AngleToVector(num2) * (float)radius + center;
 					Debug.DrawLine(start, vector, color);
@@ -521,98 +521,98 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x06002D56 RID: 11606 RVA: 0x001CEBFC File Offset: 0x001CCDFC
+			// Token: 0x06002DB9 RID: 11705 RVA: 0x001D48A4 File Offset: 0x001D2AA4
 			public double GetLengthFromAngle(double angle, double radius)
 			{
 				return radius * angle;
 			}
 
-			// Token: 0x06002D57 RID: 11607 RVA: 0x001CEC01 File Offset: 0x001CCE01
+			// Token: 0x06002DBA RID: 11706 RVA: 0x001D48A9 File Offset: 0x001D2AA9
 			public double ClockwiseAngle(double from, double to)
 			{
 				return this.ClampAngle(to - from);
 			}
 
-			// Token: 0x06002D58 RID: 11608 RVA: 0x001CEC0C File Offset: 0x001CCE0C
+			// Token: 0x06002DBB RID: 11707 RVA: 0x001D48B4 File Offset: 0x001D2AB4
 			public double CounterClockwiseAngle(double from, double to)
 			{
 				return this.ClampAngle(from - to);
 			}
 
-			// Token: 0x06002D59 RID: 11609 RVA: 0x001CEC17 File Offset: 0x001CCE17
+			// Token: 0x06002DBC RID: 11708 RVA: 0x001D48BF File Offset: 0x001D2ABF
 			public Vector3 AngleToVector(double a)
 			{
 				return new Vector3((float)Math.Cos(a), 0f, (float)Math.Sin(a));
 			}
 
-			// Token: 0x06002D5A RID: 11610 RVA: 0x001CEC31 File Offset: 0x001CCE31
+			// Token: 0x06002DBD RID: 11709 RVA: 0x001D48D9 File Offset: 0x001D2AD9
 			public double ToDegrees(double rad)
 			{
 				return rad * 57.295780181884766;
 			}
 
-			// Token: 0x06002D5B RID: 11611 RVA: 0x001CEC3E File Offset: 0x001CCE3E
+			// Token: 0x06002DBE RID: 11710 RVA: 0x001D48E6 File Offset: 0x001D2AE6
 			public double ClampAngle(double a)
 			{
 				while (a < 0.0)
 				{
-					a += 6.283185307179586;
+					a += 6.2831853071795862;
 				}
-				while (a > 6.283185307179586)
+				while (a > 6.2831853071795862)
 				{
-					a -= 6.283185307179586;
+					a -= 6.2831853071795862;
 				}
 				return a;
 			}
 
-			// Token: 0x06002D5C RID: 11612 RVA: 0x001CEC77 File Offset: 0x001CCE77
+			// Token: 0x06002DBF RID: 11711 RVA: 0x001D491F File Offset: 0x001D2B1F
 			public double Atan2(Vector3 v)
 			{
 				return Math.Atan2((double)v.z, (double)v.x);
 			}
 
-			// Token: 0x040049D5 RID: 18901
+			// Token: 0x04004AC0 RID: 19136
 			public float constantBias;
 
-			// Token: 0x040049D6 RID: 18902
+			// Token: 0x04004AC1 RID: 19137
 			public float factorBias = 1f;
 
-			// Token: 0x040049D7 RID: 18903
+			// Token: 0x04004AC2 RID: 19138
 			public static float turningRadius = 1f;
 
-			// Token: 0x040049D8 RID: 18904
-			public const double ThreeSixtyRadians = 6.283185307179586;
+			// Token: 0x04004AC3 RID: 19139
+			public const double ThreeSixtyRadians = 6.2831853071795862;
 
-			// Token: 0x040049D9 RID: 18905
+			// Token: 0x04004AC4 RID: 19140
 			public static Vector3 prev;
 
-			// Token: 0x040049DA RID: 18906
+			// Token: 0x04004AC5 RID: 19141
 			public static Vector3 current;
 
-			// Token: 0x040049DB RID: 18907
+			// Token: 0x04004AC6 RID: 19142
 			public static Vector3 next;
 
-			// Token: 0x040049DC RID: 18908
+			// Token: 0x04004AC7 RID: 19143
 			public static Vector3 t1;
 
-			// Token: 0x040049DD RID: 18909
+			// Token: 0x04004AC8 RID: 19144
 			public static Vector3 t2;
 
-			// Token: 0x040049DE RID: 18910
+			// Token: 0x04004AC9 RID: 19145
 			public static Vector3 normal;
 
-			// Token: 0x040049DF RID: 18911
+			// Token: 0x04004ACA RID: 19146
 			public static Vector3 prevNormal;
 
-			// Token: 0x040049E0 RID: 18912
+			// Token: 0x04004ACB RID: 19147
 			public static bool changedPreviousTangent = false;
 		}
 
-		// Token: 0x02000751 RID: 1873
+		// Token: 0x0200076B RID: 1899
 		public struct Turn : IComparable<AdvancedSmooth.Turn>
 		{
-			// Token: 0x1700068B RID: 1675
-			// (get) Token: 0x06002D5F RID: 11615 RVA: 0x001CECB1 File Offset: 0x001CCEB1
+			// Token: 0x17000691 RID: 1681
+			// (get) Token: 0x06002DC2 RID: 11714 RVA: 0x001D4959 File Offset: 0x001D2B59
 			public float score
 			{
 				get
@@ -621,7 +621,7 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x06002D60 RID: 11616 RVA: 0x001CECD1 File Offset: 0x001CCED1
+			// Token: 0x06002DC3 RID: 11715 RVA: 0x001D4979 File Offset: 0x001D2B79
 			public Turn(float length, AdvancedSmooth.TurnConstructor constructor, int id = 0)
 			{
 				this.length = length;
@@ -629,13 +629,13 @@ namespace Pathfinding
 				this.constructor = constructor;
 			}
 
-			// Token: 0x06002D61 RID: 11617 RVA: 0x001CECE8 File Offset: 0x001CCEE8
+			// Token: 0x06002DC4 RID: 11716 RVA: 0x001D4990 File Offset: 0x001D2B90
 			public void GetPath(List<Vector3> output)
 			{
 				this.constructor.GetPath(this, output);
 			}
 
-			// Token: 0x06002D62 RID: 11618 RVA: 0x001CECFC File Offset: 0x001CCEFC
+			// Token: 0x06002DC5 RID: 11717 RVA: 0x001D49A4 File Offset: 0x001D2BA4
 			public int CompareTo(AdvancedSmooth.Turn t)
 			{
 				if (t.score > this.score)
@@ -649,25 +649,25 @@ namespace Pathfinding
 				return 1;
 			}
 
-			// Token: 0x06002D63 RID: 11619 RVA: 0x001CED21 File Offset: 0x001CCF21
+			// Token: 0x06002DC6 RID: 11718 RVA: 0x001D49C9 File Offset: 0x001D2BC9
 			public static bool operator <(AdvancedSmooth.Turn lhs, AdvancedSmooth.Turn rhs)
 			{
 				return lhs.score < rhs.score;
 			}
 
-			// Token: 0x06002D64 RID: 11620 RVA: 0x001CED33 File Offset: 0x001CCF33
+			// Token: 0x06002DC7 RID: 11719 RVA: 0x001D49DB File Offset: 0x001D2BDB
 			public static bool operator >(AdvancedSmooth.Turn lhs, AdvancedSmooth.Turn rhs)
 			{
 				return lhs.score > rhs.score;
 			}
 
-			// Token: 0x040049E1 RID: 18913
+			// Token: 0x04004ACC RID: 19148
 			public float length;
 
-			// Token: 0x040049E2 RID: 18914
+			// Token: 0x04004ACD RID: 19149
 			public int id;
 
-			// Token: 0x040049E3 RID: 18915
+			// Token: 0x04004ACE RID: 19150
 			public AdvancedSmooth.TurnConstructor constructor;
 		}
 	}

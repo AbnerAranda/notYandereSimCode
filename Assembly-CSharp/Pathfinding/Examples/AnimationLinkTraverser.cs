@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F8 RID: 1528
+	// Token: 0x0200060E RID: 1550
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_animation_link_traverser.php")]
 	public class AnimationLinkTraverser : VersionedMonoBehaviour
 	{
-		// Token: 0x06002A03 RID: 10755 RVA: 0x001C2A1C File Offset: 0x001C0C1C
+		// Token: 0x06002A59 RID: 10841 RVA: 0x001C8608 File Offset: 0x001C6808
 		private void OnEnable()
 		{
 			this.ai = base.GetComponent<RichAI>();
@@ -19,7 +19,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x06002A04 RID: 10756 RVA: 0x001C2A6B File Offset: 0x001C0C6B
+		// Token: 0x06002A5A RID: 10842 RVA: 0x001C8657 File Offset: 0x001C6857
 		private void OnDisable()
 		{
 			if (this.ai != null)
@@ -29,7 +29,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x06002A05 RID: 10757 RVA: 0x001C2AA3 File Offset: 0x001C0CA3
+		// Token: 0x06002A5B RID: 10843 RVA: 0x001C868F File Offset: 0x001C688F
 		protected virtual IEnumerator TraverseOffMeshLink(RichSpecial rs)
 		{
 			AnimationLink link = rs.nodeLink as AnimationLink;
@@ -71,10 +71,10 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x040043D2 RID: 17362
+		// Token: 0x040044B0 RID: 17584
 		public Animation anim;
 
-		// Token: 0x040043D3 RID: 17363
+		// Token: 0x040044B1 RID: 17585
 		private RichAI ai;
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020000ED RID: 237
+// Token: 0x020000EE RID: 238
 [Serializable]
 public class BucketGas : BucketContents
 {
 	// Token: 0x17000213 RID: 531
-	// (get) Token: 0x06000A81 RID: 2689 RVA: 0x0002291C File Offset: 0x00020B1C
+	// (get) Token: 0x06000A88 RID: 2696 RVA: 0x00022944 File Offset: 0x00020B44
 	public override BucketContentsType Type
 	{
 		get
@@ -15,7 +15,7 @@ public class BucketGas : BucketContents
 	}
 
 	// Token: 0x17000214 RID: 532
-	// (get) Token: 0x06000A82 RID: 2690 RVA: 0x0002D171 File Offset: 0x0002B371
+	// (get) Token: 0x06000A89 RID: 2697 RVA: 0x0002D199 File Offset: 0x0002B399
 	public override bool IsCleaningAgent
 	{
 		get
@@ -25,7 +25,7 @@ public class BucketGas : BucketContents
 	}
 
 	// Token: 0x17000215 RID: 533
-	// (get) Token: 0x06000A83 RID: 2691 RVA: 0x0002291C File Offset: 0x00020B1C
+	// (get) Token: 0x06000A8A RID: 2698 RVA: 0x00022944 File Offset: 0x00020B44
 	public override bool IsFlammable
 	{
 		get
@@ -34,7 +34,7 @@ public class BucketGas : BucketContents
 		}
 	}
 
-	// Token: 0x06000A84 RID: 2692 RVA: 0x0002291C File Offset: 0x00020B1C
+	// Token: 0x06000A8B RID: 2699 RVA: 0x00022944 File Offset: 0x00020B44
 	public override bool CanBeLifted(int strength)
 	{
 		return true;

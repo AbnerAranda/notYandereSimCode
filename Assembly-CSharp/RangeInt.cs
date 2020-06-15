@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000442 RID: 1090
+// Token: 0x02000447 RID: 1095
 [Serializable]
 public class RangeInt
 {
-	// Token: 0x06001CB6 RID: 7350 RVA: 0x001557FC File Offset: 0x001539FC
+	// Token: 0x06001CDB RID: 7387 RVA: 0x00158D00 File Offset: 0x00156F00
 	public RangeInt(int value, int min, int max)
 	{
 		this.value = value;
@@ -13,14 +13,14 @@ public class RangeInt
 		this.max = max;
 	}
 
-	// Token: 0x06001CB7 RID: 7351 RVA: 0x00155819 File Offset: 0x00153A19
+	// Token: 0x06001CDC RID: 7388 RVA: 0x00158D1D File Offset: 0x00156F1D
 	public RangeInt(int min, int max) : this(min, min, max)
 	{
 	}
 
-	// Token: 0x1700047F RID: 1151
-	// (get) Token: 0x06001CB8 RID: 7352 RVA: 0x00155824 File Offset: 0x00153A24
-	// (set) Token: 0x06001CB9 RID: 7353 RVA: 0x0015582C File Offset: 0x00153A2C
+	// Token: 0x17000484 RID: 1156
+	// (get) Token: 0x06001CDD RID: 7389 RVA: 0x00158D28 File Offset: 0x00156F28
+	// (set) Token: 0x06001CDE RID: 7390 RVA: 0x00158D30 File Offset: 0x00156F30
 	public int Value
 	{
 		get
@@ -33,8 +33,8 @@ public class RangeInt
 		}
 	}
 
-	// Token: 0x17000480 RID: 1152
-	// (get) Token: 0x06001CBA RID: 7354 RVA: 0x00155835 File Offset: 0x00153A35
+	// Token: 0x17000485 RID: 1157
+	// (get) Token: 0x06001CDF RID: 7391 RVA: 0x00158D39 File Offset: 0x00156F39
 	public int Min
 	{
 		get
@@ -43,8 +43,8 @@ public class RangeInt
 		}
 	}
 
-	// Token: 0x17000481 RID: 1153
-	// (get) Token: 0x06001CBB RID: 7355 RVA: 0x0015583D File Offset: 0x00153A3D
+	// Token: 0x17000486 RID: 1158
+	// (get) Token: 0x06001CE0 RID: 7392 RVA: 0x00158D41 File Offset: 0x00156F41
 	public int Max
 	{
 		get
@@ -53,8 +53,8 @@ public class RangeInt
 		}
 	}
 
-	// Token: 0x17000482 RID: 1154
-	// (get) Token: 0x06001CBC RID: 7356 RVA: 0x00155845 File Offset: 0x00153A45
+	// Token: 0x17000487 RID: 1159
+	// (get) Token: 0x06001CE1 RID: 7393 RVA: 0x00158D49 File Offset: 0x00156F49
 	public int Next
 	{
 		get
@@ -67,8 +67,8 @@ public class RangeInt
 		}
 	}
 
-	// Token: 0x17000483 RID: 1155
-	// (get) Token: 0x06001CBD RID: 7357 RVA: 0x00155864 File Offset: 0x00153A64
+	// Token: 0x17000488 RID: 1160
+	// (get) Token: 0x06001CE2 RID: 7394 RVA: 0x00158D68 File Offset: 0x00156F68
 	public int Previous
 	{
 		get
@@ -81,15 +81,15 @@ public class RangeInt
 		}
 	}
 
-	// Token: 0x040035F0 RID: 13808
+	// Token: 0x04003665 RID: 13925
 	[SerializeField]
 	private int value;
 
-	// Token: 0x040035F1 RID: 13809
+	// Token: 0x04003666 RID: 13926
 	[SerializeField]
 	private int min;
 
-	// Token: 0x040035F2 RID: 13810
+	// Token: 0x04003667 RID: 13927
 	[SerializeField]
 	private int max;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000423 RID: 1059
+// Token: 0x02000428 RID: 1064
 public class TitleMenuScript : MonoBehaviour
 {
-	// Token: 0x06001C35 RID: 7221 RVA: 0x00150540 File Offset: 0x0014E740
+	// Token: 0x06001C59 RID: 7257 RVA: 0x001539B8 File Offset: 0x00151BB8
 	private void Awake()
 	{
 		Animation component = this.Yandere.GetComponent<Animation>();
@@ -15,7 +15,7 @@ public class TitleMenuScript : MonoBehaviour
 		component.Blend("f02_fist_00");
 	}
 
-	// Token: 0x06001C36 RID: 7222 RVA: 0x00150590 File Offset: 0x0014E790
+	// Token: 0x06001C5A RID: 7258 RVA: 0x00153A08 File Offset: 0x00151C08
 	private void Start()
 	{
 		if (GameGlobals.LoveSick)
@@ -53,7 +53,7 @@ public class TitleMenuScript : MonoBehaviour
 		Time.timeScale = 1f;
 	}
 
-	// Token: 0x06001C37 RID: 7223 RVA: 0x001507BC File Offset: 0x0014E9BC
+	// Token: 0x06001C5B RID: 7259 RVA: 0x00153C34 File Offset: 0x00151E34
 	private void Update()
 	{
 		if (this.LoveSick)
@@ -279,7 +279,7 @@ public class TitleMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C38 RID: 7224 RVA: 0x00151114 File Offset: 0x0014F314
+	// Token: 0x06001C5C RID: 7260 RVA: 0x0015458C File Offset: 0x0015278C
 	private void LateUpdate()
 	{
 		if (this.Knife.activeInHierarchy)
@@ -295,7 +295,7 @@ public class TitleMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C39 RID: 7225 RVA: 0x00151234 File Offset: 0x0014F434
+	// Token: 0x06001C5D RID: 7261 RVA: 0x001546AC File Offset: 0x001528AC
 	private void TurnDark()
 	{
 		GameObjectUtils.SetLayerRecursively(this.Yandere.transform.parent.gameObject, 14);
@@ -335,7 +335,7 @@ public class TitleMenuScript : MonoBehaviour
 		this.SimulatorLabel.color = new Color(1f, 0f, 0f, 1f);
 	}
 
-	// Token: 0x06001C3A RID: 7226 RVA: 0x001514E4 File Offset: 0x0014F6E4
+	// Token: 0x06001C5E RID: 7262 RVA: 0x0015495C File Offset: 0x00152B5C
 	private void TurnCute()
 	{
 		GameObjectUtils.SetLayerRecursively(this.Yandere.transform.parent.gameObject, 9);
@@ -376,7 +376,7 @@ public class TitleMenuScript : MonoBehaviour
 		this.SimulatorLabel.color = this.MediumColor;
 	}
 
-	// Token: 0x06001C3B RID: 7227 RVA: 0x001517C0 File Offset: 0x0014F9C0
+	// Token: 0x06001C5F RID: 7263 RVA: 0x00154C38 File Offset: 0x00152E38
 	private void TurnLoveSick()
 	{
 		RenderSettings.ambientLight = new Color(0.25f, 0.25f, 0.25f, 1f);
@@ -403,171 +403,171 @@ public class TitleMenuScript : MonoBehaviour
 		this.Logo.SetActive(false);
 	}
 
-	// Token: 0x040034B8 RID: 13496
+	// Token: 0x0400352D RID: 13613
 	public ColorCorrectionCurves ColorCorrection;
 
-	// Token: 0x040034B9 RID: 13497
+	// Token: 0x0400352E RID: 13614
 	public InputManagerScript InputManager;
 
-	// Token: 0x040034BA RID: 13498
+	// Token: 0x0400352F RID: 13615
 	public TitleSaveFilesScript SaveFiles;
 
-	// Token: 0x040034BB RID: 13499
+	// Token: 0x04003530 RID: 13616
 	public SelectiveGrayscale Grayscale;
 
-	// Token: 0x040034BC RID: 13500
+	// Token: 0x04003531 RID: 13617
 	public TitleSponsorScript Sponsors;
 
-	// Token: 0x040034BD RID: 13501
+	// Token: 0x04003532 RID: 13618
 	public TitleExtrasScript Extras;
 
-	// Token: 0x040034BE RID: 13502
+	// Token: 0x04003533 RID: 13619
 	public PromptBarScript PromptBar;
 
-	// Token: 0x040034BF RID: 13503
+	// Token: 0x04003534 RID: 13620
 	public SSAOEffect SSAO;
 
-	// Token: 0x040034C0 RID: 13504
+	// Token: 0x04003535 RID: 13621
 	public JsonScript JSON;
 
-	// Token: 0x040034C1 RID: 13505
+	// Token: 0x04003536 RID: 13622
 	public UISprite[] MediumSprites;
 
-	// Token: 0x040034C2 RID: 13506
+	// Token: 0x04003537 RID: 13623
 	public UISprite[] LightSprites;
 
-	// Token: 0x040034C3 RID: 13507
+	// Token: 0x04003538 RID: 13624
 	public UISprite[] DarkSprites;
 
-	// Token: 0x040034C4 RID: 13508
+	// Token: 0x04003539 RID: 13625
 	public UILabel TitleLabel;
 
-	// Token: 0x040034C5 RID: 13509
+	// Token: 0x0400353A RID: 13626
 	public UILabel SimulatorLabel;
 
-	// Token: 0x040034C6 RID: 13510
+	// Token: 0x0400353B RID: 13627
 	public UILabel[] ColoredLabels;
 
-	// Token: 0x040034C7 RID: 13511
+	// Token: 0x0400353C RID: 13628
 	public Color MediumColor;
 
-	// Token: 0x040034C8 RID: 13512
+	// Token: 0x0400353D RID: 13629
 	public Color LightColor;
 
-	// Token: 0x040034C9 RID: 13513
+	// Token: 0x0400353E RID: 13630
 	public Color DarkColor;
 
-	// Token: 0x040034CA RID: 13514
+	// Token: 0x0400353F RID: 13631
 	public Transform VictimHead;
 
-	// Token: 0x040034CB RID: 13515
+	// Token: 0x04003540 RID: 13632
 	public Transform RightHand;
 
-	// Token: 0x040034CC RID: 13516
+	// Token: 0x04003541 RID: 13633
 	public Transform TwintailL;
 
-	// Token: 0x040034CD RID: 13517
+	// Token: 0x04003542 RID: 13634
 	public Transform TwintailR;
 
-	// Token: 0x040034CE RID: 13518
+	// Token: 0x04003543 RID: 13635
 	public Animation LoveSickYandere;
 
-	// Token: 0x040034CF RID: 13519
+	// Token: 0x04003544 RID: 13636
 	public GameObject BloodProjector;
 
-	// Token: 0x040034D0 RID: 13520
+	// Token: 0x04003545 RID: 13637
 	public GameObject LoveSickLogo;
 
-	// Token: 0x040034D1 RID: 13521
+	// Token: 0x04003546 RID: 13638
 	public GameObject BloodCamera;
 
-	// Token: 0x040034D2 RID: 13522
+	// Token: 0x04003547 RID: 13639
 	public GameObject Yandere;
 
-	// Token: 0x040034D3 RID: 13523
+	// Token: 0x04003548 RID: 13640
 	public GameObject Knife;
 
-	// Token: 0x040034D4 RID: 13524
+	// Token: 0x04003549 RID: 13641
 	public GameObject Logo;
 
-	// Token: 0x040034D5 RID: 13525
+	// Token: 0x0400354A RID: 13642
 	public GameObject Sun;
 
-	// Token: 0x040034D6 RID: 13526
+	// Token: 0x0400354B RID: 13643
 	public AudioSource LoveSickMusic;
 
-	// Token: 0x040034D7 RID: 13527
+	// Token: 0x0400354C RID: 13644
 	public AudioSource CuteMusic;
 
-	// Token: 0x040034D8 RID: 13528
+	// Token: 0x0400354D RID: 13645
 	public AudioSource DarkMusic;
 
-	// Token: 0x040034D9 RID: 13529
+	// Token: 0x0400354E RID: 13646
 	public Renderer[] YandereEye;
 
-	// Token: 0x040034DA RID: 13530
+	// Token: 0x0400354F RID: 13647
 	public Material CuteSkybox;
 
-	// Token: 0x040034DB RID: 13531
+	// Token: 0x04003550 RID: 13648
 	public Material DarkSkybox;
 
-	// Token: 0x040034DC RID: 13532
+	// Token: 0x04003551 RID: 13649
 	public Transform Highlight;
 
-	// Token: 0x040034DD RID: 13533
+	// Token: 0x04003552 RID: 13650
 	public Transform[] Spine;
 
-	// Token: 0x040034DE RID: 13534
+	// Token: 0x04003553 RID: 13651
 	public Transform[] Arm;
 
-	// Token: 0x040034DF RID: 13535
+	// Token: 0x04003554 RID: 13652
 	public UISprite Darkness;
 
-	// Token: 0x040034E0 RID: 13536
+	// Token: 0x04003555 RID: 13653
 	public Vector3 PermaPositionL;
 
-	// Token: 0x040034E1 RID: 13537
+	// Token: 0x04003556 RID: 13654
 	public Vector3 PermaPositionR;
 
-	// Token: 0x040034E2 RID: 13538
+	// Token: 0x04003557 RID: 13655
 	public bool NeverChange;
 
-	// Token: 0x040034E3 RID: 13539
+	// Token: 0x04003558 RID: 13656
 	public bool LoveSick;
 
-	// Token: 0x040034E4 RID: 13540
+	// Token: 0x04003559 RID: 13657
 	public bool FadeOut;
 
-	// Token: 0x040034E5 RID: 13541
+	// Token: 0x0400355A RID: 13658
 	public bool Turning;
 
-	// Token: 0x040034E6 RID: 13542
+	// Token: 0x0400355B RID: 13659
 	public bool Fading = true;
 
-	// Token: 0x040034E7 RID: 13543
+	// Token: 0x0400355C RID: 13660
 	public int SelectionCount = 8;
 
-	// Token: 0x040034E8 RID: 13544
+	// Token: 0x0400355D RID: 13661
 	public int Selected;
 
-	// Token: 0x040034E9 RID: 13545
+	// Token: 0x0400355E RID: 13662
 	public float InputTimer;
 
-	// Token: 0x040034EA RID: 13546
+	// Token: 0x0400355F RID: 13663
 	public float FadeSpeed = 1f;
 
-	// Token: 0x040034EB RID: 13547
+	// Token: 0x04003560 RID: 13664
 	public float LateTimer;
 
-	// Token: 0x040034EC RID: 13548
+	// Token: 0x04003561 RID: 13665
 	public float RotationY;
 
-	// Token: 0x040034ED RID: 13549
+	// Token: 0x04003562 RID: 13666
 	public float RotationZ;
 
-	// Token: 0x040034EE RID: 13550
+	// Token: 0x04003563 RID: 13667
 	public float Volume;
 
-	// Token: 0x040034EF RID: 13551
+	// Token: 0x04003564 RID: 13668
 	public float Timer;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000154 RID: 340
+// Token: 0x02000155 RID: 341
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/RGB")]
 public class CameraFilterPack_Color_RGB : MonoBehaviour
 {
 	// Token: 0x17000274 RID: 628
-	// (get) Token: 0x06000D08 RID: 3336 RVA: 0x00069672 File Offset: 0x00067872
+	// (get) Token: 0x06000D0F RID: 3343 RVA: 0x0006A3A2 File Offset: 0x000685A2
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Color_RGB : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D09 RID: 3337 RVA: 0x000696A6 File Offset: 0x000678A6
+	// Token: 0x06000D10 RID: 3344 RVA: 0x0006A3D6 File Offset: 0x000685D6
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Color_RGB");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Color_RGB : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D0A RID: 3338 RVA: 0x000696C8 File Offset: 0x000678C8
+	// Token: 0x06000D11 RID: 3345 RVA: 0x0006A3F8 File Offset: 0x000685F8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Color_RGB : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D0B RID: 3339 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D12 RID: 3346 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D0C RID: 3340 RVA: 0x0006977E File Offset: 0x0006797E
+	// Token: 0x06000D13 RID: 3347 RVA: 0x0006A4AE File Offset: 0x000686AE
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,15 +65,15 @@ public class CameraFilterPack_Color_RGB : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FC6 RID: 4038
+	// Token: 0x04000FE5 RID: 4069
 	public Shader SCShader;
 
-	// Token: 0x04000FC7 RID: 4039
+	// Token: 0x04000FE6 RID: 4070
 	private float TimeX = 1f;
 
-	// Token: 0x04000FC8 RID: 4040
+	// Token: 0x04000FE7 RID: 4071
 	private Material SCMaterial;
 
-	// Token: 0x04000FC9 RID: 4041
+	// Token: 0x04000FE8 RID: 4072
 	public Color ColorRGB = new Color(1f, 1f, 1f);
 }

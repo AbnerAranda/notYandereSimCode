@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B1 RID: 433
+// Token: 0x020001B2 RID: 434
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/Spot")]
 public class CameraFilterPack_FX_Spot : MonoBehaviour
 {
 	// Token: 0x170002D1 RID: 721
-	// (get) Token: 0x06000F39 RID: 3897 RVA: 0x0007234F File Offset: 0x0007054F
+	// (get) Token: 0x06000F40 RID: 3904 RVA: 0x0007307F File Offset: 0x0007127F
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_Spot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F3A RID: 3898 RVA: 0x00072383 File Offset: 0x00070583
+	// Token: 0x06000F41 RID: 3905 RVA: 0x000730B3 File Offset: 0x000712B3
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_Spot");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_Spot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F3B RID: 3899 RVA: 0x000723A4 File Offset: 0x000705A4
+	// Token: 0x06000F42 RID: 3906 RVA: 0x000730D4 File Offset: 0x000712D4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -53,12 +53,12 @@ public class CameraFilterPack_FX_Spot : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F3C RID: 3900 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F43 RID: 3907 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F3D RID: 3901 RVA: 0x00072490 File Offset: 0x00070690
+	// Token: 0x06000F44 RID: 3908 RVA: 0x000731C0 File Offset: 0x000713C0
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -67,18 +67,18 @@ public class CameraFilterPack_FX_Spot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011F0 RID: 4592
+	// Token: 0x0400120F RID: 4623
 	public Shader SCShader;
 
-	// Token: 0x040011F1 RID: 4593
+	// Token: 0x04001210 RID: 4624
 	private float TimeX = 1f;
 
-	// Token: 0x040011F2 RID: 4594
+	// Token: 0x04001211 RID: 4625
 	private Material SCMaterial;
 
-	// Token: 0x040011F3 RID: 4595
+	// Token: 0x04001212 RID: 4626
 	public Vector2 center = new Vector2(0.5f, 0.5f);
 
-	// Token: 0x040011F4 RID: 4596
+	// Token: 0x04001213 RID: 4627
 	public float Radius = 0.2f;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x0200041F RID: 1055
+// Token: 0x02000424 RID: 1060
 public class ThanksForPlayingScript : MonoBehaviour
 {
-	// Token: 0x06001C29 RID: 7209 RVA: 0x0014FC5C File Offset: 0x0014DE5C
+	// Token: 0x06001C4D RID: 7245 RVA: 0x001530D4 File Offset: 0x001512D4
 	private void Start()
 	{
 		this.Ryoba["f02_faceCouncilGrace_00"].layer = 1;
@@ -16,7 +16,7 @@ public class ThanksForPlayingScript : MonoBehaviour
 		this.Alpha = 1f;
 	}
 
-	// Token: 0x06001C2A RID: 7210 RVA: 0x0014FCE8 File Offset: 0x0014DEE8
+	// Token: 0x06001C4E RID: 7246 RVA: 0x00153160 File Offset: 0x00151360
 	private void Update()
 	{
 		if (!this.FadeOut)
@@ -104,45 +104,45 @@ public class ThanksForPlayingScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400349F RID: 13471
+	// Token: 0x04003514 RID: 13588
 	public UIPanel ThankYouPanel;
 
-	// Token: 0x040034A0 RID: 13472
+	// Token: 0x04003515 RID: 13589
 	public UIPanel FinalGamePanel;
 
-	// Token: 0x040034A1 RID: 13473
+	// Token: 0x04003516 RID: 13590
 	public UIPanel RivalPanel;
 
-	// Token: 0x040034A2 RID: 13474
+	// Token: 0x04003517 RID: 13591
 	public UIPanel QualityPanel;
 
-	// Token: 0x040034A3 RID: 13475
+	// Token: 0x04003518 RID: 13592
 	public UIPanel WeaponsPanel;
 
-	// Token: 0x040034A4 RID: 13476
+	// Token: 0x04003519 RID: 13593
 	public UIPanel StoryPanel;
 
-	// Token: 0x040034A5 RID: 13477
+	// Token: 0x0400351A RID: 13594
 	public UIPanel MorePanel;
 
-	// Token: 0x040034A6 RID: 13478
+	// Token: 0x0400351B RID: 13595
 	public UIPanel CrowdfundPanel;
 
-	// Token: 0x040034A7 RID: 13479
+	// Token: 0x0400351C RID: 13596
 	public Transform Yandere;
 
-	// Token: 0x040034A8 RID: 13480
+	// Token: 0x0400351D RID: 13597
 	public UISprite Darkness;
 
-	// Token: 0x040034A9 RID: 13481
+	// Token: 0x0400351E RID: 13598
 	public Animation YandereKun;
 
-	// Token: 0x040034AA RID: 13482
+	// Token: 0x0400351F RID: 13599
 	public Animation Ryoba;
 
-	// Token: 0x040034AB RID: 13483
+	// Token: 0x04003520 RID: 13600
 	public bool FadeOut;
 
-	// Token: 0x040034AC RID: 13484
+	// Token: 0x04003521 RID: 13601
 	public float Alpha;
 }

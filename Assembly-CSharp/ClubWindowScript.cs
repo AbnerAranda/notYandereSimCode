@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023F RID: 575
+// Token: 0x02000240 RID: 576
 public class ClubWindowScript : MonoBehaviour
 {
-	// Token: 0x06001268 RID: 4712 RVA: 0x00086490 File Offset: 0x00084690
+	// Token: 0x0600126F RID: 4719 RVA: 0x000871A4 File Offset: 0x000853A4
 	private void Start()
 	{
 		this.Window.SetActive(false);
@@ -19,7 +19,7 @@ public class ClubWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001269 RID: 4713 RVA: 0x000864E0 File Offset: 0x000846E0
+	// Token: 0x06001270 RID: 4720 RVA: 0x000871F4 File Offset: 0x000853F4
 	private void Update()
 	{
 		if (this.Window.activeInHierarchy)
@@ -30,7 +30,7 @@ public class ClubWindowScript : MonoBehaviour
 				{
 					if (!this.Quitting && !this.Activity)
 					{
-						ClubGlobals.Club = this.Club;
+						this.Yandere.Club = this.Club;
 						this.Yandere.ClubAccessory();
 						this.Yandere.TargetStudent.Interaction = StudentInteractionType.ClubJoin;
 						this.ClubManager.ActivateClubBenefit();
@@ -39,7 +39,7 @@ public class ClubWindowScript : MonoBehaviour
 					{
 						this.ClubManager.DeactivateClubBenefit();
 						ClubGlobals.SetQuitClub(this.Club, true);
-						ClubGlobals.Club = ClubType.None;
+						this.Yandere.Club = ClubType.None;
 						this.Yandere.ClubAccessory();
 						this.Yandere.TargetStudent.Interaction = StudentInteractionType.ClubQuit;
 						this.Quitting = false;
@@ -109,7 +109,7 @@ public class ClubWindowScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600126A RID: 4714 RVA: 0x000867FC File Offset: 0x000849FC
+	// Token: 0x06001271 RID: 4721 RVA: 0x0008751C File Offset: 0x0008571C
 	public void UpdateWindow()
 	{
 		this.ClubName.text = this.ClubNames[(int)this.Club];
@@ -150,66 +150,66 @@ public class ClubWindowScript : MonoBehaviour
 		this.Timer = 0f;
 	}
 
-	// Token: 0x0400163E RID: 5694
+	// Token: 0x0400165D RID: 5725
 	public ClubManagerScript ClubManager;
 
-	// Token: 0x0400163F RID: 5695
+	// Token: 0x0400165E RID: 5726
 	public PromptBarScript PromptBar;
 
-	// Token: 0x04001640 RID: 5696
+	// Token: 0x0400165F RID: 5727
 	public YandereScript Yandere;
 
-	// Token: 0x04001641 RID: 5697
+	// Token: 0x04001660 RID: 5728
 	public Transform ActivityWindow;
 
-	// Token: 0x04001642 RID: 5698
+	// Token: 0x04001661 RID: 5729
 	public GameObject ClubInfo;
 
-	// Token: 0x04001643 RID: 5699
+	// Token: 0x04001662 RID: 5730
 	public GameObject Window;
 
-	// Token: 0x04001644 RID: 5700
+	// Token: 0x04001663 RID: 5731
 	public GameObject Warning;
 
-	// Token: 0x04001645 RID: 5701
+	// Token: 0x04001664 RID: 5732
 	public string[] ActivityDescs;
 
-	// Token: 0x04001646 RID: 5702
+	// Token: 0x04001665 RID: 5733
 	public string[] ClubNames;
 
-	// Token: 0x04001647 RID: 5703
+	// Token: 0x04001666 RID: 5734
 	public string[] ClubDescs;
 
-	// Token: 0x04001648 RID: 5704
+	// Token: 0x04001667 RID: 5735
 	public string MedAtmosphereDesc;
 
-	// Token: 0x04001649 RID: 5705
+	// Token: 0x04001668 RID: 5736
 	public string LowAtmosphereDesc;
 
-	// Token: 0x0400164A RID: 5706
+	// Token: 0x04001669 RID: 5737
 	public UILabel ActivityLabel;
 
-	// Token: 0x0400164B RID: 5707
+	// Token: 0x0400166A RID: 5738
 	public UILabel BottomLabel;
 
-	// Token: 0x0400164C RID: 5708
+	// Token: 0x0400166B RID: 5739
 	public UILabel ClubName;
 
-	// Token: 0x0400164D RID: 5709
+	// Token: 0x0400166C RID: 5740
 	public UILabel ClubDesc;
 
-	// Token: 0x0400164E RID: 5710
+	// Token: 0x0400166D RID: 5741
 	public bool PerformingActivity;
 
-	// Token: 0x0400164F RID: 5711
+	// Token: 0x0400166E RID: 5742
 	public bool Activity;
 
-	// Token: 0x04001650 RID: 5712
+	// Token: 0x0400166F RID: 5743
 	public bool Quitting;
 
-	// Token: 0x04001651 RID: 5713
+	// Token: 0x04001670 RID: 5744
 	public float Timer;
 
-	// Token: 0x04001652 RID: 5714
+	// Token: 0x04001671 RID: 5745
 	public ClubType Club;
 }

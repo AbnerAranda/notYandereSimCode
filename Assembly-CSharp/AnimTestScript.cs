@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020000C5 RID: 197
 public class AnimTestScript : MonoBehaviour
 {
-	// Token: 0x060009F2 RID: 2546 RVA: 0x0004EC67 File Offset: 0x0004CE67
+	// Token: 0x060009F5 RID: 2549 RVA: 0x0004F6ED File Offset: 0x0004D8ED
 	private void Start()
 	{
 		Time.timeScale = 1f;
 	}
 
-	// Token: 0x060009F3 RID: 2547 RVA: 0x0004EC74 File Offset: 0x0004CE74
+	// Token: 0x060009F6 RID: 2550 RVA: 0x0004F6FC File Offset: 0x0004D8FC
 	private void Update()
 	{
 		if (Input.GetKeyDown("space"))
@@ -48,12 +48,12 @@ public class AnimTestScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040009C6 RID: 2502
+	// Token: 0x040009D9 RID: 2521
 	public Animation CharacterA;
 
-	// Token: 0x040009C7 RID: 2503
+	// Token: 0x040009DA RID: 2522
 	public Animation CharacterB;
 
-	// Token: 0x040009C8 RID: 2504
+	// Token: 0x040009DB RID: 2523
 	public int ID;
 }

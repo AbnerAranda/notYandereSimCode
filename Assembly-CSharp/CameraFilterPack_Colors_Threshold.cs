@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000162 RID: 354
+// Token: 0x02000163 RID: 355
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/Threshold")]
 public class CameraFilterPack_Colors_Threshold : MonoBehaviour
 {
 	// Token: 0x17000282 RID: 642
-	// (get) Token: 0x06000D5E RID: 3422 RVA: 0x0006B05D File Offset: 0x0006925D
+	// (get) Token: 0x06000D65 RID: 3429 RVA: 0x0006BD8D File Offset: 0x00069F8D
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Colors_Threshold : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D5F RID: 3423 RVA: 0x0006B091 File Offset: 0x00069291
+	// Token: 0x06000D66 RID: 3430 RVA: 0x0006BDC1 File Offset: 0x00069FC1
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Colors_Threshold");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Colors_Threshold : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D60 RID: 3424 RVA: 0x0006B0B4 File Offset: 0x000692B4
+	// Token: 0x06000D67 RID: 3431 RVA: 0x0006BDE4 File Offset: 0x00069FE4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_Colors_Threshold : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D61 RID: 3425 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D68 RID: 3432 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D62 RID: 3426 RVA: 0x0006B13A File Offset: 0x0006933A
+	// Token: 0x06000D69 RID: 3433 RVA: 0x0006BE6A File Offset: 0x0006A06A
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,16 +64,16 @@ public class CameraFilterPack_Colors_Threshold : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400101E RID: 4126
+	// Token: 0x0400103D RID: 4157
 	public Shader SCShader;
 
-	// Token: 0x0400101F RID: 4127
+	// Token: 0x0400103E RID: 4158
 	private float TimeX = 1f;
 
-	// Token: 0x04001020 RID: 4128
+	// Token: 0x0400103F RID: 4159
 	[Range(0f, 1f)]
 	public float Threshold = 0.3f;
 
-	// Token: 0x04001021 RID: 4129
+	// Token: 0x04001040 RID: 4160
 	private Material SCMaterial;
 }

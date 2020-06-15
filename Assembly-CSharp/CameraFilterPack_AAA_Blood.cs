@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000108 RID: 264
+// Token: 0x02000109 RID: 265
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/AAA/Blood")]
 public class CameraFilterPack_AAA_Blood : MonoBehaviour
 {
 	// Token: 0x17000228 RID: 552
-	// (get) Token: 0x06000B01 RID: 2817 RVA: 0x0005FD62 File Offset: 0x0005DF62
+	// (get) Token: 0x06000B08 RID: 2824 RVA: 0x00060A92 File Offset: 0x0005EC92
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_AAA_Blood : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B02 RID: 2818 RVA: 0x0005FD96 File Offset: 0x0005DF96
+	// Token: 0x06000B09 RID: 2825 RVA: 0x00060AC6 File Offset: 0x0005ECC6
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_AAA_Blood1") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_AAA_Blood : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B03 RID: 2819 RVA: 0x0005FDCC File Offset: 0x0005DFCC
+	// Token: 0x06000B0A RID: 2826 RVA: 0x00060AFC File Offset: 0x0005ECFC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -56,12 +56,12 @@ public class CameraFilterPack_AAA_Blood : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B04 RID: 2820 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B0B RID: 2827 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B05 RID: 2821 RVA: 0x0005FEC3 File Offset: 0x0005E0C3
+	// Token: 0x06000B0C RID: 2828 RVA: 0x00060BF3 File Offset: 0x0005EDF3
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -70,35 +70,35 @@ public class CameraFilterPack_AAA_Blood : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000D50 RID: 3408
+	// Token: 0x04000D6F RID: 3439
 	public Shader SCShader;
 
-	// Token: 0x04000D51 RID: 3409
+	// Token: 0x04000D70 RID: 3440
 	private float TimeX = 1f;
 
-	// Token: 0x04000D52 RID: 3410
+	// Token: 0x04000D71 RID: 3441
 	[Range(0f, 128f)]
 	public float Blood1;
 
-	// Token: 0x04000D53 RID: 3411
+	// Token: 0x04000D72 RID: 3442
 	[Range(0f, 128f)]
 	public float Blood2;
 
-	// Token: 0x04000D54 RID: 3412
+	// Token: 0x04000D73 RID: 3443
 	[Range(0f, 128f)]
 	public float Blood3;
 
-	// Token: 0x04000D55 RID: 3413
+	// Token: 0x04000D74 RID: 3444
 	[Range(0f, 128f)]
 	public float Blood4 = 1f;
 
-	// Token: 0x04000D56 RID: 3414
+	// Token: 0x04000D75 RID: 3445
 	[Range(0f, 0.004f)]
 	public float LightReflect = 0.002f;
 
-	// Token: 0x04000D57 RID: 3415
+	// Token: 0x04000D76 RID: 3446
 	private Material SCMaterial;
 
-	// Token: 0x04000D58 RID: 3416
+	// Token: 0x04000D77 RID: 3447
 	private Texture2D Texture2;
 }

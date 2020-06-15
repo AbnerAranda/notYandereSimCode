@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200040F RID: 1039
+// Token: 0x02000414 RID: 1044
 public class SuitorBoostScript : MonoBehaviour
 {
-	// Token: 0x06001BED RID: 7149 RVA: 0x00146BF4 File Offset: 0x00144DF4
+	// Token: 0x06001C11 RID: 7185 RVA: 0x00149F8C File Offset: 0x0014818C
 	private void Update()
 	{
 		if (this.Yandere.Followers > 0)
@@ -69,8 +69,8 @@ public class SuitorBoostScript : MonoBehaviour
 						{
 							this.Yandere.FixCamera();
 							this.Yandere.Follower.Character.transform.localScale = new Vector3(0.94f, 0.94f, 0.94f);
-							this.YandereChair.transform.localPosition = new Vector3(this.YandereChair.transform.localPosition.x, this.YandereChair.transform.localPosition.y, -0.33333334f);
-							this.SuitorChair.transform.localPosition = new Vector3(this.SuitorChair.transform.localPosition.x, this.SuitorChair.transform.localPosition.y, -0.33333334f);
+							this.YandereChair.transform.localPosition = new Vector3(this.YandereChair.transform.localPosition.x, this.YandereChair.transform.localPosition.y, -0.333333343f);
+							this.SuitorChair.transform.localPosition = new Vector3(this.SuitorChair.transform.localPosition.x, this.SuitorChair.transform.localPosition.y, -0.333333343f);
 							this.Yandere.Character.GetComponent<Animation>().Play(this.Yandere.IdleAnim);
 							this.Yandere.Follower.Character.GetComponent<Animation>().Play(this.Yandere.Follower.IdleAnim);
 							this.Yandere.transform.position = this.YandereSpot.position;
@@ -140,7 +140,7 @@ public class SuitorBoostScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BEE RID: 7150 RVA: 0x001473E8 File Offset: 0x001455E8
+	// Token: 0x06001C12 RID: 7186 RVA: 0x0014A780 File Offset: 0x00148980
 	private void LateUpdate()
 	{
 		if (this.Boosting && this.Phase > 1 && this.Phase < 5)
@@ -150,54 +150,54 @@ public class SuitorBoostScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040033D1 RID: 13265
+	// Token: 0x04003446 RID: 13382
 	public LoveManagerScript LoveManager;
 
-	// Token: 0x040033D2 RID: 13266
+	// Token: 0x04003447 RID: 13383
 	public PromptBarScript PromptBar;
 
-	// Token: 0x040033D3 RID: 13267
+	// Token: 0x04003448 RID: 13384
 	public YandereScript Yandere;
 
-	// Token: 0x040033D4 RID: 13268
+	// Token: 0x04003449 RID: 13385
 	public PromptScript Prompt;
 
-	// Token: 0x040033D5 RID: 13269
+	// Token: 0x0400344A RID: 13386
 	public UISprite Darkness;
 
-	// Token: 0x040033D6 RID: 13270
+	// Token: 0x0400344B RID: 13387
 	public Transform YandereSitSpot;
 
-	// Token: 0x040033D7 RID: 13271
+	// Token: 0x0400344C RID: 13388
 	public Transform SuitorSitSpot;
 
-	// Token: 0x040033D8 RID: 13272
+	// Token: 0x0400344D RID: 13389
 	public Transform YandereChair;
 
-	// Token: 0x040033D9 RID: 13273
+	// Token: 0x0400344E RID: 13390
 	public Transform SuitorChair;
 
-	// Token: 0x040033DA RID: 13274
+	// Token: 0x0400344F RID: 13391
 	public Transform YandereSpot;
 
-	// Token: 0x040033DB RID: 13275
+	// Token: 0x04003450 RID: 13392
 	public Transform SuitorSpot;
 
-	// Token: 0x040033DC RID: 13276
+	// Token: 0x04003451 RID: 13393
 	public Transform LookTarget;
 
-	// Token: 0x040033DD RID: 13277
+	// Token: 0x04003452 RID: 13394
 	public Transform TextBox;
 
-	// Token: 0x040033DE RID: 13278
+	// Token: 0x04003453 RID: 13395
 	public bool Boosting;
 
-	// Token: 0x040033DF RID: 13279
+	// Token: 0x04003454 RID: 13396
 	public bool FadeOut;
 
-	// Token: 0x040033E0 RID: 13280
+	// Token: 0x04003455 RID: 13397
 	public float Timer;
 
-	// Token: 0x040033E1 RID: 13281
+	// Token: 0x04003456 RID: 13398
 	public int Phase = 1;
 }

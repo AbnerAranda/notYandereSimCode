@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200052B RID: 1323
+	// Token: 0x02000541 RID: 1345
 	[AddComponentMenu("Pathfinding/Link2")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_node_link2.php")]
 	public class NodeLink2 : GraphModifier
 	{
-		// Token: 0x060022D6 RID: 8918 RVA: 0x00191C34 File Offset: 0x0018FE34
+		// Token: 0x0600232C RID: 9004 RVA: 0x00197820 File Offset: 0x00195A20
 		public static NodeLink2 GetNodeLink(GraphNode node)
 		{
 			NodeLink2 result;
@@ -19,8 +19,8 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x17000540 RID: 1344
-		// (get) Token: 0x060022D7 RID: 8919 RVA: 0x00191A71 File Offset: 0x0018FC71
+		// Token: 0x17000546 RID: 1350
+		// (get) Token: 0x0600232D RID: 9005 RVA: 0x0019765D File Offset: 0x0019585D
 		public Transform StartTransform
 		{
 			get
@@ -29,8 +29,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000541 RID: 1345
-		// (get) Token: 0x060022D8 RID: 8920 RVA: 0x00191C50 File Offset: 0x0018FE50
+		// Token: 0x17000547 RID: 1351
+		// (get) Token: 0x0600232E RID: 9006 RVA: 0x0019783C File Offset: 0x00195A3C
 		public Transform EndTransform
 		{
 			get
@@ -39,18 +39,18 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000542 RID: 1346
-		// (get) Token: 0x060022D9 RID: 8921 RVA: 0x00191C58 File Offset: 0x0018FE58
-		// (set) Token: 0x060022DA RID: 8922 RVA: 0x00191C60 File Offset: 0x0018FE60
+		// Token: 0x17000548 RID: 1352
+		// (get) Token: 0x0600232F RID: 9007 RVA: 0x00197844 File Offset: 0x00195A44
+		// (set) Token: 0x06002330 RID: 9008 RVA: 0x0019784C File Offset: 0x00195A4C
 		public PointNode startNode { get; private set; }
 
-		// Token: 0x17000543 RID: 1347
-		// (get) Token: 0x060022DB RID: 8923 RVA: 0x00191C69 File Offset: 0x0018FE69
-		// (set) Token: 0x060022DC RID: 8924 RVA: 0x00191C71 File Offset: 0x0018FE71
+		// Token: 0x17000549 RID: 1353
+		// (get) Token: 0x06002331 RID: 9009 RVA: 0x00197855 File Offset: 0x00195A55
+		// (set) Token: 0x06002332 RID: 9010 RVA: 0x0019785D File Offset: 0x00195A5D
 		public PointNode endNode { get; private set; }
 
-		// Token: 0x17000544 RID: 1348
-		// (get) Token: 0x060022DD RID: 8925 RVA: 0x00191C7A File Offset: 0x0018FE7A
+		// Token: 0x1700054A RID: 1354
+		// (get) Token: 0x06002333 RID: 9011 RVA: 0x00197866 File Offset: 0x00195A66
 		[Obsolete("Use startNode instead (lowercase s)")]
 		public GraphNode StartNode
 		{
@@ -60,8 +60,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000545 RID: 1349
-		// (get) Token: 0x060022DE RID: 8926 RVA: 0x00191C82 File Offset: 0x0018FE82
+		// Token: 0x1700054B RID: 1355
+		// (get) Token: 0x06002334 RID: 9012 RVA: 0x0019786E File Offset: 0x00195A6E
 		[Obsolete("Use endNode instead (lowercase e)")]
 		public GraphNode EndNode
 		{
@@ -71,13 +71,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022DF RID: 8927 RVA: 0x00191C8A File Offset: 0x0018FE8A
+		// Token: 0x06002335 RID: 9013 RVA: 0x00197876 File Offset: 0x00195A76
 		public override void OnPostScan()
 		{
 			this.InternalOnPostScan();
 		}
 
-		// Token: 0x060022E0 RID: 8928 RVA: 0x00191C94 File Offset: 0x0018FE94
+		// Token: 0x06002336 RID: 9014 RVA: 0x00197880 File Offset: 0x00195A80
 		public void InternalOnPostScan()
 		{
 			if (this.EndTransform == null || this.StartTransform == null)
@@ -120,7 +120,7 @@ namespace Pathfinding
 			this.Apply(true);
 		}
 
-		// Token: 0x060022E1 RID: 8929 RVA: 0x00191E14 File Offset: 0x00190014
+		// Token: 0x06002337 RID: 9015 RVA: 0x00197A00 File Offset: 0x00195C00
 		public override void OnGraphsPostUpdate()
 		{
 			if (AstarPath.active.isScanning)
@@ -143,7 +143,7 @@ namespace Pathfinding
 			this.Apply(false);
 		}
 
-		// Token: 0x060022E2 RID: 8930 RVA: 0x00191E7C File Offset: 0x0019007C
+		// Token: 0x06002338 RID: 9016 RVA: 0x00197A68 File Offset: 0x00195C68
 		protected override void OnEnable()
 		{
 			base.OnEnable();
@@ -153,7 +153,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022E3 RID: 8931 RVA: 0x00191EE4 File Offset: 0x001900E4
+		// Token: 0x06002339 RID: 9017 RVA: 0x00197AD0 File Offset: 0x00195CD0
 		protected override void OnDisable()
 		{
 			base.OnDisable();
@@ -180,13 +180,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022E4 RID: 8932 RVA: 0x00191FB6 File Offset: 0x001901B6
+		// Token: 0x0600233A RID: 9018 RVA: 0x00197BA2 File Offset: 0x00195DA2
 		private void RemoveConnections(GraphNode node)
 		{
 			node.ClearConnections(true);
 		}
 
-		// Token: 0x060022E5 RID: 8933 RVA: 0x00191FBF File Offset: 0x001901BF
+		// Token: 0x0600233B RID: 9019 RVA: 0x00197BAB File Offset: 0x00195DAB
 		[ContextMenu("Recalculate neighbours")]
 		private void ContextApplyForce()
 		{
@@ -200,7 +200,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022E6 RID: 8934 RVA: 0x00191FE8 File Offset: 0x001901E8
+		// Token: 0x0600233C RID: 9020 RVA: 0x00197BD4 File Offset: 0x00195DD4
 		public void Apply(bool forceNewCheck)
 		{
 			NNConstraint none = NNConstraint.None;
@@ -241,29 +241,29 @@ namespace Pathfinding
 			this.endNode.AddConnection(this.connectedNode2, (uint)Mathf.RoundToInt((float)((Int3)(this.clamped2 - this.EndTransform.position)).costMagnitude * this.costFactor));
 		}
 
-		// Token: 0x060022E7 RID: 8935 RVA: 0x0019225F File Offset: 0x0019045F
+		// Token: 0x0600233D RID: 9021 RVA: 0x00197E4B File Offset: 0x0019604B
 		public virtual void OnDrawGizmosSelected()
 		{
 			this.OnDrawGizmos(true);
 		}
 
-		// Token: 0x060022E8 RID: 8936 RVA: 0x00192268 File Offset: 0x00190468
+		// Token: 0x0600233E RID: 9022 RVA: 0x00197E54 File Offset: 0x00196054
 		public void OnDrawGizmos()
 		{
 			this.OnDrawGizmos(false);
 		}
 
-		// Token: 0x060022E9 RID: 8937 RVA: 0x00192274 File Offset: 0x00190474
+		// Token: 0x0600233F RID: 9023 RVA: 0x00197E60 File Offset: 0x00196060
 		public void OnDrawGizmos(bool selected)
 		{
 			Color color = selected ? NodeLink2.GizmosColorSelected : NodeLink2.GizmosColor;
 			if (this.StartTransform != null)
 			{
-				Draw.Gizmos.CircleXZ(this.StartTransform.position, 0.4f, color, 0f, 6.2831855f);
+				Draw.Gizmos.CircleXZ(this.StartTransform.position, 0.4f, color, 0f, 6.28318548f);
 			}
 			if (this.EndTransform != null)
 			{
-				Draw.Gizmos.CircleXZ(this.EndTransform.position, 0.4f, color, 0f, 6.2831855f);
+				Draw.Gizmos.CircleXZ(this.EndTransform.position, 0.4f, color, 0f, 6.28318548f);
 			}
 			if (this.StartTransform != null && this.EndTransform != null)
 			{
@@ -277,7 +277,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022EA RID: 8938 RVA: 0x001923F0 File Offset: 0x001905F0
+		// Token: 0x06002340 RID: 9024 RVA: 0x00197FDC File Offset: 0x001961DC
 		internal static void SerializeReferences(GraphSerializationContext ctx)
 		{
 			List<NodeLink2> modifiersOfType = GraphModifier.GetModifiersOfType<NodeLink2>();
@@ -295,7 +295,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060022EB RID: 8939 RVA: 0x001924B8 File Offset: 0x001906B8
+		// Token: 0x06002341 RID: 9025 RVA: 0x001980A4 File Offset: 0x001962A4
 		internal static void DeserializeReferences(GraphSerializationContext ctx)
 		{
 			int num = ctx.reader.ReadInt32();
@@ -345,37 +345,37 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003F1C RID: 16156
+		// Token: 0x04003FFA RID: 16378
 		protected static Dictionary<GraphNode, NodeLink2> reference = new Dictionary<GraphNode, NodeLink2>();
 
-		// Token: 0x04003F1D RID: 16157
+		// Token: 0x04003FFB RID: 16379
 		public Transform end;
 
-		// Token: 0x04003F1E RID: 16158
+		// Token: 0x04003FFC RID: 16380
 		public float costFactor = 1f;
 
-		// Token: 0x04003F1F RID: 16159
+		// Token: 0x04003FFD RID: 16381
 		public bool oneWay;
 
-		// Token: 0x04003F22 RID: 16162
+		// Token: 0x04004000 RID: 16384
 		private GraphNode connectedNode1;
 
-		// Token: 0x04003F23 RID: 16163
+		// Token: 0x04004001 RID: 16385
 		private GraphNode connectedNode2;
 
-		// Token: 0x04003F24 RID: 16164
+		// Token: 0x04004002 RID: 16386
 		private Vector3 clamped1;
 
-		// Token: 0x04003F25 RID: 16165
+		// Token: 0x04004003 RID: 16387
 		private Vector3 clamped2;
 
-		// Token: 0x04003F26 RID: 16166
+		// Token: 0x04004004 RID: 16388
 		private bool postScanCalled;
 
-		// Token: 0x04003F27 RID: 16167
-		private static readonly Color GizmosColor = new Color(0.80784315f, 0.53333336f, 0.1882353f, 0.5f);
+		// Token: 0x04004005 RID: 16389
+		private static readonly Color GizmosColor = new Color(0.807843149f, 0.533333361f, 0.1882353f, 0.5f);
 
-		// Token: 0x04003F28 RID: 16168
-		private static readonly Color GizmosColorSelected = new Color(0.92156863f, 0.48235294f, 0.1254902f, 1f);
+		// Token: 0x04004006 RID: 16390
+		private static readonly Color GizmosColorSelected = new Color(0.921568632f, 0.482352942f, 0.1254902f, 1f);
 	}
 }

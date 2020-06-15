@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002A2 RID: 674
+// Token: 0x020002A4 RID: 676
 public class FloatScript : MonoBehaviour
 {
-	// Token: 0x06001409 RID: 5129 RVA: 0x000AF608 File Offset: 0x000AD808
+	// Token: 0x06001418 RID: 5144 RVA: 0x000B0EB0 File Offset: 0x000AF0B0
 	private void Update()
 	{
 		if (!this.Down)
@@ -34,21 +34,21 @@ public class FloatScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001C2E RID: 7214
+	// Token: 0x04001C66 RID: 7270
 	public bool Down;
 
-	// Token: 0x04001C2F RID: 7215
+	// Token: 0x04001C67 RID: 7271
 	public float Float;
 
-	// Token: 0x04001C30 RID: 7216
+	// Token: 0x04001C68 RID: 7272
 	public float Speed;
 
-	// Token: 0x04001C31 RID: 7217
+	// Token: 0x04001C69 RID: 7273
 	public float Limit;
 
-	// Token: 0x04001C32 RID: 7218
+	// Token: 0x04001C6A RID: 7274
 	public float DownLimit;
 
-	// Token: 0x04001C33 RID: 7219
+	// Token: 0x04001C6B RID: 7275
 	public float UpLimit;
 }

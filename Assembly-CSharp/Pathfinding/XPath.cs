@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200059A RID: 1434
+	// Token: 0x020005B0 RID: 1456
 	public class XPath : ABPath
 	{
-		// Token: 0x06002712 RID: 10002 RVA: 0x001ABD02 File Offset: 0x001A9F02
+		// Token: 0x06002768 RID: 10088 RVA: 0x001B18EE File Offset: 0x001AFAEE
 		public new static XPath Construct(Vector3 start, Vector3 end, OnPathDelegate callback = null)
 		{
 			XPath path = PathPool.GetPath<XPath>();
@@ -15,20 +15,20 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x06002713 RID: 10003 RVA: 0x001ABD1E File Offset: 0x001A9F1E
+		// Token: 0x06002769 RID: 10089 RVA: 0x001B190A File Offset: 0x001AFB0A
 		protected override void Reset()
 		{
 			base.Reset();
 			this.endingCondition = null;
 		}
 
-		// Token: 0x06002714 RID: 10004 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x0600276A RID: 10090 RVA: 0x0002D199 File Offset: 0x0002B399
 		protected override bool EndPointGridGraphSpecialCase(GraphNode endNode)
 		{
 			return false;
 		}
 
-		// Token: 0x06002715 RID: 10005 RVA: 0x001ABD30 File Offset: 0x001A9F30
+		// Token: 0x0600276B RID: 10091 RVA: 0x001B191C File Offset: 0x001AFB1C
 		protected override void CompletePathIfStartIsValidTarget()
 		{
 			PathNode pathNode = this.pathHandler.GetPathNode(this.startNode);
@@ -40,7 +40,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002716 RID: 10006 RVA: 0x001ABD78 File Offset: 0x001A9F78
+		// Token: 0x0600276C RID: 10092 RVA: 0x001B1964 File Offset: 0x001AFB64
 		private void ChangeEndNode(GraphNode target)
 		{
 			if (this.endNode != null && this.endNode != this.startNode)
@@ -52,7 +52,7 @@ namespace Pathfinding
 			this.endPoint = (Vector3)target.position;
 		}
 
-		// Token: 0x06002717 RID: 10007 RVA: 0x001ABDD4 File Offset: 0x001A9FD4
+		// Token: 0x0600276D RID: 10093 RVA: 0x001B19C0 File Offset: 0x001AFBC0
 		protected override void CalculateStep(long targetTick)
 		{
 			int num = 0;
@@ -92,7 +92,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x040041B6 RID: 16822
+		// Token: 0x04004294 RID: 17044
 		public PathEndingCondition endingCondition;
 	}
 }

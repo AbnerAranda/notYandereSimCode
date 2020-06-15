@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000577 RID: 1399
+	// Token: 0x0200058D RID: 1421
 	[Serializable]
 	public class EuclideanEmbedding
 	{
-		// Token: 0x06002600 RID: 9728 RVA: 0x001A3B4E File Offset: 0x001A1D4E
+		// Token: 0x06002656 RID: 9814 RVA: 0x001A973A File Offset: 0x001A793A
 		private uint GetRandom()
 		{
-			this.rval = 12820163u * this.rval + 1140671485u;
+			this.rval = 12820163U * this.rval + 1140671485U;
 			return this.rval;
 		}
 
-		// Token: 0x06002601 RID: 9729 RVA: 0x001A3B70 File Offset: 0x001A1D70
+		// Token: 0x06002657 RID: 9815 RVA: 0x001A975C File Offset: 0x001A795C
 		private void EnsureCapacity(int index)
 		{
 			if (index > this.maxNodeIndex)
@@ -41,7 +41,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002602 RID: 9730 RVA: 0x001A3C0C File Offset: 0x001A1E0C
+		// Token: 0x06002658 RID: 9816 RVA: 0x001A97F8 File Offset: 0x001A79F8
 		public uint GetHeuristic(int nodeIndex1, int nodeIndex2)
 		{
 			nodeIndex1 *= this.pivotCount;
@@ -50,7 +50,7 @@ namespace Pathfinding
 			{
 				this.EnsureCapacity((nodeIndex1 > nodeIndex2) ? nodeIndex1 : nodeIndex2);
 			}
-			uint num = 0u;
+			uint num = 0U;
 			for (int i = 0; i < this.pivotCount; i++)
 			{
 				uint num2 = (uint)Math.Abs((int)(this.costs[nodeIndex1 + i] - this.costs[nodeIndex2 + i]));
@@ -62,7 +62,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x06002603 RID: 9731 RVA: 0x001A3C88 File Offset: 0x001A1E88
+		// Token: 0x06002659 RID: 9817 RVA: 0x001A9874 File Offset: 0x001A7A74
 		private void GetClosestWalkableNodesToChildrenRecursively(Transform tr, List<GraphNode> nodes)
 		{
 			foreach (object obj in tr)
@@ -77,7 +77,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002604 RID: 9732 RVA: 0x001A3D14 File Offset: 0x001A1F14
+		// Token: 0x0600265A RID: 9818 RVA: 0x001A9900 File Offset: 0x001A7B00
 		private void PickNRandomNodes(int count, List<GraphNode> buffer)
 		{
 			int n = 0;
@@ -109,7 +109,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002605 RID: 9733 RVA: 0x001A3D84 File Offset: 0x001A1F84
+		// Token: 0x0600265B RID: 9819 RVA: 0x001A9970 File Offset: 0x001A7B70
 		private GraphNode PickAnyWalkableNode()
 		{
 			NavGraph[] graphs = AstarPath.active.graphs;
@@ -133,7 +133,7 @@ namespace Pathfinding
 			return first;
 		}
 
-		// Token: 0x06002606 RID: 9734 RVA: 0x001A3DE4 File Offset: 0x001A1FE4
+		// Token: 0x0600265C RID: 9820 RVA: 0x001A99D0 File Offset: 0x001A7BD0
 		public void RecalculatePivots()
 		{
 			if (this.mode == HeuristicOptimizationMode.None)
@@ -187,7 +187,7 @@ namespace Pathfinding
 			ListPool<GraphNode>.Release(ref list);
 		}
 
-		// Token: 0x06002607 RID: 9735 RVA: 0x001A3F14 File Offset: 0x001A2114
+		// Token: 0x0600265D RID: 9821 RVA: 0x001A9B00 File Offset: 0x001A7D00
 		public void RecalculateCosts()
 		{
 			if (this.pivots == null)
@@ -238,7 +238,7 @@ namespace Pathfinding
 				{
 					_p.Claim(this);
 					MeshNode meshNode = pivot as MeshNode;
-					uint costOffset = 0u;
+					uint costOffset = 0U;
 					if (meshNode != null && meshNode.connections != null)
 					{
 						for (int l = 0; l < meshNode.connections.Length; l++)
@@ -259,12 +259,12 @@ namespace Pathfinding
 								int num6 = node.NodeIndex * this.pivotCount + pivotIndex;
 								this.EnsureCapacity(num6);
 								PathNode pathNode = ((IPathInternals)floodPath).PathHandler.GetPathNode(node);
-								if (costOffset > 0u)
+								if (costOffset > 0U)
 								{
-									this.costs[num6] = ((pathNode.pathID == floodPath.pathID && pathNode.parent != null) ? Math.Max(pathNode.parent.G - costOffset, 0u) : 0u);
+									this.costs[num6] = ((pathNode.pathID == floodPath.pathID && pathNode.parent != null) ? Math.Max(pathNode.parent.G - costOffset, 0U) : 0U);
 									return;
 								}
-								this.costs[num6] = ((pathNode.pathID == floodPath.pathID) ? pathNode.G : 0u);
+								this.costs[num6] = ((pathNode.pathID == floodPath.pathID) ? pathNode.G : 0U);
 							});
 						}
 						navGraph.GetNodes(action);
@@ -274,11 +274,11 @@ namespace Pathfinding
 						if (this.pivots[pivotIndex + 1] == null)
 						{
 							int num = -1;
-							uint num2 = 0u;
+							uint num2 = 0U;
 							int num3 = this.maxNodeIndex / this.pivotCount;
 							for (int n = 1; n < num3; n++)
 							{
-								uint num4 = 1073741824u;
+								uint num4 = 1073741824U;
 								for (int num5 = 0; num5 <= pivotIndex; num5++)
 								{
 									num4 = Math.Min(num4, this.costs[n * this.pivotCount + num5]);
@@ -317,7 +317,7 @@ namespace Pathfinding
 			this.dirty = false;
 		}
 
-		// Token: 0x06002608 RID: 9736 RVA: 0x001A404C File Offset: 0x001A224C
+		// Token: 0x0600265E RID: 9822 RVA: 0x001A9C38 File Offset: 0x001A7E38
 		private void ApplyGridGraphEndpointSpecialCase()
 		{
 			NavGraph[] graphs = AstarPath.active.graphs;
@@ -369,9 +369,9 @@ namespace Pathfinding
 								}
 								for (int num5 = 0; num5 < this.pivotCount; num5++)
 								{
-									if (this.costs[num2 + num5] == 4294967295u)
+									if (this.costs[num2 + num5] == 4294967295U)
 									{
-										this.costs[num2 + num5] = 0u;
+										this.costs[num2 + num5] = 0U;
 									}
 								}
 							}
@@ -381,14 +381,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002609 RID: 9737 RVA: 0x001A4260 File Offset: 0x001A2460
+		// Token: 0x0600265F RID: 9823 RVA: 0x001A9E4C File Offset: 0x001A804C
 		public void OnDrawGizmos()
 		{
 			if (this.pivots != null)
 			{
 				for (int i = 0; i < this.pivots.Length; i++)
 				{
-					Gizmos.color = new Color(0.62352943f, 0.36862746f, 0.7607843f, 0.8f);
+					Gizmos.color = new Color(0.623529434f, 0.368627459f, 0.7607843f, 0.8f);
 					if (this.pivots[i] != null && !this.pivots[i].Destroyed)
 					{
 						Gizmos.DrawCube((Vector3)this.pivots[i].position, Vector3.one);
@@ -397,44 +397,44 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x040040FA RID: 16634
+		// Token: 0x040041D8 RID: 16856
 		public HeuristicOptimizationMode mode;
 
-		// Token: 0x040040FB RID: 16635
+		// Token: 0x040041D9 RID: 16857
 		public int seed;
 
-		// Token: 0x040040FC RID: 16636
+		// Token: 0x040041DA RID: 16858
 		public Transform pivotPointRoot;
 
-		// Token: 0x040040FD RID: 16637
+		// Token: 0x040041DB RID: 16859
 		public int spreadOutCount = 1;
 
-		// Token: 0x040040FE RID: 16638
+		// Token: 0x040041DC RID: 16860
 		[NonSerialized]
 		public bool dirty;
 
-		// Token: 0x040040FF RID: 16639
+		// Token: 0x040041DD RID: 16861
 		private uint[] costs = new uint[8];
 
-		// Token: 0x04004100 RID: 16640
+		// Token: 0x040041DE RID: 16862
 		private int maxNodeIndex;
 
-		// Token: 0x04004101 RID: 16641
+		// Token: 0x040041DF RID: 16863
 		private int pivotCount;
 
-		// Token: 0x04004102 RID: 16642
+		// Token: 0x040041E0 RID: 16864
 		private GraphNode[] pivots;
 
-		// Token: 0x04004103 RID: 16643
-		private const uint ra = 12820163u;
+		// Token: 0x040041E1 RID: 16865
+		private const uint ra = 12820163U;
 
-		// Token: 0x04004104 RID: 16644
-		private const uint rc = 1140671485u;
+		// Token: 0x040041E2 RID: 16866
+		private const uint rc = 1140671485U;
 
-		// Token: 0x04004105 RID: 16645
+		// Token: 0x040041E3 RID: 16867
 		private uint rval;
 
-		// Token: 0x04004106 RID: 16646
+		// Token: 0x040041E4 RID: 16868
 		private object lockObj = new object();
 	}
 }

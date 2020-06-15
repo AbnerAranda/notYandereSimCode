@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001EF RID: 495
+// Token: 0x020001F0 RID: 496
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/VHS/Real VHS HQ")]
 public class CameraFilterPack_Real_VHS : MonoBehaviour
 {
 	// Token: 0x1700030F RID: 783
-	// (get) Token: 0x060010CF RID: 4303 RVA: 0x0007A2A7 File Offset: 0x000784A7
+	// (get) Token: 0x060010D6 RID: 4310 RVA: 0x0007AFD7 File Offset: 0x000791D7
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Real_VHS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D0 RID: 4304 RVA: 0x0007A2DC File Offset: 0x000784DC
+	// Token: 0x060010D7 RID: 4311 RVA: 0x0007B00C File Offset: 0x0007920C
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Real_VHS");
@@ -34,7 +34,7 @@ public class CameraFilterPack_Real_VHS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D1 RID: 4305 RVA: 0x0007A332 File Offset: 0x00078532
+	// Token: 0x060010D8 RID: 4312 RVA: 0x0007B062 File Offset: 0x00079262
 	public static Texture2D GetRTPixels(Texture2D t, RenderTexture rt, int sx, int sy)
 	{
 		RenderTexture active = RenderTexture.active;
@@ -44,7 +44,7 @@ public class CameraFilterPack_Real_VHS : MonoBehaviour
 		return t;
 	}
 
-	// Token: 0x060010D2 RID: 4306 RVA: 0x0007A36C File Offset: 0x0007856C
+	// Token: 0x060010D9 RID: 4313 RVA: 0x0007B09C File Offset: 0x0007929C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -69,12 +69,12 @@ public class CameraFilterPack_Real_VHS : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010D3 RID: 4307 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010DA RID: 4314 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010D4 RID: 4308 RVA: 0x0007A47C File Offset: 0x0007867C
+	// Token: 0x060010DB RID: 4315 RVA: 0x0007B1AC File Offset: 0x000793AC
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -83,39 +83,39 @@ public class CameraFilterPack_Real_VHS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013D1 RID: 5073
+	// Token: 0x040013F0 RID: 5104
 	public Shader SCShader;
 
-	// Token: 0x040013D2 RID: 5074
+	// Token: 0x040013F1 RID: 5105
 	private Material SCMaterial;
 
-	// Token: 0x040013D3 RID: 5075
+	// Token: 0x040013F2 RID: 5106
 	private Texture2D VHS;
 
-	// Token: 0x040013D4 RID: 5076
+	// Token: 0x040013F3 RID: 5107
 	private Texture2D VHS2;
 
-	// Token: 0x040013D5 RID: 5077
+	// Token: 0x040013F4 RID: 5108
 	[Range(0f, 1f)]
 	public float TRACKING = 0.212f;
 
-	// Token: 0x040013D6 RID: 5078
+	// Token: 0x040013F5 RID: 5109
 	[Range(0f, 1f)]
 	public float JITTER = 1f;
 
-	// Token: 0x040013D7 RID: 5079
+	// Token: 0x040013F6 RID: 5110
 	[Range(0f, 1f)]
 	public float GLITCH = 1f;
 
-	// Token: 0x040013D8 RID: 5080
+	// Token: 0x040013F7 RID: 5111
 	[Range(0f, 1f)]
 	public float NOISE = 1f;
 
-	// Token: 0x040013D9 RID: 5081
+	// Token: 0x040013F8 RID: 5112
 	[Range(-1f, 1f)]
 	public float Brightness;
 
-	// Token: 0x040013DA RID: 5082
+	// Token: 0x040013F9 RID: 5113
 	[Range(0f, 1.5f)]
 	public float Constrast = 1f;
 }

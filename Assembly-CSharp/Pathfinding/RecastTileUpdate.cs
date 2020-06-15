@@ -3,29 +3,29 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200055D RID: 1373
+	// Token: 0x02000573 RID: 1395
 	[AddComponentMenu("Pathfinding/Navmesh/RecastTileUpdate")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_recast_tile_update.php")]
 	public class RecastTileUpdate : MonoBehaviour
 	{
 		// Token: 0x14000005 RID: 5
-		// (add) Token: 0x06002442 RID: 9282 RVA: 0x00196E48 File Offset: 0x00195048
-		// (remove) Token: 0x06002443 RID: 9283 RVA: 0x00196E7C File Offset: 0x0019507C
+		// (add) Token: 0x06002498 RID: 9368 RVA: 0x0019CA34 File Offset: 0x0019AC34
+		// (remove) Token: 0x06002499 RID: 9369 RVA: 0x0019CA68 File Offset: 0x0019AC68
 		public static event Action<Bounds> OnNeedUpdates;
 
-		// Token: 0x06002444 RID: 9284 RVA: 0x00196EAF File Offset: 0x001950AF
+		// Token: 0x0600249A RID: 9370 RVA: 0x0019CA9B File Offset: 0x0019AC9B
 		private void Start()
 		{
 			this.ScheduleUpdate();
 		}
 
-		// Token: 0x06002445 RID: 9285 RVA: 0x00196EAF File Offset: 0x001950AF
+		// Token: 0x0600249B RID: 9371 RVA: 0x0019CA9B File Offset: 0x0019AC9B
 		private void OnDestroy()
 		{
 			this.ScheduleUpdate();
 		}
 
-		// Token: 0x06002446 RID: 9286 RVA: 0x00196EB8 File Offset: 0x001950B8
+		// Token: 0x0600249C RID: 9372 RVA: 0x0019CAA4 File Offset: 0x0019ACA4
 		public void ScheduleUpdate()
 		{
 			Collider component = base.GetComponent<Collider>();

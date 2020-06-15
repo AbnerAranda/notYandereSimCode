@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F3 RID: 243
+// Token: 0x020000F4 RID: 244
 public class BusStopScript : MonoBehaviour
 {
 }

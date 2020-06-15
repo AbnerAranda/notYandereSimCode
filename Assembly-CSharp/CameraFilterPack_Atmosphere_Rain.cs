@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000113 RID: 275
+// Token: 0x02000114 RID: 276
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Weather/Rain")]
 public class CameraFilterPack_Atmosphere_Rain : MonoBehaviour
 {
 	// Token: 0x17000233 RID: 563
-	// (get) Token: 0x06000B43 RID: 2883 RVA: 0x0006144F File Offset: 0x0005F64F
+	// (get) Token: 0x06000B4A RID: 2890 RVA: 0x0006217F File Offset: 0x0006037F
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Atmosphere_Rain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B44 RID: 2884 RVA: 0x00061483 File Offset: 0x0005F683
+	// Token: 0x06000B4B RID: 2891 RVA: 0x000621B3 File Offset: 0x000603B3
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_Atmosphere_Rain_FX") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Atmosphere_Rain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B45 RID: 2885 RVA: 0x000614BC File Offset: 0x0005F6BC
+	// Token: 0x06000B4C RID: 2892 RVA: 0x000621EC File Offset: 0x000603EC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -59,12 +59,12 @@ public class CameraFilterPack_Atmosphere_Rain : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B46 RID: 2886 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B4D RID: 2893 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B47 RID: 2887 RVA: 0x0006160C File Offset: 0x0005F80C
+	// Token: 0x06000B4E RID: 2894 RVA: 0x0006233C File Offset: 0x0006053C
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -73,43 +73,43 @@ public class CameraFilterPack_Atmosphere_Rain : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DBE RID: 3518
+	// Token: 0x04000DDD RID: 3549
 	public Shader SCShader;
 
-	// Token: 0x04000DBF RID: 3519
+	// Token: 0x04000DDE RID: 3550
 	private float TimeX = 1f;
 
-	// Token: 0x04000DC0 RID: 3520
+	// Token: 0x04000DDF RID: 3551
 	private Material SCMaterial;
 
-	// Token: 0x04000DC1 RID: 3521
+	// Token: 0x04000DE0 RID: 3552
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04000DC2 RID: 3522
+	// Token: 0x04000DE1 RID: 3553
 	[Range(0f, 2f)]
 	public float Intensity = 0.5f;
 
-	// Token: 0x04000DC3 RID: 3523
+	// Token: 0x04000DE2 RID: 3554
 	[Range(-0.25f, 0.25f)]
 	public float DirectionX = 0.12f;
 
-	// Token: 0x04000DC4 RID: 3524
+	// Token: 0x04000DE3 RID: 3555
 	[Range(0.4f, 2f)]
 	public float Size = 1.5f;
 
-	// Token: 0x04000DC5 RID: 3525
+	// Token: 0x04000DE4 RID: 3556
 	[Range(0f, 0.5f)]
 	public float Speed = 0.275f;
 
-	// Token: 0x04000DC6 RID: 3526
+	// Token: 0x04000DE5 RID: 3557
 	[Range(0f, 0.5f)]
 	public float Distortion = 0.05f;
 
-	// Token: 0x04000DC7 RID: 3527
+	// Token: 0x04000DE6 RID: 3558
 	[Range(0f, 1f)]
 	public float StormFlashOnOff = 1f;
 
-	// Token: 0x04000DC8 RID: 3528
+	// Token: 0x04000DE7 RID: 3559
 	private Texture2D Texture2;
 }

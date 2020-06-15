@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200055E RID: 1374
+	// Token: 0x02000574 RID: 1396
 	[AddComponentMenu("Pathfinding/Navmesh/RecastTileUpdateHandler")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_recast_tile_update_handler.php")]
 	public class RecastTileUpdateHandler : MonoBehaviour
 	{
-		// Token: 0x06002448 RID: 9288 RVA: 0x00196F13 File Offset: 0x00195113
+		// Token: 0x0600249E RID: 9374 RVA: 0x0019CAFF File Offset: 0x0019ACFF
 		public void SetGraph(RecastGraph graph)
 		{
 			this.graph = graph;
@@ -20,7 +20,7 @@ namespace Pathfinding
 			this.anyDirtyTiles = false;
 		}
 
-		// Token: 0x06002449 RID: 9289 RVA: 0x00196F40 File Offset: 0x00195140
+		// Token: 0x0600249F RID: 9375 RVA: 0x0019CB2C File Offset: 0x0019AD2C
 		public void ScheduleUpdate(Bounds bounds)
 		{
 			if (this.graph == null)
@@ -55,19 +55,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600244A RID: 9290 RVA: 0x00197054 File Offset: 0x00195254
+		// Token: 0x060024A0 RID: 9376 RVA: 0x0019CC40 File Offset: 0x0019AE40
 		private void OnEnable()
 		{
 			RecastTileUpdate.OnNeedUpdates += this.ScheduleUpdate;
 		}
 
-		// Token: 0x0600244B RID: 9291 RVA: 0x00197067 File Offset: 0x00195267
+		// Token: 0x060024A1 RID: 9377 RVA: 0x0019CC53 File Offset: 0x0019AE53
 		private void OnDisable()
 		{
 			RecastTileUpdate.OnNeedUpdates -= this.ScheduleUpdate;
 		}
 
-		// Token: 0x0600244C RID: 9292 RVA: 0x0019707A File Offset: 0x0019527A
+		// Token: 0x060024A2 RID: 9378 RVA: 0x0019CC66 File Offset: 0x0019AE66
 		private void Update()
 		{
 			if (this.anyDirtyTiles && Time.time - this.earliestDirty >= this.maxThrottlingDelay && this.graph != null)
@@ -76,7 +76,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600244D RID: 9293 RVA: 0x001970A8 File Offset: 0x001952A8
+		// Token: 0x060024A3 RID: 9379 RVA: 0x0019CC94 File Offset: 0x0019AE94
 		public void UpdateDirtyTiles()
 		{
 			if (this.graph == null)
@@ -107,19 +107,19 @@ namespace Pathfinding
 			this.anyDirtyTiles = false;
 		}
 
-		// Token: 0x04004029 RID: 16425
+		// Token: 0x04004107 RID: 16647
 		private RecastGraph graph;
 
-		// Token: 0x0400402A RID: 16426
+		// Token: 0x04004108 RID: 16648
 		private bool[] dirtyTiles;
 
-		// Token: 0x0400402B RID: 16427
+		// Token: 0x04004109 RID: 16649
 		private bool anyDirtyTiles;
 
-		// Token: 0x0400402C RID: 16428
+		// Token: 0x0400410A RID: 16650
 		private float earliestDirty = float.NegativeInfinity;
 
-		// Token: 0x0400402D RID: 16429
+		// Token: 0x0400410B RID: 16651
 		public float maxThrottlingDelay = 0.5f;
 	}
 }

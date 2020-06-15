@@ -2,18 +2,18 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000550 RID: 1360
+	// Token: 0x02000566 RID: 1382
 	public enum PathLog
 	{
-		// Token: 0x04003FE0 RID: 16352
+		// Token: 0x040040BE RID: 16574
 		None,
-		// Token: 0x04003FE1 RID: 16353
+		// Token: 0x040040BF RID: 16575
 		Normal,
-		// Token: 0x04003FE2 RID: 16354
+		// Token: 0x040040C0 RID: 16576
 		Heavy,
-		// Token: 0x04003FE3 RID: 16355
+		// Token: 0x040040C1 RID: 16577
 		InGame,
-		// Token: 0x04003FE4 RID: 16356
+		// Token: 0x040040C2 RID: 16578
 		OnlyErrors
 	}
 }

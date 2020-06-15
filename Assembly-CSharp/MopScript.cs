@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000336 RID: 822
+// Token: 0x0200033A RID: 826
 public class MopScript : MonoBehaviour
 {
-	// Token: 0x06001838 RID: 6200 RVA: 0x000D8892 File Offset: 0x000D6A92
+	// Token: 0x06001857 RID: 6231 RVA: 0x000DAB32 File Offset: 0x000D8D32
 	private void Start()
 	{
 		this.Yandere = GameObject.Find("YandereChan").GetComponent<YandereScript>();
@@ -12,7 +12,7 @@ public class MopScript : MonoBehaviour
 		this.UpdateBlood();
 	}
 
-	// Token: 0x06001839 RID: 6201 RVA: 0x000D88BC File Offset: 0x000D6ABC
+	// Token: 0x06001858 RID: 6232 RVA: 0x000DAB5C File Offset: 0x000D8D5C
 	private void Update()
 	{
 		if (this.PickUp.Clock.Period == 5)
@@ -121,7 +121,7 @@ public class MopScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600183A RID: 6202 RVA: 0x000D8C78 File Offset: 0x000D6E78
+	// Token: 0x06001859 RID: 6233 RVA: 0x000DAF18 File Offset: 0x000D9118
 	public void UpdateBlood()
 	{
 		if (this.Bloodiness > 100f)
@@ -133,33 +133,33 @@ public class MopScript : MonoBehaviour
 		this.Blood.material.color = new Color(this.Blood.material.color.r, this.Blood.material.color.g, this.Blood.material.color.b, this.Bloodiness / 100f * 0.9f);
 	}
 
-	// Token: 0x0400231B RID: 8987
+	// Token: 0x04002369 RID: 9065
 	public ParticleSystem Sparkles;
 
-	// Token: 0x0400231C RID: 8988
+	// Token: 0x0400236A RID: 9066
 	public YandereScript Yandere;
 
-	// Token: 0x0400231D RID: 8989
+	// Token: 0x0400236B RID: 9067
 	public PromptScript Prompt;
 
-	// Token: 0x0400231E RID: 8990
+	// Token: 0x0400236C RID: 9068
 	public PickUpScript PickUp;
 
-	// Token: 0x0400231F RID: 8991
+	// Token: 0x0400236D RID: 9069
 	public Collider HeadCollider;
 
-	// Token: 0x04002320 RID: 8992
+	// Token: 0x0400236E RID: 9070
 	public Vector3 Rotation;
 
-	// Token: 0x04002321 RID: 8993
+	// Token: 0x0400236F RID: 9071
 	public Renderer Blood;
 
-	// Token: 0x04002322 RID: 8994
+	// Token: 0x04002370 RID: 9072
 	public Transform Head;
 
-	// Token: 0x04002323 RID: 8995
+	// Token: 0x04002371 RID: 9073
 	public float Bloodiness;
 
-	// Token: 0x04002324 RID: 8996
+	// Token: 0x04002372 RID: 9074
 	public bool Bleached;
 }

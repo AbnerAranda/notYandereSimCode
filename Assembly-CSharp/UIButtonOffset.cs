@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Button Offset")]
 public class UIButtonOffset : MonoBehaviour
 {
-	// Token: 0x0600018D RID: 397 RVA: 0x00014C68 File Offset: 0x00012E68
+	// Token: 0x0600018E RID: 398 RVA: 0x00014C90 File Offset: 0x00012E90
 	private void Start()
 	{
 		if (!this.mStarted)
@@ -19,7 +19,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600018E RID: 398 RVA: 0x00014CA4 File Offset: 0x00012EA4
+	// Token: 0x0600018F RID: 399 RVA: 0x00014CCC File Offset: 0x00012ECC
 	private void OnEnable()
 	{
 		if (this.mStarted)
@@ -28,7 +28,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600018F RID: 399 RVA: 0x00014CC0 File Offset: 0x00012EC0
+	// Token: 0x06000190 RID: 400 RVA: 0x00014CE8 File Offset: 0x00012EE8
 	private void OnDisable()
 	{
 		if (this.mStarted && this.tweenTarget != null)
@@ -42,7 +42,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000190 RID: 400 RVA: 0x00014D0C File Offset: 0x00012F0C
+	// Token: 0x06000191 RID: 401 RVA: 0x00014D34 File Offset: 0x00012F34
 	private void OnPress(bool isPressed)
 	{
 		this.mPressed = isPressed;
@@ -56,7 +56,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000191 RID: 401 RVA: 0x00014D90 File Offset: 0x00012F90
+	// Token: 0x06000192 RID: 402 RVA: 0x00014DB8 File Offset: 0x00012FB8
 	private void OnHover(bool isOver)
 	{
 		if (base.enabled)
@@ -69,7 +69,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000192 RID: 402 RVA: 0x00014DEB File Offset: 0x00012FEB
+	// Token: 0x06000193 RID: 403 RVA: 0x00014E13 File Offset: 0x00013013
 	private void OnDragOver()
 	{
 		if (this.mPressed)
@@ -78,7 +78,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000193 RID: 403 RVA: 0x00014E22 File Offset: 0x00013022
+	// Token: 0x06000194 RID: 404 RVA: 0x00014E4A File Offset: 0x0001304A
 	private void OnDragOut()
 	{
 		if (this.mPressed)
@@ -87,7 +87,7 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000194 RID: 404 RVA: 0x00014E4E File Offset: 0x0001304E
+	// Token: 0x06000195 RID: 405 RVA: 0x00014E76 File Offset: 0x00013076
 	private void OnSelect(bool isSelected)
 	{
 		if (base.enabled && (!isSelected || UICamera.currentScheme == UICamera.ControlScheme.Controller))
@@ -96,27 +96,27 @@ public class UIButtonOffset : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400031A RID: 794
+	// Token: 0x0400031C RID: 796
 	public Transform tweenTarget;
 
-	// Token: 0x0400031B RID: 795
+	// Token: 0x0400031D RID: 797
 	public Vector3 hover = Vector3.zero;
 
-	// Token: 0x0400031C RID: 796
+	// Token: 0x0400031E RID: 798
 	public Vector3 pressed = new Vector3(2f, -2f);
 
-	// Token: 0x0400031D RID: 797
+	// Token: 0x0400031F RID: 799
 	public float duration = 0.2f;
 
-	// Token: 0x0400031E RID: 798
+	// Token: 0x04000320 RID: 800
 	[NonSerialized]
 	private Vector3 mPos;
 
-	// Token: 0x0400031F RID: 799
+	// Token: 0x04000321 RID: 801
 	[NonSerialized]
 	private bool mStarted;
 
-	// Token: 0x04000320 RID: 800
+	// Token: 0x04000322 RID: 802
 	[NonSerialized]
 	private bool mPressed;
 }

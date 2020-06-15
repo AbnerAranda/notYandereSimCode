@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F7 RID: 247
+// Token: 0x020000F8 RID: 248
 public class ChallengeIconScript : MonoBehaviour
 {
-	// Token: 0x06000AA4 RID: 2724 RVA: 0x00058A20 File Offset: 0x00056C20
+	// Token: 0x06000AAB RID: 2731 RVA: 0x00059750 File Offset: 0x00057950
 	private void Start()
 	{
 		if (GameGlobals.LoveSick)
@@ -19,7 +19,7 @@ public class ChallengeIconScript : MonoBehaviour
 		this.B = 1f;
 	}
 
-	// Token: 0x06000AA5 RID: 2725 RVA: 0x00058A78 File Offset: 0x00056C78
+	// Token: 0x06000AAC RID: 2732 RVA: 0x000597A8 File Offset: 0x000579A8
 	private void Update()
 	{
 		if (base.transform.position.x > -0.125f && base.transform.position.x < 0.125f)
@@ -60,30 +60,30 @@ public class ChallengeIconScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B52 RID: 2898
+	// Token: 0x04000B71 RID: 2929
 	public UITexture LargeIcon;
 
-	// Token: 0x04000B53 RID: 2899
+	// Token: 0x04000B72 RID: 2930
 	public UISprite IconFrame;
 
-	// Token: 0x04000B54 RID: 2900
+	// Token: 0x04000B73 RID: 2931
 	public UISprite NameFrame;
 
-	// Token: 0x04000B55 RID: 2901
+	// Token: 0x04000B74 RID: 2932
 	public UITexture Icon;
 
-	// Token: 0x04000B56 RID: 2902
+	// Token: 0x04000B75 RID: 2933
 	public UILabel Name;
 
-	// Token: 0x04000B57 RID: 2903
+	// Token: 0x04000B76 RID: 2934
 	public float Dark;
 
-	// Token: 0x04000B58 RID: 2904
+	// Token: 0x04000B77 RID: 2935
 	private float R;
 
-	// Token: 0x04000B59 RID: 2905
+	// Token: 0x04000B78 RID: 2936
 	private float G;
 
-	// Token: 0x04000B5A RID: 2906
+	// Token: 0x04000B79 RID: 2937
 	private float B;
 }

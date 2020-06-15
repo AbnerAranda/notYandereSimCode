@@ -6,15 +6,15 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000598 RID: 1432
+	// Token: 0x020005AE RID: 1454
 	public class MultiTargetPath : ABPath
 	{
-		// Token: 0x170005BB RID: 1467
-		// (get) Token: 0x060026F1 RID: 9969 RVA: 0x001AA878 File Offset: 0x001A8A78
-		// (set) Token: 0x060026F2 RID: 9970 RVA: 0x001AA880 File Offset: 0x001A8A80
+		// Token: 0x170005C1 RID: 1473
+		// (get) Token: 0x06002747 RID: 10055 RVA: 0x001B0464 File Offset: 0x001AE664
+		// (set) Token: 0x06002748 RID: 10056 RVA: 0x001B046C File Offset: 0x001AE66C
 		public bool inverted { get; protected set; }
 
-		// Token: 0x060026F4 RID: 9972 RVA: 0x001AA8A6 File Offset: 0x001A8AA6
+		// Token: 0x0600274A RID: 10058 RVA: 0x001B0492 File Offset: 0x001AE692
 		public static MultiTargetPath Construct(Vector3[] startPoints, Vector3 target, OnPathDelegate[] callbackDelegates, OnPathDelegate callback = null)
 		{
 			MultiTargetPath multiTargetPath = MultiTargetPath.Construct(target, startPoints, callbackDelegates, callback);
@@ -22,7 +22,7 @@ namespace Pathfinding
 			return multiTargetPath;
 		}
 
-		// Token: 0x060026F5 RID: 9973 RVA: 0x001AA8B8 File Offset: 0x001A8AB8
+		// Token: 0x0600274B RID: 10059 RVA: 0x001B04A4 File Offset: 0x001AE6A4
 		public static MultiTargetPath Construct(Vector3 start, Vector3[] targets, OnPathDelegate[] callbackDelegates, OnPathDelegate callback = null)
 		{
 			MultiTargetPath path = PathPool.GetPath<MultiTargetPath>();
@@ -30,7 +30,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026F6 RID: 9974 RVA: 0x001AA8CC File Offset: 0x001A8ACC
+		// Token: 0x0600274C RID: 10060 RVA: 0x001B04B8 File Offset: 0x001AE6B8
 		protected void Setup(Vector3 start, Vector3[] targets, OnPathDelegate[] callbackDelegates, OnPathDelegate callback)
 		{
 			this.inverted = false;
@@ -57,7 +57,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026F7 RID: 9975 RVA: 0x001AA98B File Offset: 0x001A8B8B
+		// Token: 0x0600274D RID: 10061 RVA: 0x001B0577 File Offset: 0x001AE777
 		protected override void Reset()
 		{
 			base.Reset();
@@ -68,7 +68,7 @@ namespace Pathfinding
 			this.heuristicMode = MultiTargetPath.HeuristicMode.Sequential;
 		}
 
-		// Token: 0x060026F8 RID: 9976 RVA: 0x001AA9B8 File Offset: 0x001A8BB8
+		// Token: 0x0600274E RID: 10062 RVA: 0x001B05A4 File Offset: 0x001AE7A4
 		protected override void OnEnterPool()
 		{
 			if (this.vectorPaths != null)
@@ -103,13 +103,13 @@ namespace Pathfinding
 			base.OnEnterPool();
 		}
 
-		// Token: 0x060026F9 RID: 9977 RVA: 0x001AAA70 File Offset: 0x001A8C70
+		// Token: 0x0600274F RID: 10063 RVA: 0x001B065C File Offset: 0x001AE85C
 		private void ChooseShortestPath()
 		{
 			this.chosenTarget = -1;
 			if (this.nodePaths != null)
 			{
-				uint num = 2147483647u;
+				uint num = 2147483647U;
 				for (int i = 0; i < this.nodePaths.Length; i++)
 				{
 					List<GraphNode> list = this.nodePaths[i];
@@ -126,7 +126,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026FA RID: 9978 RVA: 0x001AAAF4 File Offset: 0x001A8CF4
+		// Token: 0x06002750 RID: 10064 RVA: 0x001B06E0 File Offset: 0x001AE8E0
 		private void SetPathParametersForReturn(int target)
 		{
 			this.path = this.nodePaths[target];
@@ -143,7 +143,7 @@ namespace Pathfinding
 			this.originalEndPoint = this.originalTargetPoints[target];
 		}
 
-		// Token: 0x060026FB RID: 9979 RVA: 0x001AAB8C File Offset: 0x001A8D8C
+		// Token: 0x06002751 RID: 10065 RVA: 0x001B0778 File Offset: 0x001AE978
 		protected override void ReturnPath()
 		{
 			if (base.error)
@@ -204,7 +204,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026FC RID: 9980 RVA: 0x001AACB0 File Offset: 0x001A8EB0
+		// Token: 0x06002752 RID: 10066 RVA: 0x001B089C File Offset: 0x001AEA9C
 		protected void FoundTarget(PathNode nodeR, int i)
 		{
 			nodeR.flag1 = false;
@@ -229,7 +229,7 @@ namespace Pathfinding
 			this.RecalculateHTarget(false);
 		}
 
-		// Token: 0x060026FD RID: 9981 RVA: 0x001AAD44 File Offset: 0x001A8F44
+		// Token: 0x06002753 RID: 10067 RVA: 0x001B0930 File Offset: 0x001AEB30
 		protected void RebuildOpenList()
 		{
 			BinaryHeap heap = this.pathHandler.heap;
@@ -242,7 +242,7 @@ namespace Pathfinding
 			this.pathHandler.heap.Rebuild();
 		}
 
-		// Token: 0x060026FE RID: 9982 RVA: 0x001AADA8 File Offset: 0x001A8FA8
+		// Token: 0x06002754 RID: 10068 RVA: 0x001B0994 File Offset: 0x001AEB94
 		protected override void Prepare()
 		{
 			this.nnConstraint.tags = this.enabledTags;
@@ -324,7 +324,7 @@ namespace Pathfinding
 			this.RecalculateHTarget(true);
 		}
 
-		// Token: 0x060026FF RID: 9983 RVA: 0x001AAFCC File Offset: 0x001A91CC
+		// Token: 0x06002755 RID: 10069 RVA: 0x001B0BB8 File Offset: 0x001AEDB8
 		private void RecalculateHTarget(bool firstTime)
 		{
 			if (!this.pathsForAll)
@@ -427,14 +427,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002700 RID: 9984 RVA: 0x001AB208 File Offset: 0x001A9408
+		// Token: 0x06002756 RID: 10070 RVA: 0x001B0DF4 File Offset: 0x001AEFF4
 		protected override void Initialize()
 		{
 			PathNode pathNode = this.pathHandler.GetPathNode(this.startNode);
 			pathNode.node = this.startNode;
 			pathNode.pathID = base.pathID;
 			pathNode.parent = null;
-			pathNode.cost = 0u;
+			pathNode.cost = 0U;
 			pathNode.G = base.GetTraversalCost(this.startNode);
 			pathNode.H = base.CalculateHScore(this.startNode);
 			for (int i = 0; i < this.targetNodes.Length; i++)
@@ -463,14 +463,14 @@ namespace Pathfinding
 			this.currentR = this.pathHandler.heap.Remove();
 		}
 
-		// Token: 0x06002701 RID: 9985 RVA: 0x001AB327 File Offset: 0x001A9527
+		// Token: 0x06002757 RID: 10071 RVA: 0x001B0F13 File Offset: 0x001AF113
 		protected override void Cleanup()
 		{
 			this.ChooseShortestPath();
 			this.ResetFlags();
 		}
 
-		// Token: 0x06002702 RID: 9986 RVA: 0x001AB338 File Offset: 0x001A9538
+		// Token: 0x06002758 RID: 10072 RVA: 0x001B0F24 File Offset: 0x001AF124
 		private void ResetFlags()
 		{
 			if (this.targetNodes != null)
@@ -485,7 +485,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002703 RID: 9987 RVA: 0x001AB384 File Offset: 0x001A9584
+		// Token: 0x06002759 RID: 10073 RVA: 0x001B0F70 File Offset: 0x001AF170
 		protected override void CalculateStep(long targetTick)
 		{
 			int num = 0;
@@ -530,7 +530,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002704 RID: 9988 RVA: 0x001AB484 File Offset: 0x001A9684
+		// Token: 0x0600275A RID: 10074 RVA: 0x001B1070 File Offset: 0x001AF270
 		protected override void Trace(PathNode node)
 		{
 			base.Trace(node);
@@ -552,7 +552,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002705 RID: 9989 RVA: 0x001AB568 File Offset: 0x001A9768
+		// Token: 0x0600275B RID: 10075 RVA: 0x001B1154 File Offset: 0x001AF354
 		internal override string DebugString(PathLog logMode)
 		{
 			if (logMode == PathLog.None || (!base.error && logMode == PathLog.OnlyErrors))
@@ -619,56 +619,56 @@ namespace Pathfinding
 			return debugStringBuilder.ToString();
 		}
 
-		// Token: 0x040041A0 RID: 16800
+		// Token: 0x0400427E RID: 17022
 		public OnPathDelegate[] callbacks;
 
-		// Token: 0x040041A1 RID: 16801
+		// Token: 0x0400427F RID: 17023
 		public GraphNode[] targetNodes;
 
-		// Token: 0x040041A2 RID: 16802
+		// Token: 0x04004280 RID: 17024
 		protected int targetNodeCount;
 
-		// Token: 0x040041A3 RID: 16803
+		// Token: 0x04004281 RID: 17025
 		public bool[] targetsFound;
 
-		// Token: 0x040041A4 RID: 16804
+		// Token: 0x04004282 RID: 17026
 		public Vector3[] targetPoints;
 
-		// Token: 0x040041A5 RID: 16805
+		// Token: 0x04004283 RID: 17027
 		public Vector3[] originalTargetPoints;
 
-		// Token: 0x040041A6 RID: 16806
+		// Token: 0x04004284 RID: 17028
 		public List<Vector3>[] vectorPaths;
 
-		// Token: 0x040041A7 RID: 16807
+		// Token: 0x04004285 RID: 17029
 		public List<GraphNode>[] nodePaths;
 
-		// Token: 0x040041A8 RID: 16808
+		// Token: 0x04004286 RID: 17030
 		public bool pathsForAll = true;
 
-		// Token: 0x040041A9 RID: 16809
+		// Token: 0x04004287 RID: 17031
 		public int chosenTarget = -1;
 
-		// Token: 0x040041AA RID: 16810
+		// Token: 0x04004288 RID: 17032
 		private int sequentialTarget;
 
-		// Token: 0x040041AB RID: 16811
+		// Token: 0x04004289 RID: 17033
 		public MultiTargetPath.HeuristicMode heuristicMode = MultiTargetPath.HeuristicMode.Sequential;
 
-		// Token: 0x02000758 RID: 1880
+		// Token: 0x02000772 RID: 1906
 		public enum HeuristicMode
 		{
-			// Token: 0x04004A03 RID: 18947
+			// Token: 0x04004AEE RID: 19182
 			None,
-			// Token: 0x04004A04 RID: 18948
+			// Token: 0x04004AEF RID: 19183
 			Average,
-			// Token: 0x04004A05 RID: 18949
+			// Token: 0x04004AF0 RID: 19184
 			MovingAverage,
-			// Token: 0x04004A06 RID: 18950
+			// Token: 0x04004AF1 RID: 19185
 			Midpoint,
-			// Token: 0x04004A07 RID: 18951
+			// Token: 0x04004AF2 RID: 19186
 			MovingMidpoint,
-			// Token: 0x04004A08 RID: 18952
+			// Token: 0x04004AF3 RID: 19187
 			Sequential
 		}
 	}

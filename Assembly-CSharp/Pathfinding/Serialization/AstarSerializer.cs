@@ -8,55 +8,55 @@ using UnityEngine;
 
 namespace Pathfinding.Serialization
 {
-	// Token: 0x020005B9 RID: 1465
+	// Token: 0x020005CF RID: 1487
 	public class AstarSerializer
 	{
-		// Token: 0x060027E4 RID: 10212 RVA: 0x001B55F0 File Offset: 0x001B37F0
+		// Token: 0x0600283A RID: 10298 RVA: 0x001BB1DC File Offset: 0x001B93DC
 		private static StringBuilder GetStringBuilder()
 		{
 			AstarSerializer._stringBuilder.Length = 0;
 			return AstarSerializer._stringBuilder;
 		}
 
-		// Token: 0x060027E5 RID: 10213 RVA: 0x001B5602 File Offset: 0x001B3802
+		// Token: 0x0600283B RID: 10299 RVA: 0x001BB1EE File Offset: 0x001B93EE
 		public AstarSerializer(AstarData data)
 		{
 			this.data = data;
 			this.settings = SerializeSettings.Settings;
 		}
 
-		// Token: 0x060027E6 RID: 10214 RVA: 0x001B562E File Offset: 0x001B382E
+		// Token: 0x0600283C RID: 10300 RVA: 0x001BB21A File Offset: 0x001B941A
 		public AstarSerializer(AstarData data, SerializeSettings settings)
 		{
 			this.data = data;
 			this.settings = settings;
 		}
 
-		// Token: 0x060027E7 RID: 10215 RVA: 0x001B5656 File Offset: 0x001B3856
+		// Token: 0x0600283D RID: 10301 RVA: 0x001BB242 File Offset: 0x001B9442
 		public void SetGraphIndexOffset(int offset)
 		{
 			this.graphIndexOffset = offset;
 		}
 
-		// Token: 0x060027E8 RID: 10216 RVA: 0x001B565F File Offset: 0x001B385F
+		// Token: 0x0600283E RID: 10302 RVA: 0x001BB24B File Offset: 0x001B944B
 		private void AddChecksum(byte[] bytes)
 		{
 			this.checksum = Checksum.GetChecksum(bytes, this.checksum);
 		}
 
-		// Token: 0x060027E9 RID: 10217 RVA: 0x001B5673 File Offset: 0x001B3873
+		// Token: 0x0600283F RID: 10303 RVA: 0x001BB25F File Offset: 0x001B945F
 		private void AddEntry(string name, byte[] bytes)
 		{
 			this.zip.AddEntry(name, bytes);
 		}
 
-		// Token: 0x060027EA RID: 10218 RVA: 0x001B5683 File Offset: 0x001B3883
+		// Token: 0x06002840 RID: 10304 RVA: 0x001BB26F File Offset: 0x001B946F
 		public uint GetChecksum()
 		{
 			return this.checksum;
 		}
 
-		// Token: 0x060027EB RID: 10219 RVA: 0x001B568B File Offset: 0x001B388B
+		// Token: 0x06002841 RID: 10305 RVA: 0x001BB277 File Offset: 0x001B9477
 		public void OpenSerialize()
 		{
 			this.zipStream = new MemoryStream();
@@ -66,7 +66,7 @@ namespace Pathfinding.Serialization
 			this.meta = new GraphMeta();
 		}
 
-		// Token: 0x060027EC RID: 10220 RVA: 0x001B56CC File Offset: 0x001B38CC
+		// Token: 0x06002842 RID: 10306 RVA: 0x001BB2B8 File Offset: 0x001B94B8
 		public byte[] CloseSerialize()
 		{
 			byte[] array = this.SerializeMeta();
@@ -88,7 +88,7 @@ namespace Pathfinding.Serialization
 			return array;
 		}
 
-		// Token: 0x060027ED RID: 10221 RVA: 0x001B5794 File Offset: 0x001B3994
+		// Token: 0x06002843 RID: 10307 RVA: 0x001BB380 File Offset: 0x001B9580
 		public void SerializeGraphs(NavGraph[] _graphs)
 		{
 			if (this.graphs != null)
@@ -115,7 +115,7 @@ namespace Pathfinding.Serialization
 			}
 		}
 
-		// Token: 0x060027EE RID: 10222 RVA: 0x001B5834 File Offset: 0x001B3A34
+		// Token: 0x06002844 RID: 10308 RVA: 0x001BB420 File Offset: 0x001B9620
 		private byte[] SerializeMeta()
 		{
 			if (this.graphs == null)
@@ -144,7 +144,7 @@ namespace Pathfinding.Serialization
 			return this.encoding.GetBytes(stringBuilder.ToString());
 		}
 
-		// Token: 0x060027EF RID: 10223 RVA: 0x001B5948 File Offset: 0x001B3B48
+		// Token: 0x06002845 RID: 10309 RVA: 0x001BB534 File Offset: 0x001B9734
 		public byte[] Serialize(NavGraph graph)
 		{
 			StringBuilder stringBuilder = AstarSerializer.GetStringBuilder();
@@ -152,13 +152,13 @@ namespace Pathfinding.Serialization
 			return this.encoding.GetBytes(stringBuilder.ToString());
 		}
 
-		// Token: 0x060027F0 RID: 10224 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x06002846 RID: 10310 RVA: 0x00002ACE File Offset: 0x00000CCE
 		[Obsolete("Not used anymore. You can safely remove the call to this function.")]
 		public void SerializeNodes()
 		{
 		}
 
-		// Token: 0x060027F1 RID: 10225 RVA: 0x001B5974 File Offset: 0x001B3B74
+		// Token: 0x06002847 RID: 10311 RVA: 0x001BB560 File Offset: 0x001B9760
 		private static int GetMaxNodeIndexInAllGraphs(NavGraph[] graphs)
 		{
 			int maxIndex = 0;
@@ -186,7 +186,7 @@ namespace Pathfinding.Serialization
 			return maxIndex;
 		}
 
-		// Token: 0x060027F2 RID: 10226 RVA: 0x001B59D0 File Offset: 0x001B3BD0
+		// Token: 0x06002848 RID: 10312 RVA: 0x001BB5BC File Offset: 0x001B97BC
 		private static byte[] SerializeNodeIndices(NavGraph[] graphs)
 		{
 			MemoryStream memoryStream = new MemoryStream();
@@ -221,7 +221,7 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x060027F3 RID: 10227 RVA: 0x001B5A70 File Offset: 0x001B3C70
+		// Token: 0x06002849 RID: 10313 RVA: 0x001BB65C File Offset: 0x001B985C
 		private static byte[] SerializeGraphExtraInfo(NavGraph graph)
 		{
 			MemoryStream memoryStream = new MemoryStream();
@@ -233,7 +233,7 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x060027F4 RID: 10228 RVA: 0x001B5AA4 File Offset: 0x001B3CA4
+		// Token: 0x0600284A RID: 10314 RVA: 0x001BB690 File Offset: 0x001B9890
 		private static byte[] SerializeGraphNodeReferences(NavGraph graph)
 		{
 			MemoryStream memoryStream = new MemoryStream();
@@ -247,7 +247,7 @@ namespace Pathfinding.Serialization
 			return memoryStream.ToArray();
 		}
 
-		// Token: 0x060027F5 RID: 10229 RVA: 0x001B5AEC File Offset: 0x001B3CEC
+		// Token: 0x0600284B RID: 10315 RVA: 0x001BB6D8 File Offset: 0x001B98D8
 		public void SerializeExtraInfo()
 		{
 			if (!this.settings.nodes)
@@ -278,7 +278,7 @@ namespace Pathfinding.Serialization
 			this.AddEntry("node_link2.binary", bytes);
 		}
 
-		// Token: 0x060027F6 RID: 10230 RVA: 0x001B5BD2 File Offset: 0x001B3DD2
+		// Token: 0x0600284C RID: 10316 RVA: 0x001BB7BE File Offset: 0x001B99BE
 		private byte[] SerializeNodeLinks()
 		{
 			MemoryStream memoryStream = new MemoryStream();
@@ -286,19 +286,19 @@ namespace Pathfinding.Serialization
 			return memoryStream.ToArray();
 		}
 
-		// Token: 0x060027F7 RID: 10231 RVA: 0x001B5BEE File Offset: 0x001B3DEE
+		// Token: 0x0600284D RID: 10317 RVA: 0x001BB7DA File Offset: 0x001B99DA
 		private ZipEntry GetEntry(string name)
 		{
 			return this.zip[name];
 		}
 
-		// Token: 0x060027F8 RID: 10232 RVA: 0x001B5BFC File Offset: 0x001B3DFC
+		// Token: 0x0600284E RID: 10318 RVA: 0x001BB7E8 File Offset: 0x001B99E8
 		private bool ContainsEntry(string name)
 		{
 			return this.GetEntry(name) != null;
 		}
 
-		// Token: 0x060027F9 RID: 10233 RVA: 0x001B5C08 File Offset: 0x001B3E08
+		// Token: 0x0600284F RID: 10319 RVA: 0x001BB7F4 File Offset: 0x001B99F4
 		public bool OpenDeserialize(byte[] bytes)
 		{
 			this.zipStream = new MemoryStream();
@@ -351,13 +351,13 @@ namespace Pathfinding.Serialization
 			return true;
 		}
 
-		// Token: 0x060027FA RID: 10234 RVA: 0x001B5DA0 File Offset: 0x001B3FA0
+		// Token: 0x06002850 RID: 10320 RVA: 0x001BB98C File Offset: 0x001B9B8C
 		private static Version FullyDefinedVersion(Version v)
 		{
 			return new Version(Mathf.Max(v.Major, 0), Mathf.Max(v.Minor, 0), Mathf.Max(v.Build, 0), Mathf.Max(v.Revision, 0));
 		}
 
-		// Token: 0x060027FB RID: 10235 RVA: 0x001B5DD7 File Offset: 0x001B3FD7
+		// Token: 0x06002851 RID: 10321 RVA: 0x001BB9C3 File Offset: 0x001B9BC3
 		public void CloseDeserialize()
 		{
 			this.zipStream.Dispose();
@@ -366,7 +366,7 @@ namespace Pathfinding.Serialization
 			this.zipStream = null;
 		}
 
-		// Token: 0x060027FC RID: 10236 RVA: 0x001B5E00 File Offset: 0x001B4000
+		// Token: 0x06002852 RID: 10322 RVA: 0x001BB9EC File Offset: 0x001B9BEC
 		private NavGraph DeserializeGraph(int zipIndex, int graphIndex)
 		{
 			Type graphType = this.meta.GetGraphType(zipIndex);
@@ -411,7 +411,7 @@ namespace Pathfinding.Serialization
 			return navGraph;
 		}
 
-		// Token: 0x060027FD RID: 10237 RVA: 0x001B5F60 File Offset: 0x001B4160
+		// Token: 0x06002853 RID: 10323 RVA: 0x001BBB4C File Offset: 0x001B9D4C
 		public NavGraph[] DeserializeGraphs()
 		{
 			List<NavGraph> list = new List<NavGraph>();
@@ -430,7 +430,7 @@ namespace Pathfinding.Serialization
 			return this.graphs;
 		}
 
-		// Token: 0x060027FE RID: 10238 RVA: 0x001B5FD4 File Offset: 0x001B41D4
+		// Token: 0x06002854 RID: 10324 RVA: 0x001BBBC0 File Offset: 0x001B9DC0
 		private bool DeserializeExtraInfo(NavGraph graph)
 		{
 			int num = this.graphIndexInZip[graph];
@@ -444,7 +444,7 @@ namespace Pathfinding.Serialization
 			return true;
 		}
 
-		// Token: 0x060027FF RID: 10239 RVA: 0x001B6030 File Offset: 0x001B4230
+		// Token: 0x06002855 RID: 10325 RVA: 0x001BBC1C File Offset: 0x001B9E1C
 		private bool AnyDestroyedNodesInGraphs()
 		{
 			bool result = false;
@@ -468,7 +468,7 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x06002800 RID: 10240 RVA: 0x001B6090 File Offset: 0x001B4290
+		// Token: 0x06002856 RID: 10326 RVA: 0x001BBC7C File Offset: 0x001B9E7C
 		private GraphNode[] DeserializeNodeReferenceMap()
 		{
 			ZipEntry entry = this.GetEntry("graph_references.binary");
@@ -515,7 +515,7 @@ namespace Pathfinding.Serialization
 			return int2Node;
 		}
 
-		// Token: 0x06002801 RID: 10241 RVA: 0x001B61D0 File Offset: 0x001B43D0
+		// Token: 0x06002857 RID: 10327 RVA: 0x001BBDBC File Offset: 0x001B9FBC
 		private void DeserializeNodeReferences(NavGraph graph, GraphNode[] int2Node)
 		{
 			int num = this.graphIndexInZip[graph];
@@ -532,7 +532,7 @@ namespace Pathfinding.Serialization
 			});
 		}
 
-		// Token: 0x06002802 RID: 10242 RVA: 0x001B625C File Offset: 0x001B445C
+		// Token: 0x06002858 RID: 10328 RVA: 0x001BBE48 File Offset: 0x001BA048
 		public void DeserializeExtraInfo()
 		{
 			bool flag = false;
@@ -556,7 +556,7 @@ namespace Pathfinding.Serialization
 			this.DeserializeNodeLinks(int2Node);
 		}
 
-		// Token: 0x06002803 RID: 10243 RVA: 0x001B62D8 File Offset: 0x001B44D8
+		// Token: 0x06002859 RID: 10329 RVA: 0x001BBEC4 File Offset: 0x001BA0C4
 		private void DeserializeNodeLinks(GraphNode[] int2Node)
 		{
 			ZipEntry entry = this.GetEntry("node_link2.binary");
@@ -564,20 +564,20 @@ namespace Pathfinding.Serialization
 			{
 				return;
 			}
-			NodeLink2.DeserializeReferences(new GraphSerializationContext(AstarSerializer.GetBinaryReader(entry), int2Node, 0u, this.meta));
+			NodeLink2.DeserializeReferences(new GraphSerializationContext(AstarSerializer.GetBinaryReader(entry), int2Node, 0U, this.meta));
 		}
 
-		// Token: 0x06002804 RID: 10244 RVA: 0x001B6310 File Offset: 0x001B4510
+		// Token: 0x0600285A RID: 10330 RVA: 0x001BBEFC File Offset: 0x001BA0FC
 		public void PostDeserialization()
 		{
 			for (int i = 0; i < this.graphs.Length; i++)
 			{
-				GraphSerializationContext ctx = new GraphSerializationContext(null, null, 0u, this.meta);
+				GraphSerializationContext ctx = new GraphSerializationContext(null, null, 0U, this.meta);
 				((IGraphInternals)this.graphs[i]).PostDeserialization(ctx);
 			}
 		}
 
-		// Token: 0x06002805 RID: 10245 RVA: 0x001B6350 File Offset: 0x001B4550
+		// Token: 0x0600285B RID: 10331 RVA: 0x001BBF3C File Offset: 0x001BA13C
 		public void DeserializeEditorSettingsCompatibility()
 		{
 			for (int i = 0; i < this.graphs.Length; i++)
@@ -591,7 +591,7 @@ namespace Pathfinding.Serialization
 			}
 		}
 
-		// Token: 0x06002806 RID: 10246 RVA: 0x001B63B8 File Offset: 0x001B45B8
+		// Token: 0x0600285C RID: 10332 RVA: 0x001BBFA4 File Offset: 0x001BA1A4
 		private static BinaryReader GetBinaryReader(ZipEntry entry)
 		{
 			MemoryStream memoryStream = new MemoryStream();
@@ -600,7 +600,7 @@ namespace Pathfinding.Serialization
 			return new BinaryReader(memoryStream);
 		}
 
-		// Token: 0x06002807 RID: 10247 RVA: 0x001B63E0 File Offset: 0x001B45E0
+		// Token: 0x0600285D RID: 10333 RVA: 0x001BBFCC File Offset: 0x001BA1CC
 		private static string GetString(ZipEntry entry)
 		{
 			MemoryStream memoryStream = new MemoryStream();
@@ -612,13 +612,13 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x06002808 RID: 10248 RVA: 0x001B6415 File Offset: 0x001B4615
+		// Token: 0x0600285E RID: 10334 RVA: 0x001BC001 File Offset: 0x001BA201
 		private GraphMeta DeserializeMeta(ZipEntry entry)
 		{
 			return TinyJsonDeserializer.Deserialize(AstarSerializer.GetString(entry), typeof(GraphMeta), null) as GraphMeta;
 		}
 
-		// Token: 0x06002809 RID: 10249 RVA: 0x001B6434 File Offset: 0x001B4634
+		// Token: 0x0600285F RID: 10335 RVA: 0x001BC020 File Offset: 0x001BA220
 		private GraphMeta DeserializeBinaryMeta(ZipEntry entry)
 		{
 			GraphMeta graphMeta = new GraphMeta();
@@ -667,7 +667,7 @@ namespace Pathfinding.Serialization
 			return graphMeta;
 		}
 
-		// Token: 0x0600280A RID: 10250 RVA: 0x001B6564 File Offset: 0x001B4764
+		// Token: 0x06002860 RID: 10336 RVA: 0x001BC150 File Offset: 0x001BA350
 		public static void SaveToFile(string path, byte[] data)
 		{
 			using (FileStream fileStream = new FileStream(path, FileMode.Create))
@@ -676,7 +676,7 @@ namespace Pathfinding.Serialization
 			}
 		}
 
-		// Token: 0x0600280B RID: 10251 RVA: 0x001B65A0 File Offset: 0x001B47A0
+		// Token: 0x06002861 RID: 10337 RVA: 0x001BC18C File Offset: 0x001BA38C
 		public static byte[] LoadFromFile(string path)
 		{
 			byte[] result;
@@ -689,52 +689,52 @@ namespace Pathfinding.Serialization
 			return result;
 		}
 
-		// Token: 0x04004242 RID: 16962
+		// Token: 0x04004320 RID: 17184
 		private AstarData data;
 
-		// Token: 0x04004243 RID: 16963
+		// Token: 0x04004321 RID: 17185
 		private ZipFile zip;
 
-		// Token: 0x04004244 RID: 16964
+		// Token: 0x04004322 RID: 17186
 		private MemoryStream zipStream;
 
-		// Token: 0x04004245 RID: 16965
+		// Token: 0x04004323 RID: 17187
 		private GraphMeta meta;
 
-		// Token: 0x04004246 RID: 16966
+		// Token: 0x04004324 RID: 17188
 		private SerializeSettings settings;
 
-		// Token: 0x04004247 RID: 16967
+		// Token: 0x04004325 RID: 17189
 		private NavGraph[] graphs;
 
-		// Token: 0x04004248 RID: 16968
+		// Token: 0x04004326 RID: 17190
 		private Dictionary<NavGraph, int> graphIndexInZip;
 
-		// Token: 0x04004249 RID: 16969
+		// Token: 0x04004327 RID: 17191
 		private int graphIndexOffset;
 
-		// Token: 0x0400424A RID: 16970
+		// Token: 0x04004328 RID: 17192
 		private const string binaryExt = ".binary";
 
-		// Token: 0x0400424B RID: 16971
+		// Token: 0x04004329 RID: 17193
 		private const string jsonExt = ".json";
 
-		// Token: 0x0400424C RID: 16972
+		// Token: 0x0400432A RID: 17194
 		private uint checksum = uint.MaxValue;
 
-		// Token: 0x0400424D RID: 16973
+		// Token: 0x0400432B RID: 17195
 		private UTF8Encoding encoding = new UTF8Encoding();
 
-		// Token: 0x0400424E RID: 16974
+		// Token: 0x0400432C RID: 17196
 		private static StringBuilder _stringBuilder = new StringBuilder();
 
-		// Token: 0x0400424F RID: 16975
+		// Token: 0x0400432D RID: 17197
 		public static readonly Version V3_8_3 = new Version(3, 8, 3);
 
-		// Token: 0x04004250 RID: 16976
+		// Token: 0x0400432E RID: 17198
 		public static readonly Version V3_9_0 = new Version(3, 9, 0);
 
-		// Token: 0x04004251 RID: 16977
+		// Token: 0x0400432F RID: 17199
 		public static readonly Version V4_1_0 = new Version(4, 1, 0);
 	}
 }

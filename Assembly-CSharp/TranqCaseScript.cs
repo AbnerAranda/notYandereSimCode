@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200042C RID: 1068
+// Token: 0x02000431 RID: 1073
 public class TranqCaseScript : MonoBehaviour
 {
-	// Token: 0x06001C5C RID: 7260 RVA: 0x00152DDD File Offset: 0x00150FDD
+	// Token: 0x06001C80 RID: 7296 RVA: 0x00156255 File Offset: 0x00154455
 	private void Start()
 	{
 		this.Prompt.enabled = false;
 	}
 
-	// Token: 0x06001C5D RID: 7261 RVA: 0x00152DEC File Offset: 0x00150FEC
+	// Token: 0x06001C81 RID: 7297 RVA: 0x00156264 File Offset: 0x00154464
 	private void Update()
 	{
 		if (this.Yandere.transform.position.x > base.transform.position.x && Vector3.Distance(base.transform.position, this.Yandere.transform.position) < 1f)
@@ -85,36 +85,36 @@ public class TranqCaseScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003535 RID: 13621
+	// Token: 0x040035AA RID: 13738
 	public YandereScript Yandere;
 
-	// Token: 0x04003536 RID: 13622
+	// Token: 0x040035AB RID: 13739
 	public RagdollScript Ragdoll;
 
-	// Token: 0x04003537 RID: 13623
+	// Token: 0x040035AC RID: 13740
 	public PromptScript Prompt;
 
-	// Token: 0x04003538 RID: 13624
+	// Token: 0x040035AD RID: 13741
 	public DoorScript Door;
 
-	// Token: 0x04003539 RID: 13625
+	// Token: 0x040035AE RID: 13742
 	public Transform Hinge;
 
-	// Token: 0x0400353A RID: 13626
+	// Token: 0x040035AF RID: 13743
 	public bool Occupied;
 
-	// Token: 0x0400353B RID: 13627
+	// Token: 0x040035B0 RID: 13744
 	public bool Open;
 
-	// Token: 0x0400353C RID: 13628
+	// Token: 0x040035B1 RID: 13745
 	public int VictimID;
 
-	// Token: 0x0400353D RID: 13629
+	// Token: 0x040035B2 RID: 13746
 	public ClubType VictimClubType;
 
-	// Token: 0x0400353E RID: 13630
+	// Token: 0x040035B3 RID: 13747
 	public float Rotation;
 
-	// Token: 0x0400353F RID: 13631
+	// Token: 0x040035B4 RID: 13748
 	public bool Animate;
 }

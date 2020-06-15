@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001DD RID: 477
+// Token: 0x020001DE RID: 478
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Night Vision/Night Vision 4")]
 public class CameraFilterPack_NightVision_4 : MonoBehaviour
 {
 	// Token: 0x170002FD RID: 765
-	// (get) Token: 0x0600105D RID: 4189 RVA: 0x00078002 File Offset: 0x00076202
+	// (get) Token: 0x06001064 RID: 4196 RVA: 0x00078D32 File Offset: 0x00076F32
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_NightVision_4 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600105E RID: 4190 RVA: 0x00078036 File Offset: 0x00076236
+	// Token: 0x06001065 RID: 4197 RVA: 0x00078D66 File Offset: 0x00076F66
 	private void ChangeFilters()
 	{
 		this.Matrix9 = new float[]
@@ -41,7 +41,7 @@ public class CameraFilterPack_NightVision_4 : MonoBehaviour
 		};
 	}
 
-	// Token: 0x0600105F RID: 4191 RVA: 0x00078050 File Offset: 0x00076250
+	// Token: 0x06001066 RID: 4198 RVA: 0x00078D80 File Offset: 0x00076F80
 	private void Start()
 	{
 		this.ChangeFilters();
@@ -53,7 +53,7 @@ public class CameraFilterPack_NightVision_4 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001060 RID: 4192 RVA: 0x00078078 File Offset: 0x00076278
+	// Token: 0x06001067 RID: 4199 RVA: 0x00078DA8 File Offset: 0x00076FA8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -84,18 +84,18 @@ public class CameraFilterPack_NightVision_4 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001061 RID: 4193 RVA: 0x00078299 File Offset: 0x00076499
+	// Token: 0x06001068 RID: 4200 RVA: 0x00078FC9 File Offset: 0x000771C9
 	private void OnValidate()
 	{
 		this.ChangeFilters();
 	}
 
-	// Token: 0x06001062 RID: 4194 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001069 RID: 4201 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001063 RID: 4195 RVA: 0x000782A1 File Offset: 0x000764A1
+	// Token: 0x0600106A RID: 4202 RVA: 0x00078FD1 File Offset: 0x000771D1
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -104,22 +104,22 @@ public class CameraFilterPack_NightVision_4 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001353 RID: 4947
+	// Token: 0x04001372 RID: 4978
 	private string ShaderName = "CameraFilterPack/NightVision_4";
 
-	// Token: 0x04001354 RID: 4948
+	// Token: 0x04001373 RID: 4979
 	public Shader SCShader;
 
-	// Token: 0x04001355 RID: 4949
+	// Token: 0x04001374 RID: 4980
 	[Range(0f, 1f)]
 	public float FadeFX = 1f;
 
-	// Token: 0x04001356 RID: 4950
+	// Token: 0x04001375 RID: 4981
 	private float TimeX = 1f;
 
-	// Token: 0x04001357 RID: 4951
+	// Token: 0x04001376 RID: 4982
 	private Material SCMaterial;
 
-	// Token: 0x04001358 RID: 4952
+	// Token: 0x04001377 RID: 4983
 	private float[] Matrix9;
 }

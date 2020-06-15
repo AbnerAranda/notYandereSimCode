@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005B4 RID: 1460
+	// Token: 0x020005CA RID: 1482
 	public class Voxelize
 	{
-		// Token: 0x06002785 RID: 10117 RVA: 0x001AF6EC File Offset: 0x001AD8EC
+		// Token: 0x060027DB RID: 10203 RVA: 0x001B52D8 File Offset: 0x001B34D8
 		public void BuildContours(float maxError, int maxEdgeLength, VoxelContourSet cset, int buildFlags)
 		{
 			int num = this.voxelArea.width;
@@ -159,7 +159,7 @@ namespace Pathfinding.Voxels
 			cset.conts = list;
 		}
 
-		// Token: 0x06002786 RID: 10118 RVA: 0x001AFC2C File Offset: 0x001ADE2C
+		// Token: 0x060027DC RID: 10204 RVA: 0x001B5818 File Offset: 0x001B3A18
 		private void GetClosestIndices(int[] vertsa, int nvertsa, int[] vertsb, int nvertsb, ref int ia, ref int ib)
 		{
 			int num = 268435455;
@@ -191,7 +191,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x06002787 RID: 10119 RVA: 0x001AFCF4 File Offset: 0x001ADEF4
+		// Token: 0x060027DD RID: 10205 RVA: 0x001B58E0 File Offset: 0x001B3AE0
 		private static void ReleaseContours(VoxelContourSet cset)
 		{
 			for (int i = 0; i < cset.conts.Count; i++)
@@ -203,7 +203,7 @@ namespace Pathfinding.Voxels
 			cset.conts = null;
 		}
 
-		// Token: 0x06002788 RID: 10120 RVA: 0x001AFD48 File Offset: 0x001ADF48
+		// Token: 0x060027DE RID: 10206 RVA: 0x001B5934 File Offset: 0x001B3B34
 		public static bool MergeContours(ref VoxelContour ca, ref VoxelContour cb, int ia, int ib)
 		{
 			int[] array = ArrayPool<int>.Claim((ca.nverts + cb.nverts + 2) * 4);
@@ -237,7 +237,7 @@ namespace Pathfinding.Voxels
 			return true;
 		}
 
-		// Token: 0x06002789 RID: 10121 RVA: 0x001AFE78 File Offset: 0x001AE078
+		// Token: 0x060027DF RID: 10207 RVA: 0x001B5A64 File Offset: 0x001B3C64
 		public void SimplifyContour(List<int> verts, List<int> simplified, float maxError, int maxEdgeLenght, int buildFlags)
 		{
 			bool flag = false;
@@ -456,7 +456,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x0600278A RID: 10122 RVA: 0x001B05E4 File Offset: 0x001AE7E4
+		// Token: 0x060027E0 RID: 10208 RVA: 0x001B61D0 File Offset: 0x001B43D0
 		public void WalkContour(int x, int z, int i, ushort[] flags, List<int> verts)
 		{
 			int num = 0;
@@ -545,7 +545,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x0600278B RID: 10123 RVA: 0x001B082C File Offset: 0x001AEA2C
+		// Token: 0x060027E1 RID: 10209 RVA: 0x001B6418 File Offset: 0x001B4618
 		public int GetCornerHeight(int x, int z, int i, int dir, ref bool isBorderVertex)
 		{
 			CompactVoxelSpan compactVoxelSpan = this.voxelArea.compactSpans[i];
@@ -595,10 +595,10 @@ namespace Pathfinding.Voxels
 				int num16 = j + 1 & 3;
 				int num17 = j + 2 & 3;
 				int num18 = j + 3 & 3;
-				bool flag = (array[num15] & array[num16] & 32768u) != 0u && array[num15] == array[num16];
-				bool flag2 = ((array[num17] | array[num18]) & 32768u) == 0u;
+				bool flag = (array[num15] & array[num16] & 32768U) != 0U && array[num15] == array[num16];
+				bool flag2 = ((array[num17] | array[num18]) & 32768U) == 0U;
 				bool flag3 = array[num17] >> 16 == array[num18] >> 16;
-				bool flag4 = array[num15] != 0u && array[num16] != 0u && array[num17] != 0u && array[num18] > 0u;
+				bool flag4 = array[num15] != 0U && array[num16] != 0U && array[num17] != 0U && array[num18] > 0U;
 				if (flag && flag2 && flag3 && flag4)
 				{
 					isBorderVertex = true;
@@ -608,7 +608,7 @@ namespace Pathfinding.Voxels
 			return num;
 		}
 
-		// Token: 0x0600278C RID: 10124 RVA: 0x001B0B94 File Offset: 0x001AED94
+		// Token: 0x060027E2 RID: 10210 RVA: 0x001B6780 File Offset: 0x001B4980
 		public void RemoveDegenerateSegments(List<int> simplified)
 		{
 			for (int i = 0; i < simplified.Count / 4; i++)
@@ -625,7 +625,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x0600278D RID: 10125 RVA: 0x001B0BFC File Offset: 0x001AEDFC
+		// Token: 0x060027E3 RID: 10211 RVA: 0x001B67E8 File Offset: 0x001B49E8
 		public int CalcAreaOfPolygon2D(int[] verts, int nverts)
 		{
 			int num = 0;
@@ -641,19 +641,19 @@ namespace Pathfinding.Voxels
 			return (num + 1) / 2;
 		}
 
-		// Token: 0x0600278E RID: 10126 RVA: 0x001B0C5B File Offset: 0x001AEE5B
+		// Token: 0x060027E4 RID: 10212 RVA: 0x001B6847 File Offset: 0x001B4A47
 		public static bool Ileft(int a, int b, int c, int[] va, int[] vb, int[] vc)
 		{
 			return (vb[b] - va[a]) * (vc[c + 2] - va[a + 2]) - (vc[c] - va[a]) * (vb[b + 2] - va[a + 2]) <= 0;
 		}
 
-		// Token: 0x0600278F RID: 10127 RVA: 0x001B0C8E File Offset: 0x001AEE8E
+		// Token: 0x060027E5 RID: 10213 RVA: 0x001B687A File Offset: 0x001B4A7A
 		public static bool Diagonal(int i, int j, int n, int[] verts, int[] indices)
 		{
 			return Voxelize.InCone(i, j, n, verts, indices) && Voxelize.Diagonalie(i, j, n, verts, indices);
 		}
 
-		// Token: 0x06002790 RID: 10128 RVA: 0x001B0CAC File Offset: 0x001AEEAC
+		// Token: 0x060027E6 RID: 10214 RVA: 0x001B6898 File Offset: 0x001B4A98
 		public static bool InCone(int i, int j, int n, int[] verts, int[] indices)
 		{
 			int num = (indices[i] & 268435455) * 4;
@@ -667,31 +667,31 @@ namespace Pathfinding.Voxels
 			return !Voxelize.LeftOn(num, num2, c, verts) || !Voxelize.LeftOn(num2, num, num3, verts);
 		}
 
-		// Token: 0x06002791 RID: 10129 RVA: 0x001B0D34 File Offset: 0x001AEF34
+		// Token: 0x060027E7 RID: 10215 RVA: 0x001B6920 File Offset: 0x001B4B20
 		public static bool Left(int a, int b, int c, int[] verts)
 		{
 			return Voxelize.Area2(a, b, c, verts) < 0;
 		}
 
-		// Token: 0x06002792 RID: 10130 RVA: 0x001B0D42 File Offset: 0x001AEF42
+		// Token: 0x060027E8 RID: 10216 RVA: 0x001B692E File Offset: 0x001B4B2E
 		public static bool LeftOn(int a, int b, int c, int[] verts)
 		{
 			return Voxelize.Area2(a, b, c, verts) <= 0;
 		}
 
-		// Token: 0x06002793 RID: 10131 RVA: 0x001B0D53 File Offset: 0x001AEF53
+		// Token: 0x060027E9 RID: 10217 RVA: 0x001B693F File Offset: 0x001B4B3F
 		public static bool Collinear(int a, int b, int c, int[] verts)
 		{
 			return Voxelize.Area2(a, b, c, verts) == 0;
 		}
 
-		// Token: 0x06002794 RID: 10132 RVA: 0x001B0D61 File Offset: 0x001AEF61
+		// Token: 0x060027EA RID: 10218 RVA: 0x001B694D File Offset: 0x001B4B4D
 		public static int Area2(int a, int b, int c, int[] verts)
 		{
 			return (verts[b] - verts[a]) * (verts[c + 2] - verts[a + 2]) - (verts[c] - verts[a]) * (verts[b + 2] - verts[a + 2]);
 		}
 
-		// Token: 0x06002795 RID: 10133 RVA: 0x001B0D8C File Offset: 0x001AEF8C
+		// Token: 0x060027EB RID: 10219 RVA: 0x001B6978 File Offset: 0x001B4B78
 		private static bool Diagonalie(int i, int j, int n, int[] verts, int[] indices)
 		{
 			int a = (indices[i] & 268435455) * 4;
@@ -712,19 +712,19 @@ namespace Pathfinding.Voxels
 			return true;
 		}
 
-		// Token: 0x06002796 RID: 10134 RVA: 0x001B0E30 File Offset: 0x001AF030
+		// Token: 0x060027EC RID: 10220 RVA: 0x001B6A1C File Offset: 0x001B4C1C
 		public static bool Xorb(bool x, bool y)
 		{
 			return !x ^ !y;
 		}
 
-		// Token: 0x06002797 RID: 10135 RVA: 0x001B0E3C File Offset: 0x001AF03C
+		// Token: 0x060027ED RID: 10221 RVA: 0x001B6A28 File Offset: 0x001B4C28
 		public static bool IntersectProp(int a, int b, int c, int d, int[] verts)
 		{
 			return !Voxelize.Collinear(a, b, c, verts) && !Voxelize.Collinear(a, b, d, verts) && !Voxelize.Collinear(c, d, a, verts) && !Voxelize.Collinear(c, d, b, verts) && Voxelize.Xorb(Voxelize.Left(a, b, c, verts), Voxelize.Left(a, b, d, verts)) && Voxelize.Xorb(Voxelize.Left(c, d, a, verts), Voxelize.Left(c, d, b, verts));
 		}
 
-		// Token: 0x06002798 RID: 10136 RVA: 0x001B0EB4 File Offset: 0x001AF0B4
+		// Token: 0x060027EE RID: 10222 RVA: 0x001B6AA0 File Offset: 0x001B4CA0
 		private static bool Between(int a, int b, int c, int[] verts)
 		{
 			if (!Voxelize.Collinear(a, b, c, verts))
@@ -738,19 +738,19 @@ namespace Pathfinding.Voxels
 			return (verts[a + 2] <= verts[c + 2] && verts[c + 2] <= verts[b + 2]) || (verts[a + 2] >= verts[c + 2] && verts[c + 2] >= verts[b + 2]);
 		}
 
-		// Token: 0x06002799 RID: 10137 RVA: 0x001B0F38 File Offset: 0x001AF138
+		// Token: 0x060027EF RID: 10223 RVA: 0x001B6B24 File Offset: 0x001B4D24
 		private static bool Intersect(int a, int b, int c, int d, int[] verts)
 		{
 			return Voxelize.IntersectProp(a, b, c, d, verts) || (Voxelize.Between(a, b, c, verts) || Voxelize.Between(a, b, d, verts) || Voxelize.Between(c, d, a, verts) || Voxelize.Between(c, d, b, verts));
 		}
 
-		// Token: 0x0600279A RID: 10138 RVA: 0x001B0F87 File Offset: 0x001AF187
+		// Token: 0x060027F0 RID: 10224 RVA: 0x001B6B73 File Offset: 0x001B4D73
 		private static bool Vequal(int a, int b, int[] verts)
 		{
 			return verts[a] == verts[b] && verts[a + 2] == verts[b + 2];
 		}
 
-		// Token: 0x0600279B RID: 10139 RVA: 0x001B0F9F File Offset: 0x001AF19F
+		// Token: 0x060027F1 RID: 10225 RVA: 0x001B6B8B File Offset: 0x001B4D8B
 		public static int Prev(int i, int n)
 		{
 			if (i - 1 < 0)
@@ -760,7 +760,7 @@ namespace Pathfinding.Voxels
 			return i - 1;
 		}
 
-		// Token: 0x0600279C RID: 10140 RVA: 0x001B0FAE File Offset: 0x001AF1AE
+		// Token: 0x060027F2 RID: 10226 RVA: 0x001B6B9A File Offset: 0x001B4D9A
 		public static int Next(int i, int n)
 		{
 			if (i + 1 >= n)
@@ -770,7 +770,7 @@ namespace Pathfinding.Voxels
 			return i + 1;
 		}
 
-		// Token: 0x0600279D RID: 10141 RVA: 0x001B0FBC File Offset: 0x001AF1BC
+		// Token: 0x060027F3 RID: 10227 RVA: 0x001B6BA8 File Offset: 0x001B4DA8
 		public void BuildPolyMesh(VoxelContourSet cset, int nvp, out VoxelMesh mesh)
 		{
 			nvp = 3;
@@ -837,7 +837,7 @@ namespace Pathfinding.Voxels
 			ArrayPool<int>.Release(ref array5, false);
 		}
 
-		// Token: 0x0600279E RID: 10142 RVA: 0x001B1220 File Offset: 0x001AF420
+		// Token: 0x060027F4 RID: 10228 RVA: 0x001B6E0C File Offset: 0x001B500C
 		private int Triangulate(int n, int[] verts, ref int[] indices, ref int[] tris)
 		{
 			int num = 0;
@@ -924,18 +924,18 @@ namespace Pathfinding.Voxels
 			return num + 1;
 		}
 
-		// Token: 0x170005BF RID: 1471
-		// (get) Token: 0x0600279F RID: 10143 RVA: 0x001B144C File Offset: 0x001AF64C
-		// (set) Token: 0x060027A0 RID: 10144 RVA: 0x001B1454 File Offset: 0x001AF654
+		// Token: 0x170005C5 RID: 1477
+		// (get) Token: 0x060027F5 RID: 10229 RVA: 0x001B7038 File Offset: 0x001B5238
+		// (set) Token: 0x060027F6 RID: 10230 RVA: 0x001B7040 File Offset: 0x001B5240
 		public GraphTransform transformVoxel2Graph { get; private set; }
 
-		// Token: 0x060027A1 RID: 10145 RVA: 0x001B1460 File Offset: 0x001AF660
+		// Token: 0x060027F7 RID: 10231 RVA: 0x001B704C File Offset: 0x001B524C
 		public Vector3 CompactSpanToVector(int x, int z, int i)
 		{
 			return this.voxelOffset + new Vector3(((float)x + 0.5f) * this.cellSize, (float)this.voxelArea.compactSpans[i].y * this.cellHeight, ((float)z + 0.5f) * this.cellSize);
 		}
 
-		// Token: 0x060027A2 RID: 10146 RVA: 0x001B14BC File Offset: 0x001AF6BC
+		// Token: 0x060027F8 RID: 10232 RVA: 0x001B70A8 File Offset: 0x001B52A8
 		public void VectorToIndex(Vector3 p, out int x, out int z)
 		{
 			p -= this.voxelOffset;
@@ -943,7 +943,7 @@ namespace Pathfinding.Voxels
 			z = Mathf.RoundToInt(p.z / this.cellSize - 0.5f);
 		}
 
-		// Token: 0x060027A3 RID: 10147 RVA: 0x001B150C File Offset: 0x001AF70C
+		// Token: 0x060027F9 RID: 10233 RVA: 0x001B70F8 File Offset: 0x001B52F8
 		public Voxelize(float ch, float cs, float walkableClimb, float walkableHeight, float maxSlope, float maxEdgeLength)
 		{
 			this.cellSize = cs;
@@ -955,7 +955,7 @@ namespace Pathfinding.Voxels
 			this.maxEdgeLength = maxEdgeLength;
 		}
 
-		// Token: 0x060027A4 RID: 10148 RVA: 0x001B15BC File Offset: 0x001AF7BC
+		// Token: 0x060027FA RID: 10234 RVA: 0x001B71A8 File Offset: 0x001B53A8
 		public void Init()
 		{
 			if (this.voxelArea == null || this.voxelArea.width != this.width || this.voxelArea.depth != this.depth)
@@ -966,14 +966,14 @@ namespace Pathfinding.Voxels
 			this.voxelArea.Reset();
 		}
 
-		// Token: 0x060027A5 RID: 10149 RVA: 0x001B161C File Offset: 0x001AF81C
+		// Token: 0x060027FB RID: 10235 RVA: 0x001B7208 File Offset: 0x001B5408
 		public void VoxelizeInput(GraphTransform graphTransform, Bounds graphSpaceBounds)
 		{
 			Matrix4x4 matrix4x = Matrix4x4.TRS(graphSpaceBounds.min, Quaternion.identity, Vector3.one) * Matrix4x4.Scale(new Vector3(this.cellSize, this.cellHeight, this.cellSize));
 			this.transformVoxel2Graph = new GraphTransform(matrix4x);
 			this.transform = graphTransform * matrix4x * Matrix4x4.TRS(new Vector3(0.5f, 0f, 0.5f), Quaternion.identity, Vector3.one);
 			int num = (int)(graphSpaceBounds.size.y / this.cellHeight);
-			float num2 = Mathf.Cos(Mathf.Atan(Mathf.Tan(this.maxSlope * 0.017453292f) * (this.cellSize / this.cellHeight)));
+			float num2 = Mathf.Cos(Mathf.Atan(Mathf.Tan(this.maxSlope * 0.0174532924f) * (this.cellSize / this.cellHeight)));
 			float[] array = new float[9];
 			float[] array2 = new float[21];
 			float[] array3 = new float[21];
@@ -1087,7 +1087,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027A6 RID: 10150 RVA: 0x001B1B98 File Offset: 0x001AFD98
+		// Token: 0x060027FC RID: 10236 RVA: 0x001B7784 File Offset: 0x001B5984
 		public void DebugDrawSpans()
 		{
 			int num = this.voxelArea.width * this.voxelArea.depth;
@@ -1100,10 +1100,10 @@ namespace Pathfinding.Voxels
 				for (int j = 0; j < this.voxelArea.width; j++)
 				{
 					int num3 = i + j;
-					while (num3 != -1 && linkedSpans[num3].bottom != 4294967295u)
+					while (num3 != -1 && linkedSpans[num3].bottom != 4294967295U)
 					{
 						uint top = linkedSpans[num3].top;
-						uint num4 = (linkedSpans[num3].next != -1) ? linkedSpans[linkedSpans[num3].next].bottom : 65536u;
+						uint num4 = (linkedSpans[num3].next != -1) ? linkedSpans[linkedSpans[num3].next].bottom : 65536U;
 						if (top > num4)
 						{
 							Debug.Log(top + " " + num4);
@@ -1119,7 +1119,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027A7 RID: 10151 RVA: 0x001B1D24 File Offset: 0x001AFF24
+		// Token: 0x060027FD RID: 10237 RVA: 0x001B7910 File Offset: 0x001B5B10
 		public void BuildCompactField()
 		{
 			int spanCount = this.voxelArea.GetSpanCount();
@@ -1129,11 +1129,11 @@ namespace Pathfinding.Voxels
 				this.voxelArea.compactSpans = new CompactVoxelSpan[spanCount];
 				this.voxelArea.areaTypes = new int[spanCount];
 			}
-			uint num = 0u;
+			uint num = 0U;
 			int num2 = this.voxelArea.width;
 			int num3 = this.voxelArea.depth;
 			int num4 = num2 * num3;
-			if (this.voxelWalkableHeight >= 65535u)
+			if (this.voxelWalkableHeight >= 65535U)
 			{
 				Debug.LogWarning("Too high walkable height to guarantee correctness. Increase voxel height or lower walkable height.");
 			}
@@ -1145,25 +1145,25 @@ namespace Pathfinding.Voxels
 				for (int j = 0; j < num2; j++)
 				{
 					int num6 = j + i;
-					if (linkedSpans[num6].bottom == 4294967295u)
+					if (linkedSpans[num6].bottom == 4294967295U)
 					{
-						this.voxelArea.compactCells[j + i] = new CompactVoxelCell(0u, 0u);
+						this.voxelArea.compactCells[j + i] = new CompactVoxelCell(0U, 0U);
 					}
 					else
 					{
 						uint i2 = num;
-						uint num7 = 0u;
+						uint num7 = 0U;
 						while (num6 != -1)
 						{
 							if (linkedSpans[num6].area != 0)
 							{
 								int top = (int)linkedSpans[num6].top;
 								int next = linkedSpans[num6].next;
-								int num8 = (int)((next != -1) ? linkedSpans[next].bottom : 65536u);
+								int num8 = (int)((next != -1) ? linkedSpans[next].bottom : 65536U);
 								this.voxelArea.compactSpans[(int)num] = new CompactVoxelSpan((ushort)((top > 65535) ? 65535 : top), (uint)((num8 - top > 65535) ? 65535 : (num8 - top)));
 								this.voxelArea.areaTypes[(int)num] = linkedSpans[num6].area;
-								num += 1u;
-								num7 += 1u;
+								num += 1U;
+								num7 += 1U;
 							}
 							num6 = linkedSpans[num6].next;
 						}
@@ -1175,7 +1175,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027A8 RID: 10152 RVA: 0x001B1F30 File Offset: 0x001B0130
+		// Token: 0x060027FE RID: 10238 RVA: 0x001B7B1C File Offset: 0x001B5D1C
 		public void BuildVoxelConnections()
 		{
 			int num = this.voxelArea.width * this.voxelArea.depth;
@@ -1210,7 +1210,7 @@ namespace Pathfinding.Voxels
 									if ((long)(Math.Min((int)((uint)compactVoxelSpan.y + compactVoxelSpan.h), (int)((uint)compactVoxelSpan2.y + compactVoxelSpan2.h)) - num7) >= (long)((ulong)this.voxelWalkableHeight) && Math.Abs((int)(compactVoxelSpan2.y - compactVoxelSpan.y)) <= this.voxelWalkableClimb)
 									{
 										uint num8 = (uint)(m - (int)compactVoxelCell2.index);
-										if (num8 <= 65535u)
+										if (num8 <= 65535U)
 										{
 											compactSpans[k].SetConnection(l, num8);
 											break;
@@ -1229,7 +1229,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027A9 RID: 10153 RVA: 0x001B2144 File Offset: 0x001B0344
+		// Token: 0x060027FF RID: 10239 RVA: 0x001B7D30 File Offset: 0x001B5F30
 		private void DrawLine(int a, int b, int[] indices, int[] verts, Color color)
 		{
 			int num = (indices[a] & 268435455) * 4;
@@ -1237,13 +1237,13 @@ namespace Pathfinding.Voxels
 			Debug.DrawLine(this.VoxelToWorld(verts[num], verts[num + 1], verts[num + 2]), this.VoxelToWorld(verts[num2], verts[num2 + 1], verts[num2 + 2]), color);
 		}
 
-		// Token: 0x060027AA RID: 10154 RVA: 0x001B219C File Offset: 0x001B039C
+		// Token: 0x06002800 RID: 10240 RVA: 0x001B7D88 File Offset: 0x001B5F88
 		public Vector3 VoxelToWorld(int x, int y, int z)
 		{
 			return Vector3.Scale(new Vector3((float)x, (float)y, (float)z), this.cellScale) + this.voxelOffset;
 		}
 
-		// Token: 0x060027AB RID: 10155 RVA: 0x001B21C0 File Offset: 0x001B03C0
+		// Token: 0x06002801 RID: 10241 RVA: 0x001B7DAC File Offset: 0x001B5FAC
 		public Int3 VoxelToWorldInt3(Int3 voxelPosition)
 		{
 			Int3 @int = voxelPosition * 1000;
@@ -1251,20 +1251,20 @@ namespace Pathfinding.Voxels
 			return @int + (Int3)this.voxelOffset;
 		}
 
-		// Token: 0x060027AC RID: 10156 RVA: 0x001B2239 File Offset: 0x001B0439
+		// Token: 0x06002802 RID: 10242 RVA: 0x001B7E25 File Offset: 0x001B6025
 		private Vector3 ConvertPosWithoutOffset(int x, int y, int z)
 		{
 			return Vector3.Scale(new Vector3((float)x, (float)y, (float)z / (float)this.voxelArea.width), this.cellScale) + this.voxelOffset;
 		}
 
-		// Token: 0x060027AD RID: 10157 RVA: 0x001B226C File Offset: 0x001B046C
+		// Token: 0x06002803 RID: 10243 RVA: 0x001B7E58 File Offset: 0x001B6058
 		private Vector3 ConvertPosition(int x, int z, int i)
 		{
 			CompactVoxelSpan compactVoxelSpan = this.voxelArea.compactSpans[i];
 			return new Vector3((float)x * this.cellSize, (float)compactVoxelSpan.y * this.cellHeight, (float)z / (float)this.voxelArea.width * this.cellSize) + this.voxelOffset;
 		}
 
-		// Token: 0x060027AE RID: 10158 RVA: 0x001B22C8 File Offset: 0x001B04C8
+		// Token: 0x06002804 RID: 10244 RVA: 0x001B7EB4 File Offset: 0x001B60B4
 		public void ErodeWalkableArea(int radius)
 		{
 			ushort[] array = this.voxelArea.tmpUShortArr;
@@ -1283,7 +1283,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027AF RID: 10159 RVA: 0x001B234C File Offset: 0x001B054C
+		// Token: 0x06002805 RID: 10245 RVA: 0x001B7F38 File Offset: 0x001B6138
 		public void BuildDistanceField()
 		{
 			ushort[] array = this.voxelArea.tmpUShortArr;
@@ -1302,7 +1302,7 @@ namespace Pathfinding.Voxels
 			this.voxelArea.dist = array2;
 		}
 
-		// Token: 0x060027B0 RID: 10160 RVA: 0x001B23FC File Offset: 0x001B05FC
+		// Token: 0x06002806 RID: 10246 RVA: 0x001B7FE8 File Offset: 0x001B61E8
 		[Obsolete("This function is not complete and should not be used")]
 		public void ErodeVoxels(int radius)
 		{
@@ -1348,7 +1348,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027B1 RID: 10161 RVA: 0x001B2534 File Offset: 0x001B0734
+		// Token: 0x06002807 RID: 10247 RVA: 0x001B8120 File Offset: 0x001B6320
 		public void FilterLowHeightSpans(uint voxelWalkableHeight, float cs, float ch)
 		{
 			int num = this.voxelArea.width * this.voxelArea.depth;
@@ -1360,10 +1360,10 @@ namespace Pathfinding.Voxels
 				for (int j = 0; j < this.voxelArea.width; j++)
 				{
 					int num3 = i + j;
-					while (num3 != -1 && linkedSpans[num3].bottom != 4294967295u)
+					while (num3 != -1 && linkedSpans[num3].bottom != 4294967295U)
 					{
 						uint top = linkedSpans[num3].top;
-						if (((linkedSpans[num3].next != -1) ? linkedSpans[linkedSpans[num3].next].bottom : 65536u) - top < voxelWalkableHeight)
+						if (((linkedSpans[num3].next != -1) ? linkedSpans[linkedSpans[num3].next].bottom : 65536U) - top < voxelWalkableHeight)
 						{
 							linkedSpans[num3].area = 0;
 						}
@@ -1375,7 +1375,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027B2 RID: 10162 RVA: 0x001B2628 File Offset: 0x001B0828
+		// Token: 0x06002808 RID: 10248 RVA: 0x001B8214 File Offset: 0x001B6414
 		public void FilterLedges(uint voxelWalkableHeight, int voxelWalkableClimb, float cs, float ch)
 		{
 			int num = this.voxelArea.width * this.voxelArea.depth;
@@ -1389,14 +1389,14 @@ namespace Pathfinding.Voxels
 			{
 				for (int j = 0; j < num2; j++)
 				{
-					if (linkedSpans[j + i].bottom != 4294967295u)
+					if (linkedSpans[j + i].bottom != 4294967295U)
 					{
 						for (int num4 = j + i; num4 != -1; num4 = linkedSpans[num4].next)
 						{
 							if (linkedSpans[num4].area != 0)
 							{
 								int top = (int)linkedSpans[num4].top;
-								int val = (int)((linkedSpans[num4].next != -1) ? linkedSpans[linkedSpans[num4].next].bottom : 65536u);
+								int val = (int)((linkedSpans[num4].next != -1) ? linkedSpans[linkedSpans[num4].next].bottom : 65536U);
 								int num5 = 65536;
 								int num6 = (int)linkedSpans[num4].top;
 								int num7 = num6;
@@ -1411,17 +1411,17 @@ namespace Pathfinding.Voxels
 									}
 									int num10 = num8 + num9;
 									int num11 = -voxelWalkableClimb;
-									int val2 = (int)((linkedSpans[num10].bottom != uint.MaxValue) ? linkedSpans[num10].bottom : 65536u);
+									int val2 = (int)((linkedSpans[num10].bottom != uint.MaxValue) ? linkedSpans[num10].bottom : 65536U);
 									if ((long)(Math.Min(val, val2) - Math.Max(top, num11)) > (long)((ulong)voxelWalkableHeight))
 									{
 										num5 = Math.Min(num5, num11 - top);
 									}
-									if (linkedSpans[num10].bottom != 4294967295u)
+									if (linkedSpans[num10].bottom != 4294967295U)
 									{
 										for (int num12 = num10; num12 != -1; num12 = linkedSpans[num12].next)
 										{
 											num11 = (int)linkedSpans[num12].top;
-											val2 = (int)((linkedSpans[num12].next != -1) ? linkedSpans[linkedSpans[num12].next].bottom : 65536u);
+											val2 = (int)((linkedSpans[num12].next != -1) ? linkedSpans[linkedSpans[num12].next].bottom : 65536U);
 											if ((long)(Math.Min(val, val2) - Math.Max(top, num11)) > (long)((ulong)voxelWalkableHeight))
 											{
 												num5 = Math.Min(num5, num11 - top);
@@ -1453,7 +1453,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027B3 RID: 10163 RVA: 0x001B28D8 File Offset: 0x001B0AD8
+		// Token: 0x06002809 RID: 10249 RVA: 0x001B84C4 File Offset: 0x001B66C4
 		public ushort[] ExpandRegions(int maxIterations, uint level, ushort[] srcReg, ushort[] srcDist, ushort[] dstReg, ushort[] dstDist, List<int> stack)
 		{
 			int num = this.voxelArea.width;
@@ -1545,7 +1545,7 @@ namespace Pathfinding.Voxels
 					{
 						break;
 					}
-					if (level > 0u)
+					if (level > 0U)
 					{
 						num6++;
 						if (num6 >= maxIterations)
@@ -1558,7 +1558,7 @@ namespace Pathfinding.Voxels
 			return srcReg;
 		}
 
-		// Token: 0x060027B4 RID: 10164 RVA: 0x001B2B88 File Offset: 0x001B0D88
+		// Token: 0x0600280A RID: 10250 RVA: 0x001B8774 File Offset: 0x001B6974
 		public bool FloodRegion(int x, int z, int i, uint level, ushort r, ushort[] srcReg, ushort[] srcDist, List<int> stack)
 		{
 			int num = this.voxelArea.areaTypes[i];
@@ -1568,7 +1568,7 @@ namespace Pathfinding.Voxels
 			stack.Add(i);
 			srcReg[i] = r;
 			srcDist[i] = 0;
-			int num2 = (int)((level >= 2u) ? (level - 2u) : 0u);
+			int num2 = (int)((level >= 2U) ? (level - 2U) : 0U);
 			int num3 = 0;
 			while (stack.Count > 0)
 			{
@@ -1647,7 +1647,7 @@ namespace Pathfinding.Voxels
 			return num3 > 0;
 		}
 
-		// Token: 0x060027B5 RID: 10165 RVA: 0x001B2E98 File Offset: 0x001B1098
+		// Token: 0x0600280B RID: 10251 RVA: 0x001B8A84 File Offset: 0x001B6C84
 		public void MarkRectWithRegion(int minx, int maxx, int minz, int maxz, ushort region, ushort[] srcReg)
 		{
 			int num = maxz * this.voxelArea.width;
@@ -1670,7 +1670,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027B6 RID: 10166 RVA: 0x001B2F34 File Offset: 0x001B1134
+		// Token: 0x0600280C RID: 10252 RVA: 0x001B8B20 File Offset: 0x001B6D20
 		public ushort CalculateDistanceField(ushort[] src)
 		{
 			int num = this.voxelArea.width * this.voxelArea.depth;
@@ -1819,7 +1819,7 @@ namespace Pathfinding.Voxels
 			return num34;
 		}
 
-		// Token: 0x060027B7 RID: 10167 RVA: 0x001B3560 File Offset: 0x001B1760
+		// Token: 0x0600280D RID: 10253 RVA: 0x001B914C File Offset: 0x001B734C
 		public ushort[] BoxBlur(ushort[] src, ushort[] dst)
 		{
 			ushort num = 20;
@@ -1877,7 +1877,7 @@ namespace Pathfinding.Voxels
 			return dst;
 		}
 
-		// Token: 0x060027B8 RID: 10168 RVA: 0x001B3760 File Offset: 0x001B1960
+		// Token: 0x0600280E RID: 10254 RVA: 0x001B934C File Offset: 0x001B754C
 		private void FloodOnes(List<Int3> st1, ushort[] regs, uint level, ushort reg)
 		{
 			for (int i = 0; i < st1.Count; i++)
@@ -1905,7 +1905,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027B9 RID: 10169 RVA: 0x001B3874 File Offset: 0x001B1A74
+		// Token: 0x0600280F RID: 10255 RVA: 0x001B9460 File Offset: 0x001B7660
 		public void BuildRegions()
 		{
 			int num = this.voxelArea.width;
@@ -1927,11 +1927,11 @@ namespace Pathfinding.Voxels
 			num5 += 1;
 			this.MarkRectWithRegion(0, num, num2 - this.borderSize, num2, num5 | 32768, array);
 			num5 += 1;
-			uint num6 = (uint)(this.voxelArea.maxDistance + 1) & 4294967294u;
+			uint num6 = (uint)(this.voxelArea.maxDistance + 1) & 4294967294U;
 			int num7 = 0;
-			while (num6 > 0u)
+			while (num6 > 0U)
 			{
-				num6 = ((num6 >= 2u) ? (num6 - 2u) : 0u);
+				num6 = ((num6 >= 2U) ? (num6 - 2U) : 0U);
 				if (this.ExpandRegions(num4, num6, array, array2, array3, array4, stack) != array)
 				{
 					ushort[] array5 = array;
@@ -1964,7 +1964,7 @@ namespace Pathfinding.Voxels
 				}
 				num7++;
 			}
-			if (this.ExpandRegions(num4 * 8, 0u, array, array2, array3, array4, stack) != array)
+			if (this.ExpandRegions(num4 * 8, 0U, array, array2, array3, array4, stack) != array)
 			{
 				array = array3;
 			}
@@ -1977,7 +1977,7 @@ namespace Pathfinding.Voxels
 			ListPool<int>.Release(ref stack);
 		}
 
-		// Token: 0x060027BA RID: 10170 RVA: 0x001B3B10 File Offset: 0x001B1D10
+		// Token: 0x06002810 RID: 10256 RVA: 0x001B96FC File Offset: 0x001B78FC
 		private static int union_find_find(int[] arr, int x)
 		{
 			if (arr[x] < 0)
@@ -1987,7 +1987,7 @@ namespace Pathfinding.Voxels
 			return arr[x] = Voxelize.union_find_find(arr, arr[x]);
 		}
 
-		// Token: 0x060027BB RID: 10171 RVA: 0x001B3B34 File Offset: 0x001B1D34
+		// Token: 0x06002811 RID: 10257 RVA: 0x001B9720 File Offset: 0x001B7920
 		private static void union_find_union(int[] arr, int a, int b)
 		{
 			a = Voxelize.union_find_find(arr, a);
@@ -2006,7 +2006,7 @@ namespace Pathfinding.Voxels
 			arr[b] = a;
 		}
 
-		// Token: 0x060027BC RID: 10172 RVA: 0x001B3B70 File Offset: 0x001B1D70
+		// Token: 0x06002812 RID: 10258 RVA: 0x001B975C File Offset: 0x001B795C
 		public void FilterSmallRegions(ushort[] reg, int minRegionSize, int maxRegions)
 		{
 			RelevantGraphSurface relevantGraphSurface = RelevantGraphSurface.Root;
@@ -2136,97 +2136,97 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x04004213 RID: 16915
+		// Token: 0x040042F1 RID: 17137
 		public List<RasterizationMesh> inputMeshes;
 
-		// Token: 0x04004214 RID: 16916
+		// Token: 0x040042F2 RID: 17138
 		public readonly int voxelWalkableClimb;
 
-		// Token: 0x04004215 RID: 16917
+		// Token: 0x040042F3 RID: 17139
 		public readonly uint voxelWalkableHeight;
 
-		// Token: 0x04004216 RID: 16918
+		// Token: 0x040042F4 RID: 17140
 		public readonly float cellSize = 0.2f;
 
-		// Token: 0x04004217 RID: 16919
+		// Token: 0x040042F5 RID: 17141
 		public readonly float cellHeight = 0.1f;
 
-		// Token: 0x04004218 RID: 16920
+		// Token: 0x040042F6 RID: 17142
 		public int minRegionSize = 100;
 
-		// Token: 0x04004219 RID: 16921
+		// Token: 0x040042F7 RID: 17143
 		public int borderSize;
 
-		// Token: 0x0400421A RID: 16922
+		// Token: 0x040042F8 RID: 17144
 		public float maxEdgeLength = 20f;
 
-		// Token: 0x0400421B RID: 16923
+		// Token: 0x040042F9 RID: 17145
 		public float maxSlope = 30f;
 
-		// Token: 0x0400421C RID: 16924
+		// Token: 0x040042FA RID: 17146
 		public RecastGraph.RelevantGraphSurfaceMode relevantGraphSurfaceMode;
 
-		// Token: 0x0400421D RID: 16925
+		// Token: 0x040042FB RID: 17147
 		public Bounds forcedBounds;
 
-		// Token: 0x0400421E RID: 16926
+		// Token: 0x040042FC RID: 17148
 		public VoxelArea voxelArea;
 
-		// Token: 0x0400421F RID: 16927
+		// Token: 0x040042FD RID: 17149
 		public VoxelContourSet countourSet;
 
-		// Token: 0x04004220 RID: 16928
+		// Token: 0x040042FE RID: 17150
 		private GraphTransform transform;
 
-		// Token: 0x04004222 RID: 16930
+		// Token: 0x04004300 RID: 17152
 		private VoxelPolygonClipper clipper;
 
-		// Token: 0x04004223 RID: 16931
+		// Token: 0x04004301 RID: 17153
 		public int width;
 
-		// Token: 0x04004224 RID: 16932
+		// Token: 0x04004302 RID: 17154
 		public int depth;
 
-		// Token: 0x04004225 RID: 16933
+		// Token: 0x04004303 RID: 17155
 		private Vector3 voxelOffset = Vector3.zero;
 
-		// Token: 0x04004226 RID: 16934
-		public const uint NotConnected = 63u;
+		// Token: 0x04004304 RID: 17156
+		public const uint NotConnected = 63U;
 
-		// Token: 0x04004227 RID: 16935
+		// Token: 0x04004305 RID: 17157
 		private const int MaxLayers = 65535;
 
-		// Token: 0x04004228 RID: 16936
+		// Token: 0x04004306 RID: 17158
 		private const int MaxRegions = 500;
 
-		// Token: 0x04004229 RID: 16937
+		// Token: 0x04004307 RID: 17159
 		private const int UnwalkableArea = 0;
 
-		// Token: 0x0400422A RID: 16938
+		// Token: 0x04004308 RID: 17160
 		private const ushort BorderReg = 32768;
 
-		// Token: 0x0400422B RID: 16939
+		// Token: 0x04004309 RID: 17161
 		private const int RC_BORDER_VERTEX = 65536;
 
-		// Token: 0x0400422C RID: 16940
+		// Token: 0x0400430A RID: 17162
 		private const int RC_AREA_BORDER = 131072;
 
-		// Token: 0x0400422D RID: 16941
+		// Token: 0x0400430B RID: 17163
 		private const int VERTEX_BUCKET_COUNT = 4096;
 
-		// Token: 0x0400422E RID: 16942
+		// Token: 0x0400430C RID: 17164
 		public const int RC_CONTOUR_TESS_WALL_EDGES = 1;
 
-		// Token: 0x0400422F RID: 16943
+		// Token: 0x0400430D RID: 17165
 		public const int RC_CONTOUR_TESS_AREA_EDGES = 2;
 
-		// Token: 0x04004230 RID: 16944
+		// Token: 0x0400430E RID: 17166
 		public const int RC_CONTOUR_TESS_TILE_EDGES = 4;
 
-		// Token: 0x04004231 RID: 16945
+		// Token: 0x0400430F RID: 17167
 		private const int ContourRegMask = 65535;
 
-		// Token: 0x04004232 RID: 16946
+		// Token: 0x04004310 RID: 17168
 		private readonly Vector3 cellScale;
 	}
 }

@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000584 RID: 1412
+	// Token: 0x0200059A RID: 1434
 	[AddComponentMenu("Pathfinding/Modifiers/Radius Offset")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_radius_modifier.php")]
 	public class RadiusModifier : MonoModifier
 	{
-		// Token: 0x170005AD RID: 1453
-		// (get) Token: 0x06002659 RID: 9817 RVA: 0x001A5F36 File Offset: 0x001A4136
+		// Token: 0x170005B3 RID: 1459
+		// (get) Token: 0x060026AF RID: 9903 RVA: 0x001ABB22 File Offset: 0x001A9D22
 		public override int Order
 		{
 			get
@@ -20,7 +20,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600265A RID: 9818 RVA: 0x001A5F3C File Offset: 0x001A413C
+		// Token: 0x060026B0 RID: 9904 RVA: 0x001ABB28 File Offset: 0x001A9D28
 		private bool CalculateCircleInner(Vector3 p1, Vector3 p2, float r1, float r2, out float a, out float sigma)
 		{
 			float magnitude = (p1 - p2).magnitude;
@@ -35,7 +35,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x0600265B RID: 9819 RVA: 0x001A5FA8 File Offset: 0x001A41A8
+		// Token: 0x060026B1 RID: 9905 RVA: 0x001ABB94 File Offset: 0x001A9D94
 		private bool CalculateCircleOuter(Vector3 p1, Vector3 p2, float r1, float r2, out float a, out float sigma)
 		{
 			float magnitude = (p1 - p2).magnitude;
@@ -50,7 +50,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x0600265C RID: 9820 RVA: 0x001A601C File Offset: 0x001A421C
+		// Token: 0x060026B2 RID: 9906 RVA: 0x001ABC08 File Offset: 0x001A9E08
 		private RadiusModifier.TangentType CalculateTangentType(Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4)
 		{
 			bool flag = VectorMath.RightOrColinearXZ(p1, p2, p3);
@@ -58,7 +58,7 @@ namespace Pathfinding
 			return (RadiusModifier.TangentType)(1 << ((flag ? 2 : 0) + (flag2 ? 1 : 0) & 31));
 		}
 
-		// Token: 0x0600265D RID: 9821 RVA: 0x001A6050 File Offset: 0x001A4250
+		// Token: 0x060026B3 RID: 9907 RVA: 0x001ABC3C File Offset: 0x001A9E3C
 		private RadiusModifier.TangentType CalculateTangentTypeSimple(Vector3 p1, Vector3 p2, Vector3 p3)
 		{
 			bool flag = VectorMath.RightOrColinearXZ(p1, p2, p3);
@@ -66,7 +66,7 @@ namespace Pathfinding
 			return (RadiusModifier.TangentType)(1 << ((flag2 ? 2 : 0) + (flag ? 1 : 0) & 31));
 		}
 
-		// Token: 0x0600265E RID: 9822 RVA: 0x001A607C File Offset: 0x001A427C
+		// Token: 0x060026B4 RID: 9908 RVA: 0x001ABC68 File Offset: 0x001A9E68
 		public override void Apply(Path p)
 		{
 			List<Vector3> vectorPath = p.vectorPath;
@@ -78,7 +78,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600265F RID: 9823 RVA: 0x001A60B0 File Offset: 0x001A42B0
+		// Token: 0x060026B5 RID: 9909 RVA: 0x001ABC9C File Offset: 0x001A9E9C
 		public List<Vector3> Apply(List<Vector3> vs)
 		{
 			if (vs == null || vs.Count < 3)
@@ -138,13 +138,13 @@ namespace Pathfinding
 					else if (tangentType == RadiusModifier.TangentType.InnerRightLeft)
 					{
 						this.a2[j] = num3 - num2;
-						this.a1[j + 1] = num3 - num2 + 3.1415927f;
+						this.a1[j + 1] = num3 - num2 + 3.14159274f;
 						this.dir[j] = true;
 					}
 					else
 					{
 						this.a2[j] = num3 + num2;
-						this.a1[j + 1] = num3 + num2 + 3.1415927f;
+						this.a1[j + 1] = num3 + num2 + 3.14159274f;
 						this.dir[j] = false;
 					}
 				}
@@ -189,7 +189,7 @@ namespace Pathfinding
 			{
 				this.detail = 1f;
 			}
-			float num6 = 6.2831855f / this.detail;
+			float num6 = 6.28318548f / this.detail;
 			for (int k = 1; k < vs.Count - 1; k++)
 			{
 				float num7 = this.a1[k];
@@ -199,7 +199,7 @@ namespace Pathfinding
 				{
 					if (num8 < num7)
 					{
-						num8 += 6.2831855f;
+						num8 += 6.28318548f;
 					}
 					for (float num9 = num7; num9 < num8; num9 += num6)
 					{
@@ -210,7 +210,7 @@ namespace Pathfinding
 				{
 					if (num7 < num8)
 					{
-						num7 += 6.2831855f;
+						num7 += 6.28318548f;
 					}
 					for (float num10 = num7; num10 > num8; num10 -= num6)
 					{
@@ -222,39 +222,39 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x04004132 RID: 16690
+		// Token: 0x04004210 RID: 16912
 		public float radius = 1f;
 
-		// Token: 0x04004133 RID: 16691
+		// Token: 0x04004211 RID: 16913
 		public float detail = 10f;
 
-		// Token: 0x04004134 RID: 16692
+		// Token: 0x04004212 RID: 16914
 		private float[] radi = new float[10];
 
-		// Token: 0x04004135 RID: 16693
+		// Token: 0x04004213 RID: 16915
 		private float[] a1 = new float[10];
 
-		// Token: 0x04004136 RID: 16694
+		// Token: 0x04004214 RID: 16916
 		private float[] a2 = new float[10];
 
-		// Token: 0x04004137 RID: 16695
+		// Token: 0x04004215 RID: 16917
 		private bool[] dir = new bool[10];
 
-		// Token: 0x02000752 RID: 1874
+		// Token: 0x0200076C RID: 1900
 		[Flags]
 		private enum TangentType
 		{
-			// Token: 0x040049E5 RID: 18917
+			// Token: 0x04004AD0 RID: 19152
 			OuterRight = 1,
-			// Token: 0x040049E6 RID: 18918
+			// Token: 0x04004AD1 RID: 19153
 			InnerRightLeft = 2,
-			// Token: 0x040049E7 RID: 18919
+			// Token: 0x04004AD2 RID: 19154
 			InnerLeftRight = 4,
-			// Token: 0x040049E8 RID: 18920
+			// Token: 0x04004AD3 RID: 19155
 			OuterLeft = 8,
-			// Token: 0x040049E9 RID: 18921
+			// Token: 0x04004AD4 RID: 19156
 			Outer = 9,
-			// Token: 0x040049EA RID: 18922
+			// Token: 0x04004AD5 RID: 19157
 			Inner = 6
 		}
 	}

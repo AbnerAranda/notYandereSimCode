@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000116 RID: 278
+// Token: 0x02000117 RID: 279
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Pixel/Snow_8bits")]
 public class CameraFilterPack_Atmosphere_Snow_8bits : MonoBehaviour
 {
 	// Token: 0x17000236 RID: 566
-	// (get) Token: 0x06000B55 RID: 2901 RVA: 0x00061CC5 File Offset: 0x0005FEC5
+	// (get) Token: 0x06000B5C RID: 2908 RVA: 0x000629F5 File Offset: 0x00060BF5
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Atmosphere_Snow_8bits : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B56 RID: 2902 RVA: 0x00061CF9 File Offset: 0x0005FEF9
+	// Token: 0x06000B5D RID: 2909 RVA: 0x00062A29 File Offset: 0x00060C29
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Atmosphere_Snow_8bits");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Atmosphere_Snow_8bits : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B57 RID: 2903 RVA: 0x00061D1C File Offset: 0x0005FF1C
+	// Token: 0x06000B5E RID: 2910 RVA: 0x00062A4C File Offset: 0x00060C4C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Atmosphere_Snow_8bits : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B58 RID: 2904 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B5F RID: 2911 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B59 RID: 2905 RVA: 0x00061E14 File Offset: 0x00060014
+	// Token: 0x06000B60 RID: 2912 RVA: 0x00062B44 File Offset: 0x00060D44
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Atmosphere_Snow_8bits : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DEA RID: 3562
+	// Token: 0x04000E09 RID: 3593
 	public Shader SCShader;
 
-	// Token: 0x04000DEB RID: 3563
+	// Token: 0x04000E0A RID: 3594
 	private float TimeX = 1f;
 
-	// Token: 0x04000DEC RID: 3564
+	// Token: 0x04000E0B RID: 3595
 	private Material SCMaterial;
 
-	// Token: 0x04000DED RID: 3565
+	// Token: 0x04000E0C RID: 3596
 	[Range(0.9f, 2f)]
 	public float Threshold = 1f;
 
-	// Token: 0x04000DEE RID: 3566
+	// Token: 0x04000E0D RID: 3597
 	[Range(8f, 256f)]
 	public float Size = 64f;
 
-	// Token: 0x04000DEF RID: 3567
+	// Token: 0x04000E0E RID: 3598
 	[Range(-0.5f, 0.5f)]
 	public float DirectionX;
 
-	// Token: 0x04000DF0 RID: 3568
+	// Token: 0x04000E0F RID: 3599
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 }

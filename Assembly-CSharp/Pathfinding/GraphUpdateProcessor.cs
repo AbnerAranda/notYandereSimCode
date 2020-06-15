@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000526 RID: 1318
+	// Token: 0x0200053C RID: 1340
 	internal class GraphUpdateProcessor
 	{
 		// Token: 0x14000001 RID: 1
-		// (add) Token: 0x06002288 RID: 8840 RVA: 0x00190638 File Offset: 0x0018E838
-		// (remove) Token: 0x06002289 RID: 8841 RVA: 0x00190670 File Offset: 0x0018E870
+		// (add) Token: 0x060022DE RID: 8926 RVA: 0x00196224 File Offset: 0x00194424
+		// (remove) Token: 0x060022DF RID: 8927 RVA: 0x0019625C File Offset: 0x0019445C
 		public event Action OnGraphsUpdated;
 
-		// Token: 0x17000534 RID: 1332
-		// (get) Token: 0x0600228A RID: 8842 RVA: 0x001906A5 File Offset: 0x0018E8A5
+		// Token: 0x1700053A RID: 1338
+		// (get) Token: 0x060022E0 RID: 8928 RVA: 0x00196291 File Offset: 0x00194491
 		public bool IsAnyGraphUpdateQueued
 		{
 			get
@@ -24,8 +24,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000535 RID: 1333
-		// (get) Token: 0x0600228B RID: 8843 RVA: 0x001906B5 File Offset: 0x0018E8B5
+		// Token: 0x1700053B RID: 1339
+		// (get) Token: 0x060022E1 RID: 8929 RVA: 0x001962A1 File Offset: 0x001944A1
 		public bool IsAnyGraphUpdateInProgress
 		{
 			get
@@ -34,19 +34,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600228C RID: 8844 RVA: 0x001906C0 File Offset: 0x0018E8C0
+		// Token: 0x060022E2 RID: 8930 RVA: 0x001962AC File Offset: 0x001944AC
 		public GraphUpdateProcessor(AstarPath astar)
 		{
 			this.astar = astar;
 		}
 
-		// Token: 0x0600228D RID: 8845 RVA: 0x0019072A File Offset: 0x0018E92A
+		// Token: 0x060022E3 RID: 8931 RVA: 0x00196316 File Offset: 0x00194516
 		public AstarWorkItem GetWorkItem()
 		{
 			return new AstarWorkItem(new Action(this.QueueGraphUpdatesInternal), new Func<bool, bool>(this.ProcessGraphUpdates));
 		}
 
-		// Token: 0x0600228E RID: 8846 RVA: 0x0019074C File Offset: 0x0018E94C
+		// Token: 0x060022E4 RID: 8932 RVA: 0x00196338 File Offset: 0x00194538
 		public void EnableMultithreading()
 		{
 			if (this.graphUpdateThread == null || !this.graphUpdateThread.IsAlive)
@@ -58,7 +58,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600228F RID: 8847 RVA: 0x001907A8 File Offset: 0x0018E9A8
+		// Token: 0x060022E5 RID: 8933 RVA: 0x00196394 File Offset: 0x00194594
 		public void DisableMultithreading()
 		{
 			if (this.graphUpdateThread != null && this.graphUpdateThread.IsAlive)
@@ -72,13 +72,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002290 RID: 8848 RVA: 0x001907F9 File Offset: 0x0018E9F9
+		// Token: 0x060022E6 RID: 8934 RVA: 0x001963E5 File Offset: 0x001945E5
 		public void AddToQueue(GraphUpdateObject ob)
 		{
 			this.graphUpdateQueue.Enqueue(ob);
 		}
 
-		// Token: 0x06002291 RID: 8849 RVA: 0x00190808 File Offset: 0x0018EA08
+		// Token: 0x060022E7 RID: 8935 RVA: 0x001963F4 File Offset: 0x001945F4
 		private void QueueGraphUpdatesInternal()
 		{
 			bool flag = false;
@@ -113,7 +113,7 @@ namespace Pathfinding
 			this.anyGraphUpdateInProgress = true;
 		}
 
-		// Token: 0x06002292 RID: 8850 RVA: 0x00190920 File Offset: 0x0018EB20
+		// Token: 0x060022E8 RID: 8936 RVA: 0x0019650C File Offset: 0x0019470C
 		private bool ProcessGraphUpdates(bool force)
 		{
 			if (force)
@@ -138,7 +138,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x06002293 RID: 8851 RVA: 0x00190984 File Offset: 0x0018EB84
+		// Token: 0x060022E9 RID: 8937 RVA: 0x00196570 File Offset: 0x00194770
 		private bool ProcessRegularUpdates(bool force)
 		{
 			while (this.graphUpdateQueueRegular.Count > 0)
@@ -197,7 +197,7 @@ namespace Pathfinding
 			return !this.StartAsyncUpdatesIfQueued();
 		}
 
-		// Token: 0x06002294 RID: 8852 RVA: 0x00190AC0 File Offset: 0x0018ECC0
+		// Token: 0x060022EA RID: 8938 RVA: 0x001966AC File Offset: 0x001948AC
 		private bool StartAsyncUpdatesIfQueued()
 		{
 			if (this.graphUpdateQueueAsync.Count > 0)
@@ -209,7 +209,7 @@ namespace Pathfinding
 			return false;
 		}
 
-		// Token: 0x06002295 RID: 8853 RVA: 0x00190AEC File Offset: 0x0018ECEC
+		// Token: 0x060022EB RID: 8939 RVA: 0x001966D8 File Offset: 0x001948D8
 		private void ProcessPostUpdates()
 		{
 			while (this.graphUpdateQueuePost.Count > 0)
@@ -229,7 +229,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002296 RID: 8854 RVA: 0x00190B60 File Offset: 0x0018ED60
+		// Token: 0x060022EC RID: 8940 RVA: 0x0019674C File Offset: 0x0019494C
 		private void ProcessGraphUpdatesAsync()
 		{
 			AutoResetEvent[] array = new AutoResetEvent[]
@@ -274,22 +274,22 @@ namespace Pathfinding
 			this.asyncGraphUpdatesComplete.Set();
 		}
 
-		// Token: 0x06002297 RID: 8855 RVA: 0x00190C4C File Offset: 0x0018EE4C
+		// Token: 0x060022ED RID: 8941 RVA: 0x00196838 File Offset: 0x00194A38
 		public void FloodFill(GraphNode seed)
 		{
-			this.FloodFill(seed, this.lastUniqueAreaIndex + 1u);
-			this.lastUniqueAreaIndex += 1u;
+			this.FloodFill(seed, this.lastUniqueAreaIndex + 1U);
+			this.lastUniqueAreaIndex += 1U;
 		}
 
-		// Token: 0x06002298 RID: 8856 RVA: 0x00190C6C File Offset: 0x0018EE6C
+		// Token: 0x060022EE RID: 8942 RVA: 0x00196858 File Offset: 0x00194A58
 		public void FloodFill(GraphNode seed, uint area)
 		{
-			if (area > 131071u)
+			if (area > 131071U)
 			{
-				Debug.LogError("Too high area index - The maximum area index is " + 131071u);
+				Debug.LogError("Too high area index - The maximum area index is " + 131071U);
 				return;
 			}
-			if (area < 0u)
+			if (area < 0U)
 			{
 				Debug.LogError("Too low area index - The minimum area index is 0");
 				return;
@@ -304,7 +304,7 @@ namespace Pathfinding
 			StackPool<GraphNode>.Release(stack);
 		}
 
-		// Token: 0x06002299 RID: 8857 RVA: 0x00190CDC File Offset: 0x0018EEDC
+		// Token: 0x060022EF RID: 8943 RVA: 0x001968C8 File Offset: 0x00194AC8
 		public void FloodFill()
 		{
 			NavGraph[] graphs = this.astar.graphs;
@@ -318,12 +318,12 @@ namespace Pathfinding
 				{
 					navGraph.GetNodes(delegate(GraphNode node)
 					{
-						node.Area = 0u;
+						node.Area = 0U;
 					});
 				}
 			}
-			this.lastUniqueAreaIndex = 0u;
-			uint area = 0u;
+			this.lastUniqueAreaIndex = 0U;
+			uint area = 0U;
 			int forcedSmallAreas = 0;
 			Stack<GraphNode> stack = StackPool<GraphNode>.Claim();
 			Action<GraphNode> <>9__1;
@@ -337,15 +337,15 @@ namespace Pathfinding
 					{
 						action = (<>9__1 = delegate(GraphNode node)
 						{
-							if (node.Walkable && node.Area == 0u)
+							if (node.Walkable && node.Area == 0U)
 							{
 								uint area = area;
-								area += 1u;
+								area += 1U;
 								uint area2 = area;
-								if (area > 131071u)
+								if (area > 131071U)
 								{
 									area = area;
-									area -= 1u;
+									area -= 1U;
 									area2 = area;
 									int forcedSmallAreas;
 									if (forcedSmallAreas == 0)
@@ -377,65 +377,65 @@ namespace Pathfinding
 				{
 					forcedSmallAreas,
 					" areas had to share IDs. This usually doesn't affect pathfinding in any significant way (you might get 'Searched whole area but could not find target' as a reason for path failure) however some path requests may take longer to calculate (specifically those that fail with the 'Searched whole area' error).The maximum number of areas is ",
-					131071u,
+					131071U,
 					"."
 				}));
 			}
 			StackPool<GraphNode>.Release(stack);
 		}
 
-		// Token: 0x04003F04 RID: 16132
+		// Token: 0x04003FE2 RID: 16354
 		private readonly AstarPath astar;
 
-		// Token: 0x04003F05 RID: 16133
+		// Token: 0x04003FE3 RID: 16355
 		private Thread graphUpdateThread;
 
-		// Token: 0x04003F06 RID: 16134
+		// Token: 0x04003FE4 RID: 16356
 		private bool anyGraphUpdateInProgress;
 
-		// Token: 0x04003F07 RID: 16135
+		// Token: 0x04003FE5 RID: 16357
 		private readonly Queue<GraphUpdateObject> graphUpdateQueue = new Queue<GraphUpdateObject>();
 
-		// Token: 0x04003F08 RID: 16136
+		// Token: 0x04003FE6 RID: 16358
 		private readonly Queue<GraphUpdateProcessor.GUOSingle> graphUpdateQueueAsync = new Queue<GraphUpdateProcessor.GUOSingle>();
 
-		// Token: 0x04003F09 RID: 16137
+		// Token: 0x04003FE7 RID: 16359
 		private readonly Queue<GraphUpdateProcessor.GUOSingle> graphUpdateQueuePost = new Queue<GraphUpdateProcessor.GUOSingle>();
 
-		// Token: 0x04003F0A RID: 16138
+		// Token: 0x04003FE8 RID: 16360
 		private readonly Queue<GraphUpdateProcessor.GUOSingle> graphUpdateQueueRegular = new Queue<GraphUpdateProcessor.GUOSingle>();
 
-		// Token: 0x04003F0B RID: 16139
+		// Token: 0x04003FE9 RID: 16361
 		private readonly ManualResetEvent asyncGraphUpdatesComplete = new ManualResetEvent(true);
 
-		// Token: 0x04003F0C RID: 16140
+		// Token: 0x04003FEA RID: 16362
 		private readonly AutoResetEvent graphUpdateAsyncEvent = new AutoResetEvent(false);
 
-		// Token: 0x04003F0D RID: 16141
+		// Token: 0x04003FEB RID: 16363
 		private readonly AutoResetEvent exitAsyncThread = new AutoResetEvent(false);
 
-		// Token: 0x04003F0E RID: 16142
+		// Token: 0x04003FEC RID: 16364
 		private uint lastUniqueAreaIndex;
 
-		// Token: 0x02000719 RID: 1817
+		// Token: 0x02000733 RID: 1843
 		private enum GraphUpdateOrder
 		{
-			// Token: 0x040048F6 RID: 18678
+			// Token: 0x040049E1 RID: 18913
 			GraphUpdate,
-			// Token: 0x040048F7 RID: 18679
+			// Token: 0x040049E2 RID: 18914
 			FloodFill
 		}
 
-		// Token: 0x0200071A RID: 1818
+		// Token: 0x02000734 RID: 1844
 		private struct GUOSingle
 		{
-			// Token: 0x040048F8 RID: 18680
+			// Token: 0x040049E3 RID: 18915
 			public GraphUpdateProcessor.GraphUpdateOrder order;
 
-			// Token: 0x040048F9 RID: 18681
+			// Token: 0x040049E4 RID: 18916
 			public IUpdatableGraph graph;
 
-			// Token: 0x040048FA RID: 18682
+			// Token: 0x040049E5 RID: 18917
 			public GraphUpdateObject obj;
 		}
 	}
