@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200039F RID: 927
+// Token: 0x020003A4 RID: 932
 public class OsanaWednesdayLunchEventScript : MonoBehaviour
 {
 }

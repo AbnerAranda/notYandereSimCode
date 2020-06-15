@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000EC RID: 236
+// Token: 0x020000ED RID: 237
 [Serializable]
 public class BucketWater : BucketContents
 {
 	// Token: 0x1700020E RID: 526
-	// (get) Token: 0x06000A78 RID: 2680 RVA: 0x00056183 File Offset: 0x00054383
-	// (set) Token: 0x06000A79 RID: 2681 RVA: 0x0005618B File Offset: 0x0005438B
+	// (get) Token: 0x06000A7F RID: 2687 RVA: 0x00056E97 File Offset: 0x00055097
+	// (set) Token: 0x06000A80 RID: 2688 RVA: 0x00056E9F File Offset: 0x0005509F
 	public float Bloodiness
 	{
 		get
@@ -21,8 +21,8 @@ public class BucketWater : BucketContents
 	}
 
 	// Token: 0x1700020F RID: 527
-	// (get) Token: 0x06000A7A RID: 2682 RVA: 0x00056199 File Offset: 0x00054399
-	// (set) Token: 0x06000A7B RID: 2683 RVA: 0x000561A1 File Offset: 0x000543A1
+	// (get) Token: 0x06000A81 RID: 2689 RVA: 0x00056EAD File Offset: 0x000550AD
+	// (set) Token: 0x06000A82 RID: 2690 RVA: 0x00056EB5 File Offset: 0x000550B5
 	public bool HasBleach
 	{
 		get
@@ -36,7 +36,7 @@ public class BucketWater : BucketContents
 	}
 
 	// Token: 0x17000210 RID: 528
-	// (get) Token: 0x06000A7C RID: 2684 RVA: 0x0002D171 File Offset: 0x0002B371
+	// (get) Token: 0x06000A83 RID: 2691 RVA: 0x0002D199 File Offset: 0x0002B399
 	public override BucketContentsType Type
 	{
 		get
@@ -46,7 +46,7 @@ public class BucketWater : BucketContents
 	}
 
 	// Token: 0x17000211 RID: 529
-	// (get) Token: 0x06000A7D RID: 2685 RVA: 0x00056199 File Offset: 0x00054399
+	// (get) Token: 0x06000A84 RID: 2692 RVA: 0x00056EAD File Offset: 0x000550AD
 	public override bool IsCleaningAgent
 	{
 		get
@@ -56,7 +56,7 @@ public class BucketWater : BucketContents
 	}
 
 	// Token: 0x17000212 RID: 530
-	// (get) Token: 0x06000A7E RID: 2686 RVA: 0x0002D171 File Offset: 0x0002B371
+	// (get) Token: 0x06000A85 RID: 2693 RVA: 0x0002D199 File Offset: 0x0002B399
 	public override bool IsFlammable
 	{
 		get
@@ -65,17 +65,17 @@ public class BucketWater : BucketContents
 		}
 	}
 
-	// Token: 0x06000A7F RID: 2687 RVA: 0x0002291C File Offset: 0x00020B1C
+	// Token: 0x06000A86 RID: 2694 RVA: 0x00022944 File Offset: 0x00020B44
 	public override bool CanBeLifted(int strength)
 	{
 		return true;
 	}
 
-	// Token: 0x04000B05 RID: 2821
+	// Token: 0x04000B24 RID: 2852
 	[SerializeField]
 	private float bloodiness;
 
-	// Token: 0x04000B06 RID: 2822
+	// Token: 0x04000B25 RID: 2853
 	[SerializeField]
 	private bool hasBleach;
 }

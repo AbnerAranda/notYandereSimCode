@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000527 RID: 1319
+	// Token: 0x0200053D RID: 1341
 	public static class GraphUtilities
 	{
-		// Token: 0x0600229A RID: 8858 RVA: 0x00190DF8 File Offset: 0x0018EFF8
+		// Token: 0x060022F0 RID: 8944 RVA: 0x001969E4 File Offset: 0x00194BE4
 		public static List<Vector3> GetContours(NavGraph graph)
 		{
 			List<Vector3> result = ListPool<Vector3>.Claim();
@@ -42,7 +42,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x0600229B RID: 8859 RVA: 0x00190E64 File Offset: 0x0018F064
+		// Token: 0x060022F1 RID: 8945 RVA: 0x00196A50 File Offset: 0x00194C50
 		public static void GetContours(INavmesh navmesh, Action<List<Int3>, bool> results)
 		{
 			bool[] uses = new bool[3];
@@ -92,7 +92,7 @@ namespace Pathfinding
 			});
 		}
 
-		// Token: 0x0600229C RID: 8860 RVA: 0x00190EDC File Offset: 0x0018F0DC
+		// Token: 0x060022F2 RID: 8946 RVA: 0x00196AC8 File Offset: 0x00194CC8
 		public static void GetContours(GridGraph grid, Action<Vector3[]> callback, float yMergeThreshold, GridNodeBase[] nodes = null)
 		{
 			HashSet<GridNodeBase> hashSet = (nodes != null) ? new HashSet<GridNodeBase>(nodes) : null;
@@ -125,7 +125,7 @@ namespace Pathfinding
 				array3 = GridGraph.hexagonNeighbourIndices;
 			}
 			int[] array4 = array3;
-			float num = (grid.neighbours == NumNeighbours.Six) ? 0.33333334f : 0.5f;
+			float num = (grid.neighbours == NumNeighbours.Six) ? 0.333333343f : 0.5f;
 			if (nodes != null)
 			{
 				List<Vector3> list = ListPool<Vector3>.Claim();

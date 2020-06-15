@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F0 RID: 1520
+	// Token: 0x02000606 RID: 1542
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_mecanim_bridge.php")]
 	public class MecanimBridge : VersionedMonoBehaviour
 	{
-		// Token: 0x060029E0 RID: 10720 RVA: 0x001C1950 File Offset: 0x001BFB50
+		// Token: 0x06002A36 RID: 10806 RVA: 0x001C753C File Offset: 0x001C573C
 		protected override void Awake()
 		{
 			base.Awake();
@@ -21,13 +21,13 @@ namespace Pathfinding.Examples
 			};
 		}
 
-		// Token: 0x060029E1 RID: 10721 RVA: 0x001C19B1 File Offset: 0x001BFBB1
+		// Token: 0x06002A37 RID: 10807 RVA: 0x001C759D File Offset: 0x001C579D
 		private void Update()
 		{
 			(this.ai as AIBase).canMove = false;
 		}
 
-		// Token: 0x060029E2 RID: 10722 RVA: 0x001C19C4 File Offset: 0x001BFBC4
+		// Token: 0x06002A38 RID: 10808 RVA: 0x001C75B0 File Offset: 0x001C57B0
 		private Vector3 CalculateBlendPoint()
 		{
 			if (this.footTransforms[0] == null || this.footTransforms[1] == null)
@@ -45,7 +45,7 @@ namespace Pathfinding.Examples
 			return Vector3.Lerp(position, position2, t);
 		}
 
-		// Token: 0x060029E3 RID: 10723 RVA: 0x001C1AA4 File Offset: 0x001BFCA4
+		// Token: 0x06002A39 RID: 10809 RVA: 0x001C7690 File Offset: 0x001C5890
 		private void OnAnimatorMove()
 		{
 			Vector3 vector;
@@ -75,13 +75,13 @@ namespace Pathfinding.Examples
 			this.ai.FinalizeMovement(vector, quaternion);
 		}
 
-		// Token: 0x060029E4 RID: 10724 RVA: 0x001C1C56 File Offset: 0x001BFE56
+		// Token: 0x06002A3A RID: 10810 RVA: 0x001C7842 File Offset: 0x001C5A42
 		private static Vector3 RotatePointAround(Vector3 point, Vector3 around, Quaternion rotation)
 		{
 			return rotation * (point - around) + around;
 		}
 
-		// Token: 0x060029E5 RID: 10725 RVA: 0x001C1C6C File Offset: 0x001BFE6C
+		// Token: 0x06002A3B RID: 10811 RVA: 0x001C7858 File Offset: 0x001C5A58
 		protected virtual Quaternion RotateTowards(Vector3 direction, float maxDegrees)
 		{
 			if (direction != Vector3.zero)
@@ -92,25 +92,25 @@ namespace Pathfinding.Examples
 			return this.tr.rotation;
 		}
 
-		// Token: 0x0400439E RID: 17310
+		// Token: 0x0400447C RID: 17532
 		public float velocitySmoothing = 1f;
 
-		// Token: 0x0400439F RID: 17311
+		// Token: 0x0400447D RID: 17533
 		private IAstarAI ai;
 
-		// Token: 0x040043A0 RID: 17312
+		// Token: 0x0400447E RID: 17534
 		private Animator anim;
 
-		// Token: 0x040043A1 RID: 17313
+		// Token: 0x0400447F RID: 17535
 		private Transform tr;
 
-		// Token: 0x040043A2 RID: 17314
+		// Token: 0x04004480 RID: 17536
 		private Vector3 smoothedVelocity;
 
-		// Token: 0x040043A3 RID: 17315
+		// Token: 0x04004481 RID: 17537
 		private Vector3[] prevFootPos = new Vector3[2];
 
-		// Token: 0x040043A4 RID: 17316
+		// Token: 0x04004482 RID: 17538
 		private Transform[] footTransforms;
 	}
 }

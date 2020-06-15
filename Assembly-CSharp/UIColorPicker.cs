@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(UITexture))]
 public class UIColorPicker : MonoBehaviour
 {
-	// Token: 0x0600074B RID: 1867 RVA: 0x0003D05C File Offset: 0x0003B25C
+	// Token: 0x0600074C RID: 1868 RVA: 0x0003D084 File Offset: 0x0003B284
 	private void Start()
 	{
 		this.mTrans = base.transform;
@@ -34,14 +34,14 @@ public class UIColorPicker : MonoBehaviour
 		this.Select(this.value);
 	}
 
-	// Token: 0x0600074C RID: 1868 RVA: 0x0003D193 File Offset: 0x0003B393
+	// Token: 0x0600074D RID: 1869 RVA: 0x0003D1BB File Offset: 0x0003B3BB
 	private void OnDestroy()
 	{
 		UnityEngine.Object.Destroy(this.mTex);
 		this.mTex = null;
 	}
 
-	// Token: 0x0600074D RID: 1869 RVA: 0x0003D1A7 File Offset: 0x0003B3A7
+	// Token: 0x0600074E RID: 1870 RVA: 0x0003D1CF File Offset: 0x0003B3CF
 	private void OnPress(bool pressed)
 	{
 		if (base.enabled && pressed && UICamera.currentScheme != UICamera.ControlScheme.Controller)
@@ -50,7 +50,7 @@ public class UIColorPicker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600074E RID: 1870 RVA: 0x0003D1C1 File Offset: 0x0003B3C1
+	// Token: 0x0600074F RID: 1871 RVA: 0x0003D1E9 File Offset: 0x0003B3E9
 	private void OnDrag(Vector2 delta)
 	{
 		if (base.enabled)
@@ -59,7 +59,7 @@ public class UIColorPicker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600074F RID: 1871 RVA: 0x0003D1D4 File Offset: 0x0003B3D4
+	// Token: 0x06000750 RID: 1872 RVA: 0x0003D1FC File Offset: 0x0003B3FC
 	private void OnPan(Vector2 delta)
 	{
 		if (base.enabled)
@@ -70,7 +70,7 @@ public class UIColorPicker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000750 RID: 1872 RVA: 0x0003D23C File Offset: 0x0003B43C
+	// Token: 0x06000751 RID: 1873 RVA: 0x0003D264 File Offset: 0x0003B464
 	private void Sample()
 	{
 		Vector3 vector = this.mTrans.InverseTransformPoint(UICamera.lastWorldPosition);
@@ -90,7 +90,7 @@ public class UIColorPicker : MonoBehaviour
 		UIColorPicker.current = null;
 	}
 
-	// Token: 0x06000751 RID: 1873 RVA: 0x0003D3B0 File Offset: 0x0003B5B0
+	// Token: 0x06000752 RID: 1874 RVA: 0x0003D3D8 File Offset: 0x0003B5D8
 	public void Select(Vector2 v)
 	{
 		v.x = Mathf.Clamp01(v.x);
@@ -110,7 +110,7 @@ public class UIColorPicker : MonoBehaviour
 		UIColorPicker.current = null;
 	}
 
-	// Token: 0x06000752 RID: 1874 RVA: 0x0003D4D4 File Offset: 0x0003B6D4
+	// Token: 0x06000753 RID: 1875 RVA: 0x0003D4FC File Offset: 0x0003B6FC
 	public Vector2 Select(Color c)
 	{
 		if (this.mUITex == null)
@@ -155,7 +155,7 @@ public class UIColorPicker : MonoBehaviour
 		return this.mPos;
 	}
 
-	// Token: 0x06000753 RID: 1875 RVA: 0x0003D6C0 File Offset: 0x0003B8C0
+	// Token: 0x06000754 RID: 1876 RVA: 0x0003D6E8 File Offset: 0x0003B8E8
 	public static Color Sample(float x, float y)
 	{
 		if (UIColorPicker.mRed == null)
@@ -163,34 +163,34 @@ public class UIColorPicker : MonoBehaviour
 			UIColorPicker.mRed = new AnimationCurve(new Keyframe[]
 			{
 				new Keyframe(0f, 1f),
-				new Keyframe(0.14285715f, 1f),
+				new Keyframe(0.142857149f, 1f),
 				new Keyframe(0.2857143f, 0f),
-				new Keyframe(0.42857143f, 0f),
+				new Keyframe(0.428571433f, 0f),
 				new Keyframe(0.5714286f, 0f),
-				new Keyframe(0.71428573f, 1f),
-				new Keyframe(0.85714287f, 1f),
+				new Keyframe(0.714285731f, 1f),
+				new Keyframe(0.857142866f, 1f),
 				new Keyframe(1f, 0.5f)
 			});
 			UIColorPicker.mGreen = new AnimationCurve(new Keyframe[]
 			{
 				new Keyframe(0f, 0f),
-				new Keyframe(0.14285715f, 1f),
+				new Keyframe(0.142857149f, 1f),
 				new Keyframe(0.2857143f, 1f),
-				new Keyframe(0.42857143f, 1f),
+				new Keyframe(0.428571433f, 1f),
 				new Keyframe(0.5714286f, 0f),
-				new Keyframe(0.71428573f, 0f),
-				new Keyframe(0.85714287f, 0f),
+				new Keyframe(0.714285731f, 0f),
+				new Keyframe(0.857142866f, 0f),
 				new Keyframe(1f, 0.5f)
 			});
 			UIColorPicker.mBlue = new AnimationCurve(new Keyframe[]
 			{
 				new Keyframe(0f, 0f),
-				new Keyframe(0.14285715f, 0f),
+				new Keyframe(0.142857149f, 0f),
 				new Keyframe(0.2857143f, 0f),
-				new Keyframe(0.42857143f, 1f),
+				new Keyframe(0.428571433f, 1f),
 				new Keyframe(0.5714286f, 1f),
-				new Keyframe(0.71428573f, 1f),
-				new Keyframe(0.85714287f, 0f),
+				new Keyframe(0.714285731f, 1f),
+				new Keyframe(0.857142866f, 0f),
 				new Keyframe(1f, 0.5f)
 			});
 		}
@@ -209,52 +209,52 @@ public class UIColorPicker : MonoBehaviour
 		return new Color(vector.x, vector.y, vector.z, 1f);
 	}
 
-	// Token: 0x040006B5 RID: 1717
+	// Token: 0x040006B7 RID: 1719
 	public static UIColorPicker current;
 
-	// Token: 0x040006B6 RID: 1718
+	// Token: 0x040006B8 RID: 1720
 	public Color value = Color.white;
 
-	// Token: 0x040006B7 RID: 1719
+	// Token: 0x040006B9 RID: 1721
 	public UIWidget selectionWidget;
 
-	// Token: 0x040006B8 RID: 1720
-	public List<EventDelegate> onChange = new List<EventDelegate>();
-
-	// Token: 0x040006B9 RID: 1721
-	[NonSerialized]
-	private Transform mTrans;
-
 	// Token: 0x040006BA RID: 1722
-	[NonSerialized]
-	private UITexture mUITex;
+	public List<EventDelegate> onChange = new List<EventDelegate>();
 
 	// Token: 0x040006BB RID: 1723
 	[NonSerialized]
-	private Texture2D mTex;
+	private Transform mTrans;
 
 	// Token: 0x040006BC RID: 1724
 	[NonSerialized]
-	private UICamera mCam;
+	private UITexture mUITex;
 
 	// Token: 0x040006BD RID: 1725
 	[NonSerialized]
-	private Vector2 mPos;
+	private Texture2D mTex;
 
 	// Token: 0x040006BE RID: 1726
 	[NonSerialized]
-	private int mWidth;
+	private UICamera mCam;
 
 	// Token: 0x040006BF RID: 1727
 	[NonSerialized]
-	private int mHeight;
+	private Vector2 mPos;
 
 	// Token: 0x040006C0 RID: 1728
-	private static AnimationCurve mRed;
+	[NonSerialized]
+	private int mWidth;
 
 	// Token: 0x040006C1 RID: 1729
-	private static AnimationCurve mGreen;
+	[NonSerialized]
+	private int mHeight;
 
 	// Token: 0x040006C2 RID: 1730
+	private static AnimationCurve mRed;
+
+	// Token: 0x040006C3 RID: 1731
+	private static AnimationCurve mGreen;
+
+	// Token: 0x040006C4 RID: 1732
 	private static AnimationCurve mBlue;
 }

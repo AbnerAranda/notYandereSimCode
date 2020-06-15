@@ -1,15 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200034A RID: 842
+// Token: 0x0200034E RID: 846
 public class OsanaJokeScript : MonoBehaviour
 {
-	// Token: 0x06001889 RID: 6281 RVA: 0x000E0940 File Offset: 0x000DEB40
+	// Token: 0x060018A9 RID: 6313 RVA: 0x000E2D90 File Offset: 0x000E0F90
 	private void Update()
 	{
 		if (this.Advance)
 		{
 			this.Timer += Time.deltaTime;
+			if (this.Timer > 14f)
+			{
+				Application.Quit();
+				return;
+			}
 			if (this.Timer > 3f)
 			{
 				this.Label.text = "Congratulations, you eliminated Osana!";
@@ -19,11 +24,6 @@ public class OsanaJokeScript : MonoBehaviour
 					this.Jukebox.Play();
 					return;
 				}
-			}
-			else if (this.Timer > 14f)
-			{
-				Application.Quit();
-				return;
 			}
 		}
 		else if (Input.GetKeyDown("f"))
@@ -45,33 +45,33 @@ public class OsanaJokeScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002415 RID: 9237
+	// Token: 0x04002465 RID: 9317
 	public ConstantRandomRotation[] Rotation;
 
-	// Token: 0x04002416 RID: 9238
+	// Token: 0x04002466 RID: 9318
 	public GameObject BloodSplatterEffect;
 
-	// Token: 0x04002417 RID: 9239
+	// Token: 0x04002467 RID: 9319
 	public AudioClip BloodSplatterSFX;
 
-	// Token: 0x04002418 RID: 9240
+	// Token: 0x04002468 RID: 9320
 	public AudioClip VictoryMusic;
 
-	// Token: 0x04002419 RID: 9241
+	// Token: 0x04002469 RID: 9321
 	public AudioSource Jukebox;
 
-	// Token: 0x0400241A RID: 9242
+	// Token: 0x0400246A RID: 9322
 	public Transform Head;
 
-	// Token: 0x0400241B RID: 9243
+	// Token: 0x0400246B RID: 9323
 	public UILabel Label;
 
-	// Token: 0x0400241C RID: 9244
+	// Token: 0x0400246C RID: 9324
 	public bool Advance;
 
-	// Token: 0x0400241D RID: 9245
+	// Token: 0x0400246D RID: 9325
 	public float Timer;
 
-	// Token: 0x0400241E RID: 9246
+	// Token: 0x0400246E RID: 9326
 	public int ID;
 }

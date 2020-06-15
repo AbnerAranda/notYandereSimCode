@@ -2,10 +2,10 @@
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x02000428 RID: 1064
+// Token: 0x0200042D RID: 1069
 internal class ToiletFlushScript : MonoBehaviour
 {
-	// Token: 0x06001C4E RID: 7246 RVA: 0x00152B65 File Offset: 0x00150D65
+	// Token: 0x06001C72 RID: 7282 RVA: 0x00155FDD File Offset: 0x001541DD
 	private void Start()
 	{
 		this.StudentManager = UnityEngine.Object.FindObjectOfType<StudentManagerScript>();
@@ -13,13 +13,13 @@ internal class ToiletFlushScript : MonoBehaviour
 		this.toilet = this.Toilet;
 	}
 
-	// Token: 0x06001C4F RID: 7247 RVA: 0x00152B97 File Offset: 0x00150D97
+	// Token: 0x06001C73 RID: 7283 RVA: 0x0015600F File Offset: 0x0015420F
 	private void Update()
 	{
 		this.Flush(this.toilet);
 	}
 
-	// Token: 0x06001C50 RID: 7248 RVA: 0x00152BA8 File Offset: 0x00150DA8
+	// Token: 0x06001C74 RID: 7284 RVA: 0x00156020 File Offset: 0x00154220
 	private void Flush(GameObject toilet)
 	{
 		if (this.Toilet != null)
@@ -35,23 +35,23 @@ internal class ToiletFlushScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C51 RID: 7249 RVA: 0x00152BFC File Offset: 0x00150DFC
+	// Token: 0x06001C75 RID: 7285 RVA: 0x00156074 File Offset: 0x00154274
 	private string RandomSound(int Length)
 	{
 		return new string((from s in Enumerable.Repeat<string>("ABCDEFGHIJKLMNOPQRSTUVWXYZ", Length)
 		select s[ToiletFlushScript.random.Next(s.Length)]).ToArray<char>());
 	}
 
-	// Token: 0x0400352B RID: 13611
+	// Token: 0x040035A0 RID: 13728
 	[Header("=== Toilet Related ===")]
 	public GameObject Toilet;
 
-	// Token: 0x0400352C RID: 13612
+	// Token: 0x040035A1 RID: 13729
 	private GameObject toilet;
 
-	// Token: 0x0400352D RID: 13613
+	// Token: 0x040035A2 RID: 13730
 	private static System.Random random = new System.Random();
 
-	// Token: 0x0400352E RID: 13614
+	// Token: 0x040035A3 RID: 13731
 	private StudentManagerScript StudentManager;
 }

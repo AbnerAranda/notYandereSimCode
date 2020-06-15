@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000543 RID: 1347
+	// Token: 0x02000559 RID: 1369
 	public struct NNInfoInternal
 	{
-		// Token: 0x060023EF RID: 9199 RVA: 0x00195E7C File Offset: 0x0019407C
+		// Token: 0x06002445 RID: 9285 RVA: 0x0019BA68 File Offset: 0x00199C68
 		public NNInfoInternal(GraphNode node)
 		{
 			this.node = node;
@@ -16,23 +16,23 @@ namespace Pathfinding
 			this.UpdateInfo();
 		}
 
-		// Token: 0x060023F0 RID: 9200 RVA: 0x00195EA8 File Offset: 0x001940A8
+		// Token: 0x06002446 RID: 9286 RVA: 0x0019BA94 File Offset: 0x00199C94
 		public void UpdateInfo()
 		{
 			this.clampedPosition = ((this.node != null) ? ((Vector3)this.node.position) : Vector3.zero);
 			this.constClampedPosition = ((this.constrainedNode != null) ? ((Vector3)this.constrainedNode.position) : Vector3.zero);
 		}
 
-		// Token: 0x04003FBC RID: 16316
+		// Token: 0x0400409A RID: 16538
 		public GraphNode node;
 
-		// Token: 0x04003FBD RID: 16317
+		// Token: 0x0400409B RID: 16539
 		public GraphNode constrainedNode;
 
-		// Token: 0x04003FBE RID: 16318
+		// Token: 0x0400409C RID: 16540
 		public Vector3 clampedPosition;
 
-		// Token: 0x04003FBF RID: 16319
+		// Token: 0x0400409D RID: 16541
 		public Vector3 constClampedPosition;
 	}
 }

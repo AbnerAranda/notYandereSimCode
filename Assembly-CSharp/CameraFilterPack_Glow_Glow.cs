@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001BE RID: 446
+// Token: 0x020001BF RID: 447
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Glow/Glow")]
 public class CameraFilterPack_Glow_Glow : MonoBehaviour
 {
 	// Token: 0x170002DE RID: 734
-	// (get) Token: 0x06000F87 RID: 3975 RVA: 0x00073D8D File Offset: 0x00071F8D
+	// (get) Token: 0x06000F8E RID: 3982 RVA: 0x00074ABD File Offset: 0x00072CBD
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Glow_Glow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F88 RID: 3976 RVA: 0x00073DC1 File Offset: 0x00071FC1
+	// Token: 0x06000F8F RID: 3983 RVA: 0x00074AF1 File Offset: 0x00072CF1
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Glow_Glow");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Glow_Glow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F89 RID: 3977 RVA: 0x00073DE4 File Offset: 0x00071FE4
+	// Token: 0x06000F90 RID: 3984 RVA: 0x00074B14 File Offset: 0x00072D14
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (!(this.SCShader != null))
@@ -74,12 +74,12 @@ public class CameraFilterPack_Glow_Glow : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture, this.material, 0);
 	}
 
-	// Token: 0x06000F8A RID: 3978 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F91 RID: 3985 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F8B RID: 3979 RVA: 0x00073FAC File Offset: 0x000721AC
+	// Token: 0x06000F92 RID: 3986 RVA: 0x00074CDC File Offset: 0x00072EDC
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -88,32 +88,32 @@ public class CameraFilterPack_Glow_Glow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400126A RID: 4714
+	// Token: 0x04001289 RID: 4745
 	public Shader SCShader;
 
-	// Token: 0x0400126B RID: 4715
+	// Token: 0x0400128A RID: 4746
 	private float TimeX = 1f;
 
-	// Token: 0x0400126C RID: 4716
+	// Token: 0x0400128B RID: 4747
 	private Material SCMaterial;
 
-	// Token: 0x0400126D RID: 4717
+	// Token: 0x0400128C RID: 4748
 	[Range(0f, 20f)]
 	public float Amount = 4f;
 
-	// Token: 0x0400126E RID: 4718
+	// Token: 0x0400128D RID: 4749
 	[Range(2f, 16f)]
 	public int FastFilter = 4;
 
-	// Token: 0x0400126F RID: 4719
+	// Token: 0x0400128E RID: 4750
 	[Range(0f, 1f)]
 	public float Threshold = 0.5f;
 
-	// Token: 0x04001270 RID: 4720
+	// Token: 0x0400128F RID: 4751
 	[Range(0f, 1f)]
 	public float Intensity = 0.75f;
 
-	// Token: 0x04001271 RID: 4721
+	// Token: 0x04001290 RID: 4752
 	[Range(-1f, 1f)]
 	public float Precision = 0.56f;
 }

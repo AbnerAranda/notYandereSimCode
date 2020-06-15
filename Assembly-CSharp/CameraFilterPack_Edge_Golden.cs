@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000193 RID: 403
+// Token: 0x02000194 RID: 404
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Edge/Golden")]
 public class CameraFilterPack_Edge_Golden : MonoBehaviour
 {
 	// Token: 0x170002B3 RID: 691
-	// (get) Token: 0x06000E85 RID: 3717 RVA: 0x0006F8DB File Offset: 0x0006DADB
+	// (get) Token: 0x06000E8C RID: 3724 RVA: 0x0007060B File Offset: 0x0006E80B
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Edge_Golden : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E86 RID: 3718 RVA: 0x0006F90F File Offset: 0x0006DB0F
+	// Token: 0x06000E8D RID: 3725 RVA: 0x0007063F File Offset: 0x0006E83F
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Edge_Golden");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Edge_Golden : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E87 RID: 3719 RVA: 0x0006F930 File Offset: 0x0006DB30
+	// Token: 0x06000E8E RID: 3726 RVA: 0x00070660 File Offset: 0x0006E860
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_Edge_Golden : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E88 RID: 3720 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E8F RID: 3727 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E89 RID: 3721 RVA: 0x0006F9C6 File Offset: 0x0006DBC6
+	// Token: 0x06000E90 RID: 3728 RVA: 0x000706F6 File Offset: 0x0006E8F6
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,12 +64,12 @@ public class CameraFilterPack_Edge_Golden : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400114C RID: 4428
+	// Token: 0x0400116B RID: 4459
 	public Shader SCShader;
 
-	// Token: 0x0400114D RID: 4429
+	// Token: 0x0400116C RID: 4460
 	private float TimeX = 1f;
 
-	// Token: 0x0400114E RID: 4430
+	// Token: 0x0400116D RID: 4461
 	private Material SCMaterial;
 }

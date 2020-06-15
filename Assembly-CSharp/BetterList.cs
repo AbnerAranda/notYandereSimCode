@@ -6,7 +6,7 @@ using UnityEngine;
 // Token: 0x02000070 RID: 112
 public class BetterList<T>
 {
-	// Token: 0x06000367 RID: 871 RVA: 0x00020980 File Offset: 0x0001EB80
+	// Token: 0x06000368 RID: 872 RVA: 0x000209A8 File Offset: 0x0001EBA8
 	public IEnumerator<T> GetEnumerator()
 	{
 		if (this.buffer != null)
@@ -36,7 +36,7 @@ public class BetterList<T>
 		}
 	}
 
-	// Token: 0x0600036A RID: 874 RVA: 0x000209AC File Offset: 0x0001EBAC
+	// Token: 0x0600036B RID: 875 RVA: 0x000209D4 File Offset: 0x0001EBD4
 	private void AllocateMore()
 	{
 		T[] array = (this.buffer != null) ? new T[Mathf.Max(this.buffer.Length << 1, 32)] : new T[32];
@@ -47,7 +47,7 @@ public class BetterList<T>
 		this.buffer = array;
 	}
 
-	// Token: 0x0600036B RID: 875 RVA: 0x00020A08 File Offset: 0x0001EC08
+	// Token: 0x0600036C RID: 876 RVA: 0x00020A30 File Offset: 0x0001EC30
 	private void Trim()
 	{
 		if (this.size > 0)
@@ -69,20 +69,20 @@ public class BetterList<T>
 		}
 	}
 
-	// Token: 0x0600036C RID: 876 RVA: 0x00020A6D File Offset: 0x0001EC6D
+	// Token: 0x0600036D RID: 877 RVA: 0x00020A95 File Offset: 0x0001EC95
 	public void Clear()
 	{
 		this.size = 0;
 	}
 
-	// Token: 0x0600036D RID: 877 RVA: 0x00020A76 File Offset: 0x0001EC76
+	// Token: 0x0600036E RID: 878 RVA: 0x00020A9E File Offset: 0x0001EC9E
 	public void Release()
 	{
 		this.size = 0;
 		this.buffer = null;
 	}
 
-	// Token: 0x0600036E RID: 878 RVA: 0x00020A88 File Offset: 0x0001EC88
+	// Token: 0x0600036F RID: 879 RVA: 0x00020AB0 File Offset: 0x0001ECB0
 	public void Add(T item)
 	{
 		if (this.buffer == null || this.size == this.buffer.Length)
@@ -95,7 +95,7 @@ public class BetterList<T>
 		array[num] = item;
 	}
 
-	// Token: 0x0600036F RID: 879 RVA: 0x00020AD0 File Offset: 0x0001ECD0
+	// Token: 0x06000370 RID: 880 RVA: 0x00020AF8 File Offset: 0x0001ECF8
 	public void Insert(int index, T item)
 	{
 		if (this.buffer == null || this.size == this.buffer.Length)
@@ -115,7 +115,7 @@ public class BetterList<T>
 		this.Add(item);
 	}
 
-	// Token: 0x06000370 RID: 880 RVA: 0x00020B58 File Offset: 0x0001ED58
+	// Token: 0x06000371 RID: 881 RVA: 0x00020B80 File Offset: 0x0001ED80
 	public bool Contains(T item)
 	{
 		if (this.buffer == null)
@@ -132,7 +132,7 @@ public class BetterList<T>
 		return false;
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x00020BA4 File Offset: 0x0001EDA4
+	// Token: 0x06000372 RID: 882 RVA: 0x00020BCC File Offset: 0x0001EDCC
 	public int IndexOf(T item)
 	{
 		if (this.buffer == null)
@@ -149,7 +149,7 @@ public class BetterList<T>
 		return -1;
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x00020BF0 File Offset: 0x0001EDF0
+	// Token: 0x06000373 RID: 883 RVA: 0x00020C18 File Offset: 0x0001EE18
 	public bool Remove(T item)
 	{
 		if (this.buffer != null)
@@ -173,7 +173,7 @@ public class BetterList<T>
 		return false;
 	}
 
-	// Token: 0x06000373 RID: 883 RVA: 0x00020CA8 File Offset: 0x0001EEA8
+	// Token: 0x06000374 RID: 884 RVA: 0x00020CD0 File Offset: 0x0001EED0
 	public void RemoveAt(int index)
 	{
 		if (this.buffer != null && index > -1 && index < this.size)
@@ -188,7 +188,7 @@ public class BetterList<T>
 		}
 	}
 
-	// Token: 0x06000374 RID: 884 RVA: 0x00020D34 File Offset: 0x0001EF34
+	// Token: 0x06000375 RID: 885 RVA: 0x00020D5C File Offset: 0x0001EF5C
 	public T Pop()
 	{
 		if (this.buffer != null && this.size != 0)
@@ -203,14 +203,14 @@ public class BetterList<T>
 		return default(T);
 	}
 
-	// Token: 0x06000375 RID: 885 RVA: 0x00020D91 File Offset: 0x0001EF91
+	// Token: 0x06000376 RID: 886 RVA: 0x00020DB9 File Offset: 0x0001EFB9
 	public T[] ToArray()
 	{
 		this.Trim();
 		return this.buffer;
 	}
 
-	// Token: 0x06000376 RID: 886 RVA: 0x00020DA0 File Offset: 0x0001EFA0
+	// Token: 0x06000377 RID: 887 RVA: 0x00020DC8 File Offset: 0x0001EFC8
 	[DebuggerHidden]
 	[DebuggerStepThrough]
 	public void Sort(BetterList<T>.CompareFunc comparer)
@@ -238,13 +238,13 @@ public class BetterList<T>
 		}
 	}
 
-	// Token: 0x040004B3 RID: 1203
+	// Token: 0x040004B5 RID: 1205
 	public T[] buffer;
 
-	// Token: 0x040004B4 RID: 1204
+	// Token: 0x040004B6 RID: 1206
 	public int size;
 
-	// Token: 0x0200062F RID: 1583
-	// (Invoke) Token: 0x06002A83 RID: 10883
+	// Token: 0x02000645 RID: 1605
+	// (Invoke) Token: 0x06002AD9 RID: 10969
 	public delegate int CompareFunc(T left, T right);
 }

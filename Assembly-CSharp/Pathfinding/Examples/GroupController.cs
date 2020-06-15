@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E4 RID: 1508
+	// Token: 0x020005FA RID: 1530
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_group_controller.php")]
 	public class GroupController : MonoBehaviour
 	{
-		// Token: 0x0600299F RID: 10655 RVA: 0x001BF428 File Offset: 0x001BD628
+		// Token: 0x060029F5 RID: 10741 RVA: 0x001C5014 File Offset: 0x001C3214
 		public void Start()
 		{
 			this.cam = Camera.main;
@@ -23,7 +23,7 @@ namespace Pathfinding.Examples
 			this.sim = rvosimulator.GetSimulator();
 		}
 
-		// Token: 0x060029A0 RID: 10656 RVA: 0x001BF47C File Offset: 0x001BD67C
+		// Token: 0x060029F6 RID: 10742 RVA: 0x001C5068 File Offset: 0x001C3268
 		public void Update()
 		{
 			if (Screen.fullScreen && Screen.width != Screen.resolutions[Screen.resolutions.Length - 1].width)
@@ -42,8 +42,8 @@ namespace Pathfinding.Examples
 						num = num2;
 					}
 				}
-				float a = num / Mathf.Tan(this.cam.fieldOfView * 0.017453292f / 2f);
-				float b = num / Mathf.Tan(Mathf.Atan(Mathf.Tan(this.cam.fieldOfView * 0.017453292f / 2f) * this.cam.aspect));
+				float a = num / Mathf.Tan(this.cam.fieldOfView * 0.0174532924f / 2f);
+				float b = num / Mathf.Tan(Mathf.Atan(Mathf.Tan(this.cam.fieldOfView * 0.0174532924f / 2f) * this.cam.aspect));
 				float num3 = Mathf.Max(a, b) * 1.1f;
 				num3 = Mathf.Max(num3, 20f);
 				this.cam.transform.position = Vector3.Lerp(this.cam.transform.position, new Vector3(0f, num3, 0f), Time.smoothDeltaTime * 2f);
@@ -54,7 +54,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029A1 RID: 10657 RVA: 0x001BF61C File Offset: 0x001BD81C
+		// Token: 0x060029F7 RID: 10743 RVA: 0x001C5208 File Offset: 0x001C3408
 		private void OnGUI()
 		{
 			if (Event.current.type == EventType.MouseUp && Event.current.button == 0 && !Input.GetKey(KeyCode.A))
@@ -85,7 +85,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029A2 RID: 10658 RVA: 0x001BF764 File Offset: 0x001BD964
+		// Token: 0x060029F8 RID: 10744 RVA: 0x001C5350 File Offset: 0x001C3550
 		public void Order()
 		{
 			RaycastHit raycastHit;
@@ -96,11 +96,11 @@ namespace Pathfinding.Examples
 				{
 					num += this.selection[i].GetComponent<RVOController>().radius;
 				}
-				float num2 = num / 3.1415927f;
+				float num2 = num / 3.14159274f;
 				num2 *= 2f;
 				for (int j = 0; j < this.selection.Count; j++)
 				{
-					float num3 = 6.2831855f * (float)j / (float)this.selection.Count;
+					float num3 = 6.28318548f * (float)j / (float)this.selection.Count;
 					Vector3 target = raycastHit.point + new Vector3(Mathf.Cos(num3), 0f, Mathf.Sin(num3)) * num2;
 					this.selection[j].SetTarget(target);
 					this.selection[j].SetColor(this.GetColor(num3));
@@ -109,7 +109,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029A3 RID: 10659 RVA: 0x001BF878 File Offset: 0x001BDA78
+		// Token: 0x060029F9 RID: 10745 RVA: 0x001C5464 File Offset: 0x001C3664
 		public void Select(Vector2 _start, Vector2 _end)
 		{
 			_start.y = (float)Screen.height - _start.y;
@@ -132,37 +132,37 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029A4 RID: 10660 RVA: 0x001BF971 File Offset: 0x001BDB71
+		// Token: 0x060029FA RID: 10746 RVA: 0x001C555D File Offset: 0x001C375D
 		public Color GetColor(float angle)
 		{
-			return AstarMath.HSVToRGB(angle * 57.295776f, 0.8f, 0.6f);
+			return AstarMath.HSVToRGB(angle * 57.2957764f, 0.8f, 0.6f);
 		}
 
-		// Token: 0x0400434E RID: 17230
+		// Token: 0x0400442C RID: 17452
 		public GUIStyle selectionBox;
 
-		// Token: 0x0400434F RID: 17231
+		// Token: 0x0400442D RID: 17453
 		public bool adjustCamera = true;
 
-		// Token: 0x04004350 RID: 17232
+		// Token: 0x0400442E RID: 17454
 		private Vector2 start;
 
-		// Token: 0x04004351 RID: 17233
+		// Token: 0x0400442F RID: 17455
 		private Vector2 end;
 
-		// Token: 0x04004352 RID: 17234
+		// Token: 0x04004430 RID: 17456
 		private bool wasDown;
 
-		// Token: 0x04004353 RID: 17235
+		// Token: 0x04004431 RID: 17457
 		private List<RVOExampleAgent> selection = new List<RVOExampleAgent>();
 
-		// Token: 0x04004354 RID: 17236
+		// Token: 0x04004432 RID: 17458
 		private Simulator sim;
 
-		// Token: 0x04004355 RID: 17237
+		// Token: 0x04004433 RID: 17459
 		private Camera cam;
 
-		// Token: 0x04004356 RID: 17238
-		private const float rad2Deg = 57.295776f;
+		// Token: 0x04004434 RID: 17460
+		private const float rad2Deg = 57.2957764f;
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200025D RID: 605
+// Token: 0x0200025E RID: 606
 public class DelinquentMaskScript : MonoBehaviour
 {
-	// Token: 0x0600131E RID: 4894 RVA: 0x0009E5C4 File Offset: 0x0009C7C4
+	// Token: 0x06001325 RID: 4901 RVA: 0x0009F548 File Offset: 0x0009D748
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.LeftAlt))
@@ -18,12 +18,12 @@ public class DelinquentMaskScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400197C RID: 6524
+	// Token: 0x0400199B RID: 6555
 	public MeshFilter MyRenderer;
 
-	// Token: 0x0400197D RID: 6525
+	// Token: 0x0400199C RID: 6556
 	public Mesh[] Meshes;
 
-	// Token: 0x0400197E RID: 6526
+	// Token: 0x0400199D RID: 6557
 	public int ID;
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200054A RID: 1354
+	// Token: 0x02000560 RID: 1376
 	[Serializable]
 	public struct IntRect
 	{
-		// Token: 0x06002406 RID: 9222 RVA: 0x001961EE File Offset: 0x001943EE
+		// Token: 0x0600245C RID: 9308 RVA: 0x0019BDDA File Offset: 0x00199FDA
 		public IntRect(int xmin, int ymin, int xmax, int ymax)
 		{
 			this.xmin = xmin;
@@ -17,14 +17,14 @@ namespace Pathfinding
 			this.ymax = ymax;
 		}
 
-		// Token: 0x06002407 RID: 9223 RVA: 0x0019620D File Offset: 0x0019440D
+		// Token: 0x0600245D RID: 9309 RVA: 0x0019BDF9 File Offset: 0x00199FF9
 		public bool Contains(int x, int y)
 		{
 			return x >= this.xmin && y >= this.ymin && x <= this.xmax && y <= this.ymax;
 		}
 
-		// Token: 0x17000575 RID: 1397
-		// (get) Token: 0x06002408 RID: 9224 RVA: 0x00196238 File Offset: 0x00194438
+		// Token: 0x1700057B RID: 1403
+		// (get) Token: 0x0600245E RID: 9310 RVA: 0x0019BE24 File Offset: 0x0019A024
 		public int Width
 		{
 			get
@@ -33,8 +33,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000576 RID: 1398
-		// (get) Token: 0x06002409 RID: 9225 RVA: 0x00196249 File Offset: 0x00194449
+		// Token: 0x1700057C RID: 1404
+		// (get) Token: 0x0600245F RID: 9311 RVA: 0x0019BE35 File Offset: 0x0019A035
 		public int Height
 		{
 			get
@@ -43,68 +43,68 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600240A RID: 9226 RVA: 0x0019625A File Offset: 0x0019445A
+		// Token: 0x06002460 RID: 9312 RVA: 0x0019BE46 File Offset: 0x0019A046
 		public bool IsValid()
 		{
 			return this.xmin <= this.xmax && this.ymin <= this.ymax;
 		}
 
-		// Token: 0x0600240B RID: 9227 RVA: 0x0019627D File Offset: 0x0019447D
+		// Token: 0x06002461 RID: 9313 RVA: 0x0019BE69 File Offset: 0x0019A069
 		public static bool operator ==(IntRect a, IntRect b)
 		{
 			return a.xmin == b.xmin && a.xmax == b.xmax && a.ymin == b.ymin && a.ymax == b.ymax;
 		}
 
-		// Token: 0x0600240C RID: 9228 RVA: 0x001962B9 File Offset: 0x001944B9
+		// Token: 0x06002462 RID: 9314 RVA: 0x0019BEA5 File Offset: 0x0019A0A5
 		public static bool operator !=(IntRect a, IntRect b)
 		{
 			return a.xmin != b.xmin || a.xmax != b.xmax || a.ymin != b.ymin || a.ymax != b.ymax;
 		}
 
-		// Token: 0x0600240D RID: 9229 RVA: 0x001962F8 File Offset: 0x001944F8
+		// Token: 0x06002463 RID: 9315 RVA: 0x0019BEE4 File Offset: 0x0019A0E4
 		public override bool Equals(object obj)
 		{
 			IntRect intRect = (IntRect)obj;
 			return this.xmin == intRect.xmin && this.xmax == intRect.xmax && this.ymin == intRect.ymin && this.ymax == intRect.ymax;
 		}
 
-		// Token: 0x0600240E RID: 9230 RVA: 0x00196346 File Offset: 0x00194546
+		// Token: 0x06002464 RID: 9316 RVA: 0x0019BF32 File Offset: 0x0019A132
 		public override int GetHashCode()
 		{
 			return this.xmin * 131071 ^ this.xmax * 3571 ^ this.ymin * 3109 ^ this.ymax * 7;
 		}
 
-		// Token: 0x0600240F RID: 9231 RVA: 0x00196378 File Offset: 0x00194578
+		// Token: 0x06002465 RID: 9317 RVA: 0x0019BF64 File Offset: 0x0019A164
 		public static IntRect Intersection(IntRect a, IntRect b)
 		{
 			return new IntRect(Math.Max(a.xmin, b.xmin), Math.Max(a.ymin, b.ymin), Math.Min(a.xmax, b.xmax), Math.Min(a.ymax, b.ymax));
 		}
 
-		// Token: 0x06002410 RID: 9232 RVA: 0x001963CE File Offset: 0x001945CE
+		// Token: 0x06002466 RID: 9318 RVA: 0x0019BFBA File Offset: 0x0019A1BA
 		public static bool Intersects(IntRect a, IntRect b)
 		{
 			return a.xmin <= b.xmax && a.ymin <= b.ymax && a.xmax >= b.xmin && a.ymax >= b.ymin;
 		}
 
-		// Token: 0x06002411 RID: 9233 RVA: 0x00196410 File Offset: 0x00194610
+		// Token: 0x06002467 RID: 9319 RVA: 0x0019BFFC File Offset: 0x0019A1FC
 		public static IntRect Union(IntRect a, IntRect b)
 		{
 			return new IntRect(Math.Min(a.xmin, b.xmin), Math.Min(a.ymin, b.ymin), Math.Max(a.xmax, b.xmax), Math.Max(a.ymax, b.ymax));
 		}
 
-		// Token: 0x06002412 RID: 9234 RVA: 0x00196466 File Offset: 0x00194666
+		// Token: 0x06002468 RID: 9320 RVA: 0x0019C052 File Offset: 0x0019A252
 		public IntRect ExpandToContain(int x, int y)
 		{
 			return new IntRect(Math.Min(this.xmin, x), Math.Min(this.ymin, y), Math.Max(this.xmax, x), Math.Max(this.ymax, y));
 		}
 
-		// Token: 0x06002413 RID: 9235 RVA: 0x0019649D File Offset: 0x0019469D
+		// Token: 0x06002469 RID: 9321 RVA: 0x0019C089 File Offset: 0x0019A289
 		public IntRect Expand(int range)
 		{
 			return new IntRect(this.xmin - range, this.ymin - range, this.xmax + range, this.ymax + range);
 		}
 
-		// Token: 0x06002414 RID: 9236 RVA: 0x001964C4 File Offset: 0x001946C4
+		// Token: 0x0600246A RID: 9322 RVA: 0x0019C0B0 File Offset: 0x0019A2B0
 		public IntRect Rotate(int r)
 		{
 			int num = IntRect.Rotations[r * 4];
@@ -118,19 +118,19 @@ namespace Pathfinding
 			return new IntRect(Math.Min(val, val3), Math.Min(val2, val4), Math.Max(val, val3), Math.Max(val2, val4));
 		}
 
-		// Token: 0x06002415 RID: 9237 RVA: 0x0019656F File Offset: 0x0019476F
+		// Token: 0x0600246B RID: 9323 RVA: 0x0019C15B File Offset: 0x0019A35B
 		public IntRect Offset(Int2 offset)
 		{
 			return new IntRect(this.xmin + offset.x, this.ymin + offset.y, this.xmax + offset.x, this.ymax + offset.y);
 		}
 
-		// Token: 0x06002416 RID: 9238 RVA: 0x001965AA File Offset: 0x001947AA
+		// Token: 0x0600246C RID: 9324 RVA: 0x0019C196 File Offset: 0x0019A396
 		public IntRect Offset(int x, int y)
 		{
 			return new IntRect(this.xmin + x, this.ymin + y, this.xmax + x, this.ymax + y);
 		}
 
-		// Token: 0x06002417 RID: 9239 RVA: 0x001965D4 File Offset: 0x001947D4
+		// Token: 0x0600246D RID: 9325 RVA: 0x0019C1C0 File Offset: 0x0019A3C0
 		public override string ToString()
 		{
 			return string.Concat(new object[]
@@ -147,7 +147,7 @@ namespace Pathfinding
 			});
 		}
 
-		// Token: 0x06002418 RID: 9240 RVA: 0x00196650 File Offset: 0x00194850
+		// Token: 0x0600246E RID: 9326 RVA: 0x0019C23C File Offset: 0x0019A43C
 		public void DebugDraw(GraphTransform transform, Color color)
 		{
 			Vector3 vector = transform.Transform(new Vector3((float)this.xmin, 0f, (float)this.ymin));
@@ -160,19 +160,19 @@ namespace Pathfinding
 			Debug.DrawLine(vector4, vector, color);
 		}
 
-		// Token: 0x04003FD4 RID: 16340
+		// Token: 0x040040B2 RID: 16562
 		public int xmin;
 
-		// Token: 0x04003FD5 RID: 16341
+		// Token: 0x040040B3 RID: 16563
 		public int ymin;
 
-		// Token: 0x04003FD6 RID: 16342
+		// Token: 0x040040B4 RID: 16564
 		public int xmax;
 
-		// Token: 0x04003FD7 RID: 16343
+		// Token: 0x040040B5 RID: 16565
 		public int ymax;
 
-		// Token: 0x04003FD8 RID: 16344
+		// Token: 0x040040B6 RID: 16566
 		private static readonly int[] Rotations = new int[]
 		{
 			1,

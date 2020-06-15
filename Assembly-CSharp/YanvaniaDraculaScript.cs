@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x0200047C RID: 1148
+// Token: 0x02000482 RID: 1154
 public class YanvaniaDraculaScript : MonoBehaviour
 {
-	// Token: 0x06001DB0 RID: 7600 RVA: 0x00170EBC File Offset: 0x0016F0BC
+	// Token: 0x06001DDF RID: 7647 RVA: 0x00174EBC File Offset: 0x001730BC
 	private void Awake()
 	{
 		Animation component = this.Character.GetComponent<Animation>();
@@ -15,7 +15,7 @@ public class YanvaniaDraculaScript : MonoBehaviour
 		component["succubus_a_charm_03"].speed = 4.66666f;
 	}
 
-	// Token: 0x06001DB1 RID: 7601 RVA: 0x00170F14 File Offset: 0x0016F114
+	// Token: 0x06001DE0 RID: 7648 RVA: 0x00174F14 File Offset: 0x00173114
 	private void Update()
 	{
 		Animation component = this.Character.GetComponent<Animation>();
@@ -192,7 +192,7 @@ public class YanvaniaDraculaScript : MonoBehaviour
 					{
 						if (!this.PhotoTaken)
 						{
-							Time.timeScale = Mathf.MoveTowards(Time.timeScale, 0f, 0.016666668f);
+							Time.timeScale = Mathf.MoveTowards(Time.timeScale, 0f, 0.0166666675f);
 							if (Time.timeScale == 0f)
 							{
 								ScreenCapture.CaptureScreenshot(Application.streamingAssetsPath + "/Dracula.png");
@@ -236,7 +236,7 @@ public class YanvaniaDraculaScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB2 RID: 7602 RVA: 0x00171A28 File Offset: 0x0016FC28
+	// Token: 0x06001DE1 RID: 7649 RVA: 0x00175A28 File Offset: 0x00173C28
 	public void SpawnTeleportEffect()
 	{
 		Animation component = this.Character.GetComponent<Animation>();
@@ -262,13 +262,13 @@ public class YanvaniaDraculaScript : MonoBehaviour
 		this.AttackID = 0;
 	}
 
-	// Token: 0x06001DB3 RID: 7603 RVA: 0x00171BA4 File Offset: 0x0016FDA4
+	// Token: 0x06001DE2 RID: 7650 RVA: 0x00175BA4 File Offset: 0x00173DA4
 	private void Teleport()
 	{
 		base.transform.position = new Vector3(base.transform.position.x, (base.transform.position.y > 0f) ? -10f : 6.5f, 0f);
 	}
 
-	// Token: 0x06001DB4 RID: 7604 RVA: 0x00171BFC File Offset: 0x0016FDFC
+	// Token: 0x06001DE3 RID: 7651 RVA: 0x00175BFC File Offset: 0x00173DFC
 	public void TakeDamage()
 	{
 		this.Health -= 5f + ((float)this.Yanmont.Level * 5f - 5f);
@@ -285,7 +285,7 @@ public class YanvaniaDraculaScript : MonoBehaviour
 		component.Play();
 	}
 
-	// Token: 0x06001DB5 RID: 7605 RVA: 0x00171C91 File Offset: 0x0016FE91
+	// Token: 0x06001DE4 RID: 7652 RVA: 0x00175C91 File Offset: 0x00173E91
 	private IEnumerator ApplyScreenshot()
 	{
 		this.PhotoTaken = true;
@@ -299,114 +299,114 @@ public class YanvaniaDraculaScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04003AA1 RID: 15009
+	// Token: 0x04003B2D RID: 15149
 	public YanvaniaCameraScript YanvaniaCamera;
 
-	// Token: 0x04003AA2 RID: 15010
+	// Token: 0x04003B2E RID: 15150
 	public YanvaniaYanmontScript Yanmont;
 
-	// Token: 0x04003AA3 RID: 15011
+	// Token: 0x04003B2F RID: 15151
 	public UITexture HealthBarParent;
 
-	// Token: 0x04003AA4 RID: 15012
+	// Token: 0x04003B30 RID: 15152
 	public UITexture Photograph;
 
-	// Token: 0x04003AA5 RID: 15013
+	// Token: 0x04003B31 RID: 15153
 	public AudioClip DeathScream;
 
-	// Token: 0x04003AA6 RID: 15014
+	// Token: 0x04003B32 RID: 15154
 	public AudioClip FinalLine;
 
-	// Token: 0x04003AA7 RID: 15015
+	// Token: 0x04003B33 RID: 15155
 	public GameObject NewTeleportEffect;
 
-	// Token: 0x04003AA8 RID: 15016
+	// Token: 0x04003B34 RID: 15156
 	public GameObject NewAttack;
 
-	// Token: 0x04003AA9 RID: 15017
+	// Token: 0x04003B35 RID: 15157
 	public GameObject DoubleFireball;
 
-	// Token: 0x04003AAA RID: 15018
+	// Token: 0x04003B36 RID: 15158
 	public GameObject TripleFireball;
 
-	// Token: 0x04003AAB RID: 15019
+	// Token: 0x04003B37 RID: 15159
 	public GameObject MainCamera;
 
-	// Token: 0x04003AAC RID: 15020
+	// Token: 0x04003B38 RID: 15160
 	public GameObject EndCamera;
 
-	// Token: 0x04003AAD RID: 15021
+	// Token: 0x04003B39 RID: 15161
 	public GameObject TeleportEffect;
 
-	// Token: 0x04003AAE RID: 15022
+	// Token: 0x04003B3A RID: 15162
 	public GameObject Explosion;
 
-	// Token: 0x04003AAF RID: 15023
+	// Token: 0x04003B3B RID: 15163
 	public GameObject Character;
 
-	// Token: 0x04003AB0 RID: 15024
+	// Token: 0x04003B3C RID: 15164
 	public Transform HealthBar;
 
-	// Token: 0x04003AB1 RID: 15025
+	// Token: 0x04003B3D RID: 15165
 	public Transform RightHand;
 
-	// Token: 0x04003AB2 RID: 15026
+	// Token: 0x04003B3E RID: 15166
 	public Renderer MyRenderer;
 
-	// Token: 0x04003AB3 RID: 15027
+	// Token: 0x04003B3F RID: 15167
 	public AudioClip[] Injuries;
 
-	// Token: 0x04003AB4 RID: 15028
+	// Token: 0x04003B40 RID: 15168
 	public float ExplosionTimer;
 
-	// Token: 0x04003AB5 RID: 15029
+	// Token: 0x04003B41 RID: 15169
 	public float TeleportTimer = 10f;
 
-	// Token: 0x04003AB6 RID: 15030
+	// Token: 0x04003B42 RID: 15170
 	public float FinalTimer;
 
-	// Token: 0x04003AB7 RID: 15031
+	// Token: 0x04003B43 RID: 15171
 	public float DeathTimer;
 
-	// Token: 0x04003AB8 RID: 15032
+	// Token: 0x04003B44 RID: 15172
 	public float FlashTimer;
 
-	// Token: 0x04003AB9 RID: 15033
+	// Token: 0x04003B45 RID: 15173
 	public float Distance;
 
-	// Token: 0x04003ABA RID: 15034
+	// Token: 0x04003B46 RID: 15174
 	public float MaxHealth = 100f;
 
-	// Token: 0x04003ABB RID: 15035
+	// Token: 0x04003B47 RID: 15175
 	public float Health = 100f;
 
-	// Token: 0x04003ABC RID: 15036
+	// Token: 0x04003B48 RID: 15176
 	public bool FinalLineSpoken;
 
-	// Token: 0x04003ABD RID: 15037
+	// Token: 0x04003B49 RID: 15177
 	public bool PhotoTaken;
 
-	// Token: 0x04003ABE RID: 15038
+	// Token: 0x04003B4A RID: 15178
 	public bool Screamed;
 
-	// Token: 0x04003ABF RID: 15039
+	// Token: 0x04003B4B RID: 15179
 	public bool Injured;
 
-	// Token: 0x04003AC0 RID: 15040
+	// Token: 0x04003B4C RID: 15180
 	public bool Shrink;
 
-	// Token: 0x04003AC1 RID: 15041
+	// Token: 0x04003B4D RID: 15181
 	public bool Grow;
 
-	// Token: 0x04003AC2 RID: 15042
+	// Token: 0x04003B4E RID: 15182
 	public bool Red;
 
-	// Token: 0x04003AC3 RID: 15043
+	// Token: 0x04003B4F RID: 15183
 	public int AttackID;
 
-	// Token: 0x04003AC4 RID: 15044
+	// Token: 0x04003B50 RID: 15184
 	public int Frames;
 
-	// Token: 0x04003AC5 RID: 15045
+	// Token: 0x04003B51 RID: 15185
 	public int Frame;
 }

@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000562 RID: 1378
+	// Token: 0x02000578 RID: 1400
 	[Serializable]
 	public class GraphCollision
 	{
-		// Token: 0x0600247D RID: 9341 RVA: 0x00197710 File Offset: 0x00195910
+		// Token: 0x060024D3 RID: 9427 RVA: 0x0019D2FC File Offset: 0x0019B4FC
 		public void Initialize(GraphTransform transform, float scale)
 		{
 			this.up = (transform.Transform(Vector3.up) - transform.Transform(Vector3.zero)).normalized;
@@ -19,7 +19,7 @@ namespace Pathfinding
 			this.finalRaycastRadius = this.thickRaycastDiameter * scale * 0.5f;
 		}
 
-		// Token: 0x0600247E RID: 9342 RVA: 0x00197788 File Offset: 0x00195988
+		// Token: 0x060024D4 RID: 9428 RVA: 0x0019D374 File Offset: 0x0019B574
 		public bool Check(Vector3 position)
 		{
 			if (!this.collisionCheck)
@@ -60,7 +60,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600247F RID: 9343 RVA: 0x00197914 File Offset: 0x00195B14
+		// Token: 0x060024D5 RID: 9429 RVA: 0x0019D500 File Offset: 0x0019B700
 		public Vector3 CheckHeight(Vector3 position)
 		{
 			RaycastHit raycastHit;
@@ -68,7 +68,7 @@ namespace Pathfinding
 			return this.CheckHeight(position, out raycastHit, out flag);
 		}
 
-		// Token: 0x06002480 RID: 9344 RVA: 0x0019792C File Offset: 0x00195B2C
+		// Token: 0x060024D6 RID: 9430 RVA: 0x0019D518 File Offset: 0x0019B718
 		public Vector3 CheckHeight(Vector3 position, out RaycastHit hit, out bool walkable)
 		{
 			walkable = true;
@@ -97,7 +97,7 @@ namespace Pathfinding
 			return position;
 		}
 
-		// Token: 0x06002481 RID: 9345 RVA: 0x00197A40 File Offset: 0x00195C40
+		// Token: 0x060024D7 RID: 9431 RVA: 0x0019D62C File Offset: 0x0019B82C
 		public Vector3 Raycast(Vector3 origin, out RaycastHit hit, out bool walkable)
 		{
 			walkable = true;
@@ -126,7 +126,7 @@ namespace Pathfinding
 			return origin - this.up * this.fromHeight;
 		}
 
-		// Token: 0x06002482 RID: 9346 RVA: 0x00197B50 File Offset: 0x00195D50
+		// Token: 0x060024D8 RID: 9432 RVA: 0x0019D73C File Offset: 0x0019B93C
 		public RaycastHit[] CheckHeightAll(Vector3 position)
 		{
 			if (!this.heightCheck || this.use2D)
@@ -185,7 +185,7 @@ namespace Pathfinding
 			return list.ToArray();
 		}
 
-		// Token: 0x06002483 RID: 9347 RVA: 0x00197C94 File Offset: 0x00195E94
+		// Token: 0x060024D9 RID: 9433 RVA: 0x0019D880 File Offset: 0x0019BA80
 		public void DeserializeSettingsCompatibility(GraphSerializationContext ctx)
 		{
 			this.type = (ColliderType)ctx.reader.ReadInt32();
@@ -204,61 +204,61 @@ namespace Pathfinding
 			this.heightCheck = ctx.reader.ReadBoolean();
 		}
 
-		// Token: 0x0400403F RID: 16447
+		// Token: 0x0400411D RID: 16669
 		public ColliderType type = ColliderType.Capsule;
 
-		// Token: 0x04004040 RID: 16448
+		// Token: 0x0400411E RID: 16670
 		public float diameter = 1f;
 
-		// Token: 0x04004041 RID: 16449
+		// Token: 0x0400411F RID: 16671
 		public float height = 2f;
 
-		// Token: 0x04004042 RID: 16450
+		// Token: 0x04004120 RID: 16672
 		public float collisionOffset;
 
-		// Token: 0x04004043 RID: 16451
+		// Token: 0x04004121 RID: 16673
 		public RayDirection rayDirection = RayDirection.Both;
 
-		// Token: 0x04004044 RID: 16452
+		// Token: 0x04004122 RID: 16674
 		public LayerMask mask;
 
-		// Token: 0x04004045 RID: 16453
+		// Token: 0x04004123 RID: 16675
 		public LayerMask heightMask = -1;
 
-		// Token: 0x04004046 RID: 16454
+		// Token: 0x04004124 RID: 16676
 		public float fromHeight = 100f;
 
-		// Token: 0x04004047 RID: 16455
+		// Token: 0x04004125 RID: 16677
 		public bool thickRaycast;
 
-		// Token: 0x04004048 RID: 16456
+		// Token: 0x04004126 RID: 16678
 		public float thickRaycastDiameter = 1f;
 
-		// Token: 0x04004049 RID: 16457
+		// Token: 0x04004127 RID: 16679
 		public bool unwalkableWhenNoGround = true;
 
-		// Token: 0x0400404A RID: 16458
+		// Token: 0x04004128 RID: 16680
 		public bool use2D;
 
-		// Token: 0x0400404B RID: 16459
+		// Token: 0x04004129 RID: 16681
 		public bool collisionCheck = true;
 
-		// Token: 0x0400404C RID: 16460
+		// Token: 0x0400412A RID: 16682
 		public bool heightCheck = true;
 
-		// Token: 0x0400404D RID: 16461
+		// Token: 0x0400412B RID: 16683
 		public Vector3 up;
 
-		// Token: 0x0400404E RID: 16462
+		// Token: 0x0400412C RID: 16684
 		private Vector3 upheight;
 
-		// Token: 0x0400404F RID: 16463
+		// Token: 0x0400412D RID: 16685
 		private float finalRadius;
 
-		// Token: 0x04004050 RID: 16464
+		// Token: 0x0400412E RID: 16686
 		private float finalRaycastRadius;
 
-		// Token: 0x04004051 RID: 16465
+		// Token: 0x0400412F RID: 16687
 		public const float RaycastErrorMargin = 0.005f;
 	}
 }

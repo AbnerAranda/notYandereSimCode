@@ -2,22 +2,22 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000593 RID: 1427
+	// Token: 0x020005A9 RID: 1449
 	public class EndingConditionDistance : PathEndingCondition
 	{
-		// Token: 0x060026D6 RID: 9942 RVA: 0x001AA363 File Offset: 0x001A8563
+		// Token: 0x0600272C RID: 10028 RVA: 0x001AFF4F File Offset: 0x001AE14F
 		public EndingConditionDistance(Path p, int maxGScore) : base(p)
 		{
 			this.maxGScore = maxGScore;
 		}
 
-		// Token: 0x060026D7 RID: 9943 RVA: 0x001AA37B File Offset: 0x001A857B
+		// Token: 0x0600272D RID: 10029 RVA: 0x001AFF67 File Offset: 0x001AE167
 		public override bool TargetFound(PathNode node)
 		{
 			return (ulong)node.G >= (ulong)((long)this.maxGScore);
 		}
 
-		// Token: 0x04004198 RID: 16792
+		// Token: 0x04004276 RID: 17014
 		public int maxGScore = 100;
 	}
 }

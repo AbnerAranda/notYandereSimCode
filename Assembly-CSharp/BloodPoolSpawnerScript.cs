@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020000DF RID: 223
+// Token: 0x020000E0 RID: 224
 public class BloodPoolSpawnerScript : MonoBehaviour
 {
-	// Token: 0x06000A54 RID: 2644 RVA: 0x00054EA4 File Offset: 0x000530A4
+	// Token: 0x06000A5B RID: 2651 RVA: 0x00055B3C File Offset: 0x00053D3C
 	public void Start()
 	{
+		this.PoolsSpawned = this.Ragdoll.Student.BloodPoolsSpawned;
 		if (SceneManager.GetActiveScene().name == "SchoolScene")
 		{
 			this.GardenArea = GameObject.Find("GardenArea").GetComponent<Collider>();
@@ -25,7 +26,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		this.Positions[4] = new Vector3(0f, 0.012f, -0.5f);
 	}
 
-	// Token: 0x06000A55 RID: 2645 RVA: 0x00054FE5 File Offset: 0x000531E5
+	// Token: 0x06000A5C RID: 2652 RVA: 0x00055C93 File Offset: 0x00053E93
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.name == "BloodPool(Clone)")
@@ -35,7 +36,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A56 RID: 2646 RVA: 0x00055018 File Offset: 0x00053218
+	// Token: 0x06000A5D RID: 2653 RVA: 0x00055CC6 File Offset: 0x00053EC6
 	private void OnTriggerExit(Collider other)
 	{
 		if (other.gameObject.name == "BloodPool(Clone)")
@@ -44,7 +45,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A57 RID: 2647 RVA: 0x00055040 File Offset: 0x00053240
+	// Token: 0x06000A5E RID: 2654 RVA: 0x00055CF0 File Offset: 0x00053EF0
 	private void Update()
 	{
 		if (!this.Falling)
@@ -61,7 +62,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 				{
 					this.CanSpawn = (!this.GardenArea.bounds.Contains(position) && !this.NEStairs.bounds.Contains(position) && !this.NWStairs.bounds.Contains(position) && !this.SEStairs.bounds.Contains(position) && !this.SWStairs.bounds.Contains(position));
 				}
-				if (this.CanSpawn && position.y < this.Height + 0.33333334f)
+				if (this.CanSpawn && position.y < this.Height + 0.333333343f)
 				{
 					if (this.NearbyBlood > 0 && this.LastBloodPool == null)
 					{
@@ -76,6 +77,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 							gameObject.transform.localEulerAngles = new Vector3(90f, UnityEngine.Random.Range(0f, 360f), 0f);
 							gameObject.transform.parent = this.BloodParent;
 							this.PoolsSpawned++;
+							this.Ragdoll.Student.BloodPoolsSpawned++;
 							return;
 						}
 						if (this.PoolsSpawned < 20)
@@ -84,6 +86,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 							gameObject2.transform.localEulerAngles = new Vector3(90f, UnityEngine.Random.Range(0f, 360f), 0f);
 							gameObject2.transform.parent = this.BloodParent;
 							this.PoolsSpawned++;
+							this.Ragdoll.Student.BloodPoolsSpawned++;
 							gameObject2.GetComponent<BloodPoolScript>().TargetSize = 1f - (float)(this.PoolsSpawned - 10) * 0.1f;
 							if (this.PoolsSpawned == 20)
 							{
@@ -105,7 +108,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A58 RID: 2648 RVA: 0x000552F8 File Offset: 0x000534F8
+	// Token: 0x06000A5F RID: 2655 RVA: 0x00055FDC File Offset: 0x000541DC
 	public void SpawnBigPool()
 	{
 		this.SetHeight();
@@ -118,7 +121,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A59 RID: 2649 RVA: 0x000553A8 File Offset: 0x000535A8
+	// Token: 0x06000A60 RID: 2656 RVA: 0x0005608C File Offset: 0x0005428C
 	private void SpawnRow(Transform Location)
 	{
 		Vector3 position = Location.position;
@@ -134,7 +137,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		gameObject3.transform.parent = this.BloodParent;
 	}
 
-	// Token: 0x06000A5A RID: 2650 RVA: 0x000554D4 File Offset: 0x000536D4
+	// Token: 0x06000A61 RID: 2657 RVA: 0x000561B8 File Offset: 0x000543B8
 	public void SpawnPool(Transform Location)
 	{
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.BloodPool, Location.position + Location.forward + new Vector3(0f, 0.0001f, 0f), Quaternion.identity);
@@ -142,7 +145,7 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		gameObject.transform.parent = this.BloodParent;
 	}
 
-	// Token: 0x06000A5B RID: 2651 RVA: 0x00055554 File Offset: 0x00053754
+	// Token: 0x06000A62 RID: 2658 RVA: 0x00056238 File Offset: 0x00054438
 	private void SetHeight()
 	{
 		float y = base.transform.position.y;
@@ -164,63 +167,63 @@ public class BloodPoolSpawnerScript : MonoBehaviour
 		this.Height = 12f;
 	}
 
-	// Token: 0x04000A97 RID: 2711
+	// Token: 0x04000AB5 RID: 2741
 	public RagdollScript Ragdoll;
 
-	// Token: 0x04000A98 RID: 2712
+	// Token: 0x04000AB6 RID: 2742
 	public GameObject LastBloodPool;
 
-	// Token: 0x04000A99 RID: 2713
+	// Token: 0x04000AB7 RID: 2743
 	public GameObject BloodPool;
 
-	// Token: 0x04000A9A RID: 2714
+	// Token: 0x04000AB8 RID: 2744
 	public Transform BloodParent;
 
-	// Token: 0x04000A9B RID: 2715
+	// Token: 0x04000AB9 RID: 2745
 	public Transform Hips;
 
-	// Token: 0x04000A9C RID: 2716
+	// Token: 0x04000ABA RID: 2746
 	public Collider MyCollider;
 
-	// Token: 0x04000A9D RID: 2717
+	// Token: 0x04000ABB RID: 2747
 	public Collider GardenArea;
 
-	// Token: 0x04000A9E RID: 2718
+	// Token: 0x04000ABC RID: 2748
 	public Collider NEStairs;
 
-	// Token: 0x04000A9F RID: 2719
+	// Token: 0x04000ABD RID: 2749
 	public Collider NWStairs;
 
-	// Token: 0x04000AA0 RID: 2720
+	// Token: 0x04000ABE RID: 2750
 	public Collider SEStairs;
 
-	// Token: 0x04000AA1 RID: 2721
+	// Token: 0x04000ABF RID: 2751
 	public Collider SWStairs;
 
-	// Token: 0x04000AA2 RID: 2722
+	// Token: 0x04000AC0 RID: 2752
 	public Vector3[] Positions;
 
-	// Token: 0x04000AA3 RID: 2723
+	// Token: 0x04000AC1 RID: 2753
 	public bool CanSpawn;
 
-	// Token: 0x04000AA4 RID: 2724
+	// Token: 0x04000AC2 RID: 2754
 	public bool Falling;
 
-	// Token: 0x04000AA5 RID: 2725
+	// Token: 0x04000AC3 RID: 2755
 	public int PoolsSpawned;
 
-	// Token: 0x04000AA6 RID: 2726
+	// Token: 0x04000AC4 RID: 2756
 	public int NearbyBlood;
 
-	// Token: 0x04000AA7 RID: 2727
+	// Token: 0x04000AC5 RID: 2757
 	public float FallTimer;
 
-	// Token: 0x04000AA8 RID: 2728
+	// Token: 0x04000AC6 RID: 2758
 	public float Height;
 
-	// Token: 0x04000AA9 RID: 2729
+	// Token: 0x04000AC7 RID: 2759
 	public float Timer;
 
-	// Token: 0x04000AAA RID: 2730
+	// Token: 0x04000AC8 RID: 2760
 	public LayerMask Mask;
 }

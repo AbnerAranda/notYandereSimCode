@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E9 RID: 1513
+	// Token: 0x020005FF RID: 1535
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_bezier_mover.php")]
 	public class BezierMover : MonoBehaviour
 	{
-		// Token: 0x060029BB RID: 10683 RVA: 0x001C11D4 File Offset: 0x001BF3D4
+		// Token: 0x06002A11 RID: 10769 RVA: 0x001C6DC0 File Offset: 0x001C4FC0
 		private Vector3 Position(float t)
 		{
 			int num = this.points.Length;
@@ -15,7 +15,7 @@ namespace Pathfinding.Examples
 			return AstarSplines.CatmullRom(this.points[(num2 - 1 + num) % num].position, this.points[num2].position, this.points[(num2 + 1) % num].position, this.points[(num2 + 2) % num].position, t - (float)Mathf.FloorToInt(t));
 		}
 
-		// Token: 0x060029BC RID: 10684 RVA: 0x001C1244 File Offset: 0x001BF444
+		// Token: 0x06002A12 RID: 10770 RVA: 0x001C6E30 File Offset: 0x001C5030
 		private void Update()
 		{
 			float num = this.time;
@@ -42,7 +42,7 @@ namespace Pathfinding.Examples
 			base.transform.rotation = Quaternion.LookRotation(a - vector, upwards);
 		}
 
-		// Token: 0x060029BD RID: 10685 RVA: 0x001C13A8 File Offset: 0x001BF5A8
+		// Token: 0x06002A13 RID: 10771 RVA: 0x001C6F94 File Offset: 0x001C5194
 		private void OnDrawGizmos()
 		{
 			if (this.points.Length >= 3)
@@ -68,16 +68,16 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x04004389 RID: 17289
+		// Token: 0x04004467 RID: 17511
 		public Transform[] points;
 
-		// Token: 0x0400438A RID: 17290
+		// Token: 0x04004468 RID: 17512
 		public float speed = 1f;
 
-		// Token: 0x0400438B RID: 17291
+		// Token: 0x04004469 RID: 17513
 		public float tiltAmount = 1f;
 
-		// Token: 0x0400438C RID: 17292
+		// Token: 0x0400446A RID: 17514
 		private float time;
 	}
 }

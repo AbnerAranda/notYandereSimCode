@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003C7 RID: 967
+// Token: 0x020003CC RID: 972
 public class SchemeManagerScript : MonoBehaviour
 {
-	// Token: 0x06001A3E RID: 6718 RVA: 0x00100D78 File Offset: 0x000FEF78
+	// Token: 0x06001A5F RID: 6751 RVA: 0x001033EC File Offset: 0x001015EC
 	private void Update()
 	{
 		if (this.Clock.HourTime > 15.5f)
@@ -32,15 +32,15 @@ public class SchemeManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400297B RID: 10619
+	// Token: 0x040029DC RID: 10716
 	public SchemesScript Schemes;
 
-	// Token: 0x0400297C RID: 10620
+	// Token: 0x040029DD RID: 10717
 	public ClockScript Clock;
 
-	// Token: 0x0400297D RID: 10621
+	// Token: 0x040029DE RID: 10718
 	public bool ClockCheck;
 
-	// Token: 0x0400297E RID: 10622
+	// Token: 0x040029DF RID: 10719
 	public float Timer;
 }

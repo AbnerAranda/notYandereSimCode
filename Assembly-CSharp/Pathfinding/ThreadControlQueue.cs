@@ -3,17 +3,17 @@ using System.Threading;
 
 namespace Pathfinding
 {
-	// Token: 0x02000532 RID: 1330
+	// Token: 0x02000548 RID: 1352
 	internal class ThreadControlQueue
 	{
-		// Token: 0x06002326 RID: 8998 RVA: 0x00193CFC File Offset: 0x00191EFC
+		// Token: 0x0600237C RID: 9084 RVA: 0x001998E8 File Offset: 0x00197AE8
 		public ThreadControlQueue(int numReceivers)
 		{
 			this.numReceivers = numReceivers;
 		}
 
-		// Token: 0x1700054C RID: 1356
-		// (get) Token: 0x06002327 RID: 8999 RVA: 0x00193D22 File Offset: 0x00191F22
+		// Token: 0x17000552 RID: 1362
+		// (get) Token: 0x0600237D RID: 9085 RVA: 0x0019990E File Offset: 0x00197B0E
 		public bool IsEmpty
 		{
 			get
@@ -22,8 +22,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700054D RID: 1357
-		// (get) Token: 0x06002328 RID: 9000 RVA: 0x00193D2D File Offset: 0x00191F2D
+		// Token: 0x17000553 RID: 1363
+		// (get) Token: 0x0600237E RID: 9086 RVA: 0x00199919 File Offset: 0x00197B19
 		public bool IsTerminating
 		{
 			get
@@ -32,7 +32,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002329 RID: 9001 RVA: 0x00193D38 File Offset: 0x00191F38
+		// Token: 0x0600237F RID: 9087 RVA: 0x00199924 File Offset: 0x00197B24
 		public void Block()
 		{
 			object obj = this.lockObj;
@@ -43,7 +43,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600232A RID: 9002 RVA: 0x00193D88 File Offset: 0x00191F88
+		// Token: 0x06002380 RID: 9088 RVA: 0x00199974 File Offset: 0x00197B74
 		public void Unblock()
 		{
 			object obj = this.lockObj;
@@ -54,20 +54,20 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600232B RID: 9003 RVA: 0x00193DD8 File Offset: 0x00191FD8
+		// Token: 0x06002381 RID: 9089 RVA: 0x001999C4 File Offset: 0x00197BC4
 		public void Lock()
 		{
 			Monitor.Enter(this.lockObj);
 		}
 
-		// Token: 0x0600232C RID: 9004 RVA: 0x00193DE5 File Offset: 0x00191FE5
+		// Token: 0x06002382 RID: 9090 RVA: 0x001999D1 File Offset: 0x00197BD1
 		public void Unlock()
 		{
 			Monitor.Exit(this.lockObj);
 		}
 
-		// Token: 0x1700054E RID: 1358
-		// (get) Token: 0x0600232D RID: 9005 RVA: 0x00193DF4 File Offset: 0x00191FF4
+		// Token: 0x17000554 RID: 1364
+		// (get) Token: 0x06002383 RID: 9091 RVA: 0x001999E0 File Offset: 0x00197BE0
 		public bool AllReceiversBlocked
 		{
 			get
@@ -82,7 +82,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600232E RID: 9006 RVA: 0x00193E4C File Offset: 0x0019204C
+		// Token: 0x06002384 RID: 9092 RVA: 0x00199A38 File Offset: 0x00197C38
 		public void PushFront(Path path)
 		{
 			object obj = this.lockObj;
@@ -113,7 +113,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600232F RID: 9007 RVA: 0x00193EE8 File Offset: 0x001920E8
+		// Token: 0x06002385 RID: 9093 RVA: 0x00199AD4 File Offset: 0x00197CD4
 		public void Push(Path path)
 		{
 			object obj = this.lockObj;
@@ -144,14 +144,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002330 RID: 9008 RVA: 0x00193F84 File Offset: 0x00192184
+		// Token: 0x06002386 RID: 9094 RVA: 0x00199B70 File Offset: 0x00197D70
 		private void Starving()
 		{
 			this.starving = true;
 			this.block.Reset();
 		}
 
-		// Token: 0x06002331 RID: 9009 RVA: 0x00193F9C File Offset: 0x0019219C
+		// Token: 0x06002387 RID: 9095 RVA: 0x00199B88 File Offset: 0x00197D88
 		public void TerminateReceivers()
 		{
 			object obj = this.lockObj;
@@ -162,7 +162,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002332 RID: 9010 RVA: 0x00193FEC File Offset: 0x001921EC
+		// Token: 0x06002388 RID: 9096 RVA: 0x00199BD8 File Offset: 0x00197DD8
 		public Path Pop()
 		{
 			Path result;
@@ -217,7 +217,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002333 RID: 9011 RVA: 0x00194154 File Offset: 0x00192354
+		// Token: 0x06002389 RID: 9097 RVA: 0x00199D40 File Offset: 0x00197F40
 		public void ReceiverTerminated()
 		{
 			Monitor.Enter(this.lockObj);
@@ -225,7 +225,7 @@ namespace Pathfinding
 			Monitor.Exit(this.lockObj);
 		}
 
-		// Token: 0x06002334 RID: 9012 RVA: 0x0019417C File Offset: 0x0019237C
+		// Token: 0x0600238A RID: 9098 RVA: 0x00199D68 File Offset: 0x00197F68
 		public Path PopNoBlock(bool blockedBefore)
 		{
 			Path result;
@@ -283,34 +283,34 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x04003F4A RID: 16202
+		// Token: 0x04004028 RID: 16424
 		private Path head;
 
-		// Token: 0x04003F4B RID: 16203
+		// Token: 0x04004029 RID: 16425
 		private Path tail;
 
-		// Token: 0x04003F4C RID: 16204
+		// Token: 0x0400402A RID: 16426
 		private readonly object lockObj = new object();
 
-		// Token: 0x04003F4D RID: 16205
+		// Token: 0x0400402B RID: 16427
 		private readonly int numReceivers;
 
-		// Token: 0x04003F4E RID: 16206
+		// Token: 0x0400402C RID: 16428
 		private bool blocked;
 
-		// Token: 0x04003F4F RID: 16207
+		// Token: 0x0400402D RID: 16429
 		private int blockedReceivers;
 
-		// Token: 0x04003F50 RID: 16208
+		// Token: 0x0400402E RID: 16430
 		private bool starving;
 
-		// Token: 0x04003F51 RID: 16209
+		// Token: 0x0400402F RID: 16431
 		private bool terminate;
 
-		// Token: 0x04003F52 RID: 16210
+		// Token: 0x04004030 RID: 16432
 		private ManualResetEvent block = new ManualResetEvent(true);
 
-		// Token: 0x02000722 RID: 1826
+		// Token: 0x0200073C RID: 1852
 		public class QueueTerminationException : Exception
 		{
 		}

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200037F RID: 895
+// Token: 0x02000384 RID: 900
 public class PromptScript : MonoBehaviour
 {
-	// Token: 0x06001951 RID: 6481 RVA: 0x000F32DC File Offset: 0x000F14DC
+	// Token: 0x06001972 RID: 6514 RVA: 0x000F58E8 File Offset: 0x000F3AE8
 	private void Awake()
 	{
 		bool student = this.Student;
@@ -96,7 +96,7 @@ public class PromptScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001952 RID: 6482 RVA: 0x000F3855 File Offset: 0x000F1A55
+	// Token: 0x06001973 RID: 6515 RVA: 0x000F5E61 File Offset: 0x000F4061
 	private void Start()
 	{
 		if (this.DisableAtStart)
@@ -106,7 +106,7 @@ public class PromptScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001953 RID: 6483 RVA: 0x000F386C File Offset: 0x000F1A6C
+	// Token: 0x06001974 RID: 6516 RVA: 0x000F5E78 File Offset: 0x000F4078
 	private PromptOwnerType DecideOwnerType()
 	{
 		if (base.GetComponent<DoorScript>() != null)
@@ -116,19 +116,19 @@ public class PromptScript : MonoBehaviour
 		return PromptOwnerType.Unknown;
 	}
 
-	// Token: 0x06001954 RID: 6484 RVA: 0x000F387F File Offset: 0x000F1A7F
+	// Token: 0x06001975 RID: 6517 RVA: 0x000F5E8B File Offset: 0x000F408B
 	private bool AllowedWhenCrouching(PromptOwnerType ownerType)
 	{
 		return ownerType == PromptOwnerType.Door;
 	}
 
-	// Token: 0x06001955 RID: 6485 RVA: 0x0002D171 File Offset: 0x0002B371
+	// Token: 0x06001976 RID: 6518 RVA: 0x0002D199 File Offset: 0x0002B399
 	private bool AllowedWhenCrawling(PromptOwnerType ownerType)
 	{
 		return false;
 	}
 
-	// Token: 0x06001956 RID: 6486 RVA: 0x000F3888 File Offset: 0x000F1A88
+	// Token: 0x06001977 RID: 6519 RVA: 0x000F5E94 File Offset: 0x000F4094
 	private void Update()
 	{
 		if (this.PauseScreen.Show)
@@ -429,20 +429,20 @@ public class PromptScript : MonoBehaviour
 		this.Hide();
 	}
 
-	// Token: 0x06001957 RID: 6487 RVA: 0x000F47C1 File Offset: 0x000F29C1
+	// Token: 0x06001978 RID: 6520 RVA: 0x000F6DCD File Offset: 0x000F4FCD
 	private void OnBecameVisible()
 	{
 		this.InView = true;
 	}
 
-	// Token: 0x06001958 RID: 6488 RVA: 0x000F47CA File Offset: 0x000F29CA
+	// Token: 0x06001979 RID: 6521 RVA: 0x000F6DD6 File Offset: 0x000F4FD6
 	private void OnBecameInvisible()
 	{
 		this.InView = false;
 		this.Hide();
 	}
 
-	// Token: 0x06001959 RID: 6489 RVA: 0x000F47DC File Offset: 0x000F29DC
+	// Token: 0x0600197A RID: 6522 RVA: 0x000F6DE8 File Offset: 0x000F4FE8
 	public void Hide()
 	{
 		if (!this.Hidden)
@@ -494,164 +494,164 @@ public class PromptScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002695 RID: 9877
+	// Token: 0x040026EE RID: 9966
 	public PauseScreenScript PauseScreen;
 
-	// Token: 0x04002696 RID: 9878
+	// Token: 0x040026EF RID: 9967
 	public StudentScript MyStudent;
 
-	// Token: 0x04002697 RID: 9879
+	// Token: 0x040026F0 RID: 9968
 	public YandereScript Yandere;
 
-	// Token: 0x04002698 RID: 9880
+	// Token: 0x040026F1 RID: 9969
 	public GameObject[] ButtonObject;
 
-	// Token: 0x04002699 RID: 9881
+	// Token: 0x040026F2 RID: 9970
 	public GameObject SpeakerObject;
 
-	// Token: 0x0400269A RID: 9882
+	// Token: 0x040026F3 RID: 9971
 	public GameObject CircleObject;
 
-	// Token: 0x0400269B RID: 9883
+	// Token: 0x040026F4 RID: 9972
 	public GameObject LabelObject;
 
-	// Token: 0x0400269C RID: 9884
+	// Token: 0x040026F5 RID: 9973
 	public PromptParentScript PromptParent;
 
-	// Token: 0x0400269D RID: 9885
+	// Token: 0x040026F6 RID: 9974
 	public Collider MyCollider;
 
-	// Token: 0x0400269E RID: 9886
+	// Token: 0x040026F7 RID: 9975
 	public Camera MainCamera;
 
-	// Token: 0x0400269F RID: 9887
+	// Token: 0x040026F8 RID: 9976
 	public Camera UICamera;
 
-	// Token: 0x040026A0 RID: 9888
+	// Token: 0x040026F9 RID: 9977
 	public bool[] AcceptingInput;
 
-	// Token: 0x040026A1 RID: 9889
+	// Token: 0x040026FA RID: 9978
 	public bool[] ButtonActive;
 
-	// Token: 0x040026A2 RID: 9890
+	// Token: 0x040026FB RID: 9979
 	public bool[] HideButton;
 
-	// Token: 0x040026A3 RID: 9891
+	// Token: 0x040026FC RID: 9980
 	public UISprite[] Button;
 
-	// Token: 0x040026A4 RID: 9892
+	// Token: 0x040026FD RID: 9981
 	public UISprite[] Circle;
 
-	// Token: 0x040026A5 RID: 9893
+	// Token: 0x040026FE RID: 9982
 	public UILabel[] Label;
 
-	// Token: 0x040026A6 RID: 9894
+	// Token: 0x040026FF RID: 9983
 	public UISprite Speaker;
 
-	// Token: 0x040026A7 RID: 9895
+	// Token: 0x04002700 RID: 9984
 	public UISprite Square;
 
-	// Token: 0x040026A8 RID: 9896
+	// Token: 0x04002701 RID: 9985
 	public float[] OffsetX;
 
-	// Token: 0x040026A9 RID: 9897
+	// Token: 0x04002702 RID: 9986
 	public float[] OffsetY;
 
-	// Token: 0x040026AA RID: 9898
+	// Token: 0x04002703 RID: 9987
 	public float[] OffsetZ;
 
-	// Token: 0x040026AB RID: 9899
+	// Token: 0x04002704 RID: 9988
 	public string[] Text;
 
-	// Token: 0x040026AC RID: 9900
+	// Token: 0x04002705 RID: 9989
 	public PromptOwnerType OwnerType;
 
-	// Token: 0x040026AD RID: 9901
+	// Token: 0x04002706 RID: 9990
 	public bool DisableAtStart;
 
-	// Token: 0x040026AE RID: 9902
+	// Token: 0x04002707 RID: 9991
 	public bool Suspicious;
 
-	// Token: 0x040026AF RID: 9903
+	// Token: 0x04002708 RID: 9992
 	public bool Debugging;
 
-	// Token: 0x040026B0 RID: 9904
+	// Token: 0x04002709 RID: 9993
 	public bool SquareSet;
 
-	// Token: 0x040026B1 RID: 9905
+	// Token: 0x0400270A RID: 9994
 	public bool Carried;
 
-	// Token: 0x040026B2 RID: 9906
+	// Token: 0x0400270B RID: 9995
 	[Tooltip("This means that the prompt's renderer is within the camera's cone of vision.")]
 	public bool InSight;
 
-	// Token: 0x040026B3 RID: 9907
+	// Token: 0x0400270C RID: 9996
 	[Tooltip("This means that a raycast can hit the prompt's collider.")]
 	public bool InView;
 
-	// Token: 0x040026B4 RID: 9908
+	// Token: 0x0400270D RID: 9997
 	public bool NoCheck;
 
-	// Token: 0x040026B5 RID: 9909
+	// Token: 0x0400270E RID: 9998
 	public bool Attack;
 
-	// Token: 0x040026B6 RID: 9910
+	// Token: 0x0400270F RID: 9999
 	public bool Weapon;
 
-	// Token: 0x040026B7 RID: 9911
+	// Token: 0x04002710 RID: 10000
 	public bool Noisy;
 
-	// Token: 0x040026B8 RID: 9912
+	// Token: 0x04002711 RID: 10001
 	public bool Local = true;
 
-	// Token: 0x040026B9 RID: 9913
+	// Token: 0x04002712 RID: 10002
 	public float RelativePosition;
 
-	// Token: 0x040026BA RID: 9914
+	// Token: 0x04002713 RID: 10003
 	public float MaximumDistance = 5f;
 
-	// Token: 0x040026BB RID: 9915
+	// Token: 0x04002714 RID: 10004
 	public float MinimumDistance;
 
-	// Token: 0x040026BC RID: 9916
+	// Token: 0x04002715 RID: 10005
 	public float DistanceSqr;
 
-	// Token: 0x040026BD RID: 9917
+	// Token: 0x04002716 RID: 10006
 	public float Height;
 
-	// Token: 0x040026BE RID: 9918
+	// Token: 0x04002717 RID: 10007
 	public int ButtonHeld;
 
-	// Token: 0x040026BF RID: 9919
+	// Token: 0x04002718 RID: 10008
 	public int BloodMask;
 
-	// Token: 0x040026C0 RID: 9920
+	// Token: 0x04002719 RID: 10009
 	public int Priority;
 
-	// Token: 0x040026C1 RID: 9921
+	// Token: 0x0400271A RID: 10010
 	public int ID;
 
-	// Token: 0x040026C2 RID: 9922
+	// Token: 0x0400271B RID: 10011
 	public GameObject YandereObject;
 
-	// Token: 0x040026C3 RID: 9923
+	// Token: 0x0400271C RID: 10012
 	public Transform RaycastTarget;
 
-	// Token: 0x040026C4 RID: 9924
+	// Token: 0x0400271D RID: 10013
 	public float MinimumDistanceSqr;
 
-	// Token: 0x040026C5 RID: 9925
+	// Token: 0x0400271E RID: 10014
 	public float MaximumDistanceSqr;
 
-	// Token: 0x040026C6 RID: 9926
+	// Token: 0x0400271F RID: 10015
 	public float Timer;
 
-	// Token: 0x040026C7 RID: 9927
+	// Token: 0x04002720 RID: 10016
 	public bool Student;
 
-	// Token: 0x040026C8 RID: 9928
+	// Token: 0x04002721 RID: 10017
 	public bool Door;
 
-	// Token: 0x040026C9 RID: 9929
+	// Token: 0x04002722 RID: 10018
 	public bool Hidden;
 }

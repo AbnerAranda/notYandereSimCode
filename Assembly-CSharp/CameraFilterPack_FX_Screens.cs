@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B0 RID: 432
+// Token: 0x020001B1 RID: 433
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/Screens")]
 public class CameraFilterPack_FX_Screens : MonoBehaviour
 {
 	// Token: 0x170002D0 RID: 720
-	// (get) Token: 0x06000F33 RID: 3891 RVA: 0x0007217D File Offset: 0x0007037D
+	// (get) Token: 0x06000F3A RID: 3898 RVA: 0x00072EAD File Offset: 0x000710AD
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_Screens : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F34 RID: 3892 RVA: 0x000721B1 File Offset: 0x000703B1
+	// Token: 0x06000F3B RID: 3899 RVA: 0x00072EE1 File Offset: 0x000710E1
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_Screens");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_Screens : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F35 RID: 3893 RVA: 0x000721D4 File Offset: 0x000703D4
+	// Token: 0x06000F3C RID: 3900 RVA: 0x00072F04 File Offset: 0x00071104
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -55,12 +55,12 @@ public class CameraFilterPack_FX_Screens : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F36 RID: 3894 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F3D RID: 3901 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F37 RID: 3895 RVA: 0x000722E2 File Offset: 0x000704E2
+	// Token: 0x06000F3E RID: 3902 RVA: 0x00073012 File Offset: 0x00071212
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -69,31 +69,31 @@ public class CameraFilterPack_FX_Screens : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011E8 RID: 4584
+	// Token: 0x04001207 RID: 4615
 	public Shader SCShader;
 
-	// Token: 0x040011E9 RID: 4585
+	// Token: 0x04001208 RID: 4616
 	private float TimeX = 1f;
 
-	// Token: 0x040011EA RID: 4586
+	// Token: 0x04001209 RID: 4617
 	private Material SCMaterial;
 
-	// Token: 0x040011EB RID: 4587
+	// Token: 0x0400120A RID: 4618
 	[Range(0f, 256f)]
 	public float Tiles = 8f;
 
-	// Token: 0x040011EC RID: 4588
+	// Token: 0x0400120B RID: 4619
 	[Range(0f, 5f)]
 	public float Speed = 0.25f;
 
-	// Token: 0x040011ED RID: 4589
+	// Token: 0x0400120C RID: 4620
 	public Color color = new Color(0f, 1f, 1f, 1f);
 
-	// Token: 0x040011EE RID: 4590
+	// Token: 0x0400120D RID: 4621
 	[Range(-1f, 1f)]
 	public float PosX;
 
-	// Token: 0x040011EF RID: 4591
+	// Token: 0x0400120E RID: 4622
 	[Range(-1f, 1f)]
 	public float PosY;
 }

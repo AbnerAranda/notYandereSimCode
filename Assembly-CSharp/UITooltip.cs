@@ -6,7 +6,7 @@ using UnityEngine;
 public class UITooltip : MonoBehaviour
 {
 	// Token: 0x170001E7 RID: 487
-	// (get) Token: 0x06000925 RID: 2341 RVA: 0x0004894D File Offset: 0x00046B4D
+	// (get) Token: 0x06000926 RID: 2342 RVA: 0x00048975 File Offset: 0x00046B75
 	public static bool isVisible
 	{
 		get
@@ -15,19 +15,19 @@ public class UITooltip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000926 RID: 2342 RVA: 0x0004896F File Offset: 0x00046B6F
+	// Token: 0x06000927 RID: 2343 RVA: 0x00048997 File Offset: 0x00046B97
 	private void Awake()
 	{
 		UITooltip.mInstance = this;
 	}
 
-	// Token: 0x06000927 RID: 2343 RVA: 0x00048977 File Offset: 0x00046B77
+	// Token: 0x06000928 RID: 2344 RVA: 0x0004899F File Offset: 0x00046B9F
 	private void OnDestroy()
 	{
 		UITooltip.mInstance = null;
 	}
 
-	// Token: 0x06000928 RID: 2344 RVA: 0x00048980 File Offset: 0x00046B80
+	// Token: 0x06000929 RID: 2345 RVA: 0x000489A8 File Offset: 0x00046BA8
 	protected virtual void Start()
 	{
 		this.mTrans = base.transform;
@@ -40,7 +40,7 @@ public class UITooltip : MonoBehaviour
 		this.SetAlpha(0f);
 	}
 
-	// Token: 0x06000929 RID: 2345 RVA: 0x000489E8 File Offset: 0x00046BE8
+	// Token: 0x0600092A RID: 2346 RVA: 0x00048A10 File Offset: 0x00046C10
 	protected virtual void Update()
 	{
 		if (this.mTooltip != UICamera.tooltipObject)
@@ -68,7 +68,7 @@ public class UITooltip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600092A RID: 2346 RVA: 0x00048B00 File Offset: 0x00046D00
+	// Token: 0x0600092B RID: 2347 RVA: 0x00048B28 File Offset: 0x00046D28
 	protected virtual void SetAlpha(float val)
 	{
 		int i = 0;
@@ -83,7 +83,7 @@ public class UITooltip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600092B RID: 2347 RVA: 0x00048B40 File Offset: 0x00046D40
+	// Token: 0x0600092C RID: 2348 RVA: 0x00048B68 File Offset: 0x00046D68
 	protected virtual void SetText(string tooltipText)
 	{
 		if (!(this.text != null) || string.IsNullOrEmpty(tooltipText))
@@ -146,7 +146,7 @@ public class UITooltip : MonoBehaviour
 		this.text.BroadcastMessage("UpdateAnchors");
 	}
 
-	// Token: 0x0600092C RID: 2348 RVA: 0x00048F0A File Offset: 0x0004710A
+	// Token: 0x0600092D RID: 2349 RVA: 0x00048F32 File Offset: 0x00047132
 	[Obsolete("Use UITooltip.Show instead")]
 	public static void ShowText(string text)
 	{
@@ -156,7 +156,7 @@ public class UITooltip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600092D RID: 2349 RVA: 0x00048F0A File Offset: 0x0004710A
+	// Token: 0x0600092E RID: 2350 RVA: 0x00048F32 File Offset: 0x00047132
 	public static void Show(string text)
 	{
 		if (UITooltip.mInstance != null)
@@ -165,7 +165,7 @@ public class UITooltip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600092E RID: 2350 RVA: 0x00048F24 File Offset: 0x00047124
+	// Token: 0x0600092F RID: 2351 RVA: 0x00048F4C File Offset: 0x0004714C
 	public static void Hide()
 	{
 		if (UITooltip.mInstance != null)
@@ -175,45 +175,45 @@ public class UITooltip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040007B2 RID: 1970
+	// Token: 0x040007B4 RID: 1972
 	protected static UITooltip mInstance;
 
-	// Token: 0x040007B3 RID: 1971
+	// Token: 0x040007B5 RID: 1973
 	public Camera uiCamera;
 
-	// Token: 0x040007B4 RID: 1972
+	// Token: 0x040007B6 RID: 1974
 	public UILabel text;
 
-	// Token: 0x040007B5 RID: 1973
+	// Token: 0x040007B7 RID: 1975
 	public GameObject tooltipRoot;
 
-	// Token: 0x040007B6 RID: 1974
+	// Token: 0x040007B8 RID: 1976
 	public UISprite background;
 
-	// Token: 0x040007B7 RID: 1975
+	// Token: 0x040007B9 RID: 1977
 	public float appearSpeed = 10f;
 
-	// Token: 0x040007B8 RID: 1976
+	// Token: 0x040007BA RID: 1978
 	public bool scalingTransitions = true;
 
-	// Token: 0x040007B9 RID: 1977
+	// Token: 0x040007BB RID: 1979
 	protected GameObject mTooltip;
 
-	// Token: 0x040007BA RID: 1978
+	// Token: 0x040007BC RID: 1980
 	protected Transform mTrans;
 
-	// Token: 0x040007BB RID: 1979
+	// Token: 0x040007BD RID: 1981
 	protected float mTarget;
 
-	// Token: 0x040007BC RID: 1980
+	// Token: 0x040007BE RID: 1982
 	protected float mCurrent;
 
-	// Token: 0x040007BD RID: 1981
+	// Token: 0x040007BF RID: 1983
 	protected Vector3 mPos;
 
-	// Token: 0x040007BE RID: 1982
+	// Token: 0x040007C0 RID: 1984
 	protected Vector3 mSize = Vector3.zero;
 
-	// Token: 0x040007BF RID: 1983
+	// Token: 0x040007C1 RID: 1985
 	protected UIWidget[] mWidgets;
 }

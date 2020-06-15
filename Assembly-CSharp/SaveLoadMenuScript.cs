@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020003C3 RID: 963
+// Token: 0x020003C8 RID: 968
 public class SaveLoadMenuScript : MonoBehaviour
 {
-	// Token: 0x06001A31 RID: 6705 RVA: 0x000FFA25 File Offset: 0x000FDC25
+	// Token: 0x06001A52 RID: 6738 RVA: 0x00102129 File Offset: 0x00100329
 	public void Start()
 	{
 		if (GameGlobals.Profile == 0)
@@ -14,10 +15,12 @@ public class SaveLoadMenuScript : MonoBehaviour
 			GameGlobals.Profile = 1;
 		}
 		this.Profile = GameGlobals.Profile;
+		this.WarningWindow.SetActive(true);
 		this.ConfirmWindow.SetActive(false);
+		base.StartCoroutine(this.GetThumbnails());
 	}
 
-	// Token: 0x06001A32 RID: 6706 RVA: 0x000FFA4C File Offset: 0x000FDC4C
+	// Token: 0x06001A53 RID: 6739 RVA: 0x00102168 File Offset: 0x00100368
 	public void Update()
 	{
 		if (!this.ConfirmWindow.activeInHierarchy)
@@ -54,62 +57,6 @@ public class SaveLoadMenuScript : MonoBehaviour
 			this.UICamera.enabled = true;
 			this.StudentManager.Save();
 			base.StartCoroutine(this.GetThumbnails());
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_YanderePosX"
-			}), this.PauseScreen.Yandere.transform.position.x);
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_YanderePosY"
-			}), this.PauseScreen.Yandere.transform.position.y);
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_YanderePosZ"
-			}), this.PauseScreen.Yandere.transform.position.z);
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_YandereRotX"
-			}), this.PauseScreen.Yandere.transform.eulerAngles.x);
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_YandereRotY"
-			}), this.PauseScreen.Yandere.transform.eulerAngles.y);
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_YandereRotZ"
-			}), this.PauseScreen.Yandere.transform.eulerAngles.z);
-			PlayerPrefs.SetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Time"
-			}), this.Clock.PresentTime);
 			if (DateGlobals.Weekday == DayOfWeek.Monday)
 			{
 				PlayerPrefs.SetInt(string.Concat(new object[]
@@ -167,36 +114,174 @@ public class SaveLoadMenuScript : MonoBehaviour
 			}
 			this.GrabScreenshot = false;
 		}
-		if (Input.GetButtonDown("A"))
+		if (this.WarningWindow.activeInHierarchy)
 		{
-			if (this.Loading)
+			if (Input.GetButtonDown("A"))
 			{
-				if (this.DataLabels[this.Selected].text != "No Data")
+				this.WarningWindow.SetActive(false);
+				return;
+			}
+			if (Input.GetButtonDown("B"))
+			{
+				this.PauseScreen.MainMenu.SetActive(true);
+				this.PauseScreen.Sideways = false;
+				this.PauseScreen.PressedB = true;
+				base.gameObject.SetActive(false);
+				this.PauseScreen.PromptBar.ClearButtons();
+				this.PauseScreen.PromptBar.Label[0].text = "Accept";
+				this.PauseScreen.PromptBar.Label[1].text = "Exit";
+				this.PauseScreen.PromptBar.Label[4].text = "Choose";
+				this.PauseScreen.PromptBar.UpdateButtons();
+				this.PauseScreen.PromptBar.Show = true;
+				return;
+			}
+		}
+		else
+		{
+			if (Input.GetButtonDown("A"))
+			{
+				if (this.Loading)
+				{
+					if (this.DataLabels[this.Selected].text != "No Data")
+					{
+						if (!this.ConfirmWindow.activeInHierarchy)
+						{
+							this.AreYouSureLabel.text = "Are you sure you'd like to load?";
+							this.ConfirmWindow.SetActive(true);
+						}
+						else if (this.DataLabels[this.Selected].text != "No Data")
+						{
+							PlayerPrefs.SetInt("LoadingSave", 1);
+							PlayerPrefs.SetInt("SaveSlot", this.Selected);
+							SceneManager.LoadScene("LoadingScene");
+						}
+					}
+				}
+				else if (this.Saving)
 				{
 					if (!this.ConfirmWindow.activeInHierarchy)
 					{
-						this.AreYouSureLabel.text = "Are you sure you'd like to load?";
+						this.AreYouSureLabel.text = "Are you sure you'd like to save?";
 						this.ConfirmWindow.SetActive(true);
 					}
-					else if (this.DataLabels[this.Selected].text != "No Data")
+					else
 					{
-						PlayerPrefs.SetInt("LoadingSave", 1);
+						this.ConfirmWindow.SetActive(false);
 						PlayerPrefs.SetInt("SaveSlot", this.Selected);
-						SceneManager.LoadScene("LoadingScene");
+						GameGlobals.MostRecentSlot = this.Selected;
+						PlayerPrefs.SetString(string.Concat(new object[]
+						{
+							"Profile_",
+							this.Profile,
+							"_Slot_",
+							this.Selected,
+							"_DateTime"
+						}), DateTime.Now.ToString());
+						ScreenCapture.CaptureScreenshot(string.Concat(new object[]
+						{
+							Application.streamingAssetsPath,
+							"/SaveData/Profile_",
+							this.Profile,
+							"/Slot_",
+							this.Selected,
+							"_Thumbnail.png"
+						}));
+						this.PauseScreen.ScreenBlur.enabled = false;
+						this.UICamera.enabled = false;
+						this.GrabScreenshot = true;
 					}
 				}
 			}
-			else if (this.Saving)
+			if (Input.GetButtonDown("X"))
 			{
-				if (!this.ConfirmWindow.activeInHierarchy)
+				if (this.Loading)
 				{
-					this.AreYouSureLabel.text = "Are you sure you'd like to save?";
-					this.ConfirmWindow.SetActive(true);
+					if (this.DataLabels[this.Selected].text != "No Data")
+					{
+						PlayerPrefs.SetInt("SaveSlot", this.Selected);
+						this.StudentManager.Load();
+						Physics.SyncTransforms();
+						if (PlayerPrefs.GetInt(string.Concat(new object[]
+						{
+							"Profile_",
+							this.Profile,
+							"_Slot_",
+							this.Selected,
+							"_Weekday"
+						})) == 1)
+						{
+							DateGlobals.Weekday = DayOfWeek.Monday;
+						}
+						else if (PlayerPrefs.GetInt(string.Concat(new object[]
+						{
+							"Profile_",
+							this.Profile,
+							"_Slot_",
+							this.Selected,
+							"_Weekday"
+						})) == 2)
+						{
+							DateGlobals.Weekday = DayOfWeek.Tuesday;
+						}
+						else if (PlayerPrefs.GetInt(string.Concat(new object[]
+						{
+							"Profile_",
+							this.Profile,
+							"_Slot_",
+							this.Selected,
+							"_Weekday"
+						})) == 3)
+						{
+							DateGlobals.Weekday = DayOfWeek.Wednesday;
+						}
+						else if (PlayerPrefs.GetInt(string.Concat(new object[]
+						{
+							"Profile_",
+							this.Profile,
+							"_Slot_",
+							this.Selected,
+							"_Weekday"
+						})) == 4)
+						{
+							DateGlobals.Weekday = DayOfWeek.Tuesday;
+						}
+						else if (PlayerPrefs.GetInt(string.Concat(new object[]
+						{
+							"Profile_",
+							this.Profile,
+							"_Slot_",
+							this.Selected,
+							"_Weekday"
+						})) == 5)
+						{
+							DateGlobals.Weekday = DayOfWeek.Wednesday;
+						}
+						this.Clock.DayLabel.text = this.Clock.GetWeekdayText(DateGlobals.Weekday);
+						this.PauseScreen.MainMenu.SetActive(true);
+						this.PauseScreen.Sideways = false;
+						this.PauseScreen.PressedB = true;
+						base.gameObject.SetActive(false);
+						this.PauseScreen.ExitPhone();
+					}
 				}
-				else
+				else if (this.Saving && PlayerPrefs.GetString(string.Concat(new object[]
 				{
-					this.ConfirmWindow.SetActive(false);
-					PlayerPrefs.SetInt("SaveSlot", this.Selected);
+					"Profile_",
+					this.Profile,
+					"_Slot_",
+					this.Selected,
+					"_DateTime"
+				})) != "")
+				{
+					File.Delete(string.Concat(new object[]
+					{
+						Application.streamingAssetsPath,
+						"/SaveData/Profile_",
+						this.Profile,
+						"/Slot_",
+						this.Selected,
+						"_Thumbnail.png"
+					}));
 					PlayerPrefs.SetString(string.Concat(new object[]
 					{
 						"Profile_",
@@ -204,117 +289,33 @@ public class SaveLoadMenuScript : MonoBehaviour
 						"_Slot_",
 						this.Selected,
 						"_DateTime"
-					}), DateTime.Now.ToString());
-					ScreenCapture.CaptureScreenshot(string.Concat(new object[]
-					{
-						Application.streamingAssetsPath,
-						"/SaveData/Profile_",
-						this.Profile,
-						"/Slot_",
-						this.Selected,
-						"/Thumbnail.png"
-					}));
-					this.PauseScreen.ScreenBlur.enabled = false;
-					this.UICamera.enabled = false;
-					this.GrabScreenshot = true;
+					}), "");
+					this.Thumbnails[this.Selected].mainTexture = this.DefaultThumbnail;
+					this.DataLabels[this.Selected].text = "No Data";
 				}
 			}
-		}
-		if (Input.GetButtonDown("X") && this.DataLabels[this.Selected].text != "No Data")
-		{
-			PlayerPrefs.SetInt("SaveSlot", this.Selected);
-			this.StudentManager.Load();
-			if (PlayerPrefs.GetInt(string.Concat(new object[]
+			if (Input.GetButtonDown("B"))
 			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Weekday"
-			})) == 1)
-			{
-				DateGlobals.Weekday = DayOfWeek.Monday;
+				if (this.ConfirmWindow.activeInHierarchy)
+				{
+					this.ConfirmWindow.SetActive(false);
+					return;
+				}
+				this.PauseScreen.MainMenu.SetActive(true);
+				this.PauseScreen.Sideways = false;
+				this.PauseScreen.PressedB = true;
+				base.gameObject.SetActive(false);
+				this.PauseScreen.PromptBar.ClearButtons();
+				this.PauseScreen.PromptBar.Label[0].text = "Accept";
+				this.PauseScreen.PromptBar.Label[1].text = "Exit";
+				this.PauseScreen.PromptBar.Label[4].text = "Choose";
+				this.PauseScreen.PromptBar.UpdateButtons();
+				this.PauseScreen.PromptBar.Show = true;
 			}
-			else if (PlayerPrefs.GetInt(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Weekday"
-			})) == 2)
-			{
-				DateGlobals.Weekday = DayOfWeek.Tuesday;
-			}
-			else if (PlayerPrefs.GetInt(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Weekday"
-			})) == 3)
-			{
-				DateGlobals.Weekday = DayOfWeek.Wednesday;
-			}
-			else if (PlayerPrefs.GetInt(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Weekday"
-			})) == 4)
-			{
-				DateGlobals.Weekday = DayOfWeek.Tuesday;
-			}
-			else if (PlayerPrefs.GetInt(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Weekday"
-			})) == 5)
-			{
-				DateGlobals.Weekday = DayOfWeek.Wednesday;
-			}
-			this.Clock.PresentTime = PlayerPrefs.GetFloat(string.Concat(new object[]
-			{
-				"Profile_",
-				this.Profile,
-				"_Slot_",
-				this.Selected,
-				"_Time"
-			}), this.Clock.PresentTime);
-			this.Clock.DayLabel.text = this.Clock.GetWeekdayText(DateGlobals.Weekday);
-			this.PauseScreen.MainMenu.SetActive(true);
-			this.PauseScreen.Sideways = false;
-			this.PauseScreen.PressedB = true;
-			base.gameObject.SetActive(false);
-			this.PauseScreen.ExitPhone();
-		}
-		if (Input.GetButtonDown("B"))
-		{
-			if (this.ConfirmWindow.activeInHierarchy)
-			{
-				this.ConfirmWindow.SetActive(false);
-				return;
-			}
-			this.PauseScreen.MainMenu.SetActive(true);
-			this.PauseScreen.Sideways = false;
-			this.PauseScreen.PressedB = true;
-			base.gameObject.SetActive(false);
-			this.PauseScreen.PromptBar.ClearButtons();
-			this.PauseScreen.PromptBar.Label[0].text = "Accept";
-			this.PauseScreen.PromptBar.Label[1].text = "Exit";
-			this.PauseScreen.PromptBar.Label[4].text = "Choose";
-			this.PauseScreen.PromptBar.UpdateButtons();
-			this.PauseScreen.PromptBar.Show = true;
 		}
 	}
 
-	// Token: 0x06001A33 RID: 6707 RVA: 0x001004A5 File Offset: 0x000FE6A5
+	// Token: 0x06001A54 RID: 6740 RVA: 0x00102B19 File Offset: 0x00100D19
 	public IEnumerator GetThumbnails()
 	{
 		int num;
@@ -345,7 +346,7 @@ public class SaveLoadMenuScript : MonoBehaviour
 					this.Profile,
 					"/Slot_",
 					ID,
-					"/Thumbnail.png"
+					"_Thumbnail.png"
 				});
 				WWW www = new WWW(url);
 				yield return www;
@@ -368,7 +369,7 @@ public class SaveLoadMenuScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001A34 RID: 6708 RVA: 0x001004B4 File Offset: 0x000FE6B4
+	// Token: 0x06001A55 RID: 6741 RVA: 0x00102B28 File Offset: 0x00100D28
 	public void UpdateHighlight()
 	{
 		if (this.Row < 1)
@@ -391,57 +392,63 @@ public class SaveLoadMenuScript : MonoBehaviour
 		this.Selected = this.Column + (this.Row - 1) * 5;
 	}
 
-	// Token: 0x04002932 RID: 10546
+	// Token: 0x0400298F RID: 10639
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04002933 RID: 10547
+	// Token: 0x04002990 RID: 10640
 	public InputManagerScript InputManager;
 
-	// Token: 0x04002934 RID: 10548
+	// Token: 0x04002991 RID: 10641
 	public PauseScreenScript PauseScreen;
 
-	// Token: 0x04002935 RID: 10549
+	// Token: 0x04002992 RID: 10642
 	public GameObject ConfirmWindow;
 
-	// Token: 0x04002936 RID: 10550
+	// Token: 0x04002993 RID: 10643
+	public GameObject WarningWindow;
+
+	// Token: 0x04002994 RID: 10644
 	public ClockScript Clock;
 
-	// Token: 0x04002937 RID: 10551
+	// Token: 0x04002995 RID: 10645
+	public Texture DefaultThumbnail;
+
+	// Token: 0x04002996 RID: 10646
 	public UILabel AreYouSureLabel;
 
-	// Token: 0x04002938 RID: 10552
+	// Token: 0x04002997 RID: 10647
 	public UILabel Header;
 
-	// Token: 0x04002939 RID: 10553
+	// Token: 0x04002998 RID: 10648
 	public UITexture[] Thumbnails;
 
-	// Token: 0x0400293A RID: 10554
+	// Token: 0x04002999 RID: 10649
 	public UILabel[] DataLabels;
 
-	// Token: 0x0400293B RID: 10555
+	// Token: 0x0400299A RID: 10650
 	public Transform Highlight;
 
-	// Token: 0x0400293C RID: 10556
+	// Token: 0x0400299B RID: 10651
 	public Camera UICamera;
 
-	// Token: 0x0400293D RID: 10557
+	// Token: 0x0400299C RID: 10652
 	public bool GrabScreenshot;
 
-	// Token: 0x0400293E RID: 10558
+	// Token: 0x0400299D RID: 10653
 	public bool Loading;
 
-	// Token: 0x0400293F RID: 10559
+	// Token: 0x0400299E RID: 10654
 	public bool Saving;
 
-	// Token: 0x04002940 RID: 10560
+	// Token: 0x0400299F RID: 10655
 	public int Profile;
 
-	// Token: 0x04002941 RID: 10561
+	// Token: 0x040029A0 RID: 10656
 	public int Row = 1;
 
-	// Token: 0x04002942 RID: 10562
+	// Token: 0x040029A1 RID: 10657
 	public int Column = 1;
 
-	// Token: 0x04002943 RID: 10563
+	// Token: 0x040029A2 RID: 10658
 	public int Selected = 1;
 }

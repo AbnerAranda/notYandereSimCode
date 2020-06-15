@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003E6 RID: 998
+// Token: 0x020003EB RID: 1003
 public class SniperScript : MonoBehaviour
 {
-	// Token: 0x06001AB7 RID: 6839 RVA: 0x0010C284 File Offset: 0x0010A484
+	// Token: 0x06001AD8 RID: 6872 RVA: 0x0010EB24 File Offset: 0x0010CD24
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -22,9 +22,9 @@ public class SniperScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002B38 RID: 11064
+	// Token: 0x04002B99 RID: 11161
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04002B39 RID: 11065
+	// Token: 0x04002B9A RID: 11162
 	public float Timer;
 }

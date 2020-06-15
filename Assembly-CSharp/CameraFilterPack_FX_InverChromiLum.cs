@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001AB RID: 427
+// Token: 0x020001AC RID: 428
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/FX/InverChromiLum")]
 public class CameraFilterPack_FX_InverChromiLum : MonoBehaviour
 {
 	// Token: 0x170002CB RID: 715
-	// (get) Token: 0x06000F15 RID: 3861 RVA: 0x00071B3E File Offset: 0x0006FD3E
+	// (get) Token: 0x06000F1C RID: 3868 RVA: 0x0007286E File Offset: 0x00070A6E
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_InverChromiLum : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F16 RID: 3862 RVA: 0x00071B72 File Offset: 0x0006FD72
+	// Token: 0x06000F1D RID: 3869 RVA: 0x000728A2 File Offset: 0x00070AA2
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_InverChromiLum");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_InverChromiLum : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F17 RID: 3863 RVA: 0x00071B94 File Offset: 0x0006FD94
+	// Token: 0x06000F1E RID: 3870 RVA: 0x000728C4 File Offset: 0x00070AC4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_FX_InverChromiLum : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F18 RID: 3864 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F1F RID: 3871 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F19 RID: 3865 RVA: 0x00071C31 File Offset: 0x0006FE31
+	// Token: 0x06000F20 RID: 3872 RVA: 0x00072961 File Offset: 0x00070B61
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,12 +64,12 @@ public class CameraFilterPack_FX_InverChromiLum : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011D3 RID: 4563
+	// Token: 0x040011F2 RID: 4594
 	public Shader SCShader;
 
-	// Token: 0x040011D4 RID: 4564
+	// Token: 0x040011F3 RID: 4595
 	private float TimeX = 1f;
 
-	// Token: 0x040011D5 RID: 4565
+	// Token: 0x040011F4 RID: 4596
 	private Material SCMaterial;
 }

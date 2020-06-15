@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B6 RID: 438
+// Token: 0x020001B7 RID: 439
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Vision/Fly_Vision")]
 public class CameraFilterPack_Fly_Vision : MonoBehaviour
 {
 	// Token: 0x170002D6 RID: 726
-	// (get) Token: 0x06000F57 RID: 3927 RVA: 0x00072A2E File Offset: 0x00070C2E
+	// (get) Token: 0x06000F5E RID: 3934 RVA: 0x0007375E File Offset: 0x0007195E
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Fly_Vision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F58 RID: 3928 RVA: 0x00072A62 File Offset: 0x00070C62
+	// Token: 0x06000F5F RID: 3935 RVA: 0x00073792 File Offset: 0x00071992
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_Fly_VisionFX") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Fly_Vision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F59 RID: 3929 RVA: 0x00072A98 File Offset: 0x00070C98
+	// Token: 0x06000F60 RID: 3936 RVA: 0x000737C8 File Offset: 0x000719C8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -56,12 +56,12 @@ public class CameraFilterPack_Fly_Vision : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000F5A RID: 3930 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F61 RID: 3937 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F5B RID: 3931 RVA: 0x00072BA6 File Offset: 0x00070DA6
+	// Token: 0x06000F62 RID: 3938 RVA: 0x000738D6 File Offset: 0x00071AD6
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -70,31 +70,31 @@ public class CameraFilterPack_Fly_Vision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001207 RID: 4615
+	// Token: 0x04001226 RID: 4646
 	public Shader SCShader;
 
-	// Token: 0x04001208 RID: 4616
+	// Token: 0x04001227 RID: 4647
 	private float TimeX = 1f;
 
-	// Token: 0x04001209 RID: 4617
+	// Token: 0x04001228 RID: 4648
 	private Material SCMaterial;
 
-	// Token: 0x0400120A RID: 4618
+	// Token: 0x04001229 RID: 4649
 	[Range(0.04f, 1.5f)]
 	public float Zoom = 0.25f;
 
-	// Token: 0x0400120B RID: 4619
+	// Token: 0x0400122A RID: 4650
 	[Range(0f, 1f)]
 	public float Distortion = 0.4f;
 
-	// Token: 0x0400120C RID: 4620
+	// Token: 0x0400122B RID: 4651
 	[Range(0f, 1f)]
 	public float Fade = 0.4f;
 
-	// Token: 0x0400120D RID: 4621
+	// Token: 0x0400122C RID: 4652
 	[Range(0f, 10f)]
 	private float Value4 = 1f;
 
-	// Token: 0x0400120E RID: 4622
+	// Token: 0x0400122D RID: 4653
 	private Texture2D Texture2;
 }

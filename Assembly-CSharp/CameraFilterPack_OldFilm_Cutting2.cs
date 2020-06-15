@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E7 RID: 487
+// Token: 0x020001E8 RID: 488
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Old Film/Cutting 2")]
 public class CameraFilterPack_OldFilm_Cutting2 : MonoBehaviour
 {
 	// Token: 0x17000307 RID: 775
-	// (get) Token: 0x0600109F RID: 4255 RVA: 0x0007946D File Offset: 0x0007766D
+	// (get) Token: 0x060010A6 RID: 4262 RVA: 0x0007A19D File Offset: 0x0007839D
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_OldFilm_Cutting2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010A0 RID: 4256 RVA: 0x000794A1 File Offset: 0x000776A1
+	// Token: 0x060010A7 RID: 4263 RVA: 0x0007A1D1 File Offset: 0x000783D1
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_OldFilm2") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_OldFilm_Cutting2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010A1 RID: 4257 RVA: 0x000794D8 File Offset: 0x000776D8
+	// Token: 0x060010A8 RID: 4264 RVA: 0x0007A208 File Offset: 0x00078408
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -55,12 +55,12 @@ public class CameraFilterPack_OldFilm_Cutting2 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010A2 RID: 4258 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010A9 RID: 4265 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010A3 RID: 4259 RVA: 0x000795C5 File Offset: 0x000777C5
+	// Token: 0x060010AA RID: 4266 RVA: 0x0007A2F5 File Offset: 0x000784F5
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -69,31 +69,31 @@ public class CameraFilterPack_OldFilm_Cutting2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001399 RID: 5017
+	// Token: 0x040013B8 RID: 5048
 	public Shader SCShader;
 
-	// Token: 0x0400139A RID: 5018
+	// Token: 0x040013B9 RID: 5049
 	private float TimeX = 1f;
 
-	// Token: 0x0400139B RID: 5019
+	// Token: 0x040013BA RID: 5050
 	[Range(0f, 10f)]
 	public float Speed = 5f;
 
-	// Token: 0x0400139C RID: 5020
+	// Token: 0x040013BB RID: 5051
 	[Range(0f, 2f)]
 	public float Luminosity = 1f;
 
-	// Token: 0x0400139D RID: 5021
+	// Token: 0x040013BC RID: 5052
 	[Range(0f, 1f)]
 	public float Vignette = 1f;
 
-	// Token: 0x0400139E RID: 5022
+	// Token: 0x040013BD RID: 5053
 	[Range(0f, 1f)]
 	public float Negative;
 
-	// Token: 0x0400139F RID: 5023
+	// Token: 0x040013BE RID: 5054
 	private Material SCMaterial;
 
-	// Token: 0x040013A0 RID: 5024
+	// Token: 0x040013BF RID: 5055
 	private Texture2D Texture2;
 }

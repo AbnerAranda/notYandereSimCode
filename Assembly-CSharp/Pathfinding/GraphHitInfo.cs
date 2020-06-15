@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000540 RID: 1344
+	// Token: 0x02000556 RID: 1366
 	public struct GraphHitInfo
 	{
-		// Token: 0x1700056F RID: 1391
-		// (get) Token: 0x060023E5 RID: 9189 RVA: 0x00195D10 File Offset: 0x00193F10
+		// Token: 0x17000575 RID: 1397
+		// (get) Token: 0x0600243B RID: 9275 RVA: 0x0019B8FC File Offset: 0x00199AFC
 		public float distance
 		{
 			get
@@ -16,7 +16,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023E6 RID: 9190 RVA: 0x00195D36 File Offset: 0x00193F36
+		// Token: 0x0600243C RID: 9276 RVA: 0x0019B922 File Offset: 0x00199B22
 		public GraphHitInfo(Vector3 point)
 		{
 			this.tangentOrigin = Vector3.zero;
@@ -26,19 +26,19 @@ namespace Pathfinding
 			this.tangent = Vector3.zero;
 		}
 
-		// Token: 0x04003FAE RID: 16302
+		// Token: 0x0400408C RID: 16524
 		public Vector3 origin;
 
-		// Token: 0x04003FAF RID: 16303
+		// Token: 0x0400408D RID: 16525
 		public Vector3 point;
 
-		// Token: 0x04003FB0 RID: 16304
+		// Token: 0x0400408E RID: 16526
 		public GraphNode node;
 
-		// Token: 0x04003FB1 RID: 16305
+		// Token: 0x0400408F RID: 16527
 		public Vector3 tangentOrigin;
 
-		// Token: 0x04003FB2 RID: 16306
+		// Token: 0x04004090 RID: 16528
 		public Vector3 tangent;
 	}
 }

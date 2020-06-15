@@ -5,27 +5,27 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E7 RID: 1511
+	// Token: 0x020005FD RID: 1533
 	[RequireComponent(typeof(RVOController))]
 	[RequireComponent(typeof(Seeker))]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_r_v_o_example_agent.php")]
 	public class RVOExampleAgent : MonoBehaviour
 	{
-		// Token: 0x060029B0 RID: 10672 RVA: 0x001C0878 File Offset: 0x001BEA78
+		// Token: 0x06002A06 RID: 10758 RVA: 0x001C6464 File Offset: 0x001C4664
 		public void Awake()
 		{
 			this.seeker = base.GetComponent<Seeker>();
 			this.controller = base.GetComponent<RVOController>();
 		}
 
-		// Token: 0x060029B1 RID: 10673 RVA: 0x001C0892 File Offset: 0x001BEA92
+		// Token: 0x06002A07 RID: 10759 RVA: 0x001C647E File Offset: 0x001C467E
 		public void SetTarget(Vector3 target)
 		{
 			this.target = target;
 			this.RecalculatePath();
 		}
 
-		// Token: 0x060029B2 RID: 10674 RVA: 0x001C08A4 File Offset: 0x001BEAA4
+		// Token: 0x06002A08 RID: 10760 RVA: 0x001C6490 File Offset: 0x001C4690
 		public void SetColor(Color color)
 		{
 			if (this.rends == null)
@@ -54,7 +54,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029B3 RID: 10675 RVA: 0x001C09FC File Offset: 0x001BEBFC
+		// Token: 0x06002A09 RID: 10761 RVA: 0x001C65E8 File Offset: 0x001C47E8
 		public void RecalculatePath()
 		{
 			this.canSearchAgain = false;
@@ -62,7 +62,7 @@ namespace Pathfinding.Examples
 			this.seeker.StartPath(base.transform.position, this.target, new OnPathDelegate(this.OnPathComplete));
 		}
 
-		// Token: 0x060029B4 RID: 10676 RVA: 0x001C0A58 File Offset: 0x001BEC58
+		// Token: 0x06002A0A RID: 10762 RVA: 0x001C6644 File Offset: 0x001C4844
 		public void OnPathComplete(Path _p)
 		{
 			ABPath abpath = _p as ABPath;
@@ -102,7 +102,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029B5 RID: 10677 RVA: 0x001C0BAC File Offset: 0x001BEDAC
+		// Token: 0x06002A0B RID: 10763 RVA: 0x001C6798 File Offset: 0x001C4998
 		public void Update()
 		{
 			if (Time.time >= this.nextRepath && this.canSearchAgain)
@@ -155,46 +155,46 @@ namespace Pathfinding.Examples
 			base.transform.position = vector;
 		}
 
-		// Token: 0x04004373 RID: 17267
+		// Token: 0x04004451 RID: 17489
 		public float repathRate = 1f;
 
-		// Token: 0x04004374 RID: 17268
+		// Token: 0x04004452 RID: 17490
 		private float nextRepath;
 
-		// Token: 0x04004375 RID: 17269
+		// Token: 0x04004453 RID: 17491
 		private Vector3 target;
 
-		// Token: 0x04004376 RID: 17270
+		// Token: 0x04004454 RID: 17492
 		private bool canSearchAgain = true;
 
-		// Token: 0x04004377 RID: 17271
+		// Token: 0x04004455 RID: 17493
 		private RVOController controller;
 
-		// Token: 0x04004378 RID: 17272
+		// Token: 0x04004456 RID: 17494
 		public float maxSpeed = 10f;
 
-		// Token: 0x04004379 RID: 17273
+		// Token: 0x04004457 RID: 17495
 		private Path path;
 
-		// Token: 0x0400437A RID: 17274
+		// Token: 0x04004458 RID: 17496
 		private List<Vector3> vectorPath;
 
-		// Token: 0x0400437B RID: 17275
+		// Token: 0x04004459 RID: 17497
 		private int wp;
 
-		// Token: 0x0400437C RID: 17276
+		// Token: 0x0400445A RID: 17498
 		public float moveNextDist = 1f;
 
-		// Token: 0x0400437D RID: 17277
+		// Token: 0x0400445B RID: 17499
 		public float slowdownDistance = 1f;
 
-		// Token: 0x0400437E RID: 17278
+		// Token: 0x0400445C RID: 17500
 		public LayerMask groundMask;
 
-		// Token: 0x0400437F RID: 17279
+		// Token: 0x0400445D RID: 17501
 		private Seeker seeker;
 
-		// Token: 0x04004380 RID: 17280
+		// Token: 0x0400445E RID: 17502
 		private MeshRenderer[] rends;
 	}
 }

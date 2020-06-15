@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Pathfinding
 {
-	// Token: 0x0200052E RID: 1326
+	// Token: 0x02000544 RID: 1348
 	public static class PathPool
 	{
-		// Token: 0x06002305 RID: 8965 RVA: 0x00193250 File Offset: 0x00191450
+		// Token: 0x0600235B RID: 9051 RVA: 0x00198E3C File Offset: 0x0019703C
 		public static void Pool(Path path)
 		{
 			Dictionary<Type, Stack<Path>> obj = PathPool.pool;
@@ -28,7 +28,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002306 RID: 8966 RVA: 0x001932DC File Offset: 0x001914DC
+		// Token: 0x0600235C RID: 9052 RVA: 0x00198EC8 File Offset: 0x001970C8
 		public static int GetTotalCreated(Type type)
 		{
 			int result;
@@ -39,7 +39,7 @@ namespace Pathfinding
 			return 0;
 		}
 
-		// Token: 0x06002307 RID: 8967 RVA: 0x001932FC File Offset: 0x001914FC
+		// Token: 0x0600235D RID: 9053 RVA: 0x00198EE8 File Offset: 0x001970E8
 		public static int GetSize(Type type)
 		{
 			Stack<Path> stack;
@@ -50,7 +50,7 @@ namespace Pathfinding
 			return 0;
 		}
 
-		// Token: 0x06002308 RID: 8968 RVA: 0x00193320 File Offset: 0x00191520
+		// Token: 0x0600235E RID: 9054 RVA: 0x00198F0C File Offset: 0x0019710C
 		public static T GetPath<T>() where T : Path, new()
 		{
 			Dictionary<Type, Stack<Path>> obj = PathPool.pool;
@@ -82,10 +82,10 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x04003F39 RID: 16185
+		// Token: 0x04004017 RID: 16407
 		private static readonly Dictionary<Type, Stack<Path>> pool = new Dictionary<Type, Stack<Path>>();
 
-		// Token: 0x04003F3A RID: 16186
+		// Token: 0x04004018 RID: 16408
 		private static readonly Dictionary<Type, int> totalCreated = new Dictionary<Type, int>();
 	}
 }

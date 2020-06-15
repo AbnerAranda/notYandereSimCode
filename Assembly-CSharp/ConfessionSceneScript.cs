@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000245 RID: 581
+// Token: 0x02000246 RID: 582
 public class ConfessionSceneScript : MonoBehaviour
 {
-	// Token: 0x06001289 RID: 4745 RVA: 0x0004EC67 File Offset: 0x0004CE67
+	// Token: 0x06001290 RID: 4752 RVA: 0x0004F6ED File Offset: 0x0004D8ED
 	private void Start()
 	{
 		Time.timeScale = 1f;
 	}
 
-	// Token: 0x0600128A RID: 4746 RVA: 0x00089F24 File Offset: 0x00088124
+	// Token: 0x06001291 RID: 4753 RVA: 0x0008AE24 File Offset: 0x00089024
 	private void Update()
 	{
 		if (this.Phase == 1)
@@ -193,96 +193,96 @@ public class ConfessionSceneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001699 RID: 5785
+	// Token: 0x040016B8 RID: 5816
 	public Transform[] CameraDestinations;
 
-	// Token: 0x0400169A RID: 5786
+	// Token: 0x040016B9 RID: 5817
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x0400169B RID: 5787
+	// Token: 0x040016BA RID: 5818
 	public LoveManagerScript LoveManager;
 
-	// Token: 0x0400169C RID: 5788
+	// Token: 0x040016BB RID: 5819
 	public PromptBarScript PromptBar;
 
-	// Token: 0x0400169D RID: 5789
+	// Token: 0x040016BC RID: 5820
 	public JukeboxScript Jukebox;
 
-	// Token: 0x0400169E RID: 5790
+	// Token: 0x040016BD RID: 5821
 	public YandereScript Yandere;
 
-	// Token: 0x0400169F RID: 5791
+	// Token: 0x040016BE RID: 5822
 	public ClockScript Clock;
 
-	// Token: 0x040016A0 RID: 5792
+	// Token: 0x040016BF RID: 5823
 	public Bloom BloomEffect;
 
-	// Token: 0x040016A1 RID: 5793
+	// Token: 0x040016C0 RID: 5824
 	public StudentScript Suitor;
 
-	// Token: 0x040016A2 RID: 5794
+	// Token: 0x040016C1 RID: 5825
 	public StudentScript Rival;
 
-	// Token: 0x040016A3 RID: 5795
+	// Token: 0x040016C2 RID: 5826
 	public ParticleSystem MythBlossoms;
 
-	// Token: 0x040016A4 RID: 5796
+	// Token: 0x040016C3 RID: 5827
 	public GameObject HeartBeatCamera;
 
-	// Token: 0x040016A5 RID: 5797
+	// Token: 0x040016C4 RID: 5828
 	public GameObject ConfessionBG;
 
-	// Token: 0x040016A6 RID: 5798
+	// Token: 0x040016C5 RID: 5829
 	public Transform MainCamera;
 
-	// Token: 0x040016A7 RID: 5799
+	// Token: 0x040016C6 RID: 5830
 	public Transform RivalSpot;
 
-	// Token: 0x040016A8 RID: 5800
+	// Token: 0x040016C7 RID: 5831
 	public Transform KissSpot;
 
-	// Token: 0x040016A9 RID: 5801
+	// Token: 0x040016C8 RID: 5832
 	public string[] Text;
 
-	// Token: 0x040016AA RID: 5802
+	// Token: 0x040016C9 RID: 5833
 	public GameObject[] Letters;
 
-	// Token: 0x040016AB RID: 5803
+	// Token: 0x040016CA RID: 5834
 	public UISprite Darkness;
 
-	// Token: 0x040016AC RID: 5804
+	// Token: 0x040016CB RID: 5835
 	public UILabel Label;
 
-	// Token: 0x040016AD RID: 5805
+	// Token: 0x040016CC RID: 5836
 	public UIPanel Panel;
 
-	// Token: 0x040016AE RID: 5806
+	// Token: 0x040016CD RID: 5837
 	public AudioSource Jingle;
 
-	// Token: 0x040016AF RID: 5807
+	// Token: 0x040016CE RID: 5838
 	public bool MoveSuitor;
 
-	// Token: 0x040016B0 RID: 5808
+	// Token: 0x040016CF RID: 5839
 	public bool ShowLabel;
 
-	// Token: 0x040016B1 RID: 5809
+	// Token: 0x040016D0 RID: 5840
 	public bool Kissing;
 
-	// Token: 0x040016B2 RID: 5810
+	// Token: 0x040016D1 RID: 5841
 	public int TextPhase = 1;
 
-	// Token: 0x040016B3 RID: 5811
+	// Token: 0x040016D2 RID: 5842
 	public int LetterID = 1;
 
-	// Token: 0x040016B4 RID: 5812
+	// Token: 0x040016D3 RID: 5843
 	public int Phase = 1;
 
-	// Token: 0x040016B5 RID: 5813
+	// Token: 0x040016D4 RID: 5844
 	public float LetterTimer = 0.1f;
 
-	// Token: 0x040016B6 RID: 5814
+	// Token: 0x040016D5 RID: 5845
 	public float Speed;
 
-	// Token: 0x040016B7 RID: 5815
+	// Token: 0x040016D6 RID: 5846
 	public float Timer;
 }

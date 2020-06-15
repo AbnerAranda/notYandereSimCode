@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000595 RID: 1429
+	// Token: 0x020005AB RID: 1451
 	public class FloodPath : Path
 	{
-		// Token: 0x170005B9 RID: 1465
-		// (get) Token: 0x060026DB RID: 9947 RVA: 0x0002291C File Offset: 0x00020B1C
+		// Token: 0x170005BF RID: 1471
+		// (get) Token: 0x06002731 RID: 10033 RVA: 0x00022944 File Offset: 0x00020B44
 		internal override bool FloodingPath
 		{
 			get
@@ -17,19 +17,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026DC RID: 9948 RVA: 0x001AA3F9 File Offset: 0x001A85F9
+		// Token: 0x06002732 RID: 10034 RVA: 0x001AFFE5 File Offset: 0x001AE1E5
 		public bool HasPathTo(GraphNode node)
 		{
 			return this.parents != null && this.parents.ContainsKey(node);
 		}
 
-		// Token: 0x060026DD RID: 9949 RVA: 0x001AA411 File Offset: 0x001A8611
+		// Token: 0x06002733 RID: 10035 RVA: 0x001AFFFD File Offset: 0x001AE1FD
 		public GraphNode GetParent(GraphNode node)
 		{
 			return this.parents[node];
 		}
 
-		// Token: 0x060026DF RID: 9951 RVA: 0x001AA42E File Offset: 0x001A862E
+		// Token: 0x06002735 RID: 10037 RVA: 0x001B001A File Offset: 0x001AE21A
 		public static FloodPath Construct(Vector3 start, OnPathDelegate callback = null)
 		{
 			FloodPath path = PathPool.GetPath<FloodPath>();
@@ -37,7 +37,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026E0 RID: 9952 RVA: 0x001AA43D File Offset: 0x001A863D
+		// Token: 0x06002736 RID: 10038 RVA: 0x001B0029 File Offset: 0x001AE229
 		public static FloodPath Construct(GraphNode start, OnPathDelegate callback = null)
 		{
 			if (start == null)
@@ -49,7 +49,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026E1 RID: 9953 RVA: 0x001AA45A File Offset: 0x001A865A
+		// Token: 0x06002737 RID: 10039 RVA: 0x001B0046 File Offset: 0x001AE246
 		protected void Setup(Vector3 start, OnPathDelegate callback)
 		{
 			this.callback = callback;
@@ -58,7 +58,7 @@ namespace Pathfinding
 			this.heuristic = Heuristic.None;
 		}
 
-		// Token: 0x060026E2 RID: 9954 RVA: 0x001AA478 File Offset: 0x001A8678
+		// Token: 0x06002738 RID: 10040 RVA: 0x001B0064 File Offset: 0x001AE264
 		protected void Setup(GraphNode start, OnPathDelegate callback)
 		{
 			this.callback = callback;
@@ -68,7 +68,7 @@ namespace Pathfinding
 			this.heuristic = Heuristic.None;
 		}
 
-		// Token: 0x060026E3 RID: 9955 RVA: 0x001AA4B1 File Offset: 0x001A86B1
+		// Token: 0x06002739 RID: 10041 RVA: 0x001B009D File Offset: 0x001AE29D
 		protected override void Reset()
 		{
 			base.Reset();
@@ -79,7 +79,7 @@ namespace Pathfinding
 			this.saveParents = true;
 		}
 
-		// Token: 0x060026E4 RID: 9956 RVA: 0x001AA4E8 File Offset: 0x001A86E8
+		// Token: 0x0600273A RID: 10042 RVA: 0x001B00D4 File Offset: 0x001AE2D4
 		protected override void Prepare()
 		{
 			if (this.startNode == null)
@@ -105,14 +105,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026E5 RID: 9957 RVA: 0x001AA584 File Offset: 0x001A8784
+		// Token: 0x0600273B RID: 10043 RVA: 0x001B0170 File Offset: 0x001AE370
 		protected override void Initialize()
 		{
 			PathNode pathNode = this.pathHandler.GetPathNode(this.startNode);
 			pathNode.node = this.startNode;
 			pathNode.pathID = this.pathHandler.PathID;
 			pathNode.parent = null;
-			pathNode.cost = 0u;
+			pathNode.cost = 0U;
 			pathNode.G = base.GetTraversalCost(this.startNode);
 			pathNode.H = base.CalculateHScore(this.startNode);
 			this.parents[this.startNode] = null;
@@ -125,7 +125,7 @@ namespace Pathfinding
 			this.currentR = this.pathHandler.heap.Remove();
 		}
 
-		// Token: 0x060026E6 RID: 9958 RVA: 0x001AA654 File Offset: 0x001A8854
+		// Token: 0x0600273C RID: 10044 RVA: 0x001B0240 File Offset: 0x001AE440
 		protected override void CalculateStep(long targetTick)
 		{
 			int num = 0;
@@ -159,19 +159,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04004199 RID: 16793
+		// Token: 0x04004277 RID: 17015
 		public Vector3 originalStartPoint;
 
-		// Token: 0x0400419A RID: 16794
+		// Token: 0x04004278 RID: 17016
 		public Vector3 startPoint;
 
-		// Token: 0x0400419B RID: 16795
+		// Token: 0x04004279 RID: 17017
 		public GraphNode startNode;
 
-		// Token: 0x0400419C RID: 16796
+		// Token: 0x0400427A RID: 17018
 		public bool saveParents = true;
 
-		// Token: 0x0400419D RID: 16797
+		// Token: 0x0400427B RID: 17019
 		protected Dictionary<GraphNode, GraphNode> parents;
 	}
 }

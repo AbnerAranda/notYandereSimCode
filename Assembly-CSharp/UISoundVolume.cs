@@ -6,7 +6,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Sound Volume")]
 public class UISoundVolume : MonoBehaviour
 {
-	// Token: 0x0600030F RID: 783 RVA: 0x0001E5F2 File Offset: 0x0001C7F2
+	// Token: 0x06000310 RID: 784 RVA: 0x0001E61A File Offset: 0x0001C81A
 	private void Awake()
 	{
 		UISlider component = base.GetComponent<UISlider>();
@@ -14,7 +14,7 @@ public class UISoundVolume : MonoBehaviour
 		EventDelegate.Add(component.onChange, new EventDelegate.Callback(this.OnChange));
 	}
 
-	// Token: 0x06000310 RID: 784 RVA: 0x0001E61C File Offset: 0x0001C81C
+	// Token: 0x06000311 RID: 785 RVA: 0x0001E644 File Offset: 0x0001C844
 	private void OnChange()
 	{
 		NGUITools.soundVolume = UIProgressBar.current.value;

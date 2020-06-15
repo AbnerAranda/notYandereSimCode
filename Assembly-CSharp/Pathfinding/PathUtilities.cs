@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x020005A3 RID: 1443
+	// Token: 0x020005B9 RID: 1465
 	public static class PathUtilities
 	{
-		// Token: 0x06002746 RID: 10054 RVA: 0x001AD3DC File Offset: 0x001AB5DC
+		// Token: 0x0600279C RID: 10140 RVA: 0x001B2FC8 File Offset: 0x001B11C8
 		public static bool IsPathPossible(GraphNode node1, GraphNode node2)
 		{
 			return node1.Walkable && node2.Walkable && node1.Area == node2.Area;
 		}
 
-		// Token: 0x06002747 RID: 10055 RVA: 0x001AD400 File Offset: 0x001AB600
+		// Token: 0x0600279D RID: 10141 RVA: 0x001B2FEC File Offset: 0x001B11EC
 		public static bool IsPathPossible(List<GraphNode> nodes)
 		{
 			if (nodes.Count == 0)
@@ -32,7 +32,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x06002748 RID: 10056 RVA: 0x001AD458 File Offset: 0x001AB658
+		// Token: 0x0600279E RID: 10142 RVA: 0x001B3044 File Offset: 0x001B1244
 		public static bool IsPathPossible(List<GraphNode> nodes, int tagMask)
 		{
 			if (nodes.Count == 0)
@@ -61,7 +61,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002749 RID: 10057 RVA: 0x001AD4D0 File Offset: 0x001AB6D0
+		// Token: 0x0600279F RID: 10143 RVA: 0x001B30BC File Offset: 0x001B12BC
 		public static List<GraphNode> GetReachableNodes(GraphNode seed, int tagMask = -1, Func<GraphNode, bool> filter = null)
 		{
 			Stack<GraphNode> dfsStack = StackPool<GraphNode>.Claim();
@@ -103,7 +103,7 @@ namespace Pathfinding
 			return reachable;
 		}
 
-		// Token: 0x0600274A RID: 10058 RVA: 0x001AD578 File Offset: 0x001AB778
+		// Token: 0x060027A0 RID: 10144 RVA: 0x001B3164 File Offset: 0x001B1364
 		public static List<GraphNode> BFS(GraphNode seed, int depth, int tagMask = -1, Func<GraphNode, bool> filter = null)
 		{
 			PathUtilities.BFSQueue = (PathUtilities.BFSQueue ?? new Queue<GraphNode>());
@@ -163,11 +163,11 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x0600274B RID: 10059 RVA: 0x001AD684 File Offset: 0x001AB884
+		// Token: 0x060027A1 RID: 10145 RVA: 0x001B3270 File Offset: 0x001B1470
 		public static List<Vector3> GetSpiralPoints(int count, float clearance)
 		{
 			List<Vector3> list = ListPool<Vector3>.Claim(count);
-			float num = clearance / 6.2831855f;
+			float num = clearance / 6.28318548f;
 			float num2 = 0f;
 			list.Add(PathUtilities.InvoluteOfCircle(num, num2));
 			for (int i = 0; i < count; i++)
@@ -194,13 +194,13 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x0600274C RID: 10060 RVA: 0x001AD75E File Offset: 0x001AB95E
+		// Token: 0x060027A2 RID: 10146 RVA: 0x001B334A File Offset: 0x001B154A
 		private static Vector3 InvoluteOfCircle(float a, float t)
 		{
 			return new Vector3(a * (Mathf.Cos(t) + t * Mathf.Sin(t)), 0f, a * (Mathf.Sin(t) - t * Mathf.Cos(t)));
 		}
 
-		// Token: 0x0600274D RID: 10061 RVA: 0x001AD78C File Offset: 0x001AB98C
+		// Token: 0x060027A3 RID: 10147 RVA: 0x001B3378 File Offset: 0x001B1578
 		public static void GetPointsAroundPointWorld(Vector3 p, IRaycastableGraph g, List<Vector3> previousPoints, float radius, float clearanceRadius)
 		{
 			if (previousPoints.Count == 0)
@@ -221,7 +221,7 @@ namespace Pathfinding
 			PathUtilities.GetPointsAroundPoint(p, g, previousPoints, radius, clearanceRadius);
 		}
 
-		// Token: 0x0600274E RID: 10062 RVA: 0x001AD80C File Offset: 0x001ABA0C
+		// Token: 0x060027A4 RID: 10148 RVA: 0x001B33F8 File Offset: 0x001B15F8
 		public static void GetPointsAroundPoint(Vector3 center, IRaycastableGraph g, List<Vector3> previousPoints, float radius, float clearanceRadius)
 		{
 			if (g == null)
@@ -311,7 +311,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600274F RID: 10063 RVA: 0x001AD9C8 File Offset: 0x001ABBC8
+		// Token: 0x060027A5 RID: 10149 RVA: 0x001B35B4 File Offset: 0x001B17B4
 		public static List<Vector3> GetPointsOnNodes(List<GraphNode> nodes, int count, float clearanceRadius = 0f)
 		{
 			if (nodes == null)
@@ -345,7 +345,7 @@ namespace Pathfinding
 						flag = true;
 						if (num3 >= num4)
 						{
-							clearanceRadius *= 0.80999994f;
+							clearanceRadius *= 0.809999943f;
 							num4 += 10;
 							if (num4 > 100)
 							{
@@ -397,10 +397,10 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x040041C1 RID: 16833
+		// Token: 0x0400429F RID: 17055
 		private static Queue<GraphNode> BFSQueue;
 
-		// Token: 0x040041C2 RID: 16834
+		// Token: 0x040042A0 RID: 17056
 		private static Dictionary<GraphNode, int> BFSMap;
 	}
 }

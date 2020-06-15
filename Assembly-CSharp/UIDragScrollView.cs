@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Drag Scroll View")]
 public class UIDragScrollView : MonoBehaviour
 {
-	// Token: 0x060001E5 RID: 485 RVA: 0x00017070 File Offset: 0x00015270
+	// Token: 0x060001E6 RID: 486 RVA: 0x00017098 File Offset: 0x00015298
 	private void OnEnable()
 	{
 		this.mTrans = base.transform;
@@ -20,14 +20,14 @@ public class UIDragScrollView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001E6 RID: 486 RVA: 0x000170DC File Offset: 0x000152DC
+	// Token: 0x060001E7 RID: 487 RVA: 0x00017104 File Offset: 0x00015304
 	private void Start()
 	{
 		this.mStarted = true;
 		this.FindScrollView();
 	}
 
-	// Token: 0x060001E7 RID: 487 RVA: 0x000170EC File Offset: 0x000152EC
+	// Token: 0x060001E8 RID: 488 RVA: 0x00017114 File Offset: 0x00015314
 	private void FindScrollView()
 	{
 		UIScrollView uiscrollView = NGUITools.FindInParents<UIScrollView>(this.mTrans);
@@ -43,7 +43,7 @@ public class UIDragScrollView : MonoBehaviour
 		this.mScroll = this.scrollView;
 	}
 
-	// Token: 0x060001E8 RID: 488 RVA: 0x0001715A File Offset: 0x0001535A
+	// Token: 0x060001E9 RID: 489 RVA: 0x00017182 File Offset: 0x00015382
 	private void OnDisable()
 	{
 		if (this.mPressed && this.mScroll != null && this.mScroll.GetComponentInChildren<UIWrapContent>() == null)
@@ -53,7 +53,7 @@ public class UIDragScrollView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001E9 RID: 489 RVA: 0x00017198 File Offset: 0x00015398
+	// Token: 0x060001EA RID: 490 RVA: 0x000171C0 File Offset: 0x000153C0
 	private void OnPress(bool pressed)
 	{
 		this.mPressed = pressed;
@@ -73,7 +73,7 @@ public class UIDragScrollView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001EA RID: 490 RVA: 0x00017230 File Offset: 0x00015430
+	// Token: 0x060001EB RID: 491 RVA: 0x00017258 File Offset: 0x00015458
 	private void OnDrag(Vector2 delta)
 	{
 		if (this.scrollView && NGUITools.GetActive(this))
@@ -82,7 +82,7 @@ public class UIDragScrollView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001EB RID: 491 RVA: 0x00017252 File Offset: 0x00015452
+	// Token: 0x060001EC RID: 492 RVA: 0x0001727A File Offset: 0x0001547A
 	private void OnScroll(float delta)
 	{
 		if (this.scrollView && NGUITools.GetActive(this))
@@ -91,7 +91,7 @@ public class UIDragScrollView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001EC RID: 492 RVA: 0x00017275 File Offset: 0x00015475
+	// Token: 0x060001ED RID: 493 RVA: 0x0001729D File Offset: 0x0001549D
 	public void OnPan(Vector2 delta)
 	{
 		if (this.scrollView && NGUITools.GetActive(this))
@@ -100,27 +100,27 @@ public class UIDragScrollView : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000369 RID: 873
+	// Token: 0x0400036B RID: 875
 	public UIScrollView scrollView;
 
-	// Token: 0x0400036A RID: 874
+	// Token: 0x0400036C RID: 876
 	[HideInInspector]
 	[SerializeField]
 	private UIScrollView draggablePanel;
 
-	// Token: 0x0400036B RID: 875
+	// Token: 0x0400036D RID: 877
 	private Transform mTrans;
 
-	// Token: 0x0400036C RID: 876
+	// Token: 0x0400036E RID: 878
 	private UIScrollView mScroll;
 
-	// Token: 0x0400036D RID: 877
+	// Token: 0x0400036F RID: 879
 	private bool mAutoFind;
 
-	// Token: 0x0400036E RID: 878
+	// Token: 0x04000370 RID: 880
 	private bool mStarted;
 
-	// Token: 0x0400036F RID: 879
+	// Token: 0x04000371 RID: 881
 	[NonSerialized]
 	private bool mPressed;
 }

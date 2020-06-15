@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F8 RID: 504
+// Token: 0x020001F9 RID: 505
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Artefact")]
 public class CameraFilterPack_TV_Artefact : MonoBehaviour
 {
 	// Token: 0x17000318 RID: 792
-	// (get) Token: 0x06001106 RID: 4358 RVA: 0x0007B06B File Offset: 0x0007926B
+	// (get) Token: 0x0600110D RID: 4365 RVA: 0x0007BD9B File Offset: 0x00079F9B
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Artefact : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001107 RID: 4359 RVA: 0x0007B09F File Offset: 0x0007929F
+	// Token: 0x0600110E RID: 4366 RVA: 0x0007BDCF File Offset: 0x00079FCF
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Artefact");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_Artefact : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001108 RID: 4360 RVA: 0x0007B0C0 File Offset: 0x000792C0
+	// Token: 0x0600110F RID: 4367 RVA: 0x0007BDF0 File Offset: 0x00079FF0
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_TV_Artefact : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001109 RID: 4361 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001110 RID: 4368 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x0600110A RID: 4362 RVA: 0x0007B1B8 File Offset: 0x000793B8
+	// Token: 0x06001111 RID: 4369 RVA: 0x0007BEE8 File Offset: 0x0007A0E8
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_TV_Artefact : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001406 RID: 5126
+	// Token: 0x04001425 RID: 5157
 	public Shader SCShader;
 
-	// Token: 0x04001407 RID: 5127
+	// Token: 0x04001426 RID: 5158
 	private float TimeX = 1f;
 
-	// Token: 0x04001408 RID: 5128
+	// Token: 0x04001427 RID: 5159
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04001409 RID: 5129
+	// Token: 0x04001428 RID: 5160
 	[Range(-10f, 10f)]
 	public float Colorisation = 1f;
 
-	// Token: 0x0400140A RID: 5130
+	// Token: 0x04001429 RID: 5161
 	[Range(-10f, 10f)]
 	public float Parasite = 1f;
 
-	// Token: 0x0400140B RID: 5131
+	// Token: 0x0400142A RID: 5162
 	[Range(-10f, 10f)]
 	public float Noise = 1f;
 
-	// Token: 0x0400140C RID: 5132
+	// Token: 0x0400142B RID: 5163
 	private Material SCMaterial;
 }

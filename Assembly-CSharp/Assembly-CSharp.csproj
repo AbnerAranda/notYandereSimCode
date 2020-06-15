@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E1D99540-59C5-477F-993F-F7A8FED80BD5}</ProjectGuid>
+    <ProjectGuid>{7E5E43AB-EA74-43EA-8887-65154E78E8AD}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -32,85 +32,91 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Bayat.SaveSystem.Runtime">
+      <HintPath>..\..\YandereSimulator_Data\Managed\Bayat.SaveSystem.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\YandereSimulator_Data\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.ClipperLib">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\Pathfinding.ClipperLib.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\Pathfinding.ClipperLib.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Poly2Tri">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\Pathfinding.Poly2Tri.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\Pathfinding.Poly2Tri.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\System.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\System.Core.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\System.Xml.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="XInputDotNetPure">
-      <HintPath>..\..\..\yandev\YandereSimulator_Data\Managed\XInputDotNetPure.dll</HintPath>
+      <HintPath>..\..\YandereSimulator_Data\Managed\XInputDotNetPure.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +178,12 @@
     <Compile Include="AudioListenerScript.cs" />
     <Compile Include="AudioMenuScript.cs" />
     <Compile Include="AudioSoftwareScript.cs" />
+    <Compile Include="Aura2API\AuraFreeCamera.cs" />
+    <Compile Include="Aura2API\AutoMoveAndRotate.cs" />
+    <Compile Include="Aura2API\DebugFps.cs" />
+    <Compile Include="Aura2API\LightFlicker.cs" />
+    <Compile Include="Aura2API\MoveSinCos.cs" />
+    <Compile Include="Aura2API\SinRotationOffset.cs" />
     <Compile Include="BarScript.cs" />
     <Compile Include="BatheEventScript.cs" />
     <Compile Include="BeachBallScript.cs" />
@@ -181,6 +193,7 @@
     <Compile Include="BlasterScript.cs" />
     <Compile Include="BlendshapeScript.cs" />
     <Compile Include="BloodCleanerScript.cs" />
+    <Compile Include="BloodParentScript.cs" />
     <Compile Include="BloodPoolScript.cs" />
     <Compile Include="BloodPoolSpawnerScript.cs" />
     <Compile Include="BloodSprayColliderScript.cs" />
@@ -620,6 +633,7 @@
     <Compile Include="DipJukeboxScript.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="DirectionalMicScript.cs" />
+    <Compile Include="DisabledYanSaveMember.cs" />
     <Compile Include="DiscordVerificationScript.cs" />
     <Compile Include="DoItScript.cs" />
     <Compile Include="DokiScript.cs" />
@@ -664,6 +678,7 @@
     <Compile Include="FalconPunchScript.cs" />
     <Compile Include="FallCheckerScript.cs" />
     <Compile Include="FallingOsanaScript.cs" />
+    <Compile Include="FamilyVoiceScript.cs" />
     <Compile Include="FanCoverScript.cs" />
     <Compile Include="FavorMenuScript.cs" />
     <Compile Include="FindStudentLockerScript.cs" />
@@ -691,6 +706,7 @@
     <Compile Include="GazerHairScript.cs" />
     <Compile Include="GenderType.cs" />
     <Compile Include="GenericBentoScript.cs" />
+    <Compile Include="GenocideEndingScript.cs" />
     <Compile Include="GentlemanScript.cs" />
     <Compile Include="GhostScript.cs" />
     <Compile Include="GiggleScript.cs" />
@@ -884,6 +900,7 @@
     <Compile Include="MissionModeScript.cs" />
     <Compile Include="MiyukiEnemyScript.cs" />
     <Compile Include="ModelSwapScript.cs" />
+    <Compile Include="MoneyWadScript.cs" />
     <Compile Include="MopHeadScript.cs" />
     <Compile Include="MopScript.cs" />
     <Compile Include="MovementType.cs" />
@@ -931,6 +948,7 @@
     <Compile Include="OsanaMondayLunchEventScript.cs" />
     <Compile Include="OsanaMorningFriendEventScript.cs" />
     <Compile Include="OsanaPoolEventScript.cs" />
+    <Compile Include="OsanaTextMessageScript.cs" />
     <Compile Include="OsanaThursdayAfterClassEventScript.cs" />
     <Compile Include="OsanaTuesdayLunchEventScript.cs" />
     <Compile Include="OsanaVendingMachineEventScript.cs" />
@@ -1246,6 +1264,8 @@
     <Compile Include="RangeInt.cs" />
     <Compile Include="RealTime.cs" />
     <Compile Include="RedStringScript.cs" />
+    <Compile Include="ReferenceArrayDict.cs" />
+    <Compile Include="ReferenceDict.cs" />
     <Compile Include="RefrigeratorScript.cs" />
     <Compile Include="RendererListScript.cs" />
     <Compile Include="ReputationScript.cs" />
@@ -1314,6 +1334,8 @@
     <Compile Include="SerializableDictionary.cs" />
     <Compile Include="SerializableHashSet.cs" />
     <Compile Include="SerializablePair.cs" />
+    <Compile Include="SerializedComponent.cs" />
+    <Compile Include="SerializedGameObject.cs" />
     <Compile Include="SerializedPose.cs" />
     <Compile Include="ServicesScript.cs" />
     <Compile Include="SetColorPickerColor.cs" />
@@ -1579,6 +1601,7 @@
     <Compile Include="UnityEngine\PostProcessing\VignetteComponent.cs" />
     <Compile Include="UnityEngine\PostProcessing\VignetteModel.cs" />
     <Compile Include="UpthrustScript.cs" />
+    <Compile Include="ValueDict.cs" />
     <Compile Include="VendingMachineScript.cs" />
     <Compile Include="VibrateScript.cs" />
     <Compile Include="VibrationScript.cs" />
@@ -1601,6 +1624,7 @@
     <Compile Include="WoodChipperScript.cs" />
     <Compile Include="WritheScript.cs" />
     <Compile Include="YancordGlobals.cs" />
+    <Compile Include="YandereHairScript.cs" />
     <Compile Include="YandereInteractionType.cs" />
     <Compile Include="YandereKunScript.cs" />
     <Compile Include="YanderePersonaType.cs" />
@@ -1615,6 +1639,10 @@
     <Compile Include="YandereSimulator\Yancord\Profile.cs" />
     <Compile Include="YandereSimulator\Yancord\Status.cs" />
     <Compile Include="YandereSimulator\Yancord\YancordManager.cs" />
+    <Compile Include="YanSave.cs" />
+    <Compile Include="YanSaveData.cs" />
+    <Compile Include="YanSaveIdentifier.cs" />
+    <Compile Include="YanSaveResolver.cs" />
     <Compile Include="YanvaniaBigFireballScript.cs" />
     <Compile Include="YanvaniaBlackHoleAttackScript.cs" />
     <Compile Include="YanvaniaBlackHoleScript.cs" />

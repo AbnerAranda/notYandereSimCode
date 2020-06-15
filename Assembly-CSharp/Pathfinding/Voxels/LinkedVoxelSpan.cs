@@ -2,10 +2,10 @@
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005AA RID: 1450
+	// Token: 0x020005C0 RID: 1472
 	public struct LinkedVoxelSpan
 	{
-		// Token: 0x06002775 RID: 10101 RVA: 0x001AF3D6 File Offset: 0x001AD5D6
+		// Token: 0x060027CB RID: 10187 RVA: 0x001B4FC2 File Offset: 0x001B31C2
 		public LinkedVoxelSpan(uint bottom, uint top, int area)
 		{
 			this.bottom = bottom;
@@ -14,7 +14,7 @@ namespace Pathfinding.Voxels
 			this.next = -1;
 		}
 
-		// Token: 0x06002776 RID: 10102 RVA: 0x001AF3F4 File Offset: 0x001AD5F4
+		// Token: 0x060027CC RID: 10188 RVA: 0x001B4FE0 File Offset: 0x001B31E0
 		public LinkedVoxelSpan(uint bottom, uint top, int area, int next)
 		{
 			this.bottom = bottom;
@@ -23,16 +23,16 @@ namespace Pathfinding.Voxels
 			this.next = next;
 		}
 
-		// Token: 0x040041F1 RID: 16881
+		// Token: 0x040042CF RID: 17103
 		public uint bottom;
 
-		// Token: 0x040041F2 RID: 16882
+		// Token: 0x040042D0 RID: 17104
 		public uint top;
 
-		// Token: 0x040041F3 RID: 16883
+		// Token: 0x040042D1 RID: 17105
 		public int next;
 
-		// Token: 0x040041F4 RID: 16884
+		// Token: 0x040042D2 RID: 17106
 		public int area;
 	}
 }

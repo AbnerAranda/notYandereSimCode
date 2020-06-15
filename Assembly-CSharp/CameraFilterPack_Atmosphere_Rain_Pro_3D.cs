@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000115 RID: 277
+// Token: 0x02000116 RID: 278
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Weather/Rain_Pro_3D")]
 public class CameraFilterPack_Atmosphere_Rain_Pro_3D : MonoBehaviour
 {
 	// Token: 0x17000235 RID: 565
-	// (get) Token: 0x06000B4F RID: 2895 RVA: 0x000618F6 File Offset: 0x0005FAF6
+	// (get) Token: 0x06000B56 RID: 2902 RVA: 0x00062626 File Offset: 0x00060826
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Atmosphere_Rain_Pro_3D : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B50 RID: 2896 RVA: 0x0006192A File Offset: 0x0005FB2A
+	// Token: 0x06000B57 RID: 2903 RVA: 0x0006265A File Offset: 0x0006085A
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_Atmosphere_Rain_FX") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Atmosphere_Rain_Pro_3D : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B51 RID: 2897 RVA: 0x00061960 File Offset: 0x0005FB60
+	// Token: 0x06000B58 RID: 2904 RVA: 0x00062690 File Offset: 0x00060890
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -84,12 +84,12 @@ public class CameraFilterPack_Atmosphere_Rain_Pro_3D : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B52 RID: 2898 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B59 RID: 2905 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B53 RID: 2899 RVA: 0x00061BE9 File Offset: 0x0005FDE9
+	// Token: 0x06000B5A RID: 2906 RVA: 0x00062919 File Offset: 0x00060B19
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -98,80 +98,80 @@ public class CameraFilterPack_Atmosphere_Rain_Pro_3D : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DD5 RID: 3541
+	// Token: 0x04000DF4 RID: 3572
 	public Shader SCShader;
 
-	// Token: 0x04000DD6 RID: 3542
+	// Token: 0x04000DF5 RID: 3573
 	public bool _Visualize;
 
-	// Token: 0x04000DD7 RID: 3543
+	// Token: 0x04000DF6 RID: 3574
 	private float TimeX = 1f;
 
-	// Token: 0x04000DD8 RID: 3544
+	// Token: 0x04000DF7 RID: 3575
 	private Material SCMaterial;
 
-	// Token: 0x04000DD9 RID: 3545
+	// Token: 0x04000DF8 RID: 3576
 	[Range(0f, 100f)]
 	public float _FixDistance = 3f;
 
-	// Token: 0x04000DDA RID: 3546
+	// Token: 0x04000DF9 RID: 3577
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04000DDB RID: 3547
+	// Token: 0x04000DFA RID: 3578
 	[Range(0f, 2f)]
 	public float Intensity = 0.5f;
 
-	// Token: 0x04000DDC RID: 3548
+	// Token: 0x04000DFB RID: 3579
 	public bool DirectionFollowCameraZ;
 
-	// Token: 0x04000DDD RID: 3549
+	// Token: 0x04000DFC RID: 3580
 	[Range(-0.45f, 0.45f)]
 	public float DirectionX = 0.12f;
 
-	// Token: 0x04000DDE RID: 3550
+	// Token: 0x04000DFD RID: 3581
 	[Range(0.4f, 2f)]
 	public float Size = 1.5f;
 
-	// Token: 0x04000DDF RID: 3551
+	// Token: 0x04000DFE RID: 3582
 	[Range(0f, 0.5f)]
 	public float Speed = 0.275f;
 
-	// Token: 0x04000DE0 RID: 3552
+	// Token: 0x04000DFF RID: 3583
 	[Range(0f, 0.5f)]
 	public float Distortion = 0.025f;
 
-	// Token: 0x04000DE1 RID: 3553
+	// Token: 0x04000E00 RID: 3584
 	[Range(0f, 1f)]
 	public float StormFlashOnOff = 1f;
 
-	// Token: 0x04000DE2 RID: 3554
+	// Token: 0x04000E01 RID: 3585
 	[Range(0f, 1f)]
 	public float DropOnOff = 1f;
 
-	// Token: 0x04000DE3 RID: 3555
+	// Token: 0x04000E02 RID: 3586
 	[Range(-0.5f, 0.99f)]
 	public float Drop_Near;
 
-	// Token: 0x04000DE4 RID: 3556
+	// Token: 0x04000E03 RID: 3587
 	[Range(0f, 1f)]
 	public float Drop_Far = 0.5f;
 
-	// Token: 0x04000DE5 RID: 3557
+	// Token: 0x04000E04 RID: 3588
 	[Range(0f, 1f)]
 	public float Drop_With_Obj = 0.2f;
 
-	// Token: 0x04000DE6 RID: 3558
+	// Token: 0x04000E05 RID: 3589
 	[Range(0f, 1f)]
 	public float Myst = 0.1f;
 
-	// Token: 0x04000DE7 RID: 3559
+	// Token: 0x04000E06 RID: 3590
 	[Range(0f, 1f)]
 	public float Drop_Floor_Fluid;
 
-	// Token: 0x04000DE8 RID: 3560
+	// Token: 0x04000E07 RID: 3591
 	public Color Myst_Color = new Color(0.5f, 0.5f, 0.5f, 1f);
 
-	// Token: 0x04000DE9 RID: 3561
+	// Token: 0x04000E08 RID: 3592
 	private Texture2D Texture2;
 }

@@ -3,22 +3,22 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200051C RID: 1308
+	// Token: 0x02000532 RID: 1330
 	public static class VectorMath
 	{
-		// Token: 0x060021AC RID: 8620 RVA: 0x0018B6BB File Offset: 0x001898BB
+		// Token: 0x06002202 RID: 8706 RVA: 0x001912A7 File Offset: 0x0018F4A7
 		public static Vector2 ComplexMultiply(Vector2 a, Vector2 b)
 		{
 			return new Vector2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);
 		}
 
-		// Token: 0x060021AD RID: 8621 RVA: 0x0018B6F8 File Offset: 0x001898F8
+		// Token: 0x06002203 RID: 8707 RVA: 0x001912E4 File Offset: 0x0018F4E4
 		public static Vector2 ComplexMultiplyConjugate(Vector2 a, Vector2 b)
 		{
 			return new Vector2(a.x * b.x + a.y * b.y, a.y * b.x - a.x * b.y);
 		}
 
-		// Token: 0x060021AE RID: 8622 RVA: 0x0018B738 File Offset: 0x00189938
+		// Token: 0x06002204 RID: 8708 RVA: 0x00191324 File Offset: 0x0018F524
 		public static Vector3 ClosestPointOnLine(Vector3 lineStart, Vector3 lineEnd, Vector3 point)
 		{
 			Vector3 vector = Vector3.Normalize(lineEnd - lineStart);
@@ -26,7 +26,7 @@ namespace Pathfinding
 			return lineStart + d * vector;
 		}
 
-		// Token: 0x060021AF RID: 8623 RVA: 0x0018B770 File Offset: 0x00189970
+		// Token: 0x06002205 RID: 8709 RVA: 0x0019135C File Offset: 0x0018F55C
 		public static float ClosestPointOnLineFactor(Vector3 lineStart, Vector3 lineEnd, Vector3 point)
 		{
 			Vector3 rhs = lineEnd - lineStart;
@@ -38,7 +38,7 @@ namespace Pathfinding
 			return Vector3.Dot(point - lineStart, rhs) / sqrMagnitude;
 		}
 
-		// Token: 0x060021B0 RID: 8624 RVA: 0x0018B7B0 File Offset: 0x001899B0
+		// Token: 0x06002206 RID: 8710 RVA: 0x0019139C File Offset: 0x0018F59C
 		public static float ClosestPointOnLineFactor(Int3 lineStart, Int3 lineEnd, Int3 point)
 		{
 			Int3 rhs = lineEnd - lineStart;
@@ -51,7 +51,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x060021B1 RID: 8625 RVA: 0x0018B7EC File Offset: 0x001899EC
+		// Token: 0x06002207 RID: 8711 RVA: 0x001913D8 File Offset: 0x0018F5D8
 		public static float ClosestPointOnLineFactor(Int2 lineStart, Int2 lineEnd, Int2 point)
 		{
 			Int2 b = lineEnd - lineStart;
@@ -64,7 +64,7 @@ namespace Pathfinding
 			return (float)num2;
 		}
 
-		// Token: 0x060021B2 RID: 8626 RVA: 0x0018B82C File Offset: 0x00189A2C
+		// Token: 0x06002208 RID: 8712 RVA: 0x00191418 File Offset: 0x0018F618
 		public static Vector3 ClosestPointOnSegment(Vector3 lineStart, Vector3 lineEnd, Vector3 point)
 		{
 			Vector3 vector = lineEnd - lineStart;
@@ -77,7 +77,7 @@ namespace Pathfinding
 			return lineStart + Mathf.Clamp01(value) * vector;
 		}
 
-		// Token: 0x060021B3 RID: 8627 RVA: 0x0018B87C File Offset: 0x00189A7C
+		// Token: 0x06002209 RID: 8713 RVA: 0x00191468 File Offset: 0x0018F668
 		public static Vector3 ClosestPointOnSegmentXZ(Vector3 lineStart, Vector3 lineEnd, Vector3 point)
 		{
 			lineStart.y = point.y;
@@ -90,7 +90,7 @@ namespace Pathfinding
 			return lineStart + Mathf.Clamp(value, 0f, a.magnitude) * vector;
 		}
 
-		// Token: 0x060021B4 RID: 8628 RVA: 0x0018B904 File Offset: 0x00189B04
+		// Token: 0x0600220A RID: 8714 RVA: 0x001914F0 File Offset: 0x0018F6F0
 		public static float SqrDistancePointSegmentApproximate(int x, int z, int px, int pz, int qx, int qz)
 		{
 			float num = (float)(qx - px);
@@ -116,7 +116,7 @@ namespace Pathfinding
 			return num3 * num3 + num4 * num4;
 		}
 
-		// Token: 0x060021B5 RID: 8629 RVA: 0x0018B988 File Offset: 0x00189B88
+		// Token: 0x0600220B RID: 8715 RVA: 0x00191574 File Offset: 0x0018F774
 		public static float SqrDistancePointSegmentApproximate(Int3 a, Int3 b, Int3 p)
 		{
 			float num = (float)(b.x - a.x);
@@ -142,13 +142,13 @@ namespace Pathfinding
 			return num3 * num3 + num4 * num4;
 		}
 
-		// Token: 0x060021B6 RID: 8630 RVA: 0x0018BA48 File Offset: 0x00189C48
+		// Token: 0x0600220C RID: 8716 RVA: 0x00191634 File Offset: 0x0018F834
 		public static float SqrDistancePointSegment(Vector3 a, Vector3 b, Vector3 p)
 		{
 			return (VectorMath.ClosestPointOnSegment(a, b, p) - p).sqrMagnitude;
 		}
 
-		// Token: 0x060021B7 RID: 8631 RVA: 0x0018BA6C File Offset: 0x00189C6C
+		// Token: 0x0600220D RID: 8717 RVA: 0x00191658 File Offset: 0x0018F858
 		public static float SqrDistanceSegmentSegment(Vector3 s1, Vector3 e1, Vector3 s2, Vector3 e2)
 		{
 			Vector3 vector = e1 - s1;
@@ -226,38 +226,38 @@ namespace Pathfinding
 			return (vector3 + d * vector - d2 * vector2).sqrMagnitude;
 		}
 
-		// Token: 0x060021B8 RID: 8632 RVA: 0x0018BC04 File Offset: 0x00189E04
+		// Token: 0x0600220E RID: 8718 RVA: 0x001917F0 File Offset: 0x0018F9F0
 		public static float SqrDistanceXZ(Vector3 a, Vector3 b)
 		{
 			Vector3 vector = a - b;
 			return vector.x * vector.x + vector.z * vector.z;
 		}
 
-		// Token: 0x060021B9 RID: 8633 RVA: 0x0018BC34 File Offset: 0x00189E34
+		// Token: 0x0600220F RID: 8719 RVA: 0x00191820 File Offset: 0x0018FA20
 		public static long SignedTriangleAreaTimes2XZ(Int3 a, Int3 b, Int3 c)
 		{
 			return (long)(b.x - a.x) * (long)(c.z - a.z) - (long)(c.x - a.x) * (long)(b.z - a.z);
 		}
 
-		// Token: 0x060021BA RID: 8634 RVA: 0x0018BC71 File Offset: 0x00189E71
+		// Token: 0x06002210 RID: 8720 RVA: 0x0019185D File Offset: 0x0018FA5D
 		public static float SignedTriangleAreaTimes2XZ(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return (b.x - a.x) * (c.z - a.z) - (c.x - a.x) * (b.z - a.z);
 		}
 
-		// Token: 0x060021BB RID: 8635 RVA: 0x0018BCAA File Offset: 0x00189EAA
+		// Token: 0x06002211 RID: 8721 RVA: 0x00191896 File Offset: 0x0018FA96
 		public static bool RightXZ(Vector3 a, Vector3 b, Vector3 p)
 		{
-			return (b.x - a.x) * (p.z - a.z) - (p.x - a.x) * (b.z - a.z) < -1E-45f;
+			return (b.x - a.x) * (p.z - a.z) - (p.x - a.x) * (b.z - a.z) < -1.401298E-45f;
 		}
 
-		// Token: 0x060021BC RID: 8636 RVA: 0x0018BCEC File Offset: 0x00189EEC
+		// Token: 0x06002212 RID: 8722 RVA: 0x001918D8 File Offset: 0x0018FAD8
 		public static bool RightXZ(Int3 a, Int3 b, Int3 p)
 		{
 			return (long)(b.x - a.x) * (long)(p.z - a.z) - (long)(p.x - a.x) * (long)(b.z - a.z) < 0L;
 		}
 
-		// Token: 0x060021BD RID: 8637 RVA: 0x0018BD38 File Offset: 0x00189F38
+		// Token: 0x06002213 RID: 8723 RVA: 0x00191924 File Offset: 0x0018FB24
 		public static Side SideXZ(Int3 a, Int3 b, Int3 p)
 		{
 			long num = (long)(b.x - a.x) * (long)(p.z - a.z) - (long)(p.x - a.x) * (long)(b.z - a.z);
@@ -272,61 +272,61 @@ namespace Pathfinding
 			return Side.Right;
 		}
 
-		// Token: 0x060021BE RID: 8638 RVA: 0x0018BD90 File Offset: 0x00189F90
+		// Token: 0x06002214 RID: 8724 RVA: 0x0019197C File Offset: 0x0018FB7C
 		public static bool RightOrColinear(Vector2 a, Vector2 b, Vector2 p)
 		{
 			return (b.x - a.x) * (p.y - a.y) - (p.x - a.x) * (b.y - a.y) <= 0f;
 		}
 
-		// Token: 0x060021BF RID: 8639 RVA: 0x0018BDE0 File Offset: 0x00189FE0
+		// Token: 0x06002215 RID: 8725 RVA: 0x001919CC File Offset: 0x0018FBCC
 		public static bool RightOrColinear(Int2 a, Int2 b, Int2 p)
 		{
 			return (long)(b.x - a.x) * (long)(p.y - a.y) - (long)(p.x - a.x) * (long)(b.y - a.y) <= 0L;
 		}
 
-		// Token: 0x060021C0 RID: 8640 RVA: 0x0018BE30 File Offset: 0x0018A030
+		// Token: 0x06002216 RID: 8726 RVA: 0x00191A1C File Offset: 0x0018FC1C
 		public static bool RightOrColinearXZ(Vector3 a, Vector3 b, Vector3 p)
 		{
 			return (b.x - a.x) * (p.z - a.z) - (p.x - a.x) * (b.z - a.z) <= 0f;
 		}
 
-		// Token: 0x060021C1 RID: 8641 RVA: 0x0018BE80 File Offset: 0x0018A080
+		// Token: 0x06002217 RID: 8727 RVA: 0x00191A6C File Offset: 0x0018FC6C
 		public static bool RightOrColinearXZ(Int3 a, Int3 b, Int3 p)
 		{
 			return (long)(b.x - a.x) * (long)(p.z - a.z) - (long)(p.x - a.x) * (long)(b.z - a.z) <= 0L;
 		}
 
-		// Token: 0x060021C2 RID: 8642 RVA: 0x0018BED0 File Offset: 0x0018A0D0
+		// Token: 0x06002218 RID: 8728 RVA: 0x00191ABC File Offset: 0x0018FCBC
 		public static bool IsClockwiseMarginXZ(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return (b.x - a.x) * (c.z - a.z) - (c.x - a.x) * (b.z - a.z) <= float.Epsilon;
 		}
 
-		// Token: 0x060021C3 RID: 8643 RVA: 0x0018BF1E File Offset: 0x0018A11E
+		// Token: 0x06002219 RID: 8729 RVA: 0x00191B0A File Offset: 0x0018FD0A
 		public static bool IsClockwiseXZ(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return (b.x - a.x) * (c.z - a.z) - (c.x - a.x) * (b.z - a.z) < 0f;
 		}
 
-		// Token: 0x060021C4 RID: 8644 RVA: 0x0018BF5E File Offset: 0x0018A15E
+		// Token: 0x0600221A RID: 8730 RVA: 0x00191B4A File Offset: 0x0018FD4A
 		public static bool IsClockwiseXZ(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.RightXZ(a, b, c);
 		}
 
-		// Token: 0x060021C5 RID: 8645 RVA: 0x0018BF68 File Offset: 0x0018A168
+		// Token: 0x0600221B RID: 8731 RVA: 0x00191B54 File Offset: 0x0018FD54
 		public static bool IsClockwiseOrColinearXZ(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.RightOrColinearXZ(a, b, c);
 		}
 
-		// Token: 0x060021C6 RID: 8646 RVA: 0x0018BF72 File Offset: 0x0018A172
+		// Token: 0x0600221C RID: 8732 RVA: 0x00191B5E File Offset: 0x0018FD5E
 		public static bool IsClockwiseOrColinear(Int2 a, Int2 b, Int2 c)
 		{
 			return VectorMath.RightOrColinear(a, b, c);
 		}
 
-		// Token: 0x060021C7 RID: 8647 RVA: 0x0018BF7C File Offset: 0x0018A17C
+		// Token: 0x0600221D RID: 8733 RVA: 0x00191B68 File Offset: 0x0018FD68
 		public static bool IsColinear(Vector3 a, Vector3 b, Vector3 c)
 		{
 			Vector3 vector = b - a;
@@ -337,46 +337,46 @@ namespace Pathfinding
 			return num * num + num2 * num2 + num3 * num3 <= 1E-07f;
 		}
 
-		// Token: 0x060021C8 RID: 8648 RVA: 0x0018C000 File Offset: 0x0018A200
+		// Token: 0x0600221E RID: 8734 RVA: 0x00191BEC File Offset: 0x0018FDEC
 		public static bool IsColinear(Vector2 a, Vector2 b, Vector2 c)
 		{
 			float num = (b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y);
 			return num <= 1E-07f && num >= -1E-07f;
 		}
 
-		// Token: 0x060021C9 RID: 8649 RVA: 0x0018C05C File Offset: 0x0018A25C
+		// Token: 0x0600221F RID: 8735 RVA: 0x00191C48 File Offset: 0x0018FE48
 		public static bool IsColinearXZ(Int3 a, Int3 b, Int3 c)
 		{
 			return (long)(b.x - a.x) * (long)(c.z - a.z) - (long)(c.x - a.x) * (long)(b.z - a.z) == 0L;
 		}
 
-		// Token: 0x060021CA RID: 8650 RVA: 0x0018C0A8 File Offset: 0x0018A2A8
+		// Token: 0x06002220 RID: 8736 RVA: 0x00191C94 File Offset: 0x0018FE94
 		public static bool IsColinearXZ(Vector3 a, Vector3 b, Vector3 c)
 		{
 			float num = (b.x - a.x) * (c.z - a.z) - (c.x - a.x) * (b.z - a.z);
 			return num <= 1E-07f && num >= -1E-07f;
 		}
 
-		// Token: 0x060021CB RID: 8651 RVA: 0x0018C104 File Offset: 0x0018A304
+		// Token: 0x06002221 RID: 8737 RVA: 0x00191CF0 File Offset: 0x0018FEF0
 		public static bool IsColinearAlmostXZ(Int3 a, Int3 b, Int3 c)
 		{
 			long num = (long)(b.x - a.x) * (long)(c.z - a.z) - (long)(c.x - a.x) * (long)(b.z - a.z);
 			return num > -1L && num < 1L;
 		}
 
-		// Token: 0x060021CC RID: 8652 RVA: 0x0018C159 File Offset: 0x0018A359
+		// Token: 0x06002222 RID: 8738 RVA: 0x00191D45 File Offset: 0x0018FF45
 		public static bool SegmentsIntersect(Int2 start1, Int2 end1, Int2 start2, Int2 end2)
 		{
 			return VectorMath.RightOrColinear(start1, end1, start2) != VectorMath.RightOrColinear(start1, end1, end2) && VectorMath.RightOrColinear(start2, end2, start1) != VectorMath.RightOrColinear(start2, end2, end1);
 		}
 
-		// Token: 0x060021CD RID: 8653 RVA: 0x0018C184 File Offset: 0x0018A384
+		// Token: 0x06002223 RID: 8739 RVA: 0x00191D70 File Offset: 0x0018FF70
 		public static bool SegmentsIntersectXZ(Int3 start1, Int3 end1, Int3 start2, Int3 end2)
 		{
 			return VectorMath.RightOrColinearXZ(start1, end1, start2) != VectorMath.RightOrColinearXZ(start1, end1, end2) && VectorMath.RightOrColinearXZ(start2, end2, start1) != VectorMath.RightOrColinearXZ(start2, end2, end1);
 		}
 
-		// Token: 0x060021CE RID: 8654 RVA: 0x0018C1B0 File Offset: 0x0018A3B0
+		// Token: 0x06002224 RID: 8740 RVA: 0x00191D9C File Offset: 0x0018FF9C
 		public static bool SegmentsIntersectXZ(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
 		{
 			Vector3 vector = end1 - start1;
@@ -393,7 +393,7 @@ namespace Pathfinding
 			return num4 >= 0f && num4 <= 1f && num5 >= 0f && num5 <= 1f;
 		}
 
-		// Token: 0x060021CF RID: 8655 RVA: 0x0018C278 File Offset: 0x0018A478
+		// Token: 0x06002225 RID: 8741 RVA: 0x00191E64 File Offset: 0x00190064
 		public static Vector3 LineDirIntersectionPointXZ(Vector3 start1, Vector3 dir1, Vector3 start2, Vector3 dir2)
 		{
 			float num = dir2.z * dir1.x - dir2.x * dir1.z;
@@ -405,7 +405,7 @@ namespace Pathfinding
 			return start1 + dir1 * d;
 		}
 
-		// Token: 0x060021D0 RID: 8656 RVA: 0x0018C2E4 File Offset: 0x0018A4E4
+		// Token: 0x06002226 RID: 8742 RVA: 0x00191ED0 File Offset: 0x001900D0
 		public static Vector3 LineDirIntersectionPointXZ(Vector3 start1, Vector3 dir1, Vector3 start2, Vector3 dir2, out bool intersects)
 		{
 			float num = dir2.z * dir1.x - dir2.x * dir1.z;
@@ -419,7 +419,7 @@ namespace Pathfinding
 			return start1 + dir1 * d;
 		}
 
-		// Token: 0x060021D1 RID: 8657 RVA: 0x0018C358 File Offset: 0x0018A558
+		// Token: 0x06002227 RID: 8743 RVA: 0x00191F44 File Offset: 0x00190144
 		public static bool RaySegmentIntersectXZ(Int3 start1, Int3 end1, Int3 start2, Int3 end2)
 		{
 			Int3 @int = end1 - start1;
@@ -434,7 +434,7 @@ namespace Pathfinding
 			return (num2 < 0L ^ num < 0L) && (num3 < 0L ^ num < 0L) && (num < 0L || num3 <= num) && (num >= 0L || num3 > num);
 		}
 
-		// Token: 0x060021D2 RID: 8658 RVA: 0x0018C420 File Offset: 0x0018A620
+		// Token: 0x06002228 RID: 8744 RVA: 0x0019200C File Offset: 0x0019020C
 		public static bool LineIntersectionFactorXZ(Int3 start1, Int3 end1, Int3 start2, Int3 end2, out float factor1, out float factor2)
 		{
 			Int3 @int = end1 - start1;
@@ -453,7 +453,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x060021D3 RID: 8659 RVA: 0x0018C4D8 File Offset: 0x0018A6D8
+		// Token: 0x06002229 RID: 8745 RVA: 0x001920C4 File Offset: 0x001902C4
 		public static bool LineIntersectionFactorXZ(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out float factor1, out float factor2)
 		{
 			Vector3 vector = end1 - start1;
@@ -474,7 +474,7 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x060021D4 RID: 8660 RVA: 0x0018C59C File Offset: 0x0018A79C
+		// Token: 0x0600222A RID: 8746 RVA: 0x00192188 File Offset: 0x00190388
 		public static float LineRayIntersectionFactorXZ(Int3 start1, Int3 end1, Int3 start2, Int3 end2)
 		{
 			Int3 @int = end1 - start1;
@@ -492,7 +492,7 @@ namespace Pathfinding
 			return (float)num2 / (float)num;
 		}
 
-		// Token: 0x060021D5 RID: 8661 RVA: 0x0018C648 File Offset: 0x0018A848
+		// Token: 0x0600222B RID: 8747 RVA: 0x00192234 File Offset: 0x00190434
 		public static float LineIntersectionFactorXZ(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
 		{
 			Vector3 vector = end1 - start1;
@@ -505,14 +505,14 @@ namespace Pathfinding
 			return (vector2.x * (start1.z - start2.z) - vector2.z * (start1.x - start2.x)) / num;
 		}
 
-		// Token: 0x060021D6 RID: 8662 RVA: 0x0018C6BC File Offset: 0x0018A8BC
+		// Token: 0x0600222C RID: 8748 RVA: 0x001922A8 File Offset: 0x001904A8
 		public static Vector3 LineIntersectionPointXZ(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
 		{
 			bool flag;
 			return VectorMath.LineIntersectionPointXZ(start1, end1, start2, end2, out flag);
 		}
 
-		// Token: 0x060021D7 RID: 8663 RVA: 0x0018C6D4 File Offset: 0x0018A8D4
+		// Token: 0x0600222D RID: 8749 RVA: 0x001922C0 File Offset: 0x001904C0
 		public static Vector3 LineIntersectionPointXZ(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out bool intersects)
 		{
 			Vector3 vector = end1 - start1;
@@ -528,14 +528,14 @@ namespace Pathfinding
 			return start1 + vector * d;
 		}
 
-		// Token: 0x060021D8 RID: 8664 RVA: 0x0018C758 File Offset: 0x0018A958
+		// Token: 0x0600222E RID: 8750 RVA: 0x00192344 File Offset: 0x00190544
 		public static Vector2 LineIntersectionPoint(Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2)
 		{
 			bool flag;
 			return VectorMath.LineIntersectionPoint(start1, end1, start2, end2, out flag);
 		}
 
-		// Token: 0x060021D9 RID: 8665 RVA: 0x0018C770 File Offset: 0x0018A970
+		// Token: 0x0600222F RID: 8751 RVA: 0x0019235C File Offset: 0x0019055C
 		public static Vector2 LineIntersectionPoint(Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2, out bool intersects)
 		{
 			Vector2 vector = end1 - start1;
@@ -551,7 +551,7 @@ namespace Pathfinding
 			return start1 + vector * d;
 		}
 
-		// Token: 0x060021DA RID: 8666 RVA: 0x0018C7F4 File Offset: 0x0018A9F4
+		// Token: 0x06002230 RID: 8752 RVA: 0x001923E0 File Offset: 0x001905E0
 		public static Vector3 SegmentIntersectionPointXZ(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out bool intersects)
 		{
 			Vector3 vector = end1 - start1;
@@ -575,7 +575,7 @@ namespace Pathfinding
 			return start1 + vector * num4;
 		}
 
-		// Token: 0x060021DB RID: 8667 RVA: 0x0018C8D4 File Offset: 0x0018AAD4
+		// Token: 0x06002231 RID: 8753 RVA: 0x001924C0 File Offset: 0x001906C0
 		public static bool SegmentIntersectsBounds(Bounds bounds, Vector3 a, Vector3 b)
 		{
 			a -= bounds.center;
@@ -587,7 +587,7 @@ namespace Pathfinding
 			return Math.Abs(vector.x) <= extents.x + vector3.x && Math.Abs(vector.y) <= extents.y + vector3.y && Math.Abs(vector.z) <= extents.z + vector3.z && Math.Abs(vector.y * vector2.z - vector.z * vector2.y) <= extents.y * vector3.z + extents.z * vector3.y && Math.Abs(vector.x * vector2.z - vector.z * vector2.x) <= extents.x * vector3.z + extents.z * vector3.x && Math.Abs(vector.x * vector2.y - vector.y * vector2.x) <= extents.x * vector3.y + extents.y * vector3.x;
 		}
 
-		// Token: 0x060021DC RID: 8668 RVA: 0x0018CA5C File Offset: 0x0018AC5C
+		// Token: 0x06002232 RID: 8754 RVA: 0x00192648 File Offset: 0x00190848
 		public static float LineCircleIntersectionFactor(Vector3 circleCenter, Vector3 linePoint1, Vector3 linePoint2, float radius)
 		{
 			float num;
@@ -607,7 +607,7 @@ namespace Pathfinding
 			return num4 / num;
 		}
 
-		// Token: 0x060021DD RID: 8669 RVA: 0x0018CAC4 File Offset: 0x0018ACC4
+		// Token: 0x06002233 RID: 8755 RVA: 0x001926B0 File Offset: 0x001908B0
 		public static bool ReversesFaceOrientations(Matrix4x4 matrix)
 		{
 			Vector3 lhs = matrix.MultiplyVector(new Vector3(1f, 0f, 0f));
@@ -616,7 +616,7 @@ namespace Pathfinding
 			return Vector3.Dot(Vector3.Cross(lhs, rhs), rhs2) < 0f;
 		}
 
-		// Token: 0x060021DE RID: 8670 RVA: 0x0018CB38 File Offset: 0x0018AD38
+		// Token: 0x06002234 RID: 8756 RVA: 0x00192724 File Offset: 0x00190924
 		public static bool ReversesFaceOrientationsXZ(Matrix4x4 matrix)
 		{
 			Vector3 vector = matrix.MultiplyVector(new Vector3(1f, 0f, 0f));
@@ -624,7 +624,7 @@ namespace Pathfinding
 			return vector.x * vector2.z - vector2.x * vector.z < 0f;
 		}
 
-		// Token: 0x060021DF RID: 8671 RVA: 0x0018CB9F File Offset: 0x0018AD9F
+		// Token: 0x06002235 RID: 8757 RVA: 0x0019278B File Offset: 0x0019098B
 		public static Vector3 Normalize(Vector3 v, out float magnitude)
 		{
 			magnitude = v.magnitude;
@@ -635,7 +635,7 @@ namespace Pathfinding
 			return Vector3.zero;
 		}
 
-		// Token: 0x060021E0 RID: 8672 RVA: 0x0018CBC1 File Offset: 0x0018ADC1
+		// Token: 0x06002236 RID: 8758 RVA: 0x001927AD File Offset: 0x001909AD
 		public static Vector2 Normalize(Vector2 v, out float magnitude)
 		{
 			magnitude = v.magnitude;
@@ -646,7 +646,7 @@ namespace Pathfinding
 			return Vector2.zero;
 		}
 
-		// Token: 0x060021E1 RID: 8673 RVA: 0x0018CBE4 File Offset: 0x0018ADE4
+		// Token: 0x06002237 RID: 8759 RVA: 0x001927D0 File Offset: 0x001909D0
 		public static Vector3 ClampMagnitudeXZ(Vector3 v, float maxMagnitude)
 		{
 			float num = v.x * v.x + v.z * v.z;
@@ -659,7 +659,7 @@ namespace Pathfinding
 			return v;
 		}
 
-		// Token: 0x060021E2 RID: 8674 RVA: 0x0018CC3D File Offset: 0x0018AE3D
+		// Token: 0x06002238 RID: 8760 RVA: 0x00192829 File Offset: 0x00190A29
 		public static float MagnitudeXZ(Vector3 v)
 		{
 			return Mathf.Sqrt(v.x * v.x + v.z * v.z);

@@ -2,11 +2,11 @@
 
 namespace MaidDereMinigame
 {
-	// Token: 0x020004E8 RID: 1256
+	// Token: 0x020004F8 RID: 1272
 	[Serializable]
 	public struct ControlInput
 	{
-		// Token: 0x04003D72 RID: 15730
+		// Token: 0x04003E22 RID: 15906
 		public float horizontal;
 	}
 }

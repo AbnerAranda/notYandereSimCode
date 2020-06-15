@@ -4,12 +4,13 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000280 RID: 640
+// Token: 0x02000281 RID: 641
 public class EndOfDayScript : MonoBehaviour
 {
-	// Token: 0x06001398 RID: 5016 RVA: 0x000A8650 File Offset: 0x000A6850
+	// Token: 0x060013A0 RID: 5024 RVA: 0x000A96E8 File Offset: 0x000A78E8
 	public void Start()
 	{
+		GameGlobals.PoliceYesterday = false;
 		this.YandereInitialPosition = this.Yandere.transform.position;
 		this.YandereInitialRotation = this.Yandere.transform.rotation;
 		if (GameGlobals.SenpaiMourning)
@@ -46,10 +47,23 @@ public class EndOfDayScript : MonoBehaviour
 		Debug.Log("Clothing with red paint is: " + this.ClothingWithRedPaint);
 	}
 
-	// Token: 0x06001399 RID: 5017 RVA: 0x000A890C File Offset: 0x000A6B0C
+	// Token: 0x060013A1 RID: 5025 RVA: 0x000A99AC File Offset: 0x000A7BAC
 	private void Update()
 	{
 		this.Yandere.UpdateSlouch();
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			PlayerPrefs.SetInt("LoadingSave", 1);
+			PlayerPrefs.SetInt("SaveSlot", GameGlobals.MostRecentSlot);
+			for (int i = 0; i < this.StudentManager.NPCsTotal; i++)
+			{
+				if (StudentGlobals.GetStudentDying(i))
+				{
+					StudentGlobals.SetStudentDying(i, false);
+				}
+			}
+			SceneManager.LoadScene("LoadingScene");
+		}
 		if (Input.GetKeyDown("space"))
 		{
 			this.EndOfDayDarkness.color = new Color(0f, 0f, 0f, 1f);
@@ -143,8 +157,15 @@ public class EndOfDayScript : MonoBehaviour
 					this.Heartbroken.transform.parent.transform.parent = null;
 					this.Heartbroken.transform.parent.gameObject.SetActive(true);
 					this.Heartbroken.Cursor.HeartbrokenCamera.depth = 6f;
-					this.Heartbroken.Noticed = false;
-					this.Heartbroken.Arrested = true;
+					if (this.Police.Deaths + PlayerGlobals.Kills > 50)
+					{
+						this.Heartbroken.Noticed = true;
+					}
+					else
+					{
+						this.Heartbroken.Noticed = false;
+						this.Heartbroken.Arrested = true;
+					}
 					this.MainCamera.SetActive(false);
 					base.gameObject.SetActive(false);
 					Time.timeScale = 1f;
@@ -175,7 +196,7 @@ public class EndOfDayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600139A RID: 5018 RVA: 0x000A8F30 File Offset: 0x000A7130
+	// Token: 0x060013A2 RID: 5026 RVA: 0x000AA044 File Offset: 0x000A8244
 	public void UpdateScene()
 	{
 		this.Label.color = new Color(0f, 0f, 0f, 1f);
@@ -196,6 +217,7 @@ public class EndOfDayScript : MonoBehaviour
 			}
 			if (this.Phase == 1)
 			{
+				GameGlobals.PoliceYesterday = true;
 				this.CopAnimation[1]["walk_00"].speed = UnityEngine.Random.Range(0.9f, 1.1f);
 				this.CopAnimation[2]["walk_00"].speed = UnityEngine.Random.Range(0.9f, 1.1f);
 				this.CopAnimation[3]["walk_00"].speed = UnityEngine.Random.Range(0.9f, 1.1f);
@@ -696,7 +718,7 @@ public class EndOfDayScript : MonoBehaviour
 					}
 					if (DateGlobals.Weekday == DayOfWeek.Friday)
 					{
-						this.Phase = 21;
+						this.Phase = 22;
 						return;
 					}
 					this.Phase += 2;
@@ -863,6 +885,21 @@ public class EndOfDayScript : MonoBehaviour
 					}
 					else if (this.Phase == 16)
 					{
+						if (this.Police.Deaths + PlayerGlobals.Kills > 50)
+						{
+							this.EODCamera.position = new Vector3(-6f, 0.15f, -49f);
+							this.EODCamera.eulerAngles = new Vector3(-22.5f, 22.5f, 0f);
+							this.Label.text = "More than half of the school's population is dead. For the safety of the remaining students, the headmaster of Akademi makes the decision to shut down the school. Senpai enrolls in a school far away. Ayano will not be able to follow him, and another girl will steal his heart. Ayano has permanently lost her chance to be with Senpai.";
+							this.Heartbroken.NoSnap = true;
+							this.GameOver = true;
+							return;
+						}
+						this.Phase++;
+						this.UpdateScene();
+						return;
+					}
+					else if (this.Phase == 17)
+					{
 						this.ClubClosed = false;
 						this.ClubKicked = false;
 						float d = 1.2f;
@@ -879,9 +916,9 @@ public class EndOfDayScript : MonoBehaviour
 									ClubGlobals.SetClubClosed(this.ClubArray[this.ClubID], true);
 									this.Label.text = "The " + this.ClubNames[this.ClubID].ToString() + " no longer has enough members to remain operational. The school forces the club to disband.";
 									this.ClubClosed = true;
-									if (ClubGlobals.Club == this.ClubArray[this.ClubID])
+									if (this.Yandere.Club == this.ClubArray[this.ClubID])
 									{
-										ClubGlobals.Club = ClubType.None;
+										this.Yandere.Club = ClubType.None;
 									}
 								}
 								if (this.ClubManager.LeaderMissing)
@@ -899,9 +936,9 @@ public class EndOfDayScript : MonoBehaviour
 										" cannot operate without its leader. The club disbands."
 									});
 									this.ClubClosed = true;
-									if (ClubGlobals.Club == this.ClubArray[this.ClubID])
+									if (this.Yandere.Club == this.ClubArray[this.ClubID])
 									{
-										ClubGlobals.Club = ClubType.None;
+										this.Yandere.Club = ClubType.None;
 									}
 								}
 								else if (this.ClubManager.LeaderDead)
@@ -919,9 +956,9 @@ public class EndOfDayScript : MonoBehaviour
 										" cannot operate without its leader. The club disbands."
 									});
 									this.ClubClosed = true;
-									if (ClubGlobals.Club == this.ClubArray[this.ClubID])
+									if (this.Yandere.Club == this.ClubArray[this.ClubID])
 									{
-										ClubGlobals.Club = ClubType.None;
+										this.Yandere.Club = ClubType.None;
 									}
 								}
 								else if (this.ClubManager.LeaderAshamed)
@@ -933,13 +970,13 @@ public class EndOfDayScript : MonoBehaviour
 									this.Label.text = "The leader of the " + this.ClubNames[this.ClubID].ToString() + " has unexpectedly disbanded the club without explanation.";
 									this.ClubClosed = true;
 									this.ClubManager.LeaderAshamed = false;
-									if (ClubGlobals.Club == this.ClubArray[this.ClubID])
+									if (this.Yandere.Club == this.ClubArray[this.ClubID])
 									{
-										ClubGlobals.Club = ClubType.None;
+										this.Yandere.Club = ClubType.None;
 									}
 								}
 							}
-							if (!ClubGlobals.GetClubClosed(this.ClubArray[this.ClubID]) && !ClubGlobals.GetClubKicked(this.ClubArray[this.ClubID]) && ClubGlobals.Club == this.ClubArray[this.ClubID])
+							if (!ClubGlobals.GetClubClosed(this.ClubArray[this.ClubID]) && !ClubGlobals.GetClubKicked(this.ClubArray[this.ClubID]) && this.Yandere.Club == this.ClubArray[this.ClubID])
 							{
 								this.ClubManager.CheckGrudge(this.ClubArray[this.ClubID]);
 								if (this.ClubManager.LeaderGrudge)
@@ -958,7 +995,7 @@ public class EndOfDayScript : MonoBehaviour
 										" room."
 									});
 									ClubGlobals.SetClubKicked(this.ClubArray[this.ClubID], true);
-									ClubGlobals.Club = ClubType.None;
+									this.Yandere.Club = ClubType.None;
 									this.ClubKicked = true;
 								}
 								else if (this.ClubManager.ClubGrudge)
@@ -979,7 +1016,7 @@ public class EndOfDayScript : MonoBehaviour
 										" room."
 									});
 									ClubGlobals.SetClubKicked(this.ClubArray[this.ClubID], true);
-									ClubGlobals.Club = ClubType.None;
+									this.Yandere.Club = ClubType.None;
 									this.ClubKicked = true;
 								}
 							}
@@ -995,7 +1032,7 @@ public class EndOfDayScript : MonoBehaviour
 						this.UpdateScene();
 						return;
 					}
-					else if (this.Phase == 17)
+					else if (this.Phase == 18)
 					{
 						if (this.TranqCase.Occupied)
 						{
@@ -1009,7 +1046,7 @@ public class EndOfDayScript : MonoBehaviour
 						this.UpdateScene();
 						return;
 					}
-					else if (this.Phase == 18)
+					else if (this.Phase == 19)
 					{
 						if (this.ErectFence)
 						{
@@ -1023,7 +1060,7 @@ public class EndOfDayScript : MonoBehaviour
 						this.UpdateScene();
 						return;
 					}
-					else if (this.Phase == 19)
+					else if (this.Phase == 20)
 					{
 						if (!SchoolGlobals.HighSecurity && this.Police.CouncilDeath)
 						{
@@ -1038,12 +1075,12 @@ public class EndOfDayScript : MonoBehaviour
 					}
 					else
 					{
-						if (this.Phase == 20)
+						if (this.Phase == 21)
 						{
 							this.Finish();
 							return;
 						}
-						if (this.Phase == 21)
+						if (this.Phase == 22)
 						{
 							this.Senpai.enabled = false;
 							this.Senpai.Pathfinding.enabled = false;
@@ -1071,7 +1108,7 @@ public class EndOfDayScript : MonoBehaviour
 							this.Phase++;
 							return;
 						}
-						if (this.Phase == 22)
+						if (this.Phase == 23)
 						{
 							for (int m = 1; m < 101; m++)
 							{
@@ -1283,7 +1320,7 @@ public class EndOfDayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600139B RID: 5019 RVA: 0x000ABD0C File Offset: 0x000A9F0C
+	// Token: 0x060013A3 RID: 5027 RVA: 0x000ACF00 File Offset: 0x000AB100
 	private void TeleportYandere()
 	{
 		this.Yandere.MyController.enabled = false;
@@ -1293,7 +1330,7 @@ public class EndOfDayScript : MonoBehaviour
 		Physics.SyncTransforms();
 	}
 
-	// Token: 0x0600139C RID: 5020 RVA: 0x000ABD90 File Offset: 0x000A9F90
+	// Token: 0x060013A4 RID: 5028 RVA: 0x000ACF84 File Offset: 0x000AB184
 	private void Finish()
 	{
 		Debug.Log("We have reached the end of the End-of-Day sequence.");
@@ -1305,6 +1342,7 @@ public class EndOfDayScript : MonoBehaviour
 			GameGlobals.RivalEliminationID = 5;
 		}
 		PlayerGlobals.Reputation = this.Reputation.Reputation;
+		ClubGlobals.Club = this.Yandere.Club;
 		StudentGlobals.MemorialStudents = 0;
 		HomeGlobals.Night = true;
 		this.Police.KillStudents();
@@ -1391,7 +1429,7 @@ public class EndOfDayScript : MonoBehaviour
 		this.StudentManager.CommunalLocker.RivalPhone.StolenPhoneDropoff.SetPhonesHacked();
 	}
 
-	// Token: 0x0600139D RID: 5021 RVA: 0x000AC0B4 File Offset: 0x000AA2B4
+	// Token: 0x060013A5 RID: 5029 RVA: 0x000AD2B8 File Offset: 0x000AB4B8
 	private void DisableThings(StudentScript TargetStudent)
 	{
 		if (TargetStudent != null)
@@ -1412,249 +1450,249 @@ public class EndOfDayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001AD6 RID: 6870
+	// Token: 0x04001AF6 RID: 6902
 	public SecuritySystemScript SecuritySystem;
 
-	// Token: 0x04001AD7 RID: 6871
+	// Token: 0x04001AF7 RID: 6903
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04001AD8 RID: 6872
+	// Token: 0x04001AF8 RID: 6904
 	public WeaponManagerScript WeaponManager;
 
-	// Token: 0x04001AD9 RID: 6873
+	// Token: 0x04001AF9 RID: 6905
 	public ClubManagerScript ClubManager;
 
-	// Token: 0x04001ADA RID: 6874
+	// Token: 0x04001AFA RID: 6906
 	public HeartbrokenScript Heartbroken;
 
-	// Token: 0x04001ADB RID: 6875
+	// Token: 0x04001AFB RID: 6907
 	public IncineratorScript Incinerator;
 
-	// Token: 0x04001ADC RID: 6876
+	// Token: 0x04001AFC RID: 6908
 	public LoveManagerScript LoveManager;
 
-	// Token: 0x04001ADD RID: 6877
+	// Token: 0x04001AFD RID: 6909
 	public RummageSpotScript RummageSpot;
 
-	// Token: 0x04001ADE RID: 6878
+	// Token: 0x04001AFE RID: 6910
 	public VoidGoddessScript VoidGoddess;
 
-	// Token: 0x04001ADF RID: 6879
+	// Token: 0x04001AFF RID: 6911
 	public WoodChipperScript WoodChipper;
 
-	// Token: 0x04001AE0 RID: 6880
+	// Token: 0x04001B00 RID: 6912
 	public ReputationScript Reputation;
 
-	// Token: 0x04001AE1 RID: 6881
+	// Token: 0x04001B01 RID: 6913
 	public DumpsterLidScript Dumpster;
 
-	// Token: 0x04001AE2 RID: 6882
+	// Token: 0x04001B02 RID: 6914
 	public CounselorScript Counselor;
 
-	// Token: 0x04001AE3 RID: 6883
+	// Token: 0x04001B03 RID: 6915
 	public WeaponScript MurderWeapon;
 
-	// Token: 0x04001AE4 RID: 6884
+	// Token: 0x04001B04 RID: 6916
 	public TranqCaseScript TranqCase;
 
-	// Token: 0x04001AE5 RID: 6885
+	// Token: 0x04001B05 RID: 6917
 	public YandereScript Yandere;
 
-	// Token: 0x04001AE6 RID: 6886
+	// Token: 0x04001B06 RID: 6918
 	public RagdollScript Corpse;
 
-	// Token: 0x04001AE7 RID: 6887
+	// Token: 0x04001B07 RID: 6919
 	public StudentScript Senpai;
 
-	// Token: 0x04001AE8 RID: 6888
+	// Token: 0x04001B08 RID: 6920
 	public StudentScript Patsy;
 
-	// Token: 0x04001AE9 RID: 6889
+	// Token: 0x04001B09 RID: 6921
 	public PoliceScript Police;
 
-	// Token: 0x04001AEA RID: 6890
+	// Token: 0x04001B0A RID: 6922
 	public Transform EODCamera;
 
-	// Token: 0x04001AEB RID: 6891
+	// Token: 0x04001B0B RID: 6923
 	public StudentScript Rival;
 
-	// Token: 0x04001AEC RID: 6892
+	// Token: 0x04001B0C RID: 6924
 	public ClockScript Clock;
 
-	// Token: 0x04001AED RID: 6893
+	// Token: 0x04001B0D RID: 6925
 	public JsonScript JSON;
 
-	// Token: 0x04001AEE RID: 6894
+	// Token: 0x04001B0E RID: 6926
 	public GardenHoleScript[] GardenHoles;
 
-	// Token: 0x04001AEF RID: 6895
+	// Token: 0x04001B0F RID: 6927
 	public StudentScript[] WitnessList;
 
-	// Token: 0x04001AF0 RID: 6896
+	// Token: 0x04001B10 RID: 6928
 	public Animation[] CopAnimation;
 
-	// Token: 0x04001AF1 RID: 6897
+	// Token: 0x04001B11 RID: 6929
 	public GameObject MainCamera;
 
-	// Token: 0x04001AF2 RID: 6898
+	// Token: 0x04001B12 RID: 6930
 	public UISprite EndOfDayDarkness;
 
-	// Token: 0x04001AF3 RID: 6899
+	// Token: 0x04001B13 RID: 6931
 	public UILabel Label;
 
-	// Token: 0x04001AF4 RID: 6900
+	// Token: 0x04001B14 RID: 6932
 	public bool PreviouslyActivated;
 
-	// Token: 0x04001AF5 RID: 6901
+	// Token: 0x04001B15 RID: 6933
 	public bool PoliceArrived;
 
-	// Token: 0x04001AF6 RID: 6902
+	// Token: 0x04001B16 RID: 6934
 	public bool RaibaruLoner;
 
-	// Token: 0x04001AF7 RID: 6903
+	// Token: 0x04001B17 RID: 6935
 	public bool StopMourning;
 
-	// Token: 0x04001AF8 RID: 6904
+	// Token: 0x04001B18 RID: 6936
 	public bool ClubClosed;
 
-	// Token: 0x04001AF9 RID: 6905
+	// Token: 0x04001B19 RID: 6937
 	public bool ClubKicked;
 
-	// Token: 0x04001AFA RID: 6906
+	// Token: 0x04001B1A RID: 6938
 	public bool ErectFence;
 
-	// Token: 0x04001AFB RID: 6907
+	// Token: 0x04001B1B RID: 6939
 	public bool GameOver;
 
-	// Token: 0x04001AFC RID: 6908
+	// Token: 0x04001B1C RID: 6940
 	public bool Darken;
 
-	// Token: 0x04001AFD RID: 6909
+	// Token: 0x04001B1D RID: 6941
 	public int ClothingWithRedPaint;
 
-	// Token: 0x04001AFE RID: 6910
+	// Token: 0x04001B1E RID: 6942
 	public int FragileTarget;
 
-	// Token: 0x04001AFF RID: 6911
+	// Token: 0x04001B1F RID: 6943
 	public int EyeWitnesses;
 
-	// Token: 0x04001B00 RID: 6912
+	// Token: 0x04001B20 RID: 6944
 	public int NewFriends;
 
-	// Token: 0x04001B01 RID: 6913
+	// Token: 0x04001B21 RID: 6945
 	public int DeadPerps;
 
-	// Token: 0x04001B02 RID: 6914
+	// Token: 0x04001B22 RID: 6946
 	public int Arrests;
 
-	// Token: 0x04001B03 RID: 6915
+	// Token: 0x04001B23 RID: 6947
 	public int Corpses;
 
-	// Token: 0x04001B04 RID: 6916
+	// Token: 0x04001B24 RID: 6948
 	public int Victims;
 
-	// Token: 0x04001B05 RID: 6917
+	// Token: 0x04001B25 RID: 6949
 	public int Weapons;
 
-	// Token: 0x04001B06 RID: 6918
+	// Token: 0x04001B26 RID: 6950
 	public int Phase = 1;
 
-	// Token: 0x04001B07 RID: 6919
+	// Token: 0x04001B27 RID: 6951
 	public int MatchmakingGifts;
 
-	// Token: 0x04001B08 RID: 6920
+	// Token: 0x04001B28 RID: 6952
 	public int SenpaiGifts;
 
-	// Token: 0x04001B09 RID: 6921
+	// Token: 0x04001B29 RID: 6953
 	public int WeaponID;
 
-	// Token: 0x04001B0A RID: 6922
+	// Token: 0x04001B2A RID: 6954
 	public int ArrestID;
 
-	// Token: 0x04001B0B RID: 6923
+	// Token: 0x04001B2B RID: 6955
 	public int ClubID;
 
-	// Token: 0x04001B0C RID: 6924
+	// Token: 0x04001B2C RID: 6956
 	public int ID;
 
-	// Token: 0x04001B0D RID: 6925
+	// Token: 0x04001B2D RID: 6957
 	public string[] ClubNames;
 
-	// Token: 0x04001B0E RID: 6926
+	// Token: 0x04001B2E RID: 6958
 	public int[] VictimArray;
 
-	// Token: 0x04001B0F RID: 6927
+	// Token: 0x04001B2F RID: 6959
 	public ClubType[] ClubArray;
 
-	// Token: 0x04001B10 RID: 6928
+	// Token: 0x04001B30 RID: 6960
 	private SaveFile saveFile;
 
-	// Token: 0x04001B11 RID: 6929
+	// Token: 0x04001B31 RID: 6961
 	public GameObject TextWindow;
 
-	// Token: 0x04001B12 RID: 6930
+	// Token: 0x04001B32 RID: 6962
 	public GameObject Cops;
 
-	// Token: 0x04001B13 RID: 6931
+	// Token: 0x04001B33 RID: 6963
 	public GameObject SearchingCop;
 
-	// Token: 0x04001B14 RID: 6932
+	// Token: 0x04001B34 RID: 6964
 	public GameObject MurderScene;
 
-	// Token: 0x04001B15 RID: 6933
+	// Token: 0x04001B35 RID: 6965
 	public GameObject ShruggingCops;
 
-	// Token: 0x04001B16 RID: 6934
+	// Token: 0x04001B36 RID: 6966
 	public GameObject TabletCop;
 
-	// Token: 0x04001B17 RID: 6935
+	// Token: 0x04001B37 RID: 6967
 	public GameObject SecuritySystemScene;
 
-	// Token: 0x04001B18 RID: 6936
+	// Token: 0x04001B38 RID: 6968
 	public GameObject OpenTranqCase;
 
-	// Token: 0x04001B19 RID: 6937
+	// Token: 0x04001B39 RID: 6969
 	public GameObject ClosedTranqCase;
 
-	// Token: 0x04001B1A RID: 6938
+	// Token: 0x04001B3A RID: 6970
 	public GameObject GaudyRing;
 
-	// Token: 0x04001B1B RID: 6939
+	// Token: 0x04001B3B RID: 6971
 	public GameObject AnswerSheet;
 
-	// Token: 0x04001B1C RID: 6940
+	// Token: 0x04001B3C RID: 6972
 	public GameObject Fence;
 
-	// Token: 0x04001B1D RID: 6941
+	// Token: 0x04001B3D RID: 6973
 	public GameObject SCP;
 
-	// Token: 0x04001B1E RID: 6942
+	// Token: 0x04001B3E RID: 6974
 	public GameObject ArrestingCops;
 
-	// Token: 0x04001B1F RID: 6943
+	// Token: 0x04001B3F RID: 6975
 	public GameObject Mask;
 
-	// Token: 0x04001B20 RID: 6944
+	// Token: 0x04001B40 RID: 6976
 	public GameObject EyeWitnessScene;
 
-	// Token: 0x04001B21 RID: 6945
+	// Token: 0x04001B41 RID: 6977
 	public GameObject ScaredCops;
 
-	// Token: 0x04001B22 RID: 6946
+	// Token: 0x04001B42 RID: 6978
 	public StudentScript KidnappedVictim;
 
-	// Token: 0x04001B23 RID: 6947
+	// Token: 0x04001B43 RID: 6979
 	public Renderer TabletPortrait;
 
-	// Token: 0x04001B24 RID: 6948
+	// Token: 0x04001B44 RID: 6980
 	public Transform CardboardBox;
 
-	// Token: 0x04001B25 RID: 6949
+	// Token: 0x04001B45 RID: 6981
 	public RivalEliminationType RivalEliminationMethod;
 
-	// Token: 0x04001B26 RID: 6950
+	// Token: 0x04001B46 RID: 6982
 	public Vector3 YandereInitialPosition;
 
-	// Token: 0x04001B27 RID: 6951
+	// Token: 0x04001B47 RID: 6983
 	public Quaternion YandereInitialRotation;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000159 RID: 345
+// Token: 0x0200015A RID: 346
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/ColorsAdjust/FullColors")]
 public class CameraFilterPack_Colors_Adjust_FullColors : MonoBehaviour
 {
 	// Token: 0x17000279 RID: 633
-	// (get) Token: 0x06000D26 RID: 3366 RVA: 0x00069D29 File Offset: 0x00067F29
+	// (get) Token: 0x06000D2D RID: 3373 RVA: 0x0006AA59 File Offset: 0x00068C59
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Colors_Adjust_FullColors : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D27 RID: 3367 RVA: 0x00069D5D File Offset: 0x00067F5D
+	// Token: 0x06000D2E RID: 3374 RVA: 0x0006AA8D File Offset: 0x00068C8D
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Colors_Adjust_FullColors");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Colors_Adjust_FullColors : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D28 RID: 3368 RVA: 0x00069D80 File Offset: 0x00067F80
+	// Token: 0x06000D2F RID: 3375 RVA: 0x0006AAB0 File Offset: 0x00068CB0
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -62,13 +62,13 @@ public class CameraFilterPack_Colors_Adjust_FullColors : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D29 RID: 3369 RVA: 0x00069F70 File Offset: 0x00068170
+	// Token: 0x06000D30 RID: 3376 RVA: 0x0006ACA0 File Offset: 0x00068EA0
 	private void Update()
 	{
 		bool isPlaying = Application.isPlaying;
 	}
 
-	// Token: 0x06000D2A RID: 3370 RVA: 0x00069F78 File Offset: 0x00068178
+	// Token: 0x06000D31 RID: 3377 RVA: 0x0006ACA8 File Offset: 0x00068EA8
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -77,60 +77,60 @@ public class CameraFilterPack_Colors_Adjust_FullColors : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FDF RID: 4063
+	// Token: 0x04000FFE RID: 4094
 	public Shader SCShader;
 
-	// Token: 0x04000FE0 RID: 4064
+	// Token: 0x04000FFF RID: 4095
 	private float TimeX = 1f;
 
-	// Token: 0x04000FE1 RID: 4065
+	// Token: 0x04001000 RID: 4096
 	private Material SCMaterial;
 
-	// Token: 0x04000FE2 RID: 4066
+	// Token: 0x04001001 RID: 4097
 	[Range(-200f, 200f)]
 	public float Red_R = 100f;
 
-	// Token: 0x04000FE3 RID: 4067
+	// Token: 0x04001002 RID: 4098
 	[Range(-200f, 200f)]
 	public float Red_G;
 
-	// Token: 0x04000FE4 RID: 4068
+	// Token: 0x04001003 RID: 4099
 	[Range(-200f, 200f)]
 	public float Red_B;
 
-	// Token: 0x04000FE5 RID: 4069
+	// Token: 0x04001004 RID: 4100
 	[Range(-200f, 200f)]
 	public float Red_Constant;
 
-	// Token: 0x04000FE6 RID: 4070
+	// Token: 0x04001005 RID: 4101
 	[Range(-200f, 200f)]
 	public float Green_R;
 
-	// Token: 0x04000FE7 RID: 4071
+	// Token: 0x04001006 RID: 4102
 	[Range(-200f, 200f)]
 	public float Green_G = 100f;
 
-	// Token: 0x04000FE8 RID: 4072
+	// Token: 0x04001007 RID: 4103
 	[Range(-200f, 200f)]
 	public float Green_B;
 
-	// Token: 0x04000FE9 RID: 4073
+	// Token: 0x04001008 RID: 4104
 	[Range(-200f, 200f)]
 	public float Green_Constant;
 
-	// Token: 0x04000FEA RID: 4074
+	// Token: 0x04001009 RID: 4105
 	[Range(-200f, 200f)]
 	public float Blue_R;
 
-	// Token: 0x04000FEB RID: 4075
+	// Token: 0x0400100A RID: 4106
 	[Range(-200f, 200f)]
 	public float Blue_G;
 
-	// Token: 0x04000FEC RID: 4076
+	// Token: 0x0400100B RID: 4107
 	[Range(-200f, 200f)]
 	public float Blue_B = 100f;
 
-	// Token: 0x04000FED RID: 4077
+	// Token: 0x0400100C RID: 4108
 	[Range(-200f, 200f)]
 	public float Blue_Constant;
 }

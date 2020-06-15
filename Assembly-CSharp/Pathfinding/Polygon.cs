@@ -5,77 +5,77 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200051E RID: 1310
+	// Token: 0x02000534 RID: 1332
 	public static class Polygon
 	{
-		// Token: 0x0600220E RID: 8718 RVA: 0x0018CF00 File Offset: 0x0018B100
+		// Token: 0x06002264 RID: 8804 RVA: 0x00192AEC File Offset: 0x00190CEC
 		[Obsolete("Use VectorMath.SignedTriangleAreaTimes2XZ instead")]
 		public static long TriangleArea2(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.SignedTriangleAreaTimes2XZ(a, b, c);
 		}
 
-		// Token: 0x0600220F RID: 8719 RVA: 0x0018CF0A File Offset: 0x0018B10A
+		// Token: 0x06002265 RID: 8805 RVA: 0x00192AF6 File Offset: 0x00190CF6
 		[Obsolete("Use VectorMath.SignedTriangleAreaTimes2XZ instead")]
 		public static float TriangleArea2(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return VectorMath.SignedTriangleAreaTimes2XZ(a, b, c);
 		}
 
-		// Token: 0x06002210 RID: 8720 RVA: 0x0018CF14 File Offset: 0x0018B114
+		// Token: 0x06002266 RID: 8806 RVA: 0x00192B00 File Offset: 0x00190D00
 		[Obsolete("Use TriangleArea2 instead to avoid confusion regarding the factor 2")]
 		public static long TriangleArea(Int3 a, Int3 b, Int3 c)
 		{
 			return Polygon.TriangleArea2(a, b, c);
 		}
 
-		// Token: 0x06002211 RID: 8721 RVA: 0x0018CF1E File Offset: 0x0018B11E
+		// Token: 0x06002267 RID: 8807 RVA: 0x00192B0A File Offset: 0x00190D0A
 		[Obsolete("Use TriangleArea2 instead to avoid confusion regarding the factor 2")]
 		public static float TriangleArea(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return Polygon.TriangleArea2(a, b, c);
 		}
 
-		// Token: 0x06002212 RID: 8722 RVA: 0x0018CF28 File Offset: 0x0018B128
+		// Token: 0x06002268 RID: 8808 RVA: 0x00192B14 File Offset: 0x00190D14
 		[Obsolete("Use ContainsPointXZ instead")]
 		public static bool ContainsPoint(Vector3 a, Vector3 b, Vector3 c, Vector3 p)
 		{
 			return Polygon.ContainsPointXZ(a, b, c, p);
 		}
 
-		// Token: 0x06002213 RID: 8723 RVA: 0x0018CF33 File Offset: 0x0018B133
+		// Token: 0x06002269 RID: 8809 RVA: 0x00192B1F File Offset: 0x00190D1F
 		public static bool ContainsPointXZ(Vector3 a, Vector3 b, Vector3 c, Vector3 p)
 		{
 			return VectorMath.IsClockwiseMarginXZ(a, b, p) && VectorMath.IsClockwiseMarginXZ(b, c, p) && VectorMath.IsClockwiseMarginXZ(c, a, p);
 		}
 
-		// Token: 0x06002214 RID: 8724 RVA: 0x0018CF53 File Offset: 0x0018B153
+		// Token: 0x0600226A RID: 8810 RVA: 0x00192B3F File Offset: 0x00190D3F
 		[Obsolete("Use ContainsPointXZ instead")]
 		public static bool ContainsPoint(Int3 a, Int3 b, Int3 c, Int3 p)
 		{
 			return Polygon.ContainsPointXZ(a, b, c, p);
 		}
 
-		// Token: 0x06002215 RID: 8725 RVA: 0x0018CF5E File Offset: 0x0018B15E
+		// Token: 0x0600226B RID: 8811 RVA: 0x00192B4A File Offset: 0x00190D4A
 		public static bool ContainsPointXZ(Int3 a, Int3 b, Int3 c, Int3 p)
 		{
 			return VectorMath.IsClockwiseOrColinearXZ(a, b, p) && VectorMath.IsClockwiseOrColinearXZ(b, c, p) && VectorMath.IsClockwiseOrColinearXZ(c, a, p);
 		}
 
-		// Token: 0x06002216 RID: 8726 RVA: 0x0018CF7E File Offset: 0x0018B17E
+		// Token: 0x0600226C RID: 8812 RVA: 0x00192B6A File Offset: 0x00190D6A
 		public static bool ContainsPoint(Int2 a, Int2 b, Int2 c, Int2 p)
 		{
 			return VectorMath.IsClockwiseOrColinear(a, b, p) && VectorMath.IsClockwiseOrColinear(b, c, p) && VectorMath.IsClockwiseOrColinear(c, a, p);
 		}
 
-		// Token: 0x06002217 RID: 8727 RVA: 0x0018CF9E File Offset: 0x0018B19E
+		// Token: 0x0600226D RID: 8813 RVA: 0x00192B8A File Offset: 0x00190D8A
 		[Obsolete("Use ContainsPointXZ instead")]
 		public static bool ContainsPoint(Vector3[] polyPoints, Vector3 p)
 		{
 			return Polygon.ContainsPointXZ(polyPoints, p);
 		}
 
-		// Token: 0x06002218 RID: 8728 RVA: 0x0018CFA8 File Offset: 0x0018B1A8
+		// Token: 0x0600226E RID: 8814 RVA: 0x00192B94 File Offset: 0x00190D94
 		public static bool ContainsPoint(Vector2[] polyPoints, Vector2 p)
 		{
 			int num = polyPoints.Length - 1;
@@ -92,7 +92,7 @@ namespace Pathfinding
 			return flag;
 		}
 
-		// Token: 0x06002219 RID: 8729 RVA: 0x0018D088 File Offset: 0x0018B288
+		// Token: 0x0600226F RID: 8815 RVA: 0x00192C74 File Offset: 0x00190E74
 		public static bool ContainsPointXZ(Vector3[] polyPoints, Vector3 p)
 		{
 			int num = polyPoints.Length - 1;
@@ -109,7 +109,7 @@ namespace Pathfinding
 			return flag;
 		}
 
-		// Token: 0x0600221A RID: 8730 RVA: 0x0018D168 File Offset: 0x0018B368
+		// Token: 0x06002270 RID: 8816 RVA: 0x00192D54 File Offset: 0x00190F54
 		public static int SampleYCoordinateInTriangle(Int3 p1, Int3 p2, Int3 p3, Int3 p)
 		{
 			double num = (double)(p2.z - p3.z) * (double)(p1.x - p3.x) + (double)(p3.x - p2.x) * (double)(p1.z - p3.z);
@@ -118,224 +118,224 @@ namespace Pathfinding
 			return (int)Math.Round(num2 * (double)p1.y + num3 * (double)p2.y + (1.0 - num2 - num3) * (double)p3.y);
 		}
 
-		// Token: 0x0600221B RID: 8731 RVA: 0x0018D25C File Offset: 0x0018B45C
+		// Token: 0x06002271 RID: 8817 RVA: 0x00192E48 File Offset: 0x00191048
 		[Obsolete("Use VectorMath.RightXZ instead. Note that it now uses a left handed coordinate system (same as Unity)")]
 		public static bool LeftNotColinear(Vector3 a, Vector3 b, Vector3 p)
 		{
 			return VectorMath.RightXZ(a, b, p);
 		}
 
-		// Token: 0x0600221C RID: 8732 RVA: 0x0018D266 File Offset: 0x0018B466
+		// Token: 0x06002272 RID: 8818 RVA: 0x00192E52 File Offset: 0x00191052
 		[Obsolete("Use VectorMath.RightOrColinearXZ instead. Note that it now uses a left handed coordinate system (same as Unity)")]
 		public static bool Left(Vector3 a, Vector3 b, Vector3 p)
 		{
 			return VectorMath.RightOrColinearXZ(a, b, p);
 		}
 
-		// Token: 0x0600221D RID: 8733 RVA: 0x0018D270 File Offset: 0x0018B470
+		// Token: 0x06002273 RID: 8819 RVA: 0x00192E5C File Offset: 0x0019105C
 		[Obsolete("Use VectorMath.RightOrColinear instead. Note that it now uses a left handed coordinate system (same as Unity)")]
 		public static bool Left(Vector2 a, Vector2 b, Vector2 p)
 		{
 			return VectorMath.RightOrColinear(a, b, p);
 		}
 
-		// Token: 0x0600221E RID: 8734 RVA: 0x0018BF68 File Offset: 0x0018A168
+		// Token: 0x06002274 RID: 8820 RVA: 0x00191B54 File Offset: 0x0018FD54
 		[Obsolete("Use VectorMath.RightOrColinearXZ instead. Note that it now uses a left handed coordinate system (same as Unity)")]
 		public static bool Left(Int3 a, Int3 b, Int3 p)
 		{
 			return VectorMath.RightOrColinearXZ(a, b, p);
 		}
 
-		// Token: 0x0600221F RID: 8735 RVA: 0x0018BF5E File Offset: 0x0018A15E
+		// Token: 0x06002275 RID: 8821 RVA: 0x00191B4A File Offset: 0x0018FD4A
 		[Obsolete("Use VectorMath.RightXZ instead. Note that it now uses a left handed coordinate system (same as Unity)")]
 		public static bool LeftNotColinear(Int3 a, Int3 b, Int3 p)
 		{
 			return VectorMath.RightXZ(a, b, p);
 		}
 
-		// Token: 0x06002220 RID: 8736 RVA: 0x0018BF72 File Offset: 0x0018A172
+		// Token: 0x06002276 RID: 8822 RVA: 0x00191B5E File Offset: 0x0018FD5E
 		[Obsolete("Use VectorMath.RightOrColinear instead. Note that it now uses a left handed coordinate system (same as Unity)")]
 		public static bool Left(Int2 a, Int2 b, Int2 p)
 		{
 			return VectorMath.RightOrColinear(a, b, p);
 		}
 
-		// Token: 0x06002221 RID: 8737 RVA: 0x0018D27A File Offset: 0x0018B47A
+		// Token: 0x06002277 RID: 8823 RVA: 0x00192E66 File Offset: 0x00191066
 		[Obsolete("Use VectorMath.IsClockwiseMarginXZ instead")]
 		public static bool IsClockwiseMargin(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return VectorMath.IsClockwiseMarginXZ(a, b, c);
 		}
 
-		// Token: 0x06002222 RID: 8738 RVA: 0x0018D284 File Offset: 0x0018B484
+		// Token: 0x06002278 RID: 8824 RVA: 0x00192E70 File Offset: 0x00191070
 		[Obsolete("Use VectorMath.IsClockwiseXZ instead")]
 		public static bool IsClockwise(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return VectorMath.IsClockwiseXZ(a, b, c);
 		}
 
-		// Token: 0x06002223 RID: 8739 RVA: 0x0018D28E File Offset: 0x0018B48E
+		// Token: 0x06002279 RID: 8825 RVA: 0x00192E7A File Offset: 0x0019107A
 		[Obsolete("Use VectorMath.IsClockwiseXZ instead")]
 		public static bool IsClockwise(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.IsClockwiseXZ(a, b, c);
 		}
 
-		// Token: 0x06002224 RID: 8740 RVA: 0x0018D298 File Offset: 0x0018B498
+		// Token: 0x0600227A RID: 8826 RVA: 0x00192E84 File Offset: 0x00191084
 		[Obsolete("Use VectorMath.IsClockwiseOrColinearXZ instead")]
 		public static bool IsClockwiseMargin(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.IsClockwiseOrColinearXZ(a, b, c);
 		}
 
-		// Token: 0x06002225 RID: 8741 RVA: 0x0018D2A2 File Offset: 0x0018B4A2
+		// Token: 0x0600227B RID: 8827 RVA: 0x00192E8E File Offset: 0x0019108E
 		[Obsolete("Use VectorMath.IsClockwiseOrColinear instead")]
 		public static bool IsClockwiseMargin(Int2 a, Int2 b, Int2 c)
 		{
 			return VectorMath.IsClockwiseOrColinear(a, b, c);
 		}
 
-		// Token: 0x06002226 RID: 8742 RVA: 0x0018D2AC File Offset: 0x0018B4AC
+		// Token: 0x0600227C RID: 8828 RVA: 0x00192E98 File Offset: 0x00191098
 		[Obsolete("Use VectorMath.IsColinearXZ instead")]
 		public static bool IsColinear(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.IsColinearXZ(a, b, c);
 		}
 
-		// Token: 0x06002227 RID: 8743 RVA: 0x0018D2B6 File Offset: 0x0018B4B6
+		// Token: 0x0600227D RID: 8829 RVA: 0x00192EA2 File Offset: 0x001910A2
 		[Obsolete("Use VectorMath.IsColinearAlmostXZ instead")]
 		public static bool IsColinearAlmost(Int3 a, Int3 b, Int3 c)
 		{
 			return VectorMath.IsColinearAlmostXZ(a, b, c);
 		}
 
-		// Token: 0x06002228 RID: 8744 RVA: 0x0018D2C0 File Offset: 0x0018B4C0
+		// Token: 0x0600227E RID: 8830 RVA: 0x00192EAC File Offset: 0x001910AC
 		[Obsolete("Use VectorMath.IsColinearXZ instead")]
 		public static bool IsColinear(Vector3 a, Vector3 b, Vector3 c)
 		{
 			return VectorMath.IsColinearXZ(a, b, c);
 		}
 
-		// Token: 0x06002229 RID: 8745 RVA: 0x0018D2CA File Offset: 0x0018B4CA
+		// Token: 0x0600227F RID: 8831 RVA: 0x00192EB6 File Offset: 0x001910B6
 		[Obsolete("Marked for removal since it is not used by any part of the A* Pathfinding Project")]
 		public static bool IntersectsUnclamped(Vector3 a, Vector3 b, Vector3 a2, Vector3 b2)
 		{
 			return VectorMath.RightOrColinearXZ(a, b, a2) != VectorMath.RightOrColinearXZ(a, b, b2);
 		}
 
-		// Token: 0x0600222A RID: 8746 RVA: 0x0018D2E1 File Offset: 0x0018B4E1
+		// Token: 0x06002280 RID: 8832 RVA: 0x00192ECD File Offset: 0x001910CD
 		[Obsolete("Use VectorMath.SegmentsIntersect instead")]
 		public static bool Intersects(Int2 start1, Int2 end1, Int2 start2, Int2 end2)
 		{
 			return VectorMath.SegmentsIntersect(start1, end1, start2, end2);
 		}
 
-		// Token: 0x0600222B RID: 8747 RVA: 0x0018D2EC File Offset: 0x0018B4EC
+		// Token: 0x06002281 RID: 8833 RVA: 0x00192ED8 File Offset: 0x001910D8
 		[Obsolete("Use VectorMath.SegmentsIntersectXZ instead")]
 		public static bool Intersects(Int3 start1, Int3 end1, Int3 start2, Int3 end2)
 		{
 			return VectorMath.SegmentsIntersectXZ(start1, end1, start2, end2);
 		}
 
-		// Token: 0x0600222C RID: 8748 RVA: 0x0018D2F7 File Offset: 0x0018B4F7
+		// Token: 0x06002282 RID: 8834 RVA: 0x00192EE3 File Offset: 0x001910E3
 		[Obsolete("Use VectorMath.SegmentsIntersectXZ instead")]
 		public static bool Intersects(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
 		{
 			return VectorMath.SegmentsIntersectXZ(start1, end1, start2, end2);
 		}
 
-		// Token: 0x0600222D RID: 8749 RVA: 0x0018D302 File Offset: 0x0018B502
+		// Token: 0x06002283 RID: 8835 RVA: 0x00192EEE File Offset: 0x001910EE
 		[Obsolete("Use VectorMath.LineDirIntersectionPointXZ instead")]
 		public static Vector3 IntersectionPointOptimized(Vector3 start1, Vector3 dir1, Vector3 start2, Vector3 dir2)
 		{
 			return VectorMath.LineDirIntersectionPointXZ(start1, dir1, start2, dir2);
 		}
 
-		// Token: 0x0600222E RID: 8750 RVA: 0x0018D30D File Offset: 0x0018B50D
+		// Token: 0x06002284 RID: 8836 RVA: 0x00192EF9 File Offset: 0x001910F9
 		[Obsolete("Use VectorMath.LineDirIntersectionPointXZ instead")]
 		public static Vector3 IntersectionPointOptimized(Vector3 start1, Vector3 dir1, Vector3 start2, Vector3 dir2, out bool intersects)
 		{
 			return VectorMath.LineDirIntersectionPointXZ(start1, dir1, start2, dir2, out intersects);
 		}
 
-		// Token: 0x0600222F RID: 8751 RVA: 0x0018D31A File Offset: 0x0018B51A
+		// Token: 0x06002285 RID: 8837 RVA: 0x00192F06 File Offset: 0x00191106
 		[Obsolete("Use VectorMath.RaySegmentIntersectXZ instead")]
 		public static bool IntersectionFactorRaySegment(Int3 start1, Int3 end1, Int3 start2, Int3 end2)
 		{
 			return VectorMath.RaySegmentIntersectXZ(start1, end1, start2, end2);
 		}
 
-		// Token: 0x06002230 RID: 8752 RVA: 0x0018D325 File Offset: 0x0018B525
+		// Token: 0x06002286 RID: 8838 RVA: 0x00192F11 File Offset: 0x00191111
 		[Obsolete("Use VectorMath.LineIntersectionFactorXZ instead")]
 		public static bool IntersectionFactor(Int3 start1, Int3 end1, Int3 start2, Int3 end2, out float factor1, out float factor2)
 		{
 			return VectorMath.LineIntersectionFactorXZ(start1, end1, start2, end2, out factor1, out factor2);
 		}
 
-		// Token: 0x06002231 RID: 8753 RVA: 0x0018D334 File Offset: 0x0018B534
+		// Token: 0x06002287 RID: 8839 RVA: 0x00192F20 File Offset: 0x00191120
 		[Obsolete("Use VectorMath.LineIntersectionFactorXZ instead")]
 		public static bool IntersectionFactor(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out float factor1, out float factor2)
 		{
 			return VectorMath.LineIntersectionFactorXZ(start1, end1, start2, end2, out factor1, out factor2);
 		}
 
-		// Token: 0x06002232 RID: 8754 RVA: 0x0018D343 File Offset: 0x0018B543
+		// Token: 0x06002288 RID: 8840 RVA: 0x00192F2F File Offset: 0x0019112F
 		[Obsolete("Use VectorMath.LineRayIntersectionFactorXZ instead")]
 		public static float IntersectionFactorRay(Int3 start1, Int3 end1, Int3 start2, Int3 end2)
 		{
 			return VectorMath.LineRayIntersectionFactorXZ(start1, end1, start2, end2);
 		}
 
-		// Token: 0x06002233 RID: 8755 RVA: 0x0018D34E File Offset: 0x0018B54E
+		// Token: 0x06002289 RID: 8841 RVA: 0x00192F3A File Offset: 0x0019113A
 		[Obsolete("Use VectorMath.LineIntersectionFactorXZ instead")]
 		public static float IntersectionFactor(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
 		{
 			return VectorMath.LineIntersectionFactorXZ(start1, end1, start2, end2);
 		}
 
-		// Token: 0x06002234 RID: 8756 RVA: 0x0018D359 File Offset: 0x0018B559
+		// Token: 0x0600228A RID: 8842 RVA: 0x00192F45 File Offset: 0x00191145
 		[Obsolete("Use VectorMath.LineIntersectionPointXZ instead")]
 		public static Vector3 IntersectionPoint(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
 		{
 			return VectorMath.LineIntersectionPointXZ(start1, end1, start2, end2);
 		}
 
-		// Token: 0x06002235 RID: 8757 RVA: 0x0018D364 File Offset: 0x0018B564
+		// Token: 0x0600228B RID: 8843 RVA: 0x00192F50 File Offset: 0x00191150
 		[Obsolete("Use VectorMath.LineIntersectionPointXZ instead")]
 		public static Vector3 IntersectionPoint(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out bool intersects)
 		{
 			return VectorMath.LineIntersectionPointXZ(start1, end1, start2, end2, out intersects);
 		}
 
-		// Token: 0x06002236 RID: 8758 RVA: 0x0018D371 File Offset: 0x0018B571
+		// Token: 0x0600228C RID: 8844 RVA: 0x00192F5D File Offset: 0x0019115D
 		[Obsolete("Use VectorMath.LineIntersectionPoint instead")]
 		public static Vector2 IntersectionPoint(Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2)
 		{
 			return VectorMath.LineIntersectionPoint(start1, end1, start2, end2);
 		}
 
-		// Token: 0x06002237 RID: 8759 RVA: 0x0018D37C File Offset: 0x0018B57C
+		// Token: 0x0600228D RID: 8845 RVA: 0x00192F68 File Offset: 0x00191168
 		[Obsolete("Use VectorMath.LineIntersectionPoint instead")]
 		public static Vector2 IntersectionPoint(Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2, out bool intersects)
 		{
 			return VectorMath.LineIntersectionPoint(start1, end1, start2, end2, out intersects);
 		}
 
-		// Token: 0x06002238 RID: 8760 RVA: 0x0018D389 File Offset: 0x0018B589
+		// Token: 0x0600228E RID: 8846 RVA: 0x00192F75 File Offset: 0x00191175
 		[Obsolete("Use VectorMath.SegmentIntersectionPointXZ instead")]
 		public static Vector3 SegmentIntersectionPoint(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out bool intersects)
 		{
 			return VectorMath.SegmentIntersectionPointXZ(start1, end1, start2, end2, out intersects);
 		}
 
-		// Token: 0x06002239 RID: 8761 RVA: 0x0018D396 File Offset: 0x0018B596
+		// Token: 0x0600228F RID: 8847 RVA: 0x00192F82 File Offset: 0x00191182
 		[Obsolete("Use ConvexHullXZ instead")]
 		public static Vector3[] ConvexHull(Vector3[] points)
 		{
 			return Polygon.ConvexHullXZ(points);
 		}
 
-		// Token: 0x0600223A RID: 8762 RVA: 0x0018D3A0 File Offset: 0x0018B5A0
+		// Token: 0x06002290 RID: 8848 RVA: 0x00192F8C File Offset: 0x0019118C
 		public static Vector3[] ConvexHullXZ(Vector3[] points)
 		{
 			if (points.Length == 0)
@@ -382,21 +382,21 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x0600223B RID: 8763 RVA: 0x0018D46C File Offset: 0x0018B66C
+		// Token: 0x06002291 RID: 8849 RVA: 0x00193058 File Offset: 0x00191258
 		[Obsolete("Use VectorMath.SegmentIntersectsBounds instead")]
 		public static bool LineIntersectsBounds(Bounds bounds, Vector3 a, Vector3 b)
 		{
 			return VectorMath.SegmentIntersectsBounds(bounds, a, b);
 		}
 
-		// Token: 0x0600223C RID: 8764 RVA: 0x0018D476 File Offset: 0x0018B676
+		// Token: 0x06002292 RID: 8850 RVA: 0x00193062 File Offset: 0x00191262
 		[Obsolete("Scheduled for removal since it is not used by any part of the A* Pathfinding Project")]
 		public static Vector3 ClosestPointOnTriangle(Vector3[] triangle, Vector3 point)
 		{
 			return Polygon.ClosestPointOnTriangle(triangle[0], triangle[1], triangle[2], point);
 		}
 
-		// Token: 0x0600223D RID: 8765 RVA: 0x0018D494 File Offset: 0x0018B694
+		// Token: 0x06002293 RID: 8851 RVA: 0x00193080 File Offset: 0x00191280
 		public static Vector2 ClosestPointOnTriangle(Vector2 a, Vector2 b, Vector2 c, Vector2 p)
 		{
 			Vector2 vector = b - a;
@@ -440,7 +440,7 @@ namespace Pathfinding
 			return p;
 		}
 
-		// Token: 0x0600223E RID: 8766 RVA: 0x0018D604 File Offset: 0x0018B804
+		// Token: 0x06002294 RID: 8852 RVA: 0x001931F0 File Offset: 0x001913F0
 		public static Vector3 ClosestPointOnTriangleXZ(Vector3 a, Vector3 b, Vector3 c, Vector3 p)
 		{
 			Vector2 lhs = new Vector2(b.x - a.x, b.z - a.z);
@@ -490,7 +490,7 @@ namespace Pathfinding
 			return new Vector3(p.x, (1f - num13 - num14) * a.y + num13 * b.y + num14 * c.y, p.z);
 		}
 
-		// Token: 0x0600223F RID: 8767 RVA: 0x0018D868 File Offset: 0x0018BA68
+		// Token: 0x06002295 RID: 8853 RVA: 0x00193454 File Offset: 0x00191654
 		public static Vector3 ClosestPointOnTriangle(Vector3 a, Vector3 b, Vector3 c, Vector3 p)
 		{
 			Vector3 vector = b - a;
@@ -540,14 +540,14 @@ namespace Pathfinding
 			return a + vector * d4 + vector2 * d5;
 		}
 
-		// Token: 0x06002240 RID: 8768 RVA: 0x0018DA19 File Offset: 0x0018BC19
+		// Token: 0x06002296 RID: 8854 RVA: 0x00193605 File Offset: 0x00191805
 		[Obsolete("Use VectorMath.SqrDistanceSegmentSegment instead")]
 		public static float DistanceSegmentSegment3D(Vector3 s1, Vector3 e1, Vector3 s2, Vector3 e2)
 		{
 			return VectorMath.SqrDistanceSegmentSegment(s1, e1, s2, e2);
 		}
 
-		// Token: 0x06002241 RID: 8769 RVA: 0x0018DA24 File Offset: 0x0018BC24
+		// Token: 0x06002297 RID: 8855 RVA: 0x00193610 File Offset: 0x00191810
 		public static void CompressMesh(List<Int3> vertices, List<int> triangles, out Int3[] outVertices, out int[] outTriangles)
 		{
 			Dictionary<Int3, int> dictionary = Polygon.cached_Int3_int_dict;
@@ -582,7 +582,7 @@ namespace Pathfinding
 			ArrayPool<int>.Release(ref array, false);
 		}
 
-		// Token: 0x06002242 RID: 8770 RVA: 0x0018DB38 File Offset: 0x0018BD38
+		// Token: 0x06002298 RID: 8856 RVA: 0x00193724 File Offset: 0x00191924
 		public static void TraceContours(Dictionary<int, int> outline, HashSet<int> hasInEdge, Action<List<int>, bool> results)
 		{
 			List<int> list = ListPool<int>.Claim();
@@ -621,7 +621,7 @@ namespace Pathfinding
 			ListPool<int>.Release(ref list);
 		}
 
-		// Token: 0x06002243 RID: 8771 RVA: 0x0018DC04 File Offset: 0x0018BE04
+		// Token: 0x06002299 RID: 8857 RVA: 0x001937F0 File Offset: 0x001919F0
 		public static void Subdivide(List<Vector3> points, List<Vector3> result, int subSegments)
 		{
 			for (int i = 0; i < points.Count - 1; i++)
@@ -634,7 +634,7 @@ namespace Pathfinding
 			result.Add(points[points.Count - 1]);
 		}
 
-		// Token: 0x04003EB1 RID: 16049
+		// Token: 0x04003F8F RID: 16271
 		private static readonly Dictionary<Int3, int> cached_Int3_int_dict = new Dictionary<Int3, int>();
 	}
 }

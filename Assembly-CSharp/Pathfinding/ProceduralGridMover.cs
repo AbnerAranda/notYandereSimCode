@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000559 RID: 1369
+	// Token: 0x0200056F RID: 1391
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_procedural_grid_mover.php")]
 	public class ProceduralGridMover : VersionedMonoBehaviour
 	{
-		// Token: 0x17000577 RID: 1399
-		// (get) Token: 0x0600242A RID: 9258 RVA: 0x00196712 File Offset: 0x00194912
-		// (set) Token: 0x0600242B RID: 9259 RVA: 0x0019671A File Offset: 0x0019491A
+		// Token: 0x1700057D RID: 1405
+		// (get) Token: 0x06002480 RID: 9344 RVA: 0x0019C2FE File Offset: 0x0019A4FE
+		// (set) Token: 0x06002481 RID: 9345 RVA: 0x0019C306 File Offset: 0x0019A506
 		public bool updatingGraph { get; private set; }
 
-		// Token: 0x0600242C RID: 9260 RVA: 0x00196724 File Offset: 0x00194924
+		// Token: 0x06002482 RID: 9346 RVA: 0x0019C310 File Offset: 0x0019A510
 		private void Start()
 		{
 			if (AstarPath.active == null)
@@ -28,7 +28,7 @@ namespace Pathfinding
 			this.UpdateGraph();
 		}
 
-		// Token: 0x0600242D RID: 9261 RVA: 0x00196788 File Offset: 0x00194988
+		// Token: 0x06002483 RID: 9347 RVA: 0x0019C374 File Offset: 0x0019A574
 		private void Update()
 		{
 			if (this.graph == null)
@@ -43,13 +43,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600242E RID: 9262 RVA: 0x001967DC File Offset: 0x001949DC
+		// Token: 0x06002484 RID: 9348 RVA: 0x0019C3C8 File Offset: 0x0019A5C8
 		private Vector3 PointToGraphSpace(Vector3 p)
 		{
 			return this.graph.transform.InverseTransform(p);
 		}
 
-		// Token: 0x0600242F RID: 9263 RVA: 0x001967F0 File Offset: 0x001949F0
+		// Token: 0x06002485 RID: 9349 RVA: 0x0019C3DC File Offset: 0x0019A5DC
 		public void UpdateGraph()
 		{
 			if (this.updatingGraph)
@@ -88,7 +88,7 @@ namespace Pathfinding
 			}));
 		}
 
-		// Token: 0x06002430 RID: 9264 RVA: 0x00196841 File Offset: 0x00194A41
+		// Token: 0x06002486 RID: 9350 RVA: 0x0019C42D File Offset: 0x0019A62D
 		private IEnumerator UpdateGraphCoroutine()
 		{
 			Vector3 vector = this.PointToGraphSpace(this.target.position) - this.PointToGraphSpace(this.graph.center);
@@ -260,7 +260,7 @@ namespace Pathfinding
 				{
 					this.graph.GetNodes(delegate(GraphNode node)
 					{
-						node.Area = 1u;
+						node.Area = 1U;
 					});
 				}
 			}
@@ -301,19 +301,19 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x04004015 RID: 16405
+		// Token: 0x040040F3 RID: 16627
 		public float updateDistance = 10f;
 
-		// Token: 0x04004016 RID: 16406
+		// Token: 0x040040F4 RID: 16628
 		public Transform target;
 
-		// Token: 0x04004017 RID: 16407
+		// Token: 0x040040F5 RID: 16629
 		public bool floodFill = true;
 
-		// Token: 0x04004018 RID: 16408
+		// Token: 0x040040F6 RID: 16630
 		private GridGraph graph;
 
-		// Token: 0x04004019 RID: 16409
+		// Token: 0x040040F7 RID: 16631
 		private GridNodeBase[] buffer;
 	}
 }

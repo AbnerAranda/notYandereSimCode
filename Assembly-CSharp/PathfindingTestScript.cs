@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000497 RID: 1175
+// Token: 0x0200049D RID: 1181
 public class PathfindingTestScript : MonoBehaviour
 {
-	// Token: 0x06001E10 RID: 7696 RVA: 0x0017837C File Offset: 0x0017657C
+	// Token: 0x06001E3F RID: 7743 RVA: 0x0017C448 File Offset: 0x0017A648
 	private void Update()
 	{
 		if (Input.GetKeyDown("left"))
@@ -18,6 +18,6 @@ public class PathfindingTestScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003BE5 RID: 15333
+	// Token: 0x04003C73 RID: 15475
 	private byte[] bytes;
 }

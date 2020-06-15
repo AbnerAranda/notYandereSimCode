@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F2 RID: 1522
+	// Token: 0x02000608 RID: 1544
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_astar_smooth_follow2.php")]
 	public class AstarSmoothFollow2 : MonoBehaviour
 	{
-		// Token: 0x060029F0 RID: 10736 RVA: 0x001C238C File Offset: 0x001C058C
+		// Token: 0x06002A46 RID: 10822 RVA: 0x001C7F78 File Offset: 0x001C6178
 		private void LateUpdate()
 		{
 			Vector3 b;
@@ -33,28 +33,28 @@ namespace Pathfinding.Examples
 			base.transform.LookAt(this.target, this.target.up);
 		}
 
-		// Token: 0x040043B3 RID: 17331
+		// Token: 0x04004491 RID: 17553
 		public Transform target;
 
-		// Token: 0x040043B4 RID: 17332
+		// Token: 0x04004492 RID: 17554
 		public float distance = 3f;
 
-		// Token: 0x040043B5 RID: 17333
+		// Token: 0x04004493 RID: 17555
 		public float height = 3f;
 
-		// Token: 0x040043B6 RID: 17334
+		// Token: 0x04004494 RID: 17556
 		public float damping = 5f;
 
-		// Token: 0x040043B7 RID: 17335
+		// Token: 0x04004495 RID: 17557
 		public bool smoothRotation = true;
 
-		// Token: 0x040043B8 RID: 17336
+		// Token: 0x04004496 RID: 17558
 		public bool followBehind = true;
 
-		// Token: 0x040043B9 RID: 17337
+		// Token: 0x04004497 RID: 17559
 		public float rotationDamping = 10f;
 
-		// Token: 0x040043BA RID: 17338
+		// Token: 0x04004498 RID: 17560
 		public bool staticOffset;
 	}
 }

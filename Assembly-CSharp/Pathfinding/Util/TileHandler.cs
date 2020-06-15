@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005DC RID: 1500
+	// Token: 0x020005F2 RID: 1522
 	public class TileHandler
 	{
-		// Token: 0x17000600 RID: 1536
-		// (get) Token: 0x0600294E RID: 10574 RVA: 0x001BCB60 File Offset: 0x001BAD60
+		// Token: 0x17000606 RID: 1542
+		// (get) Token: 0x060029A4 RID: 10660 RVA: 0x001C274C File Offset: 0x001C094C
 		public bool isValid
 		{
 			get
@@ -20,7 +20,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600294F RID: 10575 RVA: 0x001BCBA0 File Offset: 0x001BADA0
+		// Token: 0x060029A5 RID: 10661 RVA: 0x001C278C File Offset: 0x001C098C
 		public TileHandler(NavmeshBase graph)
 		{
 			if (graph == null)
@@ -41,7 +41,7 @@ namespace Pathfinding.Util
 			this.graph = graph;
 		}
 
-		// Token: 0x06002950 RID: 10576 RVA: 0x001BCC78 File Offset: 0x001BAE78
+		// Token: 0x060029A6 RID: 10662 RVA: 0x001C2864 File Offset: 0x001C0A64
 		public void OnRecalculatedTiles(NavmeshTile[] recalculatedTiles)
 		{
 			for (int i = 0; i < recalculatedTiles.Length; i++)
@@ -59,33 +59,33 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002951 RID: 10577 RVA: 0x001BCCD0 File Offset: 0x001BAED0
+		// Token: 0x060029A7 RID: 10663 RVA: 0x001C28BC File Offset: 0x001C0ABC
 		public int GetActiveRotation(Int2 p)
 		{
 			return this.activeTileRotations[p.x + p.y * this.tileXCount];
 		}
 
-		// Token: 0x06002952 RID: 10578 RVA: 0x001BCCED File Offset: 0x001BAEED
+		// Token: 0x060029A8 RID: 10664 RVA: 0x001C28D9 File Offset: 0x001C0AD9
 		[Obsolete("Use the result from RegisterTileType instead")]
 		public TileHandler.TileType GetTileType(int index)
 		{
 			throw new Exception("This method has been deprecated. Use the result from RegisterTileType instead.");
 		}
 
-		// Token: 0x06002953 RID: 10579 RVA: 0x001BCCED File Offset: 0x001BAEED
+		// Token: 0x060029A9 RID: 10665 RVA: 0x001C28D9 File Offset: 0x001C0AD9
 		[Obsolete("Use the result from RegisterTileType instead")]
 		public int GetTileTypeCount()
 		{
 			throw new Exception("This method has been deprecated. Use the result from RegisterTileType instead.");
 		}
 
-		// Token: 0x06002954 RID: 10580 RVA: 0x001BCCF9 File Offset: 0x001BAEF9
+		// Token: 0x060029AA RID: 10666 RVA: 0x001C28E5 File Offset: 0x001C0AE5
 		public TileHandler.TileType RegisterTileType(Mesh source, Int3 centerOffset, int width = 1, int depth = 1)
 		{
 			return new TileHandler.TileType(source, (Int3)new Vector3(this.graph.TileWorldSizeX, 0f, this.graph.TileWorldSizeZ), centerOffset, width, depth);
 		}
 
-		// Token: 0x06002955 RID: 10581 RVA: 0x001BCD2C File Offset: 0x001BAF2C
+		// Token: 0x060029AB RID: 10667 RVA: 0x001C2918 File Offset: 0x001C0B18
 		public void CreateTileTypesFromGraph()
 		{
 			NavmeshTile[] tiles = this.graph.GetTiles();
@@ -107,7 +107,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002956 RID: 10582 RVA: 0x001BCD94 File Offset: 0x001BAF94
+		// Token: 0x060029AC RID: 10668 RVA: 0x001C2980 File Offset: 0x001C0B80
 		private void UpdateTileType(NavmeshTile tile)
 		{
 			int x = tile.x;
@@ -121,7 +121,7 @@ namespace Pathfinding.Util
 			this.activeTileOffsets[num] = 0;
 		}
 
-		// Token: 0x06002957 RID: 10583 RVA: 0x001BCE6E File Offset: 0x001BB06E
+		// Token: 0x060029AD RID: 10669 RVA: 0x001C2A5A File Offset: 0x001C0C5A
 		public bool StartBatchLoad()
 		{
 			if (this.isBatching)
@@ -137,7 +137,7 @@ namespace Pathfinding.Util
 			return true;
 		}
 
-		// Token: 0x06002958 RID: 10584 RVA: 0x001BCEA0 File Offset: 0x001BB0A0
+		// Token: 0x060029AE RID: 10670 RVA: 0x001C2A8C File Offset: 0x001C0C8C
 		public void EndBatchLoad()
 		{
 			if (!this.isBatching)
@@ -157,7 +157,7 @@ namespace Pathfinding.Util
 			}));
 		}
 
-		// Token: 0x06002959 RID: 10585 RVA: 0x001BCF00 File Offset: 0x001BB100
+		// Token: 0x060029AF RID: 10671 RVA: 0x001C2AEC File Offset: 0x001C0CEC
 		private TileHandler.CuttingResult CutPoly(Int3[] verts, int[] tris, Int3[] extraShape, GraphTransform graphTransform, IntRect tiles, TileHandler.CutMode mode = TileHandler.CutMode.CutAll | TileHandler.CutMode.CutDual, int perturbate = -1)
 		{
 			if (verts.Length == 0 || tris.Length == 0)
@@ -453,7 +453,7 @@ namespace Pathfinding.Util
 			return result2;
 		}
 
-		// Token: 0x0600295A RID: 10586 RVA: 0x001BD8DC File Offset: 0x001BBADC
+		// Token: 0x060029B0 RID: 10672 RVA: 0x001C34C8 File Offset: 0x001C16C8
 		private static List<TileHandler.Cut> PrepareNavmeshCutsForCutting(List<NavmeshCut> navmeshCuts, GraphTransform transform, IntRect cutSpaceBounds, int perturbate, bool anyNavmeshAdds)
 		{
 			System.Random random = null;
@@ -523,7 +523,7 @@ namespace Pathfinding.Util
 			return list2;
 		}
 
-		// Token: 0x0600295B RID: 10587 RVA: 0x001BDB58 File Offset: 0x001BBD58
+		// Token: 0x060029B1 RID: 10673 RVA: 0x001C3744 File Offset: 0x001C1944
 		private static void PoolPolygon(Polygon polygon, Stack<Polygon> pool)
 		{
 			if (polygon.Holes != null)
@@ -548,7 +548,7 @@ namespace Pathfinding.Util
 			pool.Push(polygon);
 		}
 
-		// Token: 0x0600295C RID: 10588 RVA: 0x001BDC10 File Offset: 0x001BBE10
+		// Token: 0x060029B2 RID: 10674 RVA: 0x001C37FC File Offset: 0x001C19FC
 		private void CutAll(List<IntPoint> poly, List<int> intersectingCutIndices, List<TileHandler.Cut> cuts, PolyTree result)
 		{
 			this.clipper.Clear();
@@ -561,7 +561,7 @@ namespace Pathfinding.Util
 			this.clipper.Execute(ClipType.ctDifference, result, PolyFillType.pftNonZero, PolyFillType.pftNonZero);
 		}
 
-		// Token: 0x0600295D RID: 10589 RVA: 0x001BDC80 File Offset: 0x001BBE80
+		// Token: 0x060029B3 RID: 10675 RVA: 0x001C386C File Offset: 0x001C1A6C
 		private void CutDual(List<IntPoint> poly, List<int> tmpIntersectingCuts, List<TileHandler.Cut> cuts, bool hasDual, List<List<IntPoint>> intermediateResult, PolyTree result)
 		{
 			this.clipper.Clear();
@@ -593,7 +593,7 @@ namespace Pathfinding.Util
 			this.clipper.Execute(ClipType.ctDifference, result, PolyFillType.pftEvenOdd, PolyFillType.pftNonZero);
 		}
 
-		// Token: 0x0600295E RID: 10590 RVA: 0x001BDD9F File Offset: 0x001BBF9F
+		// Token: 0x060029B4 RID: 10676 RVA: 0x001C398B File Offset: 0x001C1B8B
 		private void CutExtra(List<IntPoint> poly, List<IntPoint> extraClipShape, PolyTree result)
 		{
 			this.clipper.Clear();
@@ -603,7 +603,7 @@ namespace Pathfinding.Util
 			this.clipper.Execute(ClipType.ctIntersection, result, PolyFillType.pftEvenOdd, PolyFillType.pftNonZero);
 		}
 
-		// Token: 0x0600295F RID: 10591 RVA: 0x001BDDE0 File Offset: 0x001BBFE0
+		// Token: 0x060029B5 RID: 10677 RVA: 0x001C39CC File Offset: 0x001C1BCC
 		private int ClipAgainstRectangle(Int3[] clipIn, Int3[] clipOut, Int2 size)
 		{
 			int num = this.simpleClipper.ClipPolygon(clipIn, 3, clipOut, 1, 0, 0);
@@ -624,7 +624,7 @@ namespace Pathfinding.Util
 			return this.simpleClipper.ClipPolygon(clipOut, num, clipIn, -1, size.y, 2);
 		}
 
-		// Token: 0x06002960 RID: 10592 RVA: 0x001BDE5C File Offset: 0x001BC05C
+		// Token: 0x060029B6 RID: 10678 RVA: 0x001C3A48 File Offset: 0x001C1C48
 		private static void CopyMesh(Int3[] vertices, int[] triangles, List<Int3> outVertices, List<int> outTriangles)
 		{
 			outTriangles.Capacity = Math.Max(outTriangles.Capacity, triangles.Length);
@@ -639,7 +639,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002961 RID: 10593 RVA: 0x001BDEC4 File Offset: 0x001BC0C4
+		// Token: 0x060029B7 RID: 10679 RVA: 0x001C3AB0 File Offset: 0x001C1CB0
 		private void DelaunayRefinement(Int3[] verts, int[] tris, ref int tCount, bool delaunay, bool colinear)
 		{
 			if (tCount % 3 != 0)
@@ -712,7 +712,7 @@ namespace Pathfinding.Util
 						else if (delaunay && !flag)
 						{
 							float num4 = Int3.Angle(int2 - @int, int3 - @int);
-							if (Int3.Angle(int2 - int4, int3 - int4) > 6.2831855f - 2f * num4)
+							if (Int3.Angle(int2 - int4, int3 - int4) > 6.28318548f - 2f * num4)
 							{
 								tris[j + (k + 1) % 3] = tris[num2];
 								int num5 = num2 / 3 * 3;
@@ -732,7 +732,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002962 RID: 10594 RVA: 0x001BE2B4 File Offset: 0x001BC4B4
+		// Token: 0x060029B8 RID: 10680 RVA: 0x001C3EA0 File Offset: 0x001C20A0
 		public void ClearTile(int x, int z)
 		{
 			if (AstarPath.active == null)
@@ -756,13 +756,13 @@ namespace Pathfinding.Util
 			}));
 		}
 
-		// Token: 0x06002963 RID: 10595 RVA: 0x001BE334 File Offset: 0x001BC534
+		// Token: 0x060029B9 RID: 10681 RVA: 0x001C3F20 File Offset: 0x001C2120
 		public void ReloadInBounds(Bounds bounds)
 		{
 			this.ReloadInBounds(this.graph.GetTouchingTiles(bounds));
 		}
 
-		// Token: 0x06002964 RID: 10596 RVA: 0x001BE348 File Offset: 0x001BC548
+		// Token: 0x060029BA RID: 10682 RVA: 0x001C3F34 File Offset: 0x001C2134
 		public void ReloadInBounds(IntRect tiles)
 		{
 			tiles = IntRect.Intersection(tiles, new IntRect(0, 0, this.tileXCount - 1, this.tileZCount - 1));
@@ -779,7 +779,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002965 RID: 10597 RVA: 0x001BE3B4 File Offset: 0x001BC5B4
+		// Token: 0x060029BB RID: 10683 RVA: 0x001C3FA0 File Offset: 0x001C21A0
 		public void ReloadTile(int x, int z)
 		{
 			if (x < 0 || z < 0 || x >= this.tileXCount || z >= this.tileZCount)
@@ -793,7 +793,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002966 RID: 10598 RVA: 0x001BE414 File Offset: 0x001BC614
+		// Token: 0x060029BC RID: 10684 RVA: 0x001C4000 File Offset: 0x001C2200
 		public void LoadTile(TileHandler.TileType tile, int x, int z, int rotation, int yoffset)
 		{
 			if (tile == null)
@@ -847,47 +847,47 @@ namespace Pathfinding.Util
 			}));
 		}
 
-		// Token: 0x0400431D RID: 17181
+		// Token: 0x040043FB RID: 17403
 		public readonly NavmeshBase graph;
 
-		// Token: 0x0400431E RID: 17182
+		// Token: 0x040043FC RID: 17404
 		private readonly int tileXCount;
 
-		// Token: 0x0400431F RID: 17183
+		// Token: 0x040043FD RID: 17405
 		private readonly int tileZCount;
 
-		// Token: 0x04004320 RID: 17184
+		// Token: 0x040043FE RID: 17406
 		private readonly Clipper clipper = new Clipper(0);
 
-		// Token: 0x04004321 RID: 17185
+		// Token: 0x040043FF RID: 17407
 		private readonly Dictionary<Int2, int> cached_Int2_int_dict = new Dictionary<Int2, int>();
 
-		// Token: 0x04004322 RID: 17186
+		// Token: 0x04004400 RID: 17408
 		private readonly TileHandler.TileType[] activeTileTypes;
 
-		// Token: 0x04004323 RID: 17187
+		// Token: 0x04004401 RID: 17409
 		private readonly int[] activeTileRotations;
 
-		// Token: 0x04004324 RID: 17188
+		// Token: 0x04004402 RID: 17410
 		private readonly int[] activeTileOffsets;
 
-		// Token: 0x04004325 RID: 17189
+		// Token: 0x04004403 RID: 17411
 		private readonly bool[] reloadedInBatch;
 
-		// Token: 0x04004326 RID: 17190
+		// Token: 0x04004404 RID: 17412
 		public readonly GridLookup<NavmeshClipper> cuts;
 
-		// Token: 0x04004327 RID: 17191
+		// Token: 0x04004405 RID: 17413
 		private bool isBatching;
 
-		// Token: 0x04004328 RID: 17192
+		// Token: 0x04004406 RID: 17414
 		private readonly VoxelPolygonClipper simpleClipper;
 
-		// Token: 0x02000774 RID: 1908
+		// Token: 0x0200078E RID: 1934
 		public class TileType
 		{
-			// Token: 0x1700068D RID: 1677
-			// (get) Token: 0x06002D9A RID: 11674 RVA: 0x001D0058 File Offset: 0x001CE258
+			// Token: 0x17000693 RID: 1683
+			// (get) Token: 0x06002DFD RID: 11773 RVA: 0x001D5D00 File Offset: 0x001D3F00
 			public int Width
 			{
 				get
@@ -896,8 +896,8 @@ namespace Pathfinding.Util
 				}
 			}
 
-			// Token: 0x1700068E RID: 1678
-			// (get) Token: 0x06002D9B RID: 11675 RVA: 0x001D0060 File Offset: 0x001CE260
+			// Token: 0x17000694 RID: 1684
+			// (get) Token: 0x06002DFE RID: 11774 RVA: 0x001D5D08 File Offset: 0x001D3F08
 			public int Depth
 			{
 				get
@@ -906,7 +906,7 @@ namespace Pathfinding.Util
 				}
 			}
 
-			// Token: 0x06002D9C RID: 11676 RVA: 0x001D0068 File Offset: 0x001CE268
+			// Token: 0x06002DFF RID: 11775 RVA: 0x001D5D10 File Offset: 0x001D3F10
 			public TileType(Int3[] sourceVerts, int[] sourceTris, Int3 tileSize, Int3 centerOffset, int width = 1, int depth = 1)
 			{
 				if (sourceVerts == null)
@@ -941,7 +941,7 @@ namespace Pathfinding.Util
 				this.depth = depth;
 			}
 
-			// Token: 0x06002D9D RID: 11677 RVA: 0x001D0188 File Offset: 0x001CE388
+			// Token: 0x06002E00 RID: 11776 RVA: 0x001D5E30 File Offset: 0x001D4030
 			public TileType(Mesh source, Int3 tileSize, Int3 centerOffset, int width = 1, int depth = 1)
 			{
 				if (source == null)
@@ -969,7 +969,7 @@ namespace Pathfinding.Util
 				this.depth = depth;
 			}
 
-			// Token: 0x06002D9E RID: 11678 RVA: 0x001D028C File Offset: 0x001CE48C
+			// Token: 0x06002E01 RID: 11777 RVA: 0x001D5F34 File Offset: 0x001D4134
 			public void Load(out Int3[] verts, out int[] tris, int rotation, int yoffset)
 			{
 				rotation = (rotation % 4 + 4) % 4;
@@ -994,28 +994,28 @@ namespace Pathfinding.Util
 				tris = this.tris;
 			}
 
-			// Token: 0x04004A79 RID: 19065
+			// Token: 0x04004B64 RID: 19300
 			private Int3[] verts;
 
-			// Token: 0x04004A7A RID: 19066
+			// Token: 0x04004B65 RID: 19301
 			private int[] tris;
 
-			// Token: 0x04004A7B RID: 19067
+			// Token: 0x04004B66 RID: 19302
 			private Int3 offset;
 
-			// Token: 0x04004A7C RID: 19068
+			// Token: 0x04004B67 RID: 19303
 			private int lastYOffset;
 
-			// Token: 0x04004A7D RID: 19069
+			// Token: 0x04004B68 RID: 19304
 			private int lastRotation;
 
-			// Token: 0x04004A7E RID: 19070
+			// Token: 0x04004B69 RID: 19305
 			private int width;
 
-			// Token: 0x04004A7F RID: 19071
+			// Token: 0x04004B6A RID: 19306
 			private int depth;
 
-			// Token: 0x04004A80 RID: 19072
+			// Token: 0x04004B6B RID: 19307
 			private static readonly int[] Rotations = new int[]
 			{
 				1,
@@ -1037,44 +1037,44 @@ namespace Pathfinding.Util
 			};
 		}
 
-		// Token: 0x02000775 RID: 1909
+		// Token: 0x0200078F RID: 1935
 		[Flags]
 		public enum CutMode
 		{
-			// Token: 0x04004A82 RID: 19074
+			// Token: 0x04004B6D RID: 19309
 			CutAll = 1,
-			// Token: 0x04004A83 RID: 19075
+			// Token: 0x04004B6E RID: 19310
 			CutDual = 2,
-			// Token: 0x04004A84 RID: 19076
+			// Token: 0x04004B6F RID: 19311
 			CutExtra = 4
 		}
 
-		// Token: 0x02000776 RID: 1910
+		// Token: 0x02000790 RID: 1936
 		private class Cut
 		{
-			// Token: 0x04004A85 RID: 19077
+			// Token: 0x04004B70 RID: 19312
 			public IntRect bounds;
 
-			// Token: 0x04004A86 RID: 19078
+			// Token: 0x04004B71 RID: 19313
 			public Int2 boundsY;
 
-			// Token: 0x04004A87 RID: 19079
+			// Token: 0x04004B72 RID: 19314
 			public bool isDual;
 
-			// Token: 0x04004A88 RID: 19080
+			// Token: 0x04004B73 RID: 19315
 			public bool cutsAddedGeom;
 
-			// Token: 0x04004A89 RID: 19081
+			// Token: 0x04004B74 RID: 19316
 			public List<IntPoint> contour;
 		}
 
-		// Token: 0x02000777 RID: 1911
+		// Token: 0x02000791 RID: 1937
 		private struct CuttingResult
 		{
-			// Token: 0x04004A8A RID: 19082
+			// Token: 0x04004B75 RID: 19317
 			public Int3[] verts;
 
-			// Token: 0x04004A8B RID: 19083
+			// Token: 0x04004B76 RID: 19318
 			public int[] tris;
 		}
 	}

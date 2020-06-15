@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000587 RID: 1415
+	// Token: 0x0200059D RID: 1437
 	[Serializable]
 	public class StartEndModifier : PathModifier
 	{
-		// Token: 0x170005B0 RID: 1456
-		// (get) Token: 0x06002670 RID: 9840 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x170005B6 RID: 1462
+		// (get) Token: 0x060026C6 RID: 9926 RVA: 0x0002D199 File Offset: 0x0002B399
 		public override int Order
 		{
 			get
@@ -18,7 +18,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002671 RID: 9841 RVA: 0x001A76A4 File Offset: 0x001A58A4
+		// Token: 0x060026C7 RID: 9927 RVA: 0x001AD290 File Offset: 0x001AB490
 		public override void Apply(Path _p)
 		{
 			ABPath abpath = _p as ABPath;
@@ -50,7 +50,7 @@ namespace Pathfinding
 			abpath.vectorPath[abpath.vectorPath.Count - 1] = vector2;
 		}
 
-		// Token: 0x06002672 RID: 9842 RVA: 0x001A7784 File Offset: 0x001A5984
+		// Token: 0x060026C8 RID: 9928 RVA: 0x001AD370 File Offset: 0x001AB570
 		private Vector3 Snap(ABPath path, StartEndModifier.Exactness mode, bool start, out bool forceAddPoint)
 		{
 			int num = start ? 0 : (path.path.Count - 1);
@@ -125,7 +125,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002673 RID: 9843 RVA: 0x001A7988 File Offset: 0x001A5B88
+		// Token: 0x060026C9 RID: 9929 RVA: 0x001AD574 File Offset: 0x001AB774
 		protected Vector3 GetClampedPoint(Vector3 from, Vector3 to, GraphNode hint)
 		{
 			Vector3 vector = to;
@@ -146,45 +146,45 @@ namespace Pathfinding
 			return vector;
 		}
 
-		// Token: 0x0400414D RID: 16717
+		// Token: 0x0400422B RID: 16939
 		public bool addPoints;
 
-		// Token: 0x0400414E RID: 16718
+		// Token: 0x0400422C RID: 16940
 		public StartEndModifier.Exactness exactStartPoint = StartEndModifier.Exactness.ClosestOnNode;
 
-		// Token: 0x0400414F RID: 16719
+		// Token: 0x0400422D RID: 16941
 		public StartEndModifier.Exactness exactEndPoint = StartEndModifier.Exactness.ClosestOnNode;
 
-		// Token: 0x04004150 RID: 16720
+		// Token: 0x0400422E RID: 16942
 		public Func<Vector3> adjustStartPoint;
 
-		// Token: 0x04004151 RID: 16721
+		// Token: 0x0400422F RID: 16943
 		public bool useRaycasting;
 
-		// Token: 0x04004152 RID: 16722
+		// Token: 0x04004230 RID: 16944
 		public LayerMask mask = -1;
 
-		// Token: 0x04004153 RID: 16723
+		// Token: 0x04004231 RID: 16945
 		public bool useGraphRaycasting;
 
-		// Token: 0x04004154 RID: 16724
+		// Token: 0x04004232 RID: 16946
 		private List<GraphNode> connectionBuffer;
 
-		// Token: 0x04004155 RID: 16725
+		// Token: 0x04004233 RID: 16947
 		private Action<GraphNode> connectionBufferAddDelegate;
 
-		// Token: 0x02000755 RID: 1877
+		// Token: 0x0200076F RID: 1903
 		public enum Exactness
 		{
-			// Token: 0x040049F6 RID: 18934
+			// Token: 0x04004AE1 RID: 19169
 			SnapToNode,
-			// Token: 0x040049F7 RID: 18935
+			// Token: 0x04004AE2 RID: 19170
 			Original,
-			// Token: 0x040049F8 RID: 18936
+			// Token: 0x04004AE3 RID: 19171
 			Interpolate,
-			// Token: 0x040049F9 RID: 18937
+			// Token: 0x04004AE4 RID: 19172
 			ClosestOnNode,
-			// Token: 0x040049FA RID: 18938
+			// Token: 0x04004AE5 RID: 19173
 			NodeConnection
 		}
 	}

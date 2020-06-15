@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200013F RID: 319
+// Token: 0x02000140 RID: 320
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Blur/Movie")]
 public class CameraFilterPack_Blur_Movie : MonoBehaviour
 {
 	// Token: 0x1700025F RID: 607
-	// (get) Token: 0x06000C8A RID: 3210 RVA: 0x00067417 File Offset: 0x00065617
+	// (get) Token: 0x06000C91 RID: 3217 RVA: 0x00068147 File Offset: 0x00066347
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Blur_Movie : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C8B RID: 3211 RVA: 0x0006744B File Offset: 0x0006564B
+	// Token: 0x06000C92 RID: 3218 RVA: 0x0006817B File Offset: 0x0006637B
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Blur_Movie");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Blur_Movie : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C8C RID: 3212 RVA: 0x0006746C File Offset: 0x0006566C
+	// Token: 0x06000C93 RID: 3219 RVA: 0x0006819C File Offset: 0x0006639C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (!(this.SCShader != null))
@@ -63,12 +63,12 @@ public class CameraFilterPack_Blur_Movie : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture, this.material);
 	}
 
-	// Token: 0x06000C8D RID: 3213 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000C94 RID: 3220 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000C8E RID: 3214 RVA: 0x0006757E File Offset: 0x0006577E
+	// Token: 0x06000C95 RID: 3221 RVA: 0x000682AE File Offset: 0x000664AE
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -77,24 +77,24 @@ public class CameraFilterPack_Blur_Movie : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000F44 RID: 3908
+	// Token: 0x04000F63 RID: 3939
 	public Shader SCShader;
 
-	// Token: 0x04000F45 RID: 3909
+	// Token: 0x04000F64 RID: 3940
 	private float TimeX = 1f;
 
-	// Token: 0x04000F46 RID: 3910
+	// Token: 0x04000F65 RID: 3941
 	private Material SCMaterial;
 
-	// Token: 0x04000F47 RID: 3911
+	// Token: 0x04000F66 RID: 3942
 	[Range(0f, 1000f)]
 	public float Radius = 150f;
 
-	// Token: 0x04000F48 RID: 3912
+	// Token: 0x04000F67 RID: 3943
 	[Range(0f, 1000f)]
 	public float Factor = 200f;
 
-	// Token: 0x04000F49 RID: 3913
+	// Token: 0x04000F68 RID: 3944
 	[Range(1f, 8f)]
 	public int FastFilter = 2;
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000228 RID: 552
+// Token: 0x02000229 RID: 553
 public class CardiganScript : MonoBehaviour
 {
-	// Token: 0x04001542 RID: 5442
+	// Token: 0x04001561 RID: 5473
 	public SkinnedMeshRenderer MyRenderer;
 }

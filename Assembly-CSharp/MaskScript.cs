@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000327 RID: 807
+// Token: 0x0200032A RID: 810
 public class MaskScript : MonoBehaviour
 {
-	// Token: 0x06001809 RID: 6153 RVA: 0x000D6234 File Offset: 0x000D4434
+	// Token: 0x06001826 RID: 6182 RVA: 0x000D8454 File Offset: 0x000D6654
 	private void Start()
 	{
 		if (GameGlobals.MasksBanned)
@@ -19,7 +19,7 @@ public class MaskScript : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x0600180A RID: 6154 RVA: 0x000D6294 File Offset: 0x000D4494
+	// Token: 0x06001827 RID: 6183 RVA: 0x000D84B4 File Offset: 0x000D66B4
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -47,7 +47,7 @@ public class MaskScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600180B RID: 6155 RVA: 0x000D63DC File Offset: 0x000D45DC
+	// Token: 0x06001828 RID: 6184 RVA: 0x000D85FC File Offset: 0x000D67FC
 	public void Drop()
 	{
 		this.Prompt.MyCollider.isTrigger = false;
@@ -62,36 +62,36 @@ public class MaskScript : MonoBehaviour
 		this.StudentManager.UpdateStudents(0);
 	}
 
-	// Token: 0x040022C1 RID: 8897
+	// Token: 0x0400230E RID: 8974
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x040022C2 RID: 8898
+	// Token: 0x0400230F RID: 8975
 	public ClubManagerScript ClubManager;
 
-	// Token: 0x040022C3 RID: 8899
+	// Token: 0x04002310 RID: 8976
 	public YandereScript Yandere;
 
-	// Token: 0x040022C4 RID: 8900
+	// Token: 0x04002311 RID: 8977
 	public PromptScript Prompt;
 
-	// Token: 0x040022C5 RID: 8901
+	// Token: 0x04002312 RID: 8978
 	public PickUpScript PickUp;
 
-	// Token: 0x040022C6 RID: 8902
+	// Token: 0x04002313 RID: 8979
 	public Projector Blood;
 
-	// Token: 0x040022C7 RID: 8903
+	// Token: 0x04002314 RID: 8980
 	public Renderer MyRenderer;
 
-	// Token: 0x040022C8 RID: 8904
+	// Token: 0x04002315 RID: 8981
 	public MeshFilter MyFilter;
 
-	// Token: 0x040022C9 RID: 8905
+	// Token: 0x04002316 RID: 8982
 	public Texture[] Textures;
 
-	// Token: 0x040022CA RID: 8906
+	// Token: 0x04002317 RID: 8983
 	public Mesh[] Meshes;
 
-	// Token: 0x040022CB RID: 8907
+	// Token: 0x04002318 RID: 8984
 	public int ID;
 }

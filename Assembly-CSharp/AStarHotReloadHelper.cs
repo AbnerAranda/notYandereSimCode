@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002FD RID: 765
+// Token: 0x02000300 RID: 768
 public class AStarHotReloadHelper : MonoBehaviour
 {
 }

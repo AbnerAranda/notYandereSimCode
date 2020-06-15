@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001A6 RID: 422
+// Token: 0x020001A7 RID: 423
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Glitch/Glitch3")]
 public class CameraFilterPack_FX_Glitch3 : MonoBehaviour
 {
 	// Token: 0x170002C6 RID: 710
-	// (get) Token: 0x06000EF7 RID: 3831 RVA: 0x000714C6 File Offset: 0x0006F6C6
+	// (get) Token: 0x06000EFE RID: 3838 RVA: 0x000721F6 File Offset: 0x000703F6
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_Glitch3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EF8 RID: 3832 RVA: 0x000714FA File Offset: 0x0006F6FA
+	// Token: 0x06000EFF RID: 3839 RVA: 0x0007222A File Offset: 0x0007042A
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_Glitch3");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_Glitch3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EF9 RID: 3833 RVA: 0x0007151C File Offset: 0x0006F71C
+	// Token: 0x06000F00 RID: 3840 RVA: 0x0007224C File Offset: 0x0007044C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -52,12 +52,12 @@ public class CameraFilterPack_FX_Glitch3 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000EFA RID: 3834 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F01 RID: 3841 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000EFB RID: 3835 RVA: 0x000715E8 File Offset: 0x0006F7E8
+	// Token: 0x06000F02 RID: 3842 RVA: 0x00072318 File Offset: 0x00070518
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -66,20 +66,20 @@ public class CameraFilterPack_FX_Glitch3 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011BB RID: 4539
+	// Token: 0x040011DA RID: 4570
 	public Shader SCShader;
 
-	// Token: 0x040011BC RID: 4540
+	// Token: 0x040011DB RID: 4571
 	private float TimeX = 1f;
 
-	// Token: 0x040011BD RID: 4541
+	// Token: 0x040011DC RID: 4572
 	private Material SCMaterial;
 
-	// Token: 0x040011BE RID: 4542
+	// Token: 0x040011DD RID: 4573
 	[Range(0f, 1f)]
 	public float _Glitch = 1f;
 
-	// Token: 0x040011BF RID: 4543
+	// Token: 0x040011DE RID: 4574
 	[Range(0f, 1f)]
 	public float _Noise = 1f;
 }

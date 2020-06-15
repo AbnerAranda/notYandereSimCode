@@ -1,82 +1,82 @@
 ﻿using System;
 
-// Token: 0x02000406 RID: 1030
+// Token: 0x0200040B RID: 1035
 public enum StudentActionType
 {
-	// Token: 0x04002DD5 RID: 11733
+	// Token: 0x04002E3C RID: 11836
 	AtLocker,
-	// Token: 0x04002DD6 RID: 11734
+	// Token: 0x04002E3D RID: 11837
 	Socializing,
-	// Token: 0x04002DD7 RID: 11735
+	// Token: 0x04002E3E RID: 11838
 	Gaming,
-	// Token: 0x04002DD8 RID: 11736
+	// Token: 0x04002E3F RID: 11839
 	Shamed,
-	// Token: 0x04002DD9 RID: 11737
+	// Token: 0x04002E40 RID: 11840
 	Slave,
-	// Token: 0x04002DDA RID: 11738
+	// Token: 0x04002E41 RID: 11841
 	Relax,
-	// Token: 0x04002DDB RID: 11739
+	// Token: 0x04002E42 RID: 11842
 	SitAndTakeNotes,
-	// Token: 0x04002DDC RID: 11740
+	// Token: 0x04002E43 RID: 11843
 	Peek,
-	// Token: 0x04002DDD RID: 11741
+	// Token: 0x04002E44 RID: 11844
 	ClubAction,
-	// Token: 0x04002DDE RID: 11742
+	// Token: 0x04002E45 RID: 11845
 	SitAndSocialize,
-	// Token: 0x04002DDF RID: 11743
+	// Token: 0x04002E46 RID: 11846
 	SitAndEatBento,
-	// Token: 0x04002DE0 RID: 11744
+	// Token: 0x04002E47 RID: 11847
 	ChangeShoes,
-	// Token: 0x04002DE1 RID: 11745
+	// Token: 0x04002E48 RID: 11848
 	GradePapers,
-	// Token: 0x04002DE2 RID: 11746
+	// Token: 0x04002E49 RID: 11849
 	Patrol,
-	// Token: 0x04002DE3 RID: 11747
+	// Token: 0x04002E4A RID: 11850
 	Read,
-	// Token: 0x04002DE4 RID: 11748
+	// Token: 0x04002E4B RID: 11851
 	Texting,
-	// Token: 0x04002DE5 RID: 11749
+	// Token: 0x04002E4C RID: 11852
 	Mourn,
-	// Token: 0x04002DE6 RID: 11750
+	// Token: 0x04002E4D RID: 11853
 	Cuddle,
-	// Token: 0x04002DE7 RID: 11751
+	// Token: 0x04002E4E RID: 11854
 	Teaching,
-	// Token: 0x04002DE8 RID: 11752
+	// Token: 0x04002E4F RID: 11855
 	SearchPatrol,
-	// Token: 0x04002DE9 RID: 11753
+	// Token: 0x04002E50 RID: 11856
 	Wait,
-	// Token: 0x04002DEA RID: 11754
+	// Token: 0x04002E51 RID: 11857
 	Clean,
-	// Token: 0x04002DEB RID: 11755
+	// Token: 0x04002E52 RID: 11858
 	Gossip,
-	// Token: 0x04002DEC RID: 11756
+	// Token: 0x04002E53 RID: 11859
 	Graffiti,
-	// Token: 0x04002DED RID: 11757
+	// Token: 0x04002E54 RID: 11860
 	Bully,
-	// Token: 0x04002DEE RID: 11758
+	// Token: 0x04002E55 RID: 11861
 	Follow,
-	// Token: 0x04002DEF RID: 11759
+	// Token: 0x04002E56 RID: 11862
 	Sulk,
-	// Token: 0x04002DF0 RID: 11760
+	// Token: 0x04002E57 RID: 11863
 	Sleuth,
-	// Token: 0x04002DF1 RID: 11761
+	// Token: 0x04002E58 RID: 11864
 	Stalk,
-	// Token: 0x04002DF2 RID: 11762
+	// Token: 0x04002E59 RID: 11865
 	Sketch,
-	// Token: 0x04002DF3 RID: 11763
+	// Token: 0x04002E5A RID: 11866
 	Sunbathe,
-	// Token: 0x04002DF4 RID: 11764
+	// Token: 0x04002E5B RID: 11867
 	Shock,
-	// Token: 0x04002DF5 RID: 11765
+	// Token: 0x04002E5C RID: 11868
 	Miyuki,
-	// Token: 0x04002DF6 RID: 11766
+	// Token: 0x04002E5D RID: 11869
 	Meeting,
-	// Token: 0x04002DF7 RID: 11767
+	// Token: 0x04002E5E RID: 11870
 	Lyrics,
-	// Token: 0x04002DF8 RID: 11768
+	// Token: 0x04002E5F RID: 11871
 	Practice,
-	// Token: 0x04002DF9 RID: 11769
+	// Token: 0x04002E60 RID: 11872
 	Sew,
-	// Token: 0x04002DFA RID: 11770
+	// Token: 0x04002E61 RID: 11873
 	Paint
 }

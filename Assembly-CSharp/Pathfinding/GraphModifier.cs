@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000525 RID: 1317
+	// Token: 0x0200053B RID: 1339
 	[ExecuteInEditMode]
 	public abstract class GraphModifier : VersionedMonoBehaviour
 	{
-		// Token: 0x06002275 RID: 8821 RVA: 0x0019033C File Offset: 0x0018E53C
+		// Token: 0x060022CB RID: 8907 RVA: 0x00195F28 File Offset: 0x00194128
 		protected static List<T> GetModifiersOfType<T>() where T : GraphModifier
 		{
 			GraphModifier graphModifier = GraphModifier.root;
@@ -25,7 +25,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x06002276 RID: 8822 RVA: 0x0019038C File Offset: 0x0018E58C
+		// Token: 0x060022CC RID: 8908 RVA: 0x00195F78 File Offset: 0x00194178
 		public static void FindAllModifiers()
 		{
 			GraphModifier[] array = UnityEngine.Object.FindObjectsOfType(typeof(GraphModifier)) as GraphModifier[];
@@ -38,7 +38,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002277 RID: 8823 RVA: 0x001903D0 File Offset: 0x0018E5D0
+		// Token: 0x060022CD RID: 8909 RVA: 0x00195FBC File Offset: 0x001941BC
 		public static void TriggerEvent(GraphModifier.EventType type)
 		{
 			if (!Application.isPlaying)
@@ -109,7 +109,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002278 RID: 8824 RVA: 0x001904A7 File Offset: 0x0018E6A7
+		// Token: 0x060022CE RID: 8910 RVA: 0x00196093 File Offset: 0x00194293
 		protected virtual void OnEnable()
 		{
 			this.RemoveFromLinkedList();
@@ -117,20 +117,20 @@ namespace Pathfinding
 			this.ConfigureUniqueID();
 		}
 
-		// Token: 0x06002279 RID: 8825 RVA: 0x001904BB File Offset: 0x0018E6BB
+		// Token: 0x060022CF RID: 8911 RVA: 0x001960A7 File Offset: 0x001942A7
 		protected virtual void OnDisable()
 		{
 			this.RemoveFromLinkedList();
 		}
 
-		// Token: 0x0600227A RID: 8826 RVA: 0x001904C3 File Offset: 0x0018E6C3
+		// Token: 0x060022D0 RID: 8912 RVA: 0x001960AF File Offset: 0x001942AF
 		protected override void Awake()
 		{
 			base.Awake();
 			this.ConfigureUniqueID();
 		}
 
-		// Token: 0x0600227B RID: 8827 RVA: 0x001904D4 File Offset: 0x0018E6D4
+		// Token: 0x060022D1 RID: 8913 RVA: 0x001960C0 File Offset: 0x001942C0
 		private void ConfigureUniqueID()
 		{
 			GraphModifier x;
@@ -141,7 +141,7 @@ namespace Pathfinding
 			GraphModifier.usedIDs[this.uniqueID] = this;
 		}
 
-		// Token: 0x0600227C RID: 8828 RVA: 0x00190515 File Offset: 0x0018E715
+		// Token: 0x060022D2 RID: 8914 RVA: 0x00196101 File Offset: 0x00194301
 		private void AddToLinkedList()
 		{
 			if (GraphModifier.root == null)
@@ -154,7 +154,7 @@ namespace Pathfinding
 			GraphModifier.root = this;
 		}
 
-		// Token: 0x0600227D RID: 8829 RVA: 0x00190548 File Offset: 0x0018E748
+		// Token: 0x060022D3 RID: 8915 RVA: 0x00196134 File Offset: 0x00194334
 		private void RemoveFromLinkedList()
 		{
 			if (GraphModifier.root == this)
@@ -180,43 +180,43 @@ namespace Pathfinding
 			this.next = null;
 		}
 
-		// Token: 0x0600227E RID: 8830 RVA: 0x001905D3 File Offset: 0x0018E7D3
+		// Token: 0x060022D4 RID: 8916 RVA: 0x001961BF File Offset: 0x001943BF
 		protected virtual void OnDestroy()
 		{
 			GraphModifier.usedIDs.Remove(this.uniqueID);
 		}
 
-		// Token: 0x0600227F RID: 8831 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060022D5 RID: 8917 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnPostScan()
 		{
 		}
 
-		// Token: 0x06002280 RID: 8832 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060022D6 RID: 8918 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnPreScan()
 		{
 		}
 
-		// Token: 0x06002281 RID: 8833 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060022D7 RID: 8919 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnLatePostScan()
 		{
 		}
 
-		// Token: 0x06002282 RID: 8834 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060022D8 RID: 8920 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnPostCacheLoad()
 		{
 		}
 
-		// Token: 0x06002283 RID: 8835 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060022D9 RID: 8921 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnGraphsPreUpdate()
 		{
 		}
 
-		// Token: 0x06002284 RID: 8836 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x060022DA RID: 8922 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnGraphsPostUpdate()
 		{
 		}
 
-		// Token: 0x06002285 RID: 8837 RVA: 0x001905E8 File Offset: 0x0018E7E8
+		// Token: 0x060022DB RID: 8923 RVA: 0x001961D4 File Offset: 0x001943D4
 		private void Reset()
 		{
 			ulong num = (ulong)((long)UnityEngine.Random.Range(0, int.MaxValue));
@@ -225,37 +225,37 @@ namespace Pathfinding
 			GraphModifier.usedIDs[this.uniqueID] = this;
 		}
 
-		// Token: 0x04003EFE RID: 16126
+		// Token: 0x04003FDC RID: 16348
 		private static GraphModifier root;
 
-		// Token: 0x04003EFF RID: 16127
+		// Token: 0x04003FDD RID: 16349
 		private GraphModifier prev;
 
-		// Token: 0x04003F00 RID: 16128
+		// Token: 0x04003FDE RID: 16350
 		private GraphModifier next;
 
-		// Token: 0x04003F01 RID: 16129
+		// Token: 0x04003FDF RID: 16351
 		[SerializeField]
 		[HideInInspector]
 		protected ulong uniqueID;
 
-		// Token: 0x04003F02 RID: 16130
+		// Token: 0x04003FE0 RID: 16352
 		protected static Dictionary<ulong, GraphModifier> usedIDs = new Dictionary<ulong, GraphModifier>();
 
-		// Token: 0x02000718 RID: 1816
+		// Token: 0x02000732 RID: 1842
 		public enum EventType
 		{
-			// Token: 0x040048EF RID: 18671
+			// Token: 0x040049DA RID: 18906
 			PostScan = 1,
-			// Token: 0x040048F0 RID: 18672
+			// Token: 0x040049DB RID: 18907
 			PreScan,
-			// Token: 0x040048F1 RID: 18673
+			// Token: 0x040049DC RID: 18908
 			LatePostScan = 4,
-			// Token: 0x040048F2 RID: 18674
+			// Token: 0x040049DD RID: 18909
 			PreUpdate = 8,
-			// Token: 0x040048F3 RID: 18675
+			// Token: 0x040049DE RID: 18910
 			PostUpdate = 16,
-			// Token: 0x040048F4 RID: 18676
+			// Token: 0x040049DF RID: 18911
 			PostCacheLoad = 32
 		}
 	}

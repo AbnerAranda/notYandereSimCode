@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x0200028D RID: 653
+// Token: 0x0200028E RID: 654
 public enum WitnessMemoryType
 {
-	// Token: 0x04001B8A RID: 7050
+	// Token: 0x04001BAA RID: 7082
 	Blood,
-	// Token: 0x04001B8B RID: 7051
+	// Token: 0x04001BAB RID: 7083
 	Corpse,
-	// Token: 0x04001B8C RID: 7052
+	// Token: 0x04001BAC RID: 7084
 	Murder,
-	// Token: 0x04001B8D RID: 7053
+	// Token: 0x04001BAD RID: 7085
 	Insanity,
-	// Token: 0x04001B8E RID: 7054
+	// Token: 0x04001BAE RID: 7086
 	Weapon
 }

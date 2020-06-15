@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000547 RID: 1351
+	// Token: 0x0200055D RID: 1373
 	public class GraphUpdateObject
 	{
-		// Token: 0x060023FC RID: 9212 RVA: 0x00195F8C File Offset: 0x0019418C
+		// Token: 0x06002452 RID: 9298 RVA: 0x0019BB78 File Offset: 0x00199D78
 		public virtual void WillUpdateNode(GraphNode node)
 		{
 			if (this.trackChangedNodes && node != null)
@@ -31,7 +31,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023FD RID: 9213 RVA: 0x00196030 File Offset: 0x00194230
+		// Token: 0x06002453 RID: 9299 RVA: 0x0019BC1C File Offset: 0x00199E1C
 		public virtual void RevertFromBackup()
 		{
 			if (!this.trackChangedNodes)
@@ -62,7 +62,7 @@ namespace Pathfinding
 			ListPool<Int3>.Release(ref this.backupPositionData);
 		}
 
-		// Token: 0x060023FE RID: 9214 RVA: 0x00196128 File Offset: 0x00194328
+		// Token: 0x06002454 RID: 9300 RVA: 0x0019BD14 File Offset: 0x00199F14
 		public virtual void Apply(GraphNode node)
 		{
 			if (this.shape == null || this.shape.Contains(node))
@@ -79,63 +79,63 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023FF RID: 9215 RVA: 0x00196189 File Offset: 0x00194389
+		// Token: 0x06002455 RID: 9301 RVA: 0x0019BD75 File Offset: 0x00199F75
 		public GraphUpdateObject()
 		{
 		}
 
-		// Token: 0x06002400 RID: 9216 RVA: 0x001961B8 File Offset: 0x001943B8
+		// Token: 0x06002456 RID: 9302 RVA: 0x0019BDA4 File Offset: 0x00199FA4
 		public GraphUpdateObject(Bounds b)
 		{
 			this.bounds = b;
 		}
 
-		// Token: 0x04003FC4 RID: 16324
+		// Token: 0x040040A2 RID: 16546
 		public Bounds bounds;
 
-		// Token: 0x04003FC5 RID: 16325
+		// Token: 0x040040A3 RID: 16547
 		public bool requiresFloodFill = true;
 
-		// Token: 0x04003FC6 RID: 16326
+		// Token: 0x040040A4 RID: 16548
 		public bool updatePhysics = true;
 
-		// Token: 0x04003FC7 RID: 16327
+		// Token: 0x040040A5 RID: 16549
 		public bool resetPenaltyOnPhysics = true;
 
-		// Token: 0x04003FC8 RID: 16328
+		// Token: 0x040040A6 RID: 16550
 		public bool updateErosion = true;
 
-		// Token: 0x04003FC9 RID: 16329
+		// Token: 0x040040A7 RID: 16551
 		public NNConstraint nnConstraint = NNConstraint.None;
 
-		// Token: 0x04003FCA RID: 16330
+		// Token: 0x040040A8 RID: 16552
 		public int addPenalty;
 
-		// Token: 0x04003FCB RID: 16331
+		// Token: 0x040040A9 RID: 16553
 		public bool modifyWalkability;
 
-		// Token: 0x04003FCC RID: 16332
+		// Token: 0x040040AA RID: 16554
 		public bool setWalkability;
 
-		// Token: 0x04003FCD RID: 16333
+		// Token: 0x040040AB RID: 16555
 		public bool modifyTag;
 
-		// Token: 0x04003FCE RID: 16334
+		// Token: 0x040040AC RID: 16556
 		public int setTag;
 
-		// Token: 0x04003FCF RID: 16335
+		// Token: 0x040040AD RID: 16557
 		public bool trackChangedNodes;
 
-		// Token: 0x04003FD0 RID: 16336
+		// Token: 0x040040AE RID: 16558
 		public List<GraphNode> changedNodes;
 
-		// Token: 0x04003FD1 RID: 16337
+		// Token: 0x040040AF RID: 16559
 		private List<uint> backupData;
 
-		// Token: 0x04003FD2 RID: 16338
+		// Token: 0x040040B0 RID: 16560
 		private List<Int3> backupPositionData;
 
-		// Token: 0x04003FD3 RID: 16339
+		// Token: 0x040040B1 RID: 16561
 		public GraphUpdateShape shape;
 	}
 }

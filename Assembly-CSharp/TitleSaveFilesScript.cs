@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000425 RID: 1061
+// Token: 0x0200042A RID: 1066
 public class TitleSaveFilesScript : MonoBehaviour
 {
-	// Token: 0x06001C3F RID: 7231 RVA: 0x00151B7E File Offset: 0x0014FD7E
+	// Token: 0x06001C63 RID: 7267 RVA: 0x00154FF6 File Offset: 0x001531F6
 	private void Start()
 	{
 		base.transform.localPosition = new Vector3(1050f, base.transform.localPosition.y, base.transform.localPosition.z);
 		this.UpdateHighlight();
 	}
 
-	// Token: 0x06001C40 RID: 7232 RVA: 0x00151BBC File Offset: 0x0014FDBC
+	// Token: 0x06001C64 RID: 7268 RVA: 0x00155034 File Offset: 0x00153234
 	private void Update()
 	{
 		if (!this.Show)
@@ -77,30 +77,30 @@ public class TitleSaveFilesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C41 RID: 7233 RVA: 0x00151DC9 File Offset: 0x0014FFC9
+	// Token: 0x06001C65 RID: 7269 RVA: 0x00155241 File Offset: 0x00153441
 	private void UpdateHighlight()
 	{
 		this.Highlight.localPosition = new Vector3(0f, 700f - 350f * (float)this.ID, 0f);
 	}
 
-	// Token: 0x040034FE RID: 13566
+	// Token: 0x04003573 RID: 13683
 	public InputManagerScript InputManager;
 
-	// Token: 0x040034FF RID: 13567
+	// Token: 0x04003574 RID: 13684
 	public TitleSaveDataScript[] SaveDatas;
 
-	// Token: 0x04003500 RID: 13568
+	// Token: 0x04003575 RID: 13685
 	public GameObject ConfirmationWindow;
 
-	// Token: 0x04003501 RID: 13569
+	// Token: 0x04003576 RID: 13686
 	public TitleMenuScript Menu;
 
-	// Token: 0x04003502 RID: 13570
+	// Token: 0x04003577 RID: 13687
 	public Transform Highlight;
 
-	// Token: 0x04003503 RID: 13571
+	// Token: 0x04003578 RID: 13688
 	public bool Show;
 
-	// Token: 0x04003504 RID: 13572
+	// Token: 0x04003579 RID: 13689
 	public int ID = 1;
 }

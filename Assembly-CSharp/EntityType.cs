@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000284 RID: 644
+// Token: 0x02000285 RID: 645
 public enum EntityType
 {
-	// Token: 0x04001B59 RID: 7001
+	// Token: 0x04001B79 RID: 7033
 	Player,
-	// Token: 0x04001B5A RID: 7002
+	// Token: 0x04001B7A RID: 7034
 	Student,
-	// Token: 0x04001B5B RID: 7003
+	// Token: 0x04001B7B RID: 7035
 	Teacher
 }

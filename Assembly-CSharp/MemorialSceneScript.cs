@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200032E RID: 814
+// Token: 0x02000331 RID: 817
 public class MemorialSceneScript : MonoBehaviour
 {
-	// Token: 0x0600181B RID: 6171 RVA: 0x000D7024 File Offset: 0x000D5224
+	// Token: 0x06001838 RID: 6200 RVA: 0x000D9244 File Offset: 0x000D7444
 	private void Start()
 	{
 		this.MemorialStudents = StudentGlobals.MemorialStudents;
@@ -72,7 +72,7 @@ public class MemorialSceneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600181C RID: 6172 RVA: 0x000D71A4 File Offset: 0x000D53A4
+	// Token: 0x06001839 RID: 6201 RVA: 0x000D93C4 File Offset: 0x000D75C4
 	private void Update()
 	{
 		this.Speed += Time.deltaTime;
@@ -119,33 +119,33 @@ public class MemorialSceneScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040022E7 RID: 8935
+	// Token: 0x04002334 RID: 9012
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x040022E8 RID: 8936
+	// Token: 0x04002335 RID: 9013
 	public GameObject[] Canvases;
 
-	// Token: 0x040022E9 RID: 8937
+	// Token: 0x04002336 RID: 9014
 	public UITexture[] Portraits;
 
-	// Token: 0x040022EA RID: 8938
+	// Token: 0x04002337 RID: 9015
 	public GameObject CanvasGroup;
 
-	// Token: 0x040022EB RID: 8939
+	// Token: 0x04002338 RID: 9016
 	public GameObject Headmaster;
 
-	// Token: 0x040022EC RID: 8940
+	// Token: 0x04002339 RID: 9017
 	public GameObject Counselor;
 
-	// Token: 0x040022ED RID: 8941
+	// Token: 0x0400233A RID: 9018
 	public int MemorialStudents;
 
-	// Token: 0x040022EE RID: 8942
+	// Token: 0x0400233B RID: 9019
 	public float Speed;
 
-	// Token: 0x040022EF RID: 8943
+	// Token: 0x0400233C RID: 9020
 	public bool Eulogized;
 
-	// Token: 0x040022F0 RID: 8944
+	// Token: 0x0400233D RID: 9021
 	public bool FadeOut;
 }

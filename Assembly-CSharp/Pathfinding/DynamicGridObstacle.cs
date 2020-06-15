@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200055B RID: 1371
+	// Token: 0x02000571 RID: 1393
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_dynamic_grid_obstacle.php")]
 	public class DynamicGridObstacle : GraphModifier
 	{
-		// Token: 0x17000579 RID: 1401
-		// (get) Token: 0x06002437 RID: 9271 RVA: 0x001968DC File Offset: 0x00194ADC
+		// Token: 0x1700057F RID: 1407
+		// (get) Token: 0x0600248D RID: 9357 RVA: 0x0019C4C8 File Offset: 0x0019A6C8
 		private Bounds bounds
 		{
 			get
@@ -23,8 +23,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700057A RID: 1402
-		// (get) Token: 0x06002438 RID: 9272 RVA: 0x00196936 File Offset: 0x00194B36
+		// Token: 0x17000580 RID: 1408
+		// (get) Token: 0x0600248E RID: 9358 RVA: 0x0019C522 File Offset: 0x0019A722
 		private bool colliderEnabled
 		{
 			get
@@ -37,7 +37,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002439 RID: 9273 RVA: 0x00196960 File Offset: 0x00194B60
+		// Token: 0x0600248F RID: 9359 RVA: 0x0019C54C File Offset: 0x0019A74C
 		protected override void Awake()
 		{
 			base.Awake();
@@ -53,13 +53,13 @@ namespace Pathfinding
 			this.prevEnabled = false;
 		}
 
-		// Token: 0x0600243A RID: 9274 RVA: 0x001969F7 File Offset: 0x00194BF7
+		// Token: 0x06002490 RID: 9360 RVA: 0x0019C5E3 File Offset: 0x0019A7E3
 		public override void OnPostScan()
 		{
 			this.prevEnabled = this.colliderEnabled;
 		}
 
-		// Token: 0x0600243B RID: 9275 RVA: 0x00196A08 File Offset: 0x00194C08
+		// Token: 0x06002491 RID: 9361 RVA: 0x0019C5F4 File Offset: 0x0019A7F4
 		private void Update()
 		{
 			if (this.coll == null && this.coll2D == null)
@@ -79,7 +79,7 @@ namespace Pathfinding
 				Quaternion rotation = this.tr.rotation;
 				Vector3 vector = this.prevBounds.min - bounds.min;
 				Vector3 vector2 = this.prevBounds.max - bounds.max;
-				float num = bounds.extents.magnitude * Quaternion.Angle(this.prevRotation, rotation) * 0.017453292f;
+				float num = bounds.extents.magnitude * Quaternion.Angle(this.prevRotation, rotation) * 0.0174532924f;
 				if (vector.sqrMagnitude > this.updateError * this.updateError || vector2.sqrMagnitude > this.updateError * this.updateError || num > this.updateError || !this.prevEnabled)
 				{
 					this.DoUpdateGraphs();
@@ -92,7 +92,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600243C RID: 9276 RVA: 0x00196B4C File Offset: 0x00194D4C
+		// Token: 0x06002492 RID: 9362 RVA: 0x0019C738 File Offset: 0x0019A938
 		protected override void OnDisable()
 		{
 			base.OnDisable();
@@ -104,7 +104,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600243D RID: 9277 RVA: 0x00196B94 File Offset: 0x00194D94
+		// Token: 0x06002493 RID: 9363 RVA: 0x0019C780 File Offset: 0x0019A980
 		public void DoUpdateGraphs()
 		{
 			if (this.coll == null && this.coll2D == null)
@@ -136,37 +136,37 @@ namespace Pathfinding
 			this.lastCheckTime = Time.realtimeSinceStartup;
 		}
 
-		// Token: 0x0600243E RID: 9278 RVA: 0x00196C5F File Offset: 0x00194E5F
+		// Token: 0x06002494 RID: 9364 RVA: 0x0019C84B File Offset: 0x0019AA4B
 		private static float BoundsVolume(Bounds b)
 		{
 			return Math.Abs(b.size.x * b.size.y * b.size.z);
 		}
 
-		// Token: 0x0400401D RID: 16413
+		// Token: 0x040040FB RID: 16635
 		private Collider coll;
 
-		// Token: 0x0400401E RID: 16414
+		// Token: 0x040040FC RID: 16636
 		private Collider2D coll2D;
 
-		// Token: 0x0400401F RID: 16415
+		// Token: 0x040040FD RID: 16637
 		private Transform tr;
 
-		// Token: 0x04004020 RID: 16416
+		// Token: 0x040040FE RID: 16638
 		public float updateError = 1f;
 
-		// Token: 0x04004021 RID: 16417
+		// Token: 0x040040FF RID: 16639
 		public float checkTime = 0.2f;
 
-		// Token: 0x04004022 RID: 16418
+		// Token: 0x04004100 RID: 16640
 		private Bounds prevBounds;
 
-		// Token: 0x04004023 RID: 16419
+		// Token: 0x04004101 RID: 16641
 		private Quaternion prevRotation;
 
-		// Token: 0x04004024 RID: 16420
+		// Token: 0x04004102 RID: 16642
 		private bool prevEnabled;
 
-		// Token: 0x04004025 RID: 16421
+		// Token: 0x04004103 RID: 16643
 		private float lastCheckTime = -9999f;
 	}
 }

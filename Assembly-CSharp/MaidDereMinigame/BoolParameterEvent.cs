@@ -2,7 +2,7 @@
 
 namespace MaidDereMinigame
 {
-	// Token: 0x020004F2 RID: 1266
-	// (Invoke) Token: 0x06001FE9 RID: 8169
+	// Token: 0x02000502 RID: 1282
+	// (Invoke) Token: 0x0600202B RID: 8235
 	public delegate void BoolParameterEvent(bool b);
 }

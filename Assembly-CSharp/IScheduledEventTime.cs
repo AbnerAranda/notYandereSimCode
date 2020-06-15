@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x02000292 RID: 658
+// Token: 0x02000293 RID: 659
 public interface IScheduledEventTime
 {
 	// Token: 0x17000377 RID: 887
-	// (get) Token: 0x060013D3 RID: 5075
+	// (get) Token: 0x060013DB RID: 5083
 	ScheduledEventTimeType ScheduleType { get; }
 
-	// Token: 0x060013D4 RID: 5076
+	// Token: 0x060013DC RID: 5084
 	bool OccurringNow(DateAndTime currentTime);
 
-	// Token: 0x060013D5 RID: 5077
+	// Token: 0x060013DD RID: 5085
 	bool OccursInTheFuture(DateAndTime currentTime);
 
-	// Token: 0x060013D6 RID: 5078
+	// Token: 0x060013DE RID: 5086
 	bool OccurredInThePast(DateAndTime currentTime);
 }

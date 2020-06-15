@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000410 RID: 1040
+// Token: 0x02000415 RID: 1045
 public class SundayRivalCutsceneScript : MonoBehaviour
 {
-	// Token: 0x06001BF0 RID: 7152 RVA: 0x0014744F File Offset: 0x0014564F
+	// Token: 0x06001C14 RID: 7188 RVA: 0x0014A7E7 File Offset: 0x001489E7
 	private void Start()
 	{
 		if (DateGlobals.Weekday != DayOfWeek.Sunday)

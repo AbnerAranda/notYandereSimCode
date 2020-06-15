@@ -3,10 +3,10 @@ using System.Text;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005E0 RID: 1504
+	// Token: 0x020005F6 RID: 1526
 	public struct Guid
 	{
-		// Token: 0x06002975 RID: 10613 RVA: 0x001BE830 File Offset: 0x001BCA30
+		// Token: 0x060029CB RID: 10699 RVA: 0x001C441C File Offset: 0x001C261C
 		public Guid(byte[] bytes)
 		{
 			ulong num = (ulong)bytes[0] | (ulong)bytes[1] << 8 | (ulong)bytes[2] << 16 | (ulong)bytes[3] << 24 | (ulong)bytes[4] << 32 | (ulong)bytes[5] << 40 | (ulong)bytes[6] << 48 | (ulong)bytes[7] << 56;
@@ -15,7 +15,7 @@ namespace Pathfinding.Util
 			this._b = (BitConverter.IsLittleEndian ? num2 : Guid.SwapEndianness(num2));
 		}
 
-		// Token: 0x06002976 RID: 10614 RVA: 0x001BE8E8 File Offset: 0x001BCAE8
+		// Token: 0x060029CC RID: 10700 RVA: 0x001C44D4 File Offset: 0x001C26D4
 		public Guid(string str)
 		{
 			this._a = 0UL;
@@ -70,13 +70,13 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002977 RID: 10615 RVA: 0x001BEA1F File Offset: 0x001BCC1F
+		// Token: 0x060029CD RID: 10701 RVA: 0x001C460B File Offset: 0x001C280B
 		public static Guid Parse(string input)
 		{
 			return new Guid(input);
 		}
 
-		// Token: 0x06002978 RID: 10616 RVA: 0x001BEA28 File Offset: 0x001BCC28
+		// Token: 0x060029CE RID: 10702 RVA: 0x001C4614 File Offset: 0x001C2814
 		private static ulong SwapEndianness(ulong value)
 		{
 			ulong num = value & 255UL;
@@ -90,7 +90,7 @@ namespace Pathfinding.Util
 			return num << 56 | num2 << 48 | num3 << 40 | num4 << 32 | num5 << 24 | num6 << 16 | num7 << 8 | num8;
 		}
 
-		// Token: 0x06002979 RID: 10617 RVA: 0x001BEAB8 File Offset: 0x001BCCB8
+		// Token: 0x060029CF RID: 10703 RVA: 0x001C46A4 File Offset: 0x001C28A4
 		public byte[] ToByteArray()
 		{
 			byte[] array = new byte[16];
@@ -104,7 +104,7 @@ namespace Pathfinding.Util
 			return array;
 		}
 
-		// Token: 0x0600297A RID: 10618 RVA: 0x001BEB28 File Offset: 0x001BCD28
+		// Token: 0x060029D0 RID: 10704 RVA: 0x001C4714 File Offset: 0x001C2914
 		public static Guid NewGuid()
 		{
 			byte[] array = new byte[16];
@@ -112,19 +112,19 @@ namespace Pathfinding.Util
 			return new Guid(array);
 		}
 
-		// Token: 0x0600297B RID: 10619 RVA: 0x001BEB4E File Offset: 0x001BCD4E
+		// Token: 0x060029D1 RID: 10705 RVA: 0x001C473A File Offset: 0x001C293A
 		public static bool operator ==(Guid lhs, Guid rhs)
 		{
 			return lhs._a == rhs._a && lhs._b == rhs._b;
 		}
 
-		// Token: 0x0600297C RID: 10620 RVA: 0x001BEB6E File Offset: 0x001BCD6E
+		// Token: 0x060029D2 RID: 10706 RVA: 0x001C475A File Offset: 0x001C295A
 		public static bool operator !=(Guid lhs, Guid rhs)
 		{
 			return lhs._a != rhs._a || lhs._b != rhs._b;
 		}
 
-		// Token: 0x0600297D RID: 10621 RVA: 0x001BEB94 File Offset: 0x001BCD94
+		// Token: 0x060029D3 RID: 10707 RVA: 0x001C4780 File Offset: 0x001C2980
 		public override bool Equals(object _rhs)
 		{
 			if (!(_rhs is Guid))
@@ -135,14 +135,14 @@ namespace Pathfinding.Util
 			return this._a == guid._a && this._b == guid._b;
 		}
 
-		// Token: 0x0600297E RID: 10622 RVA: 0x001BEBD0 File Offset: 0x001BCDD0
+		// Token: 0x060029D4 RID: 10708 RVA: 0x001C47BC File Offset: 0x001C29BC
 		public override int GetHashCode()
 		{
 			ulong num = this._a ^ this._b;
 			return (int)(num >> 32) ^ (int)num;
 		}
 
-		// Token: 0x0600297F RID: 10623 RVA: 0x001BEBF4 File Offset: 0x001BCDF4
+		// Token: 0x060029D5 RID: 10709 RVA: 0x001C47E0 File Offset: 0x001C29E0
 		public override string ToString()
 		{
 			if (Guid.text == null)
@@ -160,25 +160,25 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x04004330 RID: 17200
+		// Token: 0x0400440E RID: 17422
 		private const string hex = "0123456789ABCDEF";
 
-		// Token: 0x04004331 RID: 17201
+		// Token: 0x0400440F RID: 17423
 		public static readonly Guid zero = new Guid(new byte[16]);
 
-		// Token: 0x04004332 RID: 17202
+		// Token: 0x04004410 RID: 17424
 		public static readonly string zeroString = new Guid(new byte[16]).ToString();
 
-		// Token: 0x04004333 RID: 17203
+		// Token: 0x04004411 RID: 17425
 		private readonly ulong _a;
 
-		// Token: 0x04004334 RID: 17204
+		// Token: 0x04004412 RID: 17426
 		private readonly ulong _b;
 
-		// Token: 0x04004335 RID: 17205
+		// Token: 0x04004413 RID: 17427
 		private static Random random = new Random();
 
-		// Token: 0x04004336 RID: 17206
+		// Token: 0x04004414 RID: 17428
 		private static StringBuilder text;
 	}
 }

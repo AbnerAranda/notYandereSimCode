@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000243 RID: 579
+// Token: 0x02000244 RID: 580
 public class ComputerGamesScript : MonoBehaviour
 {
-	// Token: 0x0600127B RID: 4731 RVA: 0x00089440 File Offset: 0x00087640
+	// Token: 0x06001282 RID: 4738 RVA: 0x0008A340 File Offset: 0x00088540
 	private void Start()
 	{
 		this.GameWindow.gameObject.SetActive(false);
@@ -18,7 +18,7 @@ public class ComputerGamesScript : MonoBehaviour
 		this.DisableGames();
 	}
 
-	// Token: 0x0600127C RID: 4732 RVA: 0x00089490 File Offset: 0x00087690
+	// Token: 0x06001283 RID: 4739 RVA: 0x0008A390 File Offset: 0x00088590
 	private void Update()
 	{
 		if (this.ShowWindow)
@@ -132,7 +132,7 @@ public class ComputerGamesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600127D RID: 4733 RVA: 0x00089A90 File Offset: 0x00087C90
+	// Token: 0x06001284 RID: 4740 RVA: 0x0008A990 File Offset: 0x00088B90
 	public void EnableGames()
 	{
 		for (int i = 1; i < this.ComputerGames.Length; i++)
@@ -142,7 +142,7 @@ public class ComputerGamesScript : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x0600127E RID: 4734 RVA: 0x00089ACC File Offset: 0x00087CCC
+	// Token: 0x06001285 RID: 4741 RVA: 0x0008A9CC File Offset: 0x00088BCC
 	private void PlayGames()
 	{
 		this.Yandere.Character.GetComponent<Animation>().CrossFade("f02_playingGames_00");
@@ -153,13 +153,13 @@ public class ComputerGamesScript : MonoBehaviour
 		this.UpdateImage();
 	}
 
-	// Token: 0x0600127F RID: 4735 RVA: 0x00089B27 File Offset: 0x00087D27
+	// Token: 0x06001286 RID: 4742 RVA: 0x0008AA27 File Offset: 0x00088C27
 	private void UpdateImage()
 	{
 		this.MyTexture.mainTexture = this.Textures[this.Subject];
 	}
 
-	// Token: 0x06001280 RID: 4736 RVA: 0x00089B44 File Offset: 0x00087D44
+	// Token: 0x06001287 RID: 4743 RVA: 0x0008AA44 File Offset: 0x00088C44
 	public void DisableGames()
 	{
 		for (int i = 1; i < this.ComputerGames.Length; i++)
@@ -173,7 +173,7 @@ public class ComputerGamesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001281 RID: 4737 RVA: 0x00089B94 File Offset: 0x00087D94
+	// Token: 0x06001288 RID: 4744 RVA: 0x0008AA94 File Offset: 0x00088C94
 	private void EnableChairs()
 	{
 		for (int i = 1; i < this.Chairs.Length; i++)
@@ -183,7 +183,7 @@ public class ComputerGamesScript : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06001282 RID: 4738 RVA: 0x00089BD0 File Offset: 0x00087DD0
+	// Token: 0x06001289 RID: 4745 RVA: 0x0008AAD0 File Offset: 0x00088CD0
 	private void DisableChairs()
 	{
 		for (int i = 1; i < this.Chairs.Length; i++)
@@ -192,7 +192,7 @@ public class ComputerGamesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001283 RID: 4739 RVA: 0x00089C00 File Offset: 0x00087E00
+	// Token: 0x0600128A RID: 4746 RVA: 0x0008AB00 File Offset: 0x00088D00
 	private void ActivateBenefit()
 	{
 		if (this.Subject == 1)
@@ -248,7 +248,7 @@ public class ComputerGamesScript : MonoBehaviour
 		this.Police.UpdateCorpses();
 	}
 
-	// Token: 0x06001284 RID: 4740 RVA: 0x00089D0C File Offset: 0x00087F0C
+	// Token: 0x0600128B RID: 4747 RVA: 0x0008AC0C File Offset: 0x00088E0C
 	private void DeactivateBenefit()
 	{
 		if (this.Subject == 1)
@@ -304,7 +304,7 @@ public class ComputerGamesScript : MonoBehaviour
 		this.Police.UpdateCorpses();
 	}
 
-	// Token: 0x06001285 RID: 4741 RVA: 0x00089E18 File Offset: 0x00088018
+	// Token: 0x0600128C RID: 4748 RVA: 0x0008AD18 File Offset: 0x00088F18
 	public void DeactivateAllBenefits()
 	{
 		ClassGlobals.BiologyBonus = 0;
@@ -324,7 +324,7 @@ public class ComputerGamesScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001286 RID: 4742 RVA: 0x00089E80 File Offset: 0x00088080
+	// Token: 0x0600128D RID: 4749 RVA: 0x0008AD80 File Offset: 0x00088F80
 	private void UpdateHighlight()
 	{
 		if (this.Subject < 1)
@@ -339,72 +339,72 @@ public class ComputerGamesScript : MonoBehaviour
 		this.DescLabel.text = this.Descriptions[this.Subject];
 	}
 
-	// Token: 0x04001682 RID: 5762
+	// Token: 0x040016A1 RID: 5793
 	public PromptScript[] ComputerGames;
 
-	// Token: 0x04001683 RID: 5763
+	// Token: 0x040016A2 RID: 5794
 	public Collider[] Chairs;
 
-	// Token: 0x04001684 RID: 5764
+	// Token: 0x040016A3 RID: 5795
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04001685 RID: 5765
+	// Token: 0x040016A4 RID: 5796
 	public InputManagerScript InputManager;
 
-	// Token: 0x04001686 RID: 5766
+	// Token: 0x040016A5 RID: 5797
 	public PromptBarScript PromptBar;
 
-	// Token: 0x04001687 RID: 5767
+	// Token: 0x040016A6 RID: 5798
 	public YandereScript Yandere;
 
-	// Token: 0x04001688 RID: 5768
+	// Token: 0x040016A7 RID: 5799
 	public PoliceScript Police;
 
-	// Token: 0x04001689 RID: 5769
+	// Token: 0x040016A8 RID: 5800
 	public PoisonScript Poison;
 
-	// Token: 0x0400168A RID: 5770
+	// Token: 0x040016A9 RID: 5801
 	public Quaternion targetRotation;
 
-	// Token: 0x0400168B RID: 5771
+	// Token: 0x040016AA RID: 5802
 	public Transform GameWindow;
 
-	// Token: 0x0400168C RID: 5772
+	// Token: 0x040016AB RID: 5803
 	public Transform MainCamera;
 
-	// Token: 0x0400168D RID: 5773
+	// Token: 0x040016AC RID: 5804
 	public Transform Highlight;
 
-	// Token: 0x0400168E RID: 5774
+	// Token: 0x040016AD RID: 5805
 	public bool ShowWindow;
 
-	// Token: 0x0400168F RID: 5775
+	// Token: 0x040016AE RID: 5806
 	public bool Gaming;
 
-	// Token: 0x04001690 RID: 5776
+	// Token: 0x040016AF RID: 5807
 	public float Timer;
 
-	// Token: 0x04001691 RID: 5777
+	// Token: 0x040016B0 RID: 5808
 	public int Subject = 1;
 
-	// Token: 0x04001692 RID: 5778
+	// Token: 0x040016B1 RID: 5809
 	public int GameID;
 
-	// Token: 0x04001693 RID: 5779
+	// Token: 0x040016B2 RID: 5810
 	public int ID = 1;
 
-	// Token: 0x04001694 RID: 5780
+	// Token: 0x040016B3 RID: 5811
 	public Color OriginalColor;
 
-	// Token: 0x04001695 RID: 5781
+	// Token: 0x040016B4 RID: 5812
 	public string[] Descriptions;
 
-	// Token: 0x04001696 RID: 5782
+	// Token: 0x040016B5 RID: 5813
 	public UITexture MyTexture;
 
-	// Token: 0x04001697 RID: 5783
+	// Token: 0x040016B6 RID: 5814
 	public Texture[] Textures;
 
-	// Token: 0x04001698 RID: 5784
+	// Token: 0x040016B7 RID: 5815
 	public UILabel DescLabel;
 }

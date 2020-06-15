@@ -6,14 +6,14 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Button Keys (Legacy)")]
 public class UIButtonKeys : UIKeyNavigation
 {
-	// Token: 0x06000181 RID: 385 RVA: 0x000149B7 File Offset: 0x00012BB7
+	// Token: 0x06000182 RID: 386 RVA: 0x000149DF File Offset: 0x00012BDF
 	protected override void OnEnable()
 	{
 		this.Upgrade();
 		base.OnEnable();
 	}
 
-	// Token: 0x06000182 RID: 386 RVA: 0x000149C8 File Offset: 0x00012BC8
+	// Token: 0x06000183 RID: 387 RVA: 0x000149F0 File Offset: 0x00012BF0
 	public void Upgrade()
 	{
 		if (this.onClick == null && this.selectOnClick != null)
@@ -48,18 +48,18 @@ public class UIButtonKeys : UIKeyNavigation
 		}
 	}
 
-	// Token: 0x04000310 RID: 784
+	// Token: 0x04000312 RID: 786
 	public UIButtonKeys selectOnClick;
 
-	// Token: 0x04000311 RID: 785
+	// Token: 0x04000313 RID: 787
 	public UIButtonKeys selectOnUp;
 
-	// Token: 0x04000312 RID: 786
+	// Token: 0x04000314 RID: 788
 	public UIButtonKeys selectOnDown;
 
-	// Token: 0x04000313 RID: 787
+	// Token: 0x04000315 RID: 789
 	public UIButtonKeys selectOnLeft;
 
-	// Token: 0x04000314 RID: 788
+	// Token: 0x04000316 RID: 790
 	public UIButtonKeys selectOnRight;
 }

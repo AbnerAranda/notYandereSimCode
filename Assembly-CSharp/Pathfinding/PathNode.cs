@@ -2,57 +2,57 @@
 
 namespace Pathfinding
 {
-	// Token: 0x0200053D RID: 1341
+	// Token: 0x02000553 RID: 1363
 	public class PathNode
 	{
-		// Token: 0x17000568 RID: 1384
-		// (get) Token: 0x060023CC RID: 9164 RVA: 0x001958AB File Offset: 0x00193AAB
-		// (set) Token: 0x060023CD RID: 9165 RVA: 0x001958B9 File Offset: 0x00193AB9
+		// Token: 0x1700056E RID: 1390
+		// (get) Token: 0x06002422 RID: 9250 RVA: 0x0019B497 File Offset: 0x00199697
+		// (set) Token: 0x06002423 RID: 9251 RVA: 0x0019B4A5 File Offset: 0x001996A5
 		public uint cost
 		{
 			get
 			{
-				return this.flags & 268435455u;
+				return this.flags & 268435455U;
 			}
 			set
 			{
-				this.flags = ((this.flags & 4026531840u) | value);
+				this.flags = ((this.flags & 4026531840U) | value);
 			}
 		}
 
-		// Token: 0x17000569 RID: 1385
-		// (get) Token: 0x060023CE RID: 9166 RVA: 0x001958CF File Offset: 0x00193ACF
-		// (set) Token: 0x060023CF RID: 9167 RVA: 0x001958E0 File Offset: 0x00193AE0
+		// Token: 0x1700056F RID: 1391
+		// (get) Token: 0x06002424 RID: 9252 RVA: 0x0019B4BB File Offset: 0x001996BB
+		// (set) Token: 0x06002425 RID: 9253 RVA: 0x0019B4CC File Offset: 0x001996CC
 		public bool flag1
 		{
 			get
 			{
-				return (this.flags & 268435456u) > 0u;
+				return (this.flags & 268435456U) > 0U;
 			}
 			set
 			{
-				this.flags = ((this.flags & 4026531839u) | (value ? 268435456u : 0u));
+				this.flags = ((this.flags & 4026531839U) | (value ? 268435456U : 0U));
 			}
 		}
 
-		// Token: 0x1700056A RID: 1386
-		// (get) Token: 0x060023D0 RID: 9168 RVA: 0x00195900 File Offset: 0x00193B00
-		// (set) Token: 0x060023D1 RID: 9169 RVA: 0x00195911 File Offset: 0x00193B11
+		// Token: 0x17000570 RID: 1392
+		// (get) Token: 0x06002426 RID: 9254 RVA: 0x0019B4EC File Offset: 0x001996EC
+		// (set) Token: 0x06002427 RID: 9255 RVA: 0x0019B4FD File Offset: 0x001996FD
 		public bool flag2
 		{
 			get
 			{
-				return (this.flags & 536870912u) > 0u;
+				return (this.flags & 536870912U) > 0U;
 			}
 			set
 			{
-				this.flags = ((this.flags & 3758096383u) | (value ? 536870912u : 0u));
+				this.flags = ((this.flags & 3758096383U) | (value ? 536870912U : 0U));
 			}
 		}
 
-		// Token: 0x1700056B RID: 1387
-		// (get) Token: 0x060023D2 RID: 9170 RVA: 0x00195931 File Offset: 0x00193B31
-		// (set) Token: 0x060023D3 RID: 9171 RVA: 0x00195939 File Offset: 0x00193B39
+		// Token: 0x17000571 RID: 1393
+		// (get) Token: 0x06002428 RID: 9256 RVA: 0x0019B51D File Offset: 0x0019971D
+		// (set) Token: 0x06002429 RID: 9257 RVA: 0x0019B525 File Offset: 0x00199725
 		public uint G
 		{
 			get
@@ -65,9 +65,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700056C RID: 1388
-		// (get) Token: 0x060023D4 RID: 9172 RVA: 0x00195942 File Offset: 0x00193B42
-		// (set) Token: 0x060023D5 RID: 9173 RVA: 0x0019594A File Offset: 0x00193B4A
+		// Token: 0x17000572 RID: 1394
+		// (get) Token: 0x0600242A RID: 9258 RVA: 0x0019B52E File Offset: 0x0019972E
+		// (set) Token: 0x0600242B RID: 9259 RVA: 0x0019B536 File Offset: 0x00199736
 		public uint H
 		{
 			get
@@ -80,8 +80,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700056D RID: 1389
-		// (get) Token: 0x060023D6 RID: 9174 RVA: 0x00195953 File Offset: 0x00193B53
+		// Token: 0x17000573 RID: 1395
+		// (get) Token: 0x0600242C RID: 9260 RVA: 0x0019B53F File Offset: 0x0019973F
 		public uint F
 		{
 			get
@@ -90,46 +90,46 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023D7 RID: 9175 RVA: 0x00195962 File Offset: 0x00193B62
+		// Token: 0x0600242D RID: 9261 RVA: 0x0019B54E File Offset: 0x0019974E
 		public void UpdateG(Path path)
 		{
 			this.g = this.parent.g + this.cost + path.GetTraversalCost(this.node);
 		}
 
-		// Token: 0x04003F8E RID: 16270
+		// Token: 0x0400406C RID: 16492
 		public GraphNode node;
 
-		// Token: 0x04003F8F RID: 16271
+		// Token: 0x0400406D RID: 16493
 		public PathNode parent;
 
-		// Token: 0x04003F90 RID: 16272
+		// Token: 0x0400406E RID: 16494
 		public ushort pathID;
 
-		// Token: 0x04003F91 RID: 16273
+		// Token: 0x0400406F RID: 16495
 		public ushort heapIndex = ushort.MaxValue;
 
-		// Token: 0x04003F92 RID: 16274
+		// Token: 0x04004070 RID: 16496
 		private uint flags;
 
-		// Token: 0x04003F93 RID: 16275
-		private const uint CostMask = 268435455u;
+		// Token: 0x04004071 RID: 16497
+		private const uint CostMask = 268435455U;
 
-		// Token: 0x04003F94 RID: 16276
+		// Token: 0x04004072 RID: 16498
 		private const int Flag1Offset = 28;
 
-		// Token: 0x04003F95 RID: 16277
-		private const uint Flag1Mask = 268435456u;
+		// Token: 0x04004073 RID: 16499
+		private const uint Flag1Mask = 268435456U;
 
-		// Token: 0x04003F96 RID: 16278
+		// Token: 0x04004074 RID: 16500
 		private const int Flag2Offset = 29;
 
-		// Token: 0x04003F97 RID: 16279
-		private const uint Flag2Mask = 536870912u;
+		// Token: 0x04004075 RID: 16501
+		private const uint Flag2Mask = 536870912U;
 
-		// Token: 0x04003F98 RID: 16280
+		// Token: 0x04004076 RID: 16502
 		private uint g;
 
-		// Token: 0x04003F99 RID: 16281
+		// Token: 0x04004077 RID: 16503
 		private uint h;
 	}
 }

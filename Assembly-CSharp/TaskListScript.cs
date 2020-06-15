@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000417 RID: 1047
+// Token: 0x0200041C RID: 1052
 public class TaskListScript : MonoBehaviour
 {
-	// Token: 0x06001C0B RID: 7179 RVA: 0x0014E9CC File Offset: 0x0014CBCC
+	// Token: 0x06001C2F RID: 7215 RVA: 0x00151E44 File Offset: 0x00150044
 	private void Update()
 	{
 		if (this.InputManager.TappedUp)
@@ -59,7 +59,7 @@ public class TaskListScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C0C RID: 7180 RVA: 0x0014EB68 File Offset: 0x0014CD68
+	// Token: 0x06001C30 RID: 7216 RVA: 0x00151FE0 File Offset: 0x001501E0
 	public void UpdateTaskList()
 	{
 		for (int i = 1; i < this.TaskNameLabels.Length; i++)
@@ -76,7 +76,7 @@ public class TaskListScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C0D RID: 7181 RVA: 0x0014EC10 File Offset: 0x0014CE10
+	// Token: 0x06001C31 RID: 7217 RVA: 0x00152088 File Offset: 0x00150288
 	public IEnumerator UpdateTaskInfo()
 	{
 		this.Highlight.localPosition = new Vector3(this.Highlight.localPosition.x, 200f - 25f * (float)this.ID, this.Highlight.localPosition.z);
@@ -115,48 +115,48 @@ public class TaskListScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400345C RID: 13404
+	// Token: 0x040034D1 RID: 13521
 	public InputManagerScript InputManager;
 
-	// Token: 0x0400345D RID: 13405
+	// Token: 0x040034D2 RID: 13522
 	public PauseScreenScript PauseScreen;
 
-	// Token: 0x0400345E RID: 13406
+	// Token: 0x040034D3 RID: 13523
 	public TaskWindowScript TaskWindow;
 
-	// Token: 0x0400345F RID: 13407
+	// Token: 0x040034D4 RID: 13524
 	public JsonScript JSON;
 
-	// Token: 0x04003460 RID: 13408
+	// Token: 0x040034D5 RID: 13525
 	public GameObject MainMenu;
 
-	// Token: 0x04003461 RID: 13409
+	// Token: 0x040034D6 RID: 13526
 	public UITexture StudentIcon;
 
-	// Token: 0x04003462 RID: 13410
+	// Token: 0x040034D7 RID: 13527
 	public UITexture TaskIcon;
 
-	// Token: 0x04003463 RID: 13411
+	// Token: 0x040034D8 RID: 13528
 	public UILabel TaskDesc;
 
-	// Token: 0x04003464 RID: 13412
+	// Token: 0x040034D9 RID: 13529
 	public Texture QuestionMark;
 
-	// Token: 0x04003465 RID: 13413
+	// Token: 0x040034DA RID: 13530
 	public Transform Highlight;
 
-	// Token: 0x04003466 RID: 13414
+	// Token: 0x040034DB RID: 13531
 	public Texture Silhouette;
 
-	// Token: 0x04003467 RID: 13415
+	// Token: 0x040034DC RID: 13532
 	public UILabel[] TaskNameLabels;
 
-	// Token: 0x04003468 RID: 13416
+	// Token: 0x040034DD RID: 13533
 	public UISprite[] Checkmarks;
 
-	// Token: 0x04003469 RID: 13417
+	// Token: 0x040034DE RID: 13534
 	public int ListPosition;
 
-	// Token: 0x0400346A RID: 13418
+	// Token: 0x040034DF RID: 13535
 	public int ID = 1;
 }

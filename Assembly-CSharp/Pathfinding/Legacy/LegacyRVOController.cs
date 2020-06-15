@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Pathfinding.Legacy
 {
-	// Token: 0x020005A7 RID: 1447
+	// Token: 0x020005BD RID: 1469
 	[AddComponentMenu("Pathfinding/Legacy/Local Avoidance/Legacy RVO Controller")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_legacy_1_1_legacy_r_v_o_controller.php")]
 	public class LegacyRVOController : RVOController
 	{
-		// Token: 0x06002767 RID: 10087 RVA: 0x001AE380 File Offset: 0x001AC580
+		// Token: 0x060027BD RID: 10173 RVA: 0x001B3F6C File Offset: 0x001B216C
 		public void Update()
 		{
 			if (base.rvoAgent == null)
@@ -33,14 +33,14 @@ namespace Pathfinding.Legacy
 			}
 		}
 
-		// Token: 0x040041D3 RID: 16851
+		// Token: 0x040042B1 RID: 17073
 		[Tooltip("Layer mask for the ground. The RVOController will raycast down to check for the ground to figure out where to place the agent")]
 		public new LayerMask mask = -1;
 
-		// Token: 0x040041D4 RID: 16852
+		// Token: 0x040042B2 RID: 17074
 		public new bool enableRotation = true;
 
-		// Token: 0x040041D5 RID: 16853
+		// Token: 0x040042B3 RID: 17075
 		public new float rotationSpeed = 30f;
 	}
 }

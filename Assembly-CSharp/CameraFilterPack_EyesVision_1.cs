@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000197 RID: 407
+// Token: 0x02000198 RID: 408
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Vision/Eyes 1")]
 public class CameraFilterPack_EyesVision_1 : MonoBehaviour
 {
 	// Token: 0x170002B7 RID: 695
-	// (get) Token: 0x06000E9D RID: 3741 RVA: 0x0006FD8A File Offset: 0x0006DF8A
+	// (get) Token: 0x06000EA4 RID: 3748 RVA: 0x00070ABA File Offset: 0x0006ECBA
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_EyesVision_1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E9E RID: 3742 RVA: 0x0006FDBE File Offset: 0x0006DFBE
+	// Token: 0x06000EA5 RID: 3749 RVA: 0x00070AEE File Offset: 0x0006ECEE
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_eyes_vision_1") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_EyesVision_1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E9F RID: 3743 RVA: 0x0006FDF4 File Offset: 0x0006DFF4
+	// Token: 0x06000EA6 RID: 3750 RVA: 0x00070B24 File Offset: 0x0006ED24
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -55,12 +55,12 @@ public class CameraFilterPack_EyesVision_1 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000EA0 RID: 3744 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000EA7 RID: 3751 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000EA1 RID: 3745 RVA: 0x0006FED5 File Offset: 0x0006E0D5
+	// Token: 0x06000EA8 RID: 3752 RVA: 0x00070C05 File Offset: 0x0006EE05
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -69,31 +69,31 @@ public class CameraFilterPack_EyesVision_1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400115A RID: 4442
+	// Token: 0x04001179 RID: 4473
 	public Shader SCShader;
 
-	// Token: 0x0400115B RID: 4443
+	// Token: 0x0400117A RID: 4474
 	private float TimeX = 1f;
 
-	// Token: 0x0400115C RID: 4444
+	// Token: 0x0400117B RID: 4475
 	[Range(1f, 32f)]
 	public float _EyeWave = 15f;
 
-	// Token: 0x0400115D RID: 4445
+	// Token: 0x0400117C RID: 4476
 	[Range(0f, 10f)]
 	public float _EyeSpeed = 1f;
 
-	// Token: 0x0400115E RID: 4446
+	// Token: 0x0400117D RID: 4477
 	[Range(0f, 8f)]
 	public float _EyeMove = 2f;
 
-	// Token: 0x0400115F RID: 4447
+	// Token: 0x0400117E RID: 4478
 	[Range(0f, 1f)]
 	public float _EyeBlink = 1f;
 
-	// Token: 0x04001160 RID: 4448
+	// Token: 0x0400117F RID: 4479
 	private Material SCMaterial;
 
-	// Token: 0x04001161 RID: 4449
+	// Token: 0x04001180 RID: 4480
 	private Texture2D Texture2;
 }

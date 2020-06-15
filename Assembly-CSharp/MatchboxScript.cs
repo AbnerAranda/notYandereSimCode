@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200032B RID: 811
+// Token: 0x0200032E RID: 814
 public class MatchboxScript : MonoBehaviour
 {
-	// Token: 0x06001813 RID: 6163 RVA: 0x000D66C1 File Offset: 0x000D48C1
+	// Token: 0x06001830 RID: 6192 RVA: 0x000D88E1 File Offset: 0x000D6AE1
 	private void Start()
 	{
 		this.Yandere = GameObject.Find("YandereChan").GetComponent<YandereScript>();
 	}
 
-	// Token: 0x06001814 RID: 6164 RVA: 0x000D66D8 File Offset: 0x000D48D8
+	// Token: 0x06001831 RID: 6193 RVA: 0x000D88F8 File Offset: 0x000D6AF8
 	private void Update()
 	{
 		if (!this.Prompt.PauseScreen.Show)
@@ -54,15 +54,15 @@ public class MatchboxScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040022D3 RID: 8915
+	// Token: 0x04002320 RID: 8992
 	public YandereScript Yandere;
 
-	// Token: 0x040022D4 RID: 8916
+	// Token: 0x04002321 RID: 8993
 	public PromptScript Prompt;
 
-	// Token: 0x040022D5 RID: 8917
+	// Token: 0x04002322 RID: 8994
 	public PickUpScript PickUp;
 
-	// Token: 0x040022D6 RID: 8918
+	// Token: 0x04002323 RID: 8995
 	public GameObject Match;
 }

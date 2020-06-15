@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200057C RID: 1404
+	// Token: 0x02000592 RID: 1426
 	public class RecastBBTreeBox
 	{
-		// Token: 0x06002630 RID: 9776 RVA: 0x001A56FC File Offset: 0x001A38FC
+		// Token: 0x06002686 RID: 9862 RVA: 0x001AB2E8 File Offset: 0x001A94E8
 		public RecastBBTreeBox(RecastMeshObj mesh)
 		{
 			this.mesh = mesh;
@@ -15,22 +15,22 @@ namespace Pathfinding
 			this.rect = Rect.MinMaxRect(min.x, min.z, max.x, max.z);
 		}
 
-		// Token: 0x06002631 RID: 9777 RVA: 0x001A5751 File Offset: 0x001A3951
+		// Token: 0x06002687 RID: 9863 RVA: 0x001AB33D File Offset: 0x001A953D
 		public bool Contains(Vector3 p)
 		{
 			return this.rect.Contains(p);
 		}
 
-		// Token: 0x0400411A RID: 16666
+		// Token: 0x040041F8 RID: 16888
 		public Rect rect;
 
-		// Token: 0x0400411B RID: 16667
+		// Token: 0x040041F9 RID: 16889
 		public RecastMeshObj mesh;
 
-		// Token: 0x0400411C RID: 16668
+		// Token: 0x040041FA RID: 16890
 		public RecastBBTreeBox c1;
 
-		// Token: 0x0400411D RID: 16669
+		// Token: 0x040041FB RID: 16891
 		public RecastBBTreeBox c2;
 	}
 }

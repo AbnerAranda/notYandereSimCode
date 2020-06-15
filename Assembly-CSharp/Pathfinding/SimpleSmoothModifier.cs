@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000586 RID: 1414
+	// Token: 0x0200059C RID: 1436
 	[AddComponentMenu("Pathfinding/Modifiers/Simple Smooth")]
 	[RequireComponent(typeof(Seeker))]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_simple_smooth_modifier.php")]
 	[Serializable]
 	public class SimpleSmoothModifier : MonoModifier
 	{
-		// Token: 0x170005AF RID: 1455
-		// (get) Token: 0x06002668 RID: 9832 RVA: 0x001A6D65 File Offset: 0x001A4F65
+		// Token: 0x170005B5 RID: 1461
+		// (get) Token: 0x060026BE RID: 9918 RVA: 0x001AC951 File Offset: 0x001AAB51
 		public override int Order
 		{
 			get
@@ -22,7 +22,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002669 RID: 9833 RVA: 0x001A6D6C File Offset: 0x001A4F6C
+		// Token: 0x060026BF RID: 9919 RVA: 0x001AC958 File Offset: 0x001AAB58
 		public override void Apply(Path p)
 		{
 			if (p.vectorPath == null)
@@ -53,7 +53,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600266A RID: 9834 RVA: 0x001A6E04 File Offset: 0x001A5004
+		// Token: 0x060026C0 RID: 9920 RVA: 0x001AC9F0 File Offset: 0x001AABF0
 		public List<Vector3> CurvedNonuniform(List<Vector3> path)
 		{
 			if (this.maxSegmentLength <= 0f)
@@ -93,7 +93,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x0600266B RID: 9835 RVA: 0x001A7008 File Offset: 0x001A5208
+		// Token: 0x060026C1 RID: 9921 RVA: 0x001ACBF4 File Offset: 0x001AADF4
 		public static Vector3 GetPointOnCubic(Vector3 a, Vector3 b, Vector3 tan1, Vector3 tan2, float t)
 		{
 			float num = t * t;
@@ -105,7 +105,7 @@ namespace Pathfinding
 			return d * a + d2 * b + d3 * tan1 + d4 * tan2;
 		}
 
-		// Token: 0x0600266C RID: 9836 RVA: 0x001A7084 File Offset: 0x001A5284
+		// Token: 0x060026C2 RID: 9922 RVA: 0x001ACC70 File Offset: 0x001AAE70
 		public List<Vector3> SmoothOffsetSimple(List<Vector3> path)
 		{
 			if (path.Count <= 2 || this.iterations <= 0)
@@ -177,7 +177,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x0600266D RID: 9837 RVA: 0x001A7318 File Offset: 0x001A5518
+		// Token: 0x060026C3 RID: 9923 RVA: 0x001ACF04 File Offset: 0x001AB104
 		public List<Vector3> SmoothSimple(List<Vector3> path)
 		{
 			if (path.Count < 2)
@@ -237,7 +237,7 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x0600266E RID: 9838 RVA: 0x001A7508 File Offset: 0x001A5708
+		// Token: 0x060026C4 RID: 9924 RVA: 0x001AD0F4 File Offset: 0x001AB2F4
 		public List<Vector3> SmoothBezier(List<Vector3> path)
 		{
 			if (this.subdivisions < 0)
@@ -281,52 +281,52 @@ namespace Pathfinding
 			return list;
 		}
 
-		// Token: 0x04004144 RID: 16708
+		// Token: 0x04004222 RID: 16930
 		public SimpleSmoothModifier.SmoothType smoothType;
 
-		// Token: 0x04004145 RID: 16709
+		// Token: 0x04004223 RID: 16931
 		[Tooltip("The number of times to subdivide (divide in half) the path segments. [0...inf] (recommended [1...10])")]
 		public int subdivisions = 2;
 
-		// Token: 0x04004146 RID: 16710
+		// Token: 0x04004224 RID: 16932
 		[Tooltip("Number of times to apply smoothing")]
 		public int iterations = 2;
 
-		// Token: 0x04004147 RID: 16711
+		// Token: 0x04004225 RID: 16933
 		[Tooltip("Determines how much smoothing to apply in each smooth iteration. 0.5 usually produces the nicest looking curves")]
 		[Range(0f, 1f)]
 		public float strength = 0.5f;
 
-		// Token: 0x04004148 RID: 16712
+		// Token: 0x04004226 RID: 16934
 		[Tooltip("Toggle to divide all lines in equal length segments")]
 		public bool uniformLength = true;
 
-		// Token: 0x04004149 RID: 16713
+		// Token: 0x04004227 RID: 16935
 		[Tooltip("The length of each segment in the smoothed path. A high value yields rough paths and low value yields very smooth paths, but is slower")]
 		public float maxSegmentLength = 2f;
 
-		// Token: 0x0400414A RID: 16714
+		// Token: 0x04004228 RID: 16936
 		[Tooltip("Length factor of the bezier curves' tangents")]
 		public float bezierTangentLength = 0.4f;
 
-		// Token: 0x0400414B RID: 16715
+		// Token: 0x04004229 RID: 16937
 		[Tooltip("Offset to apply in each smoothing iteration when using Offset Simple")]
 		public float offset = 0.2f;
 
-		// Token: 0x0400414C RID: 16716
+		// Token: 0x0400422A RID: 16938
 		[Tooltip("How much to smooth the path. A higher value will give a smoother path, but might take the character far off the optimal path.")]
 		public float factor = 0.1f;
 
-		// Token: 0x02000754 RID: 1876
+		// Token: 0x0200076E RID: 1902
 		public enum SmoothType
 		{
-			// Token: 0x040049F1 RID: 18929
+			// Token: 0x04004ADC RID: 19164
 			Simple,
-			// Token: 0x040049F2 RID: 18930
+			// Token: 0x04004ADD RID: 19165
 			Bezier,
-			// Token: 0x040049F3 RID: 18931
+			// Token: 0x04004ADE RID: 19166
 			OffsetSimple,
-			// Token: 0x040049F4 RID: 18932
+			// Token: 0x04004ADF RID: 19167
 			CurvedNonuniform
 		}
 	}

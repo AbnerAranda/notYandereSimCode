@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200056C RID: 1388
+	// Token: 0x02000582 RID: 1410
 	[JsonOptIn]
 	public class NavMeshGraph : NavmeshBase, IUpdatableGraph
 	{
-		// Token: 0x17000589 RID: 1417
-		// (get) Token: 0x06002511 RID: 9489 RVA: 0x0019D1AA File Offset: 0x0019B3AA
+		// Token: 0x1700058F RID: 1423
+		// (get) Token: 0x06002567 RID: 9575 RVA: 0x001A2D96 File Offset: 0x001A0F96
 		protected override bool RecalculateNormals
 		{
 			get
@@ -20,8 +20,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700058A RID: 1418
-		// (get) Token: 0x06002512 RID: 9490 RVA: 0x0019D1B2 File Offset: 0x0019B3B2
+		// Token: 0x17000590 RID: 1424
+		// (get) Token: 0x06002568 RID: 9576 RVA: 0x001A2D9E File Offset: 0x001A0F9E
 		public override float TileWorldSizeX
 		{
 			get
@@ -30,8 +30,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700058B RID: 1419
-		// (get) Token: 0x06002513 RID: 9491 RVA: 0x0019D1BF File Offset: 0x0019B3BF
+		// Token: 0x17000591 RID: 1425
+		// (get) Token: 0x06002569 RID: 9577 RVA: 0x001A2DAB File Offset: 0x001A0FAB
 		public override float TileWorldSizeZ
 		{
 			get
@@ -40,8 +40,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700058C RID: 1420
-		// (get) Token: 0x06002514 RID: 9492 RVA: 0x00194851 File Offset: 0x00192A51
+		// Token: 0x17000592 RID: 1426
+		// (get) Token: 0x0600256A RID: 9578 RVA: 0x0019A43D File Offset: 0x0019863D
 		protected override float MaxTileConnectionEdgeDistance
 		{
 			get
@@ -50,35 +50,35 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002515 RID: 9493 RVA: 0x0019D1CC File Offset: 0x0019B3CC
+		// Token: 0x0600256B RID: 9579 RVA: 0x001A2DB8 File Offset: 0x001A0FB8
 		public override GraphTransform CalculateTransform()
 		{
 			return new GraphTransform(Matrix4x4.TRS(this.offset, Quaternion.Euler(this.rotation), Vector3.one) * Matrix4x4.TRS((this.sourceMesh != null) ? (this.sourceMesh.bounds.min * this.scale) : Vector3.zero, Quaternion.identity, Vector3.one));
 		}
 
-		// Token: 0x06002516 RID: 9494 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x0600256C RID: 9580 RVA: 0x0002D199 File Offset: 0x0002B399
 		GraphUpdateThreading IUpdatableGraph.CanUpdateAsync(GraphUpdateObject o)
 		{
 			return GraphUpdateThreading.UnityThread;
 		}
 
-		// Token: 0x06002517 RID: 9495 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x0600256D RID: 9581 RVA: 0x00002ACE File Offset: 0x00000CCE
 		void IUpdatableGraph.UpdateAreaInit(GraphUpdateObject o)
 		{
 		}
 
-		// Token: 0x06002518 RID: 9496 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x0600256E RID: 9582 RVA: 0x00002ACE File Offset: 0x00000CCE
 		void IUpdatableGraph.UpdateAreaPost(GraphUpdateObject o)
 		{
 		}
 
-		// Token: 0x06002519 RID: 9497 RVA: 0x0019D240 File Offset: 0x0019B440
+		// Token: 0x0600256F RID: 9583 RVA: 0x001A2E2C File Offset: 0x001A102C
 		void IUpdatableGraph.UpdateArea(GraphUpdateObject o)
 		{
 			NavMeshGraph.UpdateArea(o, this);
 		}
 
-		// Token: 0x0600251A RID: 9498 RVA: 0x0019D24C File Offset: 0x0019B44C
+		// Token: 0x06002570 RID: 9584 RVA: 0x001A2E38 File Offset: 0x001A1038
 		public static void UpdateArea(GraphUpdateObject o, INavmeshHolder graph)
 		{
 			Bounds bounds = graph.transform.InverseTransform(o.bounds);
@@ -183,7 +183,7 @@ namespace Pathfinding
 			});
 		}
 
-		// Token: 0x0600251B RID: 9499 RVA: 0x0019D3AC File Offset: 0x0019B5AC
+		// Token: 0x06002571 RID: 9585 RVA: 0x001A2F98 File Offset: 0x001A1198
 		[Obsolete("Set the mesh to ObjImporter.ImportFile(...) and scan the graph the normal way instead")]
 		public void ScanInternal(string objMeshPath)
 		{
@@ -200,7 +200,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600251C RID: 9500 RVA: 0x0019D3FA File Offset: 0x0019B5FA
+		// Token: 0x06002572 RID: 9586 RVA: 0x001A2FE6 File Offset: 0x001A11E6
 		protected override IEnumerable<Progress> ScanInternal()
 		{
 			this.transform = this.CalculateTransform();
@@ -235,7 +235,7 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x0600251D RID: 9501 RVA: 0x0019D40C File Offset: 0x0019B60C
+		// Token: 0x06002573 RID: 9587 RVA: 0x001A2FF8 File Offset: 0x001A11F8
 		protected override void DeserializeSettingsCompatibility(GraphSerializationContext ctx)
 		{
 			base.DeserializeSettingsCompatibility(ctx);
@@ -246,23 +246,23 @@ namespace Pathfinding
 			this.nearestSearchOnlyXZ = !ctx.reader.ReadBoolean();
 		}
 
-		// Token: 0x04004098 RID: 16536
+		// Token: 0x04004176 RID: 16758
 		[JsonMember]
 		public Mesh sourceMesh;
 
-		// Token: 0x04004099 RID: 16537
+		// Token: 0x04004177 RID: 16759
 		[JsonMember]
 		public Vector3 offset;
 
-		// Token: 0x0400409A RID: 16538
+		// Token: 0x04004178 RID: 16760
 		[JsonMember]
 		public Vector3 rotation;
 
-		// Token: 0x0400409B RID: 16539
+		// Token: 0x04004179 RID: 16761
 		[JsonMember]
 		public float scale = 1f;
 
-		// Token: 0x0400409C RID: 16540
+		// Token: 0x0400417A RID: 16762
 		[JsonMember]
 		public bool recalculateNormals = true;
 	}

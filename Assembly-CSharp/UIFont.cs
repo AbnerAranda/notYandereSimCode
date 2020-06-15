@@ -7,8 +7,8 @@ using UnityEngine;
 public class UIFont : MonoBehaviour, INGUIFont
 {
 	// Token: 0x17000146 RID: 326
-	// (get) Token: 0x06000755 RID: 1877 RVA: 0x0003D9CC File Offset: 0x0003BBCC
-	// (set) Token: 0x06000756 RID: 1878 RVA: 0x0003D9F0 File Offset: 0x0003BBF0
+	// (get) Token: 0x06000756 RID: 1878 RVA: 0x0003D9F4 File Offset: 0x0003BBF4
+	// (set) Token: 0x06000757 RID: 1879 RVA: 0x0003DA18 File Offset: 0x0003BC18
 	public BMFont bmFont
 	{
 		get
@@ -33,8 +33,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000147 RID: 327
-	// (get) Token: 0x06000757 RID: 1879 RVA: 0x0003DA18 File Offset: 0x0003BC18
-	// (set) Token: 0x06000758 RID: 1880 RVA: 0x0003DA4C File Offset: 0x0003BC4C
+	// (get) Token: 0x06000758 RID: 1880 RVA: 0x0003DA40 File Offset: 0x0003BC40
+	// (set) Token: 0x06000759 RID: 1881 RVA: 0x0003DA74 File Offset: 0x0003BC74
 	public int texWidth
 	{
 		get
@@ -66,8 +66,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000148 RID: 328
-	// (get) Token: 0x06000759 RID: 1881 RVA: 0x0003DA80 File Offset: 0x0003BC80
-	// (set) Token: 0x0600075A RID: 1882 RVA: 0x0003DAB4 File Offset: 0x0003BCB4
+	// (get) Token: 0x0600075A RID: 1882 RVA: 0x0003DAA8 File Offset: 0x0003BCA8
+	// (set) Token: 0x0600075B RID: 1883 RVA: 0x0003DADC File Offset: 0x0003BCDC
 	public int texHeight
 	{
 		get
@@ -99,7 +99,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000149 RID: 329
-	// (get) Token: 0x0600075B RID: 1883 RVA: 0x0003DAE8 File Offset: 0x0003BCE8
+	// (get) Token: 0x0600075C RID: 1884 RVA: 0x0003DB10 File Offset: 0x0003BD10
 	public bool hasSymbols
 	{
 		get
@@ -114,8 +114,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700014A RID: 330
-	// (get) Token: 0x0600075C RID: 1884 RVA: 0x0003DB20 File Offset: 0x0003BD20
-	// (set) Token: 0x0600075D RID: 1885 RVA: 0x0003DB44 File Offset: 0x0003BD44
+	// (get) Token: 0x0600075D RID: 1885 RVA: 0x0003DB48 File Offset: 0x0003BD48
+	// (set) Token: 0x0600075E RID: 1886 RVA: 0x0003DB6C File Offset: 0x0003BD6C
 	public List<BMSymbol> symbols
 	{
 		get
@@ -140,8 +140,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700014B RID: 331
-	// (get) Token: 0x0600075E RID: 1886 RVA: 0x0003DB6C File Offset: 0x0003BD6C
-	// (set) Token: 0x0600075F RID: 1887 RVA: 0x0003DB98 File Offset: 0x0003BD98
+	// (get) Token: 0x0600075F RID: 1887 RVA: 0x0003DB94 File Offset: 0x0003BD94
+	// (set) Token: 0x06000760 RID: 1888 RVA: 0x0003DBC0 File Offset: 0x0003BDC0
 	public INGUIAtlas atlas
 	{
 		get
@@ -183,7 +183,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		}
 	}
 
-	// Token: 0x06000760 RID: 1888 RVA: 0x0003DC14 File Offset: 0x0003BE14
+	// Token: 0x06000761 RID: 1889 RVA: 0x0003DC3C File Offset: 0x0003BE3C
 	public UISpriteData GetSprite(string spriteName)
 	{
 		INGUIAtlas atlas = this.atlas;
@@ -195,8 +195,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700014C RID: 332
-	// (get) Token: 0x06000761 RID: 1889 RVA: 0x0003DC34 File Offset: 0x0003BE34
-	// (set) Token: 0x06000762 RID: 1890 RVA: 0x0003DCDC File Offset: 0x0003BEDC
+	// (get) Token: 0x06000762 RID: 1890 RVA: 0x0003DC5C File Offset: 0x0003BE5C
+	// (set) Token: 0x06000763 RID: 1891 RVA: 0x0003DD04 File Offset: 0x0003BF04
 	public Material material
 	{
 		get
@@ -243,7 +243,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700014D RID: 333
-	// (get) Token: 0x06000763 RID: 1891 RVA: 0x0003DD1D File Offset: 0x0003BF1D
+	// (get) Token: 0x06000764 RID: 1892 RVA: 0x0003DD45 File Offset: 0x0003BF45
 	[Obsolete("Use premultipliedAlphaShader instead")]
 	public bool premultipliedAlpha
 	{
@@ -254,7 +254,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700014E RID: 334
-	// (get) Token: 0x06000764 RID: 1892 RVA: 0x0003DD28 File Offset: 0x0003BF28
+	// (get) Token: 0x06000765 RID: 1893 RVA: 0x0003DD50 File Offset: 0x0003BF50
 	public bool premultipliedAlphaShader
 	{
 		get
@@ -279,7 +279,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700014F RID: 335
-	// (get) Token: 0x06000765 RID: 1893 RVA: 0x0003DDB0 File Offset: 0x0003BFB0
+	// (get) Token: 0x06000766 RID: 1894 RVA: 0x0003DDD8 File Offset: 0x0003BFD8
 	public bool packedFontShader
 	{
 		get
@@ -303,7 +303,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000150 RID: 336
-	// (get) Token: 0x06000766 RID: 1894 RVA: 0x0003DE30 File Offset: 0x0003C030
+	// (get) Token: 0x06000767 RID: 1895 RVA: 0x0003DE58 File Offset: 0x0003C058
 	public Texture2D texture
 	{
 		get
@@ -323,8 +323,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000151 RID: 337
-	// (get) Token: 0x06000767 RID: 1895 RVA: 0x0003DE6C File Offset: 0x0003C06C
-	// (set) Token: 0x06000768 RID: 1896 RVA: 0x0003DEC0 File Offset: 0x0003C0C0
+	// (get) Token: 0x06000768 RID: 1896 RVA: 0x0003DE94 File Offset: 0x0003C094
+	// (set) Token: 0x06000769 RID: 1897 RVA: 0x0003DEE8 File Offset: 0x0003C0E8
 	public Rect uvRect
 	{
 		get
@@ -357,8 +357,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000152 RID: 338
-	// (get) Token: 0x06000769 RID: 1897 RVA: 0x0003DF04 File Offset: 0x0003C104
-	// (set) Token: 0x0600076A RID: 1898 RVA: 0x0003DF30 File Offset: 0x0003C130
+	// (get) Token: 0x0600076A RID: 1898 RVA: 0x0003DF2C File Offset: 0x0003C12C
+	// (set) Token: 0x0600076B RID: 1899 RVA: 0x0003DF58 File Offset: 0x0003C158
 	public string spriteName
 	{
 		get
@@ -387,7 +387,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000153 RID: 339
-	// (get) Token: 0x0600076B RID: 1899 RVA: 0x0003DF74 File Offset: 0x0003C174
+	// (get) Token: 0x0600076C RID: 1900 RVA: 0x0003DF9C File Offset: 0x0003C19C
 	public bool isValid
 	{
 		get
@@ -397,8 +397,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000154 RID: 340
-	// (get) Token: 0x0600076C RID: 1900 RVA: 0x0003DF91 File Offset: 0x0003C191
-	// (set) Token: 0x0600076D RID: 1901 RVA: 0x0003DF99 File Offset: 0x0003C199
+	// (get) Token: 0x0600076D RID: 1901 RVA: 0x0003DFB9 File Offset: 0x0003C1B9
+	// (set) Token: 0x0600076E RID: 1902 RVA: 0x0003DFC1 File Offset: 0x0003C1C1
 	[Obsolete("Use defaultSize instead")]
 	public int size
 	{
@@ -413,8 +413,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000155 RID: 341
-	// (get) Token: 0x0600076E RID: 1902 RVA: 0x0003DFA4 File Offset: 0x0003C1A4
-	// (set) Token: 0x0600076F RID: 1903 RVA: 0x0003DFE4 File Offset: 0x0003C1E4
+	// (get) Token: 0x0600076F RID: 1903 RVA: 0x0003DFCC File Offset: 0x0003C1CC
+	// (set) Token: 0x06000770 RID: 1904 RVA: 0x0003E00C File Offset: 0x0003C20C
 	public int defaultSize
 	{
 		get
@@ -443,7 +443,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000156 RID: 342
-	// (get) Token: 0x06000770 RID: 1904 RVA: 0x0003E00C File Offset: 0x0003C20C
+	// (get) Token: 0x06000771 RID: 1905 RVA: 0x0003E034 File Offset: 0x0003C234
 	public UISpriteData sprite
 	{
 		get
@@ -482,8 +482,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000157 RID: 343
-	// (get) Token: 0x06000771 RID: 1905 RVA: 0x0003E0E0 File Offset: 0x0003C2E0
-	// (set) Token: 0x06000772 RID: 1906 RVA: 0x0003E100 File Offset: 0x0003C300
+	// (get) Token: 0x06000772 RID: 1906 RVA: 0x0003E108 File Offset: 0x0003C308
+	// (set) Token: 0x06000773 RID: 1907 RVA: 0x0003E128 File Offset: 0x0003C328
 	public INGUIFont replacement
 	{
 		get
@@ -525,7 +525,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000158 RID: 344
-	// (get) Token: 0x06000773 RID: 1907 RVA: 0x0003E17C File Offset: 0x0003C37C
+	// (get) Token: 0x06000774 RID: 1908 RVA: 0x0003E1A4 File Offset: 0x0003C3A4
 	public INGUIFont finalFont
 	{
 		get
@@ -544,7 +544,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x17000159 RID: 345
-	// (get) Token: 0x06000774 RID: 1908 RVA: 0x0003E1A8 File Offset: 0x0003C3A8
+	// (get) Token: 0x06000775 RID: 1909 RVA: 0x0003E1D0 File Offset: 0x0003C3D0
 	public bool isDynamic
 	{
 		get
@@ -559,8 +559,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700015A RID: 346
-	// (get) Token: 0x06000775 RID: 1909 RVA: 0x0003E1D4 File Offset: 0x0003C3D4
-	// (set) Token: 0x06000776 RID: 1910 RVA: 0x0003E1F8 File Offset: 0x0003C3F8
+	// (get) Token: 0x06000776 RID: 1910 RVA: 0x0003E1FC File Offset: 0x0003C3FC
+	// (set) Token: 0x06000777 RID: 1911 RVA: 0x0003E220 File Offset: 0x0003C420
 	public Font dynamicFont
 	{
 		get
@@ -593,8 +593,8 @@ public class UIFont : MonoBehaviour, INGUIFont
 	}
 
 	// Token: 0x1700015B RID: 347
-	// (get) Token: 0x06000777 RID: 1911 RVA: 0x0003E248 File Offset: 0x0003C448
-	// (set) Token: 0x06000778 RID: 1912 RVA: 0x0003E26C File Offset: 0x0003C46C
+	// (get) Token: 0x06000778 RID: 1912 RVA: 0x0003E270 File Offset: 0x0003C470
+	// (set) Token: 0x06000779 RID: 1913 RVA: 0x0003E294 File Offset: 0x0003C494
 	public FontStyle dynamicFontStyle
 	{
 		get
@@ -622,7 +622,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		}
 	}
 
-	// Token: 0x06000779 RID: 1913 RVA: 0x0003E2A4 File Offset: 0x0003C4A4
+	// Token: 0x0600077A RID: 1914 RVA: 0x0003E2CC File Offset: 0x0003C4CC
 	private void Trim()
 	{
 		Texture x = null;
@@ -643,7 +643,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		}
 	}
 
-	// Token: 0x0600077A RID: 1914 RVA: 0x0003E3A8 File Offset: 0x0003C5A8
+	// Token: 0x0600077B RID: 1915 RVA: 0x0003E3D0 File Offset: 0x0003C5D0
 	public bool References(INGUIFont font)
 	{
 		if (font == null)
@@ -658,7 +658,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		return replacement != null && replacement.References(font);
 	}
 
-	// Token: 0x0600077B RID: 1915 RVA: 0x0003E3D4 File Offset: 0x0003C5D4
+	// Token: 0x0600077C RID: 1916 RVA: 0x0003E3FC File Offset: 0x0003C5FC
 	public void MarkAsChanged()
 	{
 		INGUIFont replacement = this.replacement;
@@ -690,7 +690,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		}
 	}
 
-	// Token: 0x0600077C RID: 1916 RVA: 0x0003E484 File Offset: 0x0003C684
+	// Token: 0x0600077D RID: 1917 RVA: 0x0003E4AC File Offset: 0x0003C6AC
 	public void UpdateUVRect()
 	{
 		if (this.mAtlas == null)
@@ -714,7 +714,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		}
 	}
 
-	// Token: 0x0600077D RID: 1917 RVA: 0x0003E578 File Offset: 0x0003C778
+	// Token: 0x0600077E RID: 1918 RVA: 0x0003E5A0 File Offset: 0x0003C7A0
 	private BMSymbol GetSymbol(string sequence, bool createIfMissing)
 	{
 		int i = 0;
@@ -738,7 +738,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		return null;
 	}
 
-	// Token: 0x0600077E RID: 1918 RVA: 0x0003E5DC File Offset: 0x0003C7DC
+	// Token: 0x0600077F RID: 1919 RVA: 0x0003E604 File Offset: 0x0003C804
 	public BMSymbol MatchSymbol(string text, int offset, int textLength)
 	{
 		int count = this.mSymbols.Count;
@@ -771,14 +771,14 @@ public class UIFont : MonoBehaviour, INGUIFont
 		return null;
 	}
 
-	// Token: 0x0600077F RID: 1919 RVA: 0x0003E66C File Offset: 0x0003C86C
+	// Token: 0x06000780 RID: 1920 RVA: 0x0003E694 File Offset: 0x0003C894
 	public void AddSymbol(string sequence, string spriteName)
 	{
 		this.GetSymbol(sequence, true).spriteName = spriteName;
 		this.MarkAsChanged();
 	}
 
-	// Token: 0x06000780 RID: 1920 RVA: 0x0003E684 File Offset: 0x0003C884
+	// Token: 0x06000781 RID: 1921 RVA: 0x0003E6AC File Offset: 0x0003C8AC
 	public void RemoveSymbol(string sequence)
 	{
 		BMSymbol symbol = this.GetSymbol(sequence, false);
@@ -789,7 +789,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		this.MarkAsChanged();
 	}
 
-	// Token: 0x06000781 RID: 1921 RVA: 0x0003E6B0 File Offset: 0x0003C8B0
+	// Token: 0x06000782 RID: 1922 RVA: 0x0003E6D8 File Offset: 0x0003C8D8
 	public void RenameSymbol(string before, string after)
 	{
 		BMSymbol symbol = this.GetSymbol(before, false);
@@ -800,7 +800,7 @@ public class UIFont : MonoBehaviour, INGUIFont
 		this.MarkAsChanged();
 	}
 
-	// Token: 0x06000782 RID: 1922 RVA: 0x0003E6D8 File Offset: 0x0003C8D8
+	// Token: 0x06000783 RID: 1923 RVA: 0x0003E700 File Offset: 0x0003C900
 	public bool UsesSprite(string s)
 	{
 		if (!string.IsNullOrEmpty(s))
@@ -824,60 +824,60 @@ public class UIFont : MonoBehaviour, INGUIFont
 		return false;
 	}
 
-	// Token: 0x040006C3 RID: 1731
+	// Token: 0x040006C5 RID: 1733
 	[HideInInspector]
 	[SerializeField]
 	private Material mMat;
 
-	// Token: 0x040006C4 RID: 1732
+	// Token: 0x040006C6 RID: 1734
 	[HideInInspector]
 	[SerializeField]
 	private Rect mUVRect = new Rect(0f, 0f, 1f, 1f);
 
-	// Token: 0x040006C5 RID: 1733
+	// Token: 0x040006C7 RID: 1735
 	[HideInInspector]
 	[SerializeField]
 	private BMFont mFont = new BMFont();
 
-	// Token: 0x040006C6 RID: 1734
+	// Token: 0x040006C8 RID: 1736
 	[HideInInspector]
 	[SerializeField]
 	private UnityEngine.Object mAtlas;
 
-	// Token: 0x040006C7 RID: 1735
+	// Token: 0x040006C9 RID: 1737
 	[HideInInspector]
 	[SerializeField]
 	private UnityEngine.Object mReplacement;
 
-	// Token: 0x040006C8 RID: 1736
+	// Token: 0x040006CA RID: 1738
 	[HideInInspector]
 	[SerializeField]
 	private List<BMSymbol> mSymbols = new List<BMSymbol>();
 
-	// Token: 0x040006C9 RID: 1737
+	// Token: 0x040006CB RID: 1739
 	[HideInInspector]
 	[SerializeField]
 	private Font mDynamicFont;
 
-	// Token: 0x040006CA RID: 1738
+	// Token: 0x040006CC RID: 1740
 	[HideInInspector]
 	[SerializeField]
 	private int mDynamicFontSize = 16;
 
-	// Token: 0x040006CB RID: 1739
+	// Token: 0x040006CD RID: 1741
 	[HideInInspector]
 	[SerializeField]
 	private FontStyle mDynamicFontStyle;
 
-	// Token: 0x040006CC RID: 1740
+	// Token: 0x040006CE RID: 1742
 	[NonSerialized]
 	private UISpriteData mSprite;
 
-	// Token: 0x040006CD RID: 1741
+	// Token: 0x040006CF RID: 1743
 	[NonSerialized]
 	private int mPMA = -1;
 
-	// Token: 0x040006CE RID: 1742
+	// Token: 0x040006D0 RID: 1744
 	[NonSerialized]
 	private int mPacked = -1;
 }

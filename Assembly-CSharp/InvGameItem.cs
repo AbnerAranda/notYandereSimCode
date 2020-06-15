@@ -7,7 +7,7 @@ using UnityEngine;
 public class InvGameItem
 {
 	// Token: 0x17000016 RID: 22
-	// (get) Token: 0x06000104 RID: 260 RVA: 0x00012409 File Offset: 0x00010609
+	// (get) Token: 0x06000105 RID: 261 RVA: 0x00012431 File Offset: 0x00010631
 	public int baseItemID
 	{
 		get
@@ -17,7 +17,7 @@ public class InvGameItem
 	}
 
 	// Token: 0x17000017 RID: 23
-	// (get) Token: 0x06000105 RID: 261 RVA: 0x00012411 File Offset: 0x00010611
+	// (get) Token: 0x06000106 RID: 262 RVA: 0x00012439 File Offset: 0x00010639
 	public InvBaseItem baseItem
 	{
 		get
@@ -31,7 +31,7 @@ public class InvGameItem
 	}
 
 	// Token: 0x17000018 RID: 24
-	// (get) Token: 0x06000106 RID: 262 RVA: 0x00012432 File Offset: 0x00010632
+	// (get) Token: 0x06000107 RID: 263 RVA: 0x0001245A File Offset: 0x0001065A
 	public string name
 	{
 		get
@@ -45,7 +45,7 @@ public class InvGameItem
 	}
 
 	// Token: 0x17000019 RID: 25
-	// (get) Token: 0x06000107 RID: 263 RVA: 0x00012464 File Offset: 0x00010664
+	// (get) Token: 0x06000108 RID: 264 RVA: 0x0001248C File Offset: 0x0001068C
 	public float statMultiplier
 	{
 		get
@@ -96,7 +96,7 @@ public class InvGameItem
 	}
 
 	// Token: 0x1700001A RID: 26
-	// (get) Token: 0x06000108 RID: 264 RVA: 0x00012534 File Offset: 0x00010734
+	// (get) Token: 0x06000109 RID: 265 RVA: 0x0001255C File Offset: 0x0001075C
 	public Color color
 	{
 		get
@@ -120,45 +120,45 @@ public class InvGameItem
 				result = new Color(1f, 1f, 1f);
 				break;
 			case InvGameItem.Quality.Polished:
-				result = NGUIMath.HexToColor(3774856959u);
+				result = NGUIMath.HexToColor(3774856959U);
 				break;
 			case InvGameItem.Quality.Improved:
-				result = NGUIMath.HexToColor(2480359935u);
+				result = NGUIMath.HexToColor(2480359935U);
 				break;
 			case InvGameItem.Quality.Crafted:
-				result = NGUIMath.HexToColor(1325334783u);
+				result = NGUIMath.HexToColor(1325334783U);
 				break;
 			case InvGameItem.Quality.Superior:
-				result = NGUIMath.HexToColor(12255231u);
+				result = NGUIMath.HexToColor(12255231U);
 				break;
 			case InvGameItem.Quality.Enchanted:
-				result = NGUIMath.HexToColor(1937178111u);
+				result = NGUIMath.HexToColor(1937178111U);
 				break;
 			case InvGameItem.Quality.Epic:
-				result = NGUIMath.HexToColor(2516647935u);
+				result = NGUIMath.HexToColor(2516647935U);
 				break;
 			case InvGameItem.Quality.Legendary:
-				result = NGUIMath.HexToColor(4287627519u);
+				result = NGUIMath.HexToColor(4287627519U);
 				break;
 			}
 			return result;
 		}
 	}
 
-	// Token: 0x06000109 RID: 265 RVA: 0x00012654 File Offset: 0x00010854
+	// Token: 0x0600010A RID: 266 RVA: 0x0001267C File Offset: 0x0001087C
 	public InvGameItem(int id)
 	{
 		this.mBaseItemID = id;
 	}
 
-	// Token: 0x0600010A RID: 266 RVA: 0x00012671 File Offset: 0x00010871
+	// Token: 0x0600010B RID: 267 RVA: 0x00012699 File Offset: 0x00010899
 	public InvGameItem(int id, InvBaseItem bi)
 	{
 		this.mBaseItemID = id;
 		this.mBaseItem = bi;
 	}
 
-	// Token: 0x0600010B RID: 267 RVA: 0x00012698 File Offset: 0x00010898
+	// Token: 0x0600010C RID: 268 RVA: 0x000126C0 File Offset: 0x000108C0
 	public List<InvStat> CalculateStats()
 	{
 		List<InvStat> list = new List<InvStat>();
@@ -205,47 +205,47 @@ public class InvGameItem
 		return list;
 	}
 
-	// Token: 0x0400029E RID: 670
+	// Token: 0x040002A0 RID: 672
 	[SerializeField]
 	private int mBaseItemID;
 
-	// Token: 0x0400029F RID: 671
+	// Token: 0x040002A1 RID: 673
 	public InvGameItem.Quality quality = InvGameItem.Quality.Sturdy;
 
-	// Token: 0x040002A0 RID: 672
+	// Token: 0x040002A2 RID: 674
 	public int itemLevel = 1;
 
-	// Token: 0x040002A1 RID: 673
+	// Token: 0x040002A3 RID: 675
 	private InvBaseItem mBaseItem;
 
-	// Token: 0x0200060A RID: 1546
+	// Token: 0x02000620 RID: 1568
 	public enum Quality
 	{
-		// Token: 0x0400445A RID: 17498
+		// Token: 0x04004538 RID: 17720
 		Broken,
-		// Token: 0x0400445B RID: 17499
+		// Token: 0x04004539 RID: 17721
 		Cursed,
-		// Token: 0x0400445C RID: 17500
+		// Token: 0x0400453A RID: 17722
 		Damaged,
-		// Token: 0x0400445D RID: 17501
+		// Token: 0x0400453B RID: 17723
 		Worn,
-		// Token: 0x0400445E RID: 17502
+		// Token: 0x0400453C RID: 17724
 		Sturdy,
-		// Token: 0x0400445F RID: 17503
+		// Token: 0x0400453D RID: 17725
 		Polished,
-		// Token: 0x04004460 RID: 17504
+		// Token: 0x0400453E RID: 17726
 		Improved,
-		// Token: 0x04004461 RID: 17505
+		// Token: 0x0400453F RID: 17727
 		Crafted,
-		// Token: 0x04004462 RID: 17506
+		// Token: 0x04004540 RID: 17728
 		Superior,
-		// Token: 0x04004463 RID: 17507
+		// Token: 0x04004541 RID: 17729
 		Enchanted,
-		// Token: 0x04004464 RID: 17508
+		// Token: 0x04004542 RID: 17730
 		Epic,
-		// Token: 0x04004465 RID: 17509
+		// Token: 0x04004543 RID: 17731
 		Legendary,
-		// Token: 0x04004466 RID: 17510
+		// Token: 0x04004544 RID: 17732
 		_LastDoNotUse
 	}
 }

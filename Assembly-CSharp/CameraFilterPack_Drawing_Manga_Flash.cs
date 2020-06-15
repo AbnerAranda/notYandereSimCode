@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000187 RID: 391
+// Token: 0x02000188 RID: 392
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Drawing/Manga_Flash")]
 public class CameraFilterPack_Drawing_Manga_Flash : MonoBehaviour
 {
 	// Token: 0x170002A7 RID: 679
-	// (get) Token: 0x06000E3C RID: 3644 RVA: 0x0006E336 File Offset: 0x0006C536
+	// (get) Token: 0x06000E43 RID: 3651 RVA: 0x0006F066 File Offset: 0x0006D266
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Drawing_Manga_Flash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3D RID: 3645 RVA: 0x0006E36A File Offset: 0x0006C56A
+	// Token: 0x06000E44 RID: 3652 RVA: 0x0006F09A File Offset: 0x0006D29A
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Drawing_Manga_Flash");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Drawing_Manga_Flash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3E RID: 3646 RVA: 0x0006E38C File Offset: 0x0006C58C
+	// Token: 0x06000E45 RID: 3653 RVA: 0x0006F0BC File Offset: 0x0006D2BC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -55,12 +55,12 @@ public class CameraFilterPack_Drawing_Manga_Flash : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E3F RID: 3647 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E46 RID: 3654 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E40 RID: 3648 RVA: 0x0006E49B File Offset: 0x0006C69B
+	// Token: 0x06000E47 RID: 3655 RVA: 0x0006F1CB File Offset: 0x0006D3CB
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -69,32 +69,32 @@ public class CameraFilterPack_Drawing_Manga_Flash : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010E9 RID: 4329
+	// Token: 0x04001108 RID: 4360
 	public Shader SCShader;
 
-	// Token: 0x040010EA RID: 4330
+	// Token: 0x04001109 RID: 4361
 	private float TimeX = 1f;
 
-	// Token: 0x040010EB RID: 4331
+	// Token: 0x0400110A RID: 4362
 	private Material SCMaterial;
 
-	// Token: 0x040010EC RID: 4332
+	// Token: 0x0400110B RID: 4363
 	[Range(1f, 10f)]
 	public float Size = 1f;
 
-	// Token: 0x040010ED RID: 4333
+	// Token: 0x0400110C RID: 4364
 	[Range(0f, 30f)]
 	public int Speed = 5;
 
-	// Token: 0x040010EE RID: 4334
+	// Token: 0x0400110D RID: 4365
 	[Range(-1f, 1f)]
 	public float PosX = 0.5f;
 
-	// Token: 0x040010EF RID: 4335
+	// Token: 0x0400110E RID: 4366
 	[Range(-1f, 1f)]
 	public float PosY = 0.5f;
 
-	// Token: 0x040010F0 RID: 4336
+	// Token: 0x0400110F RID: 4367
 	[Range(0f, 1f)]
 	public float Intensity = 1f;
 }

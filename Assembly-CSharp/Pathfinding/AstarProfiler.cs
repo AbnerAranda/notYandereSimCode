@@ -6,15 +6,15 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x020005A0 RID: 1440
+	// Token: 0x020005B6 RID: 1462
 	public class AstarProfiler
 	{
-		// Token: 0x0600272C RID: 10028 RVA: 0x000045DB File Offset: 0x000027DB
+		// Token: 0x06002782 RID: 10114 RVA: 0x000045DB File Offset: 0x000027DB
 		private AstarProfiler()
 		{
 		}
 
-		// Token: 0x0600272D RID: 10029 RVA: 0x001AC1AC File Offset: 0x001AA3AC
+		// Token: 0x06002783 RID: 10115 RVA: 0x001B1D98 File Offset: 0x001AFF98
 		[Conditional("ProfileAstar")]
 		public static void InitializeFastProfile(string[] profileNames)
 		{
@@ -29,14 +29,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600272E RID: 10030 RVA: 0x001AC22D File Offset: 0x001AA42D
+		// Token: 0x06002784 RID: 10116 RVA: 0x001B1E19 File Offset: 0x001B0019
 		[Conditional("ProfileAstar")]
 		public static void StartFastProfile(int tag)
 		{
 			AstarProfiler.fastProfiles[tag].watch.Start();
 		}
 
-		// Token: 0x0600272F RID: 10031 RVA: 0x001AC240 File Offset: 0x001AA440
+		// Token: 0x06002785 RID: 10117 RVA: 0x001B1E2C File Offset: 0x001B002C
 		[Conditional("ProfileAstar")]
 		public static void EndFastProfile(int tag)
 		{
@@ -45,13 +45,13 @@ namespace Pathfinding
 			profilePoint.watch.Stop();
 		}
 
-		// Token: 0x06002730 RID: 10032 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x06002786 RID: 10118 RVA: 0x00002ACE File Offset: 0x00000CCE
 		[Conditional("ASTAR_UNITY_PRO_PROFILER")]
 		public static void EndProfile()
 		{
 		}
 
-		// Token: 0x06002731 RID: 10033 RVA: 0x001AC264 File Offset: 0x001AA464
+		// Token: 0x06002787 RID: 10119 RVA: 0x001B1E50 File Offset: 0x001B0050
 		[Conditional("ProfileAstar")]
 		public static void StartProfile(string tag)
 		{
@@ -66,7 +66,7 @@ namespace Pathfinding
 			profilePoint.watch.Start();
 		}
 
-		// Token: 0x06002732 RID: 10034 RVA: 0x001AC2AC File Offset: 0x001AA4AC
+		// Token: 0x06002788 RID: 10120 RVA: 0x001B1E98 File Offset: 0x001B0098
 		[Conditional("ProfileAstar")]
 		public static void EndProfile(string tag)
 		{
@@ -81,7 +81,7 @@ namespace Pathfinding
 			profilePoint.totalBytes += GC.GetTotalMemory(false) - profilePoint.tmpBytes;
 		}
 
-		// Token: 0x06002733 RID: 10035 RVA: 0x001AC31C File Offset: 0x001AA51C
+		// Token: 0x06002789 RID: 10121 RVA: 0x001B1F08 File Offset: 0x001B0108
 		[Conditional("ProfileAstar")]
 		public static void Reset()
 		{
@@ -96,7 +96,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002734 RID: 10036 RVA: 0x001AC364 File Offset: 0x001AA564
+		// Token: 0x0600278A RID: 10122 RVA: 0x001B1F50 File Offset: 0x001B0150
 		[Conditional("ProfileAstar")]
 		public static void PrintFastResults()
 		{
@@ -132,7 +132,7 @@ namespace Pathfinding
 			UnityEngine.Debug.Log(stringBuilder.ToString());
 		}
 
-		// Token: 0x06002735 RID: 10037 RVA: 0x001AC53C File Offset: 0x001AA73C
+		// Token: 0x0600278B RID: 10123 RVA: 0x001B2128 File Offset: 0x001B0328
 		[Conditional("ProfileAstar")]
 		public static void PrintResults()
 		{
@@ -165,31 +165,31 @@ namespace Pathfinding
 			UnityEngine.Debug.Log(stringBuilder.ToString());
 		}
 
-		// Token: 0x040041BD RID: 16829
+		// Token: 0x0400429B RID: 17051
 		private static readonly Dictionary<string, AstarProfiler.ProfilePoint> profiles = new Dictionary<string, AstarProfiler.ProfilePoint>();
 
-		// Token: 0x040041BE RID: 16830
+		// Token: 0x0400429C RID: 17052
 		private static DateTime startTime = DateTime.UtcNow;
 
-		// Token: 0x040041BF RID: 16831
+		// Token: 0x0400429D RID: 17053
 		public static AstarProfiler.ProfilePoint[] fastProfiles;
 
-		// Token: 0x040041C0 RID: 16832
+		// Token: 0x0400429E RID: 17054
 		public static string[] fastProfileNames;
 
-		// Token: 0x0200075D RID: 1885
+		// Token: 0x02000777 RID: 1911
 		public class ProfilePoint
 		{
-			// Token: 0x04004A15 RID: 18965
+			// Token: 0x04004B00 RID: 19200
 			public Stopwatch watch = new Stopwatch();
 
-			// Token: 0x04004A16 RID: 18966
+			// Token: 0x04004B01 RID: 19201
 			public int totalCalls;
 
-			// Token: 0x04004A17 RID: 18967
+			// Token: 0x04004B02 RID: 19202
 			public long tmpBytes;
 
-			// Token: 0x04004A18 RID: 18968
+			// Token: 0x04004B03 RID: 19203
 			public long totalBytes;
 		}
 	}

@@ -4,17 +4,17 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E3 RID: 1507
+	// Token: 0x020005F9 RID: 1529
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_turn_based_a_i.php")]
 	public class TurnBasedAI : VersionedMonoBehaviour
 	{
-		// Token: 0x0600299C RID: 10652 RVA: 0x001BF3E1 File Offset: 0x001BD5E1
+		// Token: 0x060029F2 RID: 10738 RVA: 0x001C4FCD File Offset: 0x001C31CD
 		private void Start()
 		{
 			this.blocker.BlockAtCurrentPosition();
 		}
 
-		// Token: 0x0600299D RID: 10653 RVA: 0x001BF3EE File Offset: 0x001BD5EE
+		// Token: 0x060029F3 RID: 10739 RVA: 0x001C4FDA File Offset: 0x001C31DA
 		protected override void Awake()
 		{
 			base.Awake();
@@ -24,19 +24,19 @@ namespace Pathfinding.Examples
 			});
 		}
 
-		// Token: 0x04004349 RID: 17225
+		// Token: 0x04004427 RID: 17447
 		public int movementPoints = 2;
 
-		// Token: 0x0400434A RID: 17226
+		// Token: 0x04004428 RID: 17448
 		public BlockManager blockManager;
 
-		// Token: 0x0400434B RID: 17227
+		// Token: 0x04004429 RID: 17449
 		public SingleNodeBlocker blocker;
 
-		// Token: 0x0400434C RID: 17228
+		// Token: 0x0400442A RID: 17450
 		public GraphNode targetNode;
 
-		// Token: 0x0400434D RID: 17229
+		// Token: 0x0400442B RID: 17451
 		public BlockManager.TraversalProvider traversalProvider;
 	}
 }

@@ -7,17 +7,17 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200053B RID: 1339
+	// Token: 0x02000551 RID: 1361
 	public abstract class Path : IPathInternals
 	{
-		// Token: 0x1700055C RID: 1372
-		// (get) Token: 0x06002386 RID: 9094 RVA: 0x00194DEE File Offset: 0x00192FEE
-		// (set) Token: 0x06002387 RID: 9095 RVA: 0x00194DF6 File Offset: 0x00192FF6
+		// Token: 0x17000562 RID: 1378
+		// (get) Token: 0x060023DC RID: 9180 RVA: 0x0019A9DA File Offset: 0x00198BDA
+		// (set) Token: 0x060023DD RID: 9181 RVA: 0x0019A9E2 File Offset: 0x00198BE2
 		internal PathState PipelineState { get; private set; }
 
-		// Token: 0x1700055D RID: 1373
-		// (get) Token: 0x06002388 RID: 9096 RVA: 0x00194DFF File Offset: 0x00192FFF
-		// (set) Token: 0x06002389 RID: 9097 RVA: 0x00194E08 File Offset: 0x00193008
+		// Token: 0x17000563 RID: 1379
+		// (get) Token: 0x060023DE RID: 9182 RVA: 0x0019A9EB File Offset: 0x00198BEB
+		// (set) Token: 0x060023DF RID: 9183 RVA: 0x0019A9F4 File Offset: 0x00198BF4
 		public PathCompleteState CompleteState
 		{
 			get
@@ -37,8 +37,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700055E RID: 1374
-		// (get) Token: 0x0600238A RID: 9098 RVA: 0x00194E54 File Offset: 0x00193054
+		// Token: 0x17000564 RID: 1380
+		// (get) Token: 0x060023E0 RID: 9184 RVA: 0x0019AA40 File Offset: 0x00198C40
 		public bool error
 		{
 			get
@@ -47,18 +47,18 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700055F RID: 1375
-		// (get) Token: 0x0600238B RID: 9099 RVA: 0x00194E5F File Offset: 0x0019305F
-		// (set) Token: 0x0600238C RID: 9100 RVA: 0x00194E67 File Offset: 0x00193067
+		// Token: 0x17000565 RID: 1381
+		// (get) Token: 0x060023E1 RID: 9185 RVA: 0x0019AA4B File Offset: 0x00198C4B
+		// (set) Token: 0x060023E2 RID: 9186 RVA: 0x0019AA53 File Offset: 0x00198C53
 		public string errorLog { get; private set; }
 
-		// Token: 0x17000560 RID: 1376
-		// (get) Token: 0x0600238D RID: 9101 RVA: 0x00194E70 File Offset: 0x00193070
-		// (set) Token: 0x0600238E RID: 9102 RVA: 0x00194E78 File Offset: 0x00193078
+		// Token: 0x17000566 RID: 1382
+		// (get) Token: 0x060023E3 RID: 9187 RVA: 0x0019AA5C File Offset: 0x00198C5C
+		// (set) Token: 0x060023E4 RID: 9188 RVA: 0x0019AA64 File Offset: 0x00198C64
 		bool IPathInternals.Pooled { get; set; }
 
-		// Token: 0x17000561 RID: 1377
-		// (get) Token: 0x0600238F RID: 9103 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x17000567 RID: 1383
+		// (get) Token: 0x060023E5 RID: 9189 RVA: 0x0002D199 File Offset: 0x0002B399
 		[Obsolete("Has been renamed to 'Pooled' to use more widely underestood terminology", true)]
 		internal bool recycled
 		{
@@ -68,14 +68,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000562 RID: 1378
-		// (get) Token: 0x06002390 RID: 9104 RVA: 0x00194E81 File Offset: 0x00193081
-		// (set) Token: 0x06002391 RID: 9105 RVA: 0x00194E89 File Offset: 0x00193089
+		// Token: 0x17000568 RID: 1384
+		// (get) Token: 0x060023E6 RID: 9190 RVA: 0x0019AA6D File Offset: 0x00198C6D
+		// (set) Token: 0x060023E7 RID: 9191 RVA: 0x0019AA75 File Offset: 0x00198C75
 		internal ushort pathID { get; private set; }
 
-		// Token: 0x17000563 RID: 1379
-		// (get) Token: 0x06002392 RID: 9106 RVA: 0x00194E92 File Offset: 0x00193092
-		// (set) Token: 0x06002393 RID: 9107 RVA: 0x00194E9A File Offset: 0x0019309A
+		// Token: 0x17000569 RID: 1385
+		// (get) Token: 0x060023E8 RID: 9192 RVA: 0x0019AA7E File Offset: 0x00198C7E
+		// (set) Token: 0x060023E9 RID: 9193 RVA: 0x0019AA86 File Offset: 0x00198C86
 		public int[] tagPenalties
 		{
 			get
@@ -95,8 +95,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000564 RID: 1380
-		// (get) Token: 0x06002394 RID: 9108 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x1700056A RID: 1386
+		// (get) Token: 0x060023EA RID: 9194 RVA: 0x0002D199 File Offset: 0x0002B399
 		internal virtual bool FloodingPath
 		{
 			get
@@ -105,7 +105,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002395 RID: 9109 RVA: 0x00194EC8 File Offset: 0x001930C8
+		// Token: 0x060023EB RID: 9195 RVA: 0x0019AAB4 File Offset: 0x00198CB4
 		public float GetTotalLength()
 		{
 			if (this.vectorPath == null)
@@ -120,7 +120,7 @@ namespace Pathfinding
 			return num;
 		}
 
-		// Token: 0x06002396 RID: 9110 RVA: 0x00194F24 File Offset: 0x00193124
+		// Token: 0x060023EC RID: 9196 RVA: 0x0019AB10 File Offset: 0x00198D10
 		public IEnumerator WaitForPath()
 		{
 			if (this.PipelineState == PathState.Created)
@@ -134,13 +134,13 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x06002397 RID: 9111 RVA: 0x00002DA6 File Offset: 0x00000FA6
+		// Token: 0x060023ED RID: 9197 RVA: 0x00002DA6 File Offset: 0x00000FA6
 		public void BlockUntilCalculated()
 		{
 			AstarPath.BlockUntilCalculated(this);
 		}
 
-		// Token: 0x06002398 RID: 9112 RVA: 0x00194F34 File Offset: 0x00193134
+		// Token: 0x060023EE RID: 9198 RVA: 0x0019AB20 File Offset: 0x00198D20
 		internal uint CalculateHScore(GraphNode node)
 		{
 			switch (this.heuristic)
@@ -180,23 +180,23 @@ namespace Pathfinding
 				return num;
 			}
 			default:
-				return 0u;
+				return 0U;
 			}
 		}
 
-		// Token: 0x06002399 RID: 9113 RVA: 0x001950FC File Offset: 0x001932FC
+		// Token: 0x060023EF RID: 9199 RVA: 0x0019ACE8 File Offset: 0x00198EE8
 		internal uint GetTagPenalty(int tag)
 		{
 			return (uint)this.internalTagPenalties[tag];
 		}
 
-		// Token: 0x0600239A RID: 9114 RVA: 0x00195106 File Offset: 0x00193306
+		// Token: 0x060023F0 RID: 9200 RVA: 0x0019ACF2 File Offset: 0x00198EF2
 		internal Int3 GetHTarget()
 		{
 			return this.hTarget;
 		}
 
-		// Token: 0x0600239B RID: 9115 RVA: 0x0019510E File Offset: 0x0019330E
+		// Token: 0x060023F1 RID: 9201 RVA: 0x0019ACFA File Offset: 0x00198EFA
 		internal bool CanTraverse(GraphNode node)
 		{
 			if (this.traversalProvider != null)
@@ -206,7 +206,7 @@ namespace Pathfinding
 			return node.Walkable && (this.enabledTags >> (int)node.Tag & 1) != 0;
 		}
 
-		// Token: 0x0600239C RID: 9116 RVA: 0x00195145 File Offset: 0x00193345
+		// Token: 0x060023F2 RID: 9202 RVA: 0x0019AD31 File Offset: 0x00198F31
 		internal uint GetTraversalCost(GraphNode node)
 		{
 			if (this.traversalProvider != null)
@@ -216,19 +216,19 @@ namespace Pathfinding
 			return this.GetTagPenalty((int)node.Tag) + node.Penalty;
 		}
 
-		// Token: 0x0600239D RID: 9117 RVA: 0x00195170 File Offset: 0x00193370
+		// Token: 0x060023F3 RID: 9203 RVA: 0x0019AD5C File Offset: 0x00198F5C
 		internal virtual uint GetConnectionSpecialCost(GraphNode a, GraphNode b, uint currentCost)
 		{
 			return currentCost;
 		}
 
-		// Token: 0x0600239E RID: 9118 RVA: 0x00195173 File Offset: 0x00193373
+		// Token: 0x060023F4 RID: 9204 RVA: 0x0019AD5F File Offset: 0x00198F5F
 		public bool IsDone()
 		{
 			return this.CompleteState > PathCompleteState.NotCalculated;
 		}
 
-		// Token: 0x0600239F RID: 9119 RVA: 0x00195180 File Offset: 0x00193380
+		// Token: 0x060023F5 RID: 9205 RVA: 0x0019AD6C File Offset: 0x00198F6C
 		void IPathInternals.AdvanceState(PathState s)
 		{
 			object obj = this.stateLock;
@@ -238,14 +238,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023A0 RID: 9120 RVA: 0x001951CC File Offset: 0x001933CC
+		// Token: 0x060023F6 RID: 9206 RVA: 0x0019ADB8 File Offset: 0x00198FB8
 		[Obsolete("Use the 'PipelineState' property instead")]
 		public PathState GetState()
 		{
 			return this.PipelineState;
 		}
 
-		// Token: 0x060023A1 RID: 9121 RVA: 0x001951D4 File Offset: 0x001933D4
+		// Token: 0x060023F7 RID: 9207 RVA: 0x0019ADC0 File Offset: 0x00198FC0
 		internal void FailWithError(string msg)
 		{
 			this.Error();
@@ -257,27 +257,27 @@ namespace Pathfinding
 			this.errorLog = msg;
 		}
 
-		// Token: 0x060023A2 RID: 9122 RVA: 0x0019520D File Offset: 0x0019340D
+		// Token: 0x060023F8 RID: 9208 RVA: 0x0019ADF9 File Offset: 0x00198FF9
 		[Obsolete("Use FailWithError instead")]
 		internal void LogError(string msg)
 		{
 			this.Log(msg);
 		}
 
-		// Token: 0x060023A3 RID: 9123 RVA: 0x00195216 File Offset: 0x00193416
+		// Token: 0x060023F9 RID: 9209 RVA: 0x0019AE02 File Offset: 0x00199002
 		[Obsolete("Use FailWithError instead")]
 		internal void Log(string msg)
 		{
 			this.errorLog += msg;
 		}
 
-		// Token: 0x060023A4 RID: 9124 RVA: 0x0019522A File Offset: 0x0019342A
+		// Token: 0x060023FA RID: 9210 RVA: 0x0019AE16 File Offset: 0x00199016
 		public void Error()
 		{
 			this.CompleteState = PathCompleteState.Error;
 		}
 
-		// Token: 0x060023A5 RID: 9125 RVA: 0x00195234 File Offset: 0x00193434
+		// Token: 0x060023FB RID: 9211 RVA: 0x0019AE20 File Offset: 0x00199020
 		private void ErrorCheck()
 		{
 			if (!this.hasBeenReset)
@@ -298,7 +298,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023A6 RID: 9126 RVA: 0x0019528E File Offset: 0x0019348E
+		// Token: 0x060023FC RID: 9212 RVA: 0x0019AE7A File Offset: 0x0019907A
 		protected virtual void OnEnterPool()
 		{
 			if (this.vectorPath != null)
@@ -314,7 +314,7 @@ namespace Pathfinding
 			this.traversalProvider = null;
 		}
 
-		// Token: 0x060023A7 RID: 9127 RVA: 0x001952CC File Offset: 0x001934CC
+		// Token: 0x060023FD RID: 9213 RVA: 0x0019AEB8 File Offset: 0x001990B8
 		protected virtual void Reset()
 		{
 			if (AstarPath.active == null)
@@ -346,7 +346,7 @@ namespace Pathfinding
 			this.traversalProvider = null;
 		}
 
-		// Token: 0x060023A8 RID: 9128 RVA: 0x001953C0 File Offset: 0x001935C0
+		// Token: 0x060023FE RID: 9214 RVA: 0x0019AFAC File Offset: 0x001991AC
 		public void Claim(object o)
 		{
 			if (o == null)
@@ -363,14 +363,14 @@ namespace Pathfinding
 			this.claimed.Add(o);
 		}
 
-		// Token: 0x060023A9 RID: 9129 RVA: 0x00195422 File Offset: 0x00193622
+		// Token: 0x060023FF RID: 9215 RVA: 0x0019B00E File Offset: 0x0019920E
 		[Obsolete("Use Release(o, true) instead")]
 		internal void ReleaseSilent(object o)
 		{
 			this.Release(o, true);
 		}
 
-		// Token: 0x060023AA RID: 9130 RVA: 0x0019542C File Offset: 0x0019362C
+		// Token: 0x06002400 RID: 9216 RVA: 0x0019B018 File Offset: 0x00199218
 		public void Release(object o, bool silent = false)
 		{
 			if (o == null)
@@ -400,7 +400,7 @@ namespace Pathfinding
 			throw new ArgumentException("You are releasing a path which has not been claimed with this object (" + o + "). Are you releasing the path with the same object twice?\nCheck out the documentation on path pooling for help.");
 		}
 
-		// Token: 0x060023AB RID: 9131 RVA: 0x001954D8 File Offset: 0x001936D8
+		// Token: 0x06002401 RID: 9217 RVA: 0x0019B0C4 File Offset: 0x001992C4
 		protected virtual void Trace(PathNode from)
 		{
 			PathNode pathNode = from;
@@ -442,7 +442,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023AC RID: 9132 RVA: 0x001955F0 File Offset: 0x001937F0
+		// Token: 0x06002402 RID: 9218 RVA: 0x0019B1DC File Offset: 0x001993DC
 		protected void DebugStringPrefix(PathLog logMode, StringBuilder text)
 		{
 			text.Append(this.error ? "Path Failed : " : "Path Completed : ");
@@ -456,7 +456,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023AD RID: 9133 RVA: 0x0019569C File Offset: 0x0019389C
+		// Token: 0x06002403 RID: 9219 RVA: 0x0019B288 File Offset: 0x00199488
 		protected void DebugStringSuffix(PathLog logMode, StringBuilder text)
 		{
 			if (this.error)
@@ -478,7 +478,7 @@ namespace Pathfinding
 			text.Append("\nPath Number ").Append(this.pathID).Append(" (unique id)");
 		}
 
-		// Token: 0x060023AE RID: 9134 RVA: 0x0019573C File Offset: 0x0019393C
+		// Token: 0x06002404 RID: 9220 RVA: 0x0019B328 File Offset: 0x00199528
 		internal virtual string DebugString(PathLog logMode)
 		{
 			if (logMode == PathLog.None || (!this.error && logMode == PathLog.OnlyErrors))
@@ -492,7 +492,7 @@ namespace Pathfinding
 			return debugStringBuilder.ToString();
 		}
 
-		// Token: 0x060023AF RID: 9135 RVA: 0x00195787 File Offset: 0x00193987
+		// Token: 0x06002405 RID: 9221 RVA: 0x0019B373 File Offset: 0x00199573
 		protected virtual void ReturnPath()
 		{
 			if (this.callback != null)
@@ -501,7 +501,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023B0 RID: 9136 RVA: 0x001957A0 File Offset: 0x001939A0
+		// Token: 0x06002406 RID: 9222 RVA: 0x0019B38C File Offset: 0x0019958C
 		protected void PrepareBase(PathHandler pathHandler)
 		{
 			if (pathHandler.PathID > this.pathID)
@@ -524,22 +524,22 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023B1 RID: 9137
+		// Token: 0x06002407 RID: 9223
 		protected abstract void Prepare();
 
-		// Token: 0x060023B2 RID: 9138 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x06002408 RID: 9224 RVA: 0x00002ACE File Offset: 0x00000CCE
 		protected virtual void Cleanup()
 		{
 		}
 
-		// Token: 0x060023B3 RID: 9139
+		// Token: 0x06002409 RID: 9225
 		protected abstract void Initialize();
 
-		// Token: 0x060023B4 RID: 9140
+		// Token: 0x0600240A RID: 9226
 		protected abstract void CalculateStep(long targetTick);
 
-		// Token: 0x17000565 RID: 1381
-		// (get) Token: 0x060023B5 RID: 9141 RVA: 0x00195818 File Offset: 0x00193A18
+		// Token: 0x1700056B RID: 1387
+		// (get) Token: 0x0600240B RID: 9227 RVA: 0x0019B404 File Offset: 0x00199604
 		PathHandler IPathInternals.PathHandler
 		{
 			get
@@ -548,124 +548,124 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060023B6 RID: 9142 RVA: 0x00195820 File Offset: 0x00193A20
+		// Token: 0x0600240C RID: 9228 RVA: 0x0019B40C File Offset: 0x0019960C
 		void IPathInternals.OnEnterPool()
 		{
 			this.OnEnterPool();
 		}
 
-		// Token: 0x060023B7 RID: 9143 RVA: 0x00195828 File Offset: 0x00193A28
+		// Token: 0x0600240D RID: 9229 RVA: 0x0019B414 File Offset: 0x00199614
 		void IPathInternals.Reset()
 		{
 			this.Reset();
 		}
 
-		// Token: 0x060023B8 RID: 9144 RVA: 0x00195830 File Offset: 0x00193A30
+		// Token: 0x0600240E RID: 9230 RVA: 0x0019B41C File Offset: 0x0019961C
 		void IPathInternals.ReturnPath()
 		{
 			this.ReturnPath();
 		}
 
-		// Token: 0x060023B9 RID: 9145 RVA: 0x00195838 File Offset: 0x00193A38
+		// Token: 0x0600240F RID: 9231 RVA: 0x0019B424 File Offset: 0x00199624
 		void IPathInternals.PrepareBase(PathHandler handler)
 		{
 			this.PrepareBase(handler);
 		}
 
-		// Token: 0x060023BA RID: 9146 RVA: 0x00195841 File Offset: 0x00193A41
+		// Token: 0x06002410 RID: 9232 RVA: 0x0019B42D File Offset: 0x0019962D
 		void IPathInternals.Prepare()
 		{
 			this.Prepare();
 		}
 
-		// Token: 0x060023BB RID: 9147 RVA: 0x00195849 File Offset: 0x00193A49
+		// Token: 0x06002411 RID: 9233 RVA: 0x0019B435 File Offset: 0x00199635
 		void IPathInternals.Cleanup()
 		{
 			this.Cleanup();
 		}
 
-		// Token: 0x060023BC RID: 9148 RVA: 0x00195851 File Offset: 0x00193A51
+		// Token: 0x06002412 RID: 9234 RVA: 0x0019B43D File Offset: 0x0019963D
 		void IPathInternals.Initialize()
 		{
 			this.Initialize();
 		}
 
-		// Token: 0x060023BD RID: 9149 RVA: 0x00195859 File Offset: 0x00193A59
+		// Token: 0x06002413 RID: 9235 RVA: 0x0019B445 File Offset: 0x00199645
 		void IPathInternals.CalculateStep(long targetTick)
 		{
 			this.CalculateStep(targetTick);
 		}
 
-		// Token: 0x04003F72 RID: 16242
+		// Token: 0x04004050 RID: 16464
 		protected PathHandler pathHandler;
 
-		// Token: 0x04003F73 RID: 16243
+		// Token: 0x04004051 RID: 16465
 		public OnPathDelegate callback;
 
-		// Token: 0x04003F74 RID: 16244
+		// Token: 0x04004052 RID: 16466
 		public OnPathDelegate immediateCallback;
 
-		// Token: 0x04003F76 RID: 16246
+		// Token: 0x04004054 RID: 16468
 		private object stateLock = new object();
 
-		// Token: 0x04003F77 RID: 16247
+		// Token: 0x04004055 RID: 16469
 		public ITraversalProvider traversalProvider;
 
-		// Token: 0x04003F78 RID: 16248
+		// Token: 0x04004056 RID: 16470
 		protected PathCompleteState completeState;
 
-		// Token: 0x04003F7A RID: 16250
+		// Token: 0x04004058 RID: 16472
 		public List<GraphNode> path;
 
-		// Token: 0x04003F7B RID: 16251
+		// Token: 0x04004059 RID: 16473
 		public List<Vector3> vectorPath;
 
-		// Token: 0x04003F7C RID: 16252
+		// Token: 0x0400405A RID: 16474
 		protected PathNode currentR;
 
-		// Token: 0x04003F7D RID: 16253
+		// Token: 0x0400405B RID: 16475
 		internal float duration;
 
-		// Token: 0x04003F7E RID: 16254
+		// Token: 0x0400405C RID: 16476
 		internal int searchedNodes;
 
-		// Token: 0x04003F80 RID: 16256
+		// Token: 0x0400405E RID: 16478
 		protected bool hasBeenReset;
 
-		// Token: 0x04003F81 RID: 16257
+		// Token: 0x0400405F RID: 16479
 		public NNConstraint nnConstraint = PathNNConstraint.Default;
 
-		// Token: 0x04003F82 RID: 16258
+		// Token: 0x04004060 RID: 16480
 		internal Path next;
 
-		// Token: 0x04003F83 RID: 16259
+		// Token: 0x04004061 RID: 16481
 		public Heuristic heuristic;
 
-		// Token: 0x04003F84 RID: 16260
+		// Token: 0x04004062 RID: 16482
 		public float heuristicScale = 1f;
 
-		// Token: 0x04003F86 RID: 16262
+		// Token: 0x04004064 RID: 16484
 		protected GraphNode hTargetNode;
 
-		// Token: 0x04003F87 RID: 16263
+		// Token: 0x04004065 RID: 16485
 		protected Int3 hTarget;
 
-		// Token: 0x04003F88 RID: 16264
+		// Token: 0x04004066 RID: 16486
 		public int enabledTags = -1;
 
-		// Token: 0x04003F89 RID: 16265
+		// Token: 0x04004067 RID: 16487
 		private static readonly int[] ZeroTagPenalties = new int[32];
 
-		// Token: 0x04003F8A RID: 16266
+		// Token: 0x04004068 RID: 16488
 		protected int[] internalTagPenalties;
 
-		// Token: 0x04003F8B RID: 16267
+		// Token: 0x04004069 RID: 16489
 		protected int[] manualTagPenalties;
 
-		// Token: 0x04003F8C RID: 16268
+		// Token: 0x0400406A RID: 16490
 		private List<object> claimed = new List<object>();
 
-		// Token: 0x04003F8D RID: 16269
+		// Token: 0x0400406B RID: 16491
 		private bool releasedNotSilent;
 	}
 }

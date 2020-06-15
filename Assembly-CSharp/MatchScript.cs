@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000329 RID: 809
+// Token: 0x0200032C RID: 812
 public class MatchScript : MonoBehaviour
 {
-	// Token: 0x0600180F RID: 6159 RVA: 0x000D64C0 File Offset: 0x000D46C0
+	// Token: 0x0600182C RID: 6188 RVA: 0x000D86E0 File Offset: 0x000D68E0
 	private void Update()
 	{
 		if (base.GetComponent<Rigidbody>().useGravity)
@@ -26,9 +26,9 @@ public class MatchScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040022CE RID: 8910
+	// Token: 0x0400231B RID: 8987
 	public float Timer;
 
-	// Token: 0x040022CF RID: 8911
+	// Token: 0x0400231C RID: 8988
 	public Collider MyCollider;
 }

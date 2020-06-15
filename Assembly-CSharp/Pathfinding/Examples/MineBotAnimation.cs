@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F6 RID: 1526
+	// Token: 0x0200060C RID: 1548
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_mine_bot_animation.php")]
 	public class MineBotAnimation : VersionedMonoBehaviour
 	{
-		// Token: 0x060029FA RID: 10746 RVA: 0x001C26B3 File Offset: 0x001C08B3
+		// Token: 0x06002A50 RID: 10832 RVA: 0x001C829F File Offset: 0x001C649F
 		protected override void Awake()
 		{
 			base.Awake();
@@ -15,7 +15,7 @@ namespace Pathfinding.Examples
 			this.tr = base.GetComponent<Transform>();
 		}
 
-		// Token: 0x060029FB RID: 10747 RVA: 0x001C26D4 File Offset: 0x001C08D4
+		// Token: 0x06002A51 RID: 10833 RVA: 0x001C82C0 File Offset: 0x001C64C0
 		private void Start()
 		{
 			this.anim["forward"].layer = 10;
@@ -26,7 +26,7 @@ namespace Pathfinding.Examples
 			this.anim["awake"].normalizedTime = 1f;
 		}
 
-		// Token: 0x060029FC RID: 10748 RVA: 0x001C2764 File Offset: 0x001C0964
+		// Token: 0x06002A52 RID: 10834 RVA: 0x001C8350 File Offset: 0x001C6550
 		private void OnTargetReached()
 		{
 			if (this.endOfPathEffect != null && Vector3.Distance(this.tr.position, this.lastTarget) > 1f)
@@ -36,7 +36,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029FD RID: 10749 RVA: 0x001C27D0 File Offset: 0x001C09D0
+		// Token: 0x06002A53 RID: 10835 RVA: 0x001C83BC File Offset: 0x001C65BC
 		protected void Update()
 		{
 			if (this.ai.reachedEndOfPath)
@@ -64,28 +64,28 @@ namespace Pathfinding.Examples
 			animationState.speed = z * this.animationSpeed;
 		}
 
-		// Token: 0x040043C7 RID: 17351
+		// Token: 0x040044A5 RID: 17573
 		public Animation anim;
 
-		// Token: 0x040043C8 RID: 17352
+		// Token: 0x040044A6 RID: 17574
 		public float sleepVelocity = 0.4f;
 
-		// Token: 0x040043C9 RID: 17353
+		// Token: 0x040044A7 RID: 17575
 		public float animationSpeed = 0.2f;
 
-		// Token: 0x040043CA RID: 17354
+		// Token: 0x040044A8 RID: 17576
 		public GameObject endOfPathEffect;
 
-		// Token: 0x040043CB RID: 17355
+		// Token: 0x040044A9 RID: 17577
 		private bool isAtDestination;
 
-		// Token: 0x040043CC RID: 17356
+		// Token: 0x040044AA RID: 17578
 		private IAstarAI ai;
 
-		// Token: 0x040043CD RID: 17357
+		// Token: 0x040044AB RID: 17579
 		private Transform tr;
 
-		// Token: 0x040043CE RID: 17358
+		// Token: 0x040044AC RID: 17580
 		protected Vector3 lastTarget;
 	}
 }

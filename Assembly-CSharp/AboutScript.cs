@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000BE RID: 190
 public class AboutScript : MonoBehaviour
 {
-	// Token: 0x060009DE RID: 2526 RVA: 0x0004CD2C File Offset: 0x0004AF2C
+	// Token: 0x060009DF RID: 2527 RVA: 0x0004CD54 File Offset: 0x0004AF54
 	private void Start()
 	{
 		foreach (Transform transform in this.Labels)
@@ -15,7 +15,7 @@ public class AboutScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009DF RID: 2527 RVA: 0x0004CD6C File Offset: 0x0004AF6C
+	// Token: 0x060009E0 RID: 2528 RVA: 0x0004CD94 File Offset: 0x0004AF94
 	private void Update()
 	{
 		if (Input.GetButtonDown("A"))
@@ -95,30 +95,30 @@ public class AboutScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000853 RID: 2131
+	// Token: 0x04000855 RID: 2133
 	public Transform[] Labels;
 
-	// Token: 0x04000854 RID: 2132
+	// Token: 0x04000856 RID: 2134
 	public bool[] SlideOut;
 
-	// Token: 0x04000855 RID: 2133
+	// Token: 0x04000857 RID: 2135
 	public bool[] SlideIn;
 
-	// Token: 0x04000856 RID: 2134
+	// Token: 0x04000858 RID: 2136
 	public UILabel LinkLabel;
 
-	// Token: 0x04000857 RID: 2135
+	// Token: 0x04000859 RID: 2137
 	public UITexture Yuno1;
 
-	// Token: 0x04000858 RID: 2136
+	// Token: 0x0400085A RID: 2138
 	public UITexture Yuno2;
 
-	// Token: 0x04000859 RID: 2137
+	// Token: 0x0400085B RID: 2139
 	public int SlideID;
 
-	// Token: 0x0400085A RID: 2138
+	// Token: 0x0400085C RID: 2140
 	public int ID;
 
-	// Token: 0x0400085B RID: 2139
+	// Token: 0x0400085D RID: 2141
 	public float Timer;
 }

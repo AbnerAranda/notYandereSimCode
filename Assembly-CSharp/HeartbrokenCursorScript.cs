@@ -2,30 +2,33 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020002DF RID: 735
+// Token: 0x020002E2 RID: 738
 public class HeartbrokenCursorScript : MonoBehaviour
 {
-	// Token: 0x060016ED RID: 5869 RVA: 0x000BE65C File Offset: 0x000BC85C
+	// Token: 0x0600170A RID: 5898 RVA: 0x000C0360 File Offset: 0x000BE560
 	private void Start()
 	{
 		this.Darkness.transform.localPosition = new Vector3(this.Darkness.transform.localPosition.x, this.Darkness.transform.localPosition.y, -989f);
 		this.Continue.color = new Color(this.Continue.color.r, this.Continue.color.g, this.Continue.color.b, 0f);
-		this.StudentManager.Yandere.Jukebox.gameObject.SetActive(false);
-		if (this.StudentManager.Yandere.Weapon[1] != null && this.StudentManager.Yandere.Weapon[1].Type == WeaponType.Knife)
+		if (this.StudentManager != null)
 		{
-			this.StudentManager.Yandere.Weapon[1].Drop();
-		}
-		if (this.StudentManager.Yandere.Weapon[2] != null && this.StudentManager.Yandere.Weapon[2].Type == WeaponType.Knife)
-		{
-			this.StudentManager.Yandere.Weapon[2].Drop();
+			this.StudentManager.Yandere.Jukebox.gameObject.SetActive(false);
+			if (this.StudentManager.Yandere.Weapon[1] != null && this.StudentManager.Yandere.Weapon[1].Type == WeaponType.Knife)
+			{
+				this.StudentManager.Yandere.Weapon[1].Drop();
+			}
+			if (this.StudentManager.Yandere.Weapon[2] != null && this.StudentManager.Yandere.Weapon[2].Type == WeaponType.Knife)
+			{
+				this.StudentManager.Yandere.Weapon[2].Drop();
+			}
 		}
 	}
 
-	// Token: 0x060016EE RID: 5870 RVA: 0x000BE7A4 File Offset: 0x000BC9A4
+	// Token: 0x0600170B RID: 5899 RVA: 0x000C04B8 File Offset: 0x000BE6B8
 	private void Update()
 	{
 		base.transform.localPosition = new Vector3(base.transform.localPosition.x, Mathf.Lerp(base.transform.localPosition.y, 255f - (float)this.Selected * 50f, Time.deltaTime * 10f), base.transform.localPosition.z);
-		if (this.Selected == 4)
+		if (this.Selected == 5)
 		{
 			this.GameOverMusic.volume = Mathf.MoveTowards(this.GameOverMusic.volume, 0f, Time.deltaTime * 0.5f);
 		}
@@ -61,11 +64,14 @@ public class HeartbrokenCursorScript : MonoBehaviour
 				if (Input.GetButtonDown("A"))
 				{
 					this.Nudge = true;
-					if (this.Selected != 4)
+					if (this.Selected != 5)
 					{
 						this.MyAudio.clip = this.SelectSound;
 						this.MyAudio.Play();
-						this.FadeOut = true;
+						if (this.Selected != 3 || (this.Selected == 3 && GameGlobals.MostRecentSlot > 0))
+						{
+							this.FadeOut = true;
+						}
 					}
 					else
 					{
@@ -222,11 +228,11 @@ public class HeartbrokenCursorScript : MonoBehaviour
 					this.StudentManager.MainCamera.position = Vector3.Lerp(this.StudentManager.MainCamera.position, this.SnapPOV.position, Time.deltaTime * this.Speed);
 					this.SnapFocus.position = Vector3.Lerp(this.SnapFocus.position, this.SnapDestination.position, Time.deltaTime * this.Speed);
 					this.StudentManager.MainCamera.LookAt(this.SnapFocus);
-					this.MainFilter.Fade = Mathf.MoveTowards(this.MainFilter.Fade, 0f, Time.deltaTime * 0.14285715f);
-					this.HeartbrokenFilter.Fade = Mathf.MoveTowards(this.HeartbrokenFilter.Fade, 1f, Time.deltaTime * 0.14285715f);
-					this.SnappedYandere.CompressionFX.Parasite = Mathf.MoveTowards(this.SnappedYandere.CompressionFX.Parasite, 1f, Time.deltaTime * 0.14285715f);
-					this.SnappedYandere.TiltShift.Size = Mathf.MoveTowards(this.SnappedYandere.TiltShift.Size, 0.75f, Time.deltaTime * 0.14285715f);
-					this.SnappedYandere.TiltShiftV.Size = Mathf.MoveTowards(this.SnappedYandere.TiltShiftV.Size, 0.75f, Time.deltaTime * 0.14285715f);
+					this.MainFilter.Fade = Mathf.MoveTowards(this.MainFilter.Fade, 0f, Time.deltaTime * 0.142857149f);
+					this.HeartbrokenFilter.Fade = Mathf.MoveTowards(this.HeartbrokenFilter.Fade, 1f, Time.deltaTime * 0.142857149f);
+					this.SnappedYandere.CompressionFX.Parasite = Mathf.MoveTowards(this.SnappedYandere.CompressionFX.Parasite, 1f, Time.deltaTime * 0.142857149f);
+					this.SnappedYandere.TiltShift.Size = Mathf.MoveTowards(this.SnappedYandere.TiltShift.Size, 0.75f, Time.deltaTime * 0.142857149f);
+					this.SnappedYandere.TiltShiftV.Size = Mathf.MoveTowards(this.SnappedYandere.TiltShiftV.Size, 0.75f, Time.deltaTime * 0.142857149f);
 				}
 			}
 		}
@@ -238,23 +244,50 @@ public class HeartbrokenCursorScript : MonoBehaviour
 			{
 				if (this.Selected == 1)
 				{
-					for (int k = 0; k < this.StudentManager.NPCsTotal; k++)
+					if (this.ReloadScene)
 					{
-						if (StudentGlobals.GetStudentDying(k))
+						SceneManager.LoadScene(Application.loadedLevel);
+					}
+					else
+					{
+						for (int k = 0; k < this.StudentManager.NPCsTotal; k++)
 						{
-							StudentGlobals.SetStudentDying(k, false);
+							if (StudentGlobals.GetStudentDying(k))
+							{
+								StudentGlobals.SetStudentDying(k, false);
+							}
+						}
+						SceneManager.LoadScene("LoadingScene");
+					}
+				}
+				else if (this.Selected == 2)
+				{
+					if (this.ReloadScene)
+					{
+						SceneManager.LoadScene("HomeScene");
+					}
+					else
+					{
+						this.LoveSick = GameGlobals.LoveSick;
+						Globals.DeleteAll();
+						GameGlobals.LoveSick = this.LoveSick;
+						SceneManager.LoadScene("CalendarScene");
+					}
+				}
+				else if (this.Selected == 3)
+				{
+					PlayerPrefs.SetInt("LoadingSave", 1);
+					PlayerPrefs.SetInt("SaveSlot", GameGlobals.MostRecentSlot);
+					for (int l = 0; l < this.StudentManager.NPCsTotal; l++)
+					{
+						if (StudentGlobals.GetStudentDying(l))
+						{
+							StudentGlobals.SetStudentDying(l, false);
 						}
 					}
 					SceneManager.LoadScene("LoadingScene");
 				}
-				else if (this.Selected == 2)
-				{
-					this.LoveSick = GameGlobals.LoveSick;
-					Globals.DeleteAll();
-					GameGlobals.LoveSick = this.LoveSick;
-					SceneManager.LoadScene("CalendarScene");
-				}
-				else if (this.Selected == 3)
+				else if (this.Selected == 4)
 				{
 					SceneManager.LoadScene("TitleScene");
 				}
@@ -280,150 +313,153 @@ public class HeartbrokenCursorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001E78 RID: 7800
+	// Token: 0x04001EC2 RID: 7874
 	public SnappedYandereScript SnappedYandere;
 
-	// Token: 0x04001E79 RID: 7801
+	// Token: 0x04001EC3 RID: 7875
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04001E7A RID: 7802
+	// Token: 0x04001EC4 RID: 7876
 	public InputManagerScript InputManager;
 
-	// Token: 0x04001E7B RID: 7803
+	// Token: 0x04001EC5 RID: 7877
 	public HeartbrokenScript Heartbroken;
 
-	// Token: 0x04001E7C RID: 7804
+	// Token: 0x04001EC6 RID: 7878
 	public VibrateScript[] Vibrations;
 
-	// Token: 0x04001E7D RID: 7805
+	// Token: 0x04001EC7 RID: 7879
 	public UISprite CursorSprite;
 
-	// Token: 0x04001E7E RID: 7806
+	// Token: 0x04001EC8 RID: 7880
 	public UISprite Darkness;
 
-	// Token: 0x04001E7F RID: 7807
+	// Token: 0x04001EC9 RID: 7881
 	public AudioClip SelectSound;
 
-	// Token: 0x04001E80 RID: 7808
+	// Token: 0x04001ECA RID: 7882
 	public AudioClip MoveSound;
 
-	// Token: 0x04001E81 RID: 7809
+	// Token: 0x04001ECB RID: 7883
 	public AudioSource MyAudio;
 
-	// Token: 0x04001E82 RID: 7810
+	// Token: 0x04001ECC RID: 7884
 	public UILabel Continue;
 
-	// Token: 0x04001E83 RID: 7811
+	// Token: 0x04001ECD RID: 7885
 	public UILabel MyLabel;
 
-	// Token: 0x04001E84 RID: 7812
+	// Token: 0x04001ECE RID: 7886
 	public GameObject FPS;
 
-	// Token: 0x04001E85 RID: 7813
+	// Token: 0x04001ECF RID: 7887
 	public bool LoveSick;
 
-	// Token: 0x04001E86 RID: 7814
+	// Token: 0x04001ED0 RID: 7888
 	public bool FadeOut;
 
-	// Token: 0x04001E87 RID: 7815
+	// Token: 0x04001ED1 RID: 7889
 	public bool Nudge;
 
-	// Token: 0x04001E88 RID: 7816
+	// Token: 0x04001ED2 RID: 7890
 	public int CracksSpawned;
 
-	// Token: 0x04001E89 RID: 7817
+	// Token: 0x04001ED3 RID: 7891
 	public int Selected = 1;
 
-	// Token: 0x04001E8A RID: 7818
-	public int Options = 4;
+	// Token: 0x04001ED4 RID: 7892
+	public int Options = 5;
 
-	// Token: 0x04001E8B RID: 7819
+	// Token: 0x04001ED5 RID: 7893
 	public int LastRandomCrack;
 
-	// Token: 0x04001E8C RID: 7820
+	// Token: 0x04001ED6 RID: 7894
 	public int RandomCrack;
 
-	// Token: 0x04001E8D RID: 7821
+	// Token: 0x04001ED7 RID: 7895
 	public CameraFilterPack_Gradients_FireGradient HeartbrokenFilter;
 
-	// Token: 0x04001E8E RID: 7822
+	// Token: 0x04001ED8 RID: 7896
 	public CameraFilterPack_Gradients_FireGradient MainFilter;
 
-	// Token: 0x04001E8F RID: 7823
+	// Token: 0x04001ED9 RID: 7897
 	public Camera HeartbrokenCamera;
 
-	// Token: 0x04001E90 RID: 7824
+	// Token: 0x04001EDA RID: 7898
 	public AudioSource GameOverMusic;
 
-	// Token: 0x04001E91 RID: 7825
+	// Token: 0x04001EDB RID: 7899
 	public AudioSource SnapStatic;
 
-	// Token: 0x04001E92 RID: 7826
+	// Token: 0x04001EDC RID: 7900
 	public AudioSource SnapMusic;
 
-	// Token: 0x04001E93 RID: 7827
+	// Token: 0x04001EDD RID: 7901
 	public AudioClip GlassShatter;
 
-	// Token: 0x04001E94 RID: 7828
+	// Token: 0x04001EDE RID: 7902
 	public AudioClip ReverseHit;
 
-	// Token: 0x04001E95 RID: 7829
+	// Token: 0x04001EDF RID: 7903
 	public AudioClip[] CrackSound;
 
-	// Token: 0x04001E96 RID: 7830
+	// Token: 0x04001EE0 RID: 7904
 	public GameObject ShatterPrefab;
 
-	// Token: 0x04001E97 RID: 7831
+	// Token: 0x04001EE1 RID: 7905
 	public GameObject SNAPLetters;
 
-	// Token: 0x04001E98 RID: 7832
+	// Token: 0x04001EE2 RID: 7906
 	public GameObject SnapUICamera;
 
-	// Token: 0x04001E99 RID: 7833
+	// Token: 0x04001EE3 RID: 7907
 	public UIPanel SNAPPanel;
 
-	// Token: 0x04001E9A RID: 7834
+	// Token: 0x04001EE4 RID: 7908
 	public GameObject[] Background;
 
-	// Token: 0x04001E9B RID: 7835
+	// Token: 0x04001EE5 RID: 7909
 	public GameObject[] Cracks;
 
-	// Token: 0x04001E9C RID: 7836
+	// Token: 0x04001EE6 RID: 7910
 	public AudioClip[] CracksTier1;
 
-	// Token: 0x04001E9D RID: 7837
+	// Token: 0x04001EE7 RID: 7911
 	public AudioClip[] CracksTier2;
 
-	// Token: 0x04001E9E RID: 7838
+	// Token: 0x04001EE8 RID: 7912
 	public AudioClip[] CracksTier3;
 
-	// Token: 0x04001E9F RID: 7839
+	// Token: 0x04001EE9 RID: 7913
 	public AudioClip[] CracksTier4;
 
-	// Token: 0x04001EA0 RID: 7840
+	// Token: 0x04001EEA RID: 7914
 	public Texture BlackTexture;
 
-	// Token: 0x04001EA1 RID: 7841
+	// Token: 0x04001EEB RID: 7915
 	public Transform SnapDestination;
 
-	// Token: 0x04001EA2 RID: 7842
+	// Token: 0x04001EEC RID: 7916
 	public Transform SnapFocus;
 
-	// Token: 0x04001EA3 RID: 7843
+	// Token: 0x04001EED RID: 7917
 	public Transform SnapPOV;
 
-	// Token: 0x04001EA4 RID: 7844
+	// Token: 0x04001EEE RID: 7918
 	public bool SnapSequence;
 
-	// Token: 0x04001EA5 RID: 7845
+	// Token: 0x04001EEF RID: 7919
+	public bool ReloadScene;
+
+	// Token: 0x04001EF0 RID: 7920
 	public bool NeverSnap;
 
-	// Token: 0x04001EA6 RID: 7846
+	// Token: 0x04001EF1 RID: 7921
 	public float SnapTimer;
 
-	// Token: 0x04001EA7 RID: 7847
+	// Token: 0x04001EF2 RID: 7922
 	public float Speed;
 
-	// Token: 0x04001EA8 RID: 7848
+	// Token: 0x04001EF3 RID: 7923
 	public int TwitchID;
 }

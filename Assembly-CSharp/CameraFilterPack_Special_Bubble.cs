@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F2 RID: 498
+// Token: 0x020001F3 RID: 499
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Special/Bubble")]
 public class CameraFilterPack_Special_Bubble : MonoBehaviour
 {
 	// Token: 0x17000312 RID: 786
-	// (get) Token: 0x060010E2 RID: 4322 RVA: 0x0007A77F File Offset: 0x0007897F
+	// (get) Token: 0x060010E9 RID: 4329 RVA: 0x0007B4AF File Offset: 0x000796AF
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Special_Bubble : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010E3 RID: 4323 RVA: 0x0007A7B3 File Offset: 0x000789B3
+	// Token: 0x060010EA RID: 4330 RVA: 0x0007B4E3 File Offset: 0x000796E3
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Special_Bubble");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Special_Bubble : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010E4 RID: 4324 RVA: 0x0007A7D4 File Offset: 0x000789D4
+	// Token: 0x060010EB RID: 4331 RVA: 0x0007B504 File Offset: 0x00079704
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Special_Bubble : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010E5 RID: 4325 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010EC RID: 4332 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010E6 RID: 4326 RVA: 0x0007A8CC File Offset: 0x00078ACC
+	// Token: 0x060010ED RID: 4333 RVA: 0x0007B5FC File Offset: 0x000797FC
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Special_Bubble : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013E4 RID: 5092
+	// Token: 0x04001403 RID: 5123
 	public Shader SCShader;
 
-	// Token: 0x040013E5 RID: 5093
+	// Token: 0x04001404 RID: 5124
 	private float TimeX = 1f;
 
-	// Token: 0x040013E6 RID: 5094
+	// Token: 0x04001405 RID: 5125
 	private Material SCMaterial;
 
-	// Token: 0x040013E7 RID: 5095
+	// Token: 0x04001406 RID: 5126
 	[Range(-4f, 4f)]
 	public float X = 0.5f;
 
-	// Token: 0x040013E8 RID: 5096
+	// Token: 0x04001407 RID: 5127
 	[Range(-4f, 4f)]
 	public float Y = 0.5f;
 
-	// Token: 0x040013E9 RID: 5097
+	// Token: 0x04001408 RID: 5128
 	[Range(0f, 5f)]
 	public float Rate = 1f;
 
-	// Token: 0x040013EA RID: 5098
+	// Token: 0x04001409 RID: 5129
 	[Range(0f, 10f)]
 	private float Value4 = 1f;
 }

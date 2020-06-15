@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000464 RID: 1124
+// Token: 0x02000469 RID: 1129
 public class WeaponTrail : MonoBehaviour
 {
-	// Token: 0x17000488 RID: 1160
-	// (set) Token: 0x06001D18 RID: 7448 RVA: 0x0015AF64 File Offset: 0x00159164
+	// Token: 0x1700048D RID: 1165
+	// (set) Token: 0x06001D43 RID: 7491 RVA: 0x0015ECD9 File Offset: 0x0015CED9
 	public bool Emit
 	{
 		set
@@ -15,7 +15,7 @@ public class WeaponTrail : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D19 RID: 7449 RVA: 0x0015AF70 File Offset: 0x00159170
+	// Token: 0x06001D44 RID: 7492 RVA: 0x0015ECE4 File Offset: 0x0015CEE4
 	public void Start()
 	{
 		this._lastPosition = base.transform.position;
@@ -32,13 +32,13 @@ public class WeaponTrail : MonoBehaviour
 		this._o.GetComponent<MeshFilter>().mesh = this._trailMesh;
 	}
 
-	// Token: 0x06001D1A RID: 7450 RVA: 0x0015B058 File Offset: 0x00159258
+	// Token: 0x06001D45 RID: 7493 RVA: 0x0015EDCC File Offset: 0x0015CFCC
 	private void OnDisable()
 	{
 		UnityEngine.Object.Destroy(this._o);
 	}
 
-	// Token: 0x06001D1B RID: 7451 RVA: 0x0015B068 File Offset: 0x00159268
+	// Token: 0x06001D46 RID: 7494 RVA: 0x0015EDDC File Offset: 0x0015CFDC
 	private void Update()
 	{
 		if (this._emit && this._emitTime != 0f)
@@ -207,88 +207,88 @@ public class WeaponTrail : MonoBehaviour
 		this._trailMesh.Clear();
 	}
 
-	// Token: 0x040036CA RID: 14026
+	// Token: 0x0400374E RID: 14158
 	[SerializeField]
 	private bool _emit = true;
 
-	// Token: 0x040036CB RID: 14027
+	// Token: 0x0400374F RID: 14159
 	[SerializeField]
 	private float _emitTime;
 
-	// Token: 0x040036CC RID: 14028
+	// Token: 0x04003750 RID: 14160
 	[SerializeField]
 	private Material _material;
 
-	// Token: 0x040036CD RID: 14029
+	// Token: 0x04003751 RID: 14161
 	[SerializeField]
 	private float _lifeTime = 1f;
 
-	// Token: 0x040036CE RID: 14030
+	// Token: 0x04003752 RID: 14162
 	[SerializeField]
 	private Color[] _colors;
 
-	// Token: 0x040036CF RID: 14031
+	// Token: 0x04003753 RID: 14163
 	[SerializeField]
 	private float[] _sizes;
 
-	// Token: 0x040036D0 RID: 14032
+	// Token: 0x04003754 RID: 14164
 	[SerializeField]
 	private float _minVertexDistance = 0.1f;
 
-	// Token: 0x040036D1 RID: 14033
+	// Token: 0x04003755 RID: 14165
 	[SerializeField]
 	private float _maxVertexDistance = 10f;
 
-	// Token: 0x040036D2 RID: 14034
+	// Token: 0x04003756 RID: 14166
 	[SerializeField]
 	private float _maxAngle = 3f;
 
-	// Token: 0x040036D3 RID: 14035
+	// Token: 0x04003757 RID: 14167
 	[SerializeField]
 	private bool _autoDestruct;
 
-	// Token: 0x040036D4 RID: 14036
+	// Token: 0x04003758 RID: 14168
 	[SerializeField]
 	private Transform _base;
 
-	// Token: 0x040036D5 RID: 14037
+	// Token: 0x04003759 RID: 14169
 	[SerializeField]
 	private Transform _tip;
 
-	// Token: 0x040036D6 RID: 14038
+	// Token: 0x0400375A RID: 14170
 	private List<WeaponTrail.Point> _points = new List<WeaponTrail.Point>();
 
-	// Token: 0x040036D7 RID: 14039
+	// Token: 0x0400375B RID: 14171
 	private GameObject _o;
 
-	// Token: 0x040036D8 RID: 14040
+	// Token: 0x0400375C RID: 14172
 	private Mesh _trailMesh;
 
-	// Token: 0x040036D9 RID: 14041
+	// Token: 0x0400375D RID: 14173
 	private Vector3 _lastPosition;
 
-	// Token: 0x040036DA RID: 14042
+	// Token: 0x0400375E RID: 14174
 	private Vector3 _lastCameraPosition1;
 
-	// Token: 0x040036DB RID: 14043
+	// Token: 0x0400375F RID: 14175
 	private Vector3 _lastCameraPosition2;
 
-	// Token: 0x040036DC RID: 14044
+	// Token: 0x04003760 RID: 14176
 	private bool _lastFrameEmit = true;
 
-	// Token: 0x020006B1 RID: 1713
+	// Token: 0x020006C7 RID: 1735
 	public class Point
 	{
-		// Token: 0x040046B6 RID: 18102
+		// Token: 0x04004794 RID: 18324
 		public float timeCreated;
 
-		// Token: 0x040046B7 RID: 18103
+		// Token: 0x04004795 RID: 18325
 		public Vector3 basePosition;
 
-		// Token: 0x040046B8 RID: 18104
+		// Token: 0x04004796 RID: 18326
 		public Vector3 tipPosition;
 
-		// Token: 0x040046B9 RID: 18105
+		// Token: 0x04004797 RID: 18327
 		public bool lineBreak;
 	}
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000137 RID: 311
+// Token: 0x02000138 RID: 312
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Weather/Blizzard")]
 public class CameraFilterPack_Blizzard : MonoBehaviour
 {
 	// Token: 0x17000257 RID: 599
-	// (get) Token: 0x06000C5A RID: 3162 RVA: 0x000667DD File Offset: 0x000649DD
+	// (get) Token: 0x06000C61 RID: 3169 RVA: 0x0006750D File Offset: 0x0006570D
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Blizzard : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5B RID: 3163 RVA: 0x00066811 File Offset: 0x00064A11
+	// Token: 0x06000C62 RID: 3170 RVA: 0x00067541 File Offset: 0x00065741
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_Blizzard1") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Blizzard : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5C RID: 3164 RVA: 0x00066848 File Offset: 0x00064A48
+	// Token: 0x06000C63 RID: 3171 RVA: 0x00067578 File Offset: 0x00065778
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Blizzard : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000C5D RID: 3165 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000C64 RID: 3172 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000C5E RID: 3166 RVA: 0x00066913 File Offset: 0x00064B13
+	// Token: 0x06000C65 RID: 3173 RVA: 0x00067643 File Offset: 0x00065843
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,27 +68,27 @@ public class CameraFilterPack_Blizzard : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000F14 RID: 3860
+	// Token: 0x04000F33 RID: 3891
 	public Shader SCShader;
 
-	// Token: 0x04000F15 RID: 3861
+	// Token: 0x04000F34 RID: 3892
 	private float TimeX = 1f;
 
-	// Token: 0x04000F16 RID: 3862
+	// Token: 0x04000F35 RID: 3893
 	[Range(0f, 2f)]
 	public float _Speed = 1f;
 
-	// Token: 0x04000F17 RID: 3863
+	// Token: 0x04000F36 RID: 3894
 	[Range(0.2f, 2f)]
 	public float _Size = 1f;
 
-	// Token: 0x04000F18 RID: 3864
+	// Token: 0x04000F37 RID: 3895
 	[Range(0f, 1f)]
 	public float _Fade = 1f;
 
-	// Token: 0x04000F19 RID: 3865
+	// Token: 0x04000F38 RID: 3896
 	private Material SCMaterial;
 
-	// Token: 0x04000F1A RID: 3866
+	// Token: 0x04000F39 RID: 3897
 	private Texture2D Texture2;
 }

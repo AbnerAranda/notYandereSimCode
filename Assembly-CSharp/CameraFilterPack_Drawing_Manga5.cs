@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000185 RID: 389
+// Token: 0x02000186 RID: 390
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Drawing/Manga5")]
 public class CameraFilterPack_Drawing_Manga5 : MonoBehaviour
 {
 	// Token: 0x170002A5 RID: 677
-	// (get) Token: 0x06000E30 RID: 3632 RVA: 0x0006E10E File Offset: 0x0006C30E
+	// (get) Token: 0x06000E37 RID: 3639 RVA: 0x0006EE3E File Offset: 0x0006D03E
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Drawing_Manga5 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E31 RID: 3633 RVA: 0x0006E142 File Offset: 0x0006C342
+	// Token: 0x06000E38 RID: 3640 RVA: 0x0006EE72 File Offset: 0x0006D072
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Drawing_Manga5");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Drawing_Manga5 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E32 RID: 3634 RVA: 0x0006E164 File Offset: 0x0006C364
+	// Token: 0x06000E39 RID: 3641 RVA: 0x0006EE94 File Offset: 0x0006D094
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_Drawing_Manga5 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000E33 RID: 3635 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000E3A RID: 3642 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000E34 RID: 3636 RVA: 0x0006E1EA File Offset: 0x0006C3EA
+	// Token: 0x06000E3B RID: 3643 RVA: 0x0006EF1A File Offset: 0x0006D11A
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,16 +64,16 @@ public class CameraFilterPack_Drawing_Manga5 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010E0 RID: 4320
+	// Token: 0x040010FF RID: 4351
 	public Shader SCShader;
 
-	// Token: 0x040010E1 RID: 4321
+	// Token: 0x04001100 RID: 4352
 	private float TimeX = 1f;
 
-	// Token: 0x040010E2 RID: 4322
+	// Token: 0x04001101 RID: 4353
 	private Material SCMaterial;
 
-	// Token: 0x040010E3 RID: 4323
+	// Token: 0x04001102 RID: 4354
 	[Range(1f, 8f)]
 	public float DotSize = 4.72f;
 }

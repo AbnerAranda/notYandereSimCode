@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000430 RID: 1072
+// Token: 0x02000435 RID: 1077
 public class TrashCompactorScript : MonoBehaviour
 {
-	// Token: 0x06001C68 RID: 7272 RVA: 0x00153A18 File Offset: 0x00151C18
+	// Token: 0x06001C8D RID: 7309 RVA: 0x00156F14 File Offset: 0x00155114
 	private void Start()
 	{
 		if (this.StudentManager.Students[10] != null || this.StudentManager.Students[11] != null)
@@ -21,7 +21,7 @@ public class TrashCompactorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C69 RID: 7273 RVA: 0x00153AE4 File Offset: 0x00151CE4
+	// Token: 0x06001C8E RID: 7310 RVA: 0x00156FE0 File Offset: 0x001551E0
 	private void Update()
 	{
 		if (this.TrashCompactorObject.gameObject.activeInHierarchy)
@@ -36,7 +36,7 @@ public class TrashCompactorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C6A RID: 7274 RVA: 0x00153B90 File Offset: 0x00151D90
+	// Token: 0x06001C8F RID: 7311 RVA: 0x0015708C File Offset: 0x0015528C
 	private void CompactTrash()
 	{
 		Debug.Log("Taking out the garbage.");
@@ -59,24 +59,24 @@ public class TrashCompactorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003555 RID: 13653
+	// Token: 0x040035CA RID: 13770
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04003556 RID: 13654
+	// Token: 0x040035CB RID: 13771
 	public JsonScript JSON;
 
-	// Token: 0x04003557 RID: 13655
+	// Token: 0x040035CC RID: 13772
 	public UIPanel HUD;
 
-	// Token: 0x04003558 RID: 13656
+	// Token: 0x040035CD RID: 13773
 	public GameObject Jukebox;
 
-	// Token: 0x04003559 RID: 13657
+	// Token: 0x040035CE RID: 13774
 	public Transform TrashCompactorObject;
 
-	// Token: 0x0400355A RID: 13658
+	// Token: 0x040035CF RID: 13775
 	public Transform Yandere;
 
-	// Token: 0x0400355B RID: 13659
+	// Token: 0x040035D0 RID: 13776
 	public float Speed;
 }

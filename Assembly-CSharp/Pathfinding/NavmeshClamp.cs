@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200055C RID: 1372
+	// Token: 0x02000572 RID: 1394
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_navmesh_clamp.php")]
 	public class NavmeshClamp : MonoBehaviour
 	{
-		// Token: 0x06002440 RID: 9280 RVA: 0x00196CB8 File Offset: 0x00194EB8
+		// Token: 0x06002496 RID: 9366 RVA: 0x0019C8A4 File Offset: 0x0019AAA4
 		private void LateUpdate()
 		{
 			if (this.prevNode == null)
@@ -49,10 +49,10 @@ namespace Pathfinding
 			this.prevPos = base.transform.position;
 		}
 
-		// Token: 0x04004026 RID: 16422
+		// Token: 0x04004104 RID: 16644
 		private GraphNode prevNode;
 
-		// Token: 0x04004027 RID: 16423
+		// Token: 0x04004105 RID: 16645
 		private Vector3 prevPos;
 	}
 }

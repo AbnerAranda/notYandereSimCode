@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000579 RID: 1401
+	// Token: 0x0200058F RID: 1423
 	public class ObjImporter
 	{
-		// Token: 0x06002612 RID: 9746 RVA: 0x001A4390 File Offset: 0x001A2590
+		// Token: 0x06002668 RID: 9832 RVA: 0x001A9F7C File Offset: 0x001A817C
 		public static Mesh ImportFile(string filePath)
 		{
 			if (!File.Exists(filePath))
@@ -44,7 +44,7 @@ namespace Pathfinding
 			return mesh;
 		}
 
-		// Token: 0x06002613 RID: 9747 RVA: 0x001A44C8 File Offset: 0x001A26C8
+		// Token: 0x06002669 RID: 9833 RVA: 0x001AA0B4 File Offset: 0x001A82B4
 		private static ObjImporter.meshStruct createMeshStruct(string filename)
 		{
 			int num = 0;
@@ -121,7 +121,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002614 RID: 9748 RVA: 0x001A469C File Offset: 0x001A289C
+		// Token: 0x0600266A RID: 9834 RVA: 0x001AA288 File Offset: 0x001A8488
 		private static void populateMeshStruct(ref ObjImporter.meshStruct mesh)
 		{
 			StreamReader streamReader = File.OpenText(mesh.fileName);
@@ -161,13 +161,13 @@ namespace Pathfinding
 						string[] array = text.Split(separator, 50);
 						string text2 = array[0];
 						uint num8 = <PrivateImplementationDetails>.ComputeStringHash(text2);
-						if (num8 <= 1179241374u)
+						if (num8 <= 1179241374U)
 						{
-							if (num8 <= 1128908517u)
+							if (num8 <= 1128908517U)
 							{
-								if (num8 != 990293175u)
+								if (num8 != 990293175U)
 								{
-									if (num8 == 1128908517u)
+									if (num8 == 1128908517U)
 									{
 										if (text2 == "vn")
 										{
@@ -180,11 +180,11 @@ namespace Pathfinding
 								{
 								}
 							}
-							else if (num8 != 1146808303u)
+							else if (num8 != 1146808303U)
 							{
-								if (num8 != 1163585922u)
+								if (num8 != 1163585922U)
 								{
-									if (num8 == 1179241374u)
+									if (num8 == 1179241374U)
 									{
 										if (!(text2 == "vc"))
 										{
@@ -203,13 +203,13 @@ namespace Pathfinding
 								num7++;
 							}
 						}
-						else if (num8 <= 1498016135u)
+						else if (num8 <= 1498016135U)
 						{
-							if (num8 != 1297068826u)
+							if (num8 != 1297068826U)
 							{
-								if (num8 != 1328799683u)
+								if (num8 != 1328799683U)
 								{
-									if (num8 == 1498016135u)
+									if (num8 == 1498016135U)
 									{
 										if (text2 == "vt")
 										{
@@ -226,11 +226,11 @@ namespace Pathfinding
 							{
 							}
 						}
-						else if (num8 != 3792446982u)
+						else if (num8 != 3792446982U)
 						{
-							if (num8 != 3809224601u)
+							if (num8 != 3809224601U)
 							{
-								if (num8 == 4077666505u)
+								if (num8 == 4077666505U)
 								{
 									if (text2 == "v")
 									{
@@ -287,40 +287,40 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x02000749 RID: 1865
+		// Token: 0x02000763 RID: 1891
 		private struct meshStruct
 		{
-			// Token: 0x040049AE RID: 18862
+			// Token: 0x04004A99 RID: 19097
 			public Vector3[] vertices;
 
-			// Token: 0x040049AF RID: 18863
+			// Token: 0x04004A9A RID: 19098
 			public Vector3[] normals;
 
-			// Token: 0x040049B0 RID: 18864
+			// Token: 0x04004A9B RID: 19099
 			public Vector2[] uv;
 
-			// Token: 0x040049B1 RID: 18865
+			// Token: 0x04004A9C RID: 19100
 			public Vector2[] uv1;
 
-			// Token: 0x040049B2 RID: 18866
+			// Token: 0x04004A9D RID: 19101
 			public Vector2[] uv2;
 
-			// Token: 0x040049B3 RID: 18867
+			// Token: 0x04004A9E RID: 19102
 			public int[] triangles;
 
-			// Token: 0x040049B4 RID: 18868
+			// Token: 0x04004A9F RID: 19103
 			public int[] faceVerts;
 
-			// Token: 0x040049B5 RID: 18869
+			// Token: 0x04004AA0 RID: 19104
 			public int[] faceUVs;
 
-			// Token: 0x040049B6 RID: 18870
+			// Token: 0x04004AA1 RID: 19105
 			public Vector3[] faceData;
 
-			// Token: 0x040049B7 RID: 18871
+			// Token: 0x04004AA2 RID: 19106
 			public string name;
 
-			// Token: 0x040049B8 RID: 18872
+			// Token: 0x04004AA3 RID: 19107
 			public string fileName;
 		}
 	}

@@ -2,14 +2,14 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000563 RID: 1379
+	// Token: 0x02000579 RID: 1401
 	public enum ColliderType
 	{
-		// Token: 0x04004053 RID: 16467
+		// Token: 0x04004131 RID: 16689
 		Sphere,
-		// Token: 0x04004054 RID: 16468
+		// Token: 0x04004132 RID: 16690
 		Capsule,
-		// Token: 0x04004055 RID: 16469
+		// Token: 0x04004133 RID: 16691
 		Ray
 	}
 }

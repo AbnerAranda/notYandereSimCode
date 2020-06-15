@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D5 RID: 1493
+	// Token: 0x020005EB RID: 1515
 	public static class ObjectPoolSimple<T> where T : class, new()
 	{
-		// Token: 0x06002914 RID: 10516 RVA: 0x001BB4C0 File Offset: 0x001B96C0
+		// Token: 0x0600296A RID: 10602 RVA: 0x001C10AC File Offset: 0x001BF2AC
 		public static T Claim()
 		{
 			List<T> obj = ObjectPoolSimple<T>.pool;
@@ -28,7 +28,7 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x06002915 RID: 10517 RVA: 0x001BB54C File Offset: 0x001B974C
+		// Token: 0x0600296B RID: 10603 RVA: 0x001C1138 File Offset: 0x001BF338
 		public static void Release(ref T obj)
 		{
 			List<T> obj2 = ObjectPoolSimple<T>.pool;
@@ -39,7 +39,7 @@ namespace Pathfinding.Util
 			obj = default(T);
 		}
 
-		// Token: 0x06002916 RID: 10518 RVA: 0x001BB59C File Offset: 0x001B979C
+		// Token: 0x0600296C RID: 10604 RVA: 0x001C1188 File Offset: 0x001BF388
 		public static void Clear()
 		{
 			List<T> obj = ObjectPoolSimple<T>.pool;
@@ -49,16 +49,16 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002917 RID: 10519 RVA: 0x001BB5E0 File Offset: 0x001B97E0
+		// Token: 0x0600296D RID: 10605 RVA: 0x001C11CC File Offset: 0x001BF3CC
 		public static int GetSize()
 		{
 			return ObjectPoolSimple<T>.pool.Count;
 		}
 
-		// Token: 0x04004303 RID: 17155
+		// Token: 0x040043E1 RID: 17377
 		private static List<T> pool = new List<T>();
 
-		// Token: 0x04004304 RID: 17156
+		// Token: 0x040043E2 RID: 17378
 		private static readonly HashSet<T> inPool = new HashSet<T>();
 	}
 }

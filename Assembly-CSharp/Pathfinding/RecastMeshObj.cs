@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200057D RID: 1405
+	// Token: 0x02000593 RID: 1427
 	[AddComponentMenu("Pathfinding/Navmesh/RecastMeshObj")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_recast_mesh_obj.php")]
 	public class RecastMeshObj : VersionedMonoBehaviour
 	{
-		// Token: 0x06002632 RID: 9778 RVA: 0x001A5760 File Offset: 0x001A3960
+		// Token: 0x06002688 RID: 9864 RVA: 0x001AB34C File Offset: 0x001A954C
 		public static void GetAllInBounds(List<RecastMeshObj> buffer, Bounds bounds)
 		{
 			if (!Application.isPlaying)
@@ -44,13 +44,13 @@ namespace Pathfinding
 			RecastMeshObj.tree.QueryInBounds(rect, buffer);
 		}
 
-		// Token: 0x06002633 RID: 9779 RVA: 0x001A5884 File Offset: 0x001A3A84
+		// Token: 0x06002689 RID: 9865 RVA: 0x001AB470 File Offset: 0x001A9670
 		private void OnEnable()
 		{
 			this.Register();
 		}
 
-		// Token: 0x06002634 RID: 9780 RVA: 0x001A588C File Offset: 0x001A3A8C
+		// Token: 0x0600268A RID: 9866 RVA: 0x001AB478 File Offset: 0x001A9678
 		private void Register()
 		{
 			if (this.registered)
@@ -80,7 +80,7 @@ namespace Pathfinding
 			RecastMeshObj.tree.Insert(this);
 		}
 
-		// Token: 0x06002635 RID: 9781 RVA: 0x001A5958 File Offset: 0x001A3B58
+		// Token: 0x0600268B RID: 9867 RVA: 0x001AB544 File Offset: 0x001A9744
 		private void RecalculateBounds()
 		{
 			Renderer component = base.GetComponent<Renderer>();
@@ -97,7 +97,7 @@ namespace Pathfinding
 			this.bounds = ((component != null) ? component.bounds : collider.bounds);
 		}
 
-		// Token: 0x06002636 RID: 9782 RVA: 0x001A59D1 File Offset: 0x001A3BD1
+		// Token: 0x0600268C RID: 9868 RVA: 0x001AB5BD File Offset: 0x001A97BD
 		public Bounds GetBounds()
 		{
 			if (this._dynamic)
@@ -107,19 +107,19 @@ namespace Pathfinding
 			return this.bounds;
 		}
 
-		// Token: 0x06002637 RID: 9783 RVA: 0x001A59E7 File Offset: 0x001A3BE7
+		// Token: 0x0600268D RID: 9869 RVA: 0x001AB5D3 File Offset: 0x001A97D3
 		public MeshFilter GetMeshFilter()
 		{
 			return base.GetComponent<MeshFilter>();
 		}
 
-		// Token: 0x06002638 RID: 9784 RVA: 0x001A59EF File Offset: 0x001A3BEF
+		// Token: 0x0600268E RID: 9870 RVA: 0x001AB5DB File Offset: 0x001A97DB
 		public Collider GetCollider()
 		{
 			return base.GetComponent<Collider>();
 		}
 
-		// Token: 0x06002639 RID: 9785 RVA: 0x001A59F8 File Offset: 0x001A3BF8
+		// Token: 0x0600268F RID: 9871 RVA: 0x001AB5E4 File Offset: 0x001A97E4
 		private void OnDisable()
 		{
 			this.registered = false;
@@ -134,26 +134,26 @@ namespace Pathfinding
 			this._dynamic = this.dynamic;
 		}
 
-		// Token: 0x0400411E RID: 16670
+		// Token: 0x040041FC RID: 16892
 		protected static RecastBBTree tree = new RecastBBTree();
 
-		// Token: 0x0400411F RID: 16671
+		// Token: 0x040041FD RID: 16893
 		protected static List<RecastMeshObj> dynamicMeshObjs = new List<RecastMeshObj>();
 
-		// Token: 0x04004120 RID: 16672
+		// Token: 0x040041FE RID: 16894
 		[HideInInspector]
 		public Bounds bounds;
 
-		// Token: 0x04004121 RID: 16673
+		// Token: 0x040041FF RID: 16895
 		public bool dynamic = true;
 
-		// Token: 0x04004122 RID: 16674
+		// Token: 0x04004200 RID: 16896
 		public int area;
 
-		// Token: 0x04004123 RID: 16675
+		// Token: 0x04004201 RID: 16897
 		private bool _dynamic;
 
-		// Token: 0x04004124 RID: 16676
+		// Token: 0x04004202 RID: 16898
 		private bool registered;
 	}
 }

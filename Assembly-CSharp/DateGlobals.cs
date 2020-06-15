@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002BF RID: 703
+// Token: 0x020002C2 RID: 706
 public static class DateGlobals
 {
 	// Token: 0x1700038F RID: 911
-	// (get) Token: 0x060014C7 RID: 5319 RVA: 0x000B5883 File Offset: 0x000B3A83
-	// (set) Token: 0x060014C8 RID: 5320 RVA: 0x000B58A3 File Offset: 0x000B3AA3
+	// (get) Token: 0x060014DA RID: 5338 RVA: 0x000B73D7 File Offset: 0x000B55D7
+	// (set) Token: 0x060014DB RID: 5339 RVA: 0x000B73F7 File Offset: 0x000B55F7
 	public static int Week
 	{
 		get
@@ -20,8 +20,8 @@ public static class DateGlobals
 	}
 
 	// Token: 0x17000390 RID: 912
-	// (get) Token: 0x060014C9 RID: 5321 RVA: 0x000B58C4 File Offset: 0x000B3AC4
-	// (set) Token: 0x060014CA RID: 5322 RVA: 0x000B58E4 File Offset: 0x000B3AE4
+	// (get) Token: 0x060014DC RID: 5340 RVA: 0x000B7418 File Offset: 0x000B5618
+	// (set) Token: 0x060014DD RID: 5341 RVA: 0x000B7438 File Offset: 0x000B5638
 	public static DayOfWeek Weekday
 	{
 		get
@@ -35,8 +35,8 @@ public static class DateGlobals
 	}
 
 	// Token: 0x17000391 RID: 913
-	// (get) Token: 0x060014CB RID: 5323 RVA: 0x000B5905 File Offset: 0x000B3B05
-	// (set) Token: 0x060014CC RID: 5324 RVA: 0x000B5925 File Offset: 0x000B3B25
+	// (get) Token: 0x060014DE RID: 5342 RVA: 0x000B7459 File Offset: 0x000B5659
+	// (set) Token: 0x060014DF RID: 5343 RVA: 0x000B7479 File Offset: 0x000B5679
 	public static int PassDays
 	{
 		get
@@ -50,8 +50,8 @@ public static class DateGlobals
 	}
 
 	// Token: 0x17000392 RID: 914
-	// (get) Token: 0x060014CD RID: 5325 RVA: 0x000B5946 File Offset: 0x000B3B46
-	// (set) Token: 0x060014CE RID: 5326 RVA: 0x000B5966 File Offset: 0x000B3B66
+	// (get) Token: 0x060014E0 RID: 5344 RVA: 0x000B749A File Offset: 0x000B569A
+	// (set) Token: 0x060014E1 RID: 5345 RVA: 0x000B74BA File Offset: 0x000B56BA
 	public static bool DayPassed
 	{
 		get
@@ -64,7 +64,7 @@ public static class DateGlobals
 		}
 	}
 
-	// Token: 0x060014CF RID: 5327 RVA: 0x000B5988 File Offset: 0x000B3B88
+	// Token: 0x060014E2 RID: 5346 RVA: 0x000B74DC File Offset: 0x000B56DC
 	public static void DeleteAll()
 	{
 		Globals.Delete("Profile_" + GameGlobals.Profile + "_Week");
@@ -73,15 +73,15 @@ public static class DateGlobals
 		Globals.Delete("Profile_" + GameGlobals.Profile + "_DayPassed");
 	}
 
-	// Token: 0x04001D17 RID: 7447
+	// Token: 0x04001D5C RID: 7516
 	private const string Str_Week = "Week";
 
-	// Token: 0x04001D18 RID: 7448
+	// Token: 0x04001D5D RID: 7517
 	private const string Str_Weekday = "Weekday";
 
-	// Token: 0x04001D19 RID: 7449
+	// Token: 0x04001D5E RID: 7518
 	private const string Str_PassDays = "PassDays";
 
-	// Token: 0x04001D1A RID: 7450
+	// Token: 0x04001D5F RID: 7519
 	private const string Str_DayPassed = "DayPassed";
 }

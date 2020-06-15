@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200047B RID: 1147
+// Token: 0x02000481 RID: 1153
 public class YanvaniaDoubleFireballScript : MonoBehaviour
 {
-	// Token: 0x06001DAD RID: 7597 RVA: 0x00170A38 File Offset: 0x0016EC38
+	// Token: 0x06001DDC RID: 7644 RVA: 0x00174A38 File Offset: 0x00172C38
 	private void Start()
 	{
 		UnityEngine.Object.Instantiate<GameObject>(this.LightningEffect, new Vector3(base.transform.position.x, 8f, 0f), Quaternion.identity);
 		this.Direction = ((this.Dracula.position.x > base.transform.position.x) ? -1 : 1);
 	}
 
-	// Token: 0x06001DAE RID: 7598 RVA: 0x00170AA4 File Offset: 0x0016ECA4
+	// Token: 0x06001DDD RID: 7645 RVA: 0x00174AA4 File Offset: 0x00172CA4
 	private void Update()
 	{
 		if (this.Timer > 1f && !this.SpawnedFirst)
@@ -63,39 +63,39 @@ public class YanvaniaDoubleFireballScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003A95 RID: 14997
+	// Token: 0x04003B21 RID: 15137
 	public GameObject Lavaball;
 
-	// Token: 0x04003A96 RID: 14998
+	// Token: 0x04003B22 RID: 15138
 	public GameObject FirstLavaball;
 
-	// Token: 0x04003A97 RID: 14999
+	// Token: 0x04003B23 RID: 15139
 	public GameObject SecondLavaball;
 
-	// Token: 0x04003A98 RID: 15000
+	// Token: 0x04003B24 RID: 15140
 	public GameObject LightningEffect;
 
-	// Token: 0x04003A99 RID: 15001
+	// Token: 0x04003B25 RID: 15141
 	public Transform Dracula;
 
-	// Token: 0x04003A9A RID: 15002
+	// Token: 0x04003B26 RID: 15142
 	public bool SpawnedFirst;
 
-	// Token: 0x04003A9B RID: 15003
+	// Token: 0x04003B27 RID: 15143
 	public bool SpawnedSecond;
 
-	// Token: 0x04003A9C RID: 15004
+	// Token: 0x04003B28 RID: 15144
 	public float FirstPosition;
 
-	// Token: 0x04003A9D RID: 15005
+	// Token: 0x04003B29 RID: 15145
 	public float SecondPosition;
 
-	// Token: 0x04003A9E RID: 15006
+	// Token: 0x04003B2A RID: 15146
 	public int Direction;
 
-	// Token: 0x04003A9F RID: 15007
+	// Token: 0x04003B2B RID: 15147
 	public float Timer;
 
-	// Token: 0x04003AA0 RID: 15008
+	// Token: 0x04003B2C RID: 15148
 	public float Speed;
 }

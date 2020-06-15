@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
-// Token: 0x020003EF RID: 1007
+// Token: 0x020003F4 RID: 1012
 public class StalkerIntroScript : MonoBehaviour
 {
-	// Token: 0x06001AD0 RID: 6864 RVA: 0x0010CBA4 File Offset: 0x0010ADA4
+	// Token: 0x06001AF1 RID: 6897 RVA: 0x0010F444 File Offset: 0x0010D644
 	private void Start()
 	{
-		RenderSettings.ambientIntensity = 4f;
+		RenderSettings.ambientIntensity = 8f;
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 		base.transform.position = new Vector3(12.5f, 5f, 13f);
@@ -21,7 +21,7 @@ public class StalkerIntroScript : MonoBehaviour
 		this.Alpha = 1f;
 	}
 
-	// Token: 0x06001AD1 RID: 6865 RVA: 0x0010CC54 File Offset: 0x0010AE54
+	// Token: 0x06001AF2 RID: 6898 RVA: 0x0010F4F4 File Offset: 0x0010D6F4
 	private void Update()
 	{
 		this.Moon.LookAt(base.transform);
@@ -40,6 +40,7 @@ public class StalkerIntroScript : MonoBehaviour
 				if (this.Timer > 2f)
 				{
 					this.Phase++;
+					return;
 				}
 			}
 		}
@@ -63,11 +64,13 @@ public class StalkerIntroScript : MonoBehaviour
 			if (this.Yandere.MyAnimation["f02_jumpOverWall_00"].time > 13f)
 			{
 				this.Yandere.transform.position = new Vector3(13.15f, 0f, 13f);
-				base.transform.position = new Vector3(12.9f, 1.35f, 12.5f);
+				base.transform.position = new Vector3(12.75f, 1.3f, 12.4f);
 				base.transform.eulerAngles = new Vector3(0f, 45f, 0f);
-				this.UpdateDOF(0.3f);
+				this.UpdateDOF(0.5f);
+				this.DOF = 0.5f;
 				this.Speed = -1f;
 				this.Phase++;
+				return;
 			}
 		}
 		else if (this.Phase == 2)
@@ -80,31 +83,22 @@ public class StalkerIntroScript : MonoBehaviour
 			if (this.Speed > 0f)
 			{
 				base.transform.position = Vector3.Lerp(base.transform.position, new Vector3(13.15f, 1.51515f, 14.92272f), Time.deltaTime * this.Speed);
-				base.transform.eulerAngles = Vector3.Lerp(base.transform.eulerAngles, new Vector3(15f, 180f, 0f), Time.deltaTime * this.Speed);
-				this.DOF = Mathf.Lerp(this.DOF, 2f, Time.deltaTime * this.Speed);
+				base.transform.eulerAngles = Vector3.Lerp(base.transform.eulerAngles, new Vector3(15f, 180f, 0f), Time.deltaTime * this.Speed * 2f);
+				this.DOF = Mathf.MoveTowards(this.DOF, 2f, Time.deltaTime * this.Speed);
 				this.UpdateDOF(this.DOF);
 				if (this.Speed > 4f)
 				{
+					this.DOF = 2f;
+					this.UpdateDOF(this.DOF);
 					this.RPGCamera.enabled = true;
 					this.Yandere.enabled = true;
 					this.Phase++;
 				}
 			}
 		}
-		if (Input.GetKeyDown("space"))
-		{
-			if (this.Neighborhood[0].activeInHierarchy)
-			{
-				this.Neighborhood[0].SetActive(false);
-				this.Neighborhood[1].SetActive(true);
-				return;
-			}
-			this.Neighborhood[0].SetActive(true);
-			this.Neighborhood[1].SetActive(false);
-		}
 	}
 
-	// Token: 0x06001AD2 RID: 6866 RVA: 0x0010D098 File Offset: 0x0010B298
+	// Token: 0x06001AF3 RID: 6899 RVA: 0x0010F904 File Offset: 0x0010DB04
 	private void UpdateDOF(float Value)
 	{
 		DepthOfFieldModel.Settings settings = this.Profile.depthOfField.settings;
@@ -113,39 +107,39 @@ public class StalkerIntroScript : MonoBehaviour
 		this.Profile.depthOfField.settings = settings;
 	}
 
-	// Token: 0x04002B5D RID: 11101
+	// Token: 0x04002BBE RID: 11198
 	public PostProcessingProfile Profile;
 
-	// Token: 0x04002B5E RID: 11102
+	// Token: 0x04002BBF RID: 11199
 	public StalkerYandereScript Yandere;
 
-	// Token: 0x04002B5F RID: 11103
+	// Token: 0x04002BC0 RID: 11200
 	public RPG_Camera RPGCamera;
 
-	// Token: 0x04002B60 RID: 11104
+	// Token: 0x04002BC1 RID: 11201
 	public Transform CameraFocus;
 
-	// Token: 0x04002B61 RID: 11105
+	// Token: 0x04002BC2 RID: 11202
 	public Transform Moon;
 
-	// Token: 0x04002B62 RID: 11106
+	// Token: 0x04002BC3 RID: 11203
 	public Renderer Darkness;
 
-	// Token: 0x04002B63 RID: 11107
+	// Token: 0x04002BC4 RID: 11204
 	public float Alpha;
 
-	// Token: 0x04002B64 RID: 11108
+	// Token: 0x04002BC5 RID: 11205
 	public float Speed;
 
-	// Token: 0x04002B65 RID: 11109
+	// Token: 0x04002BC6 RID: 11206
 	public float Timer;
 
-	// Token: 0x04002B66 RID: 11110
+	// Token: 0x04002BC7 RID: 11207
 	public float DOF;
 
-	// Token: 0x04002B67 RID: 11111
+	// Token: 0x04002BC8 RID: 11208
 	public int Phase;
 
-	// Token: 0x04002B68 RID: 11112
+	// Token: 0x04002BC9 RID: 11209
 	public GameObject[] Neighborhood;
 }

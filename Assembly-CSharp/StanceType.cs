@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x0200028B RID: 651
+// Token: 0x0200028C RID: 652
 public enum StanceType
 {
-	// Token: 0x04001B84 RID: 7044
+	// Token: 0x04001BA4 RID: 7076
 	Standing,
-	// Token: 0x04001B85 RID: 7045
+	// Token: 0x04001BA5 RID: 7077
 	Crouching,
-	// Token: 0x04001B86 RID: 7046
+	// Token: 0x04001BA6 RID: 7078
 	Crawling
 }

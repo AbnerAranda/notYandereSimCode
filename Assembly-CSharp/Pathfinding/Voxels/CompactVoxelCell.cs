@@ -2,20 +2,20 @@
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005B1 RID: 1457
+	// Token: 0x020005C7 RID: 1479
 	public struct CompactVoxelCell
 	{
-		// Token: 0x06002780 RID: 10112 RVA: 0x001AF659 File Offset: 0x001AD859
+		// Token: 0x060027D6 RID: 10198 RVA: 0x001B5245 File Offset: 0x001B3445
 		public CompactVoxelCell(uint i, uint c)
 		{
 			this.index = i;
 			this.count = c;
 		}
 
-		// Token: 0x04004209 RID: 16905
+		// Token: 0x040042E7 RID: 17127
 		public uint index;
 
-		// Token: 0x0400420A RID: 16906
+		// Token: 0x040042E8 RID: 17128
 		public uint count;
 	}
 }

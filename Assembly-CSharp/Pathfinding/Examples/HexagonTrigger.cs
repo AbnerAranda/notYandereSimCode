@@ -4,19 +4,19 @@ using UnityEngine.UI;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005EC RID: 1516
+	// Token: 0x02000602 RID: 1538
 	[RequireComponent(typeof(Animator))]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_hexagon_trigger.php")]
 	public class HexagonTrigger : MonoBehaviour
 	{
-		// Token: 0x060029C7 RID: 10695 RVA: 0x001C1501 File Offset: 0x001BF701
+		// Token: 0x06002A1D RID: 10781 RVA: 0x001C70ED File Offset: 0x001C52ED
 		private void Awake()
 		{
 			this.anim = base.GetComponent<Animator>();
 			this.button.interactable = false;
 		}
 
-		// Token: 0x060029C8 RID: 10696 RVA: 0x001C151C File Offset: 0x001BF71C
+		// Token: 0x06002A1E RID: 10782 RVA: 0x001C7108 File Offset: 0x001C5308
 		private void OnTriggerEnter(Collider coll)
 		{
 			TurnBasedAI componentInParent = coll.GetComponentInParent<TurnBasedAI>();
@@ -29,7 +29,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029C9 RID: 10697 RVA: 0x001C1585 File Offset: 0x001BF785
+		// Token: 0x06002A1F RID: 10783 RVA: 0x001C7171 File Offset: 0x001C5371
 		private void OnTriggerExit(Collider coll)
 		{
 			if (coll.GetComponentInParent<TurnBasedAI>() != null && this.visible)
@@ -39,13 +39,13 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x0400438F RID: 17295
+		// Token: 0x0400446D RID: 17517
 		public Button button;
 
-		// Token: 0x04004390 RID: 17296
+		// Token: 0x0400446E RID: 17518
 		private Animator anim;
 
-		// Token: 0x04004391 RID: 17297
+		// Token: 0x0400446F RID: 17519
 		private bool visible;
 	}
 }

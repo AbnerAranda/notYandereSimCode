@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002CF RID: 719
+// Token: 0x020002D2 RID: 722
 public static class WeaponGlobals
 {
-	// Token: 0x0600166B RID: 5739 RVA: 0x000BAFE9 File Offset: 0x000B91E9
+	// Token: 0x06001688 RID: 5768 RVA: 0x000BCCED File Offset: 0x000BAEED
 	public static int GetWeaponStatus(int weaponID)
 	{
 		return PlayerPrefs.GetInt(string.Concat(new object[]
@@ -16,7 +16,7 @@ public static class WeaponGlobals
 		}));
 	}
 
-	// Token: 0x0600166C RID: 5740 RVA: 0x000BB024 File Offset: 0x000B9224
+	// Token: 0x06001689 RID: 5769 RVA: 0x000BCD28 File Offset: 0x000BAF28
 	public static void SetWeaponStatus(int weaponID, int value)
 	{
 		string text = weaponID.ToString();
@@ -30,18 +30,18 @@ public static class WeaponGlobals
 		}), value);
 	}
 
-	// Token: 0x0600166D RID: 5741 RVA: 0x000BB08A File Offset: 0x000B928A
+	// Token: 0x0600168A RID: 5770 RVA: 0x000BCD8E File Offset: 0x000BAF8E
 	public static int[] KeysOfWeaponStatus()
 	{
 		return KeysHelper.GetIntegerKeys("Profile_" + GameGlobals.Profile + "_WeaponStatus_");
 	}
 
-	// Token: 0x0600166E RID: 5742 RVA: 0x000BB0AA File Offset: 0x000B92AA
+	// Token: 0x0600168B RID: 5771 RVA: 0x000BCDAE File Offset: 0x000BAFAE
 	public static void DeleteAll()
 	{
 		Globals.DeleteCollection("Profile_" + GameGlobals.Profile + "_WeaponStatus_", WeaponGlobals.KeysOfWeaponStatus());
 	}
 
-	// Token: 0x04001DCA RID: 7626
+	// Token: 0x04001E14 RID: 7700
 	private const string Str_WeaponStatus = "WeaponStatus_";
 }

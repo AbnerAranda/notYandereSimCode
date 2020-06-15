@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002C4 RID: 708
+// Token: 0x020002C7 RID: 711
 public static class MissionModeGlobals
 {
-	// Token: 0x06001521 RID: 5409 RVA: 0x000B699D File Offset: 0x000B4B9D
+	// Token: 0x0600153C RID: 5436 RVA: 0x000B8645 File Offset: 0x000B6845
 	public static int GetMissionCondition(int id)
 	{
 		return PlayerPrefs.GetInt("MissionCondition_" + id.ToString());
 	}
 
-	// Token: 0x06001522 RID: 5410 RVA: 0x000B69B8 File Offset: 0x000B4BB8
+	// Token: 0x0600153D RID: 5437 RVA: 0x000B8660 File Offset: 0x000B6860
 	public static void SetMissionCondition(int id, int value)
 	{
 		string text = id.ToString();
@@ -18,15 +18,15 @@ public static class MissionModeGlobals
 		PlayerPrefs.SetInt("MissionCondition_" + text, value);
 	}
 
-	// Token: 0x06001523 RID: 5411 RVA: 0x000B69E9 File Offset: 0x000B4BE9
+	// Token: 0x0600153E RID: 5438 RVA: 0x000B8691 File Offset: 0x000B6891
 	public static int[] KeysOfMissionCondition()
 	{
 		return KeysHelper.GetIntegerKeys("MissionCondition_");
 	}
 
-	// Token: 0x170003B2 RID: 946
-	// (get) Token: 0x06001524 RID: 5412 RVA: 0x000B69F5 File Offset: 0x000B4BF5
-	// (set) Token: 0x06001525 RID: 5413 RVA: 0x000B6A01 File Offset: 0x000B4C01
+	// Token: 0x170003B6 RID: 950
+	// (get) Token: 0x0600153F RID: 5439 RVA: 0x000B869D File Offset: 0x000B689D
+	// (set) Token: 0x06001540 RID: 5440 RVA: 0x000B86A9 File Offset: 0x000B68A9
 	public static int MissionDifficulty
 	{
 		get
@@ -39,9 +39,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B3 RID: 947
-	// (get) Token: 0x06001526 RID: 5414 RVA: 0x000B6A0E File Offset: 0x000B4C0E
-	// (set) Token: 0x06001527 RID: 5415 RVA: 0x000B6A1A File Offset: 0x000B4C1A
+	// Token: 0x170003B7 RID: 951
+	// (get) Token: 0x06001541 RID: 5441 RVA: 0x000B86B6 File Offset: 0x000B68B6
+	// (set) Token: 0x06001542 RID: 5442 RVA: 0x000B86C2 File Offset: 0x000B68C2
 	public static bool MissionMode
 	{
 		get
@@ -54,9 +54,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B4 RID: 948
-	// (get) Token: 0x06001528 RID: 5416 RVA: 0x000B6A27 File Offset: 0x000B4C27
-	// (set) Token: 0x06001529 RID: 5417 RVA: 0x000B6A33 File Offset: 0x000B4C33
+	// Token: 0x170003B8 RID: 952
+	// (get) Token: 0x06001543 RID: 5443 RVA: 0x000B86CF File Offset: 0x000B68CF
+	// (set) Token: 0x06001544 RID: 5444 RVA: 0x000B86DB File Offset: 0x000B68DB
 	public static bool MultiMission
 	{
 		get
@@ -69,9 +69,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B5 RID: 949
-	// (get) Token: 0x0600152A RID: 5418 RVA: 0x000B6A40 File Offset: 0x000B4C40
-	// (set) Token: 0x0600152B RID: 5419 RVA: 0x000B6A4C File Offset: 0x000B4C4C
+	// Token: 0x170003B9 RID: 953
+	// (get) Token: 0x06001545 RID: 5445 RVA: 0x000B86E8 File Offset: 0x000B68E8
+	// (set) Token: 0x06001546 RID: 5446 RVA: 0x000B86F4 File Offset: 0x000B68F4
 	public static int MissionRequiredClothing
 	{
 		get
@@ -84,9 +84,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B6 RID: 950
-	// (get) Token: 0x0600152C RID: 5420 RVA: 0x000B6A59 File Offset: 0x000B4C59
-	// (set) Token: 0x0600152D RID: 5421 RVA: 0x000B6A65 File Offset: 0x000B4C65
+	// Token: 0x170003BA RID: 954
+	// (get) Token: 0x06001547 RID: 5447 RVA: 0x000B8701 File Offset: 0x000B6901
+	// (set) Token: 0x06001548 RID: 5448 RVA: 0x000B870D File Offset: 0x000B690D
 	public static int MissionRequiredDisposal
 	{
 		get
@@ -99,9 +99,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B7 RID: 951
-	// (get) Token: 0x0600152E RID: 5422 RVA: 0x000B6A72 File Offset: 0x000B4C72
-	// (set) Token: 0x0600152F RID: 5423 RVA: 0x000B6A7E File Offset: 0x000B4C7E
+	// Token: 0x170003BB RID: 955
+	// (get) Token: 0x06001549 RID: 5449 RVA: 0x000B871A File Offset: 0x000B691A
+	// (set) Token: 0x0600154A RID: 5450 RVA: 0x000B8726 File Offset: 0x000B6926
 	public static int MissionRequiredWeapon
 	{
 		get
@@ -114,9 +114,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B8 RID: 952
-	// (get) Token: 0x06001530 RID: 5424 RVA: 0x000B6A8B File Offset: 0x000B4C8B
-	// (set) Token: 0x06001531 RID: 5425 RVA: 0x000B6A97 File Offset: 0x000B4C97
+	// Token: 0x170003BC RID: 956
+	// (get) Token: 0x0600154B RID: 5451 RVA: 0x000B8733 File Offset: 0x000B6933
+	// (set) Token: 0x0600154C RID: 5452 RVA: 0x000B873F File Offset: 0x000B693F
 	public static int MissionTarget
 	{
 		get
@@ -129,9 +129,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003B9 RID: 953
-	// (get) Token: 0x06001532 RID: 5426 RVA: 0x000B6AA4 File Offset: 0x000B4CA4
-	// (set) Token: 0x06001533 RID: 5427 RVA: 0x000B6AB0 File Offset: 0x000B4CB0
+	// Token: 0x170003BD RID: 957
+	// (get) Token: 0x0600154D RID: 5453 RVA: 0x000B874C File Offset: 0x000B694C
+	// (set) Token: 0x0600154E RID: 5454 RVA: 0x000B8758 File Offset: 0x000B6958
 	public static string MissionTargetName
 	{
 		get
@@ -144,9 +144,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003BA RID: 954
-	// (get) Token: 0x06001534 RID: 5428 RVA: 0x000B6ABD File Offset: 0x000B4CBD
-	// (set) Token: 0x06001535 RID: 5429 RVA: 0x000B6AC9 File Offset: 0x000B4CC9
+	// Token: 0x170003BE RID: 958
+	// (get) Token: 0x0600154F RID: 5455 RVA: 0x000B8765 File Offset: 0x000B6965
+	// (set) Token: 0x06001550 RID: 5456 RVA: 0x000B8771 File Offset: 0x000B6971
 	public static int NemesisDifficulty
 	{
 		get
@@ -159,9 +159,9 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x170003BB RID: 955
-	// (get) Token: 0x06001536 RID: 5430 RVA: 0x000B6AD6 File Offset: 0x000B4CD6
-	// (set) Token: 0x06001537 RID: 5431 RVA: 0x000B6AE2 File Offset: 0x000B4CE2
+	// Token: 0x170003BF RID: 959
+	// (get) Token: 0x06001551 RID: 5457 RVA: 0x000B877E File Offset: 0x000B697E
+	// (set) Token: 0x06001552 RID: 5458 RVA: 0x000B878A File Offset: 0x000B698A
 	public static bool NemesisAggression
 	{
 		get
@@ -174,7 +174,7 @@ public static class MissionModeGlobals
 		}
 	}
 
-	// Token: 0x06001538 RID: 5432 RVA: 0x000B6AF0 File Offset: 0x000B4CF0
+	// Token: 0x06001553 RID: 5459 RVA: 0x000B8798 File Offset: 0x000B6998
 	public static void DeleteAll()
 	{
 		Globals.DeleteCollection("MissionCondition_", MissionModeGlobals.KeysOfMissionCondition());
@@ -190,36 +190,36 @@ public static class MissionModeGlobals
 		Globals.Delete("MultiMission");
 	}
 
-	// Token: 0x04001D3F RID: 7487
+	// Token: 0x04001D88 RID: 7560
 	private const string Str_MissionCondition = "MissionCondition_";
 
-	// Token: 0x04001D40 RID: 7488
+	// Token: 0x04001D89 RID: 7561
 	private const string Str_MissionDifficulty = "MissionDifficulty";
 
-	// Token: 0x04001D41 RID: 7489
+	// Token: 0x04001D8A RID: 7562
 	private const string Str_MissionMode = "MissionMode";
 
-	// Token: 0x04001D42 RID: 7490
+	// Token: 0x04001D8B RID: 7563
 	private const string Str_MissionRequiredClothing = "MissionRequiredClothing";
 
-	// Token: 0x04001D43 RID: 7491
+	// Token: 0x04001D8C RID: 7564
 	private const string Str_MissionRequiredDisposal = "MissionRequiredDisposal";
 
-	// Token: 0x04001D44 RID: 7492
+	// Token: 0x04001D8D RID: 7565
 	private const string Str_MissionRequiredWeapon = "MissionRequiredWeapon";
 
-	// Token: 0x04001D45 RID: 7493
+	// Token: 0x04001D8E RID: 7566
 	private const string Str_MissionTarget = "MissionTarget";
 
-	// Token: 0x04001D46 RID: 7494
+	// Token: 0x04001D8F RID: 7567
 	private const string Str_MissionTargetName = "MissionTargetName";
 
-	// Token: 0x04001D47 RID: 7495
+	// Token: 0x04001D90 RID: 7568
 	private const string Str_NemesisDifficulty = "NemesisDifficulty";
 
-	// Token: 0x04001D48 RID: 7496
+	// Token: 0x04001D91 RID: 7569
 	private const string Str_NemesisAggression = "NemesisAggression";
 
-	// Token: 0x04001D49 RID: 7497
+	// Token: 0x04001D92 RID: 7570
 	private const string Str_MultiMission = "MultiMission";
 }

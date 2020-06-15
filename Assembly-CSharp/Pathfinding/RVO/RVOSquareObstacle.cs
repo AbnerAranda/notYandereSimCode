@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005CB RID: 1483
+	// Token: 0x020005E1 RID: 1505
 	[AddComponentMenu("Pathfinding/Local Avoidance/Square Obstacle")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_r_v_o_1_1_r_v_o_square_obstacle.php")]
 	public class RVOSquareObstacle : RVOObstacle
 	{
-		// Token: 0x170005E4 RID: 1508
-		// (get) Token: 0x060028B8 RID: 10424 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x170005EA RID: 1514
+		// (get) Token: 0x0600290E RID: 10510 RVA: 0x0002D199 File Offset: 0x0002B399
 		protected override bool StaticObstacle
 		{
 			get
@@ -18,8 +18,8 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005E5 RID: 1509
-		// (get) Token: 0x060028B9 RID: 10425 RVA: 0x0002291C File Offset: 0x00020B1C
+		// Token: 0x170005EB RID: 1515
+		// (get) Token: 0x0600290F RID: 10511 RVA: 0x00022944 File Offset: 0x00020B44
 		protected override bool ExecuteInEditor
 		{
 			get
@@ -28,8 +28,8 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005E6 RID: 1510
-		// (get) Token: 0x060028BA RID: 10426 RVA: 0x0002291C File Offset: 0x00020B1C
+		// Token: 0x170005EC RID: 1516
+		// (get) Token: 0x06002910 RID: 10512 RVA: 0x00022944 File Offset: 0x00020B44
 		protected override bool LocalCoordinates
 		{
 			get
@@ -38,8 +38,8 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x170005E7 RID: 1511
-		// (get) Token: 0x060028BB RID: 10427 RVA: 0x001B9598 File Offset: 0x001B7798
+		// Token: 0x170005ED RID: 1517
+		// (get) Token: 0x06002911 RID: 10513 RVA: 0x001BF184 File Offset: 0x001BD384
 		protected override float Height
 		{
 			get
@@ -48,13 +48,13 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x060028BC RID: 10428 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x06002912 RID: 10514 RVA: 0x0002D199 File Offset: 0x0002B399
 		protected override bool AreGizmosDirty()
 		{
 			return false;
 		}
 
-		// Token: 0x060028BD RID: 10429 RVA: 0x001B95A0 File Offset: 0x001B77A0
+		// Token: 0x06002913 RID: 10515 RVA: 0x001BF18C File Offset: 0x001BD38C
 		protected override void CreateObstacles()
 		{
 			this.size.x = Mathf.Abs(this.size.x);
@@ -75,13 +75,13 @@ namespace Pathfinding.RVO
 			base.AddObstacle(array, this.height);
 		}
 
-		// Token: 0x040042C4 RID: 17092
+		// Token: 0x040043A2 RID: 17314
 		public float height = 1f;
 
-		// Token: 0x040042C5 RID: 17093
+		// Token: 0x040043A3 RID: 17315
 		public Vector2 size = Vector3.one;
 
-		// Token: 0x040042C6 RID: 17094
+		// Token: 0x040043A4 RID: 17316
 		public Vector2 center = Vector3.zero;
 	}
 }

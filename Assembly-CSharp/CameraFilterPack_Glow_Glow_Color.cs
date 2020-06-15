@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001BF RID: 447
+// Token: 0x020001C0 RID: 448
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Glow/Glow_Color")]
 public class CameraFilterPack_Glow_Glow_Color : MonoBehaviour
 {
 	// Token: 0x170002DF RID: 735
-	// (get) Token: 0x06000F8D RID: 3981 RVA: 0x00074019 File Offset: 0x00072219
+	// (get) Token: 0x06000F94 RID: 3988 RVA: 0x00074D49 File Offset: 0x00072F49
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Glow_Glow_Color : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F8E RID: 3982 RVA: 0x0007404D File Offset: 0x0007224D
+	// Token: 0x06000F95 RID: 3989 RVA: 0x00074D7D File Offset: 0x00072F7D
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Glow_Glow_Color");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Glow_Glow_Color : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F8F RID: 3983 RVA: 0x00074070 File Offset: 0x00072270
+	// Token: 0x06000F96 RID: 3990 RVA: 0x00074DA0 File Offset: 0x00072FA0
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (!(this.SCShader != null))
@@ -75,12 +75,12 @@ public class CameraFilterPack_Glow_Glow_Color : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture, this.material, 0);
 	}
 
-	// Token: 0x06000F90 RID: 3984 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000F97 RID: 3991 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000F91 RID: 3985 RVA: 0x0007424E File Offset: 0x0007244E
+	// Token: 0x06000F98 RID: 3992 RVA: 0x00074F7E File Offset: 0x0007317E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -89,35 +89,35 @@ public class CameraFilterPack_Glow_Glow_Color : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001272 RID: 4722
+	// Token: 0x04001291 RID: 4753
 	public Shader SCShader;
 
-	// Token: 0x04001273 RID: 4723
+	// Token: 0x04001292 RID: 4754
 	private float TimeX = 1f;
 
-	// Token: 0x04001274 RID: 4724
+	// Token: 0x04001293 RID: 4755
 	private Material SCMaterial;
 
-	// Token: 0x04001275 RID: 4725
+	// Token: 0x04001294 RID: 4756
 	[Range(0f, 20f)]
 	public float Amount = 4f;
 
-	// Token: 0x04001276 RID: 4726
+	// Token: 0x04001295 RID: 4757
 	[Range(2f, 16f)]
 	public int FastFilter = 4;
 
-	// Token: 0x04001277 RID: 4727
+	// Token: 0x04001296 RID: 4758
 	[Range(0f, 1f)]
 	public float Threshold = 0.5f;
 
-	// Token: 0x04001278 RID: 4728
+	// Token: 0x04001297 RID: 4759
 	[Range(0f, 3f)]
 	public float Intensity = 2.25f;
 
-	// Token: 0x04001279 RID: 4729
+	// Token: 0x04001298 RID: 4760
 	[Range(-1f, 1f)]
 	public float Precision = 0.56f;
 
-	// Token: 0x0400127A RID: 4730
+	// Token: 0x04001299 RID: 4761
 	public Color GlowColor = new Color(0f, 0.7f, 1f, 1f);
 }

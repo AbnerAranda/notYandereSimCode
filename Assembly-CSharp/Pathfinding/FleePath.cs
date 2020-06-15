@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000594 RID: 1428
+	// Token: 0x020005AA RID: 1450
 	public class FleePath : RandomPath
 	{
-		// Token: 0x060026D9 RID: 9945 RVA: 0x001AA398 File Offset: 0x001A8598
+		// Token: 0x0600272F RID: 10031 RVA: 0x001AFF84 File Offset: 0x001AE184
 		public static FleePath Construct(Vector3 start, Vector3 avoid, int searchLength, OnPathDelegate callback = null)
 		{
 			FleePath path = PathPool.GetPath<FleePath>();
@@ -14,7 +14,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026DA RID: 9946 RVA: 0x001AA3AC File Offset: 0x001A85AC
+		// Token: 0x06002730 RID: 10032 RVA: 0x001AFF98 File Offset: 0x001AE198
 		protected void Setup(Vector3 start, Vector3 avoid, int searchLength, OnPathDelegate callback)
 		{
 			base.Setup(start, searchLength, callback);

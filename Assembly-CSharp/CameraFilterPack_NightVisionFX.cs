@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001DC RID: 476
+// Token: 0x020001DD RID: 477
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Night Vision/Night Vision FX")]
 public class CameraFilterPack_NightVisionFX : MonoBehaviour
 {
 	// Token: 0x170002FC RID: 764
-	// (get) Token: 0x06001057 RID: 4183 RVA: 0x00077AF9 File Offset: 0x00075CF9
+	// (get) Token: 0x0600105E RID: 4190 RVA: 0x00078829 File Offset: 0x00076A29
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_NightVisionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001058 RID: 4184 RVA: 0x00077B2D File Offset: 0x00075D2D
+	// Token: 0x0600105F RID: 4191 RVA: 0x0007885D File Offset: 0x00076A5D
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/NightVisionFX");
@@ -32,7 +32,7 @@ public class CameraFilterPack_NightVisionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001059 RID: 4185 RVA: 0x00077B50 File Offset: 0x00075D50
+	// Token: 0x06001060 RID: 4192 RVA: 0x00078880 File Offset: 0x00076A80
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -66,7 +66,7 @@ public class CameraFilterPack_NightVisionFX : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x0600105A RID: 4186 RVA: 0x00077D4C File Offset: 0x00075F4C
+	// Token: 0x06001061 RID: 4193 RVA: 0x00078A7C File Offset: 0x00076C7C
 	private void Update()
 	{
 		if (this.PresetMemo != this.Preset)
@@ -281,7 +281,7 @@ public class CameraFilterPack_NightVisionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600105B RID: 4187 RVA: 0x00077F45 File Offset: 0x00076145
+	// Token: 0x06001062 RID: 4194 RVA: 0x00078C75 File Offset: 0x00076E75
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -290,109 +290,109 @@ public class CameraFilterPack_NightVisionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400133E RID: 4926
+	// Token: 0x0400135D RID: 4957
 	public Shader SCShader;
 
-	// Token: 0x0400133F RID: 4927
+	// Token: 0x0400135E RID: 4958
 	public CameraFilterPack_NightVisionFX.preset Preset;
 
-	// Token: 0x04001340 RID: 4928
+	// Token: 0x0400135F RID: 4959
 	private CameraFilterPack_NightVisionFX.preset PresetMemo;
 
-	// Token: 0x04001341 RID: 4929
+	// Token: 0x04001360 RID: 4960
 	private float TimeX = 1f;
 
-	// Token: 0x04001342 RID: 4930
+	// Token: 0x04001361 RID: 4961
 	private Material SCMaterial;
 
-	// Token: 0x04001343 RID: 4931
+	// Token: 0x04001362 RID: 4962
 	[Range(0f, 1f)]
 	public float OnOff;
 
-	// Token: 0x04001344 RID: 4932
+	// Token: 0x04001363 RID: 4963
 	[Range(0.2f, 2f)]
 	public float Greenness = 1f;
 
-	// Token: 0x04001345 RID: 4933
+	// Token: 0x04001364 RID: 4964
 	[Range(0f, 1f)]
 	public float Vignette = 1f;
 
-	// Token: 0x04001346 RID: 4934
+	// Token: 0x04001365 RID: 4965
 	[Range(0f, 1f)]
 	public float Vignette_Alpha = 1f;
 
-	// Token: 0x04001347 RID: 4935
+	// Token: 0x04001366 RID: 4966
 	[Range(-10f, 10f)]
 	public float Distortion = 1f;
 
-	// Token: 0x04001348 RID: 4936
+	// Token: 0x04001367 RID: 4967
 	[Range(0f, 1f)]
 	public float Noise = 1f;
 
-	// Token: 0x04001349 RID: 4937
+	// Token: 0x04001368 RID: 4968
 	[Range(-2f, 1f)]
 	public float Intensity = -1f;
 
-	// Token: 0x0400134A RID: 4938
+	// Token: 0x04001369 RID: 4969
 	[Range(0f, 2f)]
 	public float Light = 1f;
 
-	// Token: 0x0400134B RID: 4939
+	// Token: 0x0400136A RID: 4970
 	[Range(0f, 1f)]
 	public float Light2 = 1f;
 
-	// Token: 0x0400134C RID: 4940
+	// Token: 0x0400136B RID: 4971
 	[Range(0f, 2f)]
 	public float Line = 1f;
 
-	// Token: 0x0400134D RID: 4941
+	// Token: 0x0400136C RID: 4972
 	[Range(-2f, 2f)]
 	public float Color_R;
 
-	// Token: 0x0400134E RID: 4942
+	// Token: 0x0400136D RID: 4973
 	[Range(-2f, 2f)]
 	public float Color_G;
 
-	// Token: 0x0400134F RID: 4943
+	// Token: 0x0400136E RID: 4974
 	[Range(-2f, 2f)]
 	public float Color_B;
 
-	// Token: 0x04001350 RID: 4944
+	// Token: 0x0400136F RID: 4975
 	[Range(0f, 1f)]
 	public float _Binocular_Size = 0.499f;
 
-	// Token: 0x04001351 RID: 4945
+	// Token: 0x04001370 RID: 4976
 	[Range(0f, 1f)]
 	public float _Binocular_Smooth = 0.113f;
 
-	// Token: 0x04001352 RID: 4946
+	// Token: 0x04001371 RID: 4977
 	[Range(0f, 1f)]
 	public float _Binocular_Dist = 0.286f;
 
-	// Token: 0x0200069A RID: 1690
+	// Token: 0x020006B0 RID: 1712
 	public enum preset
 	{
-		// Token: 0x04004656 RID: 18006
+		// Token: 0x04004734 RID: 18228
 		Night_Vision_Personalized = -1,
-		// Token: 0x04004657 RID: 18007
+		// Token: 0x04004735 RID: 18229
 		Night_Vision_FX,
-		// Token: 0x04004658 RID: 18008
+		// Token: 0x04004736 RID: 18230
 		Night_Vision_Classic,
-		// Token: 0x04004659 RID: 18009
+		// Token: 0x04004737 RID: 18231
 		Night_Vision_Full,
-		// Token: 0x0400465A RID: 18010
+		// Token: 0x04004738 RID: 18232
 		Night_Vision_Dark,
-		// Token: 0x0400465B RID: 18011
+		// Token: 0x04004739 RID: 18233
 		Night_Vision_Sharp,
-		// Token: 0x0400465C RID: 18012
+		// Token: 0x0400473A RID: 18234
 		Night_Vision_BlueSky,
-		// Token: 0x0400465D RID: 18013
+		// Token: 0x0400473B RID: 18235
 		Night_Vision_Low_Light,
-		// Token: 0x0400465E RID: 18014
+		// Token: 0x0400473C RID: 18236
 		Night_Vision_Pinky,
-		// Token: 0x0400465F RID: 18015
+		// Token: 0x0400473D RID: 18237
 		Night_Vision_RedBurn,
-		// Token: 0x04004660 RID: 18016
+		// Token: 0x0400473E RID: 18238
 		Night_Vision_PurpleShadow
 	}
 }

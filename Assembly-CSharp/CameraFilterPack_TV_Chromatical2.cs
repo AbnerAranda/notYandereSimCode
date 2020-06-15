@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FC RID: 508
+// Token: 0x020001FD RID: 509
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Chromatical2")]
 public class CameraFilterPack_TV_Chromatical2 : MonoBehaviour
 {
 	// Token: 0x1700031C RID: 796
-	// (get) Token: 0x0600111E RID: 4382 RVA: 0x0007B9AF File Offset: 0x00079BAF
+	// (get) Token: 0x06001125 RID: 4389 RVA: 0x0007C6DF File Offset: 0x0007A8DF
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Chromatical2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111F RID: 4383 RVA: 0x0007B9E3 File Offset: 0x00079BE3
+	// Token: 0x06001126 RID: 4390 RVA: 0x0007C713 File Offset: 0x0007A913
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Chromatical2");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_Chromatical2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001120 RID: 4384 RVA: 0x0007BA04 File Offset: 0x00079C04
+	// Token: 0x06001127 RID: 4391 RVA: 0x0007C734 File Offset: 0x0007A934
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_TV_Chromatical2 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001121 RID: 4385 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001128 RID: 4392 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001122 RID: 4386 RVA: 0x0007BAFC File Offset: 0x00079CFC
+	// Token: 0x06001129 RID: 4393 RVA: 0x0007C82C File Offset: 0x0007AA2C
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_TV_Chromatical2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400142C RID: 5164
+	// Token: 0x0400144B RID: 5195
 	public Shader SCShader;
 
-	// Token: 0x0400142D RID: 5165
+	// Token: 0x0400144C RID: 5196
 	private float TimeX = 1f;
 
-	// Token: 0x0400142E RID: 5166
+	// Token: 0x0400144D RID: 5197
 	private Material SCMaterial;
 
-	// Token: 0x0400142F RID: 5167
+	// Token: 0x0400144E RID: 5198
 	[Range(0f, 10f)]
 	public float Aberration = 2f;
 
-	// Token: 0x04001430 RID: 5168
+	// Token: 0x0400144F RID: 5199
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04001431 RID: 5169
+	// Token: 0x04001450 RID: 5200
 	[Range(0f, 1f)]
 	public float ZoomFade = 1f;
 
-	// Token: 0x04001432 RID: 5170
+	// Token: 0x04001451 RID: 5201
 	[Range(0f, 8f)]
 	public float ZoomSpeed = 1f;
 }

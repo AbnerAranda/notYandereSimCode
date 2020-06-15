@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020003B0 RID: 944
+// Token: 0x020003B5 RID: 949
 [Serializable]
 public class ConversationSaveData
 {
-	// Token: 0x060019EF RID: 6639 RVA: 0x000FD3F8 File Offset: 0x000FB5F8
+	// Token: 0x06001A10 RID: 6672 RVA: 0x000FFAFC File Offset: 0x000FDCFC
 	public static ConversationSaveData ReadFromGlobals()
 	{
 		ConversationSaveData conversationSaveData = new ConversationSaveData();
@@ -25,7 +25,7 @@ public class ConversationSaveData
 		return conversationSaveData;
 	}
 
-	// Token: 0x060019F0 RID: 6640 RVA: 0x000FD478 File Offset: 0x000FB678
+	// Token: 0x06001A11 RID: 6673 RVA: 0x000FFB7C File Offset: 0x000FDD7C
 	public static void WriteToGlobals(ConversationSaveData data)
 	{
 		foreach (int topicID in data.topicDiscovered)
@@ -38,9 +38,9 @@ public class ConversationSaveData
 		}
 	}
 
-	// Token: 0x04002898 RID: 10392
+	// Token: 0x040028F5 RID: 10485
 	public IntHashSet topicDiscovered = new IntHashSet();
 
-	// Token: 0x04002899 RID: 10393
+	// Token: 0x040028F6 RID: 10486
 	public IntAndIntPairHashSet topicLearnedByStudent = new IntAndIntPairHashSet();
 }

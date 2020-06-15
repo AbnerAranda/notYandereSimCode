@@ -2,13 +2,13 @@
 
 namespace UnityEngine.PostProcessing
 {
-	// Token: 0x020004BC RID: 1212
+	// Token: 0x020004CC RID: 1228
 	[Serializable]
 	public class AntialiasingModel : PostProcessingModel
 	{
-		// Token: 0x170004A5 RID: 1189
-		// (get) Token: 0x06001EC0 RID: 7872 RVA: 0x0017E1E5 File Offset: 0x0017C3E5
-		// (set) Token: 0x06001EC1 RID: 7873 RVA: 0x0017E1ED File Offset: 0x0017C3ED
+		// Token: 0x170004AB RID: 1195
+		// (get) Token: 0x06001F02 RID: 7938 RVA: 0x001836B1 File Offset: 0x001818B1
+		// (set) Token: 0x06001F03 RID: 7939 RVA: 0x001836B9 File Offset: 0x001818B9
 		public AntialiasingModel.Settings settings
 		{
 			get
@@ -21,60 +21,60 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x06001EC2 RID: 7874 RVA: 0x0017E1F6 File Offset: 0x0017C3F6
+		// Token: 0x06001F04 RID: 7940 RVA: 0x001836C2 File Offset: 0x001818C2
 		public override void Reset()
 		{
 			this.m_Settings = AntialiasingModel.Settings.defaultSettings;
 		}
 
-		// Token: 0x04003C79 RID: 15481
+		// Token: 0x04003D29 RID: 15657
 		[SerializeField]
 		private AntialiasingModel.Settings m_Settings = AntialiasingModel.Settings.defaultSettings;
 
-		// Token: 0x020006CE RID: 1742
+		// Token: 0x020006E7 RID: 1767
 		public enum Method
 		{
-			// Token: 0x0400479C RID: 18332
+			// Token: 0x04004885 RID: 18565
 			Fxaa,
-			// Token: 0x0400479D RID: 18333
+			// Token: 0x04004886 RID: 18566
 			Taa
 		}
 
-		// Token: 0x020006CF RID: 1743
+		// Token: 0x020006E8 RID: 1768
 		public enum FxaaPreset
 		{
-			// Token: 0x0400479F RID: 18335
+			// Token: 0x04004888 RID: 18568
 			ExtremePerformance,
-			// Token: 0x040047A0 RID: 18336
+			// Token: 0x04004889 RID: 18569
 			Performance,
-			// Token: 0x040047A1 RID: 18337
+			// Token: 0x0400488A RID: 18570
 			Default,
-			// Token: 0x040047A2 RID: 18338
+			// Token: 0x0400488B RID: 18571
 			Quality,
-			// Token: 0x040047A3 RID: 18339
+			// Token: 0x0400488C RID: 18572
 			ExtremeQuality
 		}
 
-		// Token: 0x020006D0 RID: 1744
+		// Token: 0x020006E9 RID: 1769
 		[Serializable]
 		public struct FxaaQualitySettings
 		{
-			// Token: 0x040047A4 RID: 18340
+			// Token: 0x0400488D RID: 18573
 			[Tooltip("The amount of desired sub-pixel aliasing removal. Effects the sharpeness of the output.")]
 			[Range(0f, 1f)]
 			public float subpixelAliasingRemovalAmount;
 
-			// Token: 0x040047A5 RID: 18341
+			// Token: 0x0400488E RID: 18574
 			[Tooltip("The minimum amount of local contrast required to qualify a region as containing an edge.")]
 			[Range(0.063f, 0.333f)]
 			public float edgeDetectionThreshold;
 
-			// Token: 0x040047A6 RID: 18342
+			// Token: 0x0400488F RID: 18575
 			[Tooltip("Local contrast adaptation value to disallow the algorithm from executing on the darker regions.")]
 			[Range(0f, 0.0833f)]
 			public float minimumRequiredLuminance;
 
-			// Token: 0x040047A7 RID: 18343
+			// Token: 0x04004890 RID: 18576
 			public static AntialiasingModel.FxaaQualitySettings[] presets = new AntialiasingModel.FxaaQualitySettings[]
 			{
 				new AntialiasingModel.FxaaQualitySettings
@@ -110,31 +110,31 @@ namespace UnityEngine.PostProcessing
 			};
 		}
 
-		// Token: 0x020006D1 RID: 1745
+		// Token: 0x020006EA RID: 1770
 		[Serializable]
 		public struct FxaaConsoleSettings
 		{
-			// Token: 0x040047A8 RID: 18344
+			// Token: 0x04004891 RID: 18577
 			[Tooltip("The amount of spread applied to the sampling coordinates while sampling for subpixel information.")]
 			[Range(0.33f, 0.5f)]
 			public float subpixelSpreadAmount;
 
-			// Token: 0x040047A9 RID: 18345
+			// Token: 0x04004892 RID: 18578
 			[Tooltip("This value dictates how sharp the edges in the image are kept; a higher value implies sharper edges.")]
 			[Range(2f, 8f)]
 			public float edgeSharpnessAmount;
 
-			// Token: 0x040047AA RID: 18346
+			// Token: 0x04004893 RID: 18579
 			[Tooltip("The minimum amount of local contrast required to qualify a region as containing an edge.")]
 			[Range(0.125f, 0.25f)]
 			public float edgeDetectionThreshold;
 
-			// Token: 0x040047AB RID: 18347
+			// Token: 0x04004894 RID: 18580
 			[Tooltip("Local contrast adaptation value to disallow the algorithm from executing on the darker regions.")]
 			[Range(0.04f, 0.06f)]
 			public float minimumRequiredLuminance;
 
-			// Token: 0x040047AC RID: 18348
+			// Token: 0x04004895 RID: 18581
 			public static AntialiasingModel.FxaaConsoleSettings[] presets = new AntialiasingModel.FxaaConsoleSettings[]
 			{
 				new AntialiasingModel.FxaaConsoleSettings
@@ -175,12 +175,12 @@ namespace UnityEngine.PostProcessing
 			};
 		}
 
-		// Token: 0x020006D2 RID: 1746
+		// Token: 0x020006EB RID: 1771
 		[Serializable]
 		public struct FxaaSettings
 		{
-			// Token: 0x1700063E RID: 1598
-			// (get) Token: 0x06002C00 RID: 11264 RVA: 0x001C8224 File Offset: 0x001C6424
+			// Token: 0x17000644 RID: 1604
+			// (get) Token: 0x06002C62 RID: 11362 RVA: 0x001CDEBC File Offset: 0x001CC0BC
 			public static AntialiasingModel.FxaaSettings defaultSettings
 			{
 				get
@@ -192,16 +192,16 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047AD RID: 18349
+			// Token: 0x04004896 RID: 18582
 			public AntialiasingModel.FxaaPreset preset;
 		}
 
-		// Token: 0x020006D3 RID: 1747
+		// Token: 0x020006EC RID: 1772
 		[Serializable]
 		public struct TaaSettings
 		{
-			// Token: 0x1700063F RID: 1599
-			// (get) Token: 0x06002C01 RID: 11265 RVA: 0x001C8244 File Offset: 0x001C6444
+			// Token: 0x17000645 RID: 1605
+			// (get) Token: 0x06002C63 RID: 11363 RVA: 0x001CDEDC File Offset: 0x001CC0DC
 			public static AntialiasingModel.TaaSettings defaultSettings
 			{
 				get
@@ -216,33 +216,33 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047AE RID: 18350
+			// Token: 0x04004897 RID: 18583
 			[Tooltip("The diameter (in texels) inside which jitter samples are spread. Smaller values result in crisper but more aliased output, while larger values result in more stable but blurrier output.")]
 			[Range(0.1f, 1f)]
 			public float jitterSpread;
 
-			// Token: 0x040047AF RID: 18351
+			// Token: 0x04004898 RID: 18584
 			[Tooltip("Controls the amount of sharpening applied to the color buffer.")]
 			[Range(0f, 3f)]
 			public float sharpen;
 
-			// Token: 0x040047B0 RID: 18352
+			// Token: 0x04004899 RID: 18585
 			[Tooltip("The blend coefficient for a stationary fragment. Controls the percentage of history sample blended into the final color.")]
 			[Range(0f, 0.99f)]
 			public float stationaryBlending;
 
-			// Token: 0x040047B1 RID: 18353
+			// Token: 0x0400489A RID: 18586
 			[Tooltip("The blend coefficient for a fragment with significant motion. Controls the percentage of history sample blended into the final color.")]
 			[Range(0f, 0.99f)]
 			public float motionBlending;
 		}
 
-		// Token: 0x020006D4 RID: 1748
+		// Token: 0x020006ED RID: 1773
 		[Serializable]
 		public struct Settings
 		{
-			// Token: 0x17000640 RID: 1600
-			// (get) Token: 0x06002C02 RID: 11266 RVA: 0x001C828C File Offset: 0x001C648C
+			// Token: 0x17000646 RID: 1606
+			// (get) Token: 0x06002C64 RID: 11364 RVA: 0x001CDF24 File Offset: 0x001CC124
 			public static AntialiasingModel.Settings defaultSettings
 			{
 				get
@@ -256,13 +256,13 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047B2 RID: 18354
+			// Token: 0x0400489B RID: 18587
 			public AntialiasingModel.Method method;
 
-			// Token: 0x040047B3 RID: 18355
+			// Token: 0x0400489C RID: 18588
 			public AntialiasingModel.FxaaSettings fxaaSettings;
 
-			// Token: 0x040047B4 RID: 18356
+			// Token: 0x0400489D RID: 18589
 			public AntialiasingModel.TaaSettings taaSettings;
 		}
 	}

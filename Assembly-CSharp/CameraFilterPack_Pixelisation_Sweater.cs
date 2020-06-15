@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001ED RID: 493
+// Token: 0x020001EE RID: 494
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Pixelisation/Pixelisation_Sweater")]
 public class CameraFilterPack_Pixelisation_Sweater : MonoBehaviour
 {
 	// Token: 0x1700030D RID: 781
-	// (get) Token: 0x060010C3 RID: 4291 RVA: 0x00079DC2 File Offset: 0x00077FC2
+	// (get) Token: 0x060010CA RID: 4298 RVA: 0x0007AAF2 File Offset: 0x00078CF2
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Pixelisation_Sweater : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010C4 RID: 4292 RVA: 0x00079DF6 File Offset: 0x00077FF6
+	// Token: 0x060010CB RID: 4299 RVA: 0x0007AB26 File Offset: 0x00078D26
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_Sweater") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_Pixelisation_Sweater : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010C5 RID: 4293 RVA: 0x00079E2C File Offset: 0x0007802C
+	// Token: 0x060010CC RID: 4300 RVA: 0x0007AB5C File Offset: 0x00078D5C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Pixelisation_Sweater : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060010C6 RID: 4294 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060010CD RID: 4301 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060010C7 RID: 4295 RVA: 0x00079EF7 File Offset: 0x000780F7
+	// Token: 0x060010CE RID: 4302 RVA: 0x0007AC27 File Offset: 0x00078E27
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,27 +68,27 @@ public class CameraFilterPack_Pixelisation_Sweater : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013C0 RID: 5056
+	// Token: 0x040013DF RID: 5087
 	public Shader SCShader;
 
-	// Token: 0x040013C1 RID: 5057
+	// Token: 0x040013E0 RID: 5088
 	private float TimeX = 1f;
 
-	// Token: 0x040013C2 RID: 5058
+	// Token: 0x040013E1 RID: 5089
 	private Material SCMaterial;
 
-	// Token: 0x040013C3 RID: 5059
+	// Token: 0x040013E2 RID: 5090
 	[Range(16f, 128f)]
 	public float SweaterSize = 64f;
 
-	// Token: 0x040013C4 RID: 5060
+	// Token: 0x040013E3 RID: 5091
 	[Range(0f, 2f)]
 	public float _Intensity = 1.4f;
 
-	// Token: 0x040013C5 RID: 5061
+	// Token: 0x040013E4 RID: 5092
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x040013C6 RID: 5062
+	// Token: 0x040013E5 RID: 5093
 	private Texture2D Texture2;
 }

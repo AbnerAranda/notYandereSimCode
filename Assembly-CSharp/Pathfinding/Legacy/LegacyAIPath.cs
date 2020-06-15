@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Pathfinding.Legacy
 {
-	// Token: 0x020005A6 RID: 1446
+	// Token: 0x020005BC RID: 1468
 	[RequireComponent(typeof(Seeker))]
 	[AddComponentMenu("Pathfinding/Legacy/AI/Legacy AIPath (3D)")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_legacy_1_1_legacy_a_i_path.php")]
 	public class LegacyAIPath : AIPath
 	{
-		// Token: 0x0600275F RID: 10079 RVA: 0x001ADE57 File Offset: 0x001AC057
+		// Token: 0x060027B5 RID: 10165 RVA: 0x001B3A43 File Offset: 0x001B1C43
 		protected override void Awake()
 		{
 			base.Awake();
@@ -25,7 +25,7 @@ namespace Pathfinding.Legacy
 			}
 		}
 
-		// Token: 0x06002760 RID: 10080 RVA: 0x001ADE98 File Offset: 0x001AC098
+		// Token: 0x060027B6 RID: 10166 RVA: 0x001B3A84 File Offset: 0x001B1C84
 		protected override void OnPathComplete(Path _p)
 		{
 			ABPath abpath = _p as ABPath;
@@ -62,7 +62,7 @@ namespace Pathfinding.Legacy
 			}
 		}
 
-		// Token: 0x06002761 RID: 10081 RVA: 0x001ADF78 File Offset: 0x001AC178
+		// Token: 0x060027B7 RID: 10167 RVA: 0x001B3B64 File Offset: 0x001B1D64
 		protected override void Update()
 		{
 			if (!this.canMove)
@@ -89,7 +89,7 @@ namespace Pathfinding.Legacy
 			this.tr.Translate(vector * Time.deltaTime, Space.World);
 		}
 
-		// Token: 0x06002762 RID: 10082 RVA: 0x001AE010 File Offset: 0x001AC210
+		// Token: 0x060027B8 RID: 10168 RVA: 0x001B3BFC File Offset: 0x001B1DFC
 		protected float XZSqrMagnitude(Vector3 a, Vector3 b)
 		{
 			float num = b.x - a.x;
@@ -97,7 +97,7 @@ namespace Pathfinding.Legacy
 			return num * num + num2 * num2;
 		}
 
-		// Token: 0x06002763 RID: 10083 RVA: 0x001AE040 File Offset: 0x001AC240
+		// Token: 0x060027B9 RID: 10169 RVA: 0x001B3C2C File Offset: 0x001B1E2C
 		protected new Vector3 CalculateVelocity(Vector3 currentPosition)
 		{
 			if (this.path == null || this.path.vectorPath == null || this.path.vectorPath.Count == 0)
@@ -148,7 +148,7 @@ namespace Pathfinding.Legacy
 			return forward * num2;
 		}
 
-		// Token: 0x06002764 RID: 10084 RVA: 0x001AE224 File Offset: 0x001AC424
+		// Token: 0x060027BA RID: 10170 RVA: 0x001B3E10 File Offset: 0x001B2010
 		protected void RotateTowards(Vector3 dir)
 		{
 			if (dir == Vector3.zero)
@@ -164,7 +164,7 @@ namespace Pathfinding.Legacy
 			this.tr.rotation = quaternion;
 		}
 
-		// Token: 0x06002765 RID: 10085 RVA: 0x001AE29C File Offset: 0x001AC49C
+		// Token: 0x060027BB RID: 10171 RVA: 0x001B3E88 File Offset: 0x001B2088
 		protected Vector3 CalculateTargetPoint(Vector3 p, Vector3 a, Vector3 b)
 		{
 			a.y = p.y;
@@ -181,25 +181,25 @@ namespace Pathfinding.Legacy
 			return (b - a) * num2 + a;
 		}
 
-		// Token: 0x040041CC RID: 16844
+		// Token: 0x040042AA RID: 17066
 		public float forwardLook = 1f;
 
-		// Token: 0x040041CD RID: 16845
+		// Token: 0x040042AB RID: 17067
 		public bool closestOnPathCheck = true;
 
-		// Token: 0x040041CE RID: 16846
+		// Token: 0x040042AC RID: 17068
 		protected float minMoveScale = 0.05f;
 
-		// Token: 0x040041CF RID: 16847
+		// Token: 0x040042AD RID: 17069
 		protected int currentWaypointIndex;
 
-		// Token: 0x040041D0 RID: 16848
+		// Token: 0x040042AE RID: 17070
 		protected Vector3 lastFoundWaypointPosition;
 
-		// Token: 0x040041D1 RID: 16849
+		// Token: 0x040042AF RID: 17071
 		protected float lastFoundWaypointTime = -9999f;
 
-		// Token: 0x040041D2 RID: 16850
+		// Token: 0x040042B0 RID: 17072
 		protected new Vector3 targetDirection;
 	}
 }

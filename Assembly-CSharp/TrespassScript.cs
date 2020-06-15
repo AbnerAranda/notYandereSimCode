@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000431 RID: 1073
+// Token: 0x02000436 RID: 1078
 public class TrespassScript : MonoBehaviour
 {
-	// Token: 0x06001C6C RID: 7276 RVA: 0x00153C4C File Offset: 0x00151E4C
+	// Token: 0x06001C91 RID: 7313 RVA: 0x00157148 File Offset: 0x00155348
 	private void OnTriggerEnter(Collider other)
 	{
 		if (base.enabled && other.gameObject.layer == 13)
@@ -22,7 +22,7 @@ public class TrespassScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C6D RID: 7277 RVA: 0x00153CC5 File Offset: 0x00151EC5
+	// Token: 0x06001C92 RID: 7314 RVA: 0x001571C1 File Offset: 0x001553C1
 	private void OnTriggerExit(Collider other)
 	{
 		if (this.Yandere != null && other.gameObject == this.YandereObject)
@@ -31,15 +31,15 @@ public class TrespassScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400355C RID: 13660
+	// Token: 0x040035D1 RID: 13777
 	public GameObject YandereObject;
 
-	// Token: 0x0400355D RID: 13661
+	// Token: 0x040035D2 RID: 13778
 	public YandereScript Yandere;
 
-	// Token: 0x0400355E RID: 13662
+	// Token: 0x040035D3 RID: 13779
 	public bool HideNotification;
 
-	// Token: 0x0400355F RID: 13663
+	// Token: 0x040035D4 RID: 13780
 	public bool OffLimits;
 }

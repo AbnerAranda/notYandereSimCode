@@ -4,10 +4,10 @@ using Pathfinding.WindowsStore;
 
 namespace Pathfinding.Serialization
 {
-	// Token: 0x020005BA RID: 1466
+	// Token: 0x020005D0 RID: 1488
 	public class GraphMeta
 	{
-		// Token: 0x0600280D RID: 10253 RVA: 0x001B6628 File Offset: 0x001B4828
+		// Token: 0x06002863 RID: 10339 RVA: 0x001BC214 File Offset: 0x001BA414
 		public Type GetGraphType(int index)
 		{
 			if (string.IsNullOrEmpty(this.typeNames[index]))
@@ -22,16 +22,16 @@ namespace Pathfinding.Serialization
 			throw new Exception("No graph of type '" + this.typeNames[index] + "' could be created, type does not exist");
 		}
 
-		// Token: 0x04004252 RID: 16978
+		// Token: 0x04004330 RID: 17200
 		public Version version;
 
-		// Token: 0x04004253 RID: 16979
+		// Token: 0x04004331 RID: 17201
 		public int graphs;
 
-		// Token: 0x04004254 RID: 16980
+		// Token: 0x04004332 RID: 17202
 		public List<string> guids;
 
-		// Token: 0x04004255 RID: 16981
+		// Token: 0x04004333 RID: 17203
 		public List<string> typeNames;
 	}
 }

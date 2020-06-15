@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003DF RID: 991
+// Token: 0x020003E4 RID: 996
 public class SkullScript : MonoBehaviour
 {
-	// Token: 0x06001A9C RID: 6812 RVA: 0x00109090 File Offset: 0x00107290
+	// Token: 0x06001ABD RID: 6845 RVA: 0x0010B8C8 File Offset: 0x00109AC8
 	private void Start()
 	{
 		this.OriginalPosition = this.RitualKnife.transform.position;
@@ -12,7 +12,7 @@ public class SkullScript : MonoBehaviour
 		this.MissionMode = MissionModeGlobals.MissionMode;
 	}
 
-	// Token: 0x06001A9D RID: 6813 RVA: 0x001090CC File Offset: 0x001072CC
+	// Token: 0x06001ABE RID: 6846 RVA: 0x0010B904 File Offset: 0x00109B04
 	private void Update()
 	{
 		if (this.Yandere.Armed)
@@ -91,6 +91,7 @@ public class SkullScript : MonoBehaviour
 				this.RitualKnife.GetComponent<WeaponScript>().FireAudio.Play();
 				this.RitualKnife.GetComponent<WeaponScript>().Flaming = true;
 				this.Prompt.enabled = true;
+				this.Prompt.Yandere.Police.Invalid = true;
 				component.clip = this.FlameActivation;
 				component.Play();
 			}
@@ -142,69 +143,69 @@ public class SkullScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002AB4 RID: 10932
+	// Token: 0x04002B15 RID: 11029
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04002AB5 RID: 10933
+	// Token: 0x04002B16 RID: 11030
 	public VoidGoddessScript VoidGoddess;
 
-	// Token: 0x04002AB6 RID: 10934
+	// Token: 0x04002B17 RID: 11031
 	public JukeboxScript Jukebox;
 
-	// Token: 0x04002AB7 RID: 10935
+	// Token: 0x04002B18 RID: 11032
 	public YandereScript Yandere;
 
-	// Token: 0x04002AB8 RID: 10936
+	// Token: 0x04002B19 RID: 11033
 	public PromptScript Prompt;
 
-	// Token: 0x04002AB9 RID: 10937
+	// Token: 0x04002B1A RID: 11034
 	public ClockScript Clock;
 
-	// Token: 0x04002ABA RID: 10938
+	// Token: 0x04002B1B RID: 11035
 	public AudioClip FlameDemonVoice;
 
-	// Token: 0x04002ABB RID: 10939
+	// Token: 0x04002B1C RID: 11036
 	public AudioClip FlameActivation;
 
-	// Token: 0x04002ABC RID: 10940
+	// Token: 0x04002B1D RID: 11037
 	public GameObject HeartbeatCamera;
 
-	// Token: 0x04002ABD RID: 10941
+	// Token: 0x04002B1E RID: 11038
 	public GameObject RitualKnife;
 
-	// Token: 0x04002ABE RID: 10942
+	// Token: 0x04002B1F RID: 11039
 	public GameObject EmptyDemon;
 
-	// Token: 0x04002ABF RID: 10943
+	// Token: 0x04002B20 RID: 11040
 	public GameObject DebugMenu;
 
-	// Token: 0x04002AC0 RID: 10944
+	// Token: 0x04002B21 RID: 11041
 	public GameObject DarkAura;
 
-	// Token: 0x04002AC1 RID: 10945
+	// Token: 0x04002B22 RID: 11042
 	public GameObject Hell;
 
-	// Token: 0x04002AC2 RID: 10946
+	// Token: 0x04002B23 RID: 11043
 	public GameObject FPS;
 
-	// Token: 0x04002AC3 RID: 10947
+	// Token: 0x04002B24 RID: 11044
 	public GameObject HUD;
 
-	// Token: 0x04002AC4 RID: 10948
+	// Token: 0x04002B25 RID: 11045
 	public Vector3 OriginalPosition;
 
-	// Token: 0x04002AC5 RID: 10949
+	// Token: 0x04002B26 RID: 11046
 	public Vector3 OriginalRotation;
 
-	// Token: 0x04002AC6 RID: 10950
+	// Token: 0x04002B27 RID: 11047
 	public UISprite Darkness;
 
-	// Token: 0x04002AC7 RID: 10951
+	// Token: 0x04002B28 RID: 11048
 	public float FlameTimer;
 
-	// Token: 0x04002AC8 RID: 10952
+	// Token: 0x04002B29 RID: 11049
 	public float Timer;
 
-	// Token: 0x04002AC9 RID: 10953
+	// Token: 0x04002B2A RID: 11050
 	public bool MissionMode;
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class UIImageButton : MonoBehaviour
 {
 	// Token: 0x17000027 RID: 39
-	// (get) Token: 0x06000221 RID: 545 RVA: 0x00018264 File Offset: 0x00016464
-	// (set) Token: 0x06000222 RID: 546 RVA: 0x00018290 File Offset: 0x00016490
+	// (get) Token: 0x06000222 RID: 546 RVA: 0x0001828C File Offset: 0x0001648C
+	// (set) Token: 0x06000223 RID: 547 RVA: 0x000182B8 File Offset: 0x000164B8
 	public bool isEnabled
 	{
 		get
@@ -30,7 +30,7 @@ public class UIImageButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000223 RID: 547 RVA: 0x000182C8 File Offset: 0x000164C8
+	// Token: 0x06000224 RID: 548 RVA: 0x000182F0 File Offset: 0x000164F0
 	private void OnEnable()
 	{
 		if (this.target == null)
@@ -40,7 +40,7 @@ public class UIImageButton : MonoBehaviour
 		this.UpdateImage();
 	}
 
-	// Token: 0x06000224 RID: 548 RVA: 0x000182EC File Offset: 0x000164EC
+	// Token: 0x06000225 RID: 549 RVA: 0x00018314 File Offset: 0x00016514
 	private void OnValidate()
 	{
 		if (this.target != null)
@@ -64,7 +64,7 @@ public class UIImageButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000225 RID: 549 RVA: 0x00018380 File Offset: 0x00016580
+	// Token: 0x06000226 RID: 550 RVA: 0x000183A8 File Offset: 0x000165A8
 	private void UpdateImage()
 	{
 		if (this.target != null)
@@ -78,7 +78,7 @@ public class UIImageButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000226 RID: 550 RVA: 0x000183D1 File Offset: 0x000165D1
+	// Token: 0x06000227 RID: 551 RVA: 0x000183F9 File Offset: 0x000165F9
 	private void OnHover(bool isOver)
 	{
 		if (this.isEnabled && this.target != null)
@@ -87,7 +87,7 @@ public class UIImageButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000227 RID: 551 RVA: 0x00018400 File Offset: 0x00016600
+	// Token: 0x06000228 RID: 552 RVA: 0x00018428 File Offset: 0x00016628
 	private void OnPress(bool pressed)
 	{
 		if (pressed)
@@ -98,7 +98,7 @@ public class UIImageButton : MonoBehaviour
 		this.UpdateImage();
 	}
 
-	// Token: 0x06000228 RID: 552 RVA: 0x00018418 File Offset: 0x00016618
+	// Token: 0x06000229 RID: 553 RVA: 0x00018440 File Offset: 0x00016640
 	private void SetSprite(string sprite)
 	{
 		if (string.IsNullOrEmpty(sprite))
@@ -122,21 +122,21 @@ public class UIImageButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040003A5 RID: 933
+	// Token: 0x040003A7 RID: 935
 	public UISprite target;
 
-	// Token: 0x040003A6 RID: 934
+	// Token: 0x040003A8 RID: 936
 	public string normalSprite;
 
-	// Token: 0x040003A7 RID: 935
+	// Token: 0x040003A9 RID: 937
 	public string hoverSprite;
 
-	// Token: 0x040003A8 RID: 936
+	// Token: 0x040003AA RID: 938
 	public string pressedSprite;
 
-	// Token: 0x040003A9 RID: 937
+	// Token: 0x040003AB RID: 939
 	public string disabledSprite;
 
-	// Token: 0x040003AA RID: 938
+	// Token: 0x040003AC RID: 940
 	public bool pixelSnap = true;
 }

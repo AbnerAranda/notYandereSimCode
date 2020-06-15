@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005D6 RID: 1494
+	// Token: 0x020005EC RID: 1516
 	public class PathInterpolator
 	{
-		// Token: 0x170005F9 RID: 1529
-		// (get) Token: 0x06002919 RID: 10521 RVA: 0x001BB604 File Offset: 0x001B9804
+		// Token: 0x170005FF RID: 1535
+		// (get) Token: 0x0600296F RID: 10607 RVA: 0x001C11F0 File Offset: 0x001BF3F0
 		public virtual Vector3 position
 		{
 			get
@@ -18,8 +18,8 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x170005FA RID: 1530
-		// (get) Token: 0x0600291A RID: 10522 RVA: 0x001BB664 File Offset: 0x001B9864
+		// Token: 0x17000600 RID: 1536
+		// (get) Token: 0x06002970 RID: 10608 RVA: 0x001C1250 File Offset: 0x001BF450
 		public Vector3 tangent
 		{
 			get
@@ -28,9 +28,9 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x170005FB RID: 1531
-		// (get) Token: 0x0600291B RID: 10523 RVA: 0x001BB68F File Offset: 0x001B988F
-		// (set) Token: 0x0600291C RID: 10524 RVA: 0x001BB69E File Offset: 0x001B989E
+		// Token: 0x17000601 RID: 1537
+		// (get) Token: 0x06002971 RID: 10609 RVA: 0x001C127B File Offset: 0x001BF47B
+		// (set) Token: 0x06002972 RID: 10610 RVA: 0x001C128A File Offset: 0x001BF48A
 		public float remainingDistance
 		{
 			get
@@ -43,9 +43,9 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x170005FC RID: 1532
-		// (get) Token: 0x0600291D RID: 10525 RVA: 0x001BB6AE File Offset: 0x001B98AE
-		// (set) Token: 0x0600291E RID: 10526 RVA: 0x001BB6B8 File Offset: 0x001B98B8
+		// Token: 0x17000602 RID: 1538
+		// (get) Token: 0x06002973 RID: 10611 RVA: 0x001C129A File Offset: 0x001BF49A
+		// (set) Token: 0x06002974 RID: 10612 RVA: 0x001C12A4 File Offset: 0x001BF4A4
 		public float distance
 		{
 			get
@@ -70,13 +70,13 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x170005FD RID: 1533
-		// (get) Token: 0x0600291F RID: 10527 RVA: 0x001BB71D File Offset: 0x001B991D
-		// (set) Token: 0x06002920 RID: 10528 RVA: 0x001BB725 File Offset: 0x001B9925
+		// Token: 0x17000603 RID: 1539
+		// (get) Token: 0x06002975 RID: 10613 RVA: 0x001C1309 File Offset: 0x001BF509
+		// (set) Token: 0x06002976 RID: 10614 RVA: 0x001C1311 File Offset: 0x001BF511
 		public int segmentIndex { get; private set; }
 
-		// Token: 0x170005FE RID: 1534
-		// (get) Token: 0x06002921 RID: 10529 RVA: 0x001BB72E File Offset: 0x001B992E
+		// Token: 0x17000604 RID: 1540
+		// (get) Token: 0x06002977 RID: 10615 RVA: 0x001C131A File Offset: 0x001BF51A
 		public bool valid
 		{
 			get
@@ -85,7 +85,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002922 RID: 10530 RVA: 0x001BB73C File Offset: 0x001B993C
+		// Token: 0x06002978 RID: 10616 RVA: 0x001C1328 File Offset: 0x001BF528
 		public void SetPath(List<Vector3> path)
 		{
 			this.path = path;
@@ -113,7 +113,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002923 RID: 10531 RVA: 0x001BB808 File Offset: 0x001B9A08
+		// Token: 0x06002979 RID: 10617 RVA: 0x001C13F4 File Offset: 0x001BF5F4
 		public void MoveToSegment(int index, float fractionAlongSegment)
 		{
 			if (this.path == null)
@@ -135,7 +135,7 @@ namespace Pathfinding.Util
 			this.distance = this.distanceToSegmentStart + Mathf.Clamp01(fractionAlongSegment) * this.currentSegmentLength;
 		}
 
-		// Token: 0x06002924 RID: 10532 RVA: 0x001BB878 File Offset: 0x001B9A78
+		// Token: 0x0600297A RID: 10618 RVA: 0x001C1464 File Offset: 0x001BF664
 		public void MoveToClosestPoint(Vector3 point)
 		{
 			if (this.path == null)
@@ -160,7 +160,7 @@ namespace Pathfinding.Util
 			this.MoveToSegment(index, fractionAlongSegment);
 		}
 
-		// Token: 0x06002925 RID: 10533 RVA: 0x001BB924 File Offset: 0x001B9B24
+		// Token: 0x0600297B RID: 10619 RVA: 0x001C1510 File Offset: 0x001BF710
 		public void MoveToLocallyClosestPoint(Vector3 point, bool allowForwards = true, bool allowBackwards = true)
 		{
 			if (this.path == null)
@@ -201,7 +201,7 @@ namespace Pathfinding.Util
 			this.MoveToSegment(this.segmentIndex, num2);
 		}
 
-		// Token: 0x06002926 RID: 10534 RVA: 0x001BBB18 File Offset: 0x001B9D18
+		// Token: 0x0600297C RID: 10620 RVA: 0x001C1704 File Offset: 0x001BF904
 		public void MoveToCircleIntersection2D(Vector3 circleCenter3D, float radius, IMovementPlane transform)
 		{
 			if (this.path == null)
@@ -221,7 +221,7 @@ namespace Pathfinding.Util
 			this.MoveToSegment(this.segmentIndex, fractionAlongSegment);
 		}
 
-		// Token: 0x06002927 RID: 10535 RVA: 0x001BBC20 File Offset: 0x001B9E20
+		// Token: 0x0600297D RID: 10621 RVA: 0x001C180C File Offset: 0x001BFA0C
 		protected virtual void PrevSegment()
 		{
 			int segmentIndex = this.segmentIndex;
@@ -230,7 +230,7 @@ namespace Pathfinding.Util
 			this.distanceToSegmentStart -= this.currentSegmentLength;
 		}
 
-		// Token: 0x06002928 RID: 10536 RVA: 0x001BBC88 File Offset: 0x001B9E88
+		// Token: 0x0600297E RID: 10622 RVA: 0x001C1874 File Offset: 0x001BFA74
 		protected virtual void NextSegment()
 		{
 			int segmentIndex = this.segmentIndex;
@@ -239,19 +239,19 @@ namespace Pathfinding.Util
 			this.currentSegmentLength = (this.path[this.segmentIndex + 1] - this.path[this.segmentIndex]).magnitude;
 		}
 
-		// Token: 0x04004305 RID: 17157
+		// Token: 0x040043E3 RID: 17379
 		private List<Vector3> path;
 
-		// Token: 0x04004306 RID: 17158
+		// Token: 0x040043E4 RID: 17380
 		private float distanceToSegmentStart;
 
-		// Token: 0x04004307 RID: 17159
+		// Token: 0x040043E5 RID: 17381
 		private float currentDistance;
 
-		// Token: 0x04004308 RID: 17160
+		// Token: 0x040043E6 RID: 17382
 		private float currentSegmentLength = float.PositiveInfinity;
 
-		// Token: 0x04004309 RID: 17161
+		// Token: 0x040043E7 RID: 17383
 		private float totalDistance = float.PositiveInfinity;
 	}
 }

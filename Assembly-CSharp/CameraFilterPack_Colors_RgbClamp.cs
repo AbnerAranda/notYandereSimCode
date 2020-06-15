@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000161 RID: 353
+// Token: 0x02000162 RID: 354
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/RgbClamp")]
 public class CameraFilterPack_Colors_RgbClamp : MonoBehaviour
 {
 	// Token: 0x17000281 RID: 641
-	// (get) Token: 0x06000D58 RID: 3416 RVA: 0x0006AE5D File Offset: 0x0006905D
+	// (get) Token: 0x06000D5F RID: 3423 RVA: 0x0006BB8D File Offset: 0x00069D8D
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Colors_RgbClamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D59 RID: 3417 RVA: 0x0006AE91 File Offset: 0x00069091
+	// Token: 0x06000D60 RID: 3424 RVA: 0x0006BBC1 File Offset: 0x00069DC1
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Colors_RgbClamp");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Colors_RgbClamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D5A RID: 3418 RVA: 0x0006AEB4 File Offset: 0x000690B4
+	// Token: 0x06000D61 RID: 3425 RVA: 0x0006BBE4 File Offset: 0x00069DE4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -58,12 +58,12 @@ public class CameraFilterPack_Colors_RgbClamp : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D5B RID: 3419 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D62 RID: 3426 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D5C RID: 3420 RVA: 0x0006B004 File Offset: 0x00069204
+	// Token: 0x06000D63 RID: 3427 RVA: 0x0006BD34 File Offset: 0x00069F34
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -72,44 +72,44 @@ public class CameraFilterPack_Colors_RgbClamp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001013 RID: 4115
+	// Token: 0x04001032 RID: 4146
 	public Shader SCShader;
 
-	// Token: 0x04001014 RID: 4116
+	// Token: 0x04001033 RID: 4147
 	private float TimeX = 1f;
 
-	// Token: 0x04001015 RID: 4117
+	// Token: 0x04001034 RID: 4148
 	private Material SCMaterial;
 
-	// Token: 0x04001016 RID: 4118
+	// Token: 0x04001035 RID: 4149
 	[Range(0f, 1f)]
 	public float Red_Start;
 
-	// Token: 0x04001017 RID: 4119
+	// Token: 0x04001036 RID: 4150
 	[Range(0f, 1f)]
 	public float Red_End = 1f;
 
-	// Token: 0x04001018 RID: 4120
+	// Token: 0x04001037 RID: 4151
 	[Range(0f, 1f)]
 	public float Green_Start;
 
-	// Token: 0x04001019 RID: 4121
+	// Token: 0x04001038 RID: 4152
 	[Range(0f, 1f)]
 	public float Green_End = 1f;
 
-	// Token: 0x0400101A RID: 4122
+	// Token: 0x04001039 RID: 4153
 	[Range(0f, 1f)]
 	public float Blue_Start;
 
-	// Token: 0x0400101B RID: 4123
+	// Token: 0x0400103A RID: 4154
 	[Range(0f, 1f)]
 	public float Blue_End = 1f;
 
-	// Token: 0x0400101C RID: 4124
+	// Token: 0x0400103B RID: 4155
 	[Range(0f, 1f)]
 	public float RGB_Start;
 
-	// Token: 0x0400101D RID: 4125
+	// Token: 0x0400103C RID: 4156
 	[Range(0f, 1f)]
 	public float RGB_End = 1f;
 }

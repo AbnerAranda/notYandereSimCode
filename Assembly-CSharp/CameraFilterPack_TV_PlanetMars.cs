@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000206 RID: 518
+// Token: 0x02000207 RID: 519
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Planet Mars")]
 public class CameraFilterPack_TV_PlanetMars : MonoBehaviour
 {
 	// Token: 0x17000326 RID: 806
-	// (get) Token: 0x0600115A RID: 4442 RVA: 0x0007C747 File Offset: 0x0007A947
+	// (get) Token: 0x06001161 RID: 4449 RVA: 0x0007D477 File Offset: 0x0007B677
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_PlanetMars : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600115B RID: 4443 RVA: 0x0007C77B File Offset: 0x0007A97B
+	// Token: 0x06001162 RID: 4450 RVA: 0x0007D4AB File Offset: 0x0007B6AB
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_PlanetMars");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_PlanetMars : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600115C RID: 4444 RVA: 0x0007C79C File Offset: 0x0007A99C
+	// Token: 0x06001163 RID: 4451 RVA: 0x0007D4CC File Offset: 0x0007B6CC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -52,12 +52,12 @@ public class CameraFilterPack_TV_PlanetMars : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x0600115D RID: 4445 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001164 RID: 4452 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x0600115E RID: 4446 RVA: 0x0007C868 File Offset: 0x0007AA68
+	// Token: 0x06001165 RID: 4453 RVA: 0x0007D598 File Offset: 0x0007B798
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -66,20 +66,20 @@ public class CameraFilterPack_TV_PlanetMars : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001460 RID: 5216
+	// Token: 0x0400147F RID: 5247
 	public Shader SCShader;
 
-	// Token: 0x04001461 RID: 5217
+	// Token: 0x04001480 RID: 5248
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x04001462 RID: 5218
+	// Token: 0x04001481 RID: 5249
 	private float TimeX = 1f;
 
-	// Token: 0x04001463 RID: 5219
+	// Token: 0x04001482 RID: 5250
 	[Range(-10f, 10f)]
 	public float Distortion = 1f;
 
-	// Token: 0x04001464 RID: 5220
+	// Token: 0x04001483 RID: 5251
 	private Material SCMaterial;
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Pathfinding.RVO
 {
-	// Token: 0x020005C6 RID: 1478
+	// Token: 0x020005DC RID: 1500
 	public class RVOQuadtree
 	{
-		// Token: 0x0600286C RID: 10348 RVA: 0x001B7FDD File Offset: 0x001B61DD
+		// Token: 0x060028C2 RID: 10434 RVA: 0x001BDBC9 File Offset: 0x001BBDC9
 		public void Clear()
 		{
 			this.nodes[0] = default(RVOQuadtree.Node);
@@ -15,13 +15,13 @@ namespace Pathfinding.RVO
 			this.maxRadius = 0f;
 		}
 
-		// Token: 0x0600286D RID: 10349 RVA: 0x001B8003 File Offset: 0x001B6203
+		// Token: 0x060028C3 RID: 10435 RVA: 0x001BDBEF File Offset: 0x001BBDEF
 		public void SetBounds(Rect r)
 		{
 			this.bounds = r;
 		}
 
-		// Token: 0x0600286E RID: 10350 RVA: 0x001B800C File Offset: 0x001B620C
+		// Token: 0x060028C4 RID: 10436 RVA: 0x001BDBF8 File Offset: 0x001BBDF8
 		private int GetNodeIndex()
 		{
 			if (this.filledNodes == this.nodes.Length)
@@ -39,7 +39,7 @@ namespace Pathfinding.RVO
 			return this.filledNodes - 1;
 		}
 
-		// Token: 0x0600286F RID: 10351 RVA: 0x001B80B0 File Offset: 0x001B62B0
+		// Token: 0x060028C5 RID: 10437 RVA: 0x001BDC9C File Offset: 0x001BBE9C
 		public void Insert(Agent agent)
 		{
 			int num = 0;
@@ -99,13 +99,13 @@ namespace Pathfinding.RVO
 			array[num3].count = array[num3].count + 1;
 		}
 
-		// Token: 0x06002870 RID: 10352 RVA: 0x001B82FD File Offset: 0x001B64FD
+		// Token: 0x060028C6 RID: 10438 RVA: 0x001BDEE9 File Offset: 0x001BC0E9
 		public void CalculateSpeeds()
 		{
 			this.nodes[0].CalculateMaxSpeed(this.nodes, 0);
 		}
 
-		// Token: 0x06002871 RID: 10353 RVA: 0x001B8318 File Offset: 0x001B6518
+		// Token: 0x060028C7 RID: 10439 RVA: 0x001BDF04 File Offset: 0x001BC104
 		public void Query(Vector2 p, float speed, float timeHorizon, float agentRadius, Agent agent)
 		{
 			RVOQuadtree.QuadtreeQuery quadtreeQuery = default(RVOQuadtree.QuadtreeQuery);
@@ -119,13 +119,13 @@ namespace Pathfinding.RVO
 			quadtreeQuery.QueryRec(0, this.bounds);
 		}
 
-		// Token: 0x06002872 RID: 10354 RVA: 0x001B837E File Offset: 0x001B657E
+		// Token: 0x060028C8 RID: 10440 RVA: 0x001BDF6A File Offset: 0x001BC16A
 		public void DebugDraw()
 		{
 			this.DebugDrawRec(0, this.bounds);
 		}
 
-		// Token: 0x06002873 RID: 10355 RVA: 0x001B8390 File Offset: 0x001B6590
+		// Token: 0x060028C9 RID: 10441 RVA: 0x001BDF7C File Offset: 0x001BC17C
 		private void DebugDrawRec(int i, Rect r)
 		{
 			Debug.DrawLine(new Vector3(r.xMin, 0f, r.yMin), new Vector3(r.xMax, 0f, r.yMin), Color.white);
@@ -147,32 +147,32 @@ namespace Pathfinding.RVO
 			}
 		}
 
-		// Token: 0x04004298 RID: 17048
+		// Token: 0x04004376 RID: 17270
 		private const int LeafSize = 15;
 
-		// Token: 0x04004299 RID: 17049
+		// Token: 0x04004377 RID: 17271
 		private float maxRadius;
 
-		// Token: 0x0400429A RID: 17050
+		// Token: 0x04004378 RID: 17272
 		private RVOQuadtree.Node[] nodes = new RVOQuadtree.Node[42];
 
-		// Token: 0x0400429B RID: 17051
+		// Token: 0x04004379 RID: 17273
 		private int filledNodes = 1;
 
-		// Token: 0x0400429C RID: 17052
+		// Token: 0x0400437A RID: 17274
 		private Rect bounds;
 
-		// Token: 0x0200076B RID: 1899
+		// Token: 0x02000785 RID: 1925
 		private struct Node
 		{
-			// Token: 0x06002D88 RID: 11656 RVA: 0x001CF324 File Offset: 0x001CD524
+			// Token: 0x06002DEB RID: 11755 RVA: 0x001D4FCC File Offset: 0x001D31CC
 			public void Add(Agent agent)
 			{
 				agent.next = this.linkedList;
 				this.linkedList = agent;
 			}
 
-			// Token: 0x06002D89 RID: 11657 RVA: 0x001CF33C File Offset: 0x001CD53C
+			// Token: 0x06002DEC RID: 11756 RVA: 0x001D4FE4 File Offset: 0x001D31E4
 			public void Distribute(RVOQuadtree.Node[] nodes, Rect r)
 			{
 				Vector2 center = r.center;
@@ -203,7 +203,7 @@ namespace Pathfinding.RVO
 				this.count = 0;
 			}
 
-			// Token: 0x06002D8A RID: 11658 RVA: 0x001CF428 File Offset: 0x001CD628
+			// Token: 0x06002DED RID: 11757 RVA: 0x001D50D0 File Offset: 0x001D32D0
 			public float CalculateMaxSpeed(RVOQuadtree.Node[] nodes, int index)
 			{
 				if (this.child00 == index)
@@ -222,32 +222,32 @@ namespace Pathfinding.RVO
 				return this.maxSpeed;
 			}
 
-			// Token: 0x04004A4A RID: 19018
+			// Token: 0x04004B35 RID: 19253
 			public int child00;
 
-			// Token: 0x04004A4B RID: 19019
+			// Token: 0x04004B36 RID: 19254
 			public int child01;
 
-			// Token: 0x04004A4C RID: 19020
+			// Token: 0x04004B37 RID: 19255
 			public int child10;
 
-			// Token: 0x04004A4D RID: 19021
+			// Token: 0x04004B38 RID: 19256
 			public int child11;
 
-			// Token: 0x04004A4E RID: 19022
+			// Token: 0x04004B39 RID: 19257
 			public Agent linkedList;
 
-			// Token: 0x04004A4F RID: 19023
+			// Token: 0x04004B3A RID: 19258
 			public byte count;
 
-			// Token: 0x04004A50 RID: 19024
+			// Token: 0x04004B3B RID: 19259
 			public float maxSpeed;
 		}
 
-		// Token: 0x0200076C RID: 1900
+		// Token: 0x02000786 RID: 1926
 		private struct QuadtreeQuery
 		{
-			// Token: 0x06002D8B RID: 11659 RVA: 0x001CF500 File Offset: 0x001CD700
+			// Token: 0x06002DEE RID: 11758 RVA: 0x001D51A8 File Offset: 0x001D33A8
 			public void QueryRec(int i, Rect r)
 			{
 				float num = Math.Min(Math.Max((this.nodes[i].maxSpeed + this.speed) * this.timeHorizon, this.agentRadius) + this.agentRadius, this.maxRadius);
@@ -291,25 +291,25 @@ namespace Pathfinding.RVO
 				}
 			}
 
-			// Token: 0x04004A51 RID: 19025
+			// Token: 0x04004B3C RID: 19260
 			public Vector2 p;
 
-			// Token: 0x04004A52 RID: 19026
+			// Token: 0x04004B3D RID: 19261
 			public float speed;
 
-			// Token: 0x04004A53 RID: 19027
+			// Token: 0x04004B3E RID: 19262
 			public float timeHorizon;
 
-			// Token: 0x04004A54 RID: 19028
+			// Token: 0x04004B3F RID: 19263
 			public float agentRadius;
 
-			// Token: 0x04004A55 RID: 19029
+			// Token: 0x04004B40 RID: 19264
 			public float maxRadius;
 
-			// Token: 0x04004A56 RID: 19030
+			// Token: 0x04004B41 RID: 19265
 			public Agent agent;
 
-			// Token: 0x04004A57 RID: 19031
+			// Token: 0x04004B42 RID: 19266
 			public RVOQuadtree.Node[] nodes;
 		}
 	}

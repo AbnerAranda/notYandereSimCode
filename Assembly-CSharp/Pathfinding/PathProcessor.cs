@@ -6,26 +6,26 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000530 RID: 1328
+	// Token: 0x02000546 RID: 1350
 	public class PathProcessor
 	{
 		// Token: 0x14000002 RID: 2
-		// (add) Token: 0x0600230F RID: 8975 RVA: 0x001934A8 File Offset: 0x001916A8
-		// (remove) Token: 0x06002310 RID: 8976 RVA: 0x001934E0 File Offset: 0x001916E0
+		// (add) Token: 0x06002365 RID: 9061 RVA: 0x00199094 File Offset: 0x00197294
+		// (remove) Token: 0x06002366 RID: 9062 RVA: 0x001990CC File Offset: 0x001972CC
 		public event Action<Path> OnPathPreSearch;
 
 		// Token: 0x14000003 RID: 3
-		// (add) Token: 0x06002311 RID: 8977 RVA: 0x00193518 File Offset: 0x00191718
-		// (remove) Token: 0x06002312 RID: 8978 RVA: 0x00193550 File Offset: 0x00191750
+		// (add) Token: 0x06002367 RID: 9063 RVA: 0x00199104 File Offset: 0x00197304
+		// (remove) Token: 0x06002368 RID: 9064 RVA: 0x0019913C File Offset: 0x0019733C
 		public event Action<Path> OnPathPostSearch;
 
 		// Token: 0x14000004 RID: 4
-		// (add) Token: 0x06002313 RID: 8979 RVA: 0x00193588 File Offset: 0x00191788
-		// (remove) Token: 0x06002314 RID: 8980 RVA: 0x001935C0 File Offset: 0x001917C0
+		// (add) Token: 0x06002369 RID: 9065 RVA: 0x00199174 File Offset: 0x00197374
+		// (remove) Token: 0x0600236A RID: 9066 RVA: 0x001991AC File Offset: 0x001973AC
 		public event Action OnQueueUnblocked;
 
-		// Token: 0x1700054A RID: 1354
-		// (get) Token: 0x06002315 RID: 8981 RVA: 0x001935F5 File Offset: 0x001917F5
+		// Token: 0x17000550 RID: 1360
+		// (get) Token: 0x0600236B RID: 9067 RVA: 0x001991E1 File Offset: 0x001973E1
 		public int NumThreads
 		{
 			get
@@ -34,8 +34,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x1700054B RID: 1355
-		// (get) Token: 0x06002316 RID: 8982 RVA: 0x001935FF File Offset: 0x001917FF
+		// Token: 0x17000551 RID: 1361
+		// (get) Token: 0x0600236C RID: 9068 RVA: 0x001991EB File Offset: 0x001973EB
 		public bool IsUsingMultithreading
 		{
 			get
@@ -44,7 +44,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002317 RID: 8983 RVA: 0x0019360C File Offset: 0x0019180C
+		// Token: 0x0600236D RID: 9069 RVA: 0x001991F8 File Offset: 0x001973F8
 		internal PathProcessor(AstarPath astar, PathReturnQueue returnQueue, int processors, bool multithreaded)
 		{
 			this.astar = astar;
@@ -82,7 +82,7 @@ namespace Pathfinding
 			this.threadCoroutine = this.CalculatePaths(this.pathHandlers[0]);
 		}
 
-		// Token: 0x06002318 RID: 8984 RVA: 0x00193740 File Offset: 0x00191940
+		// Token: 0x0600236E RID: 9070 RVA: 0x0019932C File Offset: 0x0019752C
 		private int Lock(bool block)
 		{
 			this.queue.Block();
@@ -105,7 +105,7 @@ namespace Pathfinding
 			return this.nextLockID;
 		}
 
-		// Token: 0x06002319 RID: 8985 RVA: 0x001937A8 File Offset: 0x001919A8
+		// Token: 0x0600236F RID: 9071 RVA: 0x00199394 File Offset: 0x00197594
 		private void Unlock(int id)
 		{
 			if (!this.locks.Remove(id))
@@ -122,13 +122,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600231A RID: 8986 RVA: 0x001937F9 File Offset: 0x001919F9
+		// Token: 0x06002370 RID: 9072 RVA: 0x001993E5 File Offset: 0x001975E5
 		public PathProcessor.GraphUpdateLock PausePathfinding(bool block)
 		{
 			return new PathProcessor.GraphUpdateLock(this, block);
 		}
 
-		// Token: 0x0600231B RID: 8987 RVA: 0x00193804 File Offset: 0x00191A04
+		// Token: 0x06002371 RID: 9073 RVA: 0x001993F0 File Offset: 0x001975F0
 		public void TickNonMultithreaded()
 		{
 			if (this.threadCoroutine != null)
@@ -157,7 +157,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600231C RID: 8988 RVA: 0x00193884 File Offset: 0x00191A84
+		// Token: 0x06002372 RID: 9074 RVA: 0x00199470 File Offset: 0x00197670
 		public void JoinThreads()
 		{
 			if (this.threads != null)
@@ -173,7 +173,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600231D RID: 8989 RVA: 0x001938E4 File Offset: 0x00191AE4
+		// Token: 0x06002373 RID: 9075 RVA: 0x001994D0 File Offset: 0x001976D0
 		public void AbortThreads()
 		{
 			if (this.threads == null)
@@ -189,7 +189,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600231E RID: 8990 RVA: 0x00193934 File Offset: 0x00191B34
+		// Token: 0x06002374 RID: 9076 RVA: 0x00199520 File Offset: 0x00197720
 		public int GetNewNodeIndex()
 		{
 			if (this.nodeIndexPool.Count <= 0)
@@ -201,7 +201,7 @@ namespace Pathfinding
 			return this.nodeIndexPool.Pop();
 		}
 
-		// Token: 0x0600231F RID: 8991 RVA: 0x0019396C File Offset: 0x00191B6C
+		// Token: 0x06002375 RID: 9077 RVA: 0x00199558 File Offset: 0x00197758
 		public void InitializeNode(GraphNode node)
 		{
 			if (!this.queue.AllReceiversBlocked)
@@ -214,7 +214,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002320 RID: 8992 RVA: 0x001939B4 File Offset: 0x00191BB4
+		// Token: 0x06002376 RID: 9078 RVA: 0x001995A0 File Offset: 0x001977A0
 		public void DestroyNode(GraphNode node)
 		{
 			if (node.NodeIndex == -1)
@@ -228,7 +228,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002321 RID: 8993 RVA: 0x00193A00 File Offset: 0x00191C00
+		// Token: 0x06002377 RID: 9079 RVA: 0x001995EC File Offset: 0x001977EC
 		private void CalculatePathsThreaded(PathHandler pathHandler)
 		{
 			try
@@ -294,7 +294,7 @@ namespace Pathfinding
 			this.queue.ReceiverTerminated();
 		}
 
-		// Token: 0x06002322 RID: 8994 RVA: 0x00193BD0 File Offset: 0x00191DD0
+		// Token: 0x06002378 RID: 9080 RVA: 0x001997BC File Offset: 0x001979BC
 		private IEnumerator CalculatePaths(PathHandler pathHandler)
 		{
 			long maxTicks = (long)(this.astar.maxFrameTime * 10000f);
@@ -379,48 +379,48 @@ namespace Pathfinding
 			yield break;
 		}
 
-		// Token: 0x04003F3E RID: 16190
+		// Token: 0x0400401C RID: 16412
 		internal readonly ThreadControlQueue queue;
 
-		// Token: 0x04003F3F RID: 16191
+		// Token: 0x0400401D RID: 16413
 		private readonly AstarPath astar;
 
-		// Token: 0x04003F40 RID: 16192
+		// Token: 0x0400401E RID: 16414
 		private readonly PathReturnQueue returnQueue;
 
-		// Token: 0x04003F41 RID: 16193
+		// Token: 0x0400401F RID: 16415
 		private readonly PathHandler[] pathHandlers;
 
-		// Token: 0x04003F42 RID: 16194
+		// Token: 0x04004020 RID: 16416
 		private readonly Thread[] threads;
 
-		// Token: 0x04003F43 RID: 16195
+		// Token: 0x04004021 RID: 16417
 		private IEnumerator threadCoroutine;
 
-		// Token: 0x04003F44 RID: 16196
+		// Token: 0x04004022 RID: 16418
 		private int nextNodeIndex = 1;
 
-		// Token: 0x04003F45 RID: 16197
+		// Token: 0x04004023 RID: 16419
 		private readonly Stack<int> nodeIndexPool = new Stack<int>();
 
-		// Token: 0x04003F46 RID: 16198
+		// Token: 0x04004024 RID: 16420
 		private readonly List<int> locks = new List<int>();
 
-		// Token: 0x04003F47 RID: 16199
+		// Token: 0x04004025 RID: 16421
 		private int nextLockID;
 
-		// Token: 0x0200071F RID: 1823
+		// Token: 0x02000739 RID: 1849
 		public struct GraphUpdateLock
 		{
-			// Token: 0x06002C9D RID: 11421 RVA: 0x001CA345 File Offset: 0x001C8545
+			// Token: 0x06002D00 RID: 11520 RVA: 0x001CFFED File Offset: 0x001CE1ED
 			public GraphUpdateLock(PathProcessor pathProcessor, bool block)
 			{
 				this.pathProcessor = pathProcessor;
 				this.id = pathProcessor.Lock(block);
 			}
 
-			// Token: 0x17000673 RID: 1651
-			// (get) Token: 0x06002C9E RID: 11422 RVA: 0x001CA35B File Offset: 0x001C855B
+			// Token: 0x17000679 RID: 1657
+			// (get) Token: 0x06002D01 RID: 11521 RVA: 0x001D0003 File Offset: 0x001CE203
 			public bool Held
 			{
 				get
@@ -429,16 +429,16 @@ namespace Pathfinding
 				}
 			}
 
-			// Token: 0x06002C9F RID: 11423 RVA: 0x001CA37D File Offset: 0x001C857D
+			// Token: 0x06002D02 RID: 11522 RVA: 0x001D0025 File Offset: 0x001CE225
 			public void Release()
 			{
 				this.pathProcessor.Unlock(this.id);
 			}
 
-			// Token: 0x04004907 RID: 18695
+			// Token: 0x040049F2 RID: 18930
 			private PathProcessor pathProcessor;
 
-			// Token: 0x04004908 RID: 18696
+			// Token: 0x040049F3 RID: 18931
 			private int id;
 		}
 	}

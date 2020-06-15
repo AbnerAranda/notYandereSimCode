@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000110 RID: 272
+// Token: 0x02000111 RID: 273
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Alien/Vision")]
 public class CameraFilterPack_Alien_Vision : MonoBehaviour
 {
 	// Token: 0x17000230 RID: 560
-	// (get) Token: 0x06000B31 RID: 2865 RVA: 0x00060FA6 File Offset: 0x0005F1A6
+	// (get) Token: 0x06000B38 RID: 2872 RVA: 0x00061CD6 File Offset: 0x0005FED6
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Alien_Vision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B32 RID: 2866 RVA: 0x00060FDA File Offset: 0x0005F1DA
+	// Token: 0x06000B39 RID: 2873 RVA: 0x00061D0A File Offset: 0x0005FF0A
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Alien_Vision");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Alien_Vision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B33 RID: 2867 RVA: 0x00060FFC File Offset: 0x0005F1FC
+	// Token: 0x06000B3A RID: 2874 RVA: 0x00061D2C File Offset: 0x0005FF2C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_Alien_Vision : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B34 RID: 2868 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B35 RID: 2869 RVA: 0x000610F4 File Offset: 0x0005F2F4
+	// Token: 0x06000B3C RID: 2876 RVA: 0x00061E24 File Offset: 0x00060024
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_Alien_Vision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DAB RID: 3499
+	// Token: 0x04000DCA RID: 3530
 	public Shader SCShader;
 
-	// Token: 0x04000DAC RID: 3500
+	// Token: 0x04000DCB RID: 3531
 	private float TimeX = 1f;
 
-	// Token: 0x04000DAD RID: 3501
+	// Token: 0x04000DCC RID: 3532
 	private Material SCMaterial;
 
-	// Token: 0x04000DAE RID: 3502
+	// Token: 0x04000DCD RID: 3533
 	[Range(0f, 0.5f)]
 	public float Therma_Variation = 0.5f;
 
-	// Token: 0x04000DAF RID: 3503
+	// Token: 0x04000DCE RID: 3534
 	[Range(0f, 1f)]
 	public float Speed = 0.5f;
 
-	// Token: 0x04000DB0 RID: 3504
+	// Token: 0x04000DCF RID: 3535
 	[Range(0f, 4f)]
 	private float Burn;
 
-	// Token: 0x04000DB1 RID: 3505
+	// Token: 0x04000DD0 RID: 3536
 	[Range(0f, 16f)]
 	private float SceneCut = 1f;
 }

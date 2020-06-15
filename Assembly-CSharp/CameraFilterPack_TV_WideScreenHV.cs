@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000212 RID: 530
+// Token: 0x02000213 RID: 531
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/WideScreenHV")]
 public class CameraFilterPack_TV_WideScreenHV : MonoBehaviour
 {
 	// Token: 0x17000332 RID: 818
-	// (get) Token: 0x060011A2 RID: 4514 RVA: 0x0007D79D File Offset: 0x0007B99D
+	// (get) Token: 0x060011A9 RID: 4521 RVA: 0x0007E4CD File Offset: 0x0007C6CD
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_WideScreenHV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011A3 RID: 4515 RVA: 0x0007D7D1 File Offset: 0x0007B9D1
+	// Token: 0x060011AA RID: 4522 RVA: 0x0007E501 File Offset: 0x0007C701
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_WideScreenHV");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_WideScreenHV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011A4 RID: 4516 RVA: 0x0007D7F4 File Offset: 0x0007B9F4
+	// Token: 0x060011AB RID: 4523 RVA: 0x0007E524 File Offset: 0x0007C724
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -54,12 +54,12 @@ public class CameraFilterPack_TV_WideScreenHV : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060011A5 RID: 4517 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x060011AC RID: 4524 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060011A6 RID: 4518 RVA: 0x0007D8EC File Offset: 0x0007BAEC
+	// Token: 0x060011AD RID: 4525 RVA: 0x0007E61C File Offset: 0x0007C81C
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -68,28 +68,28 @@ public class CameraFilterPack_TV_WideScreenHV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040014A0 RID: 5280
+	// Token: 0x040014BF RID: 5311
 	public Shader SCShader;
 
-	// Token: 0x040014A1 RID: 5281
+	// Token: 0x040014C0 RID: 5312
 	private float TimeX = 1f;
 
-	// Token: 0x040014A2 RID: 5282
+	// Token: 0x040014C1 RID: 5313
 	private Material SCMaterial;
 
-	// Token: 0x040014A3 RID: 5283
+	// Token: 0x040014C2 RID: 5314
 	[Range(0f, 0.8f)]
 	public float Size = 0.55f;
 
-	// Token: 0x040014A4 RID: 5284
+	// Token: 0x040014C3 RID: 5315
 	[Range(0.001f, 0.4f)]
 	public float Smooth = 0.01f;
 
-	// Token: 0x040014A5 RID: 5285
+	// Token: 0x040014C4 RID: 5316
 	[Range(0f, 10f)]
 	private float StretchX = 1f;
 
-	// Token: 0x040014A6 RID: 5286
+	// Token: 0x040014C5 RID: 5317
 	[Range(0f, 10f)]
 	private float StretchY = 1f;
 }

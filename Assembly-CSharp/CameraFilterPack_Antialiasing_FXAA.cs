@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000111 RID: 273
+// Token: 0x02000112 RID: 274
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Antialiasing/FXAA")]
 public class CameraFilterPack_Antialiasing_FXAA : MonoBehaviour
 {
 	// Token: 0x17000231 RID: 561
-	// (get) Token: 0x06000B37 RID: 2871 RVA: 0x00061142 File Offset: 0x0005F342
+	// (get) Token: 0x06000B3E RID: 2878 RVA: 0x00061E72 File Offset: 0x00060072
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Antialiasing_FXAA : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B38 RID: 2872 RVA: 0x00061176 File Offset: 0x0005F376
+	// Token: 0x06000B3F RID: 2879 RVA: 0x00061EA6 File Offset: 0x000600A6
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Antialiasing_FXAA");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Antialiasing_FXAA : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B39 RID: 2873 RVA: 0x00061198 File Offset: 0x0005F398
+	// Token: 0x06000B40 RID: 2880 RVA: 0x00061EC8 File Offset: 0x000600C8
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -50,12 +50,12 @@ public class CameraFilterPack_Antialiasing_FXAA : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000B3A RID: 2874 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000B41 RID: 2881 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000B3B RID: 2875 RVA: 0x0006122E File Offset: 0x0005F42E
+	// Token: 0x06000B42 RID: 2882 RVA: 0x00061F5E File Offset: 0x0006015E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -64,12 +64,12 @@ public class CameraFilterPack_Antialiasing_FXAA : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DB2 RID: 3506
+	// Token: 0x04000DD1 RID: 3537
 	public Shader SCShader;
 
-	// Token: 0x04000DB3 RID: 3507
+	// Token: 0x04000DD2 RID: 3538
 	private float TimeX = 1f;
 
-	// Token: 0x04000DB4 RID: 3508
+	// Token: 0x04000DD3 RID: 3539
 	private Material SCMaterial;
 }

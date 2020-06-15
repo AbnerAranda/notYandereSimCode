@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace MaidDereMinigame
 {
-	// Token: 0x02000506 RID: 1286
+	// Token: 0x02000516 RID: 1302
 	public class InteractionMenu : MonoBehaviour
 	{
-		// Token: 0x170004D1 RID: 1233
-		// (get) Token: 0x0600203D RID: 8253 RVA: 0x00185CB4 File Offset: 0x00183EB4
+		// Token: 0x170004D7 RID: 1239
+		// (get) Token: 0x0600207F RID: 8319 RVA: 0x0018B1A4 File Offset: 0x001893A4
 		public static InteractionMenu Instance
 		{
 			get
@@ -20,7 +20,7 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x0600203E RID: 8254 RVA: 0x00185CD2 File Offset: 0x00183ED2
+		// Token: 0x06002080 RID: 8320 RVA: 0x0018B1C2 File Offset: 0x001893C2
 		private void Awake()
 		{
 			InteractionMenu.SetAButton(InteractionMenu.AButtonText.None);
@@ -28,7 +28,7 @@ namespace MaidDereMinigame
 			InteractionMenu.SetADButton(true);
 		}
 
-		// Token: 0x0600203F RID: 8255 RVA: 0x00185CE8 File Offset: 0x00183EE8
+		// Token: 0x06002081 RID: 8321 RVA: 0x0018B1D8 File Offset: 0x001893D8
 		public static void SetAButton(InteractionMenu.AButtonText text)
 		{
 			for (int i = 0; i < InteractionMenu.Instance.aButtonSprites.Length; i++)
@@ -49,7 +49,7 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x06002040 RID: 8256 RVA: 0x00185D70 File Offset: 0x00183F70
+		// Token: 0x06002082 RID: 8322 RVA: 0x0018B260 File Offset: 0x00189460
 		public static void SetBButton(bool on)
 		{
 			SpriteRenderer[] array = InteractionMenu.Instance.backButtons;
@@ -59,7 +59,7 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x06002041 RID: 8257 RVA: 0x00185DA4 File Offset: 0x00183FA4
+		// Token: 0x06002083 RID: 8323 RVA: 0x0018B294 File Offset: 0x00189494
 		public static void SetADButton(bool on)
 		{
 			SpriteRenderer[] array = InteractionMenu.Instance.moveButtons;
@@ -69,48 +69,48 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x04003DF2 RID: 15858
+		// Token: 0x04003EA2 RID: 16034
 		private static InteractionMenu instance;
 
-		// Token: 0x04003DF3 RID: 15859
+		// Token: 0x04003EA3 RID: 16035
 		public GameObject interactObject;
 
-		// Token: 0x04003DF4 RID: 15860
+		// Token: 0x04003EA4 RID: 16036
 		public GameObject backObject;
 
-		// Token: 0x04003DF5 RID: 15861
+		// Token: 0x04003EA5 RID: 16037
 		public GameObject moveObject;
 
-		// Token: 0x04003DF6 RID: 15862
+		// Token: 0x04003EA6 RID: 16038
 		public SpriteRenderer[] aButtons;
 
-		// Token: 0x04003DF7 RID: 15863
+		// Token: 0x04003EA7 RID: 16039
 		public SpriteRenderer[] aButtonSprites;
 
-		// Token: 0x04003DF8 RID: 15864
+		// Token: 0x04003EA8 RID: 16040
 		public SpriteRenderer[] backButtons;
 
-		// Token: 0x04003DF9 RID: 15865
+		// Token: 0x04003EA9 RID: 16041
 		public SpriteRenderer[] moveButtons;
 
-		// Token: 0x02000708 RID: 1800
+		// Token: 0x02000721 RID: 1825
 		public enum AButtonText
 		{
-			// Token: 0x040048A9 RID: 18601
+			// Token: 0x04004992 RID: 18834
 			ChoosePlate,
-			// Token: 0x040048AA RID: 18602
+			// Token: 0x04004993 RID: 18835
 			GrabPlate,
-			// Token: 0x040048AB RID: 18603
+			// Token: 0x04004994 RID: 18836
 			KitchenMenu,
-			// Token: 0x040048AC RID: 18604
+			// Token: 0x04004995 RID: 18837
 			PlaceOrder,
-			// Token: 0x040048AD RID: 18605
+			// Token: 0x04004996 RID: 18838
 			TakeOrder,
-			// Token: 0x040048AE RID: 18606
+			// Token: 0x04004997 RID: 18839
 			TossPlate,
-			// Token: 0x040048AF RID: 18607
+			// Token: 0x04004998 RID: 18840
 			GiveFood,
-			// Token: 0x040048B0 RID: 18608
+			// Token: 0x04004999 RID: 18841
 			None
 		}
 	}

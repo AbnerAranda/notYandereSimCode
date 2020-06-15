@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200038B RID: 907
+// Token: 0x02000390 RID: 912
 public class RefrigeratorScript : MonoBehaviour
 {
-	// Token: 0x0600198E RID: 6542 RVA: 0x000F8C8C File Offset: 0x000F6E8C
+	// Token: 0x060019AF RID: 6575 RVA: 0x000FB318 File Offset: 0x000F9518
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -49,7 +49,7 @@ public class RefrigeratorScript : MonoBehaviour
 				if (this.Yandere.Character.GetComponent<Animation>()["f02_prepareFood_00"].time > 3f)
 				{
 					this.Jar.parent = this.Yandere.RightHand;
-					this.Jar.localPosition = new Vector3(0f, -0.033333335f, -0.14f);
+					this.Jar.localPosition = new Vector3(0f, -0.0333333351f, -0.14f);
 					this.Jar.localEulerAngles = new Vector3(90f, 0f, 0f);
 					this.EventPhase++;
 					return;
@@ -60,7 +60,7 @@ public class RefrigeratorScript : MonoBehaviour
 				if (this.Yandere.Character.GetComponent<Animation>()["f02_prepareFood_00"].time > 5f)
 				{
 					this.JarLid.transform.parent = this.Yandere.LeftHand;
-					this.JarLid.localPosition = new Vector3(0.033333335f, 0f, 0f);
+					this.JarLid.localPosition = new Vector3(0.0333333351f, 0f, 0f);
 					this.JarLid.localEulerAngles = Vector3.zero;
 					this.EventPhase++;
 					return;
@@ -147,7 +147,7 @@ public class RefrigeratorScript : MonoBehaviour
 				if (this.Yandere.Character.GetComponent<Animation>()["f02_prepareFood_00"].time < this.Yandere.Character.GetComponent<Animation>()["f02_prepareFood_00"].length - 1f)
 				{
 					this.Knife.parent = this.CookingClub;
-					this.Knife.localPosition = new Vector3(0.197f, 1.1903f, -0.33333334f);
+					this.Knife.localPosition = new Vector3(0.197f, 1.1903f, -0.333333343f);
 					this.Knife.localEulerAngles = new Vector3(45f, -90f, -90f);
 					this.EventPhase++;
 					return;
@@ -158,10 +158,10 @@ public class RefrigeratorScript : MonoBehaviour
 				if (this.Yandere.Character.GetComponent<Animation>()["f02_prepareFood_00"].time < this.Yandere.Character.GetComponent<Animation>()["f02_prepareFood_00"].length - 2f)
 				{
 					this.JarLid.parent = this.Yandere.LeftHand;
-					this.JarLid.localPosition = new Vector3(0.033333335f, 0f, 0f);
+					this.JarLid.localPosition = new Vector3(0.0333333351f, 0f, 0f);
 					this.JarLid.localEulerAngles = Vector3.zero;
 					this.Jar.parent = this.Yandere.RightHand;
-					this.Jar.localPosition = new Vector3(0f, -0.033333335f, -0.14f);
+					this.Jar.localPosition = new Vector3(0f, -0.0333333351f, -0.14f);
 					this.Jar.localEulerAngles = new Vector3(90f, 0f, 0f);
 					this.EventPhase++;
 					return;
@@ -207,57 +207,57 @@ public class RefrigeratorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400275F RID: 10079
+	// Token: 0x040027BC RID: 10172
 	public CookingEventScript CookingEvent;
 
-	// Token: 0x04002760 RID: 10080
+	// Token: 0x040027BD RID: 10173
 	public YandereScript Yandere;
 
-	// Token: 0x04002761 RID: 10081
+	// Token: 0x040027BE RID: 10174
 	public PromptScript Prompt;
 
-	// Token: 0x04002762 RID: 10082
+	// Token: 0x040027BF RID: 10175
 	public PickUpScript PlatePickUp;
 
-	// Token: 0x04002763 RID: 10083
+	// Token: 0x040027C0 RID: 10176
 	public PromptScript PlatePrompt;
 
-	// Token: 0x04002764 RID: 10084
+	// Token: 0x040027C1 RID: 10177
 	public Collider PlateCollider;
 
-	// Token: 0x04002765 RID: 10085
+	// Token: 0x040027C2 RID: 10178
 	public GameObject[] Octodogs;
 
-	// Token: 0x04002766 RID: 10086
+	// Token: 0x040027C3 RID: 10179
 	public GameObject Refrigerator;
 
-	// Token: 0x04002767 RID: 10087
+	// Token: 0x040027C4 RID: 10180
 	public GameObject Octodog;
 
-	// Token: 0x04002768 RID: 10088
+	// Token: 0x040027C5 RID: 10181
 	public GameObject Sausage;
 
-	// Token: 0x04002769 RID: 10089
+	// Token: 0x040027C6 RID: 10182
 	public Transform CookingSpot;
 
-	// Token: 0x0400276A RID: 10090
+	// Token: 0x040027C7 RID: 10183
 	public Transform CookingClub;
 
-	// Token: 0x0400276B RID: 10091
+	// Token: 0x040027C8 RID: 10184
 	public Transform JarLid;
 
-	// Token: 0x0400276C RID: 10092
+	// Token: 0x040027C9 RID: 10185
 	public Transform Knife;
 
-	// Token: 0x0400276D RID: 10093
+	// Token: 0x040027CA RID: 10186
 	public Transform Jar;
 
-	// Token: 0x0400276E RID: 10094
+	// Token: 0x040027CB RID: 10187
 	public bool Empty;
 
-	// Token: 0x0400276F RID: 10095
+	// Token: 0x040027CC RID: 10188
 	public int EventPhase;
 
-	// Token: 0x04002770 RID: 10096
+	// Token: 0x040027CD RID: 10189
 	public float Rotation;
 }

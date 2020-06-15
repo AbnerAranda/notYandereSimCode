@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000520 RID: 1312
+	// Token: 0x02000536 RID: 1334
 	public class GraphUpdateShape
 	{
-		// Token: 0x17000531 RID: 1329
-		// (get) Token: 0x06002253 RID: 8787 RVA: 0x0018E5B0 File Offset: 0x0018C7B0
-		// (set) Token: 0x06002254 RID: 8788 RVA: 0x0018E5B8 File Offset: 0x0018C7B8
+		// Token: 0x17000537 RID: 1335
+		// (get) Token: 0x060022A9 RID: 8873 RVA: 0x0019419C File Offset: 0x0019239C
+		// (set) Token: 0x060022AA RID: 8874 RVA: 0x001941A4 File Offset: 0x001923A4
 		public Vector3[] points
 		{
 			get
@@ -25,9 +25,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x17000532 RID: 1330
-		// (get) Token: 0x06002255 RID: 8789 RVA: 0x0018E5CF File Offset: 0x0018C7CF
-		// (set) Token: 0x06002256 RID: 8790 RVA: 0x0018E5D7 File Offset: 0x0018C7D7
+		// Token: 0x17000538 RID: 1336
+		// (get) Token: 0x060022AB RID: 8875 RVA: 0x001941BB File Offset: 0x001923BB
+		// (set) Token: 0x060022AC RID: 8876 RVA: 0x001941C3 File Offset: 0x001923C3
 		public bool convex
 		{
 			get
@@ -44,12 +44,12 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002257 RID: 8791 RVA: 0x0018E5F6 File Offset: 0x0018C7F6
+		// Token: 0x060022AD RID: 8877 RVA: 0x001941E2 File Offset: 0x001923E2
 		public GraphUpdateShape()
 		{
 		}
 
-		// Token: 0x06002258 RID: 8792 RVA: 0x0018E620 File Offset: 0x0018C820
+		// Token: 0x060022AE RID: 8878 RVA: 0x0019420C File Offset: 0x0019240C
 		public GraphUpdateShape(Vector3[] points, bool convex, Matrix4x4 matrix, float minimumHeight)
 		{
 			this.convex = convex;
@@ -61,19 +61,19 @@ namespace Pathfinding
 			this.minimumHeight = minimumHeight;
 		}
 
-		// Token: 0x06002259 RID: 8793 RVA: 0x0018E6D3 File Offset: 0x0018C8D3
+		// Token: 0x060022AF RID: 8879 RVA: 0x001942BF File Offset: 0x001924BF
 		private void CalculateConvexHull()
 		{
 			this._convexPoints = ((this.points != null) ? Polygon.ConvexHullXZ(this.points) : null);
 		}
 
-		// Token: 0x0600225A RID: 8794 RVA: 0x0018E6F1 File Offset: 0x0018C8F1
+		// Token: 0x060022B0 RID: 8880 RVA: 0x001942DD File Offset: 0x001924DD
 		public Bounds GetBounds()
 		{
 			return GraphUpdateShape.GetBounds(this.convex ? this._convexPoints : this.points, this.right, this.up, this.forward, this.origin, this.minimumHeight);
 		}
 
-		// Token: 0x0600225B RID: 8795 RVA: 0x0018E72C File Offset: 0x0018C92C
+		// Token: 0x060022B1 RID: 8881 RVA: 0x00194318 File Offset: 0x00192518
 		public static Bounds GetBounds(Vector3[] points, Matrix4x4 matrix, float minimumHeight)
 		{
 			Vector3 b = matrix.MultiplyPoint3x4(Vector3.zero);
@@ -83,7 +83,7 @@ namespace Pathfinding
 			return GraphUpdateShape.GetBounds(points, vector, vector2, vector3, b, minimumHeight);
 		}
 
-		// Token: 0x0600225C RID: 8796 RVA: 0x0018E78C File Offset: 0x0018C98C
+		// Token: 0x060022B2 RID: 8882 RVA: 0x00194378 File Offset: 0x00192578
 		private static Bounds GetBounds(Vector3[] points, Vector3 right, Vector3 up, Vector3 forward, Vector3 origin, float minimumHeight)
 		{
 			if (points == null || points.Length == 0)
@@ -115,13 +115,13 @@ namespace Pathfinding
 			return new Bounds((vector + vector2) * 0.5f + origin, vector2 - vector);
 		}
 
-		// Token: 0x0600225D RID: 8797 RVA: 0x0018E90A File Offset: 0x0018CB0A
+		// Token: 0x060022B3 RID: 8883 RVA: 0x001944F6 File Offset: 0x001926F6
 		public bool Contains(GraphNode node)
 		{
 			return this.Contains((Vector3)node.position);
 		}
 
-		// Token: 0x0600225E RID: 8798 RVA: 0x0018E920 File Offset: 0x0018CB20
+		// Token: 0x060022B4 RID: 8884 RVA: 0x0019450C File Offset: 0x0019270C
 		public bool Contains(Vector3 point)
 		{
 			point -= this.origin;
@@ -148,28 +148,28 @@ namespace Pathfinding
 			return true;
 		}
 
-		// Token: 0x04003EC5 RID: 16069
+		// Token: 0x04003FA3 RID: 16291
 		private Vector3[] _points;
 
-		// Token: 0x04003EC6 RID: 16070
+		// Token: 0x04003FA4 RID: 16292
 		private Vector3[] _convexPoints;
 
-		// Token: 0x04003EC7 RID: 16071
+		// Token: 0x04003FA5 RID: 16293
 		private bool _convex;
 
-		// Token: 0x04003EC8 RID: 16072
+		// Token: 0x04003FA6 RID: 16294
 		private Vector3 right = Vector3.right;
 
-		// Token: 0x04003EC9 RID: 16073
+		// Token: 0x04003FA7 RID: 16295
 		private Vector3 forward = Vector3.forward;
 
-		// Token: 0x04003ECA RID: 16074
+		// Token: 0x04003FA8 RID: 16296
 		private Vector3 up = Vector3.up;
 
-		// Token: 0x04003ECB RID: 16075
+		// Token: 0x04003FA9 RID: 16297
 		private Vector3 origin;
 
-		// Token: 0x04003ECC RID: 16076
+		// Token: 0x04003FAA RID: 16298
 		public float minimumHeight;
 	}
 }

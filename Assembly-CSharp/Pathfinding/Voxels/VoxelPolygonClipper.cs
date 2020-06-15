@@ -2,10 +2,10 @@
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005B5 RID: 1461
+	// Token: 0x020005CB RID: 1483
 	internal struct VoxelPolygonClipper
 	{
-		// Token: 0x060027BD RID: 10173 RVA: 0x001B3F68 File Offset: 0x001B2168
+		// Token: 0x06002813 RID: 10259 RVA: 0x001B9B54 File Offset: 0x001B7D54
 		private void Init()
 		{
 			if (this.clipPolygonCache == null)
@@ -15,7 +15,7 @@ namespace Pathfinding.Voxels
 			}
 		}
 
-		// Token: 0x060027BE RID: 10174 RVA: 0x001B3F8C File Offset: 0x001B218C
+		// Token: 0x06002814 RID: 10260 RVA: 0x001B9B78 File Offset: 0x001B7D78
 		public int ClipPolygon(float[] vIn, int n, float[] vOut, float multi, float offset, int axis)
 		{
 			this.Init();
@@ -57,7 +57,7 @@ namespace Pathfinding.Voxels
 			return num;
 		}
 
-		// Token: 0x060027BF RID: 10175 RVA: 0x001B40A8 File Offset: 0x001B22A8
+		// Token: 0x06002815 RID: 10261 RVA: 0x001B9C94 File Offset: 0x001B7E94
 		public int ClipPolygonY(float[] vIn, int n, float[] vOut, float multi, float offset, int axis)
 		{
 			this.Init();
@@ -89,7 +89,7 @@ namespace Pathfinding.Voxels
 			return num;
 		}
 
-		// Token: 0x060027C0 RID: 10176 RVA: 0x001B4160 File Offset: 0x001B2360
+		// Token: 0x06002816 RID: 10262 RVA: 0x001B9D4C File Offset: 0x001B7F4C
 		public int ClipPolygon(Int3[] vIn, int n, Int3[] vOut, int multi, int offset, int axis)
 		{
 			this.Init();
@@ -122,10 +122,10 @@ namespace Pathfinding.Voxels
 			return num;
 		}
 
-		// Token: 0x04004233 RID: 16947
+		// Token: 0x04004311 RID: 17169
 		private float[] clipPolygonCache;
 
-		// Token: 0x04004234 RID: 16948
+		// Token: 0x04004312 RID: 17170
 		private int[] clipPolygonIntCache;
 	}
 }

@@ -5,16 +5,15 @@ using UnityEngine.SceneManagement;
 // Token: 0x020000D1 RID: 209
 public class ArmDetectorScript : MonoBehaviour
 {
-	// Token: 0x06000A18 RID: 2584 RVA: 0x0004FCF8 File Offset: 0x0004DEF8
+	// Token: 0x06000A1C RID: 2588 RVA: 0x0005078C File Offset: 0x0004E98C
 	private void Start()
 	{
 		this.DemonDress.SetActive(false);
 	}
 
-	// Token: 0x06000A19 RID: 2585 RVA: 0x0004FD08 File Offset: 0x0004DF08
+	// Token: 0x06000A1D RID: 2589 RVA: 0x0005079C File Offset: 0x0004E99C
 	private void Update()
 	{
-		AudioSource component = base.GetComponent<AudioSource>();
 		if (!this.SummonDemon)
 		{
 			for (int i = 1; i < this.ArmArray.Length; i++)
@@ -35,7 +34,7 @@ public class ArmDetectorScript : MonoBehaviour
 				this.Yandere.Character.GetComponent<Animation>().CrossFade(this.Yandere.IdleAnim);
 				this.Yandere.CanMove = false;
 				this.SummonDemon = true;
-				component.Play();
+				this.MyAudio.Play();
 				this.Arms = 0;
 			}
 		}
@@ -62,7 +61,7 @@ public class ArmDetectorScript : MonoBehaviour
 				this.Yandere.Character.GetComponent<Animation>().CrossFade(this.Yandere.IdleAnim);
 				this.Yandere.CanMove = false;
 				this.SummonFlameDemon = true;
-				component.Play();
+				this.MyAudio.Play();
 			}
 		}
 		if (!this.SummonEmptyDemon && this.Bodies > 10 && !this.Yandere.Chased && this.Yandere.Chasers == 0)
@@ -70,7 +69,7 @@ public class ArmDetectorScript : MonoBehaviour
 			this.Yandere.Character.GetComponent<Animation>().CrossFade(this.Yandere.IdleAnim);
 			this.Yandere.CanMove = false;
 			this.SummonEmptyDemon = true;
-			component.Play();
+			this.MyAudio.Play();
 		}
 		if (this.SummonDemon)
 		{
@@ -110,8 +109,8 @@ public class ArmDetectorScript : MonoBehaviour
 					this.Skull.Prompt.Hide();
 					this.Skull.Prompt.enabled = false;
 					this.Skull.enabled = false;
-					component.clip = this.DemonLine;
-					component.Play();
+					this.MyAudio.clip = this.DemonLine;
+					this.MyAudio.Play();
 					this.Phase++;
 				}
 			}
@@ -130,9 +129,9 @@ public class ArmDetectorScript : MonoBehaviour
 				this.DemonSubtitle.color = new Color(this.DemonSubtitle.color.r, this.DemonSubtitle.color.g, this.DemonSubtitle.color.b, Mathf.MoveTowards(this.DemonSubtitle.color.a, 0f, Time.deltaTime));
 				if (this.DemonSubtitle.color.a == 0f)
 				{
-					component.clip = this.DemonMusic;
-					component.loop = true;
-					component.Play();
+					this.MyAudio.clip = this.DemonMusic;
+					this.MyAudio.loop = true;
+					this.MyAudio.Play();
 					this.DemonSubtitle.text = string.Empty;
 					this.Phase++;
 				}
@@ -207,8 +206,8 @@ public class ArmDetectorScript : MonoBehaviour
 					this.Skull.Prompt.Hide();
 					this.Skull.Prompt.enabled = false;
 					this.Skull.enabled = false;
-					component.clip = this.FlameDemonLine;
-					component.Play();
+					this.MyAudio.clip = this.FlameDemonLine;
+					this.MyAudio.Play();
 					this.Phase++;
 				}
 			}
@@ -237,9 +236,9 @@ public class ArmDetectorScript : MonoBehaviour
 					this.Yandere.MyRenderer.materials[1].mainTexture = this.Yandere.NudePanties;
 					this.Yandere.MyRenderer.materials[2].mainTexture = this.Yandere.NudePanties;
 					this.DebugMenu.UpdateCensor();
-					component.clip = this.DemonMusic;
-					component.loop = true;
-					component.Play();
+					this.MyAudio.clip = this.DemonMusic;
+					this.MyAudio.loop = true;
+					this.MyAudio.Play();
 					this.DemonSubtitle.text = string.Empty;
 					this.Phase++;
 				}
@@ -258,7 +257,7 @@ public class ArmDetectorScript : MonoBehaviour
 				this.Timer += Time.deltaTime;
 				if (this.Timer > 5f)
 				{
-					component.PlayOneShot(this.FlameActivate);
+					this.MyAudio.PlayOneShot(this.FlameActivate);
 					this.RightFlame.SetActive(true);
 					this.LeftFlame.SetActive(true);
 					this.Phase++;
@@ -314,8 +313,8 @@ public class ArmDetectorScript : MonoBehaviour
 					this.Skull.Prompt.Hide();
 					this.Skull.Prompt.enabled = false;
 					this.Skull.enabled = false;
-					component.clip = this.EmptyDemonLine;
-					component.Play();
+					this.MyAudio.clip = this.EmptyDemonLine;
+					this.MyAudio.Play();
 					this.Phase++;
 					return;
 				}
@@ -342,7 +341,7 @@ public class ArmDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A1A RID: 2586 RVA: 0x00051038 File Offset: 0x0004F238
+	// Token: 0x06000A1E RID: 2590 RVA: 0x00051B0C File Offset: 0x0004FD0C
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.transform.parent == this.LimbParent)
@@ -397,7 +396,7 @@ public class ArmDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A1B RID: 2587 RVA: 0x000511EC File Offset: 0x0004F3EC
+	// Token: 0x06000A1F RID: 2591 RVA: 0x00051CC0 File Offset: 0x0004FEC0
 	private void OnTriggerExit(Collider other)
 	{
 		PickUpScript component = other.gameObject.GetComponent<PickUpScript>();
@@ -416,7 +415,7 @@ public class ArmDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A1C RID: 2588 RVA: 0x00051360 File Offset: 0x0004F560
+	// Token: 0x06000A20 RID: 2592 RVA: 0x00051E34 File Offset: 0x00050034
 	private void Shuffle(int Start)
 	{
 		for (int i = Start; i < this.ArmArray.Length - 1; i++)
@@ -425,7 +424,7 @@ public class ArmDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A1D RID: 2589 RVA: 0x00051394 File Offset: 0x0004F594
+	// Token: 0x06000A21 RID: 2593 RVA: 0x00051E68 File Offset: 0x00050068
 	private void ShuffleBodies(int Start)
 	{
 		for (int i = Start; i < this.BodyArray.Length - 1; i++)
@@ -434,108 +433,111 @@ public class ArmDetectorScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A18 RID: 2584
+	// Token: 0x04000A2C RID: 2604
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04000A19 RID: 2585
+	// Token: 0x04000A2D RID: 2605
 	public DebugMenuScript DebugMenu;
 
-	// Token: 0x04000A1A RID: 2586
+	// Token: 0x04000A2E RID: 2606
 	public JukeboxScript Jukebox;
 
-	// Token: 0x04000A1B RID: 2587
+	// Token: 0x04000A2F RID: 2607
 	public YandereScript Yandere;
 
-	// Token: 0x04000A1C RID: 2588
+	// Token: 0x04000A30 RID: 2608
 	public PoliceScript Police;
 
-	// Token: 0x04000A1D RID: 2589
+	// Token: 0x04000A31 RID: 2609
 	public SkullScript Skull;
 
-	// Token: 0x04000A1E RID: 2590
+	// Token: 0x04000A32 RID: 2610
 	public UILabel DemonSubtitle;
 
-	// Token: 0x04000A1F RID: 2591
+	// Token: 0x04000A33 RID: 2611
 	public UISprite Darkness;
 
-	// Token: 0x04000A20 RID: 2592
+	// Token: 0x04000A34 RID: 2612
 	public Transform LimbParent;
 
-	// Token: 0x04000A21 RID: 2593
+	// Token: 0x04000A35 RID: 2613
 	public Transform[] SpawnPoints;
 
-	// Token: 0x04000A22 RID: 2594
+	// Token: 0x04000A36 RID: 2614
 	public GameObject[] BodyArray;
 
-	// Token: 0x04000A23 RID: 2595
+	// Token: 0x04000A37 RID: 2615
 	public GameObject[] ArmArray;
 
-	// Token: 0x04000A24 RID: 2596
+	// Token: 0x04000A38 RID: 2616
 	public GameObject RiggedAccessory;
 
-	// Token: 0x04000A25 RID: 2597
+	// Token: 0x04000A39 RID: 2617
 	public GameObject BloodProjector;
 
-	// Token: 0x04000A26 RID: 2598
+	// Token: 0x04000A3A RID: 2618
 	public GameObject SmallDarkAura;
 
-	// Token: 0x04000A27 RID: 2599
+	// Token: 0x04000A3B RID: 2619
 	public GameObject DemonDress;
 
-	// Token: 0x04000A28 RID: 2600
+	// Token: 0x04000A3C RID: 2620
 	public GameObject RightFlame;
 
-	// Token: 0x04000A29 RID: 2601
+	// Token: 0x04000A3D RID: 2621
 	public GameObject LeftFlame;
 
-	// Token: 0x04000A2A RID: 2602
+	// Token: 0x04000A3E RID: 2622
 	public GameObject DemonArm;
 
-	// Token: 0x04000A2B RID: 2603
+	// Token: 0x04000A3F RID: 2623
 	public bool SummonEmptyDemon;
 
-	// Token: 0x04000A2C RID: 2604
+	// Token: 0x04000A40 RID: 2624
 	public bool SummonFlameDemon;
 
-	// Token: 0x04000A2D RID: 2605
+	// Token: 0x04000A41 RID: 2625
 	public bool SummonDemon;
 
-	// Token: 0x04000A2E RID: 2606
+	// Token: 0x04000A42 RID: 2626
 	public Mesh FlameDemonMesh;
 
-	// Token: 0x04000A2F RID: 2607
+	// Token: 0x04000A43 RID: 2627
 	public int CorpsesCounted;
 
-	// Token: 0x04000A30 RID: 2608
+	// Token: 0x04000A44 RID: 2628
 	public int ArmsSpawned;
 
-	// Token: 0x04000A31 RID: 2609
+	// Token: 0x04000A45 RID: 2629
 	public int Sacrifices;
 
-	// Token: 0x04000A32 RID: 2610
+	// Token: 0x04000A46 RID: 2630
 	public int Phase = 1;
 
-	// Token: 0x04000A33 RID: 2611
+	// Token: 0x04000A47 RID: 2631
 	public int Bodies;
 
-	// Token: 0x04000A34 RID: 2612
+	// Token: 0x04000A48 RID: 2632
 	public int Arms;
 
-	// Token: 0x04000A35 RID: 2613
+	// Token: 0x04000A49 RID: 2633
 	public float Timer;
 
-	// Token: 0x04000A36 RID: 2614
+	// Token: 0x04000A4A RID: 2634
 	public AudioClip FlameDemonLine;
 
-	// Token: 0x04000A37 RID: 2615
+	// Token: 0x04000A4B RID: 2635
 	public AudioClip FlameActivate;
 
-	// Token: 0x04000A38 RID: 2616
+	// Token: 0x04000A4C RID: 2636
 	public AudioClip DemonMusic;
 
-	// Token: 0x04000A39 RID: 2617
+	// Token: 0x04000A4D RID: 2637
 	public AudioClip DemonLine;
 
-	// Token: 0x04000A3A RID: 2618
+	// Token: 0x04000A4E RID: 2638
 	public AudioClip EmptyDemonLine;
+
+	// Token: 0x04000A4F RID: 2639
+	public AudioSource MyAudio;
 }

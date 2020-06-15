@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200031D RID: 797
+// Token: 0x02000320 RID: 800
 public class LiquidColliderScript : MonoBehaviour
 {
-	// Token: 0x060017E9 RID: 6121 RVA: 0x000D2864 File Offset: 0x000D0A64
+	// Token: 0x06001806 RID: 6150 RVA: 0x000D4A8C File Offset: 0x000D2C8C
 	private void Start()
 	{
 		if (this.Bucket)
@@ -13,7 +13,7 @@ public class LiquidColliderScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017EA RID: 6122 RVA: 0x000D2888 File Offset: 0x000D0A88
+	// Token: 0x06001807 RID: 6151 RVA: 0x000D4AB0 File Offset: 0x000D2CB0
 	private void Update()
 	{
 		if (!this.Static)
@@ -40,7 +40,7 @@ public class LiquidColliderScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060017EB RID: 6123 RVA: 0x000D2A08 File Offset: 0x000D0C08
+	// Token: 0x06001808 RID: 6152 RVA: 0x000D4C30 File Offset: 0x000D2E30
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!this.AlreadyDoused && other.gameObject.layer == 9)
@@ -85,6 +85,7 @@ public class LiquidColliderScript : MonoBehaviour
 					if (component.Following)
 					{
 						component.Hearts.emission.enabled = false;
+						component.FollowCountdown.gameObject.SetActive(false);
 						component.Yandere.Followers--;
 						component.Following = false;
 						component.CurrentDestination = component.Destinations[component.Phase];
@@ -96,33 +97,33 @@ public class LiquidColliderScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400224F RID: 8783
+	// Token: 0x0400229C RID: 8860
 	private GameObject NewPool;
 
-	// Token: 0x04002250 RID: 8784
+	// Token: 0x0400229D RID: 8861
 	public AudioClip SplashSound;
 
-	// Token: 0x04002251 RID: 8785
+	// Token: 0x0400229E RID: 8862
 	public GameObject GroundSplash;
 
-	// Token: 0x04002252 RID: 8786
+	// Token: 0x0400229F RID: 8863
 	public GameObject Splash;
 
-	// Token: 0x04002253 RID: 8787
+	// Token: 0x040022A0 RID: 8864
 	public GameObject Pool;
 
-	// Token: 0x04002254 RID: 8788
+	// Token: 0x040022A1 RID: 8865
 	public bool AlreadyDoused;
 
-	// Token: 0x04002255 RID: 8789
+	// Token: 0x040022A2 RID: 8866
 	public bool Static;
 
-	// Token: 0x04002256 RID: 8790
+	// Token: 0x040022A3 RID: 8867
 	public bool Bucket;
 
-	// Token: 0x04002257 RID: 8791
+	// Token: 0x040022A4 RID: 8868
 	public bool Blood;
 
-	// Token: 0x04002258 RID: 8792
+	// Token: 0x040022A5 RID: 8869
 	public bool Gas;
 }

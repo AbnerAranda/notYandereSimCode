@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000383 RID: 899
+// Token: 0x02000388 RID: 904
 public enum RagdollDumpType
 {
-	// Token: 0x040026FE RID: 9982
+	// Token: 0x04002757 RID: 10071
 	None,
-	// Token: 0x040026FF RID: 9983
+	// Token: 0x04002758 RID: 10072
 	Incinerator,
-	// Token: 0x04002700 RID: 9984
+	// Token: 0x04002759 RID: 10073
 	TranqCase,
-	// Token: 0x04002701 RID: 9985
+	// Token: 0x0400275A RID: 10074
 	WoodChipper
 }

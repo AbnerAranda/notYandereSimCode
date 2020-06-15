@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200058D RID: 1421
+	// Token: 0x020005A3 RID: 1443
 	public class EnumFlagAttribute : PropertyAttribute
 	{
 	}

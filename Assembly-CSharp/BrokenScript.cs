@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000E9 RID: 233
+// Token: 0x020000EA RID: 234
 public class BrokenScript : MonoBehaviour
 {
-	// Token: 0x06000A70 RID: 2672 RVA: 0x00055E28 File Offset: 0x00054028
+	// Token: 0x06000A77 RID: 2679 RVA: 0x00056B3C File Offset: 0x00054D3C
 	private void Start()
 	{
 		this.HairPhysics[0].enabled = false;
@@ -15,7 +15,7 @@ public class BrokenScript : MonoBehaviour
 		this.Yandere = GameObject.Find("YandereChan");
 	}
 
-	// Token: 0x06000A71 RID: 2673 RVA: 0x00055E98 File Offset: 0x00054098
+	// Token: 0x06000A78 RID: 2680 RVA: 0x00056BAC File Offset: 0x00054DAC
 	private void Update()
 	{
 		if (!this.Done)
@@ -79,66 +79,66 @@ public class BrokenScript : MonoBehaviour
 		this.TwintailL.eulerAngles = eulerAngles2;
 	}
 
-	// Token: 0x04000AEC RID: 2796
+	// Token: 0x04000B0B RID: 2827
 	public DynamicBone[] HairPhysics;
 
-	// Token: 0x04000AED RID: 2797
+	// Token: 0x04000B0C RID: 2828
 	public string[] MutterTexts;
 
-	// Token: 0x04000AEE RID: 2798
+	// Token: 0x04000B0D RID: 2829
 	public AudioClip[] Mutters;
 
-	// Token: 0x04000AEF RID: 2799
+	// Token: 0x04000B0E RID: 2830
 	public Vector3 PermanentAngleR;
 
-	// Token: 0x04000AF0 RID: 2800
+	// Token: 0x04000B0F RID: 2831
 	public Vector3 PermanentAngleL;
 
-	// Token: 0x04000AF1 RID: 2801
+	// Token: 0x04000B10 RID: 2832
 	public Transform TwintailR;
 
-	// Token: 0x04000AF2 RID: 2802
+	// Token: 0x04000B11 RID: 2833
 	public Transform TwintailL;
 
-	// Token: 0x04000AF3 RID: 2803
+	// Token: 0x04000B12 RID: 2834
 	public AudioClip KillKillKill;
 
-	// Token: 0x04000AF4 RID: 2804
+	// Token: 0x04000B13 RID: 2835
 	public AudioClip Stab;
 
-	// Token: 0x04000AF5 RID: 2805
+	// Token: 0x04000B14 RID: 2836
 	public AudioClip DoIt;
 
-	// Token: 0x04000AF6 RID: 2806
+	// Token: 0x04000B15 RID: 2837
 	public GameObject VoiceClip;
 
-	// Token: 0x04000AF7 RID: 2807
+	// Token: 0x04000B16 RID: 2838
 	public GameObject Yandere;
 
-	// Token: 0x04000AF8 RID: 2808
+	// Token: 0x04000B17 RID: 2839
 	public UILabel Subtitle;
 
-	// Token: 0x04000AF9 RID: 2809
+	// Token: 0x04000B18 RID: 2840
 	public AudioSource MyAudio;
 
-	// Token: 0x04000AFA RID: 2810
+	// Token: 0x04000B19 RID: 2841
 	public bool Hunting;
 
-	// Token: 0x04000AFB RID: 2811
+	// Token: 0x04000B1A RID: 2842
 	public bool Stabbed;
 
-	// Token: 0x04000AFC RID: 2812
+	// Token: 0x04000B1B RID: 2843
 	public bool Began;
 
-	// Token: 0x04000AFD RID: 2813
+	// Token: 0x04000B1C RID: 2844
 	public bool Done;
 
-	// Token: 0x04000AFE RID: 2814
+	// Token: 0x04000B1D RID: 2845
 	public float SuicideTimer;
 
-	// Token: 0x04000AFF RID: 2815
+	// Token: 0x04000B1E RID: 2846
 	public float Timer;
 
-	// Token: 0x04000B00 RID: 2816
+	// Token: 0x04000B1F RID: 2847
 	public int ID = 1;
 }

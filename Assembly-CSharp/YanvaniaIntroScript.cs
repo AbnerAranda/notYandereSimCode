@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200047D RID: 1149
+// Token: 0x02000483 RID: 1155
 public class YanvaniaIntroScript : MonoBehaviour
 {
-	// Token: 0x06001DB7 RID: 7607 RVA: 0x00171CCC File Offset: 0x0016FECC
+	// Token: 0x06001DE6 RID: 7654 RVA: 0x00175CCC File Offset: 0x00173ECC
 	private void Start()
 	{
 		this.BlackRight.gameObject.SetActive(true);
@@ -17,7 +17,7 @@ public class YanvaniaIntroScript : MonoBehaviour
 		this.FinalStage.transform.localPosition = new Vector3(-1300f, this.FinalStage.transform.localPosition.y, this.FinalStage.transform.localPosition.z);
 	}
 
-	// Token: 0x06001DB8 RID: 7608 RVA: 0x00171DCC File Offset: 0x0016FFCC
+	// Token: 0x06001DE7 RID: 7655 RVA: 0x00175DCC File Offset: 0x00173FCC
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -61,7 +61,7 @@ public class YanvaniaIntroScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DB9 RID: 7609 RVA: 0x001721D2 File Offset: 0x001703D2
+	// Token: 0x06001DE8 RID: 7656 RVA: 0x001761D2 File Offset: 0x001743D2
 	private void Finish()
 	{
 		if (!this.Jukebox.activeInHierarchy)
@@ -73,36 +73,36 @@ public class YanvaniaIntroScript : MonoBehaviour
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04003AC6 RID: 15046
+	// Token: 0x04003B52 RID: 15186
 	public YanvaniaZombieSpawnerScript ZombieSpawner;
 
-	// Token: 0x04003AC7 RID: 15047
+	// Token: 0x04003B53 RID: 15187
 	public YanvaniaYanmontScript Yanmont;
 
-	// Token: 0x04003AC8 RID: 15048
+	// Token: 0x04003B54 RID: 15188
 	public GameObject Jukebox;
 
-	// Token: 0x04003AC9 RID: 15049
+	// Token: 0x04003B55 RID: 15189
 	public Transform BlackRight;
 
-	// Token: 0x04003ACA RID: 15050
+	// Token: 0x04003B56 RID: 15190
 	public Transform BlackLeft;
 
-	// Token: 0x04003ACB RID: 15051
+	// Token: 0x04003B57 RID: 15191
 	public UILabel FinalStage;
 
-	// Token: 0x04003ACC RID: 15052
+	// Token: 0x04003B58 RID: 15192
 	public UILabel Heartbreak;
 
-	// Token: 0x04003ACD RID: 15053
+	// Token: 0x04003B59 RID: 15193
 	public UITexture Triangle;
 
-	// Token: 0x04003ACE RID: 15054
+	// Token: 0x04003B5A RID: 15194
 	public float LeaveTime;
 
-	// Token: 0x04003ACF RID: 15055
+	// Token: 0x04003B5B RID: 15195
 	public float Position;
 
-	// Token: 0x04003AD0 RID: 15056
+	// Token: 0x04003B5C RID: 15196
 	public float Timer;
 }

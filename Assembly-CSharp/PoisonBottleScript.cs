@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000368 RID: 872
+// Token: 0x0200036D RID: 877
 public class PoisonBottleScript : MonoBehaviour
 {
-	// Token: 0x06001901 RID: 6401 RVA: 0x000EA338 File Offset: 0x000E8538
+	// Token: 0x06001922 RID: 6434 RVA: 0x000EC8E8 File Offset: 0x000EAAE8
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -42,12 +42,12 @@ public class PoisonBottleScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002590 RID: 9616
+	// Token: 0x040025E7 RID: 9703
 	public PromptScript Prompt;
 
-	// Token: 0x04002591 RID: 9617
+	// Token: 0x040025E8 RID: 9704
 	public bool Theft;
 
-	// Token: 0x04002592 RID: 9618
+	// Token: 0x040025E9 RID: 9705
 	public int ID;
 }

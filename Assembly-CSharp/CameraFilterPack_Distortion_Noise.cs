@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000170 RID: 368
+// Token: 0x02000171 RID: 369
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Distortion/Noise")]
 public class CameraFilterPack_Distortion_Noise : MonoBehaviour
 {
 	// Token: 0x17000290 RID: 656
-	// (get) Token: 0x06000DB2 RID: 3506 RVA: 0x0006C317 File Offset: 0x0006A517
+	// (get) Token: 0x06000DB9 RID: 3513 RVA: 0x0006D047 File Offset: 0x0006B247
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Distortion_Noise : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DB3 RID: 3507 RVA: 0x0006C34B File Offset: 0x0006A54B
+	// Token: 0x06000DBA RID: 3514 RVA: 0x0006D07B File Offset: 0x0006B27B
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Distortion_Noise");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Distortion_Noise : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DB4 RID: 3508 RVA: 0x0006C36C File Offset: 0x0006A56C
+	// Token: 0x06000DBB RID: 3515 RVA: 0x0006D09C File Offset: 0x0006B29C
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Distortion_Noise : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000DB5 RID: 3509 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000DBC RID: 3516 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000DB6 RID: 3510 RVA: 0x0006C41B File Offset: 0x0006A61B
+	// Token: 0x06000DBD RID: 3517 RVA: 0x0006D14B File Offset: 0x0006B34B
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Distortion_Noise : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001067 RID: 4199
+	// Token: 0x04001086 RID: 4230
 	public Shader SCShader;
 
-	// Token: 0x04001068 RID: 4200
+	// Token: 0x04001087 RID: 4231
 	private float TimeX = 1f;
 
-	// Token: 0x04001069 RID: 4201
+	// Token: 0x04001088 RID: 4232
 	private Material SCMaterial;
 
-	// Token: 0x0400106A RID: 4202
+	// Token: 0x04001089 RID: 4233
 	[Range(0f, 3f)]
 	public float Distortion = 1f;
 }

@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F7 RID: 1527
+	// Token: 0x0200060D RID: 1549
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_object_placer.php")]
 	public class ObjectPlacer : MonoBehaviour
 	{
-		// Token: 0x060029FF RID: 10751 RVA: 0x001C28B8 File Offset: 0x001C0AB8
+		// Token: 0x06002A55 RID: 10837 RVA: 0x001C84A4 File Offset: 0x001C66A4
 		private void Update()
 		{
 			if (Input.GetKeyDown("p"))
@@ -20,7 +20,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x06002A00 RID: 10752 RVA: 0x001C28E0 File Offset: 0x001C0AE0
+		// Token: 0x06002A56 RID: 10838 RVA: 0x001C84CC File Offset: 0x001C66CC
 		public void PlaceObject()
 		{
 			RaycastHit raycastHit;
@@ -40,7 +40,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x06002A01 RID: 10753 RVA: 0x001C295C File Offset: 0x001C0B5C
+		// Token: 0x06002A57 RID: 10839 RVA: 0x001C8548 File Offset: 0x001C6748
 		public void RemoveObject()
 		{
 			RaycastHit raycastHit;
@@ -65,13 +65,13 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x040043CF RID: 17359
+		// Token: 0x040044AD RID: 17581
 		public GameObject go;
 
-		// Token: 0x040043D0 RID: 17360
+		// Token: 0x040044AE RID: 17582
 		public bool direct;
 
-		// Token: 0x040043D1 RID: 17361
+		// Token: 0x040044AF RID: 17583
 		public bool issueGUOs = true;
 	}
 }

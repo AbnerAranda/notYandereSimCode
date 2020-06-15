@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000220 RID: 544
+// Token: 0x02000221 RID: 545
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Vision/SniperScore")]
 public class CameraFilterPack_Vision_SniperScore : MonoBehaviour
 {
 	// Token: 0x17000340 RID: 832
-	// (get) Token: 0x060011F6 RID: 4598 RVA: 0x0007EFA1 File Offset: 0x0007D1A1
+	// (get) Token: 0x060011FD RID: 4605 RVA: 0x0007FCD1 File Offset: 0x0007DED1
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Vision_SniperScore : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011F7 RID: 4599 RVA: 0x0007EFD5 File Offset: 0x0007D1D5
+	// Token: 0x060011FE RID: 4606 RVA: 0x0007FD05 File Offset: 0x0007DF05
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Vision_SniperScore");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Vision_SniperScore : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011F8 RID: 4600 RVA: 0x0007EFF8 File Offset: 0x0007D1F8
+	// Token: 0x060011FF RID: 4607 RVA: 0x0007FD28 File Offset: 0x0007DF28
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -63,12 +63,12 @@ public class CameraFilterPack_Vision_SniperScore : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x060011F9 RID: 4601 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001200 RID: 4608 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x060011FA RID: 4602 RVA: 0x0007F1B9 File Offset: 0x0007D3B9
+	// Token: 0x06001201 RID: 4609 RVA: 0x0007FEE9 File Offset: 0x0007E0E9
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -77,59 +77,59 @@ public class CameraFilterPack_Vision_SniperScore : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001506 RID: 5382
+	// Token: 0x04001525 RID: 5413
 	public Shader SCShader;
 
-	// Token: 0x04001507 RID: 5383
+	// Token: 0x04001526 RID: 5414
 	private float TimeX = 1f;
 
-	// Token: 0x04001508 RID: 5384
+	// Token: 0x04001527 RID: 5415
 	private Material SCMaterial;
 
-	// Token: 0x04001509 RID: 5385
+	// Token: 0x04001528 RID: 5416
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 
-	// Token: 0x0400150A RID: 5386
+	// Token: 0x04001529 RID: 5417
 	[Range(0f, 1f)]
 	public float Size = 0.45f;
 
-	// Token: 0x0400150B RID: 5387
+	// Token: 0x0400152A RID: 5418
 	[Range(0.01f, 0.4f)]
 	public float Smooth = 0.045f;
 
-	// Token: 0x0400150C RID: 5388
+	// Token: 0x0400152B RID: 5419
 	[Range(0f, 1f)]
 	public float _Cible = 0.5f;
 
-	// Token: 0x0400150D RID: 5389
+	// Token: 0x0400152C RID: 5420
 	[Range(0f, 1f)]
 	public float _Distortion = 0.5f;
 
-	// Token: 0x0400150E RID: 5390
+	// Token: 0x0400152D RID: 5421
 	[Range(0f, 1f)]
 	public float _ExtraColor = 0.5f;
 
-	// Token: 0x0400150F RID: 5391
+	// Token: 0x0400152E RID: 5422
 	[Range(0f, 1f)]
 	public float _ExtraLight = 0.35f;
 
-	// Token: 0x04001510 RID: 5392
+	// Token: 0x0400152F RID: 5423
 	public Color _Tint = new Color(0f, 0.6f, 0f, 0.25f);
 
-	// Token: 0x04001511 RID: 5393
+	// Token: 0x04001530 RID: 5424
 	[Range(0f, 10f)]
 	private float StretchX = 1f;
 
-	// Token: 0x04001512 RID: 5394
+	// Token: 0x04001531 RID: 5425
 	[Range(0f, 10f)]
 	private float StretchY = 1f;
 
-	// Token: 0x04001513 RID: 5395
+	// Token: 0x04001532 RID: 5426
 	[Range(-1f, 1f)]
 	public float _PosX;
 
-	// Token: 0x04001514 RID: 5396
+	// Token: 0x04001533 RID: 5427
 	[Range(-1f, 1f)]
 	public float _PosY;
 }

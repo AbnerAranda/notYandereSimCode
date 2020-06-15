@@ -3,21 +3,21 @@ using UnityEngine;
 
 namespace Pathfinding.Voxels
 {
-	// Token: 0x020005A9 RID: 1449
+	// Token: 0x020005BF RID: 1471
 	public class VoxelArea
 	{
-		// Token: 0x0600276E RID: 10094 RVA: 0x001AEDA4 File Offset: 0x001ACFA4
+		// Token: 0x060027C4 RID: 10180 RVA: 0x001B4990 File Offset: 0x001B2B90
 		public void Reset()
 		{
 			this.ResetLinkedVoxelSpans();
 			for (int i = 0; i < this.compactCells.Length; i++)
 			{
-				this.compactCells[i].count = 0u;
-				this.compactCells[i].index = 0u;
+				this.compactCells[i].count = 0U;
+				this.compactCells[i].index = 0U;
 			}
 		}
 
-		// Token: 0x0600276F RID: 10095 RVA: 0x001AEDF0 File Offset: 0x001ACFF0
+		// Token: 0x060027C5 RID: 10181 RVA: 0x001B49DC File Offset: 0x001B2BDC
 		private void ResetLinkedVoxelSpans()
 		{
 			int num = this.linkedSpans.Length;
@@ -60,7 +60,7 @@ namespace Pathfinding.Voxels
 			this.removedStackCount = 0;
 		}
 
-		// Token: 0x06002770 RID: 10096 RVA: 0x001AEF4C File Offset: 0x001AD14C
+		// Token: 0x060027C6 RID: 10182 RVA: 0x001B4B38 File Offset: 0x001B2D38
 		public VoxelArea(int width, int depth)
 		{
 			this.width = width;
@@ -89,7 +89,7 @@ namespace Pathfinding.Voxels
 			};
 		}
 
-		// Token: 0x06002771 RID: 10097 RVA: 0x001AF014 File Offset: 0x001AD214
+		// Token: 0x060027C7 RID: 10183 RVA: 0x001B4C00 File Offset: 0x001B2E00
 		public int GetSpanCountAll()
 		{
 			int num = 0;
@@ -97,7 +97,7 @@ namespace Pathfinding.Voxels
 			for (int i = 0; i < num2; i++)
 			{
 				int num3 = i;
-				while (num3 != -1 && this.linkedSpans[num3].bottom != 4294967295u)
+				while (num3 != -1 && this.linkedSpans[num3].bottom != 4294967295U)
 				{
 					num++;
 					num3 = this.linkedSpans[num3].next;
@@ -106,7 +106,7 @@ namespace Pathfinding.Voxels
 			return num;
 		}
 
-		// Token: 0x06002772 RID: 10098 RVA: 0x001AF070 File Offset: 0x001AD270
+		// Token: 0x060027C8 RID: 10184 RVA: 0x001B4C5C File Offset: 0x001B2E5C
 		public int GetSpanCount()
 		{
 			int num = 0;
@@ -114,7 +114,7 @@ namespace Pathfinding.Voxels
 			for (int i = 0; i < num2; i++)
 			{
 				int num3 = i;
-				while (num3 != -1 && this.linkedSpans[num3].bottom != 4294967295u)
+				while (num3 != -1 && this.linkedSpans[num3].bottom != 4294967295U)
 				{
 					if (this.linkedSpans[num3].area != 0)
 					{
@@ -126,7 +126,7 @@ namespace Pathfinding.Voxels
 			return num;
 		}
 
-		// Token: 0x06002773 RID: 10099 RVA: 0x001AF0E0 File Offset: 0x001AD2E0
+		// Token: 0x060027C9 RID: 10185 RVA: 0x001B4CCC File Offset: 0x001B2ECC
 		private void PushToSpanRemovedStack(int index)
 		{
 			if (this.removedStackCount == this.removedStack.Length)
@@ -139,10 +139,10 @@ namespace Pathfinding.Voxels
 			this.removedStackCount++;
 		}
 
-		// Token: 0x06002774 RID: 10100 RVA: 0x001AF144 File Offset: 0x001AD344
+		// Token: 0x060027CA RID: 10186 RVA: 0x001B4D30 File Offset: 0x001B2F30
 		public void AddLinkedSpan(int index, uint bottom, uint top, int area, int voxelWalkableClimb)
 		{
-			if (this.linkedSpans[index].bottom == 4294967295u)
+			if (this.linkedSpans[index].bottom == 4294967295U)
 			{
 				this.linkedSpans[index] = new LinkedVoxelSpan(bottom, top, area);
 				return;
@@ -219,67 +219,67 @@ namespace Pathfinding.Voxels
 			this.linkedSpans[num2] = new LinkedVoxelSpan(bottom, top, area, num5);
 		}
 
-		// Token: 0x040041DC RID: 16860
-		public const uint MaxHeight = 65536u;
+		// Token: 0x040042BA RID: 17082
+		public const uint MaxHeight = 65536U;
 
-		// Token: 0x040041DD RID: 16861
+		// Token: 0x040042BB RID: 17083
 		public const int MaxHeightInt = 65536;
 
-		// Token: 0x040041DE RID: 16862
-		public const uint InvalidSpanValue = 4294967295u;
+		// Token: 0x040042BC RID: 17084
+		public const uint InvalidSpanValue = 4294967295U;
 
-		// Token: 0x040041DF RID: 16863
+		// Token: 0x040042BD RID: 17085
 		public const float AvgSpanLayerCountEstimate = 8f;
 
-		// Token: 0x040041E0 RID: 16864
+		// Token: 0x040042BE RID: 17086
 		public readonly int width;
 
-		// Token: 0x040041E1 RID: 16865
+		// Token: 0x040042BF RID: 17087
 		public readonly int depth;
 
-		// Token: 0x040041E2 RID: 16866
+		// Token: 0x040042C0 RID: 17088
 		public CompactVoxelSpan[] compactSpans;
 
-		// Token: 0x040041E3 RID: 16867
+		// Token: 0x040042C1 RID: 17089
 		public CompactVoxelCell[] compactCells;
 
-		// Token: 0x040041E4 RID: 16868
+		// Token: 0x040042C2 RID: 17090
 		public int compactSpanCount;
 
-		// Token: 0x040041E5 RID: 16869
+		// Token: 0x040042C3 RID: 17091
 		public ushort[] tmpUShortArr;
 
-		// Token: 0x040041E6 RID: 16870
+		// Token: 0x040042C4 RID: 17092
 		public int[] areaTypes;
 
-		// Token: 0x040041E7 RID: 16871
+		// Token: 0x040042C5 RID: 17093
 		public ushort[] dist;
 
-		// Token: 0x040041E8 RID: 16872
+		// Token: 0x040042C6 RID: 17094
 		public ushort maxDistance;
 
-		// Token: 0x040041E9 RID: 16873
+		// Token: 0x040042C7 RID: 17095
 		public int maxRegions;
 
-		// Token: 0x040041EA RID: 16874
+		// Token: 0x040042C8 RID: 17096
 		public int[] DirectionX;
 
-		// Token: 0x040041EB RID: 16875
+		// Token: 0x040042C9 RID: 17097
 		public int[] DirectionZ;
 
-		// Token: 0x040041EC RID: 16876
+		// Token: 0x040042CA RID: 17098
 		public Vector3[] VectorDirection;
 
-		// Token: 0x040041ED RID: 16877
+		// Token: 0x040042CB RID: 17099
 		private int linkedSpanCount;
 
-		// Token: 0x040041EE RID: 16878
+		// Token: 0x040042CC RID: 17100
 		public LinkedVoxelSpan[] linkedSpans;
 
-		// Token: 0x040041EF RID: 16879
+		// Token: 0x040042CD RID: 17101
 		private int[] removedStack = new int[128];
 
-		// Token: 0x040041F0 RID: 16880
+		// Token: 0x040042CE RID: 17102
 		private int removedStackCount;
 	}
 }

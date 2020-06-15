@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000152 RID: 338
+// Token: 0x02000153 RID: 339
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/Invert")]
 public class CameraFilterPack_Color_Invert : MonoBehaviour
 {
 	// Token: 0x17000272 RID: 626
-	// (get) Token: 0x06000CFC RID: 3324 RVA: 0x000693EA File Offset: 0x000675EA
+	// (get) Token: 0x06000D03 RID: 3331 RVA: 0x0006A11A File Offset: 0x0006831A
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Color_Invert : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CFD RID: 3325 RVA: 0x0006941E File Offset: 0x0006761E
+	// Token: 0x06000D04 RID: 3332 RVA: 0x0006A14E File Offset: 0x0006834E
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Color_Invert");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Color_Invert : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CFE RID: 3326 RVA: 0x00069440 File Offset: 0x00067640
+	// Token: 0x06000D05 RID: 3333 RVA: 0x0006A170 File Offset: 0x00068370
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Color_Invert : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000CFF RID: 3327 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D06 RID: 3334 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D00 RID: 3328 RVA: 0x000694F6 File Offset: 0x000676F6
+	// Token: 0x06000D07 RID: 3335 RVA: 0x0006A226 File Offset: 0x00068426
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Color_Invert : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FBE RID: 4030
+	// Token: 0x04000FDD RID: 4061
 	public Shader SCShader;
 
-	// Token: 0x04000FBF RID: 4031
+	// Token: 0x04000FDE RID: 4062
 	private float TimeX = 1f;
 
-	// Token: 0x04000FC0 RID: 4032
+	// Token: 0x04000FDF RID: 4063
 	[Range(0f, 1f)]
 	public float _Fade = 1f;
 
-	// Token: 0x04000FC1 RID: 4033
+	// Token: 0x04000FE0 RID: 4064
 	private Material SCMaterial;
 }

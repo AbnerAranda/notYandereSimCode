@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000FF RID: 255
+// Token: 0x02000100 RID: 256
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/3D/Fog_Smoke")]
 public class CameraFilterPack_3D_Fog_Smoke : MonoBehaviour
 {
 	// Token: 0x1700021F RID: 543
-	// (get) Token: 0x06000ACB RID: 2763 RVA: 0x0005E50F File Offset: 0x0005C70F
+	// (get) Token: 0x06000AD2 RID: 2770 RVA: 0x0005F23F File Offset: 0x0005D43F
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_3D_Fog_Smoke : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ACC RID: 2764 RVA: 0x0005E543 File Offset: 0x0005C743
+	// Token: 0x06000AD3 RID: 2771 RVA: 0x0005F273 File Offset: 0x0005D473
 	private void Start()
 	{
 		this.Texture2 = (Resources.Load("CameraFilterPack_3D_Myst1") as Texture2D);
@@ -33,7 +33,7 @@ public class CameraFilterPack_3D_Fog_Smoke : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ACD RID: 2765 RVA: 0x0005E57C File Offset: 0x0005C77C
+	// Token: 0x06000AD4 RID: 2772 RVA: 0x0005F2AC File Offset: 0x0005D4AC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -78,12 +78,12 @@ public class CameraFilterPack_3D_Fog_Smoke : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000ACE RID: 2766 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000AD5 RID: 2773 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000ACF RID: 2767 RVA: 0x0005E77D File Offset: 0x0005C97D
+	// Token: 0x06000AD6 RID: 2774 RVA: 0x0005F4AD File Offset: 0x0005D6AD
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -92,52 +92,52 @@ public class CameraFilterPack_3D_Fog_Smoke : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CD9 RID: 3289
+	// Token: 0x04000CF8 RID: 3320
 	public Shader SCShader;
 
-	// Token: 0x04000CDA RID: 3290
+	// Token: 0x04000CF9 RID: 3321
 	public bool _Visualize;
 
-	// Token: 0x04000CDB RID: 3291
+	// Token: 0x04000CFA RID: 3322
 	private float TimeX = 1f;
 
-	// Token: 0x04000CDC RID: 3292
+	// Token: 0x04000CFB RID: 3323
 	private Material SCMaterial;
 
-	// Token: 0x04000CDD RID: 3293
+	// Token: 0x04000CFC RID: 3324
 	[Range(0f, 100f)]
 	public float _FixDistance = 1f;
 
-	// Token: 0x04000CDE RID: 3294
+	// Token: 0x04000CFD RID: 3325
 	[Range(-0.99f, 0.99f)]
 	public float _Distance = 0.5f;
 
-	// Token: 0x04000CDF RID: 3295
+	// Token: 0x04000CFE RID: 3326
 	[Range(0f, 0.5f)]
 	public float _Size = 0.1f;
 
-	// Token: 0x04000CE0 RID: 3296
+	// Token: 0x04000CFF RID: 3327
 	[Range(0f, 10f)]
 	public float DistortionLevel = 1.2f;
 
-	// Token: 0x04000CE1 RID: 3297
+	// Token: 0x04000D00 RID: 3328
 	[Range(0.1f, 10f)]
 	public float DistortionSize = 1.4f;
 
-	// Token: 0x04000CE2 RID: 3298
+	// Token: 0x04000D01 RID: 3329
 	[Range(-2f, 4f)]
 	public float LightIntensity = 0.08f;
 
-	// Token: 0x04000CE3 RID: 3299
+	// Token: 0x04000D02 RID: 3330
 	public bool AutoAnimatedNear;
 
-	// Token: 0x04000CE4 RID: 3300
+	// Token: 0x04000D03 RID: 3331
 	[Range(-5f, 5f)]
 	public float AutoAnimatedNearSpeed = 0.5f;
 
-	// Token: 0x04000CE5 RID: 3301
+	// Token: 0x04000D04 RID: 3332
 	private Texture2D Texture2;
 
-	// Token: 0x04000CE6 RID: 3302
+	// Token: 0x04000D05 RID: 3333
 	public static Color ChangeColorRGB;
 }

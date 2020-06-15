@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000414 RID: 1044
+// Token: 0x02000419 RID: 1049
 public class TapePlayerMenuScript : MonoBehaviour
 {
-	// Token: 0x06001C00 RID: 7168 RVA: 0x0014CE80 File Offset: 0x0014B080
+	// Token: 0x06001C24 RID: 7204 RVA: 0x001502F8 File Offset: 0x0014E4F8
 	private void Start()
 	{
 		this.List.transform.localPosition = new Vector3(-955f, this.List.transform.localPosition.y, this.List.transform.localPosition.z);
@@ -13,7 +13,7 @@ public class TapePlayerMenuScript : MonoBehaviour
 		this.TapePlayerCamera.position = new Vector3(-26.15f, this.TapePlayerCamera.position.y, 5.35f);
 	}
 
-	// Token: 0x06001C01 RID: 7169 RVA: 0x0014CF40 File Offset: 0x0014B140
+	// Token: 0x06001C25 RID: 7205 RVA: 0x001503B8 File Offset: 0x0014E5B8
 	private void Update()
 	{
 		AudioSource component = base.GetComponent<AudioSource>();
@@ -41,12 +41,12 @@ public class TapePlayerMenuScript : MonoBehaviour
 				}
 				else if (this.Phase == 2)
 				{
-					this.Timer += 0.016666668f;
+					this.Timer += 0.0166666675f;
 					if (component.isPlaying)
 					{
 						if ((double)this.Timer > 0.1)
 						{
-							this.TapePlayer.GetComponent<Animation>()["PressPlay"].time += 0.016666668f;
+							this.TapePlayer.GetComponent<Animation>()["PressPlay"].time += 0.0166666675f;
 							if (this.TapePlayer.GetComponent<Animation>()["PressPlay"].time > this.TapePlayer.GetComponent<Animation>()["PressPlay"].length)
 							{
 								this.TapePlayer.GetComponent<Animation>()["PressPlay"].time = this.TapePlayer.GetComponent<Animation>()["PressPlay"].length;
@@ -55,7 +55,7 @@ public class TapePlayerMenuScript : MonoBehaviour
 					}
 					else
 					{
-						this.TapePlayer.GetComponent<Animation>()["PressPlay"].time -= 0.016666668f;
+						this.TapePlayer.GetComponent<Animation>()["PressPlay"].time -= 0.0166666675f;
 						if (this.TapePlayer.GetComponent<Animation>()["PressPlay"].time < 0f)
 						{
 							this.TapePlayer.GetComponent<Animation>()["PressPlay"].time = 0f;
@@ -107,7 +107,7 @@ public class TapePlayerMenuScript : MonoBehaviour
 				}
 				else if (this.Phase == 3)
 				{
-					this.TapePlayer.GetComponent<Animation>()["PressEject"].time += 0.016666668f;
+					this.TapePlayer.GetComponent<Animation>()["PressEject"].time += 0.0166666675f;
 					if (this.TapePlayer.GetComponent<Animation>()["PressEject"].time >= this.TapePlayer.GetComponent<Animation>()["PressEject"].length)
 					{
 						this.TapePlayer.GetComponent<Animation>().Play("InsertTape");
@@ -140,8 +140,8 @@ public class TapePlayerMenuScript : MonoBehaviour
 				}
 				if (this.InputManager.DPadRight || Input.GetKey(KeyCode.RightArrow))
 				{
-					this.ResumeTime += 1.6666666f;
-					component.time += 1.6666666f;
+					this.ResumeTime += 1.66666663f;
+					component.time += 1.66666663f;
 					this.TapePlayer.FastForward = true;
 				}
 				else
@@ -150,8 +150,8 @@ public class TapePlayerMenuScript : MonoBehaviour
 				}
 				if (this.InputManager.DPadLeft || Input.GetKey(KeyCode.LeftArrow))
 				{
-					this.ResumeTime -= 1.6666666f;
-					component.time -= 1.6666666f;
+					this.ResumeTime -= 1.66666663f;
+					component.time -= 1.66666663f;
 					this.TapePlayer.Rewind = true;
 				}
 				else
@@ -487,7 +487,7 @@ public class TapePlayerMenuScript : MonoBehaviour
 		this.List.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001C02 RID: 7170 RVA: 0x0014E24C File Offset: 0x0014C44C
+	// Token: 0x06001C26 RID: 7206 RVA: 0x001516C4 File Offset: 0x0014F8C4
 	public void UpdateLabels()
 	{
 		int i = 0;
@@ -539,7 +539,7 @@ public class TapePlayerMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C03 RID: 7171 RVA: 0x0014E3DC File Offset: 0x0014C5DC
+	// Token: 0x06001C27 RID: 7207 RVA: 0x00151854 File Offset: 0x0014FA54
 	public void CheckSelection()
 	{
 		if (this.Category == 1)
@@ -558,186 +558,186 @@ public class TapePlayerMenuScript : MonoBehaviour
 		this.TapePlayer.PromptBar.UpdateButtons();
 	}
 
-	// Token: 0x0400340B RID: 13323
+	// Token: 0x04003480 RID: 13440
 	public InputManagerScript InputManager;
 
-	// Token: 0x0400340C RID: 13324
+	// Token: 0x04003481 RID: 13441
 	public TapePlayerScript TapePlayer;
 
-	// Token: 0x0400340D RID: 13325
+	// Token: 0x04003482 RID: 13442
 	public PromptBarScript PromptBar;
 
-	// Token: 0x0400340E RID: 13326
+	// Token: 0x04003483 RID: 13443
 	public GameObject Jukebox;
 
-	// Token: 0x0400340F RID: 13327
+	// Token: 0x04003484 RID: 13444
 	public Transform TapePlayerCamera;
 
-	// Token: 0x04003410 RID: 13328
+	// Token: 0x04003485 RID: 13445
 	public Transform Highlight;
 
-	// Token: 0x04003411 RID: 13329
+	// Token: 0x04003486 RID: 13446
 	public Transform TimeBar;
 
-	// Token: 0x04003412 RID: 13330
+	// Token: 0x04003487 RID: 13447
 	public Transform List;
 
-	// Token: 0x04003413 RID: 13331
+	// Token: 0x04003488 RID: 13448
 	public AudioClip[] Recordings;
 
-	// Token: 0x04003414 RID: 13332
+	// Token: 0x04003489 RID: 13449
 	public AudioClip[] BasementRecordings;
 
-	// Token: 0x04003415 RID: 13333
+	// Token: 0x0400348A RID: 13450
 	public AudioClip[] HeadmasterRecordings;
 
-	// Token: 0x04003416 RID: 13334
+	// Token: 0x0400348B RID: 13451
 	public UILabel[] TapeLabels;
 
-	// Token: 0x04003417 RID: 13335
+	// Token: 0x0400348C RID: 13452
 	public GameObject[] NewIcons;
 
-	// Token: 0x04003418 RID: 13336
+	// Token: 0x0400348D RID: 13453
 	public AudioClip TapeStop;
 
-	// Token: 0x04003419 RID: 13337
+	// Token: 0x0400348E RID: 13454
 	public string CurrentTime;
 
-	// Token: 0x0400341A RID: 13338
+	// Token: 0x0400348F RID: 13455
 	public string ClipLength;
 
-	// Token: 0x0400341B RID: 13339
+	// Token: 0x04003490 RID: 13456
 	public bool Listening;
 
-	// Token: 0x0400341C RID: 13340
+	// Token: 0x04003491 RID: 13457
 	public bool Show;
 
-	// Token: 0x0400341D RID: 13341
+	// Token: 0x04003492 RID: 13458
 	public UILabel HeaderLabel;
 
-	// Token: 0x0400341E RID: 13342
+	// Token: 0x04003493 RID: 13459
 	public UILabel Subtitle;
 
-	// Token: 0x0400341F RID: 13343
+	// Token: 0x04003494 RID: 13460
 	public UILabel Label;
 
-	// Token: 0x04003420 RID: 13344
+	// Token: 0x04003495 RID: 13461
 	public UISprite Bar;
 
-	// Token: 0x04003421 RID: 13345
+	// Token: 0x04003496 RID: 13462
 	public int TotalTapes = 10;
 
-	// Token: 0x04003422 RID: 13346
+	// Token: 0x04003497 RID: 13463
 	public int Category = 1;
 
-	// Token: 0x04003423 RID: 13347
+	// Token: 0x04003498 RID: 13464
 	public int Selected = 1;
 
-	// Token: 0x04003424 RID: 13348
+	// Token: 0x04003499 RID: 13465
 	public int Phase = 1;
 
-	// Token: 0x04003425 RID: 13349
+	// Token: 0x0400349A RID: 13466
 	public float RoundedTime;
 
-	// Token: 0x04003426 RID: 13350
+	// Token: 0x0400349B RID: 13467
 	public float ResumeTime;
 
-	// Token: 0x04003427 RID: 13351
+	// Token: 0x0400349C RID: 13468
 	public float Timer;
 
-	// Token: 0x04003428 RID: 13352
+	// Token: 0x0400349D RID: 13469
 	public float[] Cues1;
 
-	// Token: 0x04003429 RID: 13353
+	// Token: 0x0400349E RID: 13470
 	public float[] Cues2;
 
-	// Token: 0x0400342A RID: 13354
+	// Token: 0x0400349F RID: 13471
 	public float[] Cues3;
 
-	// Token: 0x0400342B RID: 13355
+	// Token: 0x040034A0 RID: 13472
 	public float[] Cues4;
 
-	// Token: 0x0400342C RID: 13356
+	// Token: 0x040034A1 RID: 13473
 	public float[] Cues5;
 
-	// Token: 0x0400342D RID: 13357
+	// Token: 0x040034A2 RID: 13474
 	public float[] Cues6;
 
-	// Token: 0x0400342E RID: 13358
+	// Token: 0x040034A3 RID: 13475
 	public float[] Cues7;
 
-	// Token: 0x0400342F RID: 13359
+	// Token: 0x040034A4 RID: 13476
 	public float[] Cues8;
 
-	// Token: 0x04003430 RID: 13360
+	// Token: 0x040034A5 RID: 13477
 	public float[] Cues9;
 
-	// Token: 0x04003431 RID: 13361
+	// Token: 0x040034A6 RID: 13478
 	public float[] Cues10;
 
-	// Token: 0x04003432 RID: 13362
+	// Token: 0x040034A7 RID: 13479
 	public string[] Subs1;
 
-	// Token: 0x04003433 RID: 13363
+	// Token: 0x040034A8 RID: 13480
 	public string[] Subs2;
 
-	// Token: 0x04003434 RID: 13364
+	// Token: 0x040034A9 RID: 13481
 	public string[] Subs3;
 
-	// Token: 0x04003435 RID: 13365
+	// Token: 0x040034AA RID: 13482
 	public string[] Subs4;
 
-	// Token: 0x04003436 RID: 13366
+	// Token: 0x040034AB RID: 13483
 	public string[] Subs5;
 
-	// Token: 0x04003437 RID: 13367
+	// Token: 0x040034AC RID: 13484
 	public string[] Subs6;
 
-	// Token: 0x04003438 RID: 13368
+	// Token: 0x040034AD RID: 13485
 	public string[] Subs7;
 
-	// Token: 0x04003439 RID: 13369
+	// Token: 0x040034AE RID: 13486
 	public string[] Subs8;
 
-	// Token: 0x0400343A RID: 13370
+	// Token: 0x040034AF RID: 13487
 	public string[] Subs9;
 
-	// Token: 0x0400343B RID: 13371
+	// Token: 0x040034B0 RID: 13488
 	public string[] Subs10;
 
-	// Token: 0x0400343C RID: 13372
+	// Token: 0x040034B1 RID: 13489
 	public float[] BasementCues1;
 
-	// Token: 0x0400343D RID: 13373
+	// Token: 0x040034B2 RID: 13490
 	public float[] BasementCues10;
 
-	// Token: 0x0400343E RID: 13374
+	// Token: 0x040034B3 RID: 13491
 	public string[] BasementSubs1;
 
-	// Token: 0x0400343F RID: 13375
+	// Token: 0x040034B4 RID: 13492
 	public string[] BasementSubs10;
 
-	// Token: 0x04003440 RID: 13376
+	// Token: 0x040034B5 RID: 13493
 	public float[] HeadmasterCues1;
 
-	// Token: 0x04003441 RID: 13377
+	// Token: 0x040034B6 RID: 13494
 	public float[] HeadmasterCues2;
 
-	// Token: 0x04003442 RID: 13378
+	// Token: 0x040034B7 RID: 13495
 	public float[] HeadmasterCues6;
 
-	// Token: 0x04003443 RID: 13379
+	// Token: 0x040034B8 RID: 13496
 	public float[] HeadmasterCues10;
 
-	// Token: 0x04003444 RID: 13380
+	// Token: 0x040034B9 RID: 13497
 	public string[] HeadmasterSubs1;
 
-	// Token: 0x04003445 RID: 13381
+	// Token: 0x040034BA RID: 13498
 	public string[] HeadmasterSubs2;
 
-	// Token: 0x04003446 RID: 13382
+	// Token: 0x040034BB RID: 13499
 	public string[] HeadmasterSubs6;
 
-	// Token: 0x04003447 RID: 13383
+	// Token: 0x040034BC RID: 13500
 	public string[] HeadmasterSubs10;
 }

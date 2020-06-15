@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000248 RID: 584
+// Token: 0x02000249 RID: 585
 public class ConvoManagerScript : MonoBehaviour
 {
-	// Token: 0x06001293 RID: 4755 RVA: 0x0008B368 File Offset: 0x00089568
+	// Token: 0x0600129A RID: 4762 RVA: 0x0008C268 File Offset: 0x0008A468
 	public void CheckMe(int StudentID)
 	{
 		if (StudentID == 2)
@@ -345,7 +345,7 @@ public class ConvoManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001294 RID: 4756 RVA: 0x0008C0A4 File Offset: 0x0008A2A4
+	// Token: 0x0600129B RID: 4763 RVA: 0x0008CFA4 File Offset: 0x0008B1A4
 	public void MartialArtsCheck()
 	{
 		this.CheckTimer += Time.deltaTime;
@@ -370,7 +370,7 @@ public class ConvoManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001295 RID: 4757 RVA: 0x0008C230 File Offset: 0x0008A430
+	// Token: 0x0600129C RID: 4764 RVA: 0x0008D130 File Offset: 0x0008B330
 	public void LateUpdate()
 	{
 		this.CheckTimer = Mathf.MoveTowards(this.CheckTimer, 0f, Time.deltaTime);
@@ -399,30 +399,30 @@ public class ConvoManagerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040016C9 RID: 5833
+	// Token: 0x040016E8 RID: 5864
 	public StudentManagerScript SM;
 
-	// Token: 0x040016CA RID: 5834
+	// Token: 0x040016E9 RID: 5865
 	public int NearbyStudents;
 
-	// Token: 0x040016CB RID: 5835
+	// Token: 0x040016EA RID: 5866
 	public int ID;
 
-	// Token: 0x040016CC RID: 5836
+	// Token: 0x040016EB RID: 5867
 	public string[] FemaleCombatAnims;
 
-	// Token: 0x040016CD RID: 5837
+	// Token: 0x040016EC RID: 5868
 	public string[] MaleCombatAnims;
 
-	// Token: 0x040016CE RID: 5838
+	// Token: 0x040016ED RID: 5869
 	public int CombatAnimID;
 
-	// Token: 0x040016CF RID: 5839
+	// Token: 0x040016EE RID: 5870
 	public float CheckTimer;
 
-	// Token: 0x040016D0 RID: 5840
+	// Token: 0x040016EF RID: 5871
 	public bool Confirmed;
 
-	// Token: 0x040016D1 RID: 5841
+	// Token: 0x040016F0 RID: 5872
 	public int Cycles;
 }

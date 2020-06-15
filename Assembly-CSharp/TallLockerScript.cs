@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000413 RID: 1043
+// Token: 0x02000418 RID: 1048
 public class TallLockerScript : MonoBehaviour
 {
-	// Token: 0x06001BF8 RID: 7160 RVA: 0x0014BFA7 File Offset: 0x0014A1A7
+	// Token: 0x06001C1C RID: 7196 RVA: 0x0014F3F7 File Offset: 0x0014D5F7
 	private void Start()
 	{
 		this.Prompt.HideButton[1] = true;
@@ -12,7 +12,7 @@ public class TallLockerScript : MonoBehaviour
 		this.Prompt.HideButton[3] = true;
 	}
 
-	// Token: 0x06001BF9 RID: 7161 RVA: 0x0014BFD4 File Offset: 0x0014A1D4
+	// Token: 0x06001C1D RID: 7197 RVA: 0x0014F424 File Offset: 0x0014D624
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f && !this.Yandere.Chased && this.Yandere.Chasers == 0)
@@ -217,12 +217,13 @@ public class TallLockerScript : MonoBehaviour
 						this.Yandere.ChangeSchoolwear();
 						if (this.Yandere.Bloodiness > 0f)
 						{
+							this.Yandere.Police.BloodyClothing++;
 							PickUpScript component;
 							if (this.RemovingClubAttire)
 							{
-								component = UnityEngine.Object.Instantiate<GameObject>(this.BloodyClubUniform[(int)ClubGlobals.Club], this.Yandere.transform.position + Vector3.forward * 0.5f + Vector3.up, Quaternion.identity).GetComponent<PickUpScript>();
-								this.StudentManager.ChangingBooths[(int)ClubGlobals.Club].CannotChange = true;
-								this.StudentManager.ChangingBooths[(int)ClubGlobals.Club].CheckYandereClub();
+								component = UnityEngine.Object.Instantiate<GameObject>(this.BloodyClubUniform[(int)this.Yandere.Club], this.Yandere.transform.position + Vector3.forward * 0.5f + Vector3.up, Quaternion.identity).GetComponent<PickUpScript>();
+								this.StudentManager.ChangingBooths[(int)this.Yandere.Club].CannotChange = true;
+								this.StudentManager.ChangingBooths[(int)this.Yandere.Club].CheckYandereClub();
 								this.Prompt.HideButton[1] = true;
 								this.Prompt.HideButton[2] = true;
 								this.Prompt.HideButton[3] = true;
@@ -271,7 +272,7 @@ public class TallLockerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BFA RID: 7162 RVA: 0x0014C8C8 File Offset: 0x0014AAC8
+	// Token: 0x06001C1E RID: 7198 RVA: 0x0014FD40 File Offset: 0x0014DF40
 	public void SpawnSteam()
 	{
 		this.SteamCountdown = true;
@@ -289,7 +290,7 @@ public class TallLockerScript : MonoBehaviour
 		this.Student.Pathfinding.canMove = false;
 	}
 
-	// Token: 0x06001BFB RID: 7163 RVA: 0x0014C9D4 File Offset: 0x0014ABD4
+	// Token: 0x06001C1F RID: 7199 RVA: 0x0014FE4C File Offset: 0x0014E04C
 	public void SpawnSteamNoSideEffects(StudentScript SteamStudent)
 	{
 		Debug.Log("Changing clothes, no strings attached.");
@@ -302,7 +303,7 @@ public class TallLockerScript : MonoBehaviour
 		SteamStudent.Routine = false;
 	}
 
-	// Token: 0x06001BFC RID: 7164 RVA: 0x0014CA68 File Offset: 0x0014AC68
+	// Token: 0x06001C20 RID: 7200 RVA: 0x0014FEE0 File Offset: 0x0014E0E0
 	public void UpdateSchoolwear()
 	{
 		if (this.DropCleanUniform)
@@ -350,7 +351,7 @@ public class TallLockerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BFD RID: 7165 RVA: 0x0014CC3C File Offset: 0x0014AE3C
+	// Token: 0x06001C21 RID: 7201 RVA: 0x001500B4 File Offset: 0x0014E2B4
 	public void UpdateButtons()
 	{
 		if (!this.Yandere.ClubAttire || (this.Yandere.ClubAttire && this.Yandere.Bloodiness > 0f))
@@ -399,7 +400,7 @@ public class TallLockerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BFE RID: 7166 RVA: 0x0014CD94 File Offset: 0x0014AF94
+	// Token: 0x06001C22 RID: 7202 RVA: 0x0015020C File Offset: 0x0014E40C
 	private void CheckAvailableUniforms()
 	{
 		this.AvailableUniforms = this.StudentManager.OriginalUniforms;
@@ -419,72 +420,72 @@ public class TallLockerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040033F4 RID: 13300
+	// Token: 0x04003469 RID: 13417
 	public GameObject[] BloodyClubUniform;
 
-	// Token: 0x040033F5 RID: 13301
+	// Token: 0x0400346A RID: 13418
 	public GameObject[] BloodyUniform;
 
-	// Token: 0x040033F6 RID: 13302
+	// Token: 0x0400346B RID: 13419
 	public GameObject[] Schoolwear;
 
-	// Token: 0x040033F7 RID: 13303
+	// Token: 0x0400346C RID: 13420
 	public bool[] Removed;
 
-	// Token: 0x040033F8 RID: 13304
+	// Token: 0x0400346D RID: 13421
 	public bool[] Bloody;
 
-	// Token: 0x040033F9 RID: 13305
+	// Token: 0x0400346E RID: 13422
 	public GameObject CleanUniform;
 
-	// Token: 0x040033FA RID: 13306
+	// Token: 0x0400346F RID: 13423
 	public GameObject SteamCloud;
 
-	// Token: 0x040033FB RID: 13307
+	// Token: 0x04003470 RID: 13424
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x040033FC RID: 13308
+	// Token: 0x04003471 RID: 13425
 	public RivalPhoneScript RivalPhone;
 
-	// Token: 0x040033FD RID: 13309
+	// Token: 0x04003472 RID: 13426
 	public StudentScript Student;
 
-	// Token: 0x040033FE RID: 13310
+	// Token: 0x04003473 RID: 13427
 	public YandereScript Yandere;
 
-	// Token: 0x040033FF RID: 13311
+	// Token: 0x04003474 RID: 13428
 	public PromptScript Prompt;
 
-	// Token: 0x04003400 RID: 13312
+	// Token: 0x04003475 RID: 13429
 	public Transform Hinge;
 
-	// Token: 0x04003401 RID: 13313
+	// Token: 0x04003476 RID: 13430
 	public bool RemovingClubAttire;
 
-	// Token: 0x04003402 RID: 13314
+	// Token: 0x04003477 RID: 13431
 	public bool DropCleanUniform;
 
-	// Token: 0x04003403 RID: 13315
+	// Token: 0x04003478 RID: 13432
 	public bool SteamCountdown;
 
-	// Token: 0x04003404 RID: 13316
+	// Token: 0x04003479 RID: 13433
 	public bool YandereLocker;
 
-	// Token: 0x04003405 RID: 13317
+	// Token: 0x0400347A RID: 13434
 	public bool Swapping;
 
-	// Token: 0x04003406 RID: 13318
+	// Token: 0x0400347B RID: 13435
 	public bool Open;
 
-	// Token: 0x04003407 RID: 13319
+	// Token: 0x0400347C RID: 13436
 	public float Rotation;
 
-	// Token: 0x04003408 RID: 13320
+	// Token: 0x0400347D RID: 13437
 	public float Timer;
 
-	// Token: 0x04003409 RID: 13321
+	// Token: 0x0400347E RID: 13438
 	public int AvailableUniforms = 2;
 
-	// Token: 0x0400340A RID: 13322
+	// Token: 0x0400347F RID: 13439
 	public int Phase = 1;
 }

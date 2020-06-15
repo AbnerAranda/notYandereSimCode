@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000580 RID: 1408
+	// Token: 0x02000596 RID: 1430
 	[AddComponentMenu("Pathfinding/Modifiers/Funnel")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_funnel_modifier.php")]
 	[Serializable]
 	public class FunnelModifier : MonoModifier
 	{
-		// Token: 0x170005A9 RID: 1449
-		// (get) Token: 0x06002647 RID: 9799 RVA: 0x001A5BF7 File Offset: 0x001A3DF7
+		// Token: 0x170005AF RID: 1455
+		// (get) Token: 0x0600269D RID: 9885 RVA: 0x001AB7E3 File Offset: 0x001A99E3
 		public override int Order
 		{
 			get
@@ -21,7 +21,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002648 RID: 9800 RVA: 0x001A5D98 File Offset: 0x001A3F98
+		// Token: 0x0600269E RID: 9886 RVA: 0x001AB984 File Offset: 0x001A9B84
 		public override void Apply(Path p)
 		{
 			if (p.path == null || p.path.Count == 0 || p.vectorPath == null || p.vectorPath.Count == 0)
@@ -63,10 +63,10 @@ namespace Pathfinding
 			p.vectorPath = list;
 		}
 
-		// Token: 0x0400412E RID: 16686
+		// Token: 0x0400420C RID: 16908
 		public bool unwrap = true;
 
-		// Token: 0x0400412F RID: 16687
+		// Token: 0x0400420D RID: 16909
 		public bool splitAtEveryPortal;
 	}
 }

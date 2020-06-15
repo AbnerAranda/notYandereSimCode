@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000E3 RID: 227
+// Token: 0x020000E4 RID: 228
 public class BodyHidingLockerScript : MonoBehaviour
 {
-	// Token: 0x06000A64 RID: 2660 RVA: 0x000556E4 File Offset: 0x000538E4
+	// Token: 0x06000A6B RID: 2667 RVA: 0x000563C8 File Offset: 0x000545C8
 	private void Update()
 	{
 		if (this.Rotation != 0f)
@@ -27,7 +27,14 @@ public class BodyHidingLockerScript : MonoBehaviour
 			if (this.Prompt.Circle[0].fillAmount == 0f)
 			{
 				AudioSource.PlayClipAtPoint(this.LockerOpen, this.Prompt.Yandere.MainCamera.transform.position);
-				this.Corpse = this.Prompt.Yandere.CurrentRagdoll;
+				if (this.Prompt.Yandere.Carrying)
+				{
+					this.Corpse = this.Prompt.Yandere.CurrentRagdoll;
+				}
+				else
+				{
+					this.Corpse = this.Prompt.Yandere.Ragdoll.GetComponent<RagdollScript>();
+				}
 				this.Prompt.Yandere.EmptyHands();
 				this.Prompt.Yandere.NearBodies = 0;
 				this.Prompt.Yandere.NearestCorpseID = 0;
@@ -51,24 +58,24 @@ public class BodyHidingLockerScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000AB2 RID: 2738
+	// Token: 0x04000AD0 RID: 2768
 	public RagdollScript Corpse;
 
-	// Token: 0x04000AB3 RID: 2739
+	// Token: 0x04000AD1 RID: 2769
 	public PromptScript Prompt;
 
-	// Token: 0x04000AB4 RID: 2740
+	// Token: 0x04000AD2 RID: 2770
 	public AudioClip LockerClose;
 
-	// Token: 0x04000AB5 RID: 2741
+	// Token: 0x04000AD3 RID: 2771
 	public AudioClip LockerOpen;
 
-	// Token: 0x04000AB6 RID: 2742
+	// Token: 0x04000AD4 RID: 2772
 	public float Rotation;
 
-	// Token: 0x04000AB7 RID: 2743
+	// Token: 0x04000AD5 RID: 2773
 	public float Speed;
 
-	// Token: 0x04000AB8 RID: 2744
+	// Token: 0x04000AD6 RID: 2774
 	public Transform Door;
 }

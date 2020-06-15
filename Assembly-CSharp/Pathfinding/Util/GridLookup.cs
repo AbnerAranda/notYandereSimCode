@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005DB RID: 1499
+	// Token: 0x020005F1 RID: 1521
 	public class GridLookup<T> where T : class
 	{
-		// Token: 0x06002947 RID: 10567 RVA: 0x001BC6DC File Offset: 0x001BA8DC
+		// Token: 0x0600299D RID: 10653 RVA: 0x001C22C8 File Offset: 0x001C04C8
 		public GridLookup(Int2 size)
 		{
 			this.size = size;
@@ -17,8 +17,8 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x170005FF RID: 1535
-		// (get) Token: 0x06002948 RID: 10568 RVA: 0x001BC74F File Offset: 0x001BA94F
+		// Token: 0x17000605 RID: 1541
+		// (get) Token: 0x0600299E RID: 10654 RVA: 0x001C233B File Offset: 0x001C053B
 		public GridLookup<T>.Root AllItems
 		{
 			get
@@ -27,7 +27,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002949 RID: 10569 RVA: 0x001BC75C File Offset: 0x001BA95C
+		// Token: 0x0600299F RID: 10655 RVA: 0x001C2348 File Offset: 0x001C0548
 		public GridLookup<T>.Root GetRoot(T item)
 		{
 			GridLookup<T>.Root result;
@@ -35,7 +35,7 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x0600294A RID: 10570 RVA: 0x001BC77C File Offset: 0x001BA97C
+		// Token: 0x060029A0 RID: 10656 RVA: 0x001C2368 File Offset: 0x001C0568
 		public GridLookup<T>.Root Add(T item, IntRect bounds)
 		{
 			GridLookup<T>.Root root = new GridLookup<T>.Root
@@ -54,7 +54,7 @@ namespace Pathfinding.Util
 			return root;
 		}
 
-		// Token: 0x0600294B RID: 10571 RVA: 0x001BC7EC File Offset: 0x001BA9EC
+		// Token: 0x060029A1 RID: 10657 RVA: 0x001C23D8 File Offset: 0x001C05D8
 		public void Remove(T item)
 		{
 			GridLookup<T>.Root root;
@@ -71,7 +71,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600294C RID: 10572 RVA: 0x001BC854 File Offset: 0x001BAA54
+		// Token: 0x060029A2 RID: 10658 RVA: 0x001C2440 File Offset: 0x001C0640
 		public void Move(T item, IntRect bounds)
 		{
 			GridLookup<T>.Root root;
@@ -130,7 +130,7 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600294D RID: 10573 RVA: 0x001BCA30 File Offset: 0x001BAC30
+		// Token: 0x060029A3 RID: 10659 RVA: 0x001C261C File Offset: 0x001C081C
 		public List<U> QueryRect<U>(IntRect r) where U : class, T
 		{
 			List<U> list = ListPool<U>.Claim();
@@ -168,53 +168,53 @@ namespace Pathfinding.Util
 			return list;
 		}
 
-		// Token: 0x04004318 RID: 17176
+		// Token: 0x040043F6 RID: 17398
 		private Int2 size;
 
-		// Token: 0x04004319 RID: 17177
+		// Token: 0x040043F7 RID: 17399
 		private GridLookup<T>.Item[] cells;
 
-		// Token: 0x0400431A RID: 17178
+		// Token: 0x040043F8 RID: 17400
 		private GridLookup<T>.Root all = new GridLookup<T>.Root();
 
-		// Token: 0x0400431B RID: 17179
+		// Token: 0x040043F9 RID: 17401
 		private Dictionary<T, GridLookup<T>.Root> rootLookup = new Dictionary<T, GridLookup<T>.Root>();
 
-		// Token: 0x0400431C RID: 17180
+		// Token: 0x040043FA RID: 17402
 		private Stack<GridLookup<T>.Item> itemPool = new Stack<GridLookup<T>.Item>();
 
-		// Token: 0x02000772 RID: 1906
+		// Token: 0x0200078C RID: 1932
 		internal class Item
 		{
-			// Token: 0x04004A70 RID: 19056
+			// Token: 0x04004B5B RID: 19291
 			public GridLookup<T>.Root root;
 
-			// Token: 0x04004A71 RID: 19057
+			// Token: 0x04004B5C RID: 19292
 			public GridLookup<T>.Item prev;
 
-			// Token: 0x04004A72 RID: 19058
+			// Token: 0x04004B5D RID: 19293
 			public GridLookup<T>.Item next;
 		}
 
-		// Token: 0x02000773 RID: 1907
+		// Token: 0x0200078D RID: 1933
 		public class Root
 		{
-			// Token: 0x04004A73 RID: 19059
+			// Token: 0x04004B5E RID: 19294
 			public T obj;
 
-			// Token: 0x04004A74 RID: 19060
+			// Token: 0x04004B5F RID: 19295
 			public GridLookup<T>.Root next;
 
-			// Token: 0x04004A75 RID: 19061
+			// Token: 0x04004B60 RID: 19296
 			internal GridLookup<T>.Root prev;
 
-			// Token: 0x04004A76 RID: 19062
+			// Token: 0x04004B61 RID: 19297
 			internal IntRect previousBounds = new IntRect(0, 0, -1, -1);
 
-			// Token: 0x04004A77 RID: 19063
+			// Token: 0x04004B62 RID: 19298
 			internal List<GridLookup<T>.Item> items = new List<GridLookup<T>.Item>();
 
-			// Token: 0x04004A78 RID: 19064
+			// Token: 0x04004B63 RID: 19299
 			internal bool flag;
 		}
 	}

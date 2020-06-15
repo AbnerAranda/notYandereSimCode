@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000CB RID: 203
 public class DontLetSenpaiNoticeYouScript : MonoBehaviour
 {
-	// Token: 0x06000A08 RID: 2568 RVA: 0x0004F6C4 File Offset: 0x0004D8C4
+	// Token: 0x06000A0C RID: 2572 RVA: 0x00050158 File Offset: 0x0004E358
 	private void Start()
 	{
 		while (this.ID < this.Letters.Length)
@@ -18,7 +18,7 @@ public class DontLetSenpaiNoticeYouScript : MonoBehaviour
 		this.ID = 0;
 	}
 
-	// Token: 0x06000A09 RID: 2569 RVA: 0x0004F778 File Offset: 0x0004D978
+	// Token: 0x06000A0D RID: 2573 RVA: 0x0005020C File Offset: 0x0004E40C
 	private void Update()
 	{
 		if (Input.GetButtonDown("A"))
@@ -49,21 +49,21 @@ public class DontLetSenpaiNoticeYouScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040009EA RID: 2538
+	// Token: 0x040009FE RID: 2558
 	public UILabel[] Letters;
 
-	// Token: 0x040009EB RID: 2539
+	// Token: 0x040009FF RID: 2559
 	public Vector3[] Origins;
 
-	// Token: 0x040009EC RID: 2540
+	// Token: 0x04000A00 RID: 2560
 	public AudioClip Slam;
 
-	// Token: 0x040009ED RID: 2541
+	// Token: 0x04000A01 RID: 2561
 	public bool Proceed;
 
-	// Token: 0x040009EE RID: 2542
+	// Token: 0x04000A02 RID: 2562
 	public int ShakeID;
 
-	// Token: 0x040009EF RID: 2543
+	// Token: 0x04000A03 RID: 2563
 	public int ID;
 }

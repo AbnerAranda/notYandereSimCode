@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000379 RID: 889
+// Token: 0x0200037E RID: 894
 public class PrayScript : MonoBehaviour
 {
-	// Token: 0x0600193D RID: 6461 RVA: 0x000F2080 File Offset: 0x000F0280
+	// Token: 0x0600195E RID: 6494 RVA: 0x000F468C File Offset: 0x000F288C
 	private void Start()
 	{
 		if (StudentGlobals.GetStudentDead(39))
@@ -22,7 +22,7 @@ public class PrayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600193E RID: 6462 RVA: 0x000F2113 File Offset: 0x000F0313
+	// Token: 0x0600195F RID: 6495 RVA: 0x000F471F File Offset: 0x000F291F
 	private void Disable()
 	{
 		this.GenderPrompt.gameObject.SetActive(false);
@@ -31,7 +31,7 @@ public class PrayScript : MonoBehaviour
 		this.Prompt.Hide();
 	}
 
-	// Token: 0x0600193F RID: 6463 RVA: 0x000F2144 File Offset: 0x000F0344
+	// Token: 0x06001960 RID: 6496 RVA: 0x000F4750 File Offset: 0x000F2950
 	private void Update()
 	{
 		if (!this.FemaleVictimChecked)
@@ -248,7 +248,7 @@ public class PrayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001940 RID: 6464 RVA: 0x000F2954 File Offset: 0x000F0B54
+	// Token: 0x06001961 RID: 6497 RVA: 0x000F4F60 File Offset: 0x000F3160
 	private void UpdateHighlight()
 	{
 		if (this.Selected < 1)
@@ -262,7 +262,7 @@ public class PrayScript : MonoBehaviour
 		this.Highlight.transform.localPosition = new Vector3(this.Highlight.transform.localPosition.x, 225f - 50f * (float)this.Selected, this.Highlight.transform.localPosition.z);
 	}
 
-	// Token: 0x06001941 RID: 6465 RVA: 0x000F29D8 File Offset: 0x000F0BD8
+	// Token: 0x06001962 RID: 6498 RVA: 0x000F4FE4 File Offset: 0x000F31E4
 	private void Exit()
 	{
 		this.Selected = 1;
@@ -280,7 +280,7 @@ public class PrayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001942 RID: 6466 RVA: 0x000F2A5C File Offset: 0x000F0C5C
+	// Token: 0x06001963 RID: 6499 RVA: 0x000F5068 File Offset: 0x000F3268
 	public void SpawnWeapons()
 	{
 		for (int i = 1; i < 6; i++)
@@ -292,84 +292,84 @@ public class PrayScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002662 RID: 9826
+	// Token: 0x040026BB RID: 9915
 	public StudentManagerScript StudentManager;
 
-	// Token: 0x04002663 RID: 9827
+	// Token: 0x040026BC RID: 9916
 	public WeaponManagerScript WeaponManager;
 
-	// Token: 0x04002664 RID: 9828
+	// Token: 0x040026BD RID: 9917
 	public InputManagerScript InputManager;
 
-	// Token: 0x04002665 RID: 9829
+	// Token: 0x040026BE RID: 9918
 	public PromptBarScript PromptBar;
 
-	// Token: 0x04002666 RID: 9830
+	// Token: 0x040026BF RID: 9919
 	public StudentScript Student;
 
-	// Token: 0x04002667 RID: 9831
+	// Token: 0x040026C0 RID: 9920
 	public YandereScript Yandere;
 
-	// Token: 0x04002668 RID: 9832
+	// Token: 0x040026C1 RID: 9921
 	public PoliceScript Police;
 
-	// Token: 0x04002669 RID: 9833
+	// Token: 0x040026C2 RID: 9922
 	public UILabel SanityLabel;
 
-	// Token: 0x0400266A RID: 9834
+	// Token: 0x040026C3 RID: 9923
 	public UILabel VictimLabel;
 
-	// Token: 0x0400266B RID: 9835
+	// Token: 0x040026C4 RID: 9924
 	public PromptScript GenderPrompt;
 
-	// Token: 0x0400266C RID: 9836
+	// Token: 0x040026C5 RID: 9925
 	public PromptScript Prompt;
 
-	// Token: 0x0400266D RID: 9837
+	// Token: 0x040026C6 RID: 9926
 	public Transform PrayWindow;
 
-	// Token: 0x0400266E RID: 9838
+	// Token: 0x040026C7 RID: 9927
 	public Transform SummonSpot;
 
-	// Token: 0x0400266F RID: 9839
+	// Token: 0x040026C8 RID: 9928
 	public Transform Highlight;
 
-	// Token: 0x04002670 RID: 9840
+	// Token: 0x040026C9 RID: 9929
 	public Transform[] WeaponSpot;
 
-	// Token: 0x04002671 RID: 9841
+	// Token: 0x040026CA RID: 9930
 	public GameObject[] Weapon;
 
-	// Token: 0x04002672 RID: 9842
+	// Token: 0x040026CB RID: 9931
 	public GameObject FemaleTurtle;
 
-	// Token: 0x04002673 RID: 9843
+	// Token: 0x040026CC RID: 9932
 	public int StudentNumber;
 
-	// Token: 0x04002674 RID: 9844
+	// Token: 0x040026CD RID: 9933
 	public int StudentID;
 
-	// Token: 0x04002675 RID: 9845
+	// Token: 0x040026CE RID: 9934
 	public int Selected;
 
-	// Token: 0x04002676 RID: 9846
+	// Token: 0x040026CF RID: 9935
 	public int Victims;
 
-	// Token: 0x04002677 RID: 9847
+	// Token: 0x040026D0 RID: 9936
 	public int Uses;
 
-	// Token: 0x04002678 RID: 9848
+	// Token: 0x040026D1 RID: 9937
 	public bool FemaleVictimChecked;
 
-	// Token: 0x04002679 RID: 9849
+	// Token: 0x040026D2 RID: 9938
 	public bool MaleVictimChecked;
 
-	// Token: 0x0400267A RID: 9850
+	// Token: 0x040026D3 RID: 9939
 	public bool JustSummoned;
 
-	// Token: 0x0400267B RID: 9851
+	// Token: 0x040026D4 RID: 9940
 	public bool SpawnMale;
 
-	// Token: 0x0400267C RID: 9852
+	// Token: 0x040026D5 RID: 9941
 	public bool Show;
 }

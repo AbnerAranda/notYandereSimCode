@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000405 RID: 1029
+// Token: 0x0200040A RID: 1034
 public class StudentPortraitScript : MonoBehaviour
 {
-	// Token: 0x06001B68 RID: 7016 RVA: 0x0011ACD4 File Offset: 0x00118ED4
+	// Token: 0x06001B8C RID: 7052 RVA: 0x0011DAF4 File Offset: 0x0011BCF4
 	private void Start()
 	{
 		this.DeathShadow.SetActive(false);
@@ -13,18 +13,18 @@ public class StudentPortraitScript : MonoBehaviour
 		this.Friend.SetActive(false);
 	}
 
-	// Token: 0x04002DCF RID: 11727
+	// Token: 0x04002E36 RID: 11830
 	public GameObject DeathShadow;
 
-	// Token: 0x04002DD0 RID: 11728
+	// Token: 0x04002E37 RID: 11831
 	public GameObject PrisonBars;
 
-	// Token: 0x04002DD1 RID: 11729
+	// Token: 0x04002E38 RID: 11832
 	public GameObject Panties;
 
-	// Token: 0x04002DD2 RID: 11730
+	// Token: 0x04002E39 RID: 11833
 	public GameObject Friend;
 
-	// Token: 0x04002DD3 RID: 11731
+	// Token: 0x04002E3A RID: 11834
 	public UITexture Portrait;
 }

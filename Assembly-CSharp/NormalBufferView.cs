@@ -1,26 +1,26 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000491 RID: 1169
+// Token: 0x02000497 RID: 1175
 public class NormalBufferView : MonoBehaviour
 {
-	// Token: 0x06001DFE RID: 7678 RVA: 0x00178101 File Offset: 0x00176301
+	// Token: 0x06001E2D RID: 7725 RVA: 0x0017C1CD File Offset: 0x0017A3CD
 	public void ApplyNormalView()
 	{
 		this.camera.SetReplacementShader(this.normalShader, "RenderType");
 	}
 
-	// Token: 0x06001DFF RID: 7679 RVA: 0x00178119 File Offset: 0x00176319
+	// Token: 0x06001E2E RID: 7726 RVA: 0x0017C1E5 File Offset: 0x0017A3E5
 	public void DisableNormalView()
 	{
 		this.camera.ResetReplacementShader();
 	}
 
-	// Token: 0x04003BD9 RID: 15321
+	// Token: 0x04003C67 RID: 15463
 	[SerializeField]
 	private Camera camera;
 
-	// Token: 0x04003BDA RID: 15322
+	// Token: 0x04003C68 RID: 15464
 	[SerializeField]
 	private Shader normalShader;
 }

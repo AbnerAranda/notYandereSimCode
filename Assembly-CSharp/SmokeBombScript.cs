@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003E3 RID: 995
+// Token: 0x020003E8 RID: 1000
 public class SmokeBombScript : MonoBehaviour
 {
-	// Token: 0x06001AA5 RID: 6821 RVA: 0x00109CBC File Offset: 0x00107EBC
+	// Token: 0x06001AC6 RID: 6854 RVA: 0x0010C508 File Offset: 0x0010A708
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -24,7 +24,7 @@ public class SmokeBombScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA6 RID: 6822 RVA: 0x00109D24 File Offset: 0x00107F24
+	// Token: 0x06001AC7 RID: 6855 RVA: 0x0010C570 File Offset: 0x0010A770
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.layer == 9)
@@ -48,7 +48,7 @@ public class SmokeBombScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA7 RID: 6823 RVA: 0x00109DA0 File Offset: 0x00107FA0
+	// Token: 0x06001AC8 RID: 6856 RVA: 0x0010C5EC File Offset: 0x0010A7EC
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.Stink)
@@ -73,7 +73,7 @@ public class SmokeBombScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA8 RID: 6824 RVA: 0x00109E24 File Offset: 0x00108024
+	// Token: 0x06001AC9 RID: 6857 RVA: 0x0010C670 File Offset: 0x0010A870
 	private void OnTriggerExit(Collider other)
 	{
 		if (!this.Stink && !this.Amnesia && other.gameObject.layer == 9)
@@ -87,11 +87,18 @@ public class SmokeBombScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AA9 RID: 6825 RVA: 0x00109E84 File Offset: 0x00108084
+	// Token: 0x06001ACA RID: 6858 RVA: 0x0010C6D0 File Offset: 0x0010A8D0
 	private void GoAway(StudentScript Student)
 	{
 		if (!Student.Chasing)
 		{
+			if (Student.Following)
+			{
+				Student.Yandere.Followers--;
+				Student.Hearts.emission.enabled = false;
+				Student.FollowCountdown.gameObject.SetActive(false);
+				Student.Following = false;
+			}
 			Student.BecomeAlarmed();
 			Student.CurrentDestination = Student.StudentManager.GoAwaySpots.List[Student.StudentID];
 			Student.Pathfinding.target = Student.StudentManager.GoAwaySpots.List[Student.StudentID];
@@ -105,21 +112,22 @@ public class SmokeBombScript : MonoBehaviour
 			Student.Alarmed = false;
 			Student.Routine = false;
 			Student.GoAway = true;
+			Student.AlarmTimer = 0f;
 		}
 	}
 
-	// Token: 0x04002ADA RID: 10970
+	// Token: 0x04002B3B RID: 11067
 	public StudentScript[] Students;
 
-	// Token: 0x04002ADB RID: 10971
+	// Token: 0x04002B3C RID: 11068
 	public float Timer;
 
-	// Token: 0x04002ADC RID: 10972
+	// Token: 0x04002B3D RID: 11069
 	public bool Amnesia;
 
-	// Token: 0x04002ADD RID: 10973
+	// Token: 0x04002B3E RID: 11070
 	public bool Stink;
 
-	// Token: 0x04002ADE RID: 10974
+	// Token: 0x04002B3F RID: 11071
 	public int ID;
 }

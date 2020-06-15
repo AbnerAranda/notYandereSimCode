@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FD RID: 509
+// Token: 0x020001FE RID: 510
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Glitch/Compression FX")]
 public class CameraFilterPack_TV_CompressionFX : MonoBehaviour
 {
 	// Token: 0x1700031D RID: 797
-	// (get) Token: 0x06001124 RID: 4388 RVA: 0x0007BB55 File Offset: 0x00079D55
+	// (get) Token: 0x0600112B RID: 4395 RVA: 0x0007C885 File Offset: 0x0007AA85
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_CompressionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001125 RID: 4389 RVA: 0x0007BB89 File Offset: 0x00079D89
+	// Token: 0x0600112C RID: 4396 RVA: 0x0007C8B9 File Offset: 0x0007AAB9
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_CompressionFX");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_CompressionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001126 RID: 4390 RVA: 0x0007BBAC File Offset: 0x00079DAC
+	// Token: 0x0600112D RID: 4397 RVA: 0x0007C8DC File Offset: 0x0007AADC
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_TV_CompressionFX : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001127 RID: 4391 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x0600112E RID: 4398 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001128 RID: 4392 RVA: 0x0007BC62 File Offset: 0x00079E62
+	// Token: 0x0600112F RID: 4399 RVA: 0x0007C992 File Offset: 0x0007AB92
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_TV_CompressionFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001433 RID: 5171
+	// Token: 0x04001452 RID: 5202
 	public Shader SCShader;
 
-	// Token: 0x04001434 RID: 5172
+	// Token: 0x04001453 RID: 5203
 	private float TimeX = 1f;
 
-	// Token: 0x04001435 RID: 5173
+	// Token: 0x04001454 RID: 5204
 	[Range(-10f, 10f)]
 	public float Parasite = 1f;
 
-	// Token: 0x04001436 RID: 5174
+	// Token: 0x04001455 RID: 5205
 	private Material SCMaterial;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D4 RID: 468
+// Token: 0x020001D5 RID: 469
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Lut/TestMode")]
 public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 {
 	// Token: 0x170002F4 RID: 756
-	// (get) Token: 0x06001023 RID: 4131 RVA: 0x00076CB5 File Offset: 0x00074EB5
+	// (get) Token: 0x0600102A RID: 4138 RVA: 0x000779E5 File Offset: 0x00075BE5
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001024 RID: 4132 RVA: 0x00076CE9 File Offset: 0x00074EE9
+	// Token: 0x0600102B RID: 4139 RVA: 0x00077A19 File Offset: 0x00075C19
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Lut_TestMode");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001025 RID: 4133 RVA: 0x00076D0C File Offset: 0x00074F0C
+	// Token: 0x0600102C RID: 4140 RVA: 0x00077A3C File Offset: 0x00075C3C
 	public void SetIdentityLut()
 	{
 		int num = 16;
@@ -57,13 +57,13 @@ public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 		this.converted3DLut.Apply();
 	}
 
-	// Token: 0x06001026 RID: 4134 RVA: 0x0007586F File Offset: 0x00073A6F
+	// Token: 0x0600102D RID: 4141 RVA: 0x0007659F File Offset: 0x0007479F
 	public bool ValidDimensions(Texture2D tex2d)
 	{
 		return tex2d && tex2d.height == Mathf.FloorToInt(Mathf.Sqrt((float)tex2d.width));
 	}
 
-	// Token: 0x06001027 RID: 4135 RVA: 0x00076DE4 File Offset: 0x00074FE4
+	// Token: 0x0600102E RID: 4142 RVA: 0x00077B14 File Offset: 0x00075D14
 	public void Convert(Texture2D temp2DTex)
 	{
 		if (!temp2DTex)
@@ -100,7 +100,7 @@ public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 		this.converted3DLut.Apply();
 	}
 
-	// Token: 0x06001028 RID: 4136 RVA: 0x00076EE8 File Offset: 0x000750E8
+	// Token: 0x0600102F RID: 4143 RVA: 0x00077C18 File Offset: 0x00075E18
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null || !SystemInfo.supports3DTextures)
@@ -127,17 +127,17 @@ public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001029 RID: 4137 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001030 RID: 4144 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void OnValidate()
 	{
 	}
 
-	// Token: 0x0600102A RID: 4138 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001031 RID: 4145 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x0600102B RID: 4139 RVA: 0x00077002 File Offset: 0x00075202
+	// Token: 0x06001032 RID: 4146 RVA: 0x00077D32 File Offset: 0x00075F32
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -146,41 +146,41 @@ public class CameraFilterPack_Lut_TestMode : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001309 RID: 4873
+	// Token: 0x04001328 RID: 4904
 	public Shader SCShader;
 
-	// Token: 0x0400130A RID: 4874
+	// Token: 0x04001329 RID: 4905
 	private float TimeX = 1f;
 
-	// Token: 0x0400130B RID: 4875
+	// Token: 0x0400132A RID: 4906
 	private Material SCMaterial;
 
-	// Token: 0x0400130C RID: 4876
+	// Token: 0x0400132B RID: 4907
 	public Texture2D LutTexture;
 
-	// Token: 0x0400130D RID: 4877
+	// Token: 0x0400132C RID: 4908
 	private Texture3D converted3DLut;
 
-	// Token: 0x0400130E RID: 4878
+	// Token: 0x0400132D RID: 4909
 	[Range(0f, 1f)]
 	public float Blend = 1f;
 
-	// Token: 0x0400130F RID: 4879
+	// Token: 0x0400132E RID: 4910
 	[Range(0f, 3f)]
 	public float OriginalIntensity = 1f;
 
-	// Token: 0x04001310 RID: 4880
+	// Token: 0x0400132F RID: 4911
 	[Range(-1f, 1f)]
 	public float ResultIntensity;
 
-	// Token: 0x04001311 RID: 4881
+	// Token: 0x04001330 RID: 4912
 	[Range(-1f, 1f)]
 	public float FinalIntensity;
 
-	// Token: 0x04001312 RID: 4882
+	// Token: 0x04001331 RID: 4913
 	[Range(0f, 1f)]
 	public float TestMode = 0.5f;
 
-	// Token: 0x04001313 RID: 4883
+	// Token: 0x04001332 RID: 4914
 	private string MemoPath;
 }

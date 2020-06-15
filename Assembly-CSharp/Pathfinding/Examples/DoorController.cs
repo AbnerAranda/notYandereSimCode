@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005F3 RID: 1523
+	// Token: 0x02000609 RID: 1545
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_door_controller.php")]
 	public class DoorController : MonoBehaviour
 	{
-		// Token: 0x060029F2 RID: 10738 RVA: 0x001C24FD File Offset: 0x001C06FD
+		// Token: 0x06002A48 RID: 10824 RVA: 0x001C80E9 File Offset: 0x001C62E9
 		public void Start()
 		{
 			this.bounds = base.GetComponent<Collider>().bounds;
 			this.SetState(this.open);
 		}
 
-		// Token: 0x060029F3 RID: 10739 RVA: 0x001C251C File Offset: 0x001C071C
+		// Token: 0x06002A49 RID: 10825 RVA: 0x001C8108 File Offset: 0x001C6308
 		private void OnGUI()
 		{
 			if (GUI.Button(new Rect(5f, this.yOffset, 100f, 22f), "Toggle Door"))
@@ -23,7 +23,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029F4 RID: 10740 RVA: 0x001C2554 File Offset: 0x001C0754
+		// Token: 0x06002A4A RID: 10826 RVA: 0x001C8140 File Offset: 0x001C6340
 		public void SetState(bool open)
 		{
 			this.open = open;
@@ -49,22 +49,22 @@ namespace Pathfinding.Examples
 			base.GetComponent<Animation>().Play("Close");
 		}
 
-		// Token: 0x040043BB RID: 17339
+		// Token: 0x04004499 RID: 17561
 		private bool open;
 
-		// Token: 0x040043BC RID: 17340
+		// Token: 0x0400449A RID: 17562
 		public int opentag = 1;
 
-		// Token: 0x040043BD RID: 17341
+		// Token: 0x0400449B RID: 17563
 		public int closedtag = 1;
 
-		// Token: 0x040043BE RID: 17342
+		// Token: 0x0400449C RID: 17564
 		public bool updateGraphsWithGUO = true;
 
-		// Token: 0x040043BF RID: 17343
+		// Token: 0x0400449D RID: 17565
 		public float yOffset = 5f;
 
-		// Token: 0x040043C0 RID: 17344
+		// Token: 0x0400449E RID: 17566
 		private Bounds bounds;
 	}
 }

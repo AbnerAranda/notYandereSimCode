@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000156 RID: 342
+// Token: 0x02000157 RID: 343
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/Switching")]
 public class CameraFilterPack_Color_Switching : MonoBehaviour
 {
 	// Token: 0x17000276 RID: 630
-	// (get) Token: 0x06000D14 RID: 3348 RVA: 0x0006990A File Offset: 0x00067B0A
+	// (get) Token: 0x06000D1B RID: 3355 RVA: 0x0006A63A File Offset: 0x0006883A
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Color_Switching : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D15 RID: 3349 RVA: 0x0006993E File Offset: 0x00067B3E
+	// Token: 0x06000D1C RID: 3356 RVA: 0x0006A66E File Offset: 0x0006886E
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Color_Switching");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Color_Switching : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D16 RID: 3350 RVA: 0x00069960 File Offset: 0x00067B60
+	// Token: 0x06000D1D RID: 3357 RVA: 0x0006A690 File Offset: 0x00068890
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_Color_Switching : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D17 RID: 3351 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D1E RID: 3358 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D18 RID: 3352 RVA: 0x00069A17 File Offset: 0x00067C17
+	// Token: 0x06000D1F RID: 3359 RVA: 0x0006A747 File Offset: 0x00068947
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_Color_Switching : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FCE RID: 4046
+	// Token: 0x04000FED RID: 4077
 	public Shader SCShader;
 
-	// Token: 0x04000FCF RID: 4047
+	// Token: 0x04000FEE RID: 4078
 	private float TimeX = 1f;
 
-	// Token: 0x04000FD0 RID: 4048
+	// Token: 0x04000FEF RID: 4079
 	private Material SCMaterial;
 
-	// Token: 0x04000FD1 RID: 4049
+	// Token: 0x04000FF0 RID: 4080
 	[Range(0f, 5f)]
 	public int Color = 1;
 }

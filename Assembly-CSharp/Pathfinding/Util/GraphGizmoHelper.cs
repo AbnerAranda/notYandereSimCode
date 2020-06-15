@@ -4,26 +4,26 @@ using UnityEngine;
 
 namespace Pathfinding.Util
 {
-	// Token: 0x020005E1 RID: 1505
+	// Token: 0x020005F7 RID: 1527
 	public class GraphGizmoHelper : IAstarPooledObject, IDisposable
 	{
-		// Token: 0x17000601 RID: 1537
-		// (get) Token: 0x06002981 RID: 10625 RVA: 0x001BECDB File Offset: 0x001BCEDB
-		// (set) Token: 0x06002982 RID: 10626 RVA: 0x001BECE3 File Offset: 0x001BCEE3
+		// Token: 0x17000607 RID: 1543
+		// (get) Token: 0x060029D7 RID: 10711 RVA: 0x001C48C7 File Offset: 0x001C2AC7
+		// (set) Token: 0x060029D8 RID: 10712 RVA: 0x001C48CF File Offset: 0x001C2ACF
 		public RetainedGizmos.Hasher hasher { get; private set; }
 
-		// Token: 0x17000602 RID: 1538
-		// (get) Token: 0x06002983 RID: 10627 RVA: 0x001BECEC File Offset: 0x001BCEEC
-		// (set) Token: 0x06002984 RID: 10628 RVA: 0x001BECF4 File Offset: 0x001BCEF4
+		// Token: 0x17000608 RID: 1544
+		// (get) Token: 0x060029D9 RID: 10713 RVA: 0x001C48D8 File Offset: 0x001C2AD8
+		// (set) Token: 0x060029DA RID: 10714 RVA: 0x001C48E0 File Offset: 0x001C2AE0
 		public RetainedGizmos.Builder builder { get; private set; }
 
-		// Token: 0x06002985 RID: 10629 RVA: 0x001BECFD File Offset: 0x001BCEFD
+		// Token: 0x060029DB RID: 10715 RVA: 0x001C48E9 File Offset: 0x001C2AE9
 		public GraphGizmoHelper()
 		{
 			this.drawConnection = new Action<GraphNode>(this.DrawConnection);
 		}
 
-		// Token: 0x06002986 RID: 10630 RVA: 0x001BED18 File Offset: 0x001BCF18
+		// Token: 0x060029DC RID: 10716 RVA: 0x001C4904 File Offset: 0x001C2B04
 		public void Init(AstarPath active, RetainedGizmos.Hasher hasher, RetainedGizmos gizmos)
 		{
 			if (active != null)
@@ -40,7 +40,7 @@ namespace Pathfinding.Util
 			this.builder = ObjectPool<RetainedGizmos.Builder>.Claim();
 		}
 
-		// Token: 0x06002987 RID: 10631 RVA: 0x001BEDA0 File Offset: 0x001BCFA0
+		// Token: 0x060029DD RID: 10717 RVA: 0x001C498C File Offset: 0x001C2B8C
 		public void OnEnterPool()
 		{
 			RetainedGizmos.Builder builder = this.builder;
@@ -49,7 +49,7 @@ namespace Pathfinding.Util
 			this.debugData = null;
 		}
 
-		// Token: 0x06002988 RID: 10632 RVA: 0x001BEDCC File Offset: 0x001BCFCC
+		// Token: 0x060029DE RID: 10718 RVA: 0x001C49B8 File Offset: 0x001C2BB8
 		public void DrawConnections(GraphNode node)
 		{
 			if (this.showSearchTree)
@@ -68,13 +68,13 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x06002989 RID: 10633 RVA: 0x001BEE70 File Offset: 0x001BD070
+		// Token: 0x060029DF RID: 10719 RVA: 0x001C4A5C File Offset: 0x001C2C5C
 		private void DrawConnection(GraphNode other)
 		{
 			this.builder.DrawLine(this.drawConnectionStart, Vector3.Lerp((Vector3)other.position, this.drawConnectionStart, 0.5f), this.drawConnectionColor);
 		}
 
-		// Token: 0x0600298A RID: 10634 RVA: 0x001BEEA4 File Offset: 0x001BD0A4
+		// Token: 0x060029E0 RID: 10720 RVA: 0x001C4A90 File Offset: 0x001C2C90
 		public Color NodeColor(GraphNode node)
 		{
 			if (this.showSearchTree && !GraphGizmoHelper.InSearchTree(node, this.debugData, this.debugPathID))
@@ -125,13 +125,13 @@ namespace Pathfinding.Util
 			return result;
 		}
 
-		// Token: 0x0600298B RID: 10635 RVA: 0x001BEFE2 File Offset: 0x001BD1E2
+		// Token: 0x060029E1 RID: 10721 RVA: 0x001C4BCE File Offset: 0x001C2DCE
 		public static bool InSearchTree(GraphNode node, PathHandler handler, ushort pathID)
 		{
 			return handler.GetPathNode(node).pathID == pathID;
 		}
 
-		// Token: 0x0600298C RID: 10636 RVA: 0x001BEFF3 File Offset: 0x001BD1F3
+		// Token: 0x060029E2 RID: 10722 RVA: 0x001C4BDF File Offset: 0x001C2DDF
 		public void DrawWireTriangle(Vector3 a, Vector3 b, Vector3 c, Color color)
 		{
 			this.builder.DrawLine(a, b, color);
@@ -139,7 +139,7 @@ namespace Pathfinding.Util
 			this.builder.DrawLine(c, a, color);
 		}
 
-		// Token: 0x0600298D RID: 10637 RVA: 0x001BF024 File Offset: 0x001BD224
+		// Token: 0x060029E3 RID: 10723 RVA: 0x001C4C10 File Offset: 0x001C2E10
 		public void DrawTriangles(Vector3[] vertices, Color[] colors, int numTriangles)
 		{
 			List<int> list = ListPool<int>.Claim(numTriangles);
@@ -151,7 +151,7 @@ namespace Pathfinding.Util
 			ListPool<int>.Release(ref list);
 		}
 
-		// Token: 0x0600298E RID: 10638 RVA: 0x001BF068 File Offset: 0x001BD268
+		// Token: 0x060029E4 RID: 10724 RVA: 0x001C4C54 File Offset: 0x001C2E54
 		public void DrawWireTriangles(Vector3[] vertices, Color[] colors, int numTriangles)
 		{
 			for (int i = 0; i < numTriangles; i++)
@@ -160,13 +160,13 @@ namespace Pathfinding.Util
 			}
 		}
 
-		// Token: 0x0600298F RID: 10639 RVA: 0x001BF0AF File Offset: 0x001BD2AF
+		// Token: 0x060029E5 RID: 10725 RVA: 0x001C4C9B File Offset: 0x001C2E9B
 		public void Submit()
 		{
 			this.builder.Submit(this.gizmos, this.hasher);
 		}
 
-		// Token: 0x06002990 RID: 10640 RVA: 0x001BF0C8 File Offset: 0x001BD2C8
+		// Token: 0x060029E6 RID: 10726 RVA: 0x001C4CB4 File Offset: 0x001C2EB4
 		void IDisposable.Dispose()
 		{
 			GraphGizmoHelper graphGizmoHelper = this;
@@ -174,34 +174,34 @@ namespace Pathfinding.Util
 			ObjectPool<GraphGizmoHelper>.Release(ref graphGizmoHelper);
 		}
 
-		// Token: 0x04004338 RID: 17208
+		// Token: 0x04004416 RID: 17430
 		private RetainedGizmos gizmos;
 
-		// Token: 0x04004339 RID: 17209
+		// Token: 0x04004417 RID: 17431
 		private PathHandler debugData;
 
-		// Token: 0x0400433A RID: 17210
+		// Token: 0x04004418 RID: 17432
 		private ushort debugPathID;
 
-		// Token: 0x0400433B RID: 17211
+		// Token: 0x04004419 RID: 17433
 		private GraphDebugMode debugMode;
 
-		// Token: 0x0400433C RID: 17212
+		// Token: 0x0400441A RID: 17434
 		private bool showSearchTree;
 
-		// Token: 0x0400433D RID: 17213
+		// Token: 0x0400441B RID: 17435
 		private float debugFloor;
 
-		// Token: 0x0400433E RID: 17214
+		// Token: 0x0400441C RID: 17436
 		private float debugRoof;
 
-		// Token: 0x04004340 RID: 17216
+		// Token: 0x0400441E RID: 17438
 		private Vector3 drawConnectionStart;
 
-		// Token: 0x04004341 RID: 17217
+		// Token: 0x0400441F RID: 17439
 		private Color drawConnectionColor;
 
-		// Token: 0x04004342 RID: 17218
+		// Token: 0x04004420 RID: 17440
 		private readonly Action<GraphNode> drawConnection;
 	}
 }

@@ -1,10 +1,18 @@
 ﻿using System;
+using Bayat.SaveSystem;
 using UnityEngine;
 
-// Token: 0x020003F1 RID: 1009
+// Token: 0x020003F6 RID: 1014
 public class StalkerYandereScript : MonoBehaviour
 {
-	// Token: 0x06001AD6 RID: 6870 RVA: 0x0010D20C File Offset: 0x0010B40C
+	// Token: 0x06001AF7 RID: 6903 RVA: 0x0010FA76 File Offset: 0x0010DC76
+	private void Start()
+	{
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
+
+	// Token: 0x06001AF8 RID: 6904 RVA: 0x0010FA84 File Offset: 0x0010DC84
 	private void Update()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
@@ -74,12 +82,13 @@ public class StalkerYandereScript : MonoBehaviour
 			}
 			if (this.MyAnimation["f02_climbTrellis_00"].time > this.MyAnimation["f02_climbTrellis_00"].length)
 			{
-				this.MyAnimation.Play(this.IdleAnim);
+				this.MyAnimation.Play("f02_idleShort_00");
 				base.transform.position = new Vector3(-9.1f, 4f, -2.5f);
 				this.CameraTarget.position = base.transform.position + new Vector3(0f, 1f, 0f);
 				this.RPGCamera.enabled = true;
 				this.Climbing = false;
 				this.CanMove = true;
+				Physics.SyncTransforms();
 			}
 		}
 		if (this.Street && base.transform.position.x < -16f)
@@ -88,7 +97,7 @@ public class StalkerYandereScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD7 RID: 6871 RVA: 0x0010D624 File Offset: 0x0010B824
+	// Token: 0x06001AF9 RID: 6905 RVA: 0x0010FEA0 File Offset: 0x0010E0A0
 	private void UpdateMovement()
 	{
 		if (!OptionGlobals.ToggleRun)
@@ -131,11 +140,15 @@ public class StalkerYandereScript : MonoBehaviour
 				if (Input.GetButtonDown("RS"))
 				{
 					this.Stance.Current = StanceType.Crouching;
+					this.MyController.center = new Vector3(0f, 0.5f, 0f);
+					this.MyController.height = 1f;
 				}
 			}
 			else if (Input.GetButtonDown("RS"))
 			{
 				this.Stance.Current = StanceType.Standing;
+				this.MyController.center = new Vector3(0f, 0.75f, 0f);
+				this.MyController.height = 1.5f;
 			}
 		}
 		if (axis != 0f || axis2 != 0f)
@@ -177,94 +190,97 @@ public class StalkerYandereScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001AD8 RID: 6872 RVA: 0x0010D90C File Offset: 0x0010BB0C
+	// Token: 0x06001AFA RID: 6906 RVA: 0x001101EC File Offset: 0x0010E3EC
 	private void MoveTowardsTarget(Vector3 target)
 	{
 		Vector3 a = target - base.transform.position;
 		this.MyController.Move(a * (Time.deltaTime * 10f));
 	}
 
-	// Token: 0x06001AD9 RID: 6873 RVA: 0x0010BD54 File Offset: 0x00109F54
+	// Token: 0x06001AFB RID: 6907 RVA: 0x0010E5F4 File Offset: 0x0010C7F4
 	private void SpinTowardsTarget(Quaternion target)
 	{
 		base.transform.rotation = Quaternion.Slerp(base.transform.rotation, target, Time.deltaTime * 10f);
 	}
 
-	// Token: 0x04002B6D RID: 11117
+	// Token: 0x04002BCE RID: 11214
 	public CharacterController MyController;
 
-	// Token: 0x04002B6E RID: 11118
+	// Token: 0x04002BCF RID: 11215
+	public AutoSaveManager SaveManager;
+
+	// Token: 0x04002BD0 RID: 11216
 	public Transform TrellisClimbSpot;
 
-	// Token: 0x04002B6F RID: 11119
+	// Token: 0x04002BD1 RID: 11217
 	public Transform CameraTarget;
 
-	// Token: 0x04002B70 RID: 11120
+	// Token: 0x04002BD2 RID: 11218
 	public Transform EntryPOV;
 
-	// Token: 0x04002B71 RID: 11121
+	// Token: 0x04002BD3 RID: 11219
 	public Transform Hips;
 
-	// Token: 0x04002B72 RID: 11122
+	// Token: 0x04002BD4 RID: 11220
 	public RPG_Camera RPGCamera;
 
-	// Token: 0x04002B73 RID: 11123
+	// Token: 0x04002BD5 RID: 11221
 	public Animation MyAnimation;
 
-	// Token: 0x04002B74 RID: 11124
+	// Token: 0x04002BD6 RID: 11222
 	public AudioSource Jukebox;
 
-	// Token: 0x04002B75 RID: 11125
+	// Token: 0x04002BD7 RID: 11223
 	public Camera MainCamera;
 
-	// Token: 0x04002B76 RID: 11126
+	// Token: 0x04002BD8 RID: 11224
 	public bool Climbing;
 
-	// Token: 0x04002B77 RID: 11127
+	// Token: 0x04002BD9 RID: 11225
 	public bool Running;
 
-	// Token: 0x04002B78 RID: 11128
+	// Token: 0x04002BDA RID: 11226
 	public bool CanMove;
 
-	// Token: 0x04002B79 RID: 11129
+	// Token: 0x04002BDB RID: 11227
 	public bool Street;
 
-	// Token: 0x04002B7A RID: 11130
+	// Token: 0x04002BDC RID: 11228
 	public Stance Stance = new Stance(StanceType.Standing);
 
-	// Token: 0x04002B7B RID: 11131
+	// Token: 0x04002BDD RID: 11229
 	public string IdleAnim;
 
-	// Token: 0x04002B7C RID: 11132
+	// Token: 0x04002BDE RID: 11230
 	public string WalkAnim;
 
-	// Token: 0x04002B7D RID: 11133
+	// Token: 0x04002BDF RID: 11231
 	public string RunAnim;
 
-	// Token: 0x04002B7E RID: 11134
+	// Token: 0x04002BE0 RID: 11232
 	public string CrouchIdleAnim;
 
-	// Token: 0x04002B7F RID: 11135
+	// Token: 0x04002BE1 RID: 11233
 	public string CrouchWalkAnim;
 
-	// Token: 0x04002B80 RID: 11136
+	// Token: 0x04002BE2 RID: 11234
 	public string CrouchRunAnim;
 
-	// Token: 0x04002B81 RID: 11137
+	// Token: 0x04002BE3 RID: 11235
 	public float WalkSpeed;
 
-	// Token: 0x04002B82 RID: 11138
+	// Token: 0x04002BE4 RID: 11236
 	public float RunSpeed;
 
-	// Token: 0x04002B83 RID: 11139
+	// Token: 0x04002BE5 RID: 11237
 	public float CrouchWalkSpeed;
 
-	// Token: 0x04002B84 RID: 11140
+	// Token: 0x04002BE6 RID: 11238
 	public float CrouchRunSpeed;
 
-	// Token: 0x04002B85 RID: 11141
+	// Token: 0x04002BE7 RID: 11239
 	public int ClimbPhase;
 
-	// Token: 0x04002B86 RID: 11142
+	// Token: 0x04002BE8 RID: 11240
 	public int Frame;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000242 RID: 578
+// Token: 0x02000243 RID: 579
 public class CombatMinigameScript : MonoBehaviour
 {
-	// Token: 0x06001270 RID: 4720 RVA: 0x00086C44 File Offset: 0x00084E44
+	// Token: 0x06001277 RID: 4727 RVA: 0x00087964 File Offset: 0x00085B64
 	private void Start()
 	{
 		this.RedVignette.color = new Color(1f, 1f, 1f, 0f);
@@ -12,11 +12,15 @@ public class CombatMinigameScript : MonoBehaviour
 		this.ButtonPrompts[2].enabled = false;
 		this.ButtonPrompts[3].enabled = false;
 		this.ButtonPrompts[4].enabled = false;
+		this.ButtonPrompts[1].alpha = 0f;
+		this.ButtonPrompts[2].alpha = 0f;
+		this.ButtonPrompts[3].alpha = 0f;
+		this.ButtonPrompts[4].alpha = 0f;
 		this.Circle.enabled = false;
 		this.BG.enabled = false;
 	}
 
-	// Token: 0x06001271 RID: 4721 RVA: 0x00086CC8 File Offset: 0x00084EC8
+	// Token: 0x06001278 RID: 4728 RVA: 0x00087A30 File Offset: 0x00085C30
 	public void StartCombat()
 	{
 		this.StartPoint = this.MainCamera.transform.position;
@@ -41,7 +45,7 @@ public class CombatMinigameScript : MonoBehaviour
 		this.Delinquent.MyWeapon.GetComponent<Rigidbody>().useGravity = false;
 	}
 
-	// Token: 0x06001272 RID: 4722 RVA: 0x00086DB4 File Offset: 0x00084FB4
+	// Token: 0x06001279 RID: 4729 RVA: 0x00087B1C File Offset: 0x00085D1C
 	private void Update()
 	{
 		if (this.Zoom)
@@ -407,6 +411,7 @@ public class CombatMinigameScript : MonoBehaviour
 							component.useGravity = true;
 							if (!this.Practice)
 							{
+								this.Delinquent.MyWeapon.DelinquentOwned = false;
 								this.Delinquent.MyWeapon = null;
 							}
 						}
@@ -452,9 +457,19 @@ public class CombatMinigameScript : MonoBehaviour
 						ScheduleBlock scheduleBlock4 = this.Delinquent.ScheduleBlocks[7];
 						scheduleBlock4.destination = "Sulk";
 						scheduleBlock4.action = "Sulk";
+						if (this.Delinquent.Phase == 0)
+						{
+							this.Delinquent.Phase++;
+						}
 						this.Delinquent.GetDestinations();
 						this.Delinquent.CurrentDestination = this.Delinquent.Destinations[this.Delinquent.Phase];
 						this.Delinquent.Pathfinding.target = this.Delinquent.Destinations[this.Delinquent.Phase];
+						if (this.Delinquent.CurrentDestination == null)
+						{
+							Debug.Log("Manually setting Delinquent's destination to locker, to fix a saving/loading bug.");
+							this.Delinquent.CurrentDestination = this.Delinquent.Destinations[1];
+							this.Delinquent.Pathfinding.target = this.Delinquent.Destinations[1];
+						}
 						this.Delinquent.IdleAnim = "idleInjured_00";
 						this.Delinquent.WalkAnim = "walkInjured_00";
 						this.Delinquent.OriginalIdleAnim = this.Delinquent.IdleAnim;
@@ -586,9 +601,19 @@ public class CombatMinigameScript : MonoBehaviour
 			}
 			if (this.Yandere.CharacterAnimation["f02_stopFighting_00"].time > this.Yandere.CharacterAnimation["f02_stopFighting_00"].length)
 			{
+				if (this.Delinquent.Phase == 0)
+				{
+					this.Delinquent.Phase++;
+				}
 				this.Delinquent.GetDestinations();
 				this.Delinquent.CurrentDestination = this.Delinquent.Destinations[this.Delinquent.Phase];
 				this.Delinquent.Pathfinding.target = this.Delinquent.Destinations[this.Delinquent.Phase];
+				if (this.Delinquent.CurrentDestination == null)
+				{
+					Debug.Log("Manually setting Delinquent's destination to locker, to fix a saving/loading bug.");
+					this.Delinquent.CurrentDestination = this.Delinquent.Destinations[1];
+					this.Delinquent.Pathfinding.target = this.Delinquent.Destinations[1];
+				}
 				this.ReleaseYandere();
 				this.Delinquent.Threatened = false;
 				this.Delinquent.Fighting = false;
@@ -607,7 +632,7 @@ public class CombatMinigameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001273 RID: 4723 RVA: 0x00088FEC File Offset: 0x000871EC
+	// Token: 0x0600127A RID: 4730 RVA: 0x00089E48 File Offset: 0x00088048
 	private void Slowdown()
 	{
 		Time.timeScale = this.SlowdownFactor * this.Difficulty;
@@ -615,13 +640,17 @@ public class CombatMinigameScript : MonoBehaviour
 		this.MyAudio.pitch = this.SlowdownFactor * this.Difficulty;
 	}
 
-	// Token: 0x06001274 RID: 4724 RVA: 0x0008903C File Offset: 0x0008723C
+	// Token: 0x0600127B RID: 4731 RVA: 0x00089E98 File Offset: 0x00088098
 	private void ChooseButton()
 	{
 		this.ButtonPrompts[1].enabled = false;
 		this.ButtonPrompts[2].enabled = false;
 		this.ButtonPrompts[3].enabled = false;
 		this.ButtonPrompts[4].enabled = false;
+		this.ButtonPrompts[1].alpha = 0f;
+		this.ButtonPrompts[2].alpha = 0f;
+		this.ButtonPrompts[3].alpha = 0f;
+		this.ButtonPrompts[4].alpha = 0f;
 		int buttonID = this.ButtonID;
 		while (this.ButtonID == buttonID)
 		{
@@ -644,18 +673,23 @@ public class CombatMinigameScript : MonoBehaviour
 			this.CurrentButton = "Y";
 		}
 		this.ButtonPrompts[this.ButtonID].enabled = true;
+		this.ButtonPrompts[this.ButtonID].alpha = 1f;
 		this.Circle.enabled = true;
 		this.BG.enabled = true;
 		this.Timer = this.StartTime;
 	}
 
-	// Token: 0x06001275 RID: 4725 RVA: 0x00089130 File Offset: 0x00087330
+	// Token: 0x0600127C RID: 4732 RVA: 0x00089FE8 File Offset: 0x000881E8
 	public void DisablePrompts()
 	{
 		this.ButtonPrompts[1].enabled = false;
 		this.ButtonPrompts[2].enabled = false;
 		this.ButtonPrompts[3].enabled = false;
 		this.ButtonPrompts[4].enabled = false;
+		this.ButtonPrompts[1].alpha = 0f;
+		this.ButtonPrompts[2].alpha = 0f;
+		this.ButtonPrompts[3].alpha = 0f;
+		this.ButtonPrompts[4].alpha = 0f;
 		this.Circle.fillAmount = 1f;
 		this.Circle.enabled = false;
 		this.BG.enabled = false;
@@ -663,7 +697,7 @@ public class CombatMinigameScript : MonoBehaviour
 		this.ButtonID = 0;
 	}
 
-	// Token: 0x06001276 RID: 4726 RVA: 0x000891AC File Offset: 0x000873AC
+	// Token: 0x0600127D RID: 4733 RVA: 0x0008A0AC File Offset: 0x000882AC
 	private void AdjustMidpoint()
 	{
 		if (this.Strength == 0f)
@@ -685,7 +719,7 @@ public class CombatMinigameScript : MonoBehaviour
 		this.MainCamera.LookAt(this.Midpoint.position);
 	}
 
-	// Token: 0x06001277 RID: 4727 RVA: 0x000892EC File Offset: 0x000874EC
+	// Token: 0x0600127E RID: 4734 RVA: 0x0008A1EC File Offset: 0x000883EC
 	public void Stop()
 	{
 		if (this.Delinquent != null)
@@ -696,7 +730,7 @@ public class CombatMinigameScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001278 RID: 4728 RVA: 0x00089320 File Offset: 0x00087520
+	// Token: 0x0600127F RID: 4735 RVA: 0x0008A220 File Offset: 0x00088420
 	public void ResetValues()
 	{
 		this.Label.text = "State: A";
@@ -713,7 +747,7 @@ public class CombatMinigameScript : MonoBehaviour
 		this.Delinquent = null;
 	}
 
-	// Token: 0x06001279 RID: 4729 RVA: 0x000893CC File Offset: 0x000875CC
+	// Token: 0x06001280 RID: 4736 RVA: 0x0008A2CC File Offset: 0x000884CC
 	public void ReleaseYandere()
 	{
 		Debug.Log("Yandere-chan has been released from combat.");
@@ -725,111 +759,111 @@ public class CombatMinigameScript : MonoBehaviour
 		this.Yandere.Chased = false;
 	}
 
-	// Token: 0x0400165E RID: 5726
+	// Token: 0x0400167D RID: 5757
 	public UISprite[] ButtonPrompts;
 
-	// Token: 0x0400165F RID: 5727
+	// Token: 0x0400167E RID: 5758
 	public UISprite Circle;
 
-	// Token: 0x04001660 RID: 5728
+	// Token: 0x0400167F RID: 5759
 	public UISprite BG;
 
-	// Token: 0x04001661 RID: 5729
+	// Token: 0x04001680 RID: 5760
 	public GameObject HitEffect;
 
-	// Token: 0x04001662 RID: 5730
+	// Token: 0x04001681 RID: 5761
 	public PracticeWindowScript PracticeWindow;
 
-	// Token: 0x04001663 RID: 5731
+	// Token: 0x04001682 RID: 5762
 	public StudentScript Delinquent;
 
-	// Token: 0x04001664 RID: 5732
+	// Token: 0x04001683 RID: 5763
 	public YandereScript Yandere;
 
-	// Token: 0x04001665 RID: 5733
+	// Token: 0x04001684 RID: 5764
 	public Transform CombatTarget;
 
-	// Token: 0x04001666 RID: 5734
+	// Token: 0x04001685 RID: 5765
 	public Transform MainCamera;
 
-	// Token: 0x04001667 RID: 5735
+	// Token: 0x04001686 RID: 5766
 	public Transform Midpoint;
 
-	// Token: 0x04001668 RID: 5736
+	// Token: 0x04001687 RID: 5767
 	public Vector3 CameraTarget;
 
-	// Token: 0x04001669 RID: 5737
+	// Token: 0x04001688 RID: 5768
 	public Vector3 CameraStart;
 
-	// Token: 0x0400166A RID: 5738
+	// Token: 0x04001689 RID: 5769
 	public Vector3 StartPoint;
 
-	// Token: 0x0400166B RID: 5739
+	// Token: 0x0400168A RID: 5770
 	public UITexture RedVignette;
 
-	// Token: 0x0400166C RID: 5740
+	// Token: 0x0400168B RID: 5771
 	public UILabel Label;
 
-	// Token: 0x0400166D RID: 5741
+	// Token: 0x0400168C RID: 5772
 	public string CurrentButton;
 
-	// Token: 0x0400166E RID: 5742
+	// Token: 0x0400168D RID: 5773
 	public float SlowdownFactor;
 
-	// Token: 0x0400166F RID: 5743
+	// Token: 0x0400168E RID: 5774
 	public float ShakeFactor;
 
-	// Token: 0x04001670 RID: 5744
+	// Token: 0x0400168F RID: 5775
 	public float Difficulty;
 
-	// Token: 0x04001671 RID: 5745
+	// Token: 0x04001690 RID: 5776
 	public float StartTime;
 
-	// Token: 0x04001672 RID: 5746
+	// Token: 0x04001691 RID: 5777
 	public float Strength;
 
-	// Token: 0x04001673 RID: 5747
+	// Token: 0x04001692 RID: 5778
 	public float Shake;
 
-	// Token: 0x04001674 RID: 5748
+	// Token: 0x04001693 RID: 5779
 	public float Timer;
 
-	// Token: 0x04001675 RID: 5749
+	// Token: 0x04001694 RID: 5780
 	public bool KnockedOut;
 
-	// Token: 0x04001676 RID: 5750
+	// Token: 0x04001695 RID: 5781
 	public bool Practice;
 
-	// Token: 0x04001677 RID: 5751
+	// Token: 0x04001696 RID: 5782
 	public bool Success;
 
-	// Token: 0x04001678 RID: 5752
+	// Token: 0x04001697 RID: 5783
 	public bool Zoom;
 
-	// Token: 0x04001679 RID: 5753
+	// Token: 0x04001698 RID: 5784
 	public string Prefix;
 
-	// Token: 0x0400167A RID: 5754
+	// Token: 0x04001699 RID: 5785
 	public int ButtonID;
 
-	// Token: 0x0400167B RID: 5755
+	// Token: 0x0400169A RID: 5786
 	public int Strike;
 
-	// Token: 0x0400167C RID: 5756
+	// Token: 0x0400169B RID: 5787
 	public int Phase;
 
-	// Token: 0x0400167D RID: 5757
+	// Token: 0x0400169C RID: 5788
 	public int Path;
 
-	// Token: 0x0400167E RID: 5758
+	// Token: 0x0400169D RID: 5789
 	public AudioSource MyVocals;
 
-	// Token: 0x0400167F RID: 5759
+	// Token: 0x0400169E RID: 5790
 	public AudioSource MyAudio;
 
-	// Token: 0x04001680 RID: 5760
+	// Token: 0x0400169F RID: 5791
 	public AudioClip[] CombatSFX;
 
-	// Token: 0x04001681 RID: 5761
+	// Token: 0x040016A0 RID: 5792
 	public AudioClip[] Vocals;
 }

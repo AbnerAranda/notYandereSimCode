@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000388 RID: 904
+// Token: 0x0200038D RID: 909
 public class RandomSoundScript : MonoBehaviour
 {
-	// Token: 0x06001988 RID: 6536 RVA: 0x000F8BA4 File Offset: 0x000F6DA4
+	// Token: 0x060019A9 RID: 6569 RVA: 0x000FB230 File Offset: 0x000F9430
 	private void Start()
 	{
 		AudioSource component = base.GetComponent<AudioSource>();
@@ -12,6 +12,6 @@ public class RandomSoundScript : MonoBehaviour
 		component.Play();
 	}
 
-	// Token: 0x0400275A RID: 10074
+	// Token: 0x040027B7 RID: 10167
 	public AudioClip[] Clips;
 }

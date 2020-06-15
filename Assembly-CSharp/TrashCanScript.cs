@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200042F RID: 1071
+// Token: 0x02000434 RID: 1076
 public class TrashCanScript : MonoBehaviour
 {
-	// Token: 0x06001C65 RID: 7269 RVA: 0x00153598 File Offset: 0x00151798
+	// Token: 0x06001C8A RID: 7306 RVA: 0x00156A6C File Offset: 0x00154C6C
 	private void Update()
 	{
 		if (!this.Occupied)
@@ -82,7 +82,7 @@ public class TrashCanScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001C66 RID: 7270 RVA: 0x0015392C File Offset: 0x00151B2C
+	// Token: 0x06001C8B RID: 7307 RVA: 0x00156E00 File Offset: 0x00155000
 	public void UpdatePrompt()
 	{
 		if (this.Occupied)
@@ -102,6 +102,11 @@ public class TrashCanScript : MonoBehaviour
 			this.Prompt.HideButton[0] = true;
 			return;
 		}
+		if (this.Yandere.PickUp.Bucket)
+		{
+			this.Prompt.HideButton[0] = true;
+			return;
+		}
 		if (this.Yandere.PickUp.Evidence || this.Yandere.PickUp.Suspicious)
 		{
 			this.Prompt.Label[0].text = "     Insert";
@@ -111,27 +116,27 @@ public class TrashCanScript : MonoBehaviour
 		this.Prompt.HideButton[0] = true;
 	}
 
-	// Token: 0x0400354D RID: 13645
+	// Token: 0x040035C2 RID: 13762
 	public ContainerScript Container;
 
-	// Token: 0x0400354E RID: 13646
+	// Token: 0x040035C3 RID: 13763
 	public YandereScript Yandere;
 
-	// Token: 0x0400354F RID: 13647
+	// Token: 0x040035C4 RID: 13764
 	public PromptScript Prompt;
 
-	// Token: 0x04003550 RID: 13648
+	// Token: 0x040035C5 RID: 13765
 	public Transform TrashPosition;
 
-	// Token: 0x04003551 RID: 13649
+	// Token: 0x040035C6 RID: 13766
 	public GameObject Item;
 
-	// Token: 0x04003552 RID: 13650
+	// Token: 0x040035C7 RID: 13767
 	public bool Occupied;
 
-	// Token: 0x04003553 RID: 13651
+	// Token: 0x040035C8 RID: 13768
 	public bool Wearable;
 
-	// Token: 0x04003554 RID: 13652
+	// Token: 0x040035C9 RID: 13769
 	public bool Weapon;
 }

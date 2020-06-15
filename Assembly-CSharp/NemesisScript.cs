@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x0200033D RID: 829
+// Token: 0x02000341 RID: 833
 public class NemesisScript : MonoBehaviour
 {
-	// Token: 0x06001850 RID: 6224 RVA: 0x000DA454 File Offset: 0x000D8654
+	// Token: 0x0600186F RID: 6255 RVA: 0x000DC6F4 File Offset: 0x000DA8F4
 	private void Start()
 	{
 		foreach (GameObject gameObject in this.Cosmetic.FemaleHair)
@@ -113,15 +113,27 @@ public class NemesisScript : MonoBehaviour
 		this.Aggressive = MissionModeGlobals.NemesisAggression;
 	}
 
-	// Token: 0x06001851 RID: 6225 RVA: 0x000DA940 File Offset: 0x000D8B40
+	// Token: 0x06001870 RID: 6256 RVA: 0x000DCBE0 File Offset: 0x000DADE0
 	private void Update()
 	{
 		if (this.PutOnDisguise)
 		{
+			bool flag = false;
 			int num = 1;
-			while ((this.Student.StudentManager.Students[num] != null && this.Student.StudentManager.Students[num].Male) || (num > 5 && num < 21) || num == 21 || num == 26 || num == 31 || num == 36 || num == 41 || num == 46 || num == 51 || num == 56 || num == 61 || num == 66 || num == 71 || num == this.MissionMode.TargetID)
+			while ((this.Student.StudentManager.Students[num] != null && this.Student.StudentManager.Students[num].Male) || (num > 5 && num < 21) || num == 21 || num == 26 || num == 31 || num == 36 || num == 41 || num == 46 || num == 51 || num == 56 || num == 61 || num == 66 || num == 71 || num == this.MissionMode.TargetID || flag)
 			{
 				num = UnityEngine.Random.Range(2, 90);
+				if (this.MissionMode.MultiMission)
+				{
+					flag = false;
+					for (int i = 1; i < 11; i++)
+					{
+						if (num == PlayerPrefs.GetInt("MissionModeTarget" + i))
+						{
+							flag = true;
+						}
+					}
+				}
 			}
 			this.Student.StudentManager.Students[num].gameObject.SetActive(false);
 			this.Student.StudentManager.Students[num].Replaced = true;
@@ -215,7 +227,7 @@ public class NemesisScript : MonoBehaviour
 							this.Yandere.FollowHips = true;
 							this.Yandere.Laughing = false;
 							this.Yandere.CanMove = false;
-							this.Yandere.EyeShrink = 1f;
+							this.Yandere.EyeShrink = 0.5f;
 							this.Yandere.StopAiming();
 							this.Yandere.EmptyHands();
 						}
@@ -272,7 +284,7 @@ public class NemesisScript : MonoBehaviour
 				this.Yandere.targetRotation = Quaternion.LookRotation(base.transform.position - this.Yandere.transform.position);
 				this.Yandere.transform.rotation = Quaternion.Slerp(this.Yandere.transform.rotation, this.Yandere.targetRotation, Time.deltaTime * 10f);
 				this.Yandere.MoveTowardsTarget(base.transform.position + base.transform.forward * 0.5f);
-				this.Yandere.EyeShrink = 1f;
+				this.Yandere.EyeShrink = 0.5f;
 				this.Yandere.transform.position = new Vector3(this.Yandere.transform.position.x, this.OriginalYPosition, this.Yandere.transform.position.z);
 				Quaternion b = Quaternion.LookRotation(this.Yandere.transform.position - base.transform.position);
 				base.transform.rotation = Quaternion.Slerp(base.transform.rotation, b, Time.deltaTime * 10f);
@@ -305,7 +317,7 @@ public class NemesisScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001852 RID: 6226 RVA: 0x000DB3CC File Offset: 0x000D95CC
+	// Token: 0x06001871 RID: 6257 RVA: 0x000DD6B0 File Offset: 0x000DB8B0
 	private void LookForYandere()
 	{
 		Debug.Log("Nemesis is looking for Yan-chan...");
@@ -328,7 +340,7 @@ public class NemesisScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001853 RID: 6227 RVA: 0x000DB468 File Offset: 0x000D9668
+	// Token: 0x06001872 RID: 6258 RVA: 0x000DD74C File Offset: 0x000DB94C
 	private void UpdateLKP()
 	{
 		if (!this.Chasing)
@@ -354,13 +366,13 @@ public class NemesisScript : MonoBehaviour
 		this.InView = true;
 	}
 
-	// Token: 0x06001854 RID: 6228 RVA: 0x000DB518 File Offset: 0x000D9718
+	// Token: 0x06001873 RID: 6259 RVA: 0x000DD7FC File Offset: 0x000DB9FC
 	private void SpecialEffect()
 	{
 		Animation component = this.Student.Character.GetComponent<Animation>();
 		if (this.EffectPhase == 0)
 		{
-			if (component["f02_knifeLowSanityA_00"].time > 2.7666667f)
+			if (component["f02_knifeLowSanityA_00"].time > 2.76666665f)
 			{
 				UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, this.Knife.transform.position + this.Knife.transform.forward * 0.1f, Quaternion.identity);
 				this.EffectPhase++;
@@ -376,14 +388,14 @@ public class NemesisScript : MonoBehaviour
 				return;
 			}
 		}
-		else if (this.EffectPhase == 2 && component["f02_knifeLowSanityA_00"].time > 4.1666665f)
+		else if (this.EffectPhase == 2 && component["f02_knifeLowSanityA_00"].time > 4.16666651f)
 		{
 			UnityEngine.Object.Instantiate<GameObject>(this.BloodEffect, this.Knife.transform.position + this.Knife.transform.forward * 0.1f, Quaternion.identity);
 			this.EffectPhase++;
 		}
 	}
 
-	// Token: 0x06001855 RID: 6229 RVA: 0x000DB688 File Offset: 0x000D9888
+	// Token: 0x06001874 RID: 6260 RVA: 0x000DD96C File Offset: 0x000DBB6C
 	private void HideObjects()
 	{
 		this.Student.Cosmetic.RightStockings[0].SetActive(false);
@@ -442,69 +454,69 @@ public class NemesisScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002357 RID: 9047
+	// Token: 0x040023A5 RID: 9125
 	public MissionModeScript MissionMode;
 
-	// Token: 0x04002358 RID: 9048
+	// Token: 0x040023A6 RID: 9126
 	public CosmeticScript Cosmetic;
 
-	// Token: 0x04002359 RID: 9049
+	// Token: 0x040023A7 RID: 9127
 	public StudentScript Student;
 
-	// Token: 0x0400235A RID: 9050
+	// Token: 0x040023A8 RID: 9128
 	public YandereScript Yandere;
 
-	// Token: 0x0400235B RID: 9051
+	// Token: 0x040023A9 RID: 9129
 	public AudioClip YandereDeath;
 
-	// Token: 0x0400235C RID: 9052
+	// Token: 0x040023AA RID: 9130
 	public Texture NemesisUniform;
 
-	// Token: 0x0400235D RID: 9053
+	// Token: 0x040023AB RID: 9131
 	public Texture NemesisFace;
 
-	// Token: 0x0400235E RID: 9054
+	// Token: 0x040023AC RID: 9132
 	public Texture NemesisEyes;
 
-	// Token: 0x0400235F RID: 9055
+	// Token: 0x040023AD RID: 9133
 	public GameObject BloodEffect;
 
-	// Token: 0x04002360 RID: 9056
+	// Token: 0x040023AE RID: 9134
 	public GameObject NemesisHair;
 
-	// Token: 0x04002361 RID: 9057
+	// Token: 0x040023AF RID: 9135
 	public GameObject Knife;
 
-	// Token: 0x04002362 RID: 9058
+	// Token: 0x040023B0 RID: 9136
 	public bool PutOnDisguise;
 
-	// Token: 0x04002363 RID: 9059
+	// Token: 0x040023B1 RID: 9137
 	public bool Aggressive;
 
-	// Token: 0x04002364 RID: 9060
+	// Token: 0x040023B2 RID: 9138
 	public bool Attacking;
 
-	// Token: 0x04002365 RID: 9061
+	// Token: 0x040023B3 RID: 9139
 	public bool Chasing;
 
-	// Token: 0x04002366 RID: 9062
+	// Token: 0x040023B4 RID: 9140
 	public bool InView;
 
-	// Token: 0x04002367 RID: 9063
+	// Token: 0x040023B5 RID: 9141
 	public bool Dying;
 
-	// Token: 0x04002368 RID: 9064
+	// Token: 0x040023B6 RID: 9142
 	public int EffectPhase;
 
-	// Token: 0x04002369 RID: 9065
+	// Token: 0x040023B7 RID: 9143
 	public int Difficulty;
 
-	// Token: 0x0400236A RID: 9066
+	// Token: 0x040023B8 RID: 9144
 	public int ID;
 
-	// Token: 0x0400236B RID: 9067
+	// Token: 0x040023B9 RID: 9145
 	public float OriginalYPosition;
 
-	// Token: 0x0400236C RID: 9068
+	// Token: 0x040023BA RID: 9146
 	public float ScanTimer = 6f;
 }

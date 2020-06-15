@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002A5 RID: 677
+// Token: 0x020002A7 RID: 679
 public class FollowYandereScript : MonoBehaviour
 {
-	// Token: 0x06001410 RID: 5136 RVA: 0x000AFB40 File Offset: 0x000ADD40
+	// Token: 0x0600141F RID: 5151 RVA: 0x000B13E8 File Offset: 0x000AF5E8
 	private void Update()
 	{
 		base.transform.position = new Vector3(this.Yandere.position.x, base.transform.position.y, this.Yandere.position.z);
 	}
 
-	// Token: 0x04001C46 RID: 7238
+	// Token: 0x04001C7E RID: 7294
 	public Transform Yandere;
 }

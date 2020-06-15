@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000205 RID: 517
+// Token: 0x02000206 RID: 518
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Old Film/Old_Movie_2")]
 public class CameraFilterPack_TV_Old_Movie_2 : MonoBehaviour
 {
 	// Token: 0x17000325 RID: 805
-	// (get) Token: 0x06001154 RID: 4436 RVA: 0x0007C58A File Offset: 0x0007A78A
+	// (get) Token: 0x0600115B RID: 4443 RVA: 0x0007D2BA File Offset: 0x0007B4BA
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Old_Movie_2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001155 RID: 4437 RVA: 0x0007C5BE File Offset: 0x0007A7BE
+	// Token: 0x0600115C RID: 4444 RVA: 0x0007D2EE File Offset: 0x0007B4EE
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Old_Movie_2");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_Old_Movie_2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001156 RID: 4438 RVA: 0x0007C5E0 File Offset: 0x0007A7E0
+	// Token: 0x0600115D RID: 4445 RVA: 0x0007D310 File Offset: 0x0007B510
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -55,12 +55,12 @@ public class CameraFilterPack_TV_Old_Movie_2 : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001157 RID: 4439 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x0600115E RID: 4446 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001158 RID: 4440 RVA: 0x0007C6EE File Offset: 0x0007A8EE
+	// Token: 0x0600115F RID: 4447 RVA: 0x0007D41E File Offset: 0x0007B61E
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -69,32 +69,32 @@ public class CameraFilterPack_TV_Old_Movie_2 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001458 RID: 5208
+	// Token: 0x04001477 RID: 5239
 	public Shader SCShader;
 
-	// Token: 0x04001459 RID: 5209
+	// Token: 0x04001478 RID: 5240
 	private float TimeX = 1f;
 
-	// Token: 0x0400145A RID: 5210
+	// Token: 0x04001479 RID: 5241
 	private Material SCMaterial;
 
-	// Token: 0x0400145B RID: 5211
+	// Token: 0x0400147A RID: 5242
 	[Range(1f, 60f)]
 	public float FramePerSecond = 15f;
 
-	// Token: 0x0400145C RID: 5212
+	// Token: 0x0400147B RID: 5243
 	[Range(0f, 5f)]
 	public float Contrast = 1f;
 
-	// Token: 0x0400145D RID: 5213
+	// Token: 0x0400147C RID: 5244
 	[Range(0f, 4f)]
 	public float Burn;
 
-	// Token: 0x0400145E RID: 5214
+	// Token: 0x0400147D RID: 5245
 	[Range(0f, 16f)]
 	public float SceneCut = 1f;
 
-	// Token: 0x0400145F RID: 5215
+	// Token: 0x0400147E RID: 5246
 	[Range(0f, 1f)]
 	public float Fade = 1f;
 }

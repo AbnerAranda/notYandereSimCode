@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200037B RID: 891
+// Token: 0x02000380 RID: 896
 public class PromptBarScript : MonoBehaviour
 {
-	// Token: 0x06001948 RID: 6472 RVA: 0x000F2FA8 File Offset: 0x000F11A8
+	// Token: 0x06001969 RID: 6505 RVA: 0x000F55B4 File Offset: 0x000F37B4
 	private void Awake()
 	{
 		base.transform.localPosition = new Vector3(base.transform.localPosition.x, -627f, base.transform.localPosition.z);
@@ -16,13 +16,13 @@ public class PromptBarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001949 RID: 6473 RVA: 0x000F3028 File Offset: 0x000F1228
+	// Token: 0x0600196A RID: 6506 RVA: 0x000F5634 File Offset: 0x000F3834
 	private void Start()
 	{
 		this.UpdateButtons();
 	}
 
-	// Token: 0x0600194A RID: 6474 RVA: 0x000F3030 File Offset: 0x000F1230
+	// Token: 0x0600196B RID: 6507 RVA: 0x000F563C File Offset: 0x000F383C
 	private void Update()
 	{
 		float t = Time.unscaledDeltaTime * 10f;
@@ -48,7 +48,7 @@ public class PromptBarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600194B RID: 6475 RVA: 0x000F3164 File Offset: 0x000F1364
+	// Token: 0x0600196C RID: 6508 RVA: 0x000F5770 File Offset: 0x000F3970
 	public void UpdateButtons()
 	{
 		if (this.Panel != null)
@@ -63,7 +63,7 @@ public class PromptBarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600194C RID: 6476 RVA: 0x000F31E0 File Offset: 0x000F13E0
+	// Token: 0x0600196D RID: 6509 RVA: 0x000F57EC File Offset: 0x000F39EC
 	public void ClearButtons()
 	{
 		this.ID = 0;
@@ -75,18 +75,18 @@ public class PromptBarScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002687 RID: 9863
+	// Token: 0x040026E0 RID: 9952
 	public UISprite[] Button;
 
-	// Token: 0x04002688 RID: 9864
+	// Token: 0x040026E1 RID: 9953
 	public UILabel[] Label;
 
-	// Token: 0x04002689 RID: 9865
+	// Token: 0x040026E2 RID: 9954
 	public UIPanel Panel;
 
-	// Token: 0x0400268A RID: 9866
+	// Token: 0x040026E3 RID: 9955
 	public bool Show;
 
-	// Token: 0x0400268B RID: 9867
+	// Token: 0x040026E4 RID: 9956
 	public int ID;
 }

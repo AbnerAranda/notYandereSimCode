@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000592 RID: 1426
+	// Token: 0x020005A8 RID: 1448
 	public class ConstantPath : Path
 	{
-		// Token: 0x170005B8 RID: 1464
-		// (get) Token: 0x060026CC RID: 9932 RVA: 0x0002291C File Offset: 0x00020B1C
+		// Token: 0x170005BE RID: 1470
+		// (get) Token: 0x06002722 RID: 10018 RVA: 0x00022944 File Offset: 0x00020B44
 		internal override bool FloodingPath
 		{
 			get
@@ -18,7 +18,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026CD RID: 9933 RVA: 0x001AA061 File Offset: 0x001A8261
+		// Token: 0x06002723 RID: 10019 RVA: 0x001AFC4D File Offset: 0x001ADE4D
 		public static ConstantPath Construct(Vector3 start, int maxGScore, OnPathDelegate callback = null)
 		{
 			ConstantPath path = PathPool.GetPath<ConstantPath>();
@@ -26,7 +26,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026CE RID: 9934 RVA: 0x001AA071 File Offset: 0x001A8271
+		// Token: 0x06002724 RID: 10020 RVA: 0x001AFC5D File Offset: 0x001ADE5D
 		protected void Setup(Vector3 start, int maxGScore, OnPathDelegate callback)
 		{
 			this.callback = callback;
@@ -35,7 +35,7 @@ namespace Pathfinding
 			this.endingCondition = new EndingConditionDistance(this, maxGScore);
 		}
 
-		// Token: 0x060026CF RID: 9935 RVA: 0x001AA09A File Offset: 0x001A829A
+		// Token: 0x06002725 RID: 10021 RVA: 0x001AFC86 File Offset: 0x001ADE86
 		protected override void OnEnterPool()
 		{
 			base.OnEnterPool();
@@ -45,7 +45,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026D0 RID: 9936 RVA: 0x001AA0B5 File Offset: 0x001A82B5
+		// Token: 0x06002726 RID: 10022 RVA: 0x001AFCA1 File Offset: 0x001ADEA1
 		protected override void Reset()
 		{
 			base.Reset();
@@ -57,7 +57,7 @@ namespace Pathfinding
 			this.heuristic = Heuristic.None;
 		}
 
-		// Token: 0x060026D1 RID: 9937 RVA: 0x001AA0F4 File Offset: 0x001A82F4
+		// Token: 0x06002727 RID: 10023 RVA: 0x001AFCE0 File Offset: 0x001ADEE0
 		protected override void Prepare()
 		{
 			this.nnConstraint.tags = this.enabledTags;
@@ -70,14 +70,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026D2 RID: 9938 RVA: 0x001AA14C File Offset: 0x001A834C
+		// Token: 0x06002728 RID: 10024 RVA: 0x001AFD38 File Offset: 0x001ADF38
 		protected override void Initialize()
 		{
 			PathNode pathNode = this.pathHandler.GetPathNode(this.startNode);
 			pathNode.node = this.startNode;
 			pathNode.pathID = this.pathHandler.PathID;
 			pathNode.parent = null;
-			pathNode.cost = 0u;
+			pathNode.cost = 0U;
 			pathNode.G = base.GetTraversalCost(this.startNode);
 			pathNode.H = base.CalculateHScore(this.startNode);
 			this.startNode.Open(this, pathNode, this.pathHandler);
@@ -92,7 +92,7 @@ namespace Pathfinding
 			this.currentR = this.pathHandler.heap.Remove();
 		}
 
-		// Token: 0x060026D3 RID: 9939 RVA: 0x001AA224 File Offset: 0x001A8424
+		// Token: 0x06002729 RID: 10025 RVA: 0x001AFE10 File Offset: 0x001AE010
 		protected override void Cleanup()
 		{
 			int count = this.allNodes.Count;
@@ -102,7 +102,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026D4 RID: 9940 RVA: 0x001AA268 File Offset: 0x001A8468
+		// Token: 0x0600272A RID: 10026 RVA: 0x001AFE54 File Offset: 0x001AE054
 		protected override void CalculateStep(long targetTick)
 		{
 			int num = 0;
@@ -142,19 +142,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04004193 RID: 16787
+		// Token: 0x04004271 RID: 17009
 		public GraphNode startNode;
 
-		// Token: 0x04004194 RID: 16788
+		// Token: 0x04004272 RID: 17010
 		public Vector3 startPoint;
 
-		// Token: 0x04004195 RID: 16789
+		// Token: 0x04004273 RID: 17011
 		public Vector3 originalStartPoint;
 
-		// Token: 0x04004196 RID: 16790
+		// Token: 0x04004274 RID: 17012
 		public List<GraphNode> allNodes;
 
-		// Token: 0x04004197 RID: 16791
+		// Token: 0x04004275 RID: 17013
 		public PathEndingCondition endingCondition;
 	}
 }

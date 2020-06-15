@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200055F RID: 1375
+	// Token: 0x02000575 RID: 1397
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_target_mover.php")]
 	public class TargetMover : MonoBehaviour
 	{
-		// Token: 0x0600244F RID: 9295 RVA: 0x001971E0 File Offset: 0x001953E0
+		// Token: 0x060024A5 RID: 9381 RVA: 0x0019CDCC File Offset: 0x0019AFCC
 		public void Start()
 		{
 			this.cam = Camera.main;
@@ -16,7 +16,7 @@ namespace Pathfinding
 			base.useGUILayout = false;
 		}
 
-		// Token: 0x06002450 RID: 9296 RVA: 0x00197209 File Offset: 0x00195409
+		// Token: 0x060024A6 RID: 9382 RVA: 0x0019CDF5 File Offset: 0x0019AFF5
 		public void OnGUI()
 		{
 			if (this.onlyOnDoubleClick && this.cam != null && Event.current.type == EventType.MouseDown && Event.current.clickCount == 2)
@@ -25,7 +25,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002451 RID: 9297 RVA: 0x00197240 File Offset: 0x00195440
+		// Token: 0x060024A7 RID: 9383 RVA: 0x0019CE2C File Offset: 0x0019B02C
 		private void Update()
 		{
 			if (!this.onlyOnDoubleClick && this.cam != null)
@@ -34,7 +34,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002452 RID: 9298 RVA: 0x00197260 File Offset: 0x00195460
+		// Token: 0x060024A8 RID: 9384 RVA: 0x0019CE4C File Offset: 0x0019B04C
 		public void UpdateTargetPosition()
 		{
 			Vector3 vector = Vector3.zero;
@@ -67,22 +67,22 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0400402E RID: 16430
+		// Token: 0x0400410C RID: 16652
 		public LayerMask mask;
 
-		// Token: 0x0400402F RID: 16431
+		// Token: 0x0400410D RID: 16653
 		public Transform target;
 
-		// Token: 0x04004030 RID: 16432
+		// Token: 0x0400410E RID: 16654
 		private IAstarAI[] ais;
 
-		// Token: 0x04004031 RID: 16433
+		// Token: 0x0400410F RID: 16655
 		public bool onlyOnDoubleClick;
 
-		// Token: 0x04004032 RID: 16434
+		// Token: 0x04004110 RID: 16656
 		public bool use2D;
 
-		// Token: 0x04004033 RID: 16435
+		// Token: 0x04004111 RID: 16657
 		private Camera cam;
 	}
 }

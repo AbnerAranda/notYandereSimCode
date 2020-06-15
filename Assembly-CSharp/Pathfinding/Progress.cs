@@ -3,32 +3,32 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000545 RID: 1349
+	// Token: 0x0200055B RID: 1371
 	public struct Progress
 	{
-		// Token: 0x060023F5 RID: 9205 RVA: 0x00195F29 File Offset: 0x00194129
+		// Token: 0x0600244B RID: 9291 RVA: 0x0019BB15 File Offset: 0x00199D15
 		public Progress(float progress, string description)
 		{
 			this.progress = progress;
 			this.description = description;
 		}
 
-		// Token: 0x060023F6 RID: 9206 RVA: 0x00195F39 File Offset: 0x00194139
+		// Token: 0x0600244C RID: 9292 RVA: 0x0019BB25 File Offset: 0x00199D25
 		public Progress MapTo(float min, float max, string prefix = null)
 		{
 			return new Progress(Mathf.Lerp(min, max, this.progress), prefix + this.description);
 		}
 
-		// Token: 0x060023F7 RID: 9207 RVA: 0x00195F5C File Offset: 0x0019415C
+		// Token: 0x0600244D RID: 9293 RVA: 0x0019BB48 File Offset: 0x00199D48
 		public override string ToString()
 		{
 			return this.progress.ToString("0.0") + " " + this.description;
 		}
 
-		// Token: 0x04003FC2 RID: 16322
+		// Token: 0x040040A0 RID: 16544
 		public readonly float progress;
 
-		// Token: 0x04003FC3 RID: 16323
+		// Token: 0x040040A1 RID: 16545
 		public readonly string description;
 	}
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200015E RID: 350
+// Token: 0x0200015F RID: 351
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Colors/HSV")]
 public class CameraFilterPack_Colors_HSV : MonoBehaviour
 {
 	// Token: 0x1700027E RID: 638
-	// (get) Token: 0x06000D46 RID: 3398 RVA: 0x0006AA7D File Offset: 0x00068C7D
+	// (get) Token: 0x06000D4D RID: 3405 RVA: 0x0006B7AD File Offset: 0x000699AD
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Colors_HSV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D47 RID: 3399 RVA: 0x0006AAB1 File Offset: 0x00068CB1
+	// Token: 0x06000D4E RID: 3406 RVA: 0x0006B7E1 File Offset: 0x000699E1
 	private void Start()
 	{
 		if (!SystemInfo.supportsImageEffects)
@@ -31,7 +31,7 @@ public class CameraFilterPack_Colors_HSV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D48 RID: 3400 RVA: 0x0006AAC4 File Offset: 0x00068CC4
+	// Token: 0x06000D4F RID: 3407 RVA: 0x0006B7F4 File Offset: 0x000699F4
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -45,12 +45,12 @@ public class CameraFilterPack_Colors_HSV : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000D49 RID: 3401 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000D50 RID: 3408 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000D4A RID: 3402 RVA: 0x0006AB36 File Offset: 0x00068D36
+	// Token: 0x06000D51 RID: 3409 RVA: 0x0006B866 File Offset: 0x00069A66
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -59,21 +59,21 @@ public class CameraFilterPack_Colors_HSV : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001003 RID: 4099
+	// Token: 0x04001022 RID: 4130
 	public Shader SCShader;
 
-	// Token: 0x04001004 RID: 4100
+	// Token: 0x04001023 RID: 4131
 	[Range(0f, 360f)]
 	public float _HueShift = 180f;
 
-	// Token: 0x04001005 RID: 4101
+	// Token: 0x04001024 RID: 4132
 	[Range(-32f, 32f)]
 	public float _Saturation = 1f;
 
-	// Token: 0x04001006 RID: 4102
+	// Token: 0x04001025 RID: 4133
 	[Range(-32f, 32f)]
 	public float _ValueBrightness = 1f;
 
-	// Token: 0x04001007 RID: 4103
+	// Token: 0x04001026 RID: 4134
 	private Material SCMaterial;
 }

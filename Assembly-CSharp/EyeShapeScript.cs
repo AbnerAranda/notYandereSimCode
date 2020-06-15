@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000299 RID: 665
+// Token: 0x0200029A RID: 666
 public class EyeShapeScript : MonoBehaviour
 {
-	// Token: 0x060013F0 RID: 5104 RVA: 0x000AD840 File Offset: 0x000ABA40
+	// Token: 0x060013F8 RID: 5112 RVA: 0x000AEA44 File Offset: 0x000ACC44
 	private void Start()
 	{
 		this.PosOffsetX = UnityEngine.Random.Range(-0.002f, 0.002f);
@@ -15,7 +15,7 @@ public class EyeShapeScript : MonoBehaviour
 		this.RotOffsetZ = UnityEngine.Random.Range(-15f, 15f);
 	}
 
-	// Token: 0x060013F1 RID: 5105 RVA: 0x000AD8CC File Offset: 0x000ABACC
+	// Token: 0x060013F9 RID: 5113 RVA: 0x000AEAD0 File Offset: 0x000ACCD0
 	private void LateUpdate()
 	{
 		this.eyelid_und1_Left.localPosition += new Vector3(this.PosOffsetX, this.PosOffsetY, this.PosOffsetZ);
@@ -52,69 +52,69 @@ public class EyeShapeScript : MonoBehaviour
 		this.tail_of_eye_Right.localEulerAngles += new Vector3(this.RotOffsetX * -1f, this.RotOffsetY * -1f, this.RotOffsetZ);
 	}
 
-	// Token: 0x04001BC9 RID: 7113
+	// Token: 0x04001BE9 RID: 7145
 	public Transform eyelid_und1_Left;
 
-	// Token: 0x04001BCA RID: 7114
+	// Token: 0x04001BEA RID: 7146
 	public Transform eyelid_und1_Right;
 
-	// Token: 0x04001BCB RID: 7115
+	// Token: 0x04001BEB RID: 7147
 	public Transform eyelid_und2_Left;
 
-	// Token: 0x04001BCC RID: 7116
+	// Token: 0x04001BEC RID: 7148
 	public Transform eyelid_und2_Right;
 
-	// Token: 0x04001BCD RID: 7117
+	// Token: 0x04001BED RID: 7149
 	public Transform eyelid_und_Left;
 
-	// Token: 0x04001BCE RID: 7118
+	// Token: 0x04001BEE RID: 7150
 	public Transform eyelid_und_Right;
 
-	// Token: 0x04001BCF RID: 7119
+	// Token: 0x04001BEF RID: 7151
 	public Transform eyerid1_Left;
 
-	// Token: 0x04001BD0 RID: 7120
+	// Token: 0x04001BF0 RID: 7152
 	public Transform eyerid1_Right;
 
-	// Token: 0x04001BD1 RID: 7121
+	// Token: 0x04001BF1 RID: 7153
 	public Transform eyerid2_Left;
 
-	// Token: 0x04001BD2 RID: 7122
+	// Token: 0x04001BF2 RID: 7154
 	public Transform eyerid2_Right;
 
-	// Token: 0x04001BD3 RID: 7123
+	// Token: 0x04001BF3 RID: 7155
 	public Transform eyerid_Left;
 
-	// Token: 0x04001BD4 RID: 7124
+	// Token: 0x04001BF4 RID: 7156
 	public Transform eyerid_Right;
 
-	// Token: 0x04001BD5 RID: 7125
+	// Token: 0x04001BF5 RID: 7157
 	public Transform inner_corner_of_eye_Left;
 
-	// Token: 0x04001BD6 RID: 7126
+	// Token: 0x04001BF6 RID: 7158
 	public Transform inner_corner_of_eye_Reft;
 
-	// Token: 0x04001BD7 RID: 7127
+	// Token: 0x04001BF7 RID: 7159
 	public Transform tail_of_eye_Left;
 
-	// Token: 0x04001BD8 RID: 7128
+	// Token: 0x04001BF8 RID: 7160
 	public Transform tail_of_eye_Right;
 
-	// Token: 0x04001BD9 RID: 7129
+	// Token: 0x04001BF9 RID: 7161
 	public float PosOffsetX;
 
-	// Token: 0x04001BDA RID: 7130
+	// Token: 0x04001BFA RID: 7162
 	public float PosOffsetY;
 
-	// Token: 0x04001BDB RID: 7131
+	// Token: 0x04001BFB RID: 7163
 	public float PosOffsetZ;
 
-	// Token: 0x04001BDC RID: 7132
+	// Token: 0x04001BFC RID: 7164
 	public float RotOffsetX;
 
-	// Token: 0x04001BDD RID: 7133
+	// Token: 0x04001BFD RID: 7165
 	public float RotOffsetY;
 
-	// Token: 0x04001BDE RID: 7134
+	// Token: 0x04001BFE RID: 7166
 	public float RotOffsetZ;
 }

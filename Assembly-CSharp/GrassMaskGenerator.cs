@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000490 RID: 1168
+// Token: 0x02000496 RID: 1174
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 public class GrassMaskGenerator : MonoBehaviour
 {
-	// Token: 0x06001DF9 RID: 7673 RVA: 0x00177C43 File Offset: 0x00175E43
+	// Token: 0x06001E28 RID: 7720 RVA: 0x0017BD0C File Offset: 0x00179F0C
 	public void Start()
 	{
 		UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06001DFA RID: 7674 RVA: 0x00177C50 File Offset: 0x00175E50
+	// Token: 0x06001E29 RID: 7721 RVA: 0x0017BD1C File Offset: 0x00179F1C
 	private void Update()
 	{
 		if (this.camera == null)
 		{
 			this.camera = base.GetComponent<Camera>();
 		}
-		this.aspectWidth = Mathf.Clamp(this.aspectWidth, 1f, 2.1474836E+09f);
-		this.aspectHeight = Mathf.Clamp(this.aspectHeight, 1f, 2.1474836E+09f);
+		this.aspectWidth = Mathf.Clamp(this.aspectWidth, 1f, 2.14748365E+09f);
+		this.aspectHeight = Mathf.Clamp(this.aspectHeight, 1f, 2.14748365E+09f);
 		this.mapUpscale = Mathf.Clamp(this.mapUpscale, 1, 1000);
 		if (this.targetTexture == null || (float)this.targetTexture.width != this.aspectWidth * (float)this.mapUpscale || (float)this.targetTexture.height != this.aspectHeight * (float)this.mapUpscale)
 		{
@@ -38,7 +38,7 @@ public class GrassMaskGenerator : MonoBehaviour
 		this.camera.targetTexture = this.targetTexture;
 	}
 
-	// Token: 0x06001DFB RID: 7675 RVA: 0x00177DA0 File Offset: 0x00175FA0
+	// Token: 0x06001E2A RID: 7722 RVA: 0x0017BE6C File Offset: 0x0017A06C
 	[ContextMenu("Generate and save the grass occlusion map")]
 	public void GenerateMap()
 	{
@@ -94,7 +94,7 @@ public class GrassMaskGenerator : MonoBehaviour
 		}.AddComponent<MeshRenderer>().gameObject.AddComponent<MeshFilter>().mesh = mesh;
 	}
 
-	// Token: 0x06001DFC RID: 7676 RVA: 0x00178040 File Offset: 0x00176240
+	// Token: 0x06001E2B RID: 7723 RVA: 0x0017C10C File Offset: 0x0017A30C
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
@@ -105,25 +105,25 @@ public class GrassMaskGenerator : MonoBehaviour
 		Gizmos.DrawWireCube(new Vector3(0f, 0f, z2), new Vector3(this.camera.orthographicSize * 2f * this.camera.aspect, this.camera.orthographicSize * 2f, z));
 	}
 
-	// Token: 0x04003BD3 RID: 15315
+	// Token: 0x04003C61 RID: 15457
 	[SerializeField]
 	private float aspectWidth;
 
-	// Token: 0x04003BD4 RID: 15316
+	// Token: 0x04003C62 RID: 15458
 	[SerializeField]
 	private float aspectHeight;
 
-	// Token: 0x04003BD5 RID: 15317
+	// Token: 0x04003C63 RID: 15459
 	[SerializeField]
 	private float mapScale;
 
-	// Token: 0x04003BD6 RID: 15318
+	// Token: 0x04003C64 RID: 15460
 	[SerializeField]
 	private int mapUpscale;
 
-	// Token: 0x04003BD7 RID: 15319
+	// Token: 0x04003C65 RID: 15461
 	private Camera camera;
 
-	// Token: 0x04003BD8 RID: 15320
+	// Token: 0x04003C66 RID: 15462
 	private RenderTexture targetTexture;
 }

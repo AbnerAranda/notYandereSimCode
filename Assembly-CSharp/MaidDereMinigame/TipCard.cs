@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using MaidDereMinigame.Malee;
 using UnityEngine;
 
 namespace MaidDereMinigame
 {
-	// Token: 0x02000509 RID: 1289
+	// Token: 0x02000519 RID: 1305
 	public class TipCard : MonoBehaviour
 	{
-		// Token: 0x0600204C RID: 8268 RVA: 0x00185F24 File Offset: 0x00184124
+		// Token: 0x0600208E RID: 8334 RVA: 0x0018B414 File Offset: 0x00189614
 		public void SetTip(float tip)
 		{
+			Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
 			if (tip == 0f)
 			{
 				base.gameObject.SetActive(false);
@@ -23,8 +26,14 @@ namespace MaidDereMinigame
 			for (int j = 0; j < text2.Length; j++)
 			{
 				int index = -1;
-				int.TryParse(text2[j].ToString(), out index);
-				this.digits[j].sprite = GameController.Instance.numbers[index];
+				if (int.TryParse(text2[j].ToString(), NumberStyles.Float, NumberFormatInfo.InvariantInfo, out index))
+				{
+					this.digits[j].sprite = GameController.Instance.numbers[index];
+				}
+				else
+				{
+					Debug.LogError("There was an issue while parsing the value in TipCard.SetTip");
+				}
 			}
 			if (text2.Length <= 3)
 			{
@@ -43,11 +52,11 @@ namespace MaidDereMinigame
 			}
 		}
 
-		// Token: 0x04003E00 RID: 15872
+		// Token: 0x04003EB0 RID: 16048
 		[Reorderable]
 		public SpriteRenderers digits;
 
-		// Token: 0x04003E01 RID: 15873
+		// Token: 0x04003EB1 RID: 16049
 		public SpriteRenderer dollarSign;
 	}
 }

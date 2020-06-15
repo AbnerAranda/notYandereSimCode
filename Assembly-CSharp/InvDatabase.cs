@@ -8,7 +8,7 @@ using UnityEngine;
 public class InvDatabase : MonoBehaviour
 {
 	// Token: 0x17000014 RID: 20
-	// (get) Token: 0x060000F1 RID: 241 RVA: 0x00012048 File Offset: 0x00010248
+	// (get) Token: 0x060000F2 RID: 242 RVA: 0x00012070 File Offset: 0x00010270
 	public static InvDatabase[] list
 	{
 		get
@@ -22,19 +22,19 @@ public class InvDatabase : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F2 RID: 242 RVA: 0x00012066 File Offset: 0x00010266
+	// Token: 0x060000F3 RID: 243 RVA: 0x0001208E File Offset: 0x0001028E
 	private void OnEnable()
 	{
 		InvDatabase.mIsDirty = true;
 	}
 
-	// Token: 0x060000F3 RID: 243 RVA: 0x00012066 File Offset: 0x00010266
+	// Token: 0x060000F4 RID: 244 RVA: 0x0001208E File Offset: 0x0001028E
 	private void OnDisable()
 	{
 		InvDatabase.mIsDirty = true;
 	}
 
-	// Token: 0x060000F4 RID: 244 RVA: 0x00012070 File Offset: 0x00010270
+	// Token: 0x060000F5 RID: 245 RVA: 0x00012098 File Offset: 0x00010298
 	private InvBaseItem GetItem(int id16)
 	{
 		int i = 0;
@@ -51,7 +51,7 @@ public class InvDatabase : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060000F5 RID: 245 RVA: 0x000120B0 File Offset: 0x000102B0
+	// Token: 0x060000F6 RID: 246 RVA: 0x000120D8 File Offset: 0x000102D8
 	private static InvDatabase GetDatabase(int dbID)
 	{
 		int i = 0;
@@ -68,7 +68,7 @@ public class InvDatabase : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060000F6 RID: 246 RVA: 0x000120E8 File Offset: 0x000102E8
+	// Token: 0x060000F7 RID: 247 RVA: 0x00012110 File Offset: 0x00010310
 	public static InvBaseItem FindByID(int id32)
 	{
 		InvDatabase database = InvDatabase.GetDatabase(id32 >> 16);
@@ -79,7 +79,7 @@ public class InvDatabase : MonoBehaviour
 		return database.GetItem(id32 & 65535);
 	}
 
-	// Token: 0x060000F7 RID: 247 RVA: 0x00012118 File Offset: 0x00010318
+	// Token: 0x060000F8 RID: 248 RVA: 0x00012140 File Offset: 0x00010340
 	public static InvBaseItem FindByName(string exact)
 	{
 		int i = 0;
@@ -103,7 +103,7 @@ public class InvDatabase : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060000F8 RID: 248 RVA: 0x0001217C File Offset: 0x0001037C
+	// Token: 0x060000F9 RID: 249 RVA: 0x000121A4 File Offset: 0x000103A4
 	public static int FindItemID(InvBaseItem item)
 	{
 		int i = 0;
@@ -120,18 +120,18 @@ public class InvDatabase : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x04000297 RID: 663
+	// Token: 0x04000299 RID: 665
 	private static InvDatabase[] mList;
 
-	// Token: 0x04000298 RID: 664
+	// Token: 0x0400029A RID: 666
 	private static bool mIsDirty = true;
 
-	// Token: 0x04000299 RID: 665
+	// Token: 0x0400029B RID: 667
 	public int databaseID;
 
-	// Token: 0x0400029A RID: 666
+	// Token: 0x0400029C RID: 668
 	public List<InvBaseItem> items = new List<InvBaseItem>();
 
-	// Token: 0x0400029B RID: 667
+	// Token: 0x0400029D RID: 669
 	public UnityEngine.Object iconAtlas;
 }

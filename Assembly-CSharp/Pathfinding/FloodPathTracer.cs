@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000597 RID: 1431
+	// Token: 0x020005AD RID: 1453
 	public class FloodPathTracer : ABPath
 	{
-		// Token: 0x170005BA RID: 1466
-		// (get) Token: 0x060026E9 RID: 9961 RVA: 0x0002D171 File Offset: 0x0002B371
+		// Token: 0x170005C0 RID: 1472
+		// (get) Token: 0x0600273F RID: 10047 RVA: 0x0002D199 File Offset: 0x0002B399
 		protected override bool hasEndPoint
 		{
 			get
@@ -16,7 +16,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026EB RID: 9963 RVA: 0x001AA770 File Offset: 0x001A8970
+		// Token: 0x06002741 RID: 10049 RVA: 0x001B035C File Offset: 0x001AE55C
 		public static FloodPathTracer Construct(Vector3 start, FloodPath flood, OnPathDelegate callback = null)
 		{
 			FloodPathTracer path = PathPool.GetPath<FloodPathTracer>();
@@ -24,7 +24,7 @@ namespace Pathfinding
 			return path;
 		}
 
-		// Token: 0x060026EC RID: 9964 RVA: 0x001AA780 File Offset: 0x001A8980
+		// Token: 0x06002742 RID: 10050 RVA: 0x001B036C File Offset: 0x001AE56C
 		protected void Setup(Vector3 start, FloodPath flood, OnPathDelegate callback)
 		{
 			this.flood = flood;
@@ -36,14 +36,14 @@ namespace Pathfinding
 			this.nnConstraint = new FloodPathConstraint(flood);
 		}
 
-		// Token: 0x060026ED RID: 9965 RVA: 0x001AA7BA File Offset: 0x001A89BA
+		// Token: 0x06002743 RID: 10051 RVA: 0x001B03A6 File Offset: 0x001AE5A6
 		protected override void Reset()
 		{
 			base.Reset();
 			this.flood = null;
 		}
 
-		// Token: 0x060026EE RID: 9966 RVA: 0x001AA7C9 File Offset: 0x001A89C9
+		// Token: 0x06002744 RID: 10052 RVA: 0x001B03B5 File Offset: 0x001AE5B5
 		protected override void Initialize()
 		{
 			if (this.startNode != null && this.flood.HasPathTo(this.startNode))
@@ -55,7 +55,7 @@ namespace Pathfinding
 			base.FailWithError("Could not find valid start node");
 		}
 
-		// Token: 0x060026EF RID: 9967 RVA: 0x001AA805 File Offset: 0x001A8A05
+		// Token: 0x06002745 RID: 10053 RVA: 0x001B03F1 File Offset: 0x001AE5F1
 		protected override void CalculateStep(long targetTick)
 		{
 			if (!base.IsDone())
@@ -64,7 +64,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060026F0 RID: 9968 RVA: 0x001AA81C File Offset: 0x001A8A1C
+		// Token: 0x06002746 RID: 10054 RVA: 0x001B0408 File Offset: 0x001AE608
 		public void Trace(GraphNode from)
 		{
 			GraphNode graphNode = from;
@@ -83,7 +83,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0400419F RID: 16799
+		// Token: 0x0400427D RID: 17021
 		protected FloodPath flood;
 	}
 }

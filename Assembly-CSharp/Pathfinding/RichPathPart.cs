@@ -3,10 +3,10 @@ using Pathfinding.Util;
 
 namespace Pathfinding
 {
-	// Token: 0x02000516 RID: 1302
+	// Token: 0x0200052C RID: 1324
 	public abstract class RichPathPart : IAstarPooledObject
 	{
-		// Token: 0x06002147 RID: 8519
+		// Token: 0x0600219D RID: 8605
 		public abstract void OnEnterPool();
 	}
 }

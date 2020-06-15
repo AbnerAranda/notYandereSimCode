@@ -6,12 +6,12 @@ using UnityEngine.Serialization;
 
 namespace Pathfinding
 {
-	// Token: 0x02000510 RID: 1296
+	// Token: 0x02000526 RID: 1318
 	[RequireComponent(typeof(Seeker))]
 	public abstract class AIBase : VersionedMonoBehaviour
 	{
-		// Token: 0x170004D6 RID: 1238
-		// (get) Token: 0x06002074 RID: 8308 RVA: 0x00186561 File Offset: 0x00184761
+		// Token: 0x170004DC RID: 1244
+		// (get) Token: 0x060020CA RID: 8394 RVA: 0x0018C14D File Offset: 0x0018A34D
 		public Vector3 position
 		{
 			get
@@ -24,8 +24,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004D7 RID: 1239
-		// (get) Token: 0x06002075 RID: 8309 RVA: 0x0018657D File Offset: 0x0018477D
+		// Token: 0x170004DD RID: 1245
+		// (get) Token: 0x060020CB RID: 8395 RVA: 0x0018C169 File Offset: 0x0018A369
 		public Quaternion rotation
 		{
 			get
@@ -38,14 +38,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004D8 RID: 1240
-		// (get) Token: 0x06002076 RID: 8310 RVA: 0x00186599 File Offset: 0x00184799
-		// (set) Token: 0x06002077 RID: 8311 RVA: 0x001865A1 File Offset: 0x001847A1
+		// Token: 0x170004DE RID: 1246
+		// (get) Token: 0x060020CC RID: 8396 RVA: 0x0018C185 File Offset: 0x0018A385
+		// (set) Token: 0x060020CD RID: 8397 RVA: 0x0018C18D File Offset: 0x0018A38D
 		private protected bool usingGravity { protected get; private set; }
 
-		// Token: 0x170004D9 RID: 1241
-		// (get) Token: 0x06002078 RID: 8312 RVA: 0x001865AC File Offset: 0x001847AC
-		// (set) Token: 0x06002079 RID: 8313 RVA: 0x001865D4 File Offset: 0x001847D4
+		// Token: 0x170004DF RID: 1247
+		// (get) Token: 0x060020CE RID: 8398 RVA: 0x0018C198 File Offset: 0x0018A398
+		// (set) Token: 0x060020CF RID: 8399 RVA: 0x0018C1C0 File Offset: 0x0018A3C0
 		[Obsolete("Use the destination property or the AIDestinationSetter component instead")]
 		public Transform target
 		{
@@ -71,13 +71,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004DA RID: 1242
-		// (get) Token: 0x0600207A RID: 8314 RVA: 0x00186636 File Offset: 0x00184836
-		// (set) Token: 0x0600207B RID: 8315 RVA: 0x0018663E File Offset: 0x0018483E
+		// Token: 0x170004E0 RID: 1248
+		// (get) Token: 0x060020D0 RID: 8400 RVA: 0x0018C222 File Offset: 0x0018A422
+		// (set) Token: 0x060020D1 RID: 8401 RVA: 0x0018C22A File Offset: 0x0018A42A
 		public Vector3 destination { get; set; }
 
-		// Token: 0x170004DB RID: 1243
-		// (get) Token: 0x0600207C RID: 8316 RVA: 0x00186647 File Offset: 0x00184847
+		// Token: 0x170004E1 RID: 1249
+		// (get) Token: 0x060020D2 RID: 8402 RVA: 0x0018C233 File Offset: 0x0018A433
 		public Vector3 velocity
 		{
 			get
@@ -90,8 +90,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004DC RID: 1244
-		// (get) Token: 0x0600207D RID: 8317 RVA: 0x00186678 File Offset: 0x00184878
+		// Token: 0x170004E2 RID: 1250
+		// (get) Token: 0x060020D3 RID: 8403 RVA: 0x0018C264 File Offset: 0x0018A464
 		public Vector3 desiredVelocity
 		{
 			get
@@ -104,18 +104,18 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004DD RID: 1245
-		// (get) Token: 0x0600207E RID: 8318 RVA: 0x001866AF File Offset: 0x001848AF
-		// (set) Token: 0x0600207F RID: 8319 RVA: 0x001866B7 File Offset: 0x001848B7
+		// Token: 0x170004E3 RID: 1251
+		// (get) Token: 0x060020D4 RID: 8404 RVA: 0x0018C29B File Offset: 0x0018A49B
+		// (set) Token: 0x060020D5 RID: 8405 RVA: 0x0018C2A3 File Offset: 0x0018A4A3
 		public bool isStopped { get; set; }
 
-		// Token: 0x170004DE RID: 1246
-		// (get) Token: 0x06002080 RID: 8320 RVA: 0x001866C0 File Offset: 0x001848C0
-		// (set) Token: 0x06002081 RID: 8321 RVA: 0x001866C8 File Offset: 0x001848C8
+		// Token: 0x170004E4 RID: 1252
+		// (get) Token: 0x060020D6 RID: 8406 RVA: 0x0018C2AC File Offset: 0x0018A4AC
+		// (set) Token: 0x060020D7 RID: 8407 RVA: 0x0018C2B4 File Offset: 0x0018A4B4
 		public Action onSearchPath { get; set; }
 
-		// Token: 0x170004DF RID: 1247
-		// (get) Token: 0x06002082 RID: 8322 RVA: 0x001866D1 File Offset: 0x001848D1
+		// Token: 0x170004E5 RID: 1253
+		// (get) Token: 0x060020D8 RID: 8408 RVA: 0x0018C2BD File Offset: 0x0018A4BD
 		protected virtual bool shouldRecalculatePath
 		{
 			get
@@ -124,13 +124,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002083 RID: 8323 RVA: 0x0018670C File Offset: 0x0018490C
+		// Token: 0x060020D9 RID: 8409 RVA: 0x0018C2F8 File Offset: 0x0018A4F8
 		protected AIBase()
 		{
 			this.destination = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
 		}
 
-		// Token: 0x06002084 RID: 8324 RVA: 0x001867C0 File Offset: 0x001849C0
+		// Token: 0x060020DA RID: 8410 RVA: 0x0018C3AC File Offset: 0x0018A5AC
 		public virtual void FindComponents()
 		{
 			this.tr = base.transform;
@@ -141,7 +141,7 @@ namespace Pathfinding
 			this.rigid2D = base.GetComponent<Rigidbody2D>();
 		}
 
-		// Token: 0x06002085 RID: 8325 RVA: 0x00186815 File Offset: 0x00184A15
+		// Token: 0x060020DB RID: 8411 RVA: 0x0018C401 File Offset: 0x0018A601
 		protected virtual void OnEnable()
 		{
 			this.FindComponents();
@@ -150,14 +150,14 @@ namespace Pathfinding
 			this.Init();
 		}
 
-		// Token: 0x06002086 RID: 8326 RVA: 0x0018684B File Offset: 0x00184A4B
+		// Token: 0x060020DC RID: 8412 RVA: 0x0018C437 File Offset: 0x0018A637
 		protected virtual void Start()
 		{
 			this.startHasRun = true;
 			this.Init();
 		}
 
-		// Token: 0x06002087 RID: 8327 RVA: 0x0018685A File Offset: 0x00184A5A
+		// Token: 0x060020DD RID: 8413 RVA: 0x0018C446 File Offset: 0x0018A646
 		private void Init()
 		{
 			if (this.startHasRun)
@@ -171,7 +171,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002088 RID: 8328 RVA: 0x0018688C File Offset: 0x00184A8C
+		// Token: 0x060020DE RID: 8414 RVA: 0x0018C478 File Offset: 0x0018A678
 		public virtual void Teleport(Vector3 newPosition, bool clearPath = true)
 		{
 			if (clearPath)
@@ -195,7 +195,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002089 RID: 8329 RVA: 0x001868F6 File Offset: 0x00184AF6
+		// Token: 0x060020DF RID: 8415 RVA: 0x0018C4E2 File Offset: 0x0018A6E2
 		protected void CancelCurrentPathRequest()
 		{
 			this.waitingForPathCalculation = false;
@@ -205,7 +205,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600208A RID: 8330 RVA: 0x0018691C File Offset: 0x00184B1C
+		// Token: 0x060020E0 RID: 8416 RVA: 0x0018C508 File Offset: 0x0018A708
 		protected virtual void OnDisable()
 		{
 			this.CancelCurrentPathRequest();
@@ -217,7 +217,7 @@ namespace Pathfinding
 			this.lastDeltaTime = 0f;
 		}
 
-		// Token: 0x0600208B RID: 8331 RVA: 0x00186988 File Offset: 0x00184B88
+		// Token: 0x060020E1 RID: 8417 RVA: 0x0018C574 File Offset: 0x0018A774
 		protected virtual void Update()
 		{
 			if (this.shouldRecalculatePath)
@@ -234,7 +234,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600208C RID: 8332 RVA: 0x00186A40 File Offset: 0x00184C40
+		// Token: 0x060020E2 RID: 8418 RVA: 0x0018C62C File Offset: 0x0018A82C
 		protected virtual void FixedUpdate()
 		{
 			if ((!(this.rigid == null) || !(this.rigid2D == null)) && this.canMove)
@@ -246,24 +246,24 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600208D RID: 8333 RVA: 0x00186A88 File Offset: 0x00184C88
+		// Token: 0x060020E3 RID: 8419 RVA: 0x0018C674 File Offset: 0x0018A874
 		public void MovementUpdate(float deltaTime, out Vector3 nextPosition, out Quaternion nextRotation)
 		{
 			this.lastDeltaTime = deltaTime;
 			this.MovementUpdateInternal(deltaTime, out nextPosition, out nextRotation);
 		}
 
-		// Token: 0x0600208E RID: 8334
+		// Token: 0x060020E4 RID: 8420
 		protected abstract void MovementUpdateInternal(float deltaTime, out Vector3 nextPosition, out Quaternion nextRotation);
 
-		// Token: 0x0600208F RID: 8335 RVA: 0x00186A9A File Offset: 0x00184C9A
+		// Token: 0x060020E5 RID: 8421 RVA: 0x0018C686 File Offset: 0x0018A886
 		protected virtual void CalculatePathRequestEndpoints(out Vector3 start, out Vector3 end)
 		{
 			start = this.GetFeetPosition();
 			end = this.destination;
 		}
 
-		// Token: 0x06002090 RID: 8336 RVA: 0x00186AB4 File Offset: 0x00184CB4
+		// Token: 0x060020E6 RID: 8422 RVA: 0x0018C6A0 File Offset: 0x0018A8A0
 		public virtual void SearchPath()
 		{
 			if (float.IsPositiveInfinity(this.destination.x))
@@ -283,7 +283,7 @@ namespace Pathfinding
 			this.seeker.StartPath(start, end);
 		}
 
-		// Token: 0x06002091 RID: 8337 RVA: 0x00186B20 File Offset: 0x00184D20
+		// Token: 0x060020E7 RID: 8423 RVA: 0x0018C70C File Offset: 0x0018A90C
 		public virtual Vector3 GetFeetPosition()
 		{
 			if (this.rvoController != null && this.rvoController.enabled && this.rvoController.movementPlane == MovementPlane.XZ)
@@ -297,10 +297,10 @@ namespace Pathfinding
 			return this.position;
 		}
 
-		// Token: 0x06002092 RID: 8338
+		// Token: 0x060020E8 RID: 8424
 		protected abstract void OnPathComplete(Path newPath);
 
-		// Token: 0x06002093 RID: 8339 RVA: 0x00186BF8 File Offset: 0x00184DF8
+		// Token: 0x060020E9 RID: 8425 RVA: 0x0018C7E4 File Offset: 0x0018A9E4
 		public void SetPath(Path path)
 		{
 			if (path.PipelineState == PathState.Created)
@@ -324,7 +324,7 @@ namespace Pathfinding
 			throw new ArgumentException("If you calculate the path using seeker.StartPath then this script will pick up the calculated path anyway as it listens for all paths the Seeker finishes calculating. You should not call SetPath in that case.");
 		}
 
-		// Token: 0x06002094 RID: 8340 RVA: 0x00186C7C File Offset: 0x00184E7C
+		// Token: 0x060020EA RID: 8426 RVA: 0x0018C868 File Offset: 0x0018AA68
 		protected void ApplyGravity(float deltaTime)
 		{
 			if (this.usingGravity)
@@ -337,7 +337,7 @@ namespace Pathfinding
 			this.verticalVelocity = 0f;
 		}
 
-		// Token: 0x06002095 RID: 8341 RVA: 0x00186CF0 File Offset: 0x00184EF0
+		// Token: 0x060020EB RID: 8427 RVA: 0x0018C8DC File Offset: 0x0018AADC
 		protected Vector2 CalculateDeltaToMoveThisFrame(Vector2 position, float distanceToEndOfPath, float deltaTime)
 		{
 			if (this.rvoController != null && this.rvoController.enabled)
@@ -347,13 +347,13 @@ namespace Pathfinding
 			return Vector2.ClampMagnitude(this.velocity2D * deltaTime, distanceToEndOfPath);
 		}
 
-		// Token: 0x06002096 RID: 8342 RVA: 0x00186D53 File Offset: 0x00184F53
+		// Token: 0x060020EC RID: 8428 RVA: 0x0018C93F File Offset: 0x0018AB3F
 		public Quaternion SimulateRotationTowards(Vector3 direction, float maxDegrees)
 		{
 			return this.SimulateRotationTowards(this.movementPlane.ToPlane(direction), maxDegrees);
 		}
 
-		// Token: 0x06002097 RID: 8343 RVA: 0x00186D68 File Offset: 0x00184F68
+		// Token: 0x060020ED RID: 8429 RVA: 0x0018C954 File Offset: 0x0018AB54
 		protected Quaternion SimulateRotationTowards(Vector2 direction, float maxDegrees)
 		{
 			if (direction != Vector2.zero)
@@ -368,20 +368,20 @@ namespace Pathfinding
 			return this.simulatedRotation;
 		}
 
-		// Token: 0x06002098 RID: 8344 RVA: 0x00186DE5 File Offset: 0x00184FE5
+		// Token: 0x060020EE RID: 8430 RVA: 0x0018C9D1 File Offset: 0x0018ABD1
 		public virtual void Move(Vector3 deltaPosition)
 		{
 			this.accumulatedMovementDelta += deltaPosition;
 		}
 
-		// Token: 0x06002099 RID: 8345 RVA: 0x00186DF9 File Offset: 0x00184FF9
+		// Token: 0x060020EF RID: 8431 RVA: 0x0018C9E5 File Offset: 0x0018ABE5
 		public virtual void FinalizeMovement(Vector3 nextPosition, Quaternion nextRotation)
 		{
 			this.FinalizeRotation(nextRotation);
 			this.FinalizePosition(nextPosition);
 		}
 
-		// Token: 0x0600209A RID: 8346 RVA: 0x00186E0C File Offset: 0x0018500C
+		// Token: 0x060020F0 RID: 8432 RVA: 0x0018C9F8 File Offset: 0x0018ABF8
 		private void FinalizeRotation(Quaternion nextRotation)
 		{
 			this.simulatedRotation = nextRotation;
@@ -401,7 +401,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600209B RID: 8347 RVA: 0x00186E78 File Offset: 0x00185078
+		// Token: 0x060020F1 RID: 8433 RVA: 0x0018CA64 File Offset: 0x0018AC64
 		private void FinalizePosition(Vector3 nextPosition)
 		{
 			Vector3 vector = this.simulatedPosition;
@@ -449,7 +449,7 @@ namespace Pathfinding
 			this.UpdateVelocity();
 		}
 
-		// Token: 0x0600209C RID: 8348 RVA: 0x00186FAC File Offset: 0x001851AC
+		// Token: 0x060020F2 RID: 8434 RVA: 0x0018CB98 File Offset: 0x0018AD98
 		protected void UpdateVelocity()
 		{
 			int frameCount = Time.frameCount;
@@ -461,14 +461,14 @@ namespace Pathfinding
 			this.prevFrame = frameCount;
 		}
 
-		// Token: 0x0600209D RID: 8349 RVA: 0x00186FE7 File Offset: 0x001851E7
+		// Token: 0x060020F3 RID: 8435 RVA: 0x0018CBD3 File Offset: 0x0018ADD3
 		protected virtual Vector3 ClampToNavmesh(Vector3 position, out bool positionChanged)
 		{
 			positionChanged = false;
 			return position;
 		}
 
-		// Token: 0x0600209E RID: 8350 RVA: 0x00186FF0 File Offset: 0x001851F0
+		// Token: 0x060020F4 RID: 8436 RVA: 0x0018CBDC File Offset: 0x0018ADDC
 		protected Vector3 RaycastPosition(Vector3 position, float lastElevation)
 		{
 			float num;
@@ -484,7 +484,7 @@ namespace Pathfinding
 			return position;
 		}
 
-		// Token: 0x0600209F RID: 8351 RVA: 0x00187088 File Offset: 0x00185288
+		// Token: 0x060020F5 RID: 8437 RVA: 0x0018CC74 File Offset: 0x0018AE74
 		protected virtual void OnDrawGizmosSelected()
 		{
 			if (Application.isPlaying)
@@ -493,7 +493,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060020A0 RID: 8352 RVA: 0x00187098 File Offset: 0x00185298
+		// Token: 0x060020F6 RID: 8438 RVA: 0x0018CC84 File Offset: 0x0018AE84
 		protected virtual void OnDrawGizmos()
 		{
 			if (!Application.isPlaying || !base.enabled)
@@ -509,11 +509,11 @@ namespace Pathfinding
 			}
 			if (!float.IsPositiveInfinity(this.destination.x) && Application.isPlaying)
 			{
-				Draw.Gizmos.CircleXZ(this.destination, 0.2f, Color.blue, 0f, 6.2831855f);
+				Draw.Gizmos.CircleXZ(this.destination, 0.2f, Color.blue, 0f, 6.28318548f);
 			}
 		}
 
-		// Token: 0x060020A1 RID: 8353 RVA: 0x00187234 File Offset: 0x00185434
+		// Token: 0x060020F7 RID: 8439 RVA: 0x0018CE20 File Offset: 0x0018B020
 		protected override int OnUpgradeSerializedData(int version, bool unityThread)
 		{
 			if (unityThread && this.targetCompatibility != null)
@@ -523,107 +523,107 @@ namespace Pathfinding
 			return 1;
 		}
 
-		// Token: 0x04003E18 RID: 15896
+		// Token: 0x04003EF6 RID: 16118
 		public float repathRate = 0.5f;
 
-		// Token: 0x04003E19 RID: 15897
+		// Token: 0x04003EF7 RID: 16119
 		[FormerlySerializedAs("repeatedlySearchPaths")]
 		public bool canSearch = true;
 
-		// Token: 0x04003E1A RID: 15898
+		// Token: 0x04003EF8 RID: 16120
 		public bool canMove = true;
 
-		// Token: 0x04003E1B RID: 15899
+		// Token: 0x04003EF9 RID: 16121
 		[FormerlySerializedAs("speed")]
 		public float maxSpeed = 1f;
 
-		// Token: 0x04003E1C RID: 15900
+		// Token: 0x04003EFA RID: 16122
 		public Vector3 gravity = new Vector3(float.NaN, float.NaN, float.NaN);
 
-		// Token: 0x04003E1D RID: 15901
+		// Token: 0x04003EFB RID: 16123
 		public LayerMask groundMask = -1;
 
-		// Token: 0x04003E1E RID: 15902
+		// Token: 0x04003EFC RID: 16124
 		public float centerOffset = 1f;
 
-		// Token: 0x04003E1F RID: 15903
+		// Token: 0x04003EFD RID: 16125
 		public bool rotationIn2D;
 
-		// Token: 0x04003E20 RID: 15904
+		// Token: 0x04003EFE RID: 16126
 		protected Vector3 simulatedPosition;
 
-		// Token: 0x04003E21 RID: 15905
+		// Token: 0x04003EFF RID: 16127
 		protected Quaternion simulatedRotation;
 
-		// Token: 0x04003E22 RID: 15906
+		// Token: 0x04003F00 RID: 16128
 		private Vector3 accumulatedMovementDelta = Vector3.zero;
 
-		// Token: 0x04003E23 RID: 15907
+		// Token: 0x04003F01 RID: 16129
 		protected Vector2 velocity2D;
 
-		// Token: 0x04003E24 RID: 15908
+		// Token: 0x04003F02 RID: 16130
 		protected float verticalVelocity;
 
-		// Token: 0x04003E25 RID: 15909
+		// Token: 0x04003F03 RID: 16131
 		public Seeker seeker;
 
-		// Token: 0x04003E26 RID: 15910
+		// Token: 0x04003F04 RID: 16132
 		public Transform tr;
 
-		// Token: 0x04003E27 RID: 15911
+		// Token: 0x04003F05 RID: 16133
 		protected Rigidbody rigid;
 
-		// Token: 0x04003E28 RID: 15912
+		// Token: 0x04003F06 RID: 16134
 		protected Rigidbody2D rigid2D;
 
-		// Token: 0x04003E29 RID: 15913
+		// Token: 0x04003F07 RID: 16135
 		protected CharacterController controller;
 
-		// Token: 0x04003E2A RID: 15914
+		// Token: 0x04003F08 RID: 16136
 		protected RVOController rvoController;
 
-		// Token: 0x04003E2B RID: 15915
+		// Token: 0x04003F09 RID: 16137
 		public IMovementPlane movementPlane = GraphTransform.identityTransform;
 
-		// Token: 0x04003E2C RID: 15916
+		// Token: 0x04003F0A RID: 16138
 		[NonSerialized]
 		public bool updatePosition = true;
 
-		// Token: 0x04003E2D RID: 15917
+		// Token: 0x04003F0B RID: 16139
 		[NonSerialized]
 		public bool updateRotation = true;
 
-		// Token: 0x04003E2F RID: 15919
+		// Token: 0x04003F0D RID: 16141
 		protected float lastDeltaTime;
 
-		// Token: 0x04003E30 RID: 15920
+		// Token: 0x04003F0E RID: 16142
 		protected int prevFrame;
 
-		// Token: 0x04003E31 RID: 15921
+		// Token: 0x04003F0F RID: 16143
 		protected Vector3 prevPosition1;
 
-		// Token: 0x04003E32 RID: 15922
+		// Token: 0x04003F10 RID: 16144
 		protected Vector3 prevPosition2;
 
-		// Token: 0x04003E33 RID: 15923
+		// Token: 0x04003F11 RID: 16145
 		protected Vector2 lastDeltaPosition;
 
-		// Token: 0x04003E34 RID: 15924
+		// Token: 0x04003F12 RID: 16146
 		protected bool waitingForPathCalculation;
 
-		// Token: 0x04003E35 RID: 15925
+		// Token: 0x04003F13 RID: 16147
 		protected float lastRepath = float.NegativeInfinity;
 
-		// Token: 0x04003E36 RID: 15926
+		// Token: 0x04003F14 RID: 16148
 		[FormerlySerializedAs("target")]
 		[SerializeField]
 		[HideInInspector]
 		private Transform targetCompatibility;
 
-		// Token: 0x04003E37 RID: 15927
+		// Token: 0x04003F15 RID: 16149
 		private bool startHasRun;
 
-		// Token: 0x04003E3B RID: 15931
-		protected static readonly Color GizmoColorRaycast = new Color(0.4627451f, 0.80784315f, 0.4392157f);
+		// Token: 0x04003F19 RID: 16153
+		protected static readonly Color GizmoColorRaycast = new Color(0.4627451f, 0.807843149f, 0.4392157f);
 	}
 }

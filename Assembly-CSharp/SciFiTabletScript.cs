@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003CB RID: 971
+// Token: 0x020003D0 RID: 976
 public class SciFiTabletScript : MonoBehaviour
 {
-	// Token: 0x06001A49 RID: 6729 RVA: 0x001018C8 File Offset: 0x000FFAC8
+	// Token: 0x06001A6A RID: 6762 RVA: 0x00103F3C File Offset: 0x0010213C
 	private void Start()
 	{
 		this.Holograms = this.Student.StudentManager.Holograms;
 	}
 
-	// Token: 0x06001A4A RID: 6730 RVA: 0x001018E0 File Offset: 0x000FFAE0
+	// Token: 0x06001A6B RID: 6763 RVA: 0x00103F54 File Offset: 0x00102154
 	private void Update()
 	{
 		if ((double)Vector3.Distance(this.Finger.position, base.transform.position) < 0.1)
@@ -28,15 +28,15 @@ public class SciFiTabletScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040029A6 RID: 10662
+	// Token: 0x04002A07 RID: 10759
 	public StudentScript Student;
 
-	// Token: 0x040029A7 RID: 10663
+	// Token: 0x04002A08 RID: 10760
 	public HologramScript Holograms;
 
-	// Token: 0x040029A8 RID: 10664
+	// Token: 0x04002A09 RID: 10761
 	public Transform Finger;
 
-	// Token: 0x040029A9 RID: 10665
+	// Token: 0x04002A0A RID: 10762
 	public bool Updated;
 }

@@ -8,8 +8,8 @@ using UnityEngine;
 public class UISpriteCollection : UIBasicSprite
 {
 	// Token: 0x170001D0 RID: 464
-	// (get) Token: 0x060008D1 RID: 2257 RVA: 0x00046524 File Offset: 0x00044724
-	// (set) Token: 0x060008D2 RID: 2258 RVA: 0x00040545 File Offset: 0x0003E745
+	// (get) Token: 0x060008D2 RID: 2258 RVA: 0x0004654C File Offset: 0x0004474C
+	// (set) Token: 0x060008D3 RID: 2259 RVA: 0x0004056D File Offset: 0x0003E76D
 	public override Texture mainTexture
 	{
 		get
@@ -33,8 +33,8 @@ public class UISpriteCollection : UIBasicSprite
 	}
 
 	// Token: 0x170001D1 RID: 465
-	// (get) Token: 0x060008D3 RID: 2259 RVA: 0x00046558 File Offset: 0x00044758
-	// (set) Token: 0x060008D4 RID: 2260 RVA: 0x000404F2 File Offset: 0x0003E6F2
+	// (get) Token: 0x060008D4 RID: 2260 RVA: 0x00046580 File Offset: 0x00044780
+	// (set) Token: 0x060008D5 RID: 2261 RVA: 0x0004051A File Offset: 0x0003E71A
 	public override Material material
 	{
 		get
@@ -58,8 +58,8 @@ public class UISpriteCollection : UIBasicSprite
 	}
 
 	// Token: 0x170001D2 RID: 466
-	// (get) Token: 0x060008D5 RID: 2261 RVA: 0x00046589 File Offset: 0x00044789
-	// (set) Token: 0x060008D6 RID: 2262 RVA: 0x00046596 File Offset: 0x00044796
+	// (get) Token: 0x060008D6 RID: 2262 RVA: 0x000465B1 File Offset: 0x000447B1
+	// (set) Token: 0x060008D7 RID: 2263 RVA: 0x000465BE File Offset: 0x000447BE
 	public INGUIAtlas atlas
 	{
 		get
@@ -79,7 +79,7 @@ public class UISpriteCollection : UIBasicSprite
 	}
 
 	// Token: 0x170001D3 RID: 467
-	// (get) Token: 0x060008D7 RID: 2263 RVA: 0x000465CC File Offset: 0x000447CC
+	// (get) Token: 0x060008D8 RID: 2264 RVA: 0x000465F4 File Offset: 0x000447F4
 	public override float pixelSize
 	{
 		get
@@ -94,7 +94,7 @@ public class UISpriteCollection : UIBasicSprite
 	}
 
 	// Token: 0x170001D4 RID: 468
-	// (get) Token: 0x060008D8 RID: 2264 RVA: 0x000465F0 File Offset: 0x000447F0
+	// (get) Token: 0x060008D9 RID: 2265 RVA: 0x00046618 File Offset: 0x00044818
 	public override bool premultipliedAlpha
 	{
 		get
@@ -105,7 +105,7 @@ public class UISpriteCollection : UIBasicSprite
 	}
 
 	// Token: 0x170001D5 RID: 469
-	// (get) Token: 0x060008D9 RID: 2265 RVA: 0x00046610 File Offset: 0x00044810
+	// (get) Token: 0x060008DA RID: 2266 RVA: 0x00046638 File Offset: 0x00044838
 	public override Vector4 border
 	{
 		get
@@ -119,7 +119,7 @@ public class UISpriteCollection : UIBasicSprite
 	}
 
 	// Token: 0x170001D6 RID: 470
-	// (get) Token: 0x060008DA RID: 2266 RVA: 0x00046664 File Offset: 0x00044864
+	// (get) Token: 0x060008DB RID: 2267 RVA: 0x0004668C File Offset: 0x0004488C
 	protected override Vector4 padding
 	{
 		get
@@ -136,7 +136,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008DB RID: 2267 RVA: 0x000466E4 File Offset: 0x000448E4
+	// Token: 0x060008DC RID: 2268 RVA: 0x0004670C File Offset: 0x0004490C
 	public override void OnFill(List<Vector3> verts, List<Vector2> uvs, List<Color> cols)
 	{
 		Texture mainTexture = this.mainTexture;
@@ -190,7 +190,7 @@ public class UISpriteCollection : UIBasicSprite
 						}
 						if (value.rot != 0f)
 						{
-							float f = value.rot * 0.017453292f * 0.5f;
+							float f = value.rot * 0.0174532924f * 0.5f;
 							float num = Mathf.Sin(f);
 							float num2 = Mathf.Cos(f);
 							float num3 = num * 2f;
@@ -232,19 +232,19 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008DC RID: 2268 RVA: 0x00046AC0 File Offset: 0x00044CC0
+	// Token: 0x060008DD RID: 2269 RVA: 0x00046AE8 File Offset: 0x00044CE8
 	public void Add(object obj, string spriteName, Vector2 pos, float width, float height)
 	{
 		this.AddSprite(obj, spriteName, pos, width, height, new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue), new Vector2(0.5f, 0.5f), 0f, UIBasicSprite.Type.Simple, UIBasicSprite.Flip.Nothing, true);
 	}
 
-	// Token: 0x060008DD RID: 2269 RVA: 0x00046B0C File Offset: 0x00044D0C
+	// Token: 0x060008DE RID: 2270 RVA: 0x00046B34 File Offset: 0x00044D34
 	public void Add(object obj, string spriteName, Vector2 pos, float width, float height, Color32 color)
 	{
 		this.AddSprite(obj, spriteName, pos, width, height, color, new Vector2(0.5f, 0.5f), 0f, UIBasicSprite.Type.Simple, UIBasicSprite.Flip.Nothing, true);
 	}
 
-	// Token: 0x060008DE RID: 2270 RVA: 0x00046B40 File Offset: 0x00044D40
+	// Token: 0x060008DF RID: 2271 RVA: 0x00046B68 File Offset: 0x00044D68
 	public void AddSprite(object id, string spriteName, Vector2 pos, float width, float height, Color32 color, Vector2 pivot, float rot = 0f, UIBasicSprite.Type type = UIBasicSprite.Type.Simple, UIBasicSprite.Flip flip = UIBasicSprite.Flip.Nothing, bool enabled = true)
 	{
 		if (this.mAtlas == null)
@@ -278,7 +278,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008DF RID: 2271 RVA: 0x00046C00 File Offset: 0x00044E00
+	// Token: 0x060008E0 RID: 2272 RVA: 0x00046C28 File Offset: 0x00044E28
 	public UISpriteCollection.Sprite? GetSprite(object id)
 	{
 		UISpriteCollection.Sprite value;
@@ -289,7 +289,7 @@ public class UISpriteCollection : UIBasicSprite
 		return null;
 	}
 
-	// Token: 0x060008E0 RID: 2272 RVA: 0x00046C2D File Offset: 0x00044E2D
+	// Token: 0x060008E1 RID: 2273 RVA: 0x00046C55 File Offset: 0x00044E55
 	public bool RemoveSprite(object id)
 	{
 		if (this.mSprites.Remove(id))
@@ -303,7 +303,7 @@ public class UISpriteCollection : UIBasicSprite
 		return false;
 	}
 
-	// Token: 0x060008E1 RID: 2273 RVA: 0x00046C4E File Offset: 0x00044E4E
+	// Token: 0x060008E2 RID: 2274 RVA: 0x00046C76 File Offset: 0x00044E76
 	public bool SetSprite(object id, UISpriteCollection.Sprite sp)
 	{
 		this.mSprites[id] = sp;
@@ -314,7 +314,7 @@ public class UISpriteCollection : UIBasicSprite
 		return true;
 	}
 
-	// Token: 0x060008E2 RID: 2274 RVA: 0x00046C6C File Offset: 0x00044E6C
+	// Token: 0x060008E3 RID: 2275 RVA: 0x00046C94 File Offset: 0x00044E94
 	[ContextMenu("Clear")]
 	public void Clear()
 	{
@@ -325,14 +325,14 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008E3 RID: 2275 RVA: 0x00046C8C File Offset: 0x00044E8C
+	// Token: 0x060008E4 RID: 2276 RVA: 0x00046CB4 File Offset: 0x00044EB4
 	public bool IsActive(object id)
 	{
 		UISpriteCollection.Sprite sprite;
 		return this.mSprites.TryGetValue(id, out sprite) && sprite.enabled;
 	}
 
-	// Token: 0x060008E4 RID: 2276 RVA: 0x00046CB4 File Offset: 0x00044EB4
+	// Token: 0x060008E5 RID: 2277 RVA: 0x00046CDC File Offset: 0x00044EDC
 	public bool SetActive(object id, bool visible)
 	{
 		UISpriteCollection.Sprite sprite;
@@ -352,7 +352,7 @@ public class UISpriteCollection : UIBasicSprite
 		return false;
 	}
 
-	// Token: 0x060008E5 RID: 2277 RVA: 0x00046D00 File Offset: 0x00044F00
+	// Token: 0x060008E6 RID: 2278 RVA: 0x00046D28 File Offset: 0x00044F28
 	public bool SetPosition(object id, Vector2 pos, bool visible = true)
 	{
 		UISpriteCollection.Sprite sprite;
@@ -382,10 +382,10 @@ public class UISpriteCollection : UIBasicSprite
 		return false;
 	}
 
-	// Token: 0x060008E6 RID: 2278 RVA: 0x00046D88 File Offset: 0x00044F88
+	// Token: 0x060008E7 RID: 2279 RVA: 0x00046DB0 File Offset: 0x00044FB0
 	private static Vector2 Rotate(Vector2 pos, float rot)
 	{
-		float f = rot * 0.017453292f * 0.5f;
+		float f = rot * 0.0174532924f * 0.5f;
 		float num = Mathf.Sin(f);
 		float num2 = Mathf.Cos(f);
 		float num3 = num * 2f;
@@ -394,19 +394,19 @@ public class UISpriteCollection : UIBasicSprite
 		return new Vector2((1f - num4) * pos.x - num5 * pos.y, num5 * pos.x + (1f - num4) * pos.y);
 	}
 
-	// Token: 0x060008E7 RID: 2279 RVA: 0x00046DF0 File Offset: 0x00044FF0
+	// Token: 0x060008E8 RID: 2280 RVA: 0x00046E18 File Offset: 0x00045018
 	public object GetCurrentSpriteID()
 	{
 		return this.GetCurrentSpriteID(UICamera.lastWorldPosition);
 	}
 
-	// Token: 0x060008E8 RID: 2280 RVA: 0x00046DFD File Offset: 0x00044FFD
+	// Token: 0x060008E9 RID: 2281 RVA: 0x00046E25 File Offset: 0x00045025
 	public UISpriteCollection.Sprite? GetCurrentSprite()
 	{
 		return this.GetCurrentSprite(UICamera.lastWorldPosition);
 	}
 
-	// Token: 0x060008E9 RID: 2281 RVA: 0x00046E0C File Offset: 0x0004500C
+	// Token: 0x060008EA RID: 2282 RVA: 0x00046E34 File Offset: 0x00045034
 	public object GetCurrentSpriteID(Vector3 worldPos)
 	{
 		Vector2 a = this.mTrans.InverseTransformPoint(worldPos);
@@ -427,7 +427,7 @@ public class UISpriteCollection : UIBasicSprite
 		return null;
 	}
 
-	// Token: 0x060008EA RID: 2282 RVA: 0x00046F04 File Offset: 0x00045104
+	// Token: 0x060008EB RID: 2283 RVA: 0x00046F2C File Offset: 0x0004512C
 	public UISpriteCollection.Sprite? GetCurrentSprite(Vector3 worldPos)
 	{
 		Vector2 a = this.mTrans.InverseTransformPoint(worldPos);
@@ -448,7 +448,7 @@ public class UISpriteCollection : UIBasicSprite
 		return null;
 	}
 
-	// Token: 0x060008EB RID: 2283 RVA: 0x00047008 File Offset: 0x00045208
+	// Token: 0x060008EC RID: 2284 RVA: 0x00047030 File Offset: 0x00045230
 	protected void OnClick()
 	{
 		if (this.onClick != null)
@@ -461,7 +461,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008EC RID: 2284 RVA: 0x00047034 File Offset: 0x00045234
+	// Token: 0x060008ED RID: 2285 RVA: 0x0004705C File Offset: 0x0004525C
 	protected void OnPress(bool isPressed)
 	{
 		if (this.onPress != null)
@@ -487,7 +487,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008ED RID: 2285 RVA: 0x000470A0 File Offset: 0x000452A0
+	// Token: 0x060008EE RID: 2286 RVA: 0x000470C8 File Offset: 0x000452C8
 	protected void OnHover(bool isOver)
 	{
 		if (this.onHover != null)
@@ -502,7 +502,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008EE RID: 2286 RVA: 0x00047104 File Offset: 0x00045304
+	// Token: 0x060008EF RID: 2287 RVA: 0x0004712C File Offset: 0x0004532C
 	protected void OnMove(Vector2 delta)
 	{
 		if (!this || this.onHover == null)
@@ -524,7 +524,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008EF RID: 2287 RVA: 0x0004716D File Offset: 0x0004536D
+	// Token: 0x060008F0 RID: 2288 RVA: 0x00047195 File Offset: 0x00045395
 	protected void OnDrag(Vector2 delta)
 	{
 		if (this.onDrag != null && this.mLastPress != null)
@@ -533,7 +533,7 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x060008F0 RID: 2288 RVA: 0x00047194 File Offset: 0x00045394
+	// Token: 0x060008F1 RID: 2289 RVA: 0x000471BC File Offset: 0x000453BC
 	protected void OnTooltip(bool show)
 	{
 		if (this.onTooltip != null)
@@ -559,50 +559,50 @@ public class UISpriteCollection : UIBasicSprite
 		}
 	}
 
-	// Token: 0x04000779 RID: 1913
+	// Token: 0x0400077B RID: 1915
 	[HideInInspector]
 	[SerializeField]
 	private UnityEngine.Object mAtlas;
 
-	// Token: 0x0400077A RID: 1914
+	// Token: 0x0400077C RID: 1916
 	[NonSerialized]
 	private Dictionary<object, UISpriteCollection.Sprite> mSprites = new Dictionary<object, UISpriteCollection.Sprite>();
 
-	// Token: 0x0400077B RID: 1915
+	// Token: 0x0400077D RID: 1917
 	[NonSerialized]
 	private UISpriteData mSprite;
 
-	// Token: 0x0400077C RID: 1916
+	// Token: 0x0400077E RID: 1918
 	public UISpriteCollection.OnHoverCB onHover;
 
-	// Token: 0x0400077D RID: 1917
+	// Token: 0x0400077F RID: 1919
 	public UISpriteCollection.OnPressCB onPress;
 
-	// Token: 0x0400077E RID: 1918
+	// Token: 0x04000780 RID: 1920
 	public UISpriteCollection.OnClickCB onClick;
 
-	// Token: 0x0400077F RID: 1919
+	// Token: 0x04000781 RID: 1921
 	public UISpriteCollection.OnDragCB onDrag;
 
-	// Token: 0x04000780 RID: 1920
-	public UISpriteCollection.OnTooltipCB onTooltip;
-
-	// Token: 0x04000781 RID: 1921
-	[NonSerialized]
-	private object mLastHover;
-
 	// Token: 0x04000782 RID: 1922
-	[NonSerialized]
-	private object mLastPress;
+	public UISpriteCollection.OnTooltipCB onTooltip;
 
 	// Token: 0x04000783 RID: 1923
 	[NonSerialized]
+	private object mLastHover;
+
+	// Token: 0x04000784 RID: 1924
+	[NonSerialized]
+	private object mLastPress;
+
+	// Token: 0x04000785 RID: 1925
+	[NonSerialized]
 	private object mLastTooltip;
 
-	// Token: 0x02000688 RID: 1672
+	// Token: 0x0200069E RID: 1694
 	public struct Sprite
 	{
-		// Token: 0x06002B59 RID: 11097 RVA: 0x001C4698 File Offset: 0x001C2898
+		// Token: 0x06002BAF RID: 11183 RVA: 0x001CA284 File Offset: 0x001C8484
 		public Vector4 GetDrawingDimensions(float pixelSize)
 		{
 			float num = -this.pivot.x * this.width;
@@ -663,54 +663,54 @@ public class UISpriteCollection : UIBasicSprite
 			return new Vector4(num, num2, num3, num4);
 		}
 
-		// Token: 0x040045E4 RID: 17892
+		// Token: 0x040046C2 RID: 18114
 		public UISpriteData sprite;
 
-		// Token: 0x040045E5 RID: 17893
+		// Token: 0x040046C3 RID: 18115
 		public Vector2 pos;
 
-		// Token: 0x040045E6 RID: 17894
+		// Token: 0x040046C4 RID: 18116
 		public float rot;
 
-		// Token: 0x040045E7 RID: 17895
+		// Token: 0x040046C5 RID: 18117
 		public float width;
 
-		// Token: 0x040045E8 RID: 17896
+		// Token: 0x040046C6 RID: 18118
 		public float height;
 
-		// Token: 0x040045E9 RID: 17897
+		// Token: 0x040046C7 RID: 18119
 		public Color32 color;
 
-		// Token: 0x040045EA RID: 17898
+		// Token: 0x040046C8 RID: 18120
 		public Vector2 pivot;
 
-		// Token: 0x040045EB RID: 17899
+		// Token: 0x040046C9 RID: 18121
 		public UIBasicSprite.Type type;
 
-		// Token: 0x040045EC RID: 17900
+		// Token: 0x040046CA RID: 18122
 		public UIBasicSprite.Flip flip;
 
-		// Token: 0x040045ED RID: 17901
+		// Token: 0x040046CB RID: 18123
 		public bool enabled;
 	}
 
-	// Token: 0x02000689 RID: 1673
-	// (Invoke) Token: 0x06002B5B RID: 11099
+	// Token: 0x0200069F RID: 1695
+	// (Invoke) Token: 0x06002BB1 RID: 11185
 	public delegate void OnHoverCB(object obj, bool isOver);
 
-	// Token: 0x0200068A RID: 1674
-	// (Invoke) Token: 0x06002B5F RID: 11103
+	// Token: 0x020006A0 RID: 1696
+	// (Invoke) Token: 0x06002BB5 RID: 11189
 	public delegate void OnPressCB(object obj, bool isPressed);
 
-	// Token: 0x0200068B RID: 1675
-	// (Invoke) Token: 0x06002B63 RID: 11107
+	// Token: 0x020006A1 RID: 1697
+	// (Invoke) Token: 0x06002BB9 RID: 11193
 	public delegate void OnClickCB(object obj);
 
-	// Token: 0x0200068C RID: 1676
-	// (Invoke) Token: 0x06002B67 RID: 11111
+	// Token: 0x020006A2 RID: 1698
+	// (Invoke) Token: 0x06002BBD RID: 11197
 	public delegate void OnDragCB(object obj, Vector2 delta);
 
-	// Token: 0x0200068D RID: 1677
-	// (Invoke) Token: 0x06002B6B RID: 11115
+	// Token: 0x020006A3 RID: 1699
+	// (Invoke) Token: 0x06002BC1 RID: 11201
 	public delegate void OnTooltipCB(object obj, bool show);
 }

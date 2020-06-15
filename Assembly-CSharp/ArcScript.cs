@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000CE RID: 206
 public class ArcScript : MonoBehaviour
 {
-	// Token: 0x06000A0F RID: 2575 RVA: 0x0004FBB8 File Offset: 0x0004DDB8
+	// Token: 0x06000A13 RID: 2579 RVA: 0x0005064C File Offset: 0x0004E84C
 	private void Update()
 	{
 		this.Timer += Time.deltaTime;
@@ -15,12 +15,12 @@ public class ArcScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A10 RID: 2576
+	// Token: 0x04000A24 RID: 2596
 	private static readonly Vector3 NEW_ARC_RELATIVE_FORCE = Vector3.forward * 250f;
 
-	// Token: 0x04000A11 RID: 2577
+	// Token: 0x04000A25 RID: 2597
 	public GameObject ArcTrail;
 
-	// Token: 0x04000A12 RID: 2578
+	// Token: 0x04000A26 RID: 2598
 	public float Timer;
 }

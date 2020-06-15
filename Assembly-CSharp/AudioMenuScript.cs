@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020000D6 RID: 214
 public class AudioMenuScript : MonoBehaviour
 {
-	// Token: 0x06000A37 RID: 2615 RVA: 0x00053A15 File Offset: 0x00051C15
+	// Token: 0x06000A3B RID: 2619 RVA: 0x000544AE File Offset: 0x000526AE
 	private void Start()
 	{
 		this.UpdateText();
 	}
 
-	// Token: 0x06000A38 RID: 2616 RVA: 0x00053A20 File Offset: 0x00051C20
+	// Token: 0x06000A3C RID: 2620 RVA: 0x000544B8 File Offset: 0x000526B8
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.C))
@@ -67,7 +67,7 @@ public class AudioMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A39 RID: 2617 RVA: 0x00053BFC File Offset: 0x00051DFC
+	// Token: 0x06000A3D RID: 2621 RVA: 0x00054694 File Offset: 0x00052894
 	public void UpdateText()
 	{
 		if (this.Jukebox != null)
@@ -83,7 +83,7 @@ public class AudioMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A3A RID: 2618 RVA: 0x00053CA4 File Offset: 0x00051EA4
+	// Token: 0x06000A3E RID: 2622 RVA: 0x0005473C File Offset: 0x0005293C
 	private void UpdateHighlight()
 	{
 		if (this.Selected == 0)
@@ -97,36 +97,36 @@ public class AudioMenuScript : MonoBehaviour
 		this.Highlight.localPosition = new Vector3(this.Highlight.localPosition.x, 440f - 60f * (float)this.Selected, this.Highlight.localPosition.z);
 	}
 
-	// Token: 0x04000A55 RID: 2645
+	// Token: 0x04000A6A RID: 2666
 	public InputManagerScript InputManager;
 
-	// Token: 0x04000A56 RID: 2646
+	// Token: 0x04000A6B RID: 2667
 	public PauseScreenScript PauseScreen;
 
-	// Token: 0x04000A57 RID: 2647
+	// Token: 0x04000A6C RID: 2668
 	public PromptBarScript PromptBar;
 
-	// Token: 0x04000A58 RID: 2648
+	// Token: 0x04000A6D RID: 2669
 	public JukeboxScript Jukebox;
 
-	// Token: 0x04000A59 RID: 2649
+	// Token: 0x04000A6E RID: 2670
 	public UILabel CurrentTrackLabel;
 
-	// Token: 0x04000A5A RID: 2650
+	// Token: 0x04000A6F RID: 2671
 	public UILabel MusicVolumeLabel;
 
-	// Token: 0x04000A5B RID: 2651
+	// Token: 0x04000A70 RID: 2672
 	public UILabel MusicOnOffLabel;
 
-	// Token: 0x04000A5C RID: 2652
+	// Token: 0x04000A71 RID: 2673
 	public int SelectionLimit = 5;
 
-	// Token: 0x04000A5D RID: 2653
+	// Token: 0x04000A72 RID: 2674
 	public int Selected = 1;
 
-	// Token: 0x04000A5E RID: 2654
+	// Token: 0x04000A73 RID: 2675
 	public Transform Highlight;
 
-	// Token: 0x04000A5F RID: 2655
+	// Token: 0x04000A74 RID: 2676
 	public GameObject CustomMusicMenu;
 }

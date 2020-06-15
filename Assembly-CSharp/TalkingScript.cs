@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000412 RID: 1042
+// Token: 0x02000417 RID: 1047
 public class TalkingScript : MonoBehaviour
 {
-	// Token: 0x06001BF5 RID: 7157 RVA: 0x00147534 File Offset: 0x00145734
+	// Token: 0x06001C19 RID: 7193 RVA: 0x0014A8CC File Offset: 0x00148ACC
 	private void Update()
 	{
 		if (this.S.Talking)
@@ -165,10 +165,10 @@ public class TalkingScript : MonoBehaviour
 			{
 				if (this.S.TalkTimer == 3f)
 				{
-					this.S.CharacterAnimation.CrossFade(this.S.LookDownAnim);
 					this.S.Subtitle.PersonaSubtitle.UpdateLabel(this.S.Persona, this.S.Reputation.Reputation, 5f);
 					if (this.S.Club != ClubType.Delinquent)
 					{
+						this.S.CharacterAnimation.CrossFade(this.S.LookDownAnim);
 						this.CalculateRepBonus();
 						this.S.Reputation.PendingRep += 1f + (float)this.S.RepBonus;
 						this.S.PendingRep += 1f + (float)this.S.RepBonus;
@@ -313,9 +313,12 @@ public class TalkingScript : MonoBehaviour
 						PlayerGlobals.SetStudentFriend(this.S.StudentID, true);
 						this.S.Police.EndOfDay.NewFriends++;
 						this.S.Interaction = StudentInteractionType.Idle;
-						this.CalculateRepBonus();
-						this.S.Reputation.PendingRep += 1f + (float)this.S.RepBonus;
-						this.S.PendingRep += 1f + (float)this.S.RepBonus;
+						if (this.S.Club != ClubType.Delinquent)
+						{
+							this.CalculateRepBonus();
+							this.S.Reputation.PendingRep += 1f + (float)this.S.RepBonus;
+							this.S.PendingRep += 1f + (float)this.S.RepBonus;
+						}
 					}
 					else if (this.S.TaskPhase == 4 || this.S.TaskPhase == 0)
 					{
@@ -331,6 +334,7 @@ public class TalkingScript : MonoBehaviour
 					{
 						this.S.TaskPhase++;
 						this.S.Subtitle.UpdateLabel(this.S.TaskLineResponseType, this.S.TaskPhase, this.S.Subtitle.GetClipLength(this.S.StudentID, this.S.TaskPhase));
+						this.S.Subtitle.Timer = 0f;
 						this.S.CharacterAnimation.CrossFade(this.S.TaskAnims[this.S.TaskPhase]);
 						this.S.CurrentAnim = this.S.TaskAnims[this.S.TaskPhase];
 						this.S.TalkTimer = this.S.Subtitle.GetClipLength(this.S.StudentID, this.S.TaskPhase);
@@ -343,11 +347,18 @@ public class TalkingScript : MonoBehaviour
 				{
 					if (this.S.Club != ClubType.Delinquent)
 					{
-						if ((this.S.Clock.HourTime > 8f && this.S.Clock.HourTime < 13f) || (this.S.Clock.HourTime > 13.375f && this.S.Clock.HourTime < 15.5f))
+						if ((this.S.Clock.HourTime > 8f && this.S.Clock.HourTime < 13f) || (this.S.Clock.HourTime > 13.375f && this.S.Clock.HourTime < 15.5f) || this.S.StudentID == this.S.StudentManager.RivalID)
 						{
 							this.S.CharacterAnimation.CrossFade(this.S.GossipAnim);
-							this.S.Subtitle.UpdateLabel(SubtitleType.StudentStay, 0, 5f);
 							this.NegativeResponse = true;
+							if (this.S.StudentID == this.S.StudentManager.RivalID)
+							{
+								this.S.Subtitle.UpdateLabel(SubtitleType.StudentStay, 2, 5f);
+							}
+							else
+							{
+								this.S.Subtitle.UpdateLabel(SubtitleType.StudentStay, 0, 5f);
+							}
 						}
 						else if (this.S.StudentManager.LockerRoomArea.bounds.Contains(this.S.Yandere.transform.position) || this.S.StudentManager.WestBathroomArea.bounds.Contains(this.S.Yandere.transform.position) || this.S.StudentManager.EastBathroomArea.bounds.Contains(this.S.Yandere.transform.position) || this.S.StudentManager.HeadmasterArea.bounds.Contains(this.S.Yandere.transform.position) || this.S.MyRenderer.sharedMesh == this.S.SchoolSwimsuit || this.S.MyRenderer.sharedMesh == this.S.SwimmingTrunks)
 						{
@@ -358,7 +369,7 @@ public class TalkingScript : MonoBehaviour
 						else
 						{
 							int num = 0;
-							if (ClubGlobals.Club == ClubType.Delinquent)
+							if (this.S.Yandere.Club == ClubType.Delinquent)
 							{
 								this.S.Reputation.PendingRep -= 10f;
 								this.S.PendingRep -= 10f;
@@ -397,7 +408,7 @@ public class TalkingScript : MonoBehaviour
 								this.S.StudentManager.LoveManager.Follower = this.S;
 							}
 							this.S.FollowCountdown.Sprite.fillAmount = 1f;
-							if (ClubGlobals.Club != ClubType.Delinquent)
+							if (this.S.Yandere.Club != ClubType.Delinquent)
 							{
 								this.S.FollowCountdown.Speed = 1f / (35f + this.S.Reputation.Reputation * 0.25f);
 							}
@@ -437,7 +448,7 @@ public class TalkingScript : MonoBehaviour
 						else
 						{
 							int num2 = 0;
-							if (ClubGlobals.Club == ClubType.Delinquent)
+							if (this.S.Yandere.Club == ClubType.Delinquent)
 							{
 								this.S.Reputation.PendingRep -= 10f;
 								this.S.PendingRep -= 10f;
@@ -492,7 +503,7 @@ public class TalkingScript : MonoBehaviour
 							if (studentScript.Routine && !studentScript.TargetedForDistraction && !studentScript.InEvent && !this.Grudge && studentScript.Indoors && studentScript.gameObject.activeInHierarchy && studentScript.ClubActivityPhase < 16 && studentScript.CurrentAction != StudentActionType.Sunbathe && studentScript.FollowTarget == null)
 							{
 								int num3 = 0;
-								if (ClubGlobals.Club == ClubType.Delinquent)
+								if (this.S.Yandere.Club == ClubType.Delinquent)
 								{
 									this.S.Reputation.PendingRep -= 10f;
 									this.S.PendingRep -= 10f;
@@ -852,7 +863,7 @@ public class TalkingScript : MonoBehaviour
 					if (this.S.TalkTimer <= 0f)
 					{
 						this.S.ClubManager.DeactivateClubBenefit();
-						ClubGlobals.Club = ClubType.None;
+						this.S.Yandere.Club = ClubType.None;
 						this.S.DialogueWheel.End();
 						this.S.Yandere.ClubAccessory();
 					}
@@ -1409,7 +1420,7 @@ public class TalkingScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001BF6 RID: 7158 RVA: 0x0014BEE4 File Offset: 0x0014A0E4
+	// Token: 0x06001C1A RID: 7194 RVA: 0x0014F334 File Offset: 0x0014D534
 	private void CalculateRepBonus()
 	{
 		this.S.RepBonus = 0;
@@ -1432,42 +1443,42 @@ public class TalkingScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040033E7 RID: 13287
+	// Token: 0x0400345C RID: 13404
 	private const float LongestTime = 100f;
 
-	// Token: 0x040033E8 RID: 13288
+	// Token: 0x0400345D RID: 13405
 	private const float LongTime = 5f;
 
-	// Token: 0x040033E9 RID: 13289
+	// Token: 0x0400345E RID: 13406
 	private const float MediumTime = 3f;
 
-	// Token: 0x040033EA RID: 13290
+	// Token: 0x0400345F RID: 13407
 	private const float ShortTime = 2f;
 
-	// Token: 0x040033EB RID: 13291
+	// Token: 0x04003460 RID: 13408
 	public StudentScript S;
 
-	// Token: 0x040033EC RID: 13292
+	// Token: 0x04003461 RID: 13409
 	public WeaponScript StuckBoxCutter;
 
-	// Token: 0x040033ED RID: 13293
+	// Token: 0x04003462 RID: 13410
 	public bool NegativeResponse;
 
-	// Token: 0x040033EE RID: 13294
+	// Token: 0x04003463 RID: 13411
 	public bool Follow;
 
-	// Token: 0x040033EF RID: 13295
+	// Token: 0x04003464 RID: 13412
 	public bool Grudge;
 
-	// Token: 0x040033F0 RID: 13296
+	// Token: 0x04003465 RID: 13413
 	public bool Refuse;
 
-	// Token: 0x040033F1 RID: 13297
+	// Token: 0x04003466 RID: 13414
 	public bool Fake;
 
-	// Token: 0x040033F2 RID: 13298
+	// Token: 0x04003467 RID: 13415
 	public string IdleAnim = "";
 
-	// Token: 0x040033F3 RID: 13299
+	// Token: 0x04003468 RID: 13416
 	public int ClubBonus;
 }

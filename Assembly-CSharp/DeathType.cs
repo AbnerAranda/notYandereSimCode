@@ -1,28 +1,28 @@
 ﻿using System;
 
-// Token: 0x02000286 RID: 646
+// Token: 0x02000287 RID: 647
 public enum DeathType
 {
-	// Token: 0x04001B60 RID: 7008
+	// Token: 0x04001B80 RID: 7040
 	None,
-	// Token: 0x04001B61 RID: 7009
+	// Token: 0x04001B81 RID: 7041
 	Burning,
-	// Token: 0x04001B62 RID: 7010
+	// Token: 0x04001B82 RID: 7042
 	Disposed,
-	// Token: 0x04001B63 RID: 7011
+	// Token: 0x04001B83 RID: 7043
 	Drowning,
-	// Token: 0x04001B64 RID: 7012
+	// Token: 0x04001B84 RID: 7044
 	EasterEgg,
-	// Token: 0x04001B65 RID: 7013
+	// Token: 0x04001B85 RID: 7045
 	Electrocution,
-	// Token: 0x04001B66 RID: 7014
+	// Token: 0x04001B86 RID: 7046
 	Falling,
-	// Token: 0x04001B67 RID: 7015
+	// Token: 0x04001B87 RID: 7047
 	Poison,
-	// Token: 0x04001B68 RID: 7016
+	// Token: 0x04001B88 RID: 7048
 	Weapon,
-	// Token: 0x04001B69 RID: 7017
+	// Token: 0x04001B89 RID: 7049
 	Mystery,
-	// Token: 0x04001B6A RID: 7018
+	// Token: 0x04001B8A RID: 7050
 	Weight
 }

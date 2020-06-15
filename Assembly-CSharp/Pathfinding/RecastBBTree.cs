@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200057B RID: 1403
+	// Token: 0x02000591 RID: 1425
 	public class RecastBBTree
 	{
-		// Token: 0x06002626 RID: 9766 RVA: 0x001A52FC File Offset: 0x001A34FC
+		// Token: 0x0600267C RID: 9852 RVA: 0x001AAEE8 File Offset: 0x001A90E8
 		public void QueryInBounds(Rect bounds, List<RecastMeshObj> buffer)
 		{
 			if (this.root == null)
@@ -17,7 +17,7 @@ namespace Pathfinding
 			this.QueryBoxInBounds(this.root, bounds, buffer);
 		}
 
-		// Token: 0x06002627 RID: 9767 RVA: 0x001A5318 File Offset: 0x001A3518
+		// Token: 0x0600267D RID: 9853 RVA: 0x001AAF04 File Offset: 0x001A9104
 		private void QueryBoxInBounds(RecastBBTreeBox box, Rect bounds, List<RecastMeshObj> boxes)
 		{
 			if (box.mesh != null)
@@ -41,7 +41,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002628 RID: 9768 RVA: 0x001A5390 File Offset: 0x001A3590
+		// Token: 0x0600267E RID: 9854 RVA: 0x001AAF7C File Offset: 0x001A917C
 		public bool Remove(RecastMeshObj mesh)
 		{
 			if (mesh == null)
@@ -59,7 +59,7 @@ namespace Pathfinding
 			return result;
 		}
 
-		// Token: 0x06002629 RID: 9769 RVA: 0x001A5414 File Offset: 0x001A3614
+		// Token: 0x0600267F RID: 9855 RVA: 0x001AB000 File Offset: 0x001A9200
 		private RecastBBTreeBox RemoveBox(RecastBBTreeBox c, RecastMeshObj mesh, Rect bounds, ref bool found)
 		{
 			if (!RecastBBTree.RectIntersectsRect(c.rect, bounds))
@@ -94,7 +94,7 @@ namespace Pathfinding
 			return c;
 		}
 
-		// Token: 0x0600262A RID: 9770 RVA: 0x001A54D0 File Offset: 0x001A36D0
+		// Token: 0x06002680 RID: 9856 RVA: 0x001AB0BC File Offset: 0x001A92BC
 		public void Insert(RecastMeshObj mesh)
 		{
 			RecastBBTreeBox recastBBTreeBox = new RecastBBTreeBox(mesh);
@@ -132,13 +132,13 @@ namespace Pathfinding
 			recastBBTreeBox2.mesh = null;
 		}
 
-		// Token: 0x0600262B RID: 9771 RVA: 0x001A55C8 File Offset: 0x001A37C8
+		// Token: 0x06002681 RID: 9857 RVA: 0x001AB1B4 File Offset: 0x001A93B4
 		private static bool RectIntersectsRect(Rect r, Rect r2)
 		{
 			return r.xMax > r2.xMin && r.yMax > r2.yMin && r2.xMax > r.xMin && r2.yMax > r.yMin;
 		}
 
-		// Token: 0x0600262C RID: 9772 RVA: 0x001A5618 File Offset: 0x001A3818
+		// Token: 0x06002682 RID: 9858 RVA: 0x001AB204 File Offset: 0x001A9404
 		private static float ExpansionRequired(Rect r, Rect r2)
 		{
 			float num = Mathf.Min(r.xMin, r2.xMin);
@@ -148,7 +148,7 @@ namespace Pathfinding
 			return (num2 - num) * (num4 - num3) - RecastBBTree.RectArea(r);
 		}
 
-		// Token: 0x0600262D RID: 9773 RVA: 0x001A5684 File Offset: 0x001A3884
+		// Token: 0x06002683 RID: 9859 RVA: 0x001AB270 File Offset: 0x001A9470
 		private static Rect ExpandToContain(Rect r, Rect r2)
 		{
 			float xmin = Mathf.Min(r.xMin, r2.xMin);
@@ -158,13 +158,13 @@ namespace Pathfinding
 			return Rect.MinMaxRect(xmin, ymin, xmax, ymax);
 		}
 
-		// Token: 0x0600262E RID: 9774 RVA: 0x001A56E8 File Offset: 0x001A38E8
+		// Token: 0x06002684 RID: 9860 RVA: 0x001AB2D4 File Offset: 0x001A94D4
 		private static float RectArea(Rect r)
 		{
 			return r.width * r.height;
 		}
 
-		// Token: 0x04004119 RID: 16665
+		// Token: 0x040041F7 RID: 16887
 		private RecastBBTreeBox root;
 	}
 }

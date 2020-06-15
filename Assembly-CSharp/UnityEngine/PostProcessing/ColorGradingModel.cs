@@ -2,13 +2,13 @@
 
 namespace UnityEngine.PostProcessing
 {
-	// Token: 0x020004C0 RID: 1216
+	// Token: 0x020004D0 RID: 1232
 	[Serializable]
 	public class ColorGradingModel : PostProcessingModel
 	{
-		// Token: 0x170004AA RID: 1194
-		// (get) Token: 0x06001ED2 RID: 7890 RVA: 0x0017E2EC File Offset: 0x0017C4EC
-		// (set) Token: 0x06001ED3 RID: 7891 RVA: 0x0017E2F4 File Offset: 0x0017C4F4
+		// Token: 0x170004B0 RID: 1200
+		// (get) Token: 0x06001F14 RID: 7956 RVA: 0x001837B8 File Offset: 0x001819B8
+		// (set) Token: 0x06001F15 RID: 7957 RVA: 0x001837C0 File Offset: 0x001819C0
 		public ColorGradingModel.Settings settings
 		{
 			get
@@ -22,50 +22,50 @@ namespace UnityEngine.PostProcessing
 			}
 		}
 
-		// Token: 0x170004AB RID: 1195
-		// (get) Token: 0x06001ED4 RID: 7892 RVA: 0x0017E303 File Offset: 0x0017C503
-		// (set) Token: 0x06001ED5 RID: 7893 RVA: 0x0017E30B File Offset: 0x0017C50B
+		// Token: 0x170004B1 RID: 1201
+		// (get) Token: 0x06001F16 RID: 7958 RVA: 0x001837CF File Offset: 0x001819CF
+		// (set) Token: 0x06001F17 RID: 7959 RVA: 0x001837D7 File Offset: 0x001819D7
 		public bool isDirty { get; internal set; }
 
-		// Token: 0x170004AC RID: 1196
-		// (get) Token: 0x06001ED6 RID: 7894 RVA: 0x0017E314 File Offset: 0x0017C514
-		// (set) Token: 0x06001ED7 RID: 7895 RVA: 0x0017E31C File Offset: 0x0017C51C
+		// Token: 0x170004B2 RID: 1202
+		// (get) Token: 0x06001F18 RID: 7960 RVA: 0x001837E0 File Offset: 0x001819E0
+		// (set) Token: 0x06001F19 RID: 7961 RVA: 0x001837E8 File Offset: 0x001819E8
 		public RenderTexture bakedLut { get; internal set; }
 
-		// Token: 0x06001ED8 RID: 7896 RVA: 0x0017E325 File Offset: 0x0017C525
+		// Token: 0x06001F1A RID: 7962 RVA: 0x001837F1 File Offset: 0x001819F1
 		public override void Reset()
 		{
 			this.m_Settings = ColorGradingModel.Settings.defaultSettings;
 			this.OnValidate();
 		}
 
-		// Token: 0x06001ED9 RID: 7897 RVA: 0x0017E338 File Offset: 0x0017C538
+		// Token: 0x06001F1B RID: 7963 RVA: 0x00183804 File Offset: 0x00181A04
 		public override void OnValidate()
 		{
 			this.isDirty = true;
 		}
 
-		// Token: 0x04003C7D RID: 15485
+		// Token: 0x04003D2D RID: 15661
 		[SerializeField]
 		private ColorGradingModel.Settings m_Settings = ColorGradingModel.Settings.defaultSettings;
 
-		// Token: 0x020006DD RID: 1757
+		// Token: 0x020006F6 RID: 1782
 		public enum Tonemapper
 		{
-			// Token: 0x040047D6 RID: 18390
+			// Token: 0x040048BF RID: 18623
 			None,
-			// Token: 0x040047D7 RID: 18391
+			// Token: 0x040048C0 RID: 18624
 			ACES,
-			// Token: 0x040047D8 RID: 18392
+			// Token: 0x040048C1 RID: 18625
 			Neutral
 		}
 
-		// Token: 0x020006DE RID: 1758
+		// Token: 0x020006F7 RID: 1783
 		[Serializable]
 		public struct TonemappingSettings
 		{
-			// Token: 0x17000649 RID: 1609
-			// (get) Token: 0x06002C0C RID: 11276 RVA: 0x001C8470 File Offset: 0x001C6670
+			// Token: 0x1700064F RID: 1615
+			// (get) Token: 0x06002C6E RID: 11374 RVA: 0x001CE108 File Offset: 0x001CC308
 			public static ColorGradingModel.TonemappingSettings defaultSettings
 			{
 				get
@@ -83,41 +83,41 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047D9 RID: 18393
+			// Token: 0x040048C2 RID: 18626
 			[Tooltip("Tonemapping algorithm to use at the end of the color grading process. Use \"Neutral\" if you need a customizable tonemapper or \"Filmic\" to give a standard filmic look to your scenes.")]
 			public ColorGradingModel.Tonemapper tonemapper;
 
-			// Token: 0x040047DA RID: 18394
+			// Token: 0x040048C3 RID: 18627
 			[Range(-0.1f, 0.1f)]
 			public float neutralBlackIn;
 
-			// Token: 0x040047DB RID: 18395
+			// Token: 0x040048C4 RID: 18628
 			[Range(1f, 20f)]
 			public float neutralWhiteIn;
 
-			// Token: 0x040047DC RID: 18396
+			// Token: 0x040048C5 RID: 18629
 			[Range(-0.09f, 0.1f)]
 			public float neutralBlackOut;
 
-			// Token: 0x040047DD RID: 18397
+			// Token: 0x040048C6 RID: 18630
 			[Range(1f, 19f)]
 			public float neutralWhiteOut;
 
-			// Token: 0x040047DE RID: 18398
+			// Token: 0x040048C7 RID: 18631
 			[Range(0.1f, 20f)]
 			public float neutralWhiteLevel;
 
-			// Token: 0x040047DF RID: 18399
+			// Token: 0x040048C8 RID: 18632
 			[Range(1f, 10f)]
 			public float neutralWhiteClip;
 		}
 
-		// Token: 0x020006DF RID: 1759
+		// Token: 0x020006F8 RID: 1784
 		[Serializable]
 		public struct BasicSettings
 		{
-			// Token: 0x1700064A RID: 1610
-			// (get) Token: 0x06002C0D RID: 11277 RVA: 0x001C84D8 File Offset: 0x001C66D8
+			// Token: 0x17000650 RID: 1616
+			// (get) Token: 0x06002C6F RID: 11375 RVA: 0x001CE170 File Offset: 0x001CC370
 			public static ColorGradingModel.BasicSettings defaultSettings
 			{
 				get
@@ -134,42 +134,42 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047E0 RID: 18400
+			// Token: 0x040048C9 RID: 18633
 			[Tooltip("Adjusts the overall exposure of the scene in EV units. This is applied after HDR effect and right before tonemapping so it won't affect previous effects in the chain.")]
 			public float postExposure;
 
-			// Token: 0x040047E1 RID: 18401
+			// Token: 0x040048CA RID: 18634
 			[Range(-100f, 100f)]
 			[Tooltip("Sets the white balance to a custom color temperature.")]
 			public float temperature;
 
-			// Token: 0x040047E2 RID: 18402
+			// Token: 0x040048CB RID: 18635
 			[Range(-100f, 100f)]
 			[Tooltip("Sets the white balance to compensate for a green or magenta tint.")]
 			public float tint;
 
-			// Token: 0x040047E3 RID: 18403
+			// Token: 0x040048CC RID: 18636
 			[Range(-180f, 180f)]
 			[Tooltip("Shift the hue of all colors.")]
 			public float hueShift;
 
-			// Token: 0x040047E4 RID: 18404
+			// Token: 0x040048CD RID: 18637
 			[Range(0f, 2f)]
 			[Tooltip("Pushes the intensity of all colors.")]
 			public float saturation;
 
-			// Token: 0x040047E5 RID: 18405
+			// Token: 0x040048CE RID: 18638
 			[Range(0f, 2f)]
 			[Tooltip("Expands or shrinks the overall range of tonal values.")]
 			public float contrast;
 		}
 
-		// Token: 0x020006E0 RID: 1760
+		// Token: 0x020006F9 RID: 1785
 		[Serializable]
 		public struct ChannelMixerSettings
 		{
-			// Token: 0x1700064B RID: 1611
-			// (get) Token: 0x06002C0E RID: 11278 RVA: 0x001C8538 File Offset: 0x001C6738
+			// Token: 0x17000651 RID: 1617
+			// (get) Token: 0x06002C70 RID: 11376 RVA: 0x001CE1D0 File Offset: 0x001CC3D0
 			public static ColorGradingModel.ChannelMixerSettings defaultSettings
 			{
 				get
@@ -184,26 +184,26 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047E6 RID: 18406
+			// Token: 0x040048CF RID: 18639
 			public Vector3 red;
 
-			// Token: 0x040047E7 RID: 18407
+			// Token: 0x040048D0 RID: 18640
 			public Vector3 green;
 
-			// Token: 0x040047E8 RID: 18408
+			// Token: 0x040048D1 RID: 18641
 			public Vector3 blue;
 
-			// Token: 0x040047E9 RID: 18409
+			// Token: 0x040048D2 RID: 18642
 			[HideInInspector]
 			public int currentEditingChannel;
 		}
 
-		// Token: 0x020006E1 RID: 1761
+		// Token: 0x020006FA RID: 1786
 		[Serializable]
 		public struct LogWheelsSettings
 		{
-			// Token: 0x1700064C RID: 1612
-			// (get) Token: 0x06002C0F RID: 11279 RVA: 0x001C85A8 File Offset: 0x001C67A8
+			// Token: 0x17000652 RID: 1618
+			// (get) Token: 0x06002C71 RID: 11377 RVA: 0x001CE240 File Offset: 0x001CC440
 			public static ColorGradingModel.LogWheelsSettings defaultSettings
 			{
 				get
@@ -217,25 +217,25 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047EA RID: 18410
+			// Token: 0x040048D3 RID: 18643
 			[Trackball("GetSlopeValue")]
 			public Color slope;
 
-			// Token: 0x040047EB RID: 18411
+			// Token: 0x040048D4 RID: 18644
 			[Trackball("GetPowerValue")]
 			public Color power;
 
-			// Token: 0x040047EC RID: 18412
+			// Token: 0x040048D5 RID: 18645
 			[Trackball("GetOffsetValue")]
 			public Color offset;
 		}
 
-		// Token: 0x020006E2 RID: 1762
+		// Token: 0x020006FB RID: 1787
 		[Serializable]
 		public struct LinearWheelsSettings
 		{
-			// Token: 0x1700064D RID: 1613
-			// (get) Token: 0x06002C10 RID: 11280 RVA: 0x001C85E4 File Offset: 0x001C67E4
+			// Token: 0x17000653 RID: 1619
+			// (get) Token: 0x06002C72 RID: 11378 RVA: 0x001CE27C File Offset: 0x001CC47C
 			public static ColorGradingModel.LinearWheelsSettings defaultSettings
 			{
 				get
@@ -249,34 +249,34 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047ED RID: 18413
+			// Token: 0x040048D6 RID: 18646
 			[Trackball("GetLiftValue")]
 			public Color lift;
 
-			// Token: 0x040047EE RID: 18414
+			// Token: 0x040048D7 RID: 18647
 			[Trackball("GetGammaValue")]
 			public Color gamma;
 
-			// Token: 0x040047EF RID: 18415
+			// Token: 0x040048D8 RID: 18648
 			[Trackball("GetGainValue")]
 			public Color gain;
 		}
 
-		// Token: 0x020006E3 RID: 1763
+		// Token: 0x020006FC RID: 1788
 		public enum ColorWheelMode
 		{
-			// Token: 0x040047F1 RID: 18417
+			// Token: 0x040048DA RID: 18650
 			Linear,
-			// Token: 0x040047F2 RID: 18418
+			// Token: 0x040048DB RID: 18651
 			Log
 		}
 
-		// Token: 0x020006E4 RID: 1764
+		// Token: 0x020006FD RID: 1789
 		[Serializable]
 		public struct ColorWheelsSettings
 		{
-			// Token: 0x1700064E RID: 1614
-			// (get) Token: 0x06002C11 RID: 11281 RVA: 0x001C8620 File Offset: 0x001C6820
+			// Token: 0x17000654 RID: 1620
+			// (get) Token: 0x06002C73 RID: 11379 RVA: 0x001CE2B8 File Offset: 0x001CC4B8
 			public static ColorGradingModel.ColorWheelsSettings defaultSettings
 			{
 				get
@@ -290,24 +290,24 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047F3 RID: 18419
+			// Token: 0x040048DC RID: 18652
 			public ColorGradingModel.ColorWheelMode mode;
 
-			// Token: 0x040047F4 RID: 18420
+			// Token: 0x040048DD RID: 18653
 			[TrackballGroup]
 			public ColorGradingModel.LogWheelsSettings log;
 
-			// Token: 0x040047F5 RID: 18421
+			// Token: 0x040048DE RID: 18654
 			[TrackballGroup]
 			public ColorGradingModel.LinearWheelsSettings linear;
 		}
 
-		// Token: 0x020006E5 RID: 1765
+		// Token: 0x020006FE RID: 1790
 		[Serializable]
 		public struct CurvesSettings
 		{
-			// Token: 0x1700064F RID: 1615
-			// (get) Token: 0x06002C12 RID: 11282 RVA: 0x001C8658 File Offset: 0x001C6858
+			// Token: 0x17000655 RID: 1621
+			// (get) Token: 0x06002C74 RID: 11380 RVA: 0x001CE2F0 File Offset: 0x001CC4F0
 			public static ColorGradingModel.CurvesSettings defaultSettings
 			{
 				get
@@ -347,57 +347,57 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x040047F6 RID: 18422
+			// Token: 0x040048DF RID: 18655
 			public ColorGradingCurve master;
 
-			// Token: 0x040047F7 RID: 18423
+			// Token: 0x040048E0 RID: 18656
 			public ColorGradingCurve red;
 
-			// Token: 0x040047F8 RID: 18424
+			// Token: 0x040048E1 RID: 18657
 			public ColorGradingCurve green;
 
-			// Token: 0x040047F9 RID: 18425
+			// Token: 0x040048E2 RID: 18658
 			public ColorGradingCurve blue;
 
-			// Token: 0x040047FA RID: 18426
+			// Token: 0x040048E3 RID: 18659
 			public ColorGradingCurve hueVShue;
 
-			// Token: 0x040047FB RID: 18427
+			// Token: 0x040048E4 RID: 18660
 			public ColorGradingCurve hueVSsat;
 
-			// Token: 0x040047FC RID: 18428
+			// Token: 0x040048E5 RID: 18661
 			public ColorGradingCurve satVSsat;
 
-			// Token: 0x040047FD RID: 18429
+			// Token: 0x040048E6 RID: 18662
 			public ColorGradingCurve lumVSsat;
 
-			// Token: 0x040047FE RID: 18430
+			// Token: 0x040048E7 RID: 18663
 			[HideInInspector]
 			public int e_CurrentEditingCurve;
 
-			// Token: 0x040047FF RID: 18431
+			// Token: 0x040048E8 RID: 18664
 			[HideInInspector]
 			public bool e_CurveY;
 
-			// Token: 0x04004800 RID: 18432
+			// Token: 0x040048E9 RID: 18665
 			[HideInInspector]
 			public bool e_CurveR;
 
-			// Token: 0x04004801 RID: 18433
+			// Token: 0x040048EA RID: 18666
 			[HideInInspector]
 			public bool e_CurveG;
 
-			// Token: 0x04004802 RID: 18434
+			// Token: 0x040048EB RID: 18667
 			[HideInInspector]
 			public bool e_CurveB;
 		}
 
-		// Token: 0x020006E6 RID: 1766
+		// Token: 0x020006FF RID: 1791
 		[Serializable]
 		public struct Settings
 		{
-			// Token: 0x17000650 RID: 1616
-			// (get) Token: 0x06002C13 RID: 11283 RVA: 0x001C88E0 File Offset: 0x001C6AE0
+			// Token: 0x17000656 RID: 1622
+			// (get) Token: 0x06002C75 RID: 11381 RVA: 0x001CE578 File Offset: 0x001CC778
 			public static ColorGradingModel.Settings defaultSettings
 			{
 				get
@@ -413,19 +413,19 @@ namespace UnityEngine.PostProcessing
 				}
 			}
 
-			// Token: 0x04004803 RID: 18435
+			// Token: 0x040048EC RID: 18668
 			public ColorGradingModel.TonemappingSettings tonemapping;
 
-			// Token: 0x04004804 RID: 18436
+			// Token: 0x040048ED RID: 18669
 			public ColorGradingModel.BasicSettings basic;
 
-			// Token: 0x04004805 RID: 18437
+			// Token: 0x040048EE RID: 18670
 			public ColorGradingModel.ChannelMixerSettings channelMixer;
 
-			// Token: 0x04004806 RID: 18438
+			// Token: 0x040048EF RID: 18671
 			public ColorGradingModel.ColorWheelsSettings colorWheels;
 
-			// Token: 0x04004807 RID: 18439
+			// Token: 0x040048F0 RID: 18672
 			public ColorGradingModel.CurvesSettings curves;
 		}
 	}

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000390 RID: 912
+// Token: 0x02000395 RID: 917
 public class RichPresenceHelper : MonoBehaviour
 {
-	// Token: 0x060019A0 RID: 6560 RVA: 0x000FA508 File Offset: 0x000F8708
+	// Token: 0x060019C1 RID: 6593 RVA: 0x000FCBF4 File Offset: 0x000FADF4
 	private void Start()
 	{
 		this.CompileDictionaries();
@@ -19,7 +19,7 @@ public class RichPresenceHelper : MonoBehaviour
 		base.InvokeRepeating("UpdatePresence", 0f, 10f);
 	}
 
-	// Token: 0x060019A1 RID: 6561 RVA: 0x000FA585 File Offset: 0x000F8785
+	// Token: 0x060019C2 RID: 6594 RVA: 0x000FCC71 File Offset: 0x000FAE71
 	private void OnLevelWasLoaded(int level)
 	{
 		if (level == 12)
@@ -29,14 +29,14 @@ public class RichPresenceHelper : MonoBehaviour
 		this.UpdatePresence();
 	}
 
-	// Token: 0x060019A2 RID: 6562 RVA: 0x000FA59D File Offset: 0x000F879D
+	// Token: 0x060019C3 RID: 6595 RVA: 0x000FCC89 File Offset: 0x000FAE89
 	private void UpdatePresence()
 	{
 		this._discordController.presence.state = this.GetSceneDescription();
 		DiscordRpc.UpdatePresence(this._discordController.presence);
 	}
 
-	// Token: 0x060019A3 RID: 6563 RVA: 0x000FA5C8 File Offset: 0x000F87C8
+	// Token: 0x060019C4 RID: 6596 RVA: 0x000FCCB4 File Offset: 0x000FAEB4
 	private void CompileDictionaries()
 	{
 		this._weekdays.Add(1, "Monday");
@@ -81,7 +81,7 @@ public class RichPresenceHelper : MonoBehaviour
 		this._sceneDescriptions.Add("OsanaJoke", "Killing Osana at long last!");
 	}
 
-	// Token: 0x060019A4 RID: 6564 RVA: 0x000FA8F4 File Offset: 0x000F8AF4
+	// Token: 0x060019C5 RID: 6597 RVA: 0x000FCFE0 File Offset: 0x000FB1E0
 	private string GetSceneDescription()
 	{
 		string name = SceneManager.GetActiveScene().name;
@@ -104,18 +104,18 @@ public class RichPresenceHelper : MonoBehaviour
 		return "No description available yet.";
 	}
 
-	// Token: 0x04002791 RID: 10129
+	// Token: 0x040027EE RID: 10222
 	private DiscordController _discordController;
 
-	// Token: 0x04002792 RID: 10130
+	// Token: 0x040027EF RID: 10223
 	private ClockScript _clockScript;
 
-	// Token: 0x04002793 RID: 10131
+	// Token: 0x040027F0 RID: 10224
 	private Dictionary<int, string> _weekdays = new Dictionary<int, string>();
 
-	// Token: 0x04002794 RID: 10132
+	// Token: 0x040027F1 RID: 10225
 	private Dictionary<int, string> _periods = new Dictionary<int, string>();
 
-	// Token: 0x04002795 RID: 10133
+	// Token: 0x040027F2 RID: 10226
 	private Dictionary<string, string> _sceneDescriptions = new Dictionary<string, string>();
 }

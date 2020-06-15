@@ -2,12 +2,12 @@
 
 namespace Pathfinding
 {
-	// Token: 0x02000556 RID: 1366
+	// Token: 0x0200056C RID: 1388
 	public enum CloseToDestinationMode
 	{
-		// Token: 0x0400400A RID: 16394
+		// Token: 0x040040E8 RID: 16616
 		Stop,
-		// Token: 0x0400400B RID: 16395
+		// Token: 0x040040E9 RID: 16617
 		ContinueToExactDestination
 	}
 }

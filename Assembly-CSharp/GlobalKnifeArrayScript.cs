@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002B6 RID: 694
+// Token: 0x020002B9 RID: 697
 public class GlobalKnifeArrayScript : MonoBehaviour
 {
-	// Token: 0x0600144A RID: 5194 RVA: 0x000B3B00 File Offset: 0x000B1D00
+	// Token: 0x0600145D RID: 5213 RVA: 0x000B5654 File Offset: 0x000B3854
 	public void ActivateKnives()
 	{
 		foreach (TimeStopKnifeScript timeStopKnifeScript in this.Knives)
@@ -17,9 +17,9 @@ public class GlobalKnifeArrayScript : MonoBehaviour
 		this.ID = 0;
 	}
 
-	// Token: 0x04001CF0 RID: 7408
+	// Token: 0x04001D35 RID: 7477
 	public TimeStopKnifeScript[] Knives;
 
-	// Token: 0x04001CF1 RID: 7409
+	// Token: 0x04001D36 RID: 7478
 	public int ID;
 }

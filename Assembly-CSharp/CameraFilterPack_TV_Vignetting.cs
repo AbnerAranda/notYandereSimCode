@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200020F RID: 527
+// Token: 0x02000210 RID: 528
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Vignetting")]
 public class CameraFilterPack_TV_Vignetting : MonoBehaviour
 {
 	// Token: 0x1700032F RID: 815
-	// (get) Token: 0x06001190 RID: 4496 RVA: 0x0007D38E File Offset: 0x0007B58E
+	// (get) Token: 0x06001197 RID: 4503 RVA: 0x0007E0BE File Offset: 0x0007C2BE
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_Vignetting : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001191 RID: 4497 RVA: 0x0007D3C2 File Offset: 0x0007B5C2
+	// Token: 0x06001198 RID: 4504 RVA: 0x0007E0F2 File Offset: 0x0007C2F2
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_Vignetting");
@@ -33,7 +33,7 @@ public class CameraFilterPack_TV_Vignetting : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001192 RID: 4498 RVA: 0x0007D3F8 File Offset: 0x0007B5F8
+	// Token: 0x06001199 RID: 4505 RVA: 0x0007E128 File Offset: 0x0007C328
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -49,12 +49,12 @@ public class CameraFilterPack_TV_Vignetting : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06001193 RID: 4499 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x0600119A RID: 4506 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001194 RID: 4500 RVA: 0x0007D496 File Offset: 0x0007B696
+	// Token: 0x0600119B RID: 4507 RVA: 0x0007E1C6 File Offset: 0x0007C3C6
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -63,27 +63,27 @@ public class CameraFilterPack_TV_Vignetting : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400148E RID: 5262
+	// Token: 0x040014AD RID: 5293
 	public Shader SCShader;
 
-	// Token: 0x0400148F RID: 5263
+	// Token: 0x040014AE RID: 5294
 	private Material SCMaterial;
 
-	// Token: 0x04001490 RID: 5264
+	// Token: 0x040014AF RID: 5295
 	private Texture2D Vignette;
 
-	// Token: 0x04001491 RID: 5265
+	// Token: 0x040014B0 RID: 5296
 	[Range(0f, 1f)]
 	public float Vignetting = 1f;
 
-	// Token: 0x04001492 RID: 5266
+	// Token: 0x040014B1 RID: 5297
 	[Range(0f, 1f)]
 	public float VignettingFull;
 
-	// Token: 0x04001493 RID: 5267
+	// Token: 0x040014B2 RID: 5298
 	[Range(0f, 1f)]
 	public float VignettingDirt;
 
-	// Token: 0x04001494 RID: 5268
+	// Token: 0x040014B3 RID: 5299
 	public Color VignettingColor = new Color(0f, 0f, 0f, 1f);
 }

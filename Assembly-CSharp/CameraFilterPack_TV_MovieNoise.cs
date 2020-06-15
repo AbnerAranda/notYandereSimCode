@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000201 RID: 513
+// Token: 0x02000202 RID: 514
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/TV/Movie Noise")]
 public class CameraFilterPack_TV_MovieNoise : MonoBehaviour
 {
 	// Token: 0x17000321 RID: 801
-	// (get) Token: 0x0600113C RID: 4412 RVA: 0x0007C0DA File Offset: 0x0007A2DA
+	// (get) Token: 0x06001143 RID: 4419 RVA: 0x0007CE0A File Offset: 0x0007B00A
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_TV_MovieNoise : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600113D RID: 4413 RVA: 0x0007C10E File Offset: 0x0007A30E
+	// Token: 0x06001144 RID: 4420 RVA: 0x0007CE3E File Offset: 0x0007B03E
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/TV_MovieNoise");
@@ -32,7 +32,7 @@ public class CameraFilterPack_TV_MovieNoise : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600113E RID: 4414 RVA: 0x0007C130 File Offset: 0x0007A330
+	// Token: 0x06001145 RID: 4421 RVA: 0x0007CE60 File Offset: 0x0007B060
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -51,12 +51,12 @@ public class CameraFilterPack_TV_MovieNoise : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x0600113F RID: 4415 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06001146 RID: 4422 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06001140 RID: 4416 RVA: 0x0007C1E6 File Offset: 0x0007A3E6
+	// Token: 0x06001147 RID: 4423 RVA: 0x0007CF16 File Offset: 0x0007B116
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -65,16 +65,16 @@ public class CameraFilterPack_TV_MovieNoise : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001448 RID: 5192
+	// Token: 0x04001467 RID: 5223
 	public Shader SCShader;
 
-	// Token: 0x04001449 RID: 5193
+	// Token: 0x04001468 RID: 5224
 	private float TimeX = 1f;
 
-	// Token: 0x0400144A RID: 5194
+	// Token: 0x04001469 RID: 5225
 	private Material SCMaterial;
 
-	// Token: 0x0400144B RID: 5195
+	// Token: 0x0400146A RID: 5226
 	[Range(0.0001f, 1f)]
 	public float Fade = 0.01f;
 }

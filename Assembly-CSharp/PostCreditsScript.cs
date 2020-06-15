@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000375 RID: 885
+// Token: 0x0200037A RID: 890
 public class PostCreditsScript : MonoBehaviour
 {
 }

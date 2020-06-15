@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000589 RID: 1417
+	// Token: 0x0200059F RID: 1439
 	public abstract class NavmeshClipper : VersionedMonoBehaviour
 	{
-		// Token: 0x0600267F RID: 9855 RVA: 0x001A7F5E File Offset: 0x001A615E
+		// Token: 0x060026D5 RID: 9941 RVA: 0x001ADB4A File Offset: 0x001ABD4A
 		public NavmeshClipper()
 		{
 			this.node = new LinkedListNode<NavmeshClipper>(this);
 		}
 
-		// Token: 0x06002680 RID: 9856 RVA: 0x001A7F74 File Offset: 0x001A6174
+		// Token: 0x060026D6 RID: 9942 RVA: 0x001ADB60 File Offset: 0x001ABD60
 		public static void AddEnableCallback(Action<NavmeshClipper> onEnable, Action<NavmeshClipper> onDisable)
 		{
 			NavmeshClipper.OnEnableCallback = (Action<NavmeshClipper>)Delegate.Combine(NavmeshClipper.OnEnableCallback, onEnable);
@@ -25,7 +25,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002681 RID: 9857 RVA: 0x001A7FD0 File Offset: 0x001A61D0
+		// Token: 0x060026D7 RID: 9943 RVA: 0x001ADBBC File Offset: 0x001ABDBC
 		public static void RemoveEnableCallback(Action<NavmeshClipper> onEnable, Action<NavmeshClipper> onDisable)
 		{
 			NavmeshClipper.OnEnableCallback = (Action<NavmeshClipper>)Delegate.Remove(NavmeshClipper.OnEnableCallback, onEnable);
@@ -36,8 +36,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170005B2 RID: 1458
-		// (get) Token: 0x06002682 RID: 9858 RVA: 0x001A802A File Offset: 0x001A622A
+		// Token: 0x170005B8 RID: 1464
+		// (get) Token: 0x060026D8 RID: 9944 RVA: 0x001ADC16 File Offset: 0x001ABE16
 		public static bool AnyEnableListeners
 		{
 			get
@@ -46,7 +46,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002683 RID: 9859 RVA: 0x001A8034 File Offset: 0x001A6234
+		// Token: 0x060026D9 RID: 9945 RVA: 0x001ADC20 File Offset: 0x001ABE20
 		protected virtual void OnEnable()
 		{
 			NavmeshClipper.all.AddFirst(this.node);
@@ -56,7 +56,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002684 RID: 9860 RVA: 0x001A8058 File Offset: 0x001A6258
+		// Token: 0x060026DA RID: 9946 RVA: 0x001ADC44 File Offset: 0x001ABE44
 		protected virtual void OnDisable()
 		{
 			if (NavmeshClipper.OnDisableCallback != null)
@@ -66,28 +66,28 @@ namespace Pathfinding
 			NavmeshClipper.all.Remove(this.node);
 		}
 
-		// Token: 0x06002685 RID: 9861
+		// Token: 0x060026DB RID: 9947
 		internal abstract void NotifyUpdated();
 
-		// Token: 0x06002686 RID: 9862
+		// Token: 0x060026DC RID: 9948
 		internal abstract Rect GetBounds(GraphTransform transform);
 
-		// Token: 0x06002687 RID: 9863
+		// Token: 0x060026DD RID: 9949
 		public abstract bool RequiresUpdate();
 
-		// Token: 0x06002688 RID: 9864
+		// Token: 0x060026DE RID: 9950
 		public abstract void ForceUpdate();
 
-		// Token: 0x04004164 RID: 16740
+		// Token: 0x04004242 RID: 16962
 		private static Action<NavmeshClipper> OnEnableCallback;
 
-		// Token: 0x04004165 RID: 16741
+		// Token: 0x04004243 RID: 16963
 		private static Action<NavmeshClipper> OnDisableCallback;
 
-		// Token: 0x04004166 RID: 16742
+		// Token: 0x04004244 RID: 16964
 		private static readonly LinkedList<NavmeshClipper> all = new LinkedList<NavmeshClipper>();
 
-		// Token: 0x04004167 RID: 16743
+		// Token: 0x04004245 RID: 16965
 		private readonly LinkedListNode<NavmeshClipper> node;
 	}
 }

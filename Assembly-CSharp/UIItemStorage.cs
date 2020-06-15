@@ -7,7 +7,7 @@ using UnityEngine;
 public class UIItemStorage : MonoBehaviour
 {
 	// Token: 0x17000012 RID: 18
-	// (get) Token: 0x060000E6 RID: 230 RVA: 0x00011D0F File Offset: 0x0000FF0F
+	// (get) Token: 0x060000E7 RID: 231 RVA: 0x00011D37 File Offset: 0x0000FF37
 	public List<InvGameItem> items
 	{
 		get
@@ -20,7 +20,7 @@ public class UIItemStorage : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E7 RID: 231 RVA: 0x00011D38 File Offset: 0x0000FF38
+	// Token: 0x060000E8 RID: 232 RVA: 0x00011D60 File Offset: 0x0000FF60
 	public InvGameItem GetItem(int slot)
 	{
 		if (slot >= this.items.Count)
@@ -30,7 +30,7 @@ public class UIItemStorage : MonoBehaviour
 		return this.mItems[slot];
 	}
 
-	// Token: 0x060000E8 RID: 232 RVA: 0x00011D56 File Offset: 0x0000FF56
+	// Token: 0x060000E9 RID: 233 RVA: 0x00011D7E File Offset: 0x0000FF7E
 	public InvGameItem Replace(int slot, InvGameItem item)
 	{
 		if (slot < this.maxItemCount)
@@ -42,7 +42,7 @@ public class UIItemStorage : MonoBehaviour
 		return item;
 	}
 
-	// Token: 0x060000E9 RID: 233 RVA: 0x00011D7C File Offset: 0x0000FF7C
+	// Token: 0x060000EA RID: 234 RVA: 0x00011DA4 File Offset: 0x0000FFA4
 	private void Start()
 	{
 		if (this.template != null)
@@ -79,27 +79,27 @@ public class UIItemStorage : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400027F RID: 639
+	// Token: 0x04000281 RID: 641
 	public int maxItemCount = 8;
 
-	// Token: 0x04000280 RID: 640
+	// Token: 0x04000282 RID: 642
 	public int maxRows = 4;
 
-	// Token: 0x04000281 RID: 641
+	// Token: 0x04000283 RID: 643
 	public int maxColumns = 4;
 
-	// Token: 0x04000282 RID: 642
+	// Token: 0x04000284 RID: 644
 	public GameObject template;
 
-	// Token: 0x04000283 RID: 643
+	// Token: 0x04000285 RID: 645
 	public UIWidget background;
 
-	// Token: 0x04000284 RID: 644
+	// Token: 0x04000286 RID: 646
 	public int spacing = 128;
 
-	// Token: 0x04000285 RID: 645
+	// Token: 0x04000287 RID: 647
 	public int padding = 10;
 
-	// Token: 0x04000286 RID: 646
+	// Token: 0x04000288 RID: 648
 	private List<InvGameItem> mItems = new List<InvGameItem>();
 }

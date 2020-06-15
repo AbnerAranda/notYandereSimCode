@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000143 RID: 323
+// Token: 0x02000144 RID: 324
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Blur/Regular")]
 public class CameraFilterPack_Blur_Regular : MonoBehaviour
 {
 	// Token: 0x17000263 RID: 611
-	// (get) Token: 0x06000CA2 RID: 3234 RVA: 0x00067A89 File Offset: 0x00065C89
+	// (get) Token: 0x06000CA9 RID: 3241 RVA: 0x000687B9 File Offset: 0x000669B9
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_Blur_Regular : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CA3 RID: 3235 RVA: 0x00067ABD File Offset: 0x00065CBD
+	// Token: 0x06000CAA RID: 3242 RVA: 0x000687ED File Offset: 0x000669ED
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/Blur_Regular");
@@ -32,7 +32,7 @@ public class CameraFilterPack_Blur_Regular : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CA4 RID: 3236 RVA: 0x00067AE0 File Offset: 0x00065CE0
+	// Token: 0x06000CAB RID: 3243 RVA: 0x00068810 File Offset: 0x00066A10
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -52,12 +52,12 @@ public class CameraFilterPack_Blur_Regular : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000CA5 RID: 3237 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000CAC RID: 3244 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000CA6 RID: 3238 RVA: 0x00067BB2 File Offset: 0x00065DB2
+	// Token: 0x06000CAD RID: 3245 RVA: 0x000688E2 File Offset: 0x00066AE2
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -66,19 +66,19 @@ public class CameraFilterPack_Blur_Regular : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000F5D RID: 3933
+	// Token: 0x04000F7C RID: 3964
 	public Shader SCShader;
 
-	// Token: 0x04000F5E RID: 3934
+	// Token: 0x04000F7D RID: 3965
 	private float TimeX = 1f;
 
-	// Token: 0x04000F5F RID: 3935
+	// Token: 0x04000F7E RID: 3966
 	private Material SCMaterial;
 
-	// Token: 0x04000F60 RID: 3936
+	// Token: 0x04000F7F RID: 3967
 	[Range(1f, 16f)]
 	public int Level = 4;
 
-	// Token: 0x04000F61 RID: 3937
+	// Token: 0x04000F80 RID: 3968
 	public Vector2 Distance = new Vector2(30f, 0f);
 }

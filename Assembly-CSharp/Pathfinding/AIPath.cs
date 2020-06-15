@@ -5,11 +5,11 @@ using UnityEngine.Serialization;
 
 namespace Pathfinding
 {
-	// Token: 0x02000512 RID: 1298
+	// Token: 0x02000528 RID: 1320
 	[AddComponentMenu("Pathfinding/AI/AIPath (2D,3D)")]
 	public class AIPath : AIBase, IAstarAI
 	{
-		// Token: 0x060020D4 RID: 8404 RVA: 0x00187C8A File Offset: 0x00185E8A
+		// Token: 0x0600212A RID: 8490 RVA: 0x0018D876 File Offset: 0x0018BA76
 		public override void Teleport(Vector3 newPosition, bool clearPath = true)
 		{
 			if (clearPath)
@@ -20,8 +20,8 @@ namespace Pathfinding
 			base.Teleport(newPosition, clearPath);
 		}
 
-		// Token: 0x170004F1 RID: 1265
-		// (get) Token: 0x060020D5 RID: 8405 RVA: 0x00187CAC File Offset: 0x00185EAC
+		// Token: 0x170004F7 RID: 1271
+		// (get) Token: 0x0600212B RID: 8491 RVA: 0x0018D898 File Offset: 0x0018BA98
 		public float remainingDistance
 		{
 			get
@@ -34,13 +34,13 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004F2 RID: 1266
-		// (get) Token: 0x060020D6 RID: 8406 RVA: 0x00187D01 File Offset: 0x00185F01
-		// (set) Token: 0x060020D7 RID: 8407 RVA: 0x00187D09 File Offset: 0x00185F09
+		// Token: 0x170004F8 RID: 1272
+		// (get) Token: 0x0600212C RID: 8492 RVA: 0x0018D8ED File Offset: 0x0018BAED
+		// (set) Token: 0x0600212D RID: 8493 RVA: 0x0018D8F5 File Offset: 0x0018BAF5
 		public bool reachedEndOfPath { get; protected set; }
 
-		// Token: 0x170004F3 RID: 1267
-		// (get) Token: 0x060020D8 RID: 8408 RVA: 0x00187D12 File Offset: 0x00185F12
+		// Token: 0x170004F9 RID: 1273
+		// (get) Token: 0x0600212E RID: 8494 RVA: 0x0018D8FE File Offset: 0x0018BAFE
 		public bool hasPath
 		{
 			get
@@ -49,8 +49,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004F4 RID: 1268
-		// (get) Token: 0x060020D9 RID: 8409 RVA: 0x00187D1F File Offset: 0x00185F1F
+		// Token: 0x170004FA RID: 1274
+		// (get) Token: 0x0600212F RID: 8495 RVA: 0x0018D90B File Offset: 0x0018BB0B
 		public bool pathPending
 		{
 			get
@@ -59,8 +59,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004F5 RID: 1269
-		// (get) Token: 0x060020DA RID: 8410 RVA: 0x00187D27 File Offset: 0x00185F27
+		// Token: 0x170004FB RID: 1275
+		// (get) Token: 0x06002130 RID: 8496 RVA: 0x0018D913 File Offset: 0x0018BB13
 		public Vector3 steeringTarget
 		{
 			get
@@ -73,9 +73,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004F6 RID: 1270
-		// (get) Token: 0x060020DB RID: 8411 RVA: 0x00187D48 File Offset: 0x00185F48
-		// (set) Token: 0x060020DC RID: 8412 RVA: 0x00187D50 File Offset: 0x00185F50
+		// Token: 0x170004FC RID: 1276
+		// (get) Token: 0x06002131 RID: 8497 RVA: 0x0018D934 File Offset: 0x0018BB34
+		// (set) Token: 0x06002132 RID: 8498 RVA: 0x0018D93C File Offset: 0x0018BB3C
 		float IAstarAI.maxSpeed
 		{
 			get
@@ -88,9 +88,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004F7 RID: 1271
-		// (get) Token: 0x060020DD RID: 8413 RVA: 0x00187D59 File Offset: 0x00185F59
-		// (set) Token: 0x060020DE RID: 8414 RVA: 0x00187D61 File Offset: 0x00185F61
+		// Token: 0x170004FD RID: 1277
+		// (get) Token: 0x06002133 RID: 8499 RVA: 0x0018D945 File Offset: 0x0018BB45
+		// (set) Token: 0x06002134 RID: 8500 RVA: 0x0018D94D File Offset: 0x0018BB4D
 		bool IAstarAI.canSearch
 		{
 			get
@@ -103,9 +103,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004F8 RID: 1272
-		// (get) Token: 0x060020DF RID: 8415 RVA: 0x00187D6A File Offset: 0x00185F6A
-		// (set) Token: 0x060020E0 RID: 8416 RVA: 0x00187D72 File Offset: 0x00185F72
+		// Token: 0x170004FE RID: 1278
+		// (get) Token: 0x06002135 RID: 8501 RVA: 0x0018D956 File Offset: 0x0018BB56
+		// (set) Token: 0x06002136 RID: 8502 RVA: 0x0018D95E File Offset: 0x0018BB5E
 		bool IAstarAI.canMove
 		{
 			get
@@ -118,7 +118,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060020E1 RID: 8417 RVA: 0x00187D7B File Offset: 0x00185F7B
+		// Token: 0x06002137 RID: 8503 RVA: 0x0018D967 File Offset: 0x0018BB67
 		protected override void OnDisable()
 		{
 			base.OnDisable();
@@ -130,12 +130,12 @@ namespace Pathfinding
 			this.interpolator.SetPath(null);
 		}
 
-		// Token: 0x060020E2 RID: 8418 RVA: 0x00002ACE File Offset: 0x00000CCE
+		// Token: 0x06002138 RID: 8504 RVA: 0x00002ACE File Offset: 0x00000CCE
 		public virtual void OnTargetReached()
 		{
 		}
 
-		// Token: 0x060020E3 RID: 8419 RVA: 0x00187DAC File Offset: 0x00185FAC
+		// Token: 0x06002139 RID: 8505 RVA: 0x0018D998 File Offset: 0x0018BB98
 		protected override void OnPathComplete(Path newPath)
 		{
 			ABPath abpath = newPath as ABPath;
@@ -173,7 +173,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060020E4 RID: 8420 RVA: 0x00187F34 File Offset: 0x00186134
+		// Token: 0x0600213A RID: 8506 RVA: 0x0018DB20 File Offset: 0x0018BD20
 		protected override void MovementUpdateInternal(float deltaTime, out Vector3 nextPosition, out Quaternion nextRotation)
 		{
 			float num = this.maxAcceleration;
@@ -230,7 +230,7 @@ namespace Pathfinding
 			this.CalculateNextRotation(num3, out nextRotation);
 		}
 
-		// Token: 0x060020E5 RID: 8421 RVA: 0x001881EC File Offset: 0x001863EC
+		// Token: 0x0600213B RID: 8507 RVA: 0x0018DDD8 File Offset: 0x0018BFD8
 		protected virtual void CalculateNextRotation(float slowdown, out Quaternion nextRotation)
 		{
 			if (this.lastDeltaTime > 1E-05f)
@@ -252,7 +252,7 @@ namespace Pathfinding
 			nextRotation = base.rotation;
 		}
 
-		// Token: 0x060020E6 RID: 8422 RVA: 0x001882A8 File Offset: 0x001864A8
+		// Token: 0x0600213C RID: 8508 RVA: 0x0018DE94 File Offset: 0x0018C094
 		protected override Vector3 ClampToNavmesh(Vector3 position, out bool positionChanged)
 		{
 			if (this.constrainInsideGraph)
@@ -263,7 +263,7 @@ namespace Pathfinding
 				Vector3 position2 = AstarPath.active.GetNearest(position, AIPath.cachedNNConstraint).position;
 				Vector2 vector = this.movementPlane.ToPlane(position2 - position);
 				float sqrMagnitude = vector.sqrMagnitude;
-				if (sqrMagnitude > 1.0000001E-06f)
+				if (sqrMagnitude > 1.00000011E-06f)
 				{
 					this.velocity2D -= vector * Vector2.Dot(vector, this.velocity2D) / sqrMagnitude;
 					if (this.rvoController != null && this.rvoController.enabled)
@@ -278,7 +278,7 @@ namespace Pathfinding
 			return position;
 		}
 
-		// Token: 0x060020E7 RID: 8423 RVA: 0x001883A2 File Offset: 0x001865A2
+		// Token: 0x0600213D RID: 8509 RVA: 0x0018DF8E File Offset: 0x0018C18E
 		protected override int OnUpgradeSerializedData(int version, bool unityThread)
 		{
 			base.OnUpgradeSerializedData(version, unityThread);
@@ -289,8 +289,8 @@ namespace Pathfinding
 			return 2;
 		}
 
-		// Token: 0x170004F9 RID: 1273
-		// (get) Token: 0x060020E8 RID: 8424 RVA: 0x001883C4 File Offset: 0x001865C4
+		// Token: 0x170004FF RID: 1279
+		// (get) Token: 0x0600213E RID: 8510 RVA: 0x0018DFB0 File Offset: 0x0018C1B0
 		[Obsolete("When unifying the interfaces for different movement scripts, this property has been renamed to reachedEndOfPath.  [AstarUpgradable: 'TargetReached' -> 'reachedEndOfPath']")]
 		public bool TargetReached
 		{
@@ -300,9 +300,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004FA RID: 1274
-		// (get) Token: 0x060020E9 RID: 8425 RVA: 0x001883CC File Offset: 0x001865CC
-		// (set) Token: 0x060020EA RID: 8426 RVA: 0x001883DA File Offset: 0x001865DA
+		// Token: 0x17000500 RID: 1280
+		// (get) Token: 0x0600213F RID: 8511 RVA: 0x0018DFB8 File Offset: 0x0018C1B8
+		// (set) Token: 0x06002140 RID: 8512 RVA: 0x0018DFC6 File Offset: 0x0018C1C6
 		[Obsolete("This field has been renamed to #rotationSpeed and is now in degrees per second instead of a damping factor")]
 		public float turningSpeed
 		{
@@ -316,9 +316,9 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004FB RID: 1275
-		// (get) Token: 0x060020EB RID: 8427 RVA: 0x00187D48 File Offset: 0x00185F48
-		// (set) Token: 0x060020EC RID: 8428 RVA: 0x00187D50 File Offset: 0x00185F50
+		// Token: 0x17000501 RID: 1281
+		// (get) Token: 0x06002141 RID: 8513 RVA: 0x0018D934 File Offset: 0x0018BB34
+		// (set) Token: 0x06002142 RID: 8514 RVA: 0x0018D93C File Offset: 0x0018BB3C
 		[Obsolete("This member has been deprecated. Use 'maxSpeed' instead. [AstarUpgradable: 'speed' -> 'maxSpeed']")]
 		public float speed
 		{
@@ -332,8 +332,8 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x170004FC RID: 1276
-		// (get) Token: 0x060020ED RID: 8429 RVA: 0x001883EC File Offset: 0x001865EC
+		// Token: 0x17000502 RID: 1282
+		// (get) Token: 0x06002143 RID: 8515 RVA: 0x0018DFD8 File Offset: 0x0018C1D8
 		[Obsolete("Only exists for compatibility reasons. Use desiredVelocity or steeringTarget instead.")]
 		public Vector3 targetDirection
 		{
@@ -343,48 +343,48 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x060020EE RID: 8430 RVA: 0x00188417 File Offset: 0x00186617
+		// Token: 0x06002144 RID: 8516 RVA: 0x0018E003 File Offset: 0x0018C203
 		[Obsolete("This method no longer calculates the velocity. Use the desiredVelocity property instead")]
 		public Vector3 CalculateVelocity(Vector3 position)
 		{
 			return base.desiredVelocity;
 		}
 
-		// Token: 0x04003E5A RID: 15962
+		// Token: 0x04003F38 RID: 16184
 		public float maxAcceleration = -2.5f;
 
-		// Token: 0x04003E5B RID: 15963
+		// Token: 0x04003F39 RID: 16185
 		[FormerlySerializedAs("turningSpeed")]
 		public float rotationSpeed = 360f;
 
-		// Token: 0x04003E5C RID: 15964
+		// Token: 0x04003F3A RID: 16186
 		public float slowdownDistance = 0.6f;
 
-		// Token: 0x04003E5D RID: 15965
+		// Token: 0x04003F3B RID: 16187
 		public float pickNextWaypointDist = 2f;
 
-		// Token: 0x04003E5E RID: 15966
+		// Token: 0x04003F3C RID: 16188
 		public float endReachedDistance = 0.2f;
 
-		// Token: 0x04003E5F RID: 15967
+		// Token: 0x04003F3D RID: 16189
 		public bool alwaysDrawGizmos;
 
-		// Token: 0x04003E60 RID: 15968
+		// Token: 0x04003F3E RID: 16190
 		public bool slowWhenNotFacingTarget = true;
 
-		// Token: 0x04003E61 RID: 15969
+		// Token: 0x04003F3F RID: 16191
 		public CloseToDestinationMode whenCloseToDestination;
 
-		// Token: 0x04003E62 RID: 15970
+		// Token: 0x04003F40 RID: 16192
 		public bool constrainInsideGraph;
 
-		// Token: 0x04003E63 RID: 15971
+		// Token: 0x04003F41 RID: 16193
 		protected Path path;
 
-		// Token: 0x04003E64 RID: 15972
+		// Token: 0x04003F42 RID: 16194
 		public PathInterpolator interpolator = new PathInterpolator();
 
-		// Token: 0x04003E66 RID: 15974
+		// Token: 0x04003F44 RID: 16196
 		private static NNConstraint cachedNNConstraint = NNConstraint.Default;
 	}
 }

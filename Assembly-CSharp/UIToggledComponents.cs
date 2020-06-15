@@ -8,7 +8,7 @@ using UnityEngine;
 [AddComponentMenu("NGUI/Interaction/Toggled Components")]
 public class UIToggledComponents : MonoBehaviour
 {
-	// Token: 0x06000329 RID: 809 RVA: 0x0001F2D8 File Offset: 0x0001D4D8
+	// Token: 0x0600032A RID: 810 RVA: 0x0001F300 File Offset: 0x0001D500
 	private void Awake()
 	{
 		if (this.target != null)
@@ -32,7 +32,7 @@ public class UIToggledComponents : MonoBehaviour
 		EventDelegate.Add(base.GetComponent<UIToggle>().onChange, new EventDelegate.Callback(this.Toggle));
 	}
 
-	// Token: 0x0600032A RID: 810 RVA: 0x0001F360 File Offset: 0x0001D560
+	// Token: 0x0600032B RID: 811 RVA: 0x0001F388 File Offset: 0x0001D588
 	public void Toggle()
 	{
 		if (base.enabled)
@@ -48,18 +48,18 @@ public class UIToggledComponents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000479 RID: 1145
+	// Token: 0x0400047B RID: 1147
 	public List<MonoBehaviour> activate;
 
-	// Token: 0x0400047A RID: 1146
+	// Token: 0x0400047C RID: 1148
 	public List<MonoBehaviour> deactivate;
 
-	// Token: 0x0400047B RID: 1147
+	// Token: 0x0400047D RID: 1149
 	[HideInInspector]
 	[SerializeField]
 	private MonoBehaviour target;
 
-	// Token: 0x0400047C RID: 1148
+	// Token: 0x0400047E RID: 1150
 	[HideInInspector]
 	[SerializeField]
 	private bool inverse;

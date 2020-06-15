@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002A0 RID: 672
+// Token: 0x020002A2 RID: 674
 public class FavorMenuScript : MonoBehaviour
 {
-	// Token: 0x06001404 RID: 5124 RVA: 0x000AF068 File Offset: 0x000AD268
+	// Token: 0x06001412 RID: 5138 RVA: 0x000B08F4 File Offset: 0x000AEAF4
 	private void Update()
 	{
 		if (this.InputManager.TappedRight)
@@ -72,7 +72,7 @@ public class FavorMenuScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001405 RID: 5125 RVA: 0x000AF32C File Offset: 0x000AD52C
+	// Token: 0x06001413 RID: 5139 RVA: 0x000B0BB8 File Offset: 0x000AEDB8
 	private void UpdateHighlight()
 	{
 		if (this.ID > 3)
@@ -86,30 +86,30 @@ public class FavorMenuScript : MonoBehaviour
 		this.Highlight.transform.localPosition = new Vector3(-500f + 250f * (float)this.ID, this.Highlight.transform.localPosition.y, this.Highlight.transform.localPosition.z);
 	}
 
-	// Token: 0x04001C21 RID: 7201
+	// Token: 0x04001C59 RID: 7257
 	public TutorialWindowScript TutorialWindow;
 
-	// Token: 0x04001C22 RID: 7202
+	// Token: 0x04001C5A RID: 7258
 	public InputManagerScript InputManager;
 
-	// Token: 0x04001C23 RID: 7203
+	// Token: 0x04001C5B RID: 7259
 	public PauseScreenScript PauseScreen;
 
-	// Token: 0x04001C24 RID: 7204
+	// Token: 0x04001C5C RID: 7260
 	public ServicesScript ServicesMenu;
 
-	// Token: 0x04001C25 RID: 7205
+	// Token: 0x04001C5D RID: 7261
 	public SchemesScript SchemesMenu;
 
-	// Token: 0x04001C26 RID: 7206
+	// Token: 0x04001C5E RID: 7262
 	public DropsScript DropsMenu;
 
-	// Token: 0x04001C27 RID: 7207
+	// Token: 0x04001C5F RID: 7263
 	public PromptBarScript PromptBar;
 
-	// Token: 0x04001C28 RID: 7208
+	// Token: 0x04001C60 RID: 7264
 	public Transform Highlight;
 
-	// Token: 0x04001C29 RID: 7209
+	// Token: 0x04001C61 RID: 7265
 	public int ID = 1;
 }

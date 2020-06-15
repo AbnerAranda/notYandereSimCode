@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000415 RID: 1045
+// Token: 0x0200041A RID: 1050
 public class TapePlayerScript : MonoBehaviour
 {
-	// Token: 0x06001C05 RID: 7173 RVA: 0x0014E4E2 File Offset: 0x0014C6E2
+	// Token: 0x06001C29 RID: 7209 RVA: 0x0015195A File Offset: 0x0014FB5A
 	private void Start()
 	{
 		this.Tape.SetActive(false);
 	}
 
-	// Token: 0x06001C06 RID: 7174 RVA: 0x0014E4F0 File Offset: 0x0014C6F0
+	// Token: 0x06001C2A RID: 7210 RVA: 0x00151968 File Offset: 0x0014FB68
 	private void Update()
 	{
 		if (this.Prompt.Circle[0].fillAmount == 0f)
@@ -38,68 +38,68 @@ public class TapePlayerScript : MonoBehaviour
 		if (this.Spin)
 		{
 			Transform transform = this.Rolls[0];
-			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 0.016666668f * (360f * this.SpinSpeed), transform.localEulerAngles.z);
+			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 0.0166666675f * (360f * this.SpinSpeed), transform.localEulerAngles.z);
 			Transform transform2 = this.Rolls[1];
-			transform2.localEulerAngles = new Vector3(transform2.localEulerAngles.x, transform2.localEulerAngles.y + 0.016666668f * (360f * this.SpinSpeed), transform2.localEulerAngles.z);
+			transform2.localEulerAngles = new Vector3(transform2.localEulerAngles.x, transform2.localEulerAngles.y + 0.0166666675f * (360f * this.SpinSpeed), transform2.localEulerAngles.z);
 		}
 		if (this.FastForward)
 		{
-			this.FFButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.FFButton.localEulerAngles.x, 6.25f, 1.6666666f), this.FFButton.localEulerAngles.y, this.FFButton.localEulerAngles.z);
+			this.FFButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.FFButton.localEulerAngles.x, 6.25f, 1.66666663f), this.FFButton.localEulerAngles.y, this.FFButton.localEulerAngles.z);
 			this.SpinSpeed = 2f;
 		}
 		else
 		{
-			this.FFButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.FFButton.localEulerAngles.x, 0f, 1.6666666f), this.FFButton.localEulerAngles.y, this.FFButton.localEulerAngles.z);
+			this.FFButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.FFButton.localEulerAngles.x, 0f, 1.66666663f), this.FFButton.localEulerAngles.y, this.FFButton.localEulerAngles.z);
 			this.SpinSpeed = 1f;
 		}
 		if (this.Rewind)
 		{
-			this.RWButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.RWButton.localEulerAngles.x, 6.25f, 1.6666666f), this.RWButton.localEulerAngles.y, this.RWButton.localEulerAngles.z);
+			this.RWButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.RWButton.localEulerAngles.x, 6.25f, 1.66666663f), this.RWButton.localEulerAngles.y, this.RWButton.localEulerAngles.z);
 			this.SpinSpeed = -2f;
 			return;
 		}
-		this.RWButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.RWButton.localEulerAngles.x, 0f, 1.6666666f), this.RWButton.localEulerAngles.y, this.RWButton.localEulerAngles.z);
+		this.RWButton.localEulerAngles = new Vector3(Mathf.MoveTowards(this.RWButton.localEulerAngles.x, 0f, 1.66666663f), this.RWButton.localEulerAngles.y, this.RWButton.localEulerAngles.z);
 	}
 
-	// Token: 0x04003448 RID: 13384
+	// Token: 0x040034BD RID: 13501
 	public TapePlayerMenuScript TapePlayerMenu;
 
-	// Token: 0x04003449 RID: 13385
+	// Token: 0x040034BE RID: 13502
 	public PromptBarScript PromptBar;
 
-	// Token: 0x0400344A RID: 13386
+	// Token: 0x040034BF RID: 13503
 	public YandereScript Yandere;
 
-	// Token: 0x0400344B RID: 13387
+	// Token: 0x040034C0 RID: 13504
 	public PromptScript Prompt;
 
-	// Token: 0x0400344C RID: 13388
+	// Token: 0x040034C1 RID: 13505
 	public Transform RWButton;
 
-	// Token: 0x0400344D RID: 13389
+	// Token: 0x040034C2 RID: 13506
 	public Transform FFButton;
 
-	// Token: 0x0400344E RID: 13390
+	// Token: 0x040034C3 RID: 13507
 	public Camera TapePlayerCamera;
 
-	// Token: 0x0400344F RID: 13391
+	// Token: 0x040034C4 RID: 13508
 	public Transform[] Rolls;
 
-	// Token: 0x04003450 RID: 13392
+	// Token: 0x040034C5 RID: 13509
 	public GameObject NoteWindow;
 
-	// Token: 0x04003451 RID: 13393
+	// Token: 0x040034C6 RID: 13510
 	public GameObject Tape;
 
-	// Token: 0x04003452 RID: 13394
+	// Token: 0x040034C7 RID: 13511
 	public bool FastForward;
 
-	// Token: 0x04003453 RID: 13395
+	// Token: 0x040034C8 RID: 13512
 	public bool Rewind;
 
-	// Token: 0x04003454 RID: 13396
+	// Token: 0x040034C9 RID: 13513
 	public bool Spin;
 
-	// Token: 0x04003455 RID: 13397
+	// Token: 0x040034CA RID: 13514
 	public float SpinSpeed;
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003EB RID: 1003
+// Token: 0x020003F0 RID: 1008
 public class SplashCameraScript : MonoBehaviour
 {
-	// Token: 0x06001AC4 RID: 6852 RVA: 0x0010C4D6 File Offset: 0x0010A6D6
+	// Token: 0x06001AE5 RID: 6885 RVA: 0x0010ED76 File Offset: 0x0010CF76
 	private void Start()
 	{
 		this.MyCamera.enabled = false;
 		this.MyCamera.rect = new Rect(0f, 0.219f, 0f, 0f);
 	}
 
-	// Token: 0x06001AC5 RID: 6853 RVA: 0x0010C508 File Offset: 0x0010A708
+	// Token: 0x06001AE6 RID: 6886 RVA: 0x0010EDA8 File Offset: 0x0010CFA8
 	private void Update()
 	{
 		if (this.Show)
@@ -35,12 +35,12 @@ public class SplashCameraScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04002B45 RID: 11077
+	// Token: 0x04002BA6 RID: 11174
 	public Camera MyCamera;
 
-	// Token: 0x04002B46 RID: 11078
+	// Token: 0x04002BA7 RID: 11175
 	public bool Show;
 
-	// Token: 0x04002B47 RID: 11079
+	// Token: 0x04002BA8 RID: 11176
 	public float Timer;
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000199 RID: 409
+// Token: 0x0200019A RID: 410
 [ExecuteInEditMode]
 [AddComponentMenu("Camera Filter Pack/Pixel/8bits")]
 public class CameraFilterPack_FX_8bits : MonoBehaviour
 {
 	// Token: 0x170002B9 RID: 697
-	// (get) Token: 0x06000EA9 RID: 3753 RVA: 0x000700D2 File Offset: 0x0006E2D2
+	// (get) Token: 0x06000EB0 RID: 3760 RVA: 0x00070E02 File Offset: 0x0006F002
 	private Material material
 	{
 		get
@@ -21,7 +21,7 @@ public class CameraFilterPack_FX_8bits : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EAA RID: 3754 RVA: 0x00070106 File Offset: 0x0006E306
+	// Token: 0x06000EB1 RID: 3761 RVA: 0x00070E36 File Offset: 0x0006F036
 	private void Start()
 	{
 		this.SCShader = Shader.Find("CameraFilterPack/FX_8bits");
@@ -32,7 +32,7 @@ public class CameraFilterPack_FX_8bits : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EAB RID: 3755 RVA: 0x00070128 File Offset: 0x0006E328
+	// Token: 0x06000EB2 RID: 3762 RVA: 0x00070E58 File Offset: 0x0006F058
 	private void OnRenderImage(RenderTexture sourceTexture, RenderTexture destTexture)
 	{
 		if (this.SCShader != null)
@@ -58,12 +58,12 @@ public class CameraFilterPack_FX_8bits : MonoBehaviour
 		Graphics.Blit(sourceTexture, destTexture);
 	}
 
-	// Token: 0x06000EAC RID: 3756 RVA: 0x00002ACE File Offset: 0x00000CCE
+	// Token: 0x06000EB3 RID: 3763 RVA: 0x00002ACE File Offset: 0x00000CCE
 	private void Update()
 	{
 	}
 
-	// Token: 0x06000EAD RID: 3757 RVA: 0x000701F0 File Offset: 0x0006E3F0
+	// Token: 0x06000EB4 RID: 3764 RVA: 0x00070F20 File Offset: 0x0006F120
 	private void OnDisable()
 	{
 		if (this.SCMaterial)
@@ -72,24 +72,24 @@ public class CameraFilterPack_FX_8bits : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400116A RID: 4458
+	// Token: 0x04001189 RID: 4489
 	public Shader SCShader;
 
-	// Token: 0x0400116B RID: 4459
+	// Token: 0x0400118A RID: 4490
 	private float TimeX = 1f;
 
-	// Token: 0x0400116C RID: 4460
+	// Token: 0x0400118B RID: 4491
 	private Material SCMaterial;
 
-	// Token: 0x0400116D RID: 4461
+	// Token: 0x0400118C RID: 4492
 	[Range(-1f, 1f)]
 	public float Brightness;
 
-	// Token: 0x0400116E RID: 4462
+	// Token: 0x0400118D RID: 4493
 	[Range(80f, 640f)]
 	public int ResolutionX = 160;
 
-	// Token: 0x0400116F RID: 4463
+	// Token: 0x0400118E RID: 4494
 	[Range(60f, 480f)]
 	public int ResolutionY = 240;
 }

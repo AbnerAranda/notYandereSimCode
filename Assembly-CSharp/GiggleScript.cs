@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002B5 RID: 693
+// Token: 0x020002B8 RID: 696
 public class GiggleScript : MonoBehaviour
 {
-	// Token: 0x06001446 RID: 5190 RVA: 0x000B32A0 File Offset: 0x000B14A0
+	// Token: 0x06001459 RID: 5209 RVA: 0x000B4DE8 File Offset: 0x000B2FE8
 	private void Start()
 	{
 		float num = 500f * (2f - SchoolGlobals.SchoolAtmosphere);
 		base.transform.localScale = new Vector3(num, base.transform.localScale.y, num);
 	}
 
-	// Token: 0x06001447 RID: 5191 RVA: 0x000B32E1 File Offset: 0x000B14E1
+	// Token: 0x0600145A RID: 5210 RVA: 0x000B4E29 File Offset: 0x000B3029
 	private void Update()
 	{
 		if (this.Frame > 0)
@@ -21,7 +21,7 @@ public class GiggleScript : MonoBehaviour
 		this.Frame++;
 	}
 
-	// Token: 0x06001448 RID: 5192 RVA: 0x000B3308 File Offset: 0x000B1508
+	// Token: 0x0600145B RID: 5211 RVA: 0x000B4E50 File Offset: 0x000B3050
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.layer == 9 && !this.Distracted)
@@ -86,7 +86,7 @@ public class GiggleScript : MonoBehaviour
 						{
 							this.Student.SmartPhone.SetActive(false);
 						}
-						else
+						else if (!this.Student.Phoneless)
 						{
 							this.Student.SmartPhone.SetActive(true);
 						}
@@ -130,21 +130,21 @@ public class GiggleScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001CEA RID: 7402
+	// Token: 0x04001D2F RID: 7471
 	public GameObject EmptyGameObject;
 
-	// Token: 0x04001CEB RID: 7403
+	// Token: 0x04001D30 RID: 7472
 	public GameObject Giggle;
 
-	// Token: 0x04001CEC RID: 7404
+	// Token: 0x04001D31 RID: 7473
 	public StudentScript Student;
 
-	// Token: 0x04001CED RID: 7405
+	// Token: 0x04001D32 RID: 7474
 	public bool StudentIsBusy;
 
-	// Token: 0x04001CEE RID: 7406
+	// Token: 0x04001D33 RID: 7475
 	public bool Distracted;
 
-	// Token: 0x04001CEF RID: 7407
+	// Token: 0x04001D34 RID: 7476
 	public int Frame;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200028E RID: 654
+// Token: 0x0200028F RID: 655
 [Serializable]
 public class WitnessMemory
 {
-	// Token: 0x060013C9 RID: 5065 RVA: 0x000AC56C File Offset: 0x000AA76C
+	// Token: 0x060013D1 RID: 5073 RVA: 0x000AD770 File Offset: 0x000AB970
 	public WitnessMemory()
 	{
 		this.memories = new float[Enum.GetValues(typeof(WitnessMemoryType)).Length];
@@ -16,19 +16,19 @@ public class WitnessMemory
 		this.memorySpan = 1800f;
 	}
 
-	// Token: 0x060013CA RID: 5066 RVA: 0x000AC5C9 File Offset: 0x000AA7C9
+	// Token: 0x060013D2 RID: 5074 RVA: 0x000AD7CD File Offset: 0x000AB9CD
 	public bool Remembers(WitnessMemoryType type)
 	{
 		return this.memories[(int)type] < this.memorySpan;
 	}
 
-	// Token: 0x060013CB RID: 5067 RVA: 0x000AC5DB File Offset: 0x000AA7DB
+	// Token: 0x060013D3 RID: 5075 RVA: 0x000AD7DF File Offset: 0x000AB9DF
 	public void Refresh(WitnessMemoryType type)
 	{
 		this.memories[(int)type] = 0f;
 	}
 
-	// Token: 0x060013CC RID: 5068 RVA: 0x000AC5EC File Offset: 0x000AA7EC
+	// Token: 0x060013D4 RID: 5076 RVA: 0x000AD7F0 File Offset: 0x000AB9F0
 	public void Tick(float dt)
 	{
 		for (int i = 0; i < this.memories.Length; i++)
@@ -37,23 +37,23 @@ public class WitnessMemory
 		}
 	}
 
-	// Token: 0x04001B8F RID: 7055
+	// Token: 0x04001BAF RID: 7087
 	[SerializeField]
 	private float[] memories;
 
-	// Token: 0x04001B90 RID: 7056
+	// Token: 0x04001BB0 RID: 7088
 	[SerializeField]
 	private float memorySpan;
 
-	// Token: 0x04001B91 RID: 7057
+	// Token: 0x04001BB1 RID: 7089
 	private const float LongMemorySpan = 28800f;
 
-	// Token: 0x04001B92 RID: 7058
+	// Token: 0x04001BB2 RID: 7090
 	private const float MediumMemorySpan = 7200f;
 
-	// Token: 0x04001B93 RID: 7059
+	// Token: 0x04001BB3 RID: 7091
 	private const float ShortMemorySpan = 1800f;
 
-	// Token: 0x04001B94 RID: 7060
+	// Token: 0x04001BB4 RID: 7092
 	private const float VeryShortMemorySpan = 120f;
 }

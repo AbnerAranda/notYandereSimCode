@@ -4,32 +4,32 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x02000519 RID: 1305
+	// Token: 0x0200052F RID: 1327
 	[AddComponentMenu("Pathfinding/Seeker")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_seeker.php")]
 	public class Seeker : VersionedMonoBehaviour
 	{
-		// Token: 0x0600215C RID: 8540 RVA: 0x0018A478 File Offset: 0x00188678
+		// Token: 0x060021B2 RID: 8626 RVA: 0x00190064 File Offset: 0x0018E264
 		public Seeker()
 		{
 			this.onPathDelegate = new OnPathDelegate(this.OnPathComplete);
 			this.onPartialPathDelegate = new OnPathDelegate(this.OnPartialPathComplete);
 		}
 
-		// Token: 0x0600215D RID: 8541 RVA: 0x0018A4E7 File Offset: 0x001886E7
+		// Token: 0x060021B3 RID: 8627 RVA: 0x001900D3 File Offset: 0x0018E2D3
 		protected override void Awake()
 		{
 			base.Awake();
 			this.startEndModifier.Awake(this);
 		}
 
-		// Token: 0x0600215E RID: 8542 RVA: 0x0018A4FB File Offset: 0x001886FB
+		// Token: 0x060021B4 RID: 8628 RVA: 0x001900E7 File Offset: 0x0018E2E7
 		public Path GetCurrentPath()
 		{
 			return this.path;
 		}
 
-		// Token: 0x0600215F RID: 8543 RVA: 0x0018A503 File Offset: 0x00188703
+		// Token: 0x060021B5 RID: 8629 RVA: 0x001900EF File Offset: 0x0018E2EF
 		public void CancelCurrentPathRequest(bool pool = true)
 		{
 			if (!this.IsDone())
@@ -43,14 +43,14 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002160 RID: 8544 RVA: 0x0018A543 File Offset: 0x00188743
+		// Token: 0x060021B6 RID: 8630 RVA: 0x0019012F File Offset: 0x0018E32F
 		public void OnDestroy()
 		{
 			this.ReleaseClaimedPath();
 			this.startEndModifier.OnDestroy(this);
 		}
 
-		// Token: 0x06002161 RID: 8545 RVA: 0x0018A557 File Offset: 0x00188757
+		// Token: 0x060021B7 RID: 8631 RVA: 0x00190143 File Offset: 0x0018E343
 		public void ReleaseClaimedPath()
 		{
 			if (this.prevPath != null)
@@ -60,26 +60,26 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002162 RID: 8546 RVA: 0x0018A575 File Offset: 0x00188775
+		// Token: 0x060021B8 RID: 8632 RVA: 0x00190161 File Offset: 0x0018E361
 		public void RegisterModifier(IPathModifier modifier)
 		{
 			this.modifiers.Add(modifier);
 			this.modifiers.Sort((IPathModifier a, IPathModifier b) => a.Order.CompareTo(b.Order));
 		}
 
-		// Token: 0x06002163 RID: 8547 RVA: 0x0018A5AD File Offset: 0x001887AD
+		// Token: 0x060021B9 RID: 8633 RVA: 0x00190199 File Offset: 0x0018E399
 		public void DeregisterModifier(IPathModifier modifier)
 		{
 			this.modifiers.Remove(modifier);
 		}
 
-		// Token: 0x06002164 RID: 8548 RVA: 0x0018A5BC File Offset: 0x001887BC
+		// Token: 0x060021BA RID: 8634 RVA: 0x001901A8 File Offset: 0x0018E3A8
 		public void PostProcess(Path path)
 		{
 			this.RunModifiers(Seeker.ModifierPass.PostProcess, path);
 		}
 
-		// Token: 0x06002165 RID: 8549 RVA: 0x0018A5C8 File Offset: 0x001887C8
+		// Token: 0x060021BB RID: 8635 RVA: 0x001901B4 File Offset: 0x0018E3B4
 		public void RunModifiers(Seeker.ModifierPass pass, Path path)
 		{
 			if (pass == Seeker.ModifierPass.PreProcess)
@@ -107,19 +107,19 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002166 RID: 8550 RVA: 0x0018A655 File Offset: 0x00188855
+		// Token: 0x060021BC RID: 8636 RVA: 0x00190241 File Offset: 0x0018E441
 		public bool IsDone()
 		{
 			return this.path == null || this.path.PipelineState >= PathState.Returned;
 		}
 
-		// Token: 0x06002167 RID: 8551 RVA: 0x0018A672 File Offset: 0x00188872
+		// Token: 0x060021BD RID: 8637 RVA: 0x0019025E File Offset: 0x0018E45E
 		private void OnPathComplete(Path path)
 		{
 			this.OnPathComplete(path, true, true);
 		}
 
-		// Token: 0x06002168 RID: 8552 RVA: 0x0018A680 File Offset: 0x00188880
+		// Token: 0x060021BE RID: 8638 RVA: 0x0019026C File Offset: 0x0018E46C
 		private void OnPathComplete(Path p, bool runModifiers, bool sendCallbacks)
 		{
 			if (p != null && p != this.path && sendCallbacks)
@@ -159,44 +159,44 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x06002169 RID: 8553 RVA: 0x0018A74D File Offset: 0x0018894D
+		// Token: 0x060021BF RID: 8639 RVA: 0x00190339 File Offset: 0x0018E539
 		private void OnPartialPathComplete(Path p)
 		{
 			this.OnPathComplete(p, true, false);
 		}
 
-		// Token: 0x0600216A RID: 8554 RVA: 0x0018A758 File Offset: 0x00188958
+		// Token: 0x060021C0 RID: 8640 RVA: 0x00190344 File Offset: 0x0018E544
 		private void OnMultiPathComplete(Path p)
 		{
 			this.OnPathComplete(p, false, true);
 		}
 
-		// Token: 0x0600216B RID: 8555 RVA: 0x0018A763 File Offset: 0x00188963
+		// Token: 0x060021C1 RID: 8641 RVA: 0x0019034F File Offset: 0x0018E54F
 		[Obsolete("Use ABPath.Construct(start, end, null) instead")]
 		public ABPath GetNewPath(Vector3 start, Vector3 end)
 		{
 			return ABPath.Construct(start, end, null);
 		}
 
-		// Token: 0x0600216C RID: 8556 RVA: 0x0018A76D File Offset: 0x0018896D
+		// Token: 0x060021C2 RID: 8642 RVA: 0x00190359 File Offset: 0x0018E559
 		public Path StartPath(Vector3 start, Vector3 end)
 		{
 			return this.StartPath(start, end, null);
 		}
 
-		// Token: 0x0600216D RID: 8557 RVA: 0x0018A778 File Offset: 0x00188978
+		// Token: 0x060021C3 RID: 8643 RVA: 0x00190364 File Offset: 0x0018E564
 		public Path StartPath(Vector3 start, Vector3 end, OnPathDelegate callback)
 		{
 			return this.StartPath(ABPath.Construct(start, end, null), callback);
 		}
 
-		// Token: 0x0600216E RID: 8558 RVA: 0x0018A789 File Offset: 0x00188989
+		// Token: 0x060021C4 RID: 8644 RVA: 0x00190375 File Offset: 0x0018E575
 		public Path StartPath(Vector3 start, Vector3 end, OnPathDelegate callback, int graphMask)
 		{
 			return this.StartPath(ABPath.Construct(start, end, null), callback, graphMask);
 		}
 
-		// Token: 0x0600216F RID: 8559 RVA: 0x0018A79C File Offset: 0x0018899C
+		// Token: 0x060021C5 RID: 8645 RVA: 0x00190388 File Offset: 0x0018E588
 		public Path StartPath(Path p, OnPathDelegate callback = null)
 		{
 			if (p.nnConstraint.graphMask == -1)
@@ -207,7 +207,7 @@ namespace Pathfinding
 			return p;
 		}
 
-		// Token: 0x06002170 RID: 8560 RVA: 0x0018A7C6 File Offset: 0x001889C6
+		// Token: 0x060021C6 RID: 8646 RVA: 0x001903B2 File Offset: 0x0018E5B2
 		public Path StartPath(Path p, OnPathDelegate callback, int graphMask)
 		{
 			p.nnConstraint.graphMask = graphMask;
@@ -215,7 +215,7 @@ namespace Pathfinding
 			return p;
 		}
 
-		// Token: 0x06002171 RID: 8561 RVA: 0x0018A7E0 File Offset: 0x001889E0
+		// Token: 0x060021C7 RID: 8647 RVA: 0x001903CC File Offset: 0x0018E5CC
 		private void StartPathInternal(Path p, OnPathDelegate callback)
 		{
 			MultiTargetPath multiTargetPath = p as MultiTargetPath;
@@ -246,7 +246,7 @@ namespace Pathfinding
 			AstarPath.StartPath(this.path, false);
 		}
 
-		// Token: 0x06002172 RID: 8562 RVA: 0x0018A8FC File Offset: 0x00188AFC
+		// Token: 0x060021C8 RID: 8648 RVA: 0x001904E8 File Offset: 0x0018E6E8
 		public MultiTargetPath StartMultiTargetPath(Vector3 start, Vector3[] endPoints, bool pathsForAll, OnPathDelegate callback = null, int graphMask = -1)
 		{
 			MultiTargetPath multiTargetPath = MultiTargetPath.Construct(start, endPoints, null, null);
@@ -255,7 +255,7 @@ namespace Pathfinding
 			return multiTargetPath;
 		}
 
-		// Token: 0x06002173 RID: 8563 RVA: 0x0018A928 File Offset: 0x00188B28
+		// Token: 0x060021C9 RID: 8649 RVA: 0x00190514 File Offset: 0x0018E714
 		public MultiTargetPath StartMultiTargetPath(Vector3[] startPoints, Vector3 end, bool pathsForAll, OnPathDelegate callback = null, int graphMask = -1)
 		{
 			MultiTargetPath multiTargetPath = MultiTargetPath.Construct(startPoints, end, null, null);
@@ -264,7 +264,7 @@ namespace Pathfinding
 			return multiTargetPath;
 		}
 
-		// Token: 0x06002174 RID: 8564 RVA: 0x0018A953 File Offset: 0x00188B53
+		// Token: 0x060021CA RID: 8650 RVA: 0x0019053F File Offset: 0x0018E73F
 		[Obsolete("You can use StartPath instead of this method now. It will behave identically.")]
 		public MultiTargetPath StartMultiTargetPath(MultiTargetPath p, OnPathDelegate callback = null, int graphMask = -1)
 		{
@@ -272,7 +272,7 @@ namespace Pathfinding
 			return p;
 		}
 
-		// Token: 0x06002175 RID: 8565 RVA: 0x0018A960 File Offset: 0x00188B60
+		// Token: 0x060021CB RID: 8651 RVA: 0x0019054C File Offset: 0x0018E74C
 		public void OnDrawGizmos()
 		{
 			if (this.lastCompletedNodePath == null || !this.drawGizmos)
@@ -300,74 +300,74 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003E92 RID: 16018
+		// Token: 0x04003F70 RID: 16240
 		public bool drawGizmos = true;
 
-		// Token: 0x04003E93 RID: 16019
+		// Token: 0x04003F71 RID: 16241
 		public bool detailedGizmos;
 
-		// Token: 0x04003E94 RID: 16020
+		// Token: 0x04003F72 RID: 16242
 		[HideInInspector]
 		public StartEndModifier startEndModifier = new StartEndModifier();
 
-		// Token: 0x04003E95 RID: 16021
+		// Token: 0x04003F73 RID: 16243
 		[HideInInspector]
 		public int traversableTags = -1;
 
-		// Token: 0x04003E96 RID: 16022
+		// Token: 0x04003F74 RID: 16244
 		[HideInInspector]
 		public int[] tagPenalties = new int[32];
 
-		// Token: 0x04003E97 RID: 16023
+		// Token: 0x04003F75 RID: 16245
 		[HideInInspector]
 		public int graphMask = -1;
 
-		// Token: 0x04003E98 RID: 16024
+		// Token: 0x04003F76 RID: 16246
 		public OnPathDelegate pathCallback;
 
-		// Token: 0x04003E99 RID: 16025
+		// Token: 0x04003F77 RID: 16247
 		public OnPathDelegate preProcessPath;
 
-		// Token: 0x04003E9A RID: 16026
+		// Token: 0x04003F78 RID: 16248
 		public OnPathDelegate postProcessPath;
 
-		// Token: 0x04003E9B RID: 16027
+		// Token: 0x04003F79 RID: 16249
 		[NonSerialized]
 		private List<Vector3> lastCompletedVectorPath;
 
-		// Token: 0x04003E9C RID: 16028
+		// Token: 0x04003F7A RID: 16250
 		[NonSerialized]
 		private List<GraphNode> lastCompletedNodePath;
 
-		// Token: 0x04003E9D RID: 16029
+		// Token: 0x04003F7B RID: 16251
 		[NonSerialized]
 		protected Path path;
 
-		// Token: 0x04003E9E RID: 16030
+		// Token: 0x04003F7C RID: 16252
 		[NonSerialized]
 		private Path prevPath;
 
-		// Token: 0x04003E9F RID: 16031
+		// Token: 0x04003F7D RID: 16253
 		private readonly OnPathDelegate onPathDelegate;
 
-		// Token: 0x04003EA0 RID: 16032
+		// Token: 0x04003F7E RID: 16254
 		private readonly OnPathDelegate onPartialPathDelegate;
 
-		// Token: 0x04003EA1 RID: 16033
+		// Token: 0x04003F7F RID: 16255
 		private OnPathDelegate tmpPathCallback;
 
-		// Token: 0x04003EA2 RID: 16034
+		// Token: 0x04003F80 RID: 16256
 		protected uint lastPathID;
 
-		// Token: 0x04003EA3 RID: 16035
+		// Token: 0x04003F81 RID: 16257
 		private readonly List<IPathModifier> modifiers = new List<IPathModifier>();
 
-		// Token: 0x0200070B RID: 1803
+		// Token: 0x02000725 RID: 1829
 		public enum ModifierPass
 		{
-			// Token: 0x040048BC RID: 18620
+			// Token: 0x040049A7 RID: 18855
 			PreProcess,
-			// Token: 0x040048BD RID: 18621
+			// Token: 0x040049A8 RID: 18856
 			PostProcess = 2
 		}
 	}

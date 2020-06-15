@@ -4,13 +4,13 @@ using UnityEngine;
 // Token: 0x020000BB RID: 187
 public class RPG_Camera : MonoBehaviour
 {
-	// Token: 0x060009C6 RID: 2502 RVA: 0x0004BB0E File Offset: 0x00049D0E
+	// Token: 0x060009C7 RID: 2503 RVA: 0x0004BB36 File Offset: 0x00049D36
 	private void Awake()
 	{
 		RPG_Camera.instance = this;
 	}
 
-	// Token: 0x060009C7 RID: 2503 RVA: 0x0004BB18 File Offset: 0x00049D18
+	// Token: 0x060009C8 RID: 2504 RVA: 0x0004BB40 File Offset: 0x00049D40
 	private void Start()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
@@ -20,21 +20,21 @@ public class RPG_Camera : MonoBehaviour
 		RPG_Camera.MainCamera = base.GetComponent<Camera>();
 		this.distance = Mathf.Clamp(this.distance, 0.05f, this.distanceMax);
 		this.desiredDistance = this.distance;
-		RPG_Camera.halfFieldOfView = RPG_Camera.MainCamera.fieldOfView / 2f * 0.017453292f;
+		RPG_Camera.halfFieldOfView = RPG_Camera.MainCamera.fieldOfView / 2f * 0.0174532924f;
 		RPG_Camera.planeAspect = RPG_Camera.MainCamera.aspect;
 		RPG_Camera.halfPlaneHeight = RPG_Camera.MainCamera.nearClipPlane * Mathf.Tan(RPG_Camera.halfFieldOfView);
 		RPG_Camera.halfPlaneWidth = RPG_Camera.halfPlaneHeight * RPG_Camera.planeAspect;
 		this.UpdateRotation();
 	}
 
-	// Token: 0x060009C8 RID: 2504 RVA: 0x0004BBD5 File Offset: 0x00049DD5
+	// Token: 0x060009C9 RID: 2505 RVA: 0x0004BBFD File Offset: 0x00049DFD
 	public void UpdateRotation()
 	{
 		this.mouseX = this.cameraPivot.transform.eulerAngles.y;
 		this.mouseY = 15f;
 	}
 
-	// Token: 0x060009C9 RID: 2505 RVA: 0x0004BC00 File Offset: 0x00049E00
+	// Token: 0x060009CA RID: 2506 RVA: 0x0004BC28 File Offset: 0x00049E28
 	public static void CameraSetup()
 	{
 		GameObject gameObject;
@@ -57,7 +57,7 @@ public class RPG_Camera : MonoBehaviour
 		rpg_Camera.cameraPivot = gameObject2.transform;
 	}
 
-	// Token: 0x060009CA RID: 2506 RVA: 0x0004BC84 File Offset: 0x00049E84
+	// Token: 0x060009CB RID: 2507 RVA: 0x0004BCAC File Offset: 0x00049EAC
 	private void LateUpdate()
 	{
 		if (Time.deltaTime > 0f)
@@ -74,7 +74,7 @@ public class RPG_Camera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009CB RID: 2507 RVA: 0x0004BCDC File Offset: 0x00049EDC
+	// Token: 0x060009CC RID: 2508 RVA: 0x0004BD04 File Offset: 0x00049F04
 	public void GetInput()
 	{
 		if ((double)this.distance > 0.1)
@@ -137,7 +137,7 @@ public class RPG_Camera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009CC RID: 2508 RVA: 0x0004C08C File Offset: 0x0004A28C
+	// Token: 0x060009CD RID: 2509 RVA: 0x0004C0B4 File Offset: 0x0004A2B4
 	public void GetDesiredPosition()
 	{
 		this.distance = this.desiredDistance;
@@ -167,7 +167,7 @@ public class RPG_Camera : MonoBehaviour
 		this.desiredPosition = this.GetCameraPosition(this.mouseYSmooth, this.mouseXSmooth, this.distance);
 	}
 
-	// Token: 0x060009CD RID: 2509 RVA: 0x0004C1C5 File Offset: 0x0004A3C5
+	// Token: 0x060009CE RID: 2510 RVA: 0x0004C1ED File Offset: 0x0004A3ED
 	public void PositionUpdate()
 	{
 		base.transform.position = this.desiredPosition;
@@ -177,7 +177,7 @@ public class RPG_Camera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009CE RID: 2510 RVA: 0x0004C1FC File Offset: 0x0004A3FC
+	// Token: 0x060009CF RID: 2511 RVA: 0x0004C224 File Offset: 0x0004A424
 	private void CharacterFade()
 	{
 		if (RPG_Animation.instance == null)
@@ -209,7 +209,7 @@ public class RPG_Camera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009CF RID: 2511 RVA: 0x0004C398 File Offset: 0x0004A598
+	// Token: 0x060009D0 RID: 2512 RVA: 0x0004C3C0 File Offset: 0x0004A5C0
 	private Vector3 GetCameraPosition(float xAxis, float yAxis, float distance)
 	{
 		Vector3 point = new Vector3(0f, 0f, -distance);
@@ -217,7 +217,7 @@ public class RPG_Camera : MonoBehaviour
 		return this.cameraPivot.position + rotation * point;
 	}
 
-	// Token: 0x060009D0 RID: 2512 RVA: 0x0004C3DC File Offset: 0x0004A5DC
+	// Token: 0x060009D1 RID: 2513 RVA: 0x0004C404 File Offset: 0x0004A604
 	private float CheckCameraClipPlane(Vector3 from, Vector3 to)
 	{
 		float num = -1f;
@@ -250,7 +250,7 @@ public class RPG_Camera : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060009D1 RID: 2513 RVA: 0x0004C690 File Offset: 0x0004A890
+	// Token: 0x060009D2 RID: 2514 RVA: 0x0004C6B8 File Offset: 0x0004A8B8
 	private float ClampAngle(float angle, float min, float max)
 	{
 		while (angle < -360f || angle > 360f)
@@ -267,7 +267,7 @@ public class RPG_Camera : MonoBehaviour
 		return Mathf.Clamp(angle, min, max);
 	}
 
-	// Token: 0x060009D2 RID: 2514 RVA: 0x0004C6D0 File Offset: 0x0004A8D0
+	// Token: 0x060009D3 RID: 2515 RVA: 0x0004C6F8 File Offset: 0x0004A8F8
 	public static RPG_Camera.ClipPlaneVertexes GetClipPlaneAt(Vector3 pos)
 	{
 		RPG_Camera.ClipPlaneVertexes result = default(RPG_Camera.ClipPlaneVertexes);
@@ -292,125 +292,125 @@ public class RPG_Camera : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x060009D3 RID: 2515 RVA: 0x0004C8A8 File Offset: 0x0004AAA8
+	// Token: 0x060009D4 RID: 2516 RVA: 0x0004C8D0 File Offset: 0x0004AAD0
 	public void RotateWithCharacter()
 	{
 		float num = Input.GetAxis("Horizontal") * RPG_Controller.instance.turnSpeed;
 		this.mouseX += num;
 	}
 
-	// Token: 0x04000820 RID: 2080
+	// Token: 0x04000822 RID: 2082
 	public static RPG_Camera instance;
 
-	// Token: 0x04000821 RID: 2081
+	// Token: 0x04000823 RID: 2083
 	public static Camera MainCamera;
 
-	// Token: 0x04000822 RID: 2082
+	// Token: 0x04000824 RID: 2084
 	public Transform cameraPivot;
 
-	// Token: 0x04000823 RID: 2083
+	// Token: 0x04000825 RID: 2085
 	public float distance = 5f;
 
-	// Token: 0x04000824 RID: 2084
+	// Token: 0x04000826 RID: 2086
 	public float distanceMax = 30f;
 
-	// Token: 0x04000825 RID: 2085
+	// Token: 0x04000827 RID: 2087
 	public float distanceMin = 2f;
 
-	// Token: 0x04000826 RID: 2086
+	// Token: 0x04000828 RID: 2088
 	public float mouseSpeed = 8f;
 
-	// Token: 0x04000827 RID: 2087
+	// Token: 0x04000829 RID: 2089
 	public float mouseScroll = 15f;
 
-	// Token: 0x04000828 RID: 2088
+	// Token: 0x0400082A RID: 2090
 	public float mouseSmoothingFactor = 0.08f;
 
-	// Token: 0x04000829 RID: 2089
+	// Token: 0x0400082B RID: 2091
 	public float camDistanceSpeed = 0.7f;
 
-	// Token: 0x0400082A RID: 2090
+	// Token: 0x0400082C RID: 2092
 	public float camBottomDistance = 1f;
 
-	// Token: 0x0400082B RID: 2091
+	// Token: 0x0400082D RID: 2093
 	public float firstPersonThreshold = 0.8f;
 
-	// Token: 0x0400082C RID: 2092
+	// Token: 0x0400082E RID: 2094
 	public float characterFadeThreshold = 1.8f;
 
-	// Token: 0x0400082D RID: 2093
+	// Token: 0x0400082F RID: 2095
 	public Vector3 desiredPosition;
 
-	// Token: 0x0400082E RID: 2094
+	// Token: 0x04000830 RID: 2096
 	public float desiredDistance;
 
-	// Token: 0x0400082F RID: 2095
+	// Token: 0x04000831 RID: 2097
 	private float lastDistance;
 
-	// Token: 0x04000830 RID: 2096
+	// Token: 0x04000832 RID: 2098
 	public float mouseX;
 
-	// Token: 0x04000831 RID: 2097
+	// Token: 0x04000833 RID: 2099
 	public float mouseXSmooth;
 
-	// Token: 0x04000832 RID: 2098
+	// Token: 0x04000834 RID: 2100
 	private float mouseXVel;
 
-	// Token: 0x04000833 RID: 2099
+	// Token: 0x04000835 RID: 2101
 	public float mouseY;
 
-	// Token: 0x04000834 RID: 2100
+	// Token: 0x04000836 RID: 2102
 	public float mouseYSmooth;
 
-	// Token: 0x04000835 RID: 2101
+	// Token: 0x04000837 RID: 2103
 	private float mouseYVel;
 
-	// Token: 0x04000836 RID: 2102
+	// Token: 0x04000838 RID: 2104
 	private float mouseYMin = -89.5f;
 
-	// Token: 0x04000837 RID: 2103
+	// Token: 0x04000839 RID: 2105
 	private float mouseYMax = 89.5f;
 
-	// Token: 0x04000838 RID: 2104
+	// Token: 0x0400083A RID: 2106
 	private float distanceVel;
 
-	// Token: 0x04000839 RID: 2105
+	// Token: 0x0400083B RID: 2107
 	private bool camBottom;
 
-	// Token: 0x0400083A RID: 2106
+	// Token: 0x0400083C RID: 2108
 	private bool constraint;
 
-	// Token: 0x0400083B RID: 2107
+	// Token: 0x0400083D RID: 2109
 	public bool invertAxis;
 
-	// Token: 0x0400083C RID: 2108
+	// Token: 0x0400083E RID: 2110
 	public float sensitivity;
 
-	// Token: 0x0400083D RID: 2109
+	// Token: 0x0400083F RID: 2111
 	private static float halfFieldOfView;
 
-	// Token: 0x0400083E RID: 2110
+	// Token: 0x04000840 RID: 2112
 	private static float planeAspect;
 
-	// Token: 0x0400083F RID: 2111
+	// Token: 0x04000841 RID: 2113
 	private static float halfPlaneHeight;
 
-	// Token: 0x04000840 RID: 2112
+	// Token: 0x04000842 RID: 2114
 	private static float halfPlaneWidth;
 
-	// Token: 0x02000695 RID: 1685
+	// Token: 0x020006AB RID: 1707
 	public struct ClipPlaneVertexes
 	{
-		// Token: 0x04004612 RID: 17938
+		// Token: 0x040046F0 RID: 18160
 		public Vector3 UpperLeft;
 
-		// Token: 0x04004613 RID: 17939
+		// Token: 0x040046F1 RID: 18161
 		public Vector3 UpperRight;
 
-		// Token: 0x04004614 RID: 17940
+		// Token: 0x040046F2 RID: 18162
 		public Vector3 LowerLeft;
 
-		// Token: 0x04004615 RID: 17941
+		// Token: 0x040046F3 RID: 18163
 		public Vector3 LowerRight;
 	}
 }

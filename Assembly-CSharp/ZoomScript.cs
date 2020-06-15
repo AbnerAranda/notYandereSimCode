@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200048D RID: 1165
+// Token: 0x02000493 RID: 1171
 public class ZoomScript : MonoBehaviour
 {
-	// Token: 0x06001DF2 RID: 7666 RVA: 0x00176EE4 File Offset: 0x001750E4
+	// Token: 0x06001E21 RID: 7713 RVA: 0x0017AEE4 File Offset: 0x001790E4
 	private void Update()
 	{
 		if (this.Yandere.FollowHips)
@@ -121,7 +121,7 @@ public class ZoomScript : MonoBehaviour
 		base.transform.localPosition = Vector3.MoveTowards(base.transform.localPosition, this.Target, Time.deltaTime * this.ShakeStrength * 0.1f);
 	}
 
-	// Token: 0x06001DF3 RID: 7667 RVA: 0x00177704 File Offset: 0x00175904
+	// Token: 0x06001E22 RID: 7714 RVA: 0x0017B704 File Offset: 0x00179904
 	public void LateUpdate()
 	{
 		base.transform.eulerAngles = Vector3.zero;
@@ -131,45 +131,50 @@ public class ZoomScript : MonoBehaviour
 			base.transform.position = new Vector3(this.Yandere.transform.position.x + this.midOffset * Vector3.Dot(lhs, Vector3.forward), base.transform.position.y, this.Yandere.transform.position.z + this.midOffset * Vector3.Dot(lhs, -Vector3.right));
 			return;
 		}
+		if (this.Yandere.FollowHips)
+		{
+			base.transform.position = new Vector3(Mathf.MoveTowards(base.transform.position.x, this.Yandere.Hips.position.x, Time.deltaTime), base.transform.position.y, Mathf.MoveTowards(base.transform.position.z, this.Yandere.Hips.position.z, Time.deltaTime));
+			return;
+		}
 		base.transform.localPosition = new Vector3(0f, base.transform.localPosition.y, 0f);
 	}
 
-	// Token: 0x04003BAD RID: 15277
+	// Token: 0x04003C39 RID: 15417
 	public CardboardBoxScript CardboardBox;
 
-	// Token: 0x04003BAE RID: 15278
+	// Token: 0x04003C3A RID: 15418
 	public RPG_Camera CameraScript;
 
-	// Token: 0x04003BAF RID: 15279
+	// Token: 0x04003C3B RID: 15419
 	public YandereScript Yandere;
 
-	// Token: 0x04003BB0 RID: 15280
+	// Token: 0x04003C3C RID: 15420
 	public float TargetZoom;
 
-	// Token: 0x04003BB1 RID: 15281
+	// Token: 0x04003C3D RID: 15421
 	public float Zoom;
 
-	// Token: 0x04003BB2 RID: 15282
+	// Token: 0x04003C3E RID: 15422
 	public float ShakeStrength;
 
-	// Token: 0x04003BB3 RID: 15283
+	// Token: 0x04003C3F RID: 15423
 	public float midOffset = 0.25f;
 
-	// Token: 0x04003BB4 RID: 15284
+	// Token: 0x04003C40 RID: 15424
 	public float Slender;
 
-	// Token: 0x04003BB5 RID: 15285
+	// Token: 0x04003C41 RID: 15425
 	public float Height;
 
-	// Token: 0x04003BB6 RID: 15286
+	// Token: 0x04003C42 RID: 15426
 	public float Timer;
 
-	// Token: 0x04003BB7 RID: 15287
+	// Token: 0x04003C43 RID: 15427
 	public Vector3 Target;
 
-	// Token: 0x04003BB8 RID: 15288
+	// Token: 0x04003C44 RID: 15428
 	public bool OverShoulder;
 
-	// Token: 0x04003BB9 RID: 15289
+	// Token: 0x04003C45 RID: 15429
 	public GameObject TallHat;
 }

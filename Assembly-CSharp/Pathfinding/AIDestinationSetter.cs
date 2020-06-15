@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Pathfinding
 {
-	// Token: 0x0200050E RID: 1294
+	// Token: 0x02000524 RID: 1316
 	[UniqueComponent(tag = "ai.destination")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_a_i_destination_setter.php")]
 	public class AIDestinationSetter : VersionedMonoBehaviour
 	{
-		// Token: 0x0600206D RID: 8301 RVA: 0x001863DC File Offset: 0x001845DC
+		// Token: 0x060020C3 RID: 8387 RVA: 0x0018BFC8 File Offset: 0x0018A1C8
 		private void OnEnable()
 		{
 			this.ai = base.GetComponent<IAstarAI>();
@@ -19,7 +19,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600206E RID: 8302 RVA: 0x00186419 File Offset: 0x00184619
+		// Token: 0x060020C4 RID: 8388 RVA: 0x0018C005 File Offset: 0x0018A205
 		private void OnDisable()
 		{
 			if (this.ai != null)
@@ -29,7 +29,7 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x0600206F RID: 8303 RVA: 0x0018644A File Offset: 0x0018464A
+		// Token: 0x060020C5 RID: 8389 RVA: 0x0018C036 File Offset: 0x0018A236
 		private void Update()
 		{
 			if (this.target != null && this.ai != null)
@@ -38,10 +38,10 @@ namespace Pathfinding
 			}
 		}
 
-		// Token: 0x04003E11 RID: 15889
+		// Token: 0x04003EEF RID: 16111
 		public Transform target;
 
-		// Token: 0x04003E12 RID: 15890
+		// Token: 0x04003EF0 RID: 16112
 		public IAstarAI ai;
 	}
 }

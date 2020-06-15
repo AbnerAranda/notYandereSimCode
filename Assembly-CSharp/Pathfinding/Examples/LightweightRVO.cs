@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E5 RID: 1509
+	// Token: 0x020005FB RID: 1531
 	[RequireComponent(typeof(MeshFilter))]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_lightweight_r_v_o.php")]
 	public class LightweightRVO : MonoBehaviour
 	{
-		// Token: 0x060029A6 RID: 10662 RVA: 0x001BF9A4 File Offset: 0x001BDBA4
+		// Token: 0x060029FC RID: 10748 RVA: 0x001C5590 File Offset: 0x001C3790
 		public void Start()
 		{
 			this.mesh = new Mesh();
@@ -25,7 +25,7 @@ namespace Pathfinding.Examples
 			this.CreateAgents(this.agentCount);
 		}
 
-		// Token: 0x060029A7 RID: 10663 RVA: 0x001BFA10 File Offset: 0x001BDC10
+		// Token: 0x060029FD RID: 10749 RVA: 0x001C55FC File Offset: 0x001C37FC
 		public void OnGUI()
 		{
 			if (GUILayout.Button("2", Array.Empty<GUILayoutOption>()))
@@ -80,7 +80,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029A8 RID: 10664 RVA: 0x001BFBD8 File Offset: 0x001BDDD8
+		// Token: 0x060029FE RID: 10750 RVA: 0x001C57C4 File Offset: 0x001C39C4
 		private float uniformDistance(float radius)
 		{
 			float num = UnityEngine.Random.value + UnityEngine.Random.value;
@@ -91,7 +91,7 @@ namespace Pathfinding.Examples
 			return radius * num;
 		}
 
-		// Token: 0x060029A9 RID: 10665 RVA: 0x001BFC08 File Offset: 0x001BDE08
+		// Token: 0x060029FF RID: 10751 RVA: 0x001C57F4 File Offset: 0x001C39F4
 		public void CreateAgents(int num)
 		{
 			this.agentCount = num;
@@ -101,10 +101,10 @@ namespace Pathfinding.Examples
 			this.sim.ClearAgents();
 			if (this.type == LightweightRVO.RVOExampleType.Circle)
 			{
-				float d = Mathf.Sqrt((float)this.agentCount * this.radius * this.radius * 4f / 3.1415927f) * this.exampleScale * 0.05f;
+				float d = Mathf.Sqrt((float)this.agentCount * this.radius * this.radius * 4f / 3.14159274f) * this.exampleScale * 0.05f;
 				for (int i = 0; i < this.agentCount; i++)
 				{
-					Vector3 vector = new Vector3(Mathf.Cos((float)i * 3.1415927f * 2f / (float)this.agentCount), 0f, Mathf.Sin((float)i * 3.1415927f * 2f / (float)this.agentCount)) * d * (1f + UnityEngine.Random.value * 0.01f);
+					Vector3 vector = new Vector3(Mathf.Cos((float)i * 3.14159274f * 2f / (float)this.agentCount), 0f, Mathf.Sin((float)i * 3.14159274f * 2f / (float)this.agentCount)) * d * (1f + UnityEngine.Random.value * 0.01f);
 					IAgent item = this.sim.AddAgent(new Vector2(vector.x, vector.z), vector.y);
 					this.agents.Add(item);
 					this.goals.Add(-vector);
@@ -126,7 +126,7 @@ namespace Pathfinding.Examples
 			{
 				for (int k = 0; k < this.agentCount; k++)
 				{
-					Vector3 vector3 = new Vector3(Mathf.Cos((float)k * 3.1415927f * 2f / (float)this.agentCount), 0f, Mathf.Sin((float)k * 3.1415927f * 2f / (float)this.agentCount)) * this.exampleScale;
+					Vector3 vector3 = new Vector3(Mathf.Cos((float)k * 3.14159274f * 2f / (float)this.agentCount), 0f, Mathf.Sin((float)k * 3.14159274f * 2f / (float)this.agentCount)) * this.exampleScale;
 					IAgent item3 = this.sim.AddAgent(new Vector2(vector3.x, vector3.z), vector3.y);
 					this.agents.Add(item3);
 					this.goals.Add(new Vector3(0f, vector3.y, 0f));
@@ -135,11 +135,11 @@ namespace Pathfinding.Examples
 			}
 			else if (this.type == LightweightRVO.RVOExampleType.RandomStreams)
 			{
-				float num2 = Mathf.Sqrt((float)this.agentCount * this.radius * this.radius * 4f / 3.1415927f) * this.exampleScale * 0.05f;
+				float num2 = Mathf.Sqrt((float)this.agentCount * this.radius * this.radius * 4f / 3.14159274f) * this.exampleScale * 0.05f;
 				for (int l = 0; l < this.agentCount; l++)
 				{
-					float f = UnityEngine.Random.value * 3.1415927f * 2f;
-					float num3 = UnityEngine.Random.value * 3.1415927f * 2f;
+					float f = UnityEngine.Random.value * 3.14159274f * 2f;
+					float num3 = UnityEngine.Random.value * 3.14159274f * 2f;
 					Vector3 vector4 = new Vector3(Mathf.Cos(f), 0f, Mathf.Sin(f)) * this.uniformDistance(num2);
 					IAgent item4 = this.sim.AddAgent(new Vector2(vector4.x, vector4.z), vector4.y);
 					this.agents.Add(item4);
@@ -154,7 +154,7 @@ namespace Pathfinding.Examples
 				num5 = Mathf.Max(num5, 2);
 				for (int m = 0; m < this.agentCount; m++)
 				{
-					float num6 = (float)(m % num5) / (float)num5 * 3.1415927f * 2f;
+					float num6 = (float)(m % num5) / (float)num5 * 3.14159274f * 2f;
 					float d2 = num4 * ((float)(m / (num5 * 10) + 1) + 0.3f * UnityEngine.Random.value);
 					Vector3 vector5 = new Vector3(Mathf.Cos(num6), 0f, Mathf.Sin(num6)) * d2;
 					IAgent agent = this.sim.AddAgent(new Vector2(vector5.x, vector5.z), vector5.y);
@@ -171,7 +171,7 @@ namespace Pathfinding.Examples
 			this.meshColors = new Color[this.verts.Length];
 		}
 
-		// Token: 0x060029AA RID: 10666 RVA: 0x001C0224 File Offset: 0x001BE424
+		// Token: 0x06002A00 RID: 10752 RVA: 0x001C5E10 File Offset: 0x001C4010
 		private void SetAgentSettings()
 		{
 			for (int i = 0; i < this.agents.Count; i++)
@@ -185,7 +185,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029AB RID: 10667 RVA: 0x001C0294 File Offset: 0x001BE494
+		// Token: 0x06002A01 RID: 10753 RVA: 0x001C5E80 File Offset: 0x001C4080
 		public void Update()
 		{
 			if (this.agents == null || this.mesh == null)
@@ -272,82 +272,82 @@ namespace Pathfinding.Examples
 			this.mesh.RecalculateNormals();
 		}
 
-		// Token: 0x04004357 RID: 17239
+		// Token: 0x04004435 RID: 17461
 		public int agentCount = 100;
 
-		// Token: 0x04004358 RID: 17240
+		// Token: 0x04004436 RID: 17462
 		public float exampleScale = 100f;
 
-		// Token: 0x04004359 RID: 17241
+		// Token: 0x04004437 RID: 17463
 		public LightweightRVO.RVOExampleType type;
 
-		// Token: 0x0400435A RID: 17242
+		// Token: 0x04004438 RID: 17464
 		public float radius = 3f;
 
-		// Token: 0x0400435B RID: 17243
+		// Token: 0x04004439 RID: 17465
 		public float maxSpeed = 2f;
 
-		// Token: 0x0400435C RID: 17244
+		// Token: 0x0400443A RID: 17466
 		public float agentTimeHorizon = 10f;
 
-		// Token: 0x0400435D RID: 17245
+		// Token: 0x0400443B RID: 17467
 		[HideInInspector]
 		public float obstacleTimeHorizon = 10f;
 
-		// Token: 0x0400435E RID: 17246
+		// Token: 0x0400443C RID: 17468
 		public int maxNeighbours = 10;
 
-		// Token: 0x0400435F RID: 17247
+		// Token: 0x0400443D RID: 17469
 		public Vector3 renderingOffset = Vector3.up * 0.1f;
 
-		// Token: 0x04004360 RID: 17248
+		// Token: 0x0400443E RID: 17470
 		public bool debug;
 
-		// Token: 0x04004361 RID: 17249
+		// Token: 0x0400443F RID: 17471
 		private Mesh mesh;
 
-		// Token: 0x04004362 RID: 17250
+		// Token: 0x04004440 RID: 17472
 		private Simulator sim;
 
-		// Token: 0x04004363 RID: 17251
+		// Token: 0x04004441 RID: 17473
 		private List<IAgent> agents;
 
-		// Token: 0x04004364 RID: 17252
+		// Token: 0x04004442 RID: 17474
 		private List<Vector3> goals;
 
-		// Token: 0x04004365 RID: 17253
+		// Token: 0x04004443 RID: 17475
 		private List<Color> colors;
 
-		// Token: 0x04004366 RID: 17254
+		// Token: 0x04004444 RID: 17476
 		private Vector3[] verts;
 
-		// Token: 0x04004367 RID: 17255
+		// Token: 0x04004445 RID: 17477
 		private Vector2[] uv;
 
-		// Token: 0x04004368 RID: 17256
+		// Token: 0x04004446 RID: 17478
 		private int[] tris;
 
-		// Token: 0x04004369 RID: 17257
+		// Token: 0x04004447 RID: 17479
 		private Color[] meshColors;
 
-		// Token: 0x0400436A RID: 17258
+		// Token: 0x04004448 RID: 17480
 		private Vector2[] interpolatedVelocities;
 
-		// Token: 0x0400436B RID: 17259
+		// Token: 0x04004449 RID: 17481
 		private Vector2[] interpolatedRotations;
 
-		// Token: 0x0200077E RID: 1918
+		// Token: 0x02000798 RID: 1944
 		public enum RVOExampleType
 		{
-			// Token: 0x04004AA6 RID: 19110
+			// Token: 0x04004B91 RID: 19345
 			Circle,
-			// Token: 0x04004AA7 RID: 19111
+			// Token: 0x04004B92 RID: 19346
 			Line,
-			// Token: 0x04004AA8 RID: 19112
+			// Token: 0x04004B93 RID: 19347
 			Point,
-			// Token: 0x04004AA9 RID: 19113
+			// Token: 0x04004B94 RID: 19348
 			RandomStreams,
-			// Token: 0x04004AAA RID: 19114
+			// Token: 0x04004B95 RID: 19349
 			Crossing
 		}
 	}

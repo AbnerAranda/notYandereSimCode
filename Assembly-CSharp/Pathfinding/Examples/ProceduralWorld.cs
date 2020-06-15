@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Pathfinding.Examples
 {
-	// Token: 0x020005E8 RID: 1512
+	// Token: 0x020005FE RID: 1534
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_procedural_world.php")]
 	public class ProceduralWorld : MonoBehaviour
 	{
-		// Token: 0x060029B7 RID: 10679 RVA: 0x001C0F39 File Offset: 0x001BF139
+		// Token: 0x06002A0D RID: 10765 RVA: 0x001C6B25 File Offset: 0x001C4D25
 		private void Start()
 		{
 			this.Update();
@@ -17,7 +17,7 @@ namespace Pathfinding.Examples
 			base.StartCoroutine(this.GenerateTiles());
 		}
 
-		// Token: 0x060029B8 RID: 10680 RVA: 0x001C0F5C File Offset: 0x001BF15C
+		// Token: 0x06002A0E RID: 10766 RVA: 0x001C6B48 File Offset: 0x001C4D48
 		private void Update()
 		{
 			Int2 @int = new Int2(Mathf.RoundToInt((this.target.position.x - this.tileSize * 0.5f) / this.tileSize), Mathf.RoundToInt((this.target.position.z - this.tileSize * 0.5f) / this.tileSize));
@@ -60,7 +60,7 @@ namespace Pathfinding.Examples
 			}
 		}
 
-		// Token: 0x060029B9 RID: 10681 RVA: 0x001C118C File Offset: 0x001BF38C
+		// Token: 0x06002A0F RID: 10767 RVA: 0x001C6D78 File Offset: 0x001C4F78
 		private IEnumerator GenerateTiles()
 		{
 			for (;;)
@@ -75,68 +75,68 @@ namespace Pathfinding.Examples
 			yield break;
 		}
 
-		// Token: 0x04004381 RID: 17281
+		// Token: 0x0400445F RID: 17503
 		public Transform target;
 
-		// Token: 0x04004382 RID: 17282
+		// Token: 0x04004460 RID: 17504
 		public ProceduralWorld.ProceduralPrefab[] prefabs;
 
-		// Token: 0x04004383 RID: 17283
+		// Token: 0x04004461 RID: 17505
 		public int range = 1;
 
-		// Token: 0x04004384 RID: 17284
+		// Token: 0x04004462 RID: 17506
 		public float tileSize = 100f;
 
-		// Token: 0x04004385 RID: 17285
+		// Token: 0x04004463 RID: 17507
 		public int subTiles = 20;
 
-		// Token: 0x04004386 RID: 17286
+		// Token: 0x04004464 RID: 17508
 		public bool staticBatching;
 
-		// Token: 0x04004387 RID: 17287
+		// Token: 0x04004465 RID: 17509
 		private Queue<IEnumerator> tileGenerationQueue = new Queue<IEnumerator>();
 
-		// Token: 0x04004388 RID: 17288
+		// Token: 0x04004466 RID: 17510
 		private Dictionary<Int2, ProceduralWorld.ProceduralTile> tiles = new Dictionary<Int2, ProceduralWorld.ProceduralTile>();
 
-		// Token: 0x02000780 RID: 1920
+		// Token: 0x0200079A RID: 1946
 		[Serializable]
 		public class ProceduralPrefab
 		{
-			// Token: 0x04004AAE RID: 19118
+			// Token: 0x04004B99 RID: 19353
 			public GameObject prefab;
 
-			// Token: 0x04004AAF RID: 19119
+			// Token: 0x04004B9A RID: 19354
 			public float density;
 
-			// Token: 0x04004AB0 RID: 19120
+			// Token: 0x04004B9B RID: 19355
 			public float perlin;
 
-			// Token: 0x04004AB1 RID: 19121
+			// Token: 0x04004B9C RID: 19356
 			public float perlinPower = 1f;
 
-			// Token: 0x04004AB2 RID: 19122
+			// Token: 0x04004B9D RID: 19357
 			public Vector2 perlinOffset = Vector2.zero;
 
-			// Token: 0x04004AB3 RID: 19123
+			// Token: 0x04004B9E RID: 19358
 			public float perlinScale = 1f;
 
-			// Token: 0x04004AB4 RID: 19124
+			// Token: 0x04004B9F RID: 19359
 			public float random = 1f;
 
-			// Token: 0x04004AB5 RID: 19125
+			// Token: 0x04004BA0 RID: 19360
 			public bool singleFixed;
 		}
 
-		// Token: 0x02000781 RID: 1921
+		// Token: 0x0200079B RID: 1947
 		private class ProceduralTile
 		{
-			// Token: 0x17000694 RID: 1684
-			// (get) Token: 0x06002DC0 RID: 11712 RVA: 0x001D10FB File Offset: 0x001CF2FB
-			// (set) Token: 0x06002DC1 RID: 11713 RVA: 0x001D1103 File Offset: 0x001CF303
+			// Token: 0x1700069A RID: 1690
+			// (get) Token: 0x06002E23 RID: 11811 RVA: 0x001D6DAF File Offset: 0x001D4FAF
+			// (set) Token: 0x06002E24 RID: 11812 RVA: 0x001D6DB7 File Offset: 0x001D4FB7
 			public bool destroyed { get; private set; }
 
-			// Token: 0x06002DC2 RID: 11714 RVA: 0x001D110C File Offset: 0x001CF30C
+			// Token: 0x06002E25 RID: 11813 RVA: 0x001D6DC0 File Offset: 0x001D4FC0
 			public ProceduralTile(ProceduralWorld world, int x, int z)
 			{
 				this.x = x;
@@ -145,7 +145,7 @@ namespace Pathfinding.Examples
 				this.rnd = new System.Random(x * 10007 ^ z * 36007);
 			}
 
-			// Token: 0x06002DC3 RID: 11715 RVA: 0x001D1143 File Offset: 0x001CF343
+			// Token: 0x06002E26 RID: 11814 RVA: 0x001D6DF7 File Offset: 0x001D4FF7
 			public IEnumerator Generate()
 			{
 				this.ie = this.InternalGenerate();
@@ -165,7 +165,7 @@ namespace Pathfinding.Examples
 				yield break;
 			}
 
-			// Token: 0x06002DC4 RID: 11716 RVA: 0x001D1152 File Offset: 0x001CF352
+			// Token: 0x06002E27 RID: 11815 RVA: 0x001D6E06 File Offset: 0x001D5006
 			public void ForceFinish()
 			{
 				while (this.ie != null && this.root != null && this.ie.MoveNext())
@@ -174,7 +174,7 @@ namespace Pathfinding.Examples
 				this.ie = null;
 			}
 
-			// Token: 0x06002DC5 RID: 11717 RVA: 0x001D1180 File Offset: 0x001CF380
+			// Token: 0x06002E28 RID: 11816 RVA: 0x001D6E34 File Offset: 0x001D5034
 			private Vector3 RandomInside()
 			{
 				return new Vector3
@@ -184,7 +184,7 @@ namespace Pathfinding.Examples
 				};
 			}
 
-			// Token: 0x06002DC6 RID: 11718 RVA: 0x001D11E4 File Offset: 0x001CF3E4
+			// Token: 0x06002E29 RID: 11817 RVA: 0x001D6E98 File Offset: 0x001D5098
 			private Vector3 RandomInside(float px, float pz)
 			{
 				return new Vector3
@@ -194,13 +194,13 @@ namespace Pathfinding.Examples
 				};
 			}
 
-			// Token: 0x06002DC7 RID: 11719 RVA: 0x001D1256 File Offset: 0x001CF456
+			// Token: 0x06002E2A RID: 11818 RVA: 0x001D6F0A File Offset: 0x001D510A
 			private Quaternion RandomYRot()
 			{
 				return Quaternion.Euler(360f * (float)this.rnd.NextDouble(), 0f, 360f * (float)this.rnd.NextDouble());
 			}
 
-			// Token: 0x06002DC8 RID: 11720 RVA: 0x001D1286 File Offset: 0x001CF486
+			// Token: 0x06002E2B RID: 11819 RVA: 0x001D6F3A File Offset: 0x001D513A
 			private IEnumerator InternalGenerate()
 			{
 				Debug.Log(string.Concat(new object[]
@@ -275,7 +275,7 @@ namespace Pathfinding.Examples
 				yield break;
 			}
 
-			// Token: 0x06002DC9 RID: 11721 RVA: 0x001D1298 File Offset: 0x001CF498
+			// Token: 0x06002E2C RID: 11820 RVA: 0x001D6F4C File Offset: 0x001D514C
 			public void Destroy()
 			{
 				if (this.root != null)
@@ -293,22 +293,22 @@ namespace Pathfinding.Examples
 				this.ie = null;
 			}
 
-			// Token: 0x04004AB6 RID: 19126
+			// Token: 0x04004BA1 RID: 19361
 			private int x;
 
-			// Token: 0x04004AB7 RID: 19127
+			// Token: 0x04004BA2 RID: 19362
 			private int z;
 
-			// Token: 0x04004AB8 RID: 19128
+			// Token: 0x04004BA3 RID: 19363
 			private System.Random rnd;
 
-			// Token: 0x04004AB9 RID: 19129
+			// Token: 0x04004BA4 RID: 19364
 			private ProceduralWorld world;
 
-			// Token: 0x04004ABB RID: 19131
+			// Token: 0x04004BA6 RID: 19366
 			private Transform root;
 
-			// Token: 0x04004ABC RID: 19132
+			// Token: 0x04004BA7 RID: 19367
 			private IEnumerator ie;
 		}
 	}

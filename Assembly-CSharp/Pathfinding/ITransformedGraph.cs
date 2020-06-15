@@ -3,11 +3,11 @@ using Pathfinding.Util;
 
 namespace Pathfinding
 {
-	// Token: 0x02000548 RID: 1352
+	// Token: 0x0200055E RID: 1374
 	public interface ITransformedGraph
 	{
-		// Token: 0x17000574 RID: 1396
-		// (get) Token: 0x06002401 RID: 9217
+		// Token: 0x1700057A RID: 1402
+		// (get) Token: 0x06002457 RID: 9303
 		GraphTransform transform { get; }
 	}
 }
